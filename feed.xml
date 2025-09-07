@@ -10,6 +10,74 @@
           <title>《三角范畴与导出范畴》习题 - 第一章</title>
           <description>&lt;h2 id=&quot;关键知识复习&quot;&gt;关键知识复习&lt;/h2&gt;
 
+&lt;h3 id=&quot;1-三角范畴的相关公理&quot;&gt;1. 三角范畴的相关公理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(TR1) 好三角同构封闭 + 态射嵌入好三角第一项 + 恒等态射对应三角 $ X \xrightarrow{\text{Id}_X} X \to 0 \to TX $&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(TR2) 顺时针旋转&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(TR3) 态射定理: 给定两个好三角和态射 $f, g$ 使得图表交换, 则存在 $h$ 使得整个图表交换.&lt;/p&gt;
+
+    &lt;p&gt;Q: 存在的 $h$ 是否唯一? A: 不唯一. 例子见书注记 1.1.4.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(TR4) 八面体公理&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-上同调函子&quot;&gt;2. 上同调函子&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;联系了三角范畴和 Abel 范畴, 把好三角展开成一个正合列&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;$\mathrm{Hom}_{\mathcal{C}}(M,-)$ 和 $\mathrm{Hom}_{\mathcal{C}}(-,M)$ 都是上同调函子&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;3-预三角范畴的基本性质&quot;&gt;3. 预三角范畴的基本性质&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;态射嵌入好三角其实可以嵌入任何一个位置, 嵌入 $-Σ^{-1}u $ 并考虑使用 (TR2) 旋转即可.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;相邻复合为 0.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;态射定理其实只要任意两个位置的态射就可以得到第三个位置的态射, 从而得到三角射. 这个证明只要使用 (TR2) 旋转和 (TR3) 态射定理即可.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;三角射中两个态射同构则是三角同构. 证明使用 Hom 函子. 这个证明有点意思:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;我们目前有交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/TriCat_Exercise1/diagram_8be184f8e3b01.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;现在我们使用 Hom 函子, 得到交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/TriCat_Exercise1/diagram_3d955a2e0f76f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;f 和 g 是同构, 则 $f \circ -$ 和 $g \circ -$ 也是同构. 由五引理可知 $h \circ -$ 也是同构, 特别地是满射. 于是存在 $h' : Z' \to Z$ 使得 $h \circ h' = \text{Id}_{Z'}$. 同理存在 $h'' : Z \to Z'$ 使得 $h'' \circ h = \text{Id}_Z$. 于是 $h$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里的证明用了一个好方法:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;要证明有左逆就证明前项复合是满射, 要证明有右逆就证明后项复合是满射.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;逆时针旋转&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h2 id=&quot;习题&quot;&gt;习题&lt;/h2&gt;
 &lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;设 $u : X \to Y$ 是预三角范畴 $\mathcal{C}$ 的态射。则 $u$ 是同构当且仅当 $ X \xrightarrow{u} Y \to 0 \to TX $ 是好三角。&lt;/p&gt;
