@@ -7,6 +7,354 @@
     
       
         <item>
+          <title>外三角范畴</title>
+          <description>&lt;h1 id=&quot;chapter-1-正合范畴与三角范畴拾遗&quot;&gt;Chapter 1 正合范畴与三角范畴拾遗&lt;/h1&gt;
+
+&lt;h2 id=&quot;11-正合范畴&quot;&gt;1.1 正合范畴&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(Quillen 的正合范畴)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;inflation + deflation = isomorphism&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernal 和 cokernal.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$0→X→X⊕Y→Y→0\in\mathcal{E}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/ExTriCat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ExTriCat</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》第一章习题</title>
+          <description>&lt;h2 id=&quot;11-环与代数上的模&quot;&gt;1.1 环与代数上的模&lt;/h2&gt;
+
+&lt;h3 id=&quot;基本性质&quot;&gt;基本性质&lt;/h3&gt;
+
+&lt;p&gt;域上的代数以及环上的模都有相应的对应定理和同构定理, 这个性质其实都源于他们可以构成 Abel 范畴.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(商的子和子的商一一对应) $\mathcal{A}$ 是 Abel 范畴.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;给定 $N↪L↪M$, 则 $L/N$ 自然成为 $M/N$ 的子对象.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;给定 $N↪M$ 以及 $L'↪M/N$, 考虑拉回得到 $L$, 则 $L'≅L/N$.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise/diagram_6096c12061c4c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;由余核泛性质自然诱导出 $L/N→ M/N$, 由命题 3.9.6 知右边是推出拉回方块, 由定理 3.9.5 知 $L/N↪M/N$ 是单态射.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;由拉回的性质 (定理 3.9.5) 知 $N↪L$ 也是 $L→ L'$ 的核. 由命题 3.9.6 知右边是推出拉回方块, 从而 $L/N≅L'$.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(Noether 同构定理) $\mathcal{A}$ 是 Abel 范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Q: 线性空间范畴里面 product 的基怎么考虑? (感觉上基和 coproduct 是对应的)&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;可除代数里面左逆等于右逆.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $a∈A$ 有左逆 $b$, 即 $ba=1$. 则 $b(1-ab)=b-bab=0$. 由可除知 $1-ab=0$, 即 $ab=1$. 故 $b$ 也是 $a$ 的右逆.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;习题-11&quot;&gt;习题 1.1&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;$k$ 是域, $G$ 是群. 则 $k[G]$ 是 $k$-代数.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;代数闭域 $k$ 上的有限维可除代数只有 $k$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;如若不然, 即存在有限维可除代数 $A\not\cong k$, 取 $u∈ A\backslash k$. 考虑子代数 $k[u]↪A$, 对于任意 $v=f(u)∈k[u]$, 由有限性可知它有极小多项式 $m_v(x)∈ k[x]$, 由可除性知 $m_v(x)$ 常数项非零, 从而 $v$ 在 $k[u]$ 中可逆. 于是 $k[u]$ 是域, 从而是 $k$ 的有限扩域, 由 $k$ 代数闭可得 $k[u]=k$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;[另一种证明] 如若不然, 即存在有限维可除代数 $A\not\cong k$, 取 $u∈ A\backslash k$. 考虑它的极小多项式 $m_u(x)$ (由有限维保证存在). 由于 $k$ 代数闭, 可以写成一次多项式的乘积 $m_u(x)=(x-x_1)\cdots(x-x_n)$, 从而 $(u-x_1)\cdots(u-x_n)=0$, 由可除性知 $u=x_i∈ k$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt;  $m_u(x)$ 的根并不一定都在 $k$ 中(可以把 $k$ 嵌入到一个不是域的东西里面, 即 $u$ 未必是一个域里面的元素). 最简单的例子是 $k×k$ 中 $(1,0)∉k$ 的极小多项式是 $x(x-1)$. 所以题目里面的可除条件是必须的.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;实数域 $\mathbb{R}$ 上的 2 维可除代数只有 $\mathbb{C}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A$ 是 $\mathbb{R}$ 上的 2 维可除代数. 取 $u∈ A\backslash \mathbb{R}$, 则 $1,u$ 线性无关, 从而构成 $A$ 的基. 记 $u^2=a+bu$, 则 $u$ 的极小多项式为 $x^2-bx-a$. 由可除性知 $a≠0$. 设 $v=u-\frac{b}{2}$, 则 $v^2=c=a+\frac{b^2}{4}∈\mathbb{R}\backslash \{0\}$ (可除性保证 $c≠0$) .&lt;/p&gt;
+    &lt;p&gt;若 $c&gt;0$, 则 $\{1,\frac{v}{\sqrt{c}}\}$ 是 $A$ 的基且 $(\frac{v}{\sqrt{c}})^2=1$. 注意到 $(\frac{v}{\sqrt{c}}-1)(\frac{v}{\sqrt{c}}+1)=0$, 这与可除性矛盾. 故 $c&lt;0$. 记 $d=-c&gt;0$, 则 $\{1,\frac{v}{\sqrt{d}}\}$ 是 $A$ 的基且 $(\frac{v}{\sqrt{d}})^2=-1$. 考虑映射 $\varphi:A→\mathbb{C},\ a+b\frac{v}{\sqrt{d}}\mapsto a+b\mathrm{i}$, 其中 $a,b∈\mathbb{R}$. 容易验证这是 $\mathbb{R}$-代数同构, 从而 $A\cong \mathbb{C}$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;不存在实数域 $\mathbb{R}$ 上的 3 维可除代数.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A$ 是 $\mathbb{R}$ 上的 3 维可除代数. 若对于任意的 $u∈ A\backslash \mathbb{R}$, 均有 $\{1, u, u^2\}$ 线性相关. 取 $A$ 的一组基 $\{1,u',v'\}$, 则有 $u'v'=r+su'+tv'$, 其中 $r,s,t\in\mathbb{R}$. 于是 $(u'-s)(v'-t)=r+st∈ \mathbb{R}\backslash \{0\}$ (由可除性). 令 $u=u'-s,v=v'-t$, 设 $u^2=au+b,v^2=cv+d$, 则 $u^2v^2=acuv+adu+cbv+bd$, 从而 $adu+cbv\in\mathbb{R}$. 由线性无关性知 $a=c=0$ (由可除性可知 $b≠ 0,d≠ 0$). 同上一题可知 $b&lt;0, d&lt;0$. 则 $(\frac{u}{\sqrt{-b}})^2=(\frac{v}{\sqrt{-d}})^2=-1$, 从而 $(\frac{u}{\sqrt{-b}}-\frac{v}{\sqrt{-d}})(\frac{u}{\sqrt{-b}}+\frac{v}{\sqrt{-d}})=0$, 矛盾.&lt;/p&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;于是存在 $u∈ A$ 使得 $\{1,u,u^2\}$ 是一组基. 记 $u^3=a+bu+cu^2$, 则 $u$ 的极小多项式为 $m_u(x)=x^3-cx^2-bx-a$, 它必有根 $x_0\in\mathbb{R}$, 于是 $(u-x_0)(u^2-λu-μ)=0$, 其中 $\lambda,\mu∈ \mathbb{R}$. 由于 $u∉\mathbb{R}$, $u-x_0≠0$, 由可除性 $u^2-λu-μ=0$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于任意环 $R$, 有环同构 $R≅\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑映射 $$\varphi:R→\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}},\ r\mapsto \varphi_r=[x↦ xr].$$&lt;/p&gt;
+    &lt;p&gt;容易验证 $\varphi_r$ 是左 $R$-模同态, 即 $\varphi_r\in\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}}$, 主要是 $s(φ_r(x))=s(xr)=(sx)r=φ_r(sx)$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;容易验证 $\varphi$ 是环同态, 主要是 $φ_{rs}(x)=xrs=φ_s(φ_r(x))=(φ_s∘φ_r)(x)=(φ_r∘^{^{\mathrm{op}}}φ_s)(x)$, 从而 $φ_{rs}=φ_r∘^{^{\mathrm{op}}}φ_s$. 加法显然. 现证明它是双射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $r∈\ker\varphi$, 则对于任意 $x∈R$, 有 $xr=0$. 取 $x=1$ 可知 $r=0$. 故 $\varphi$ 是单射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $f∈ \mathrm{Hom}_R(_RR,_RR)$, 则 $f(1)∈R$. 记 $r=f(1)$, 则对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=xr=\varphi_r(x)$. 即有 $f=φ_r$. 故 $\varphi$ 是满射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于右 $R$-模 $M_R$, $\mathrm{Hom}_R(R_R,M_R)$ 有自然的右 $R$-模结构, 并且有右 $R$-模同构 $M_R≅\mathrm{Hom}_R(R_R,M_R)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;$\mathrm{Hom}_R(R_R,M_R)$ 上的右 $R$-模结构定义为 $(fr)(x)=f(rx)$, 其中 $f∈\mathrm{Hom}_R(R_R,M_R), r,x∈R$. 容易验证这是右 $R$-模结构. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;考虑映射 $$\psi:M_R→\mathrm{Hom}_R(R_R,M_R),\ m\mapsto \psi_m=[x↦mx].$$&lt;/p&gt;
+    &lt;p&gt;首先这是良定义的. 主要是 $ψ_m(xr)=m(xr)=(mx)r=(ψ_m)(x)r$, 保持加法显然. 从而 $ψ_m∈\mathrm{Hom}_R(R_R,M_R)$ 是右 $R$-模同态.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;其次 $\psi$ 是右 $R$-模同态. 主要是 $(\psi_{m_1+m_2})(x)=(m_1+m_2)x=(m_1x)+(m_2x)=(\psi_{m_1})(x)+(\psi_{m_2})(x)=(\psi_{m_1}+\psi_{m_2})(x)$, $(\psi_{mr})(x)=(mr)x=m(rx)=(\psi_m)(rx)=(\psi_m r)(x)$. 即有 $\psi_{m_1+m_2}=\psi_{m_1}+\psi_{m_2}, \psi_{mr}=\psi_m r$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $m∈\ker\psi$, 则对于任意 $x∈R$, 有 $mx=0$. 取 $x=1$ 可知 $m=0$. 故 $\psi$ 是单射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $f∈ \mathrm{Hom}_R(R_R,M_R)$, 则 $f(1)∈M$. 记 $m=f(1)$, 则对于任意 $x∈R$, 有 $f(x)=f(1·x)=f(1)x=mx=\psi_m(x)$. 即有 $f=ψ_m$. 故 $\psi$ 是满射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;计算 $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;设 $m=p_1^{r_1}\cdots p_k^{r_k}, n=p_1^{s_1}\cdots p_k^{s_k}$, 其中 $p_i$ 是两两不同的素数, $r_i,s_i≥0$. 则 $\mathbb{Z}_m\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{r_i}}, \mathbb{Z}_n\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{s_i}}$. 于是有 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k\bigoplus_{j=1}^k \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}}).$$&lt;/p&gt;
+    &lt;p&gt;当 $i≠j$ 时, $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}})=0$. 这是因为对于任意 $f∈\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}})$, 有 $0=f(p_i^{r_i})=p_i^{r_i}f(1)$, 以及 $0=p_j^{s_j}f(1)$, 由 $\gcd(p_i^{r_i},p_j^{s_j})=1$ 得 $f(1)=0$, 从而 $f=0$. 于是 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}).$$&lt;/p&gt;
+    &lt;p&gt;当 $r_i≤s_i$ 时, 考虑 $\mathbb{Z}$-模同构(容易验证) $$\varphi:\mathbb{Z}_{p_i^{r_i}}\to\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}), t↦[x↦ p_i^{s_i-r_i}tx].$$&lt;/p&gt;
+    &lt;p&gt;当 $r_i&gt;s_i$ 时, 考虑 $\mathbb{Z}$-模同构(容易验证) $$\psi:\mathbb{Z}_{p_i^{s_i}}\to\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}), t↦[x↦ tx].$$&lt;/p&gt;
+    &lt;p&gt;综上所述, 有 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{\min\{r_i,s_i\}}}.$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;习题-13&quot;&gt;习题 1.3&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;非零左 $R$-模 $M$ 是单模当且仅当 $M$ 的任一非零元 $m$ 都是生成元, 即 $Rm=M$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 设 $m∈M$ 是非零元. 则 $Rm$ 是 $M$ 的非零子模, 由单模的定义知 $Rm=M$.&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $N↪M$ 是非零子模. 取 $0≠n∈N$, 则 $Rn=M$, 故 $N=M$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-09-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/BA_Exercise</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>问题</title>
+          <description>&lt;h2 id=&quot;基础代数学问题&quot;&gt;基础代数学问题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在加法范畴中, 余积到积的自然态射 $\sigma$ 是单态射吗? (我觉得不一定是单态射, 但没有找到反例.)&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+          <pubDate>2025-09-12T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/question</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/question</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025年9月11日杂记</title>
+          <description>&lt;h2 id=&quot;加法函子&quot;&gt;加法函子&lt;/h2&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;设 $F:\mathcal{A}\to\mathcal{B}$ 是加法范畴之间的函子. 则下述等价:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;$F$ 保持态射集的群结构 (是群同态).&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;$F$ 保持有限直和 (对象和态射).&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-09-11T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/additive</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/additive</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》第二章习题</title>
+          <description>&lt;h2 id=&quot;21-加法范畴&quot;&gt;2.1 加法范畴&lt;/h2&gt;
+
+&lt;h3 id=&quot;余积积加法范畴&quot;&gt;余积、积、加法范畴&lt;/h3&gt;
+
+&lt;p&gt;余积定义中的唯一性要求是为了能让我们将一个态射拆开来研究 (态射在分量上的限制和起来决定了整个态射, 拆开不会损失信息). 反过来讲, 我们也可以将态射拼起来.&lt;/p&gt;
+
+&lt;p&gt;PS: 还有弱余积的概念, 它不要求延拓态射的唯一性.&lt;/p&gt;
+
+&lt;p&gt;余积的结构态射是嵌入 $e_i$, 积的结构态射是投射 $p_i$.&lt;/p&gt;
+
+&lt;p&gt;预加法范畴强调零对象(用于定义零态射), 以及强调态射集的 Abel 群结构, 并且这个加法与态射的复合相容.&lt;/p&gt;
+
+&lt;p&gt;加法范畴额外要求有限余积的存在性. 有很多好处:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;可以进行坐标分解&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(余积到积的自然态射) 在一个有积和余积且有零对象的范畴中有&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise/diagram_d4bf90a78bb45.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;自然存在 $\sigma$ 和 $\sigma'$ 分别使得左右两边交换, 只需要验证它们相等. 由 $p_jσ e_i=p_j e_i'=\delta_{ij} = p_j'e_i=p_j σ' e_i, ∀ i,j$ 即得 $σ=σ'$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;remark.&lt;/strong&gt; 即便是在加法范畴中, 这个 $\sigma$ 也未必是单态射.&lt;/p&gt;
+
+&lt;p&gt;在加法范畴里面, 对于有限(余)积对象, 到自己的单位态射有一个自然的分解 (坐标分解):
+$$
+\mathrm{Id}_{⨁_{1≤i≤n} X_i} = \sum_{1≤i≤n}e_ip_i', \quad \mathrm{Id}_{∏_{1≤i≤n} X_i} = \sum_{1≤i≤n}e_i'p_i.
+$$&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(加法范畴中有限余积和有限积同构) $$
+    σ : \bigoplus_{1≤i≤n} X_i \xrightarrow{\sim} \prod_{1≤i≤n} X_i
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;考虑 $$
+    \sum_{1≤i≤n} e_i p_i : \prod_{1≤i≤n} X_i \to \bigoplus_{1≤i≤n} X_i.
+$$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;mathjax_protectedjfxtyxrocm17sg9tfsqmathjax_protected-与-余积&quot;&gt;$\mathrm{Hom}$ 与 (余)积&lt;/h3&gt;
+
+&lt;p&gt;最经典的两个同构, 诠释了(余)积的泛性质(普适问题的解) :&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\mathrm{Hom}_\mathcal{A}(\bigoplus_{i∈ I}M_i, N) \cong \prod_{i∈ I} \mathrm{Hom}_\mathcal{A}(M_i, N),\quad f \mapsto (f e_i)_{i∈ I}; 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\mathrm{Hom}_\mathcal{A}(M, \prod_{i∈ I}N_i) \cong \prod_{i∈ I} \mathrm{Hom}_\mathcal{A}(M, N_i),\quad f \mapsto (p_i f)_{i∈ I}.
+\end{equation}$$&lt;/p&gt;
+
+&lt;h3 id=&quot;习题-21&quot;&gt;习题 2.1&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴里面, 态射 $f$ 是单射当且仅当 $ft=0 ⇒ t=0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;必要性显然.&lt;/p&gt;
+  &lt;p&gt;对于充分性. 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;[事实 2.1.2] 设范畴 $\mathcal{A}$ 是有余积和零对象的范畴. 则&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(投影态射存在唯一性) 存在唯一的态射 $p_i':⨁_{i∈I}X_i → X_i$ 使得 $p_j' e_i = δ_{ij} : X_i→X_j$. (结构态射有左逆)&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;结构态射是单态射, 投影态射是满态射.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;态射 $f:⨁_{i∈I}X_i → Y$ 由 $f e_i$ 唯一决定, 其中 $e_i$ 是余积的结构态射.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和的存在唯一性) 给定态射 $f_i:X_i → Y_i$, 则存在唯一的态射 $f:⨁_{i∈I}X_i → ⨁_{i∈I}Y_i$ 使得 $ (⨁f_i) e_i^X = e_i^Y f_i $.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和和复合的相容性) $ (⨁g_i)(⨁f_i) = ⨁(g_i f_i) $.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和是满态射的判别法) 态射 $⨁f_i$ 是满态射当且仅当每个 $f_i$ 都是满态射.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;根据余积泛性质即可.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;由 1 立即得到.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;余积的泛性质中的唯一性保证.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;直接用一下 3 (一个范畴有余积, 就是说我们可以自由地把态射拼起来或者拆开, 并且保证不会损失信息).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;按分量验证并考虑 4 的定义就行.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;关键在于使用余积的泛性质 (或者说 3) 来把态射拆开来研究. $h(⨁f_i)=g(⨁f_i) ⟺ ∀ i, h(⨁f_i)e_i^X=g(⨁f_i)e_i^X ⟺ ∀ i, h e_i^Y f_i = g e_i^Y f_i$. 若所有的 $f_i$ 都是满的, 则 $h e_i^Y = g e_i^Y$ 对所有 $i$ 都成立, 由 3 可知 $h=g$. 反过来, 若 $⨁f_i$ 是满的. 由 $g f_i = h f_i ⟺ g p_i^Y (⨁f_i) e_i^X = h p_i^Y (⨁f_i) e_i^X ⟺ ∀ j, g p_i^Y (⨁f_i) e_j^X = h p_i^Y (⨁f_i) e_j^X ⟺ g p_i^Y (⨁f_i) = h p_i^Y (⨁f_i).$ 从而 $g=h$.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴中典范同构 $σ_{X_1,X_2}: X_1 ⊕ X_2 → X_1 ∏ X_2$ 可表达为 $σ = (e_1', e_2') = e_1' p_1' + e_2' p_2'.$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到 $σ^{-1} = e_1p_1+e_2p_2$, 直接验证即可.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在加法范畴中有 $c∘ (a,b)=(ca,cb)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;按分量验证即可 (相当于考虑所有右复合 $-∘ e_i$).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴中有 $\pmatrix{f\\ g}∘ c=\pmatrix{fc \\ gc}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;按分量验证即可 (相当于考虑所有左复合 $p_i ∘ -$). (所以这个成立实际上是用的积的性质)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-11T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/BA_Exercise</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>《三角范畴与导出范畴》习题 - 第一章</title>
           <description>&lt;h2 id=&quot;关键知识复习&quot;&gt;关键知识复习&lt;/h2&gt;
 
@@ -82,6 +430,10 @@
 &lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;设 $u : X \to Y$ 是预三角范畴 $\mathcal{C}$ 的态射。则 $u$ 是同构当且仅当 $ X \xrightarrow{u} Y \to 0 \to TX $ 是好三角。&lt;/p&gt;
 &lt;/div&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/TriCat_Exercise1/diagram_1dc61560c37ea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
 
 </description>
           <pubDate>2025-09-05T00:00:00+08:00</pubDate>

@@ -9,12 +9,12 @@
 
 
 
-  <title>《三角范畴与导出范畴》习题 - 第一章
+  <title>问题
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="关键知识复习">
+<meta name="description" content="基础代数学问题">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/TriCat_Exercise1">
+<link rel="canonical" href="/website/posts/question">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,95 +75,21 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>《三角范畴与导出范畴》习题 - 第一章</h1>
+      <h1>问题</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 5, 2025
+        September 12, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="关键知识复习">关键知识复习</h2>
+    <h2 id="基础代数学问题">基础代数学问题</h2>
 
-<h3 id="1-三角范畴的相关公理">1. 三角范畴的相关公理</h3>
-
-<ul>
-  <li>
-    <p>(TR1) 好三角同构封闭 + 态射嵌入好三角第一项 + 恒等态射对应三角 $ X \xrightarrow{\text{Id}_X} X \to 0 \to TX $</p>
-  </li>
-  <li>
-    <p>(TR2) 顺时针旋转</p>
-  </li>
-  <li>
-    <p>(TR3) 态射定理: 给定两个好三角和态射 $f, g$ 使得图表交换, 则存在 $h$ 使得整个图表交换.</p>
-
-    <p>Q: 存在的 $h$ 是否唯一? A: 不唯一. 例子见书注记 1.1.4.</p>
-  </li>
-  <li>
-    <p>(TR4) 八面体公理</p>
-  </li>
-</ul>
-
-<h3 id="2-上同调函子">2. 上同调函子</h3>
-
-<ul>
-  <li>联系了三角范畴和 Abel 范畴, 把好三角展开成一个正合列</li>
-</ul>
-
-<div class="theorem">
-  <p>$\mathrm{Hom}_{\mathcal{C}}(M,-)$ 和 $\mathrm{Hom}_{\mathcal{C}}(-,M)$ 都是上同调函子</p>
-</div>
-
-<h3 id="3-预三角范畴的基本性质">3. 预三角范畴的基本性质</h3>
-
-<ul>
-  <li>
-    <p>态射嵌入好三角其实可以嵌入任何一个位置, 嵌入 $-Σ^{-1}u $ 并考虑使用 (TR2) 旋转即可.</p>
-  </li>
-  <li>
-    <p>相邻复合为 0.</p>
-  </li>
-  <li>
-    <p>态射定理其实只要任意两个位置的态射就可以得到第三个位置的态射, 从而得到三角射. 这个证明只要使用 (TR2) 旋转和 (TR3) 态射定理即可.</p>
-  </li>
-  <li>
-    <p>三角射中两个态射同构则是三角同构. 证明使用 Hom 函子. 这个证明有点意思:</p>
-  </li>
-</ul>
-
-<div class="proof">
-  <p>我们目前有交换图</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/TriCat_Exercise1/diagram_8be184f8e3b01.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>现在我们使用 Hom 函子, 得到交换图</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/TriCat_Exercise1/diagram_3d955a2e0f76f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>f 和 g 是同构, 则 $f \circ -$ 和 $g \circ -$ 也是同构. 由五引理可知 $h \circ -$ 也是同构, 特别地是满射. 于是存在 $h' : Z' \to Z$ 使得 $h \circ h' = \text{Id}_{Z'}$. 同理存在 $h'' : Z \to Z'$ 使得 $h'' \circ h = \text{Id}_Z$. 于是 $h$ 是同构.</p>
-</div>
-
-<p>这里的证明用了一个好方法:</p>
-
-<blockquote>
-  <p>要证明有左逆就证明前项复合是满射, 要证明有右逆就证明后项复合是满射.</p>
-</blockquote>
-
-<ul>
-  <li>逆时针旋转</li>
-</ul>
-
-<h2 id="习题">习题</h2>
-<div class="problem">
-  <p>设 $u : X \to Y$ 是预三角范畴 $\mathcal{C}$ 的态射。则 $u$ 是同构当且仅当 $ X \xrightarrow{u} Y \to 0 \to TX $ 是好三角。</p>
-</div>
-
-<center> <br /> <div class="tikz-diagram">
-    <embed src="/website/svg/TriCat_Exercise1/diagram_1dc61560c37ea.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-  </div> <br /> </center>
-
+<ol>
+  <li>在加法范畴中, 余积到积的自然态射 $\sigma$ 是单态射吗? (我觉得不一定是单态射, 但没有找到反例.)</li>
+</ol>
 
   </article>
 
@@ -262,77 +188,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#关键知识复习">
+      <a href="#基础代数学问题">
         <span class="toc-number">1.</span>
-        <span class="toc-title">关键知识复习</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#1-三角范畴的相关公理">
-        <span class="toc-number">1.1.</span>
-        <span class="toc-title">1. 三角范畴的相关公理</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#2-上同调函子">
-        <span class="toc-number">1.2.</span>
-        <span class="toc-title">2. 上同调函子</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#3-预三角范畴的基本性质">
-        <span class="toc-number">1.3.</span>
-        <span class="toc-title">3. 预三角范畴的基本性质</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-2">
-      <a href="#习题">
-        <span class="toc-number">2.</span>
-        <span class="toc-title">习题</span>
+        <span class="toc-title">基础代数学问题</span>
       </a>
     </div>
   
@@ -385,13 +243,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/BA_Exercise" title="NEXT: 《基础代数学》第二章习题">&lt;&lt;</a>
+      <a class="next" href="/website/posts/BA_Exercise" title="NEXT: 《基础代数学》第一章习题">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Model" title="PREV: 模型结构简介">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/additive" title="PREV: 2025年9月11日杂记">&gt;&gt;</a>
     
   </div>
 </main>
