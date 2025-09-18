@@ -7,20 +7,270 @@
     
       
         <item>
+          <title>正合范畴</title>
+          <description>&lt;p&gt;本文基于 [Büh10] Theo Bühler. Exact categories. Expositiones Mathematicae, 28(1):1–69, January 2010. doi:  &lt;a href=&quot;https://doi.org/10.1016/j.exmath.2009.04.004&quot;&gt;10.1016/j.exmath.2009.04.004&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;我们只处理加法范畴, 同时只考虑加法函子.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fact.&lt;/strong&gt; 可裂短正合列是最小的正合结构, i.e., 其他正合结构都必须包含它.&lt;/p&gt;
+
+&lt;h2 id=&quot;简介&quot;&gt;简介&lt;/h2&gt;
+
+&lt;h2 id=&quot;定义和基本性质&quot;&gt;定义和基本性质&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(正合范畴的基本资料)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(正合范畴的公理)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(可裂单(满)态射是 admissible monics(epics))&lt;/p&gt;
+  &lt;p&gt;特别地, 同构是 admissible monic 也是 admissible epic.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; (与 Quillen 的定义的等价性)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 一般的加法范畴没有正合列….&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(admissible monic + admissible epic = isomorphism)&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;这个证明我还没想到.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(ses 对于直和封闭, 此处直和指二元双积 $⊕$)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;正合结构是函子范畴 $\mathcal{A}^{→→}$ 的加法子范畴.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(带有 admissible monic 的 pushout 方块) 考虑交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/ExactCat/diagram_a95e024ab2bd1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;其中上下两行都是 admissible monics. 则下列等价:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;这是 pushout 方块.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;&lt;span class=&quot;tikzinline-diagram&quot;&gt;           &lt;embed src=&quot;/website/svg/ExactCat/diagram_73356da6bd7e5.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: inline-block; width: 10%; height: 10%; white-space: nowrap&quot; /&gt;
+ &lt;/span&gt; 是短正合列.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;这个方块既是 pushout 方块也是 pullback 方块.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;有下面两行正合列的交换图&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/ExactCat/diagram_19d967f5bc143.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;(并排摆放的 PB 和 PO 方块)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;admissible monic 沿着一个 admissible epic 的拉回仍然是 admissible monic.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/ExactCat/diagram_9e8ea7e2ae8b2.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(🌟Obscure axiom) 设 $i: A→B$ 有 cokernel. 如果存在 $j:B→ C$ 使得 $ji:A↣C$ 是 admissible monic, 则 $i$ 也是 admissible monic.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;图表定理&quot;&gt;图表定理&lt;/h2&gt;
+
+</description>
+          <pubDate>2025-09-17T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/ExactCat</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ExactCat</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week1-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M=M_1⊕ M_2$. 则 $M_1≅ M/M_2,M_2≅ M/M_1$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑自然投射 $$
+π: M=M_1⊕M_2→M_1,\ m_1+m_2\mapsto m_1.
+$$ 则 $\ker π=\{0+m_2∣m_2∈M_2\}=M_2$, 由同态基本定理知 $M/M_2≅M_1$. 同理可证 $M_2≅ M/M_1$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有双模 $_RM_S$. 写出 $\mathrm{Hom}_R(_RR_R,_RM_S)$ 的 $R$-$S$ 双模结构, 并证明 $R$-$S$ 双模同构 $\mathrm{Hom}_R(_RR_R,_RM_S)\cong {_RM_S}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;双模结构为 ($f∈\mathrm{Hom}_R(_RR_R,_RM_S), r∈R, s∈S, x∈{_RR_R}$) $$(rf)(x)=f(xr),\quad (fs)(x)=f(x)s$$ 容易验证这是一个 $R$-$S$ 双模结构, 主要是注意到 $$\begin{equation}
+((rf)s)(x)=(rf)(x)s=f(xr)s=(fs)(xr)=(r(fs))(x). 
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((r_1r_2)f)(x)=f(x(r_1r_2))=f((xr_1)r_2)=(r_2f)(xr_1)=(r_1(r_2f))(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(f(s_1s_2))(x)=f(x)(s_1s_2)=(f(x)s_1)s_2=(f s_1)(x)s_2=( (fs_1)s_2)(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;考虑映射 $$\varphi:\mathrm{Hom}_R(_RR_R,_RM_S)→{_RM_S},\ f\mapsto f(1),$$&lt;/p&gt;
+    &lt;p&gt;首先验证这是一个 $R$-$S$ 双模同态. 主要是 $\varphi(f_1+f_2)= (f_1+f_2)(1)=f_1(1)+f_2(1)=\varphi(f_1)+\varphi(f_2)$, $\varphi(rf)= (rf)(1)=f(1r)=f(r)=r f(1)=r\varphi(f)$, $\varphi(fs)=(fs)(1)=f(1)s=\varphi(f)s$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $f∈\ker\varphi$, 则 $f(1)=0$. 对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=x·0=0$. 故 $f=0$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $m∈M$, 则考虑映射 $f_m:{_RR_R}→{_RM_S},\ x↦xm$. 容易验证 $f_m∈\mathrm{Hom}_R(_RR_R,_RM_S)$ 且 $\varphi(f_m)=f_m(1)=m$. 故 $\varphi$ 是满射. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $A$ 和 $B$ 是域 $k$ 上的代数, $_AM_B$ 是双模. 写出 $\mathrm{Hom}_k(M,k)$ 的双模结构.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;设 $f∈\mathrm{Hom}_k(M,k), a∈A, b∈B, m∈M$. 定义 $$(bf)(m)=f(mb),\quad (fa)(m)=f(am).$$ 容易验证这是一个 $B$-$A$ 双模结构, 主要是注意到&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((bf)a)(m)=(bf)(am)=f((am)b)=f(a(mb))=(fa)(mb)=( b(fa))(m),
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((b_1b_2)f)(m)=f(m(b_1b_2))=f((mb_1)b_2)=(b_2f)(mb_1)=(b_1(b_2f))(m),
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(f(a_1a_2))(m)=f((a_1a_2)m)=f(a_1(a_2m))=(f a_1)(a_2m)=( (fa_1)a_2)(m).
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;写出 $A=k[x]/⟨x^5⟩$ 上所有两两互不同构的有限维不可分解模.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;一共 5 个, 为 $$
+	⟨x^{5-m}⟩/⟨x^5⟩, m = 1,2,3,4,5.
+$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-17T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex1_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex1_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>扩张理论</title>
+          <description>&lt;p&gt;主要参照: [Mit65] Barry Mitchell. Theory of Categories. Academic Press, 1965. URL: &lt;a href=&quot;https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mitchell.pdf&quot;&gt;链接&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;关键词:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bear: Abel 群 $\mathrm{Ext}^1(C,A)$&lt;/li&gt;
+  &lt;li&gt;Cartan &amp;amp; Eilenberg: bifunctor $\mathrm{Ext}^n(-,-)$&lt;/li&gt;
+  &lt;li&gt;Yoneda: 等价类 (等价关系由短正合列的同构给出)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;预设:&lt;/p&gt;
+
+&lt;h1 id=&quot;abel-范畴里的-extension-theory&quot;&gt;Abel 范畴里的 extension theory&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-mathjax_protectedjfxtyxrocm17rxh0fv4xjamathjax_protected&quot;&gt;1. $\mathrm{Ext}^1$&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(扩张的拉回和推出)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 推出的记号在 [Mit65] 中是 $αE$, 我主要遵循学长习惯写成 $α_*E$, 拉回写为 $γ^*E$.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;(扩张的拉回和推出具有唯一性)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Question.&lt;/strong&gt; [Mit65] 中证明这一点时用了下面这个 lemma, 但是我觉得唯一性是由拉回和推出的定义直接得到的.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;&lt;a name=&quot;lem_decomp&quot;&gt;&lt;/a&gt; 给定短正合列之间的态射 $(α,\ ,γ): E'→E$, 则有分解&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/extension/diagram_d87b2bd06100f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;换句话说, 存在下列交换图满足 $\overline{β}β'=β$&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/extension/diagram_3041e84cf0450.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;构造 $\overline{E}$ 为拉回 $γ^*E$. 根据拉回的泛性质可以得到 $\overline{β}$ 使得右上角方块交换以及 $\overline{\beta}β'=β$. 左上角方块交换利用的是拉回的泛性质中态射的唯一性.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 如果只是弱拉回, 那么这个证明就会失效.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(简单等式)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(先拉回后推出和先推出后拉回是一样的) $$α_*γ^*E=γ^*α_*E.$$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/extension/diagram_4f10bcb5f45c0.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;根据 &lt;a href=&quot;#lem_decomp&quot;&gt;Lemma&lt;/a&gt; 有分解 (分解了 $(α,\ ,γ)$, 分解成第一个推出, 第二个拉回)&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/extension/diagram_d9f8a1a2c9135.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;从而 $\overline{E}=α_*γ^*E=γ^*α_*E$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 还是一样, 在只有弱拉回的情况下, 这个证明就会失效.&lt;/p&gt;
+
+&lt;h3 id=&quot;关于-mathjax_protectedjfxtyxrocm17rxh0fv4xkemsqskkmathjax_protected-是不是集合的讨论&quot;&gt;关于 $\mathrm{Ext}^1(C,A)$ 是不是集合的讨论&lt;/h3&gt;
+
+&lt;p&gt;这个我暂时还没有感觉.&lt;/p&gt;
+
+&lt;h3 id=&quot;mathjax_protectedjfxtyxrocm17rxh0fv4xioepcqmathjax_protected&quot;&gt;$\mathrm{Ext}^1 群$&lt;/h3&gt;
+
+&lt;p&gt;记号:&lt;/p&gt;
+
+&lt;p&gt;$∇=(1,1): A⊕A→A$&lt;/p&gt;
+
+&lt;p&gt;$Δ=\begin{pmatrix}1 \\ 1\end{pmatrix}: A→A⊕A$&lt;/p&gt;
+
+&lt;p&gt;定义 $\mathrm{Ext}^1(C,A)$ 中的加法为 
+$$
+E + E' = ∇ (E ⊕ E') Δ
+$$&lt;/p&gt;
+
+&lt;p&gt;我们想证明在这个加法的定义下, $\mathrm{Ext}^1(C,A)$ 作成一个 Abel 群.&lt;/p&gt;
+</description>
+          <pubDate>2025-09-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/extension</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/extension</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>外三角范畴</title>
           <description>&lt;h1 id=&quot;chapter-1-正合范畴与三角范畴拾遗&quot;&gt;Chapter 1 正合范畴与三角范畴拾遗&lt;/h1&gt;
 
 &lt;h2 id=&quot;11-正合范畴&quot;&gt;1.1 正合范畴&lt;/h2&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
-  &lt;p&gt;(Quillen 的正合范畴)&lt;/p&gt;
+  &lt;p&gt;(Quillen 的正合范畴) 正合范畴 $(\mathcal{C},\mathcal{E})$ 包括一个加法范畴 $\mathcal{C}$ 和一族态射图 $\mathcal{E}$, $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proposition&quot;&gt;
   &lt;p&gt;inflation + deflation = isomorphism&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernal 和 cokernal.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernel 和 cokernel.&lt;/p&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
   &lt;p&gt;$0→X→X⊕Y→Y→0\in\mathcal{E}$.&lt;/p&gt;
@@ -29,10 +279,162 @@
 &lt;div class=&quot;lemma&quot;&gt;
   &lt;p&gt;$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.&lt;/p&gt;
 &lt;/div&gt;
+
+&lt;h1 id=&quot;chapter-2-外三角范畴&quot;&gt;Chapter 2 外三角范畴&lt;/h1&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(外三角范畴的基本资料)&lt;/p&gt;
+  &lt;p&gt;$$
+\mathbb{E}: \mathcal{C}^{op} \times \mathcal{C} \to \mathbf{Ab}
+$$&lt;/p&gt;
+  &lt;p&gt;$$
+\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}'/\sim
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET1&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET2-1&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET2-2&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Remark.&lt;/em&gt; 这里就很像 (TR3), 在三角范畴里面给定一个 $δ:Z\to\varSigma X$ 就可以对应到一个扩张;&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET3&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET3’&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;(把 ET2-2, ET3, ET3’ 都很相似, 很像三角范畴里面的态射定理)&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET4&lt;/strong&gt; 给定 T 形图, 则可以补全虚线所示的 $⊣$ 形图&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(外三角范畴的术语) &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;加法实现&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;inflation, deflation&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;$(f,g):\delta\to\delta'$ 是&lt;strong&gt;扩张元的态射&lt;/strong&gt;, 若 $f_*\delta=g^*\delta'$&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;扩张元的推出和拉回诱导了实现的 “推出” 和 “拉回”, 但是这未必是范畴意义下的推出与拉回.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;22-六项正合列&quot;&gt;2.2 六项正合列&lt;/h2&gt;
+
+&lt;p&gt;六项正合列需要 ET4, 五项不需要.&lt;/p&gt;
+
+&lt;p&gt;预三角范畴里面可以直接无穷项&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;($\delta_\sharp$ 和 $\delta^♯$)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(weak kernel 和 weak cokernel)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(弱推出、弱拉回)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(同构二推三)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Tips&lt;/strong&gt;: $(-,β)$ epi $\iff$ $\beta$ split epi&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(同伦推出、同伦拉回)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; $(g∘-)=\mathrm{Hom}(-,g)$&lt;/p&gt;
+
+&lt;h1 id=&quot;chapter-3-图表定理&quot;&gt;Chapter 3 图表定理&lt;/h1&gt;
+
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/ExTriCat</link>
           <guid isPermaLink="true">http://localhost:4000/website/posts/ExTriCat</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week1-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;代数闭域 $k$ 上的有限维可除代数只有 $k$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;如若不然, 即存在有限维可除代数 $A\not\cong k$, 取 $u∈ A\backslash k$. 考虑子代数 $k[u]↪A$, 对于任意 $v=f(u)∈k[u]$, 由有限性可知它有极小多项式 $m_v(x)∈ k[x]$, 由可除性知 $m_v(x)$ 常数项非零, 从而 $v$ 在 $k[u]$ 中可逆. 于是 $k[u]$ 是域, 从而是 $k$ 的有限扩域, 由 $k$ 代数闭可得 $k[u]=k$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;[另一种证明] 如若不然, 即存在有限维可除代数 $A\not\cong k$, 取 $u∈ A\backslash k$. 考虑它的极小多项式 $m_u(x)$ (由有限维保证存在). 由于 $k$ 代数闭, 可以写成一次多项式的乘积 $m_u(x)=(x-x_1)\cdots(x-x_n)$, 从而 $(u-x_1)\cdots(u-x_n)=0$, 由可除性知 $u=x_i∈ k$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt;  $m_u(x)$ 的根并不一定都在 $k$ 中(可以把 $k$ 嵌入到一个不是域的东西里面, 即 $u$ 未必是一个域里面的元素). 最简单的例子是 $k×k$ 中 $(1,0)∉k$ 的极小多项式是 $x(x-1)$. 所以题目里面的可除条件是必须的.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;实数域 $\mathbb{R}$ 上的 2 维可除代数只有 $\mathbb{C}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A$ 是 $\mathbb{R}$ 上的 2 维可除代数. 取 $u∈ A\backslash \mathbb{R}$, 则 $1,u$ 线性无关, 从而构成 $A$ 的基. 记 $u^2=a+bu$, 则 $u$ 的极小多项式为 $x^2-bx-a$. 由可除性知 $a≠0$. 设 $v=u-\frac{b}{2}$, 则 $v^2=c=a+\frac{b^2}{4}∈\mathbb{R}\backslash \{0\}$ (可除性保证 $c≠0$) .&lt;/p&gt;
+    &lt;p&gt;若 $c&gt;0$, 则 $\{1,\frac{v}{\sqrt{c}}\}$ 是 $A$ 的基且 $(\frac{v}{\sqrt{c}})^2=1$. 注意到 $(\frac{v}{\sqrt{c}}-1)(\frac{v}{\sqrt{c}}+1)=0$, 这与可除性矛盾. 故 $c&lt;0$. 记 $d=-c&gt;0$, 则 $\{1,\frac{v}{\sqrt{d}}\}$ 是 $A$ 的基且 $(\frac{v}{\sqrt{d}})^2=-1$. 考虑映射 $\varphi:A→\mathbb{C},\ a+b\frac{v}{\sqrt{d}}\mapsto a+b\mathrm{i}$, 其中 $a,b∈\mathbb{R}$. 容易验证这是 $\mathbb{R}$-代数同构, 从而 $A\cong \mathbb{C}$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;不存在实数域 $\mathbb{R}$ 上的 3 维可除代数.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A$ 是 $\mathbb{R}$ 上的 3 维可除代数. 若对于任意的 $u∈ A\backslash \mathbb{R}$, 均有 $\{1, u, u^2\}$ 线性相关. 取 $A$ 的一组基 $\{1,u',v'\}$, 则有 $u'v'=r+su'+tv'$, 其中 $r,s,t\in\mathbb{R}$. 于是 $(u'-s)(v'-t)=r+st∈ \mathbb{R}\backslash \{0\}$ (由可除性). 令 $u=u'-s,v=v'-t$, 设 $u^2=au+b,v^2=cv+d$, 则 $u^2v^2=acuv+adu+cbv+bd$, 从而 $adu+cbv\in\mathbb{R}$. 由线性无关性知 $a=c=0$ (由可除性可知 $b≠ 0,d≠ 0$). 同上一题可知 $b&lt;0, d&lt;0$. 则 $(\frac{u}{\sqrt{-b}})^2=(\frac{v}{\sqrt{-d}})^2=-1$, 从而 $(\frac{u}{\sqrt{-b}}-\frac{v}{\sqrt{-d}})(\frac{u}{\sqrt{-b}}+\frac{v}{\sqrt{-d}})=0$, 矛盾.&lt;/p&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;于是存在 $u∈ A$ 使得 $\{1,u,u^2\}$ 是一组基. 记 $u^3=a+bu+cu^2$, 则 $u$ 的极小多项式为 $m_u(x)=x^3-cx^2-bx-a$, 它必有根 $x_0\in\mathbb{R}$, 于是 $(u-x_0)(u^2-λu-μ)=0$, 其中 $\lambda,\mu∈ \mathbb{R}$. 由于 $u∉\mathbb{R}$, $u-x_0≠0$, 由可除性 $u^2-λu-μ=0$, 矛盾.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于任意环 $R$, 有环同构 $R≅\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑映射 $$\varphi:R→\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}},\ r\mapsto \varphi_r=[x↦ xr].$$&lt;/p&gt;
+    &lt;p&gt;容易验证 $\varphi_r$ 是左 $R$-模同态, 即 $\varphi_r\in\mathrm{Hom}_R(_RR,_RR)^{^{\mathrm{op}}}$, 主要是 $s(φ_r(x))=s(xr)=(sx)r=φ_r(sx)$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;容易验证 $\varphi$ 是环同态, 主要是 $φ_{rs}(x)=xrs=φ_s(φ_r(x))=(φ_s∘φ_r)(x)=(φ_r∘^{^{\mathrm{op}}}φ_s)(x)$, 从而 $φ_{rs}=φ_r∘^{^{\mathrm{op}}}φ_s$. 加法显然. 现证明它是双射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $r∈\ker\varphi$, 则对于任意 $x∈R$, 有 $xr=0$. 取 $x=1$ 可知 $r=0$. 故 $\varphi$ 是单射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $f∈ \mathrm{Hom}_R(_RR,_RR)$, 则 $f(1)∈R$. 记 $r=f(1)$, 则对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=xr=\varphi_r(x)$. 即有 $f=φ_r$. 故 $\varphi$ 是满射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于右 $R$-模 $M_R$, $\mathrm{Hom}_R(R_R,M_R)$ 有自然的右 $R$-模结构, 并且有右 $R$-模同构 $M_R≅\mathrm{Hom}_R(R_R,M_R)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;$\mathrm{Hom}_R(R_R,M_R)$ 上的右 $R$-模结构定义为 $(fr)(x)=f(rx)$, 其中 $f∈\mathrm{Hom}_R(R_R,M_R), r,x∈R$. 容易验证这是右 $R$-模结构. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;考虑映射 $$\psi:M_R→\mathrm{Hom}_R(R_R,M_R),\ m\mapsto \psi_m=[x↦mx].$$&lt;/p&gt;
+    &lt;p&gt;首先这是良定义的. 主要是 $ψ_m(xr)=m(xr)=(mx)r=(ψ_m)(x)r$, 保持加法显然. 从而 $ψ_m∈\mathrm{Hom}_R(R_R,M_R)$ 是右 $R$-模同态.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;其次 $\psi$ 是右 $R$-模同态. 主要是 $(\psi_{m_1+m_2})(x)=(m_1+m_2)x=(m_1x)+(m_2x)=(\psi_{m_1})(x)+(\psi_{m_2})(x)=(\psi_{m_1}+\psi_{m_2})(x)$, $(\psi_{mr})(x)=(mr)x=m(rx)=(\psi_m)(rx)=(\psi_m r)(x)$. 即有 $\psi_{m_1+m_2}=\psi_{m_1}+\psi_{m_2}, \psi_{mr}=\psi_m r$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $m∈\ker\psi$, 则对于任意 $x∈R$, 有 $mx=0$. 取 $x=1$ 可知 $m=0$. 故 $\psi$ 是单射. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $f∈ \mathrm{Hom}_R(R_R,M_R)$, 则 $f(1)∈M$. 记 $m=f(1)$, 则对于任意 $x∈R$, 有 $f(x)=f(1·x)=f(1)x=mx=\psi_m(x)$. 即有 $f=ψ_m$. 故 $\psi$ 是满射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;计算 $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;设 $m=p_1^{r_1}\cdots p_k^{r_k}, n=p_1^{s_1}\cdots p_k^{s_k}$, 其中 $p_i$ 是两两不同的素数, $r_i,s_i≥0$. 则 $\mathbb{Z}_m\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{r_i}}, \mathbb{Z}_n\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{s_i}}$. 于是有 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k\bigoplus_{j=1}^k \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}}).$$&lt;/p&gt;
+    &lt;p&gt;当 $i≠j$ 时, $\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}})=0$. 这是因为对于任意 $f∈\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_j^{s_j}})$, 有 $0=f(p_i^{r_i})=p_i^{r_i}f(1)$, 以及 $0=p_j^{s_j}f(1)$, 由 $\gcd(p_i^{r_i},p_j^{s_j})=1$ 得 $f(1)=0$, 从而 $f=0$. 于是 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}).$$&lt;/p&gt;
+    &lt;p&gt;当 $r_i≤s_i$ 时, 考虑 $\mathbb{Z}$-模同构(容易验证) $$\varphi:\mathbb{Z}_{p_i^{r_i}}\to\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}), t↦[x↦ p_i^{s_i-r_i}tx].$$&lt;/p&gt;
+    &lt;p&gt;当 $r_i&gt;s_i$ 时, 考虑 $\mathbb{Z}$-模同构(容易验证) $$\psi:\mathbb{Z}_{p_i^{s_i}}\to\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_{p_i^{r_i}},\mathbb{Z}_{p_i^{s_i}}), t↦[x↦ tx].$$&lt;/p&gt;
+    &lt;p&gt;综上所述, 有 $$\mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}_n)\cong \bigoplus_{i=1}^k \mathbb{Z}_{p_i^{\min\{r_i,s_i\}}}.$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex1_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex1_1</guid>
         </item>
       
     
@@ -152,16 +554,130 @@
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;12-模的构造&quot;&gt;1.2 模的构造&lt;/h2&gt;
+
+&lt;h3 id=&quot;双模结构&quot;&gt;双模结构&lt;/h3&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;设有双模 $_RM_S, _RN_T$. 则 $\mathrm{Hom}_R(_RM_S,_RN_T)$ 作成 $S$-$T$ 双模: $$
+    (sft)(m)=f(ms)t.
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;紧模&quot;&gt;紧模&lt;/h3&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;有限生成模都是紧模.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 紧模未必都是有限生成模.&lt;/p&gt;
+
+&lt;h3 id=&quot;习题-12&quot;&gt;习题 1.2&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M=M_1⊕ M_2$. 则 $M_1≅ M/M_2,M_2≅ M/M_1$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑自然投射 $$
+π: M=M_1⊕M_2→M_1,\ m_1+m_2\mapsto m_1.
+$$ 则 $\ker π=\{0+m_2∣m_2∈M_2\}=M_2$, 由同态基本定理知 $M/M_2≅M_1$. 同理可证 $M_2≅ M/M_1$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有双模 $_RM_S$. 写出 $\mathrm{Hom}_R(_RR_R,_RM_S)$ 的 $R$-$S$ 双模结构, 并证明 $R$-$S$ 双模同构 $\mathrm{Hom}_R(_RR_R,_RM_S)\cong {_RM_S}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;双模结构为 ($f∈\mathrm{Hom}_R(_RR_R,_RM_S), r∈R, s∈S, x∈{_RR_R}$) $$(rf)(x)=f(xr),\quad (fs)(x)=f(x)s$$ 容易验证这是一个 $R$-$S$ 双模结构, 主要是注意到 $$\begin{equation}
+((rf)s)(x)=(rf)(x)s=f(xr)s=(fs)(xr)=(r(fs))(x). 
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((r_1r_2)f)(x)=f(x(r_1r_2))=f((xr_1)r_2)=(r_2f)(xr_1)=(r_1(r_2f))(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(f(s_1s_2))(x)=f(x)(s_1s_2)=(f(x)s_1)s_2=(f s_1)(x)s_2=( (fs_1)s_2)(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;考虑映射 $$\varphi:\mathrm{Hom}_R(_RR_R,_RM_S)→{_RM_S},\ f\mapsto f(1),$$&lt;/p&gt;
+    &lt;p&gt;首先验证这是一个 $R$-$S$ 双模同态. 主要是 $\varphi(f_1+f_2)= (f_1+f_2)(1)=f_1(1)+f_2(1)=\varphi(f_1)+\varphi(f_2)$, $\varphi(rf)= (rf)(1)=f(1r)=f(r)=r f(1)=r\varphi(f)$, $\varphi(fs)=(fs)(1)=f(1)s=\varphi(f)s$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单射) 设 $f∈\ker\varphi$, 则 $f(1)=0$. 对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=x·0=0$. 故 $f=0$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满射) 设 $m∈M$, 则考虑映射 $f_m:{_RR_R}→{_RM_S},\ x↦xm$. 容易验证 $f_m∈\mathrm{Hom}_R(_RR_R,_RM_S)$ 且 $\varphi(f_m)=f_m(1)=m$. 故 $\varphi$ 是满射. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $A$ 和 $B$ 是域 $k$ 上的代数, $_AM_B$ 是双模. 写出 $\mathrm{Hom}_k(M,k)$ 的双模结构.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;设 $f∈\mathrm{Hom}_k(M,k), a∈A, b∈B, m∈M$. 定义 $$(bf)(m)=f(mb),\quad (fa)(m)=f(am).$$ 容易验证这是一个 $B$-$A$ 双模结构, 主要是注意到&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((bf)a)(m)=(bf)(am)=f((am)b)=f(a(mb))=(fa)(mb)=( b(fa))(m),
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+((b_1b_2)f)(m)=f(m(b_1b_2))=f((mb_1)b_2)=(b_2f)(mb_1)=(b_1(b_2f))(m),
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+(f(a_1a_2))(m)=f((a_1a_2)m)=f(a_1(a_2m))=(f a_1)(a_2m)=( (fa_1)a_2)(m).
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;写出 $A=k[x]/⟨x^5⟩$ 上所有两两互不同构的有限维不可分解模.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;一共 5 个, 为 $$
+	⟨x^{5-m}⟩/⟨x^5⟩, m = 1,2,3,4,5.
+$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&quot;习题-13&quot;&gt;习题 1.3&lt;/h3&gt;
 
 &lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;非零左 $R$-模 $M$ 是单模当且仅当 $M$ 的任一非零元 $m$ 都是生成元, 即 $Rm=M$.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(⇒) 设 $m∈M$ 是非零元. 则 $Rm$ 是 $M$ 的非零子模, 由单模的定义知 $Rm=M$.&lt;/p&gt;
+    &lt;p&gt;(⇒) 设 $m∈M$ 是非零元. 则 $Rm$ 是 $M$ 的非零子模, 由单模的定义知 $Rm=M$. &lt;br /&gt;&lt;/p&gt;
     &lt;p&gt;(⇐) 设 $N↪M$ 是非零子模. 取 $0≠n∈N$, 则 $Rn=M$, 故 $N=M$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $A$ 是有限维 $k$-代数, $M$ 是单 $A$-模. 则 $M$ 是有限维的(作为 $k$-线性空间).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由先前习题知, $M=Am$, 其中 $0≠m∈M$. $\dim_k M=\dim_k A_m=\dim_k A&lt;∞$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $k$ 是域. 证明任一左 $M_n(k)$-模均为半单模.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;半单模的子模和商模也是半单模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由定理 1.3.3 知一个模是半单的等价于满足性质 &lt;strong&gt;P&lt;/strong&gt;, 再根据阴历 1.3.5 立刻得到.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;$N$ 是 $M$ 的极大子模等价于 $M/N$ 是单模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由子模对应定理立刻得到.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是环. 证明单 $R$-模是 $_RR$ 的商模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M$ 是单 $R$-模, 则对于任意 $0≠m∈M$, 有 $Rm=M$. 定义环同态 $\varphi: {_RR}→M,\ r\mapsto rm$. 则 $\varphi$ 是满射, 由同态基本定理知 $M\cong {_RR}/\ker\varphi$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是环. 证明正则模 $_RR$ 是单模当且仅当 $R$ 是除环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 设 $_RR$ 是单模. 则对于任意 $0≠a∈R$, 有 $Ra=R$. 于是存在 $r∈R$, 使得 $ra=1$. 故 $R$ 是除环(这里用到了有左逆的环里面, 左逆自动也是右逆). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $R$ 是除环. 则对于任意 $0≠a∈R$, 有 $Ra=R$. 故 $_RR$ 是单模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;14-wedderburn-artin-定理&quot;&gt;1.4 Wedderburn-Artin 定理&lt;/h2&gt;
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/BA_Exercise</link>
@@ -500,269 +1016,6 @@ a^2 + b^2 = c^2.
           <pubDate>2025-09-01T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/test</link>
           <guid isPermaLink="true">http://localhost:4000/website/posts/test</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>(线性代数) C-特征空间</title>
-          <description>&lt;div class=&quot;abstract&quot;&gt;
-  &lt;h5 id=&quot;abstract&quot;&gt;Abstract&lt;/h5&gt;
-  &lt;div&gt;
-    &lt;p&gt;选自作业题.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Problem Set for 08 May 2025: A New Jordan form over $\mathbb C$&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt; (Ceigen-). Let $A\in \mathbb C^{n \times n}$. We say that $(v, \lambda)$ is a ceigenpair of $A$ provided $A \overline v = \lambda v$ for some $\lambda \in \mathbb C$. The vector $v$ is referred to as a ceigenvector and $\lambda$ a ceigenvalue, correspondingly. For matrices, we say $A$ is csimilar to $B$ provided $A = PB\overline P^{-1}$ for some non-singular matrix $P$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 1&lt;/strong&gt; Characterise the ceigenspace corresponding to the ceigenvalue $0$.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;就是 $\overline {\ker (λ I - A)}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 2&lt;/strong&gt; Demonstrate that if $\lambda$ is a ceigenvalue, then so too is $e^{i \theta} \cdot \lambda$. Furthermore, show that for any ceigenvector $v$, there exists a ceigenvector associated with a ceigenvalue $\geq 0$.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;若有 $A \overline v = λ v$, 则对任意 $t ∈ ℝ$ 总有 $A \overline {e^{i t}v}= e^{-i⋅ 2t}λ (e^{i t}v)$. 取 $θ = -t/2$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 3&lt;/strong&gt; Suppose $(v, \sigma)$ is a ceigenpair of $A$; then $(v, \sigma \overline \sigma)$ is an eigenpair of $A \overline A$. In particular,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;if $A \in \mathbb C^{d \times d}$ possesses $d$ ceigenpairs which are linearly independent over $\mathbb C$, then $A\overline A$ is diagonalisable with all eigenvalues non-negative.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now consider the following &lt;strong&gt;partial converse statement&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$A$ has no ceigenvectors if and only if $A \overline A$ admits no eigenvalues in $\mathbb R_{\geq 0}$;&lt;/li&gt;
-  &lt;li&gt;$A \in \mathbb C^{d \times d}$ has $d$ linearly independent ceigenpairs over $\mathbb C$ if and only if $A\overline A$ is diagonalisable with non-negative eigenvalues.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Prove the &lt;strong&gt;partial converse statement&lt;/strong&gt;: suppose that $(v, \sigma \overline {\sigma })$ is an eigenpair of $A\overline A$; then $\sigma$ is a ceigenvalue of $A$.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;错误解答: $u := \overline σ v + A\overline v$, 则 $A \overline u = σ A\overline v + σ \overline σ v = σ u$.&lt;/p&gt;
-
-  &lt;p&gt;注: 应当要求 $u ≠ 0$. 取 $u_t := e^{-it}\overline σ v + e^{it}A\overline v$, 则 $A \overline {u_t} = e^{i t}σ A\overline v + e^{-i t}σ \overline σ v = σ u_t$. 至少存在一个 $t$ 使得 $u_t ≠ 0$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 4&lt;/strong&gt; Elucidate &lt;strong&gt;Exercise 3&lt;/strong&gt; (particularly the warning) with the following example:
-$$
-A = \begin{pmatrix} 1 &amp; i \\ 0 &amp; 1 \end{pmatrix},\quad v = \begin{pmatrix}1 \\ i \end{pmatrix}.
-$$&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;由 $A \overline A = I$, $v$ 是 $A\overline A$ 的特征向量, 但不是 $A$ 的 ceigenvector.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 5&lt;/strong&gt; This serves to complete &lt;strong&gt;Exercise 2&lt;/strong&gt;. Suppose $\{(v_i , \lambda_i)\}_{i=1}^n$ are ceigenpairs of $A$ such that $|\lambda_i| \neq |\lambda_j|$; show that $\{v_i\}_{i=1}^n$ are linearly independent.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;$\{v_i\}$ 是 $A\overline A$ 不同特征根的特征向量, 从而线性无关.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 6&lt;/strong&gt; We aim to identify the analogue of the Jordan canonical form in the c-version, namely, $X =P J\overline P^{-1}$. We commence with a very special case:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$P\overline {P} = I$ if and only if $P = Q\overline Q^{-1}$ for some invertible $Q$.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;假定 $P\overline P = I$. 记 $Q_t := e^{-it}I + e^{it}P$, 此时 $P \overline {Q_t} =  e^{it}P + e^{-it}I = Q_t$. 比较特征根, 存在 $t$ 使得 $Q_t ≠ 0$.&lt;/p&gt;
-
-  &lt;p&gt;假定 $P = Q\overline Q^{-1}$, 则 $P \overline P = Q \overline Q^{-1}\overline Q Q^{-1} = I$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 7&lt;/strong&gt; The most elementary Jordan matrix is the diagonal matrix. Show that $A$ is cdiagonalisable (i.e., $A = PD\overline P^{-1}$ for some $P$) if and only if   &lt;font color=&quot;red&quot;&gt;$A\overline A$ is diagonalisable and $\mathrm{rank}(A) = \mathrm{rank}(A\overline A)$ &lt;/font&gt;
-. In this scenario, $A\overline A$ has only non-negative eigenvalues.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;若 $A = PD\overline P^{-1}$, 则 $A \overline A = PD\overline D P^{-1}$ 是可对角化的矩阵.&lt;/p&gt;
-
-  &lt;p&gt;若 $A \overline A$ 可对角化, 记 $P (A\overline A) P^{-1} = D$, 其中 $D$ 是以数量矩阵 $λ_i I_{s_i}$ 为分块的对角矩阵. 形式地取 $B := PA\overline P^{-1}$, 以下计算表明 $B$ 是分块对角矩阵:&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;由 $B\overline B = D = \overline D = \overline B B$, 得 $BD = B \overline B B = DB$. 由交换性, $B$ 必然是分块对角矩阵.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;此时, 对 $A$ 的每一个分块作 c-对角化即可. 不妨设 $A\overline A$ 是零矩阵或者恒等矩阵.&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;若 $A\overline A$ 是零矩阵, 由秩关系得 $A = O$.&lt;/li&gt;
-    &lt;li&gt;若 $A\overline A = I$, 则存在可逆矩阵 $Q$ 使得 $A = Q I\overline Q^{-1}$.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;作为推论: 若 $A \overline A$ 可对角化, 则 $A$ c-相似于某个全为非负实数的 Jordan 型, 从而 $A \overline A$ 的特征值均为非负实数.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 8&lt;/strong&gt; (Nilpotent part). Show that there exists a matrix $P$ such that $PA\overline P^{-1} = \binom{N \ \ O}{O \ \ B}$, where $N$ comprises nilpotent Jordan blocks and $B$ is invertible.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;直接使用 Fitting 引理, 得两种直和分解: $V = \mathrm{im}(\cdots \overline AA\overline A A) ⊕ \ker (\cdots \overline AA\overline A A)$.&lt;/p&gt;
-
-  &lt;p&gt;取 $ℝ$-线性自同态 $φ$, 使得有 $ℂ$-线性自同态 $φ ∘ \overline {(-)}$. 称这一自同态在基 $u_i$ 下的 c-表示为矩阵 $A$, 若
-$$
-&gt; φ (u_1 ∣ \cdots ∣ u_n) = (\overline{u_1} ∣ \cdots ∣ \overline{u_n}) ⋅ A.
-&gt; $$&lt;/p&gt;
-
-  &lt;p&gt;存在 c-相似变换 $PA\overline P^{-1} = A'$, 当且仅当存在一组基 $(v_i) = (u_i) P^{-1}$ 使得 $φ(v_∙) = (\overline{v_∙}) ⋅ A'$. 比对 Fitting 引理,&lt;/p&gt;
-
-  &lt;ul&gt;
-    &lt;li&gt;存在 $\mathrm{im}(\cdots \overline AA\overline A A)$ 的一组基, 使得在 $φ ∘ \overline {(-)}$ 下是同构;&lt;/li&gt;
-    &lt;li&gt;存在 $\mathrm{ker}(\cdots \overline AA\overline A A)$ 的一组基, 使得在 $φ ∘ \overline {(-)}$ 下是幂零变换.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;p&gt;这就完成了 c-分块对角化.&lt;/p&gt;
-
-  &lt;p&gt;考虑增长的零空间 $\ker A$, $\ker \overline A A$, $\ker A\overline A A$, $\ker \overline A A \overline A A$ 等等. 记 $V_{-1}$ 是最后一个不为零的零空间, $V_{-k-1}$ 是 $V_{-k}$ 的前项. 这些都是互相包含的 $ℂ$-线性空间, 因为 $A$ 与 $\overline A$ 是向左添加的.&lt;/p&gt;
-
-  &lt;p&gt;取 $V_{-1}$ 的基 $\{v^0_{(0,∙)}\}$. 此时存在一组 $\{v_{(0,∙)}^1\}$ 使得 $A v_{(0,i)}^1 = v_{(0,i)}^0$. 另取 $\{v^1_{(1, ∙)}\}$ 使得 $\{v^1_{(0, ∙)}\} ⊔ \{v^1_{(1, ∙)}\}$ 是 $V_{-2}$ 的基. 归纳地, 取 $\{v^2_{(k, ∙)}\}_{k = 1,2,3}$ 使得有双射 $\overline A : \{v^2_{(k, ∙)}\}_{k=1,2} \overset ∼ → \{v^1_{(k, ∙)}\}_{k=1,2}$.&lt;/p&gt;
-
-  &lt;p&gt;将归纳过程总结作下图 (同一般 Jordan 型的归纳):&lt;/p&gt;
-
-  &lt;p&gt;$$
-&gt; \begin{bmatrix}
-&gt; V_{-3} &amp; \xrightarrow{\overline{A}} &amp; V_{-2} &amp; \xrightarrow{A} &amp; V_&gt; {-1} &amp; \xrightarrow{\overline{A}} &amp; 0\\
-&gt; \left\{v_{( 0,\bullet )}^{2}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 0,\bullet )}^{1}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 0,\bullet )}^{0}\right\} &amp; \twoheadrightarrow  &amp; 0\\
-&gt; \left\{v_{( 1,\bullet )}^{2}\right\} &amp; \xrightarrow{\sim } &amp; \left\{v_{( 1,\bullet )}^{1}\right\} &amp; \twoheadrightarrow  &amp; 0 &amp;  &amp; \\
-&gt; \left\{v_{( 2,\bullet )}^{2}\right\} &amp; \twoheadrightarrow  &amp; 0 &amp;  &amp;  &amp;  &amp;
-&gt; \end{bmatrix}.
-&gt; $$&lt;/p&gt;
-
-  &lt;p&gt;固定 $(i,j)$, 则一条链 $\{v_{(i,j)}^k\}$ 对应一个幂零 Jordan 块 $J(0)$. 矩阵 (视作线性映射) 的功效是平移链上的点.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 9&lt;/strong&gt; To analyse the Jordan form of $A$, we begin by studying the Jordan form of $A \overline A$. Demonstrate the following:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$A \overline A$ has a characteristic polynomial with real coefficients;&lt;/li&gt;
-  &lt;li&gt;non-real Jordan blocks occur in conjugate pairs;&lt;/li&gt;
-  &lt;li&gt;if $\dim \ker (\lambda I - A\overline A) = 1$ and $\lambda \in \mathbb R$, then $\lambda \geq 0$;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;(optional)&lt;/strong&gt; Generalise item 3 by showing that for any eigenvalue $\lambda &lt;0$, the dimension of the null space $\dim \ker (\lambda I - A \overline A)^p$ is always even ($\forall p \geq 1$), implying that negative Jordan blocks occur in pairs.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;(1.) 由方阵 $\det (x I - AB) = \det (xI - BA)$, 得 $A\overline A$ 与 $\overline A A$ 特征多项式相同. 由共轭不变, 该特征多项式是从而是是实系数的.&lt;/p&gt;
-
-  &lt;p&gt;(2.) 讨论广义特征向量的对应关系即可. 若 $λ v = A \overline A u$, 则 $e^{it}\overline {λ v} = \overline A A (e^{it}\overline u)$. 取 $t$ 使得 $e^{it}\overline λ = λ$ 即可. 由于 $t$ 是取定的, 故 $A\overline A$ 与 $\overline AA$ 关于 $λ$ 的特征空间是同构的, 通过取共轭再数乘 $e^{it}$ 实现.&lt;/p&gt;
-
-  &lt;p&gt;(3.) 若 $λ &lt; 0$, 取 $v ∈ \ker (λ I - A \overline A)$, 则 $A\overline A (A \overline v) = λ (A\overline v)$. 由特征空间一维, 必有 $z v = A \overline v$. 此时 $A \overline Av = z\overline z v$, 与 $λ &lt; 0$ 矛盾.&lt;/p&gt;
-
-  &lt;p&gt;(4.) 通过商空间归纳即可. 对 $λ &lt; 0$, 假定 $\ker (λ I - A \overline A)^k$ 是偶数维的, 往证 $\ker (λ I - A \overline A)^{k+1}$ 也是偶数维的. 考虑限制在不变子空间 $\ker (λ I - A \overline A)^k$ 上的线性变换, $\ker (λ I - A \overline A)|_{\ker (λ I - A \overline A)^{k}}$ 是偶数维的. 由 Rank-Nulity 与归纳假设得证.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 10&lt;/strong&gt; Show that there exists a matrix $P$ such that $P A \overline P^{-1}$ is block diagonal with the following summands:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;(Jordan type): $J_s(\lambda)$ where $\lambda \geq 0$;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;(Half-Jordan type): Let $H_{2s}(\lambda) := \binom{O \ \  \ J_s(\lambda)}{I \quad O \  \ }$.&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;(For non-real eigenvalues): Since each complex Jordan block in $A \overline A$ appears in a pair, i.e., $\binom{J_s(z) \quad O \ \ \ }{\ \ \ O \quad J_s(\overline z)}$, define $H_{2s}(z)$ as a block of $P A \overline P^{-1}$ satisfying&lt;/p&gt;
-
-        &lt;p&gt;$$
-      H_{2s}(z) = \begin{pmatrix}O&amp;I\\ J_s(z) &amp; O\end{pmatrix}.
-      $$&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;(For negative eigenvalues): For a negative eigenvalue $\lambda$ of $A$, the Jordan blocks also appear in pairs (see &lt;strong&gt;Exercise 9&lt;/strong&gt;).&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We refer to this as the cJordan form of $A$. It is uniquely determined by $A$.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;这是直接的验证. 关键点 (幂零部分的结构, 各阶广义负特征空间为偶数) 已在前文给出证明.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 11 (optional)&lt;/strong&gt; (The uniqueness between the cJordan form of $A$ and the Jordan form of $A \overline A$). The cJordan form is essentially unique.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Find distinct matrices $A \neq B$ such that  $A \overline A = B \overline B$;
-    &lt;blockquote&gt;
-      &lt;p&gt;$A = \binom{0 \ \ 1}{0 \ \ 0}$ 与 $B = O$.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Suppose $A\overline A = B\overline B$ are invertible; then there exists a matrix $P$ such that $PA \overline P^{-1} = B$. In this case, we say $A$ is scimilar to $B$.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;在相差一个旋转 ($e^{it}$) 的情形下, $J(≠ 0)$ 与 $H(≠ 0)$ 部分唯一确定. 相差的旋转部分可通过 $e^{it / 2} ⋅ I$ (及其构成的分块对角矩阵) 的 c-相似所用抵消.&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In summary, $A$ is csimilar to $B$ if and only if the following hold:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$A \overline A$ is similar to $B \overline B$;&lt;/li&gt;
-  &lt;li&gt;$\mathrm{rank}(A\overline A A\cdots A (\overline A)) \equiv \mathrm{rank}(B\overline B B \cdots B(\overline B))$; that is, $A$ and $B$ possess the same $J(0)$-portion in their cJordan forms.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 12 (optional)&lt;/strong&gt; Utilise the cJordan form to show that any complex matrix $A$ is csimilar to:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$\lambda A$ for $|\lambda| = 1$;&lt;/li&gt;
-  &lt;li&gt;$\overline A$;&lt;/li&gt;
-  &lt;li&gt;$A^T$;&lt;/li&gt;
-  &lt;li&gt;a real matrix;&lt;/li&gt;
-  &lt;li&gt;a symmetric matrix&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;前三条就是直接的验证 ($A \overline A$ 相似, 且 $J_0$ 部分相同).&lt;/p&gt;
-
-  &lt;p&gt;对第四条, 直接构造分块实矩阵 $\binom{N \ \ O}{O \ \ R}$ 使得 $N$ 是 $A$ 的 c-幂零部分, $R$ 是 $A \overline A$ 可逆部分的平方根 (对复特征部分, 考虑 $\binom{O \ \ +}{- \ \ 0}$ 一类的旋转矩阵; 负特征部分总是成对出现, 从而存在实的平方根).&lt;/p&gt;
-
-  &lt;p&gt;对第五条, $PA\overline P^{-1}$ 是对称的, 当且仅当 $PA\overline P ^{-1} = ({ {PA\overline P ^{-1} } })^T$, 也就是 $(P^TP) ⋅ A =  {A^T} ⋅ {(P^TP)}$. 由 Choleskey 分解, 复矩阵对称当且仅当其形如 $P^TP$. 由往期作业 (考察有理标准型以及多项式友矩阵), 任意域上的矩阵通过对称矩阵与其转置相似.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 13 (optional)&lt;/strong&gt; Show that for any complex square matrix $A$,
-$$
-\det(AA^H+I)\geq \det(A\overline{A}+I) &gt; 0.
-$$&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;由特征多项式实系数, 以上三项都在 $ℝ$ 中.&lt;/p&gt;
-
-  &lt;p&gt;(第二个不等式). 由 $A = PR\overline P^{-1}$, 得 $\det (A \overline A + I) = \det (R^2 + I) = |\det (I + iR)|^2&gt;0$.&lt;/p&gt;
-
-  &lt;p&gt;(第一个不等式). 记增广矩阵 $T := (I \ \ A)$, 第一个不等式等价于 $\det T\overline T^T ≥ \det T T^T$. 由 Cauchy-Binet 公式展开, 左侧是右侧的复数求和各项取模长所得, 取等当且仅当 $A$ 是实矩阵.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 14 (optional)&lt;/strong&gt; Using cJordan forms, show that any complex matrix is the product of a symmetric matrix and a positive definite Hermitian matrix.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;由 Choleskey 分解与 Krull-Schmidt 酉正交化, 任意对称的复矩阵形如 $U^TDU$, 其中 $D$ 是取值 $ℝ_{≥ 0}$ 的对角矩阵, $U$ 是酉矩阵. 先将复矩阵 c-相似作对称矩阵, 得 $P S \overline P^{-1}$. 将 $S$ 写作 $U^TDU$, 得&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;任意复矩阵是对称矩阵与正定 Hermitian 矩阵乘积, $PU^TDUP^T ⋅ (P^T)^{-1}\overline P^{-1}$;&lt;/li&gt;
-    &lt;li&gt;任意复矩阵是可逆对称矩阵与半正定 Hermitian 矩阵乘积, $PU^TU P^T⋅ P^{T,-1}\overline U^{T} DU \overline P^{-1}$.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exercise 15 (optional)&lt;/strong&gt; Show that $\binom{O\quad A}{\overline A\quad O}$ is similar to $\binom{O\quad B}{\overline B\quad O}$, if and only if $\binom{O\quad A}{-\overline A\quad O}$ is similar to $\binom{O\quad B}{-\overline B\quad O}$.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;若 $\binom{O\quad A}{\overline A\quad O}$ 与 $\binom{O\quad B}{\overline B\quad O}$ 相似, 则平方后亦然. 结合 $A \overline A ∼ \overline A A$, 得 $A\overline A ∼ B \overline B$. 比较零空间维数, 得 $A$ 与 $B$ c-相似.&lt;/p&gt;
-
-  &lt;p&gt;若 $A$ 与 $B$ c-相似, 记作 $A = PB\overline P^{-1}$. 此时 $\binom{P\quad O}{O \quad \overline P} \binom{O\quad A}{\overline A\quad O} \binom{P\quad O}{O \quad \overline P}^{-1} = \binom{O\quad B}{\overline B\quad O}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-          <pubDate>2025-05-11T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/C_Similar_matrix</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/C_Similar_matrix</guid>
         </item>
       
     

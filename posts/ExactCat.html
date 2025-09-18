@@ -9,12 +9,12 @@
 
 
 
-  <title>外三角范畴
+  <title>正合范畴
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="Chapter 1 正合范畴与三角范畴拾遗">
+<meta name="description" content="本文基于 [Büh10] Theo Bühler. Exact categories. Expositiones Mathematicae, 28(1):1–69, January 2010. doi:  10.1016/j.exmath.2009.04.004.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/ExTriCat">
+<link rel="canonical" href="/website/posts/ExactCat">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,116 +75,100 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>外三角范畴</h1>
+      <h1>正合范畴</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 15, 2025
+        September 17, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h1 id="chapter-1-正合范畴与三角范畴拾遗">Chapter 1 正合范畴与三角范畴拾遗</h1>
+    <p>本文基于 [Büh10] Theo Bühler. Exact categories. Expositiones Mathematicae, 28(1):1–69, January 2010. doi:  <a href="https://doi.org/10.1016/j.exmath.2009.04.004">10.1016/j.exmath.2009.04.004</a>.</p>
 
-<h2 id="11-正合范畴">1.1 正合范畴</h2>
+<p>我们只处理加法范畴, 同时只考虑加法函子.</p>
+
+<p><strong>Fact.</strong> 可裂短正合列是最小的正合结构, i.e., 其他正合结构都必须包含它.</p>
+
+<h2 id="简介">简介</h2>
+
+<h2 id="定义和基本性质">定义和基本性质</h2>
 
 <div class="definition">
-  <p>(Quillen 的正合范畴) 正合范畴 $(\mathcal{C},\mathcal{E})$ 包括一个加法范畴 $\mathcal{C}$ 和一族态射图 $\mathcal{E}$, $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的</p>
+  <p>(正合范畴的基本资料)</p>
+</div>
+
+<div class="definition">
+  <p>(正合范畴的公理)</p>
 </div>
 
 <div class="proposition">
-  <p>inflation + deflation = isomorphism</p>
+  <p>(可裂单(满)态射是 admissible monics(epics))</p>
+  <p>特别地, 同构是 admissible monic 也是 admissible epic.</p>
 </div>
 
-<p><strong>Remark.</strong> 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernel 和 cokernel.</p>
+<p><strong>Remark.</strong> (与 Quillen 的定义的等价性)</p>
 
-<div class="lemma">
-  <p>$0→X→X⊕Y→Y→0\in\mathcal{E}$.</p>
+<p><strong>Remark.</strong> 一般的加法范畴没有正合列….</p>
+
+<div class="proposition">
+  <p>(admissible monic + admissible epic = isomorphism)</p>
+  <div class="proof">
+    <p>这个证明我还没想到.</p>
+  </div>
 </div>
 
-<div class="lemma">
-  <p>$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.</p>
+<div class="proposition">
+  <p>(ses 对于直和封闭, 此处直和指二元双积 $⊕$)</p>
 </div>
 
-<h1 id="chapter-2-外三角范畴">Chapter 2 外三角范畴</h1>
-
-<div class="definition">
-  <p>(外三角范畴的基本资料)</p>
-  <p>$$
-\mathbb{E}: \mathcal{C}^{op} \times \mathcal{C} \to \mathbf{Ab}
-$$</p>
-  <p>$$
-\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}'/\sim
-$$</p>
+<div class="corollary">
+  <p>正合结构是函子范畴 $\mathcal{A}^{→→}$ 的加法子范畴.</p>
 </div>
 
-<div class="definition">
-  <p>(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: <br /></p>
-  <p><strong>ET1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-2</strong></p>
-  <p><br /></p>
-  <p><em>Remark.</em> 这里就很像 (TR3), 在三角范畴里面给定一个 $δ:Z\to\varSigma X$ 就可以对应到一个扩张;</p>
-  <p><br /></p>
-  <p><strong>ET3</strong></p>
-  <p><strong>ET3’</strong></p>
-  <p>(把 ET2-2, ET3, ET3’ 都很相似, 很像三角范畴里面的态射定理)</p>
-  <p><br /></p>
-  <p><strong>ET4</strong> 给定 T 形图, 则可以补全虚线所示的 $⊣$ 形图</p>
-</div>
-
-<div class="definition">
-  <p>(外三角范畴的术语) <br /></p>
+<div class="proposition">
+  <p>(带有 admissible monic 的 pushout 方块) 考虑交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_a95e024ab2bd1.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>其中上下两行都是 admissible monics. 则下列等价:</p>
   <ol>
     <li>
-      <p>加法实现</p>
+      <p>这是 pushout 方块.</p>
     </li>
     <li>
-      <p>inflation, deflation</p>
+      <p><span class="tikzinline-diagram">           <embed src="/website/svg/ExactCat/diagram_73356da6bd7e5.svg" type="image/svg+xml" style="display: inline-block; width: 10%; height: 10%; white-space: nowrap" />
+ </span> 是短正合列.</p>
     </li>
     <li>
-      <p>$(f,g):\delta\to\delta'$ 是<strong>扩张元的态射</strong>, 若 $f_*\delta=g^*\delta'$</p>
+      <p>这个方块既是 pushout 方块也是 pullback 方块.</p>
     </li>
     <li>
-      <p>扩张元的推出和拉回诱导了实现的 “推出” 和 “拉回”, 但是这未必是范畴意义下的推出与拉回.</p>
+      <p>有下面两行正合列的交换图</p>
     </li>
   </ol>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_19d967f5bc143.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
 </div>
 
-<h2 id="22-六项正合列">2.2 六项正合列</h2>
-
-<p>六项正合列需要 ET4, 五项不需要.</p>
-
-<p>预三角范畴里面可以直接无穷项</p>
-
-<div class="definition">
-  <p>($\delta_\sharp$ 和 $\delta^♯$)</p>
+<div class="corollary">
+  <p>(并排摆放的 PB 和 PO 方块)</p>
 </div>
 
-<div class="definition">
-  <p>(weak kernel 和 weak cokernel)</p>
+<div class="proposition">
+  <p>admissible monic 沿着一个 admissible epic 的拉回仍然是 admissible monic.</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_9e8ea7e2ae8b2.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
 </div>
 
-<div class="definition">
-  <p>(弱推出、弱拉回)</p>
+<div class="proposition">
+  <p>(🌟Obscure axiom) 设 $i: A→B$ 有 cokernel. 如果存在 $j:B→ C$ 使得 $ji:A↣C$ 是 admissible monic, 则 $i$ 也是 admissible monic.</p>
 </div>
 
-<div class="theorem">
-  <p>(同构二推三)</p>
-</div>
-
-<p><strong>Tips</strong>: $(-,β)$ epi $\iff$ $\beta$ split epi</p>
-
-<div class="definition">
-  <p>(同伦推出、同伦拉回)</p>
-</div>
-
-<p><strong>Tips:</strong> $(g∘-)=\mathrm{Hom}(-,g)$</p>
-
-<h1 id="chapter-3-图表定理">Chapter 3 图表定理</h1>
+<h2 id="图表定理">图表定理</h2>
 
 
   </article>
@@ -285,17 +269,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
     <div class="toc-row toc-level-2">
-      <a href="#11-正合范畴">
+      <a href="#简介">
         <span class="toc-number">1.</span>
-        <span class="toc-title">1.1 正合范畴</span>
+        <span class="toc-title">简介</span>
       </a>
     </div>
   
-    
-    
-    
     
     
     
@@ -307,15 +287,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#22-六项正合列">
+      <a href="#定义和基本性质">
         <span class="toc-number">2.</span>
-        <span class="toc-title">2.2 六项正合列</span>
+        <span class="toc-title">定义和基本性质</span>
       </a>
     </div>
   
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#图表定理">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">图表定理</span>
+      </a>
+    </div>
+  
 </nav>
   </div>
 
@@ -365,13 +359,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/extension" title="NEXT: 扩张理论">&lt;&lt;</a>
-      <span>&middot;</span>
-    
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex1_1" title="PREV: 《基础代数学》作业 Week1-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Ex1_2" title="PREV: 《基础代数学》作业 Week1-2">&gt;&gt;</a>
     
   </div>
 </main>

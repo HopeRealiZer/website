@@ -9,12 +9,12 @@
 
 
 
-  <title>外三角范畴
+  <title>《基础代数学》作业 Week1-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="Chapter 1 正合范畴与三角范畴拾遗">
+<meta name="description" content="  设 $M=M_1⊕ M_2$. 则 $M_1≅ M/M_2,M_2≅ M/M_1$.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/ExTriCat">
+<link rel="canonical" href="/website/posts/Ex1_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,117 +75,68 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>外三角范畴</h1>
+      <h1>《基础代数学》作业 Week1-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 15, 2025
+        September 17, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h1 id="chapter-1-正合范畴与三角范畴拾遗">Chapter 1 正合范畴与三角范畴拾遗</h1>
-
-<h2 id="11-正合范畴">1.1 正合范畴</h2>
-
-<div class="definition">
-  <p>(Quillen 的正合范畴) 正合范畴 $(\mathcal{C},\mathcal{E})$ 包括一个加法范畴 $\mathcal{C}$ 和一族态射图 $\mathcal{E}$, $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的</p>
+    <div class="problem">
+  <p>设 $M=M_1⊕ M_2$. 则 $M_1≅ M/M_2,M_2≅ M/M_1$.</p>
+  <div class="proof">
+    <p>考虑自然投射 $$
+π: M=M_1⊕M_2→M_1,\ m_1+m_2\mapsto m_1.
+$$ 则 $\ker π=\{0+m_2∣m_2∈M_2\}=M_2$, 由同态基本定理知 $M/M_2≅M_1$. 同理可证 $M_2≅ M/M_1$.</p>
+  </div>
 </div>
 
-<div class="proposition">
-  <p>inflation + deflation = isomorphism</p>
+<div class="problem">
+  <p>设有双模 $_RM_S$. 写出 $\mathrm{Hom}_R(_RR_R,_RM_S)$ 的 $R$-$S$ 双模结构, 并证明 $R$-$S$ 双模同构 $\mathrm{Hom}_R(_RR_R,_RM_S)\cong {_RM_S}$.</p>
+  <div class="proof">
+    <p>双模结构为 ($f∈\mathrm{Hom}_R(_RR_R,_RM_S), r∈R, s∈S, x∈{_RR_R}$) $$(rf)(x)=f(xr),\quad (fs)(x)=f(x)s$$ 容易验证这是一个 $R$-$S$ 双模结构, 主要是注意到 $$\begin{equation}
+((rf)s)(x)=(rf)(x)s=f(xr)s=(fs)(xr)=(r(fs))(x). 
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+((r_1r_2)f)(x)=f(x(r_1r_2))=f((xr_1)r_2)=(r_2f)(xr_1)=(r_1(r_2f))(x).
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+(f(s_1s_2))(x)=f(x)(s_1s_2)=(f(x)s_1)s_2=(f s_1)(x)s_2=( (fs_1)s_2)(x).
+\end{equation}$$</p>
+    <p>考虑映射 $$\varphi:\mathrm{Hom}_R(_RR_R,_RM_S)→{_RM_S},\ f\mapsto f(1),$$</p>
+    <p>首先验证这是一个 $R$-$S$ 双模同态. 主要是 $\varphi(f_1+f_2)= (f_1+f_2)(1)=f_1(1)+f_2(1)=\varphi(f_1)+\varphi(f_2)$, $\varphi(rf)= (rf)(1)=f(1r)=f(r)=r f(1)=r\varphi(f)$, $\varphi(fs)=(fs)(1)=f(1)s=\varphi(f)s$.<br /></p>
+    <p>(单射) 设 $f∈\ker\varphi$, 则 $f(1)=0$. 对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=x·0=0$. 故 $f=0$. <br /></p>
+    <p>(满射) 设 $m∈M$, 则考虑映射 $f_m:{_RR_R}→{_RM_S},\ x↦xm$. 容易验证 $f_m∈\mathrm{Hom}_R(_RR_R,_RM_S)$ 且 $\varphi(f_m)=f_m(1)=m$. 故 $\varphi$ 是满射. <br /></p>
+  </div>
 </div>
 
-<p><strong>Remark.</strong> 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernel 和 cokernel.</p>
-
-<div class="lemma">
-  <p>$0→X→X⊕Y→Y→0\in\mathcal{E}$.</p>
+<div class="problem">
+  <p>设 $A$ 和 $B$ 是域 $k$ 上的代数, $_AM_B$ 是双模. 写出 $\mathrm{Hom}_k(M,k)$ 的双模结构.</p>
+  <div class="solution">
+    <p>设 $f∈\mathrm{Hom}_k(M,k), a∈A, b∈B, m∈M$. 定义 $$(bf)(m)=f(mb),\quad (fa)(m)=f(am).$$ 容易验证这是一个 $B$-$A$ 双模结构, 主要是注意到</p>
+    <p>$$\begin{equation}
+((bf)a)(m)=(bf)(am)=f((am)b)=f(a(mb))=(fa)(mb)=( b(fa))(m),
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+((b_1b_2)f)(m)=f(m(b_1b_2))=f((mb_1)b_2)=(b_2f)(mb_1)=(b_1(b_2f))(m),
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+(f(a_1a_2))(m)=f((a_1a_2)m)=f(a_1(a_2m))=(f a_1)(a_2m)=( (fa_1)a_2)(m).
+\end{equation}$$</p>
+  </div>
 </div>
 
-<div class="lemma">
-  <p>$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.</p>
-</div>
-
-<h1 id="chapter-2-外三角范畴">Chapter 2 外三角范畴</h1>
-
-<div class="definition">
-  <p>(外三角范畴的基本资料)</p>
-  <p>$$
-\mathbb{E}: \mathcal{C}^{op} \times \mathcal{C} \to \mathbf{Ab}
+<div class="problem">
+  <p>写出 $A=k[x]/⟨x^5⟩$ 上所有两两互不同构的有限维不可分解模.</p>
+  <div class="solution">
+    <p>一共 5 个, 为 $$
+	⟨x^{5-m}⟩/⟨x^5⟩, m = 1,2,3,4,5.
 $$</p>
-  <p>$$
-\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}'/\sim
-$$</p>
+  </div>
 </div>
-
-<div class="definition">
-  <p>(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: <br /></p>
-  <p><strong>ET1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-2</strong></p>
-  <p><br /></p>
-  <p><em>Remark.</em> 这里就很像 (TR3), 在三角范畴里面给定一个 $δ:Z\to\varSigma X$ 就可以对应到一个扩张;</p>
-  <p><br /></p>
-  <p><strong>ET3</strong></p>
-  <p><strong>ET3’</strong></p>
-  <p>(把 ET2-2, ET3, ET3’ 都很相似, 很像三角范畴里面的态射定理)</p>
-  <p><br /></p>
-  <p><strong>ET4</strong> 给定 T 形图, 则可以补全虚线所示的 $⊣$ 形图</p>
-</div>
-
-<div class="definition">
-  <p>(外三角范畴的术语) <br /></p>
-  <ol>
-    <li>
-      <p>加法实现</p>
-    </li>
-    <li>
-      <p>inflation, deflation</p>
-    </li>
-    <li>
-      <p>$(f,g):\delta\to\delta'$ 是<strong>扩张元的态射</strong>, 若 $f_*\delta=g^*\delta'$</p>
-    </li>
-    <li>
-      <p>扩张元的推出和拉回诱导了实现的 “推出” 和 “拉回”, 但是这未必是范畴意义下的推出与拉回.</p>
-    </li>
-  </ol>
-</div>
-
-<h2 id="22-六项正合列">2.2 六项正合列</h2>
-
-<p>六项正合列需要 ET4, 五项不需要.</p>
-
-<p>预三角范畴里面可以直接无穷项</p>
-
-<div class="definition">
-  <p>($\delta_\sharp$ 和 $\delta^♯$)</p>
-</div>
-
-<div class="definition">
-  <p>(weak kernel 和 weak cokernel)</p>
-</div>
-
-<div class="definition">
-  <p>(弱推出、弱拉回)</p>
-</div>
-
-<div class="theorem">
-  <p>(同构二推三)</p>
-</div>
-
-<p><strong>Tips</strong>: $(-,β)$ epi $\iff$ $\beta$ split epi</p>
-
-<div class="definition">
-  <p>(同伦推出、同伦拉回)</p>
-</div>
-
-<p><strong>Tips:</strong> $(g∘-)=\mathrm{Hom}(-,g)$</p>
-
-<h1 id="chapter-3-图表定理">Chapter 3 图表定理</h1>
-
 
   </article>
 
@@ -275,47 +226,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-2">
-      <a href="#11-正合范畴">
-        <span class="toc-number">1.</span>
-        <span class="toc-title">1.1 正合范畴</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-2">
-      <a href="#22-六项正合列">
-        <span class="toc-number">2.</span>
-        <span class="toc-title">2.2 六项正合列</span>
-      </a>
-    </div>
-  
-    
-    
-    
 </nav>
   </div>
 
@@ -365,13 +275,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/extension" title="NEXT: 扩张理论">&lt;&lt;</a>
+      <a class="next" href="/website/posts/ExactCat" title="NEXT: 正合范畴">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex1_1" title="PREV: 《基础代数学》作业 Week1-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/extension" title="PREV: 扩张理论">&gt;&gt;</a>
     
   </div>
 </main>

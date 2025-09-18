@@ -9,12 +9,12 @@
 
 
 
-  <title>外三角范畴
+  <title>扩张理论
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="Chapter 1 正合范畴与三角范畴拾遗">
+<meta name="description" content="主要参照: [Mit65] Barry Mitchell. Theory of Categories. Academic Press, 1965. URL: 链接.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/ExTriCat">
+<link rel="canonical" href="/website/posts/extension">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,7 +75,7 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>外三角范畴</h1>
+      <h1>扩张理论</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
@@ -85,107 +85,89 @@ MathJax = {
 
     <div class="divider"></div>
 
-    <h1 id="chapter-1-正合范畴与三角范畴拾遗">Chapter 1 正合范畴与三角范畴拾遗</h1>
+    <p>主要参照: [Mit65] Barry Mitchell. Theory of Categories. Academic Press, 1965. URL: <a href="https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mitchell.pdf">链接</a>.</p>
 
-<h2 id="11-正合范畴">1.1 正合范畴</h2>
+<p>关键词:</p>
+
+<ul>
+  <li>Bear: Abel 群 $\mathrm{Ext}^1(C,A)$</li>
+  <li>Cartan &amp; Eilenberg: bifunctor $\mathrm{Ext}^n(-,-)$</li>
+  <li>Yoneda: 等价类 (等价关系由短正合列的同构给出)</li>
+</ul>
+
+<p>预设:</p>
+
+<h1 id="abel-范畴里的-extension-theory">Abel 范畴里的 extension theory</h1>
+
+<h2 id="1-mathjax_protectedjfxtyxrocm17rxh0fv4xjamathjax_protected">1. $\mathrm{Ext}^1$</h2>
 
 <div class="definition">
-  <p>(Quillen 的正合范畴) 正合范畴 $(\mathcal{C},\mathcal{E})$ 包括一个加法范畴 $\mathcal{C}$ 和一族态射图 $\mathcal{E}$, $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的</p>
+  <p>(扩张的拉回和推出)</p>
 </div>
+
+<p><strong>Remark.</strong> 推出的记号在 [Mit65] 中是 $αE$, 我主要遵循学长习惯写成 $α_*E$, 拉回写为 $γ^*E$.</p>
 
 <div class="proposition">
-  <p>inflation + deflation = isomorphism</p>
+  <p>(扩张的拉回和推出具有唯一性)</p>
 </div>
 
-<p><strong>Remark.</strong> 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernel 和 cokernel.</p>
+<p><strong>Question.</strong> [Mit65] 中证明这一点时用了下面这个 lemma, 但是我觉得唯一性是由拉回和推出的定义直接得到的.</p>
 
 <div class="lemma">
-  <p>$0→X→X⊕Y→Y→0\in\mathcal{E}$.</p>
+  <p><a name="lem_decomp"></a> 给定短正合列之间的态射 $(α,\ ,γ): E'→E$, 则有分解</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/extension/diagram_d87b2bd06100f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>换句话说, 存在下列交换图满足 $\overline{β}β'=β$</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/extension/diagram_3041e84cf0450.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <div class="proof">
+    <p>构造 $\overline{E}$ 为拉回 $γ^*E$. 根据拉回的泛性质可以得到 $\overline{β}$ 使得右上角方块交换以及 $\overline{\beta}β'=β$. 左上角方块交换利用的是拉回的泛性质中态射的唯一性.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 如果只是弱拉回, 那么这个证明就会失效.</p>
+
+<div class="lemma">
+  <p>(简单等式)</p>
 </div>
 
 <div class="lemma">
-  <p>$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.</p>
+  <p>(先拉回后推出和先推出后拉回是一样的) $$α_*γ^*E=γ^*α_*E.$$</p>
+  <div class="proof">
+    <p>考虑</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/extension/diagram_4f10bcb5f45c0.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>根据 <a href="#lem_decomp">Lemma</a> 有分解 (分解了 $(α,\ ,γ)$, 分解成第一个推出, 第二个拉回)</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/extension/diagram_d9f8a1a2c9135.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而 $\overline{E}=α_*γ^*E=γ^*α_*E$.</p>
+  </div>
 </div>
 
-<h1 id="chapter-2-外三角范畴">Chapter 2 外三角范畴</h1>
+<p><strong>Remark.</strong> 还是一样, 在只有弱拉回的情况下, 这个证明就会失效.</p>
 
-<div class="definition">
-  <p>(外三角范畴的基本资料)</p>
-  <p>$$
-\mathbb{E}: \mathcal{C}^{op} \times \mathcal{C} \to \mathbf{Ab}
+<h3 id="关于-mathjax_protectedjfxtyxrocm17rxh0fv4xkemsqskkmathjax_protected-是不是集合的讨论">关于 $\mathrm{Ext}^1(C,A)$ 是不是集合的讨论</h3>
+
+<p>这个我暂时还没有感觉.</p>
+
+<h3 id="mathjax_protectedjfxtyxrocm17rxh0fv4xioepcqmathjax_protected">$\mathrm{Ext}^1 群$</h3>
+
+<p>记号:</p>
+
+<p>$∇=(1,1): A⊕A→A$</p>
+
+<p>$Δ=\begin{pmatrix}1 \\ 1\end{pmatrix}: A→A⊕A$</p>
+
+<p>定义 $\mathrm{Ext}^1(C,A)$ 中的加法为 
+$$
+E + E' = ∇ (E ⊕ E') Δ
 $$</p>
-  <p>$$
-\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}'/\sim
-$$</p>
-</div>
 
-<div class="definition">
-  <p>(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: <br /></p>
-  <p><strong>ET1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-1</strong></p>
-  <p><br /></p>
-  <p><strong>ET2-2</strong></p>
-  <p><br /></p>
-  <p><em>Remark.</em> 这里就很像 (TR3), 在三角范畴里面给定一个 $δ:Z\to\varSigma X$ 就可以对应到一个扩张;</p>
-  <p><br /></p>
-  <p><strong>ET3</strong></p>
-  <p><strong>ET3’</strong></p>
-  <p>(把 ET2-2, ET3, ET3’ 都很相似, 很像三角范畴里面的态射定理)</p>
-  <p><br /></p>
-  <p><strong>ET4</strong> 给定 T 形图, 则可以补全虚线所示的 $⊣$ 形图</p>
-</div>
-
-<div class="definition">
-  <p>(外三角范畴的术语) <br /></p>
-  <ol>
-    <li>
-      <p>加法实现</p>
-    </li>
-    <li>
-      <p>inflation, deflation</p>
-    </li>
-    <li>
-      <p>$(f,g):\delta\to\delta'$ 是<strong>扩张元的态射</strong>, 若 $f_*\delta=g^*\delta'$</p>
-    </li>
-    <li>
-      <p>扩张元的推出和拉回诱导了实现的 “推出” 和 “拉回”, 但是这未必是范畴意义下的推出与拉回.</p>
-    </li>
-  </ol>
-</div>
-
-<h2 id="22-六项正合列">2.2 六项正合列</h2>
-
-<p>六项正合列需要 ET4, 五项不需要.</p>
-
-<p>预三角范畴里面可以直接无穷项</p>
-
-<div class="definition">
-  <p>($\delta_\sharp$ 和 $\delta^♯$)</p>
-</div>
-
-<div class="definition">
-  <p>(weak kernel 和 weak cokernel)</p>
-</div>
-
-<div class="definition">
-  <p>(弱推出、弱拉回)</p>
-</div>
-
-<div class="theorem">
-  <p>(同构二推三)</p>
-</div>
-
-<p><strong>Tips</strong>: $(-,β)$ epi $\iff$ $\beta$ split epi</p>
-
-<div class="definition">
-  <p>(同伦推出、同伦拉回)</p>
-</div>
-
-<p><strong>Tips:</strong> $(g∘-)=\mathrm{Hom}(-,g)$</p>
-
-<h1 id="chapter-3-图表定理">Chapter 3 图表定理</h1>
-
+<p>我们想证明在这个加法的定义下, $\mathrm{Ext}^1(C,A)$ 作成一个 Abel 群.</p>
 
   </article>
 
@@ -286,10 +268,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+    
+    
     <div class="toc-row toc-level-2">
-      <a href="#11-正合范畴">
+      <a href="#1-mathjax_protectedjfxtyxrocm17rxh0fv4xjamathjax_protected">
         <span class="toc-number">1.</span>
-        <span class="toc-title">1.1 正合范畴</span>
+        <span class="toc-title">1. $\mathrm{Ext}^1$</span>
       </a>
     </div>
   
@@ -303,19 +287,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
-    <div class="toc-row toc-level-2">
-      <a href="#22-六项正合列">
-        <span class="toc-number">2.</span>
-        <span class="toc-title">2.2 六项正合列</span>
+    <div class="toc-row toc-level-3">
+      <a href="#关于-mathjax_protectedjfxtyxrocm17rxh0fv4xkemsqskkmathjax_protected-是不是集合的讨论">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">关于 $\mathrm{Ext}^1(C,A)$ 是不是集合的讨论</span>
       </a>
     </div>
   
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#mathjax_protectedjfxtyxrocm17rxh0fv4xioepcqmathjax_protected">
+        <span class="toc-number">1.2.</span>
+        <span class="toc-title">$\mathrm{Ext}^1 群$</span>
+      </a>
+    </div>
+  
 </nav>
   </div>
 
@@ -365,13 +360,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/extension" title="NEXT: 扩张理论">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex1_2" title="NEXT: 《基础代数学》作业 Week1-2">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex1_1" title="PREV: 《基础代数学》作业 Week1-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/ExTriCat" title="PREV: 外三角范畴">&gt;&gt;</a>
     
   </div>
 </main>

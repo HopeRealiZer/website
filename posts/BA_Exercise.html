@@ -198,16 +198,130 @@ MathJax = {
   </div>
 </div>
 
+<h2 id="12-模的构造">1.2 模的构造</h2>
+
+<h3 id="双模结构">双模结构</h3>
+
+<div class="example">
+  <p>设有双模 $_RM_S, _RN_T$. 则 $\mathrm{Hom}_R(_RM_S,_RN_T)$ 作成 $S$-$T$ 双模: $$
+    (sft)(m)=f(ms)t.
+$$</p>
+</div>
+
+<h3 id="紧模">紧模</h3>
+
+<div class="proposition">
+  <p>有限生成模都是紧模.</p>
+</div>
+
+<p><strong>Remark.</strong> 紧模未必都是有限生成模.</p>
+
+<h3 id="习题-12">习题 1.2</h3>
+
+<div class="problem">
+  <p>设 $M=M_1⊕ M_2$. 则 $M_1≅ M/M_2,M_2≅ M/M_1$.</p>
+  <div class="proof">
+    <p>考虑自然投射 $$
+π: M=M_1⊕M_2→M_1,\ m_1+m_2\mapsto m_1.
+$$ 则 $\ker π=\{0+m_2∣m_2∈M_2\}=M_2$, 由同态基本定理知 $M/M_2≅M_1$. 同理可证 $M_2≅ M/M_1$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设有双模 $_RM_S$. 写出 $\mathrm{Hom}_R(_RR_R,_RM_S)$ 的 $R$-$S$ 双模结构, 并证明 $R$-$S$ 双模同构 $\mathrm{Hom}_R(_RR_R,_RM_S)\cong {_RM_S}$.</p>
+  <div class="proof">
+    <p>双模结构为 ($f∈\mathrm{Hom}_R(_RR_R,_RM_S), r∈R, s∈S, x∈{_RR_R}$) $$(rf)(x)=f(xr),\quad (fs)(x)=f(x)s$$ 容易验证这是一个 $R$-$S$ 双模结构, 主要是注意到 $$\begin{equation}
+((rf)s)(x)=(rf)(x)s=f(xr)s=(fs)(xr)=(r(fs))(x). 
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+((r_1r_2)f)(x)=f(x(r_1r_2))=f((xr_1)r_2)=(r_2f)(xr_1)=(r_1(r_2f))(x).
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+(f(s_1s_2))(x)=f(x)(s_1s_2)=(f(x)s_1)s_2=(f s_1)(x)s_2=( (fs_1)s_2)(x).
+\end{equation}$$</p>
+    <p>考虑映射 $$\varphi:\mathrm{Hom}_R(_RR_R,_RM_S)→{_RM_S},\ f\mapsto f(1),$$</p>
+    <p>首先验证这是一个 $R$-$S$ 双模同态. 主要是 $\varphi(f_1+f_2)= (f_1+f_2)(1)=f_1(1)+f_2(1)=\varphi(f_1)+\varphi(f_2)$, $\varphi(rf)= (rf)(1)=f(1r)=f(r)=r f(1)=r\varphi(f)$, $\varphi(fs)=(fs)(1)=f(1)s=\varphi(f)s$.<br /></p>
+    <p>(单射) 设 $f∈\ker\varphi$, 则 $f(1)=0$. 对于任意 $x∈R$, 有 $f(x)=f(x·1)=xf(1)=x·0=0$. 故 $f=0$. <br /></p>
+    <p>(满射) 设 $m∈M$, 则考虑映射 $f_m:{_RR_R}→{_RM_S},\ x↦xm$. 容易验证 $f_m∈\mathrm{Hom}_R(_RR_R,_RM_S)$ 且 $\varphi(f_m)=f_m(1)=m$. 故 $\varphi$ 是满射. <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $A$ 和 $B$ 是域 $k$ 上的代数, $_AM_B$ 是双模. 写出 $\mathrm{Hom}_k(M,k)$ 的双模结构.</p>
+  <div class="solution">
+    <p>设 $f∈\mathrm{Hom}_k(M,k), a∈A, b∈B, m∈M$. 定义 $$(bf)(m)=f(mb),\quad (fa)(m)=f(am).$$ 容易验证这是一个 $B$-$A$ 双模结构, 主要是注意到</p>
+    <p>$$\begin{equation}
+((bf)a)(m)=(bf)(am)=f((am)b)=f(a(mb))=(fa)(mb)=( b(fa))(m),
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+((b_1b_2)f)(m)=f(m(b_1b_2))=f((mb_1)b_2)=(b_2f)(mb_1)=(b_1(b_2f))(m),
+\end{equation}$$</p>
+    <p>$$\begin{equation}
+(f(a_1a_2))(m)=f((a_1a_2)m)=f(a_1(a_2m))=(f a_1)(a_2m)=( (fa_1)a_2)(m).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>写出 $A=k[x]/⟨x^5⟩$ 上所有两两互不同构的有限维不可分解模.</p>
+  <div class="solution">
+    <p>一共 5 个, 为 $$
+	⟨x^{5-m}⟩/⟨x^5⟩, m = 1,2,3,4,5.
+$$</p>
+  </div>
+</div>
+
 <h3 id="习题-13">习题 1.3</h3>
 
 <div class="problem">
   <p>非零左 $R$-模 $M$ 是单模当且仅当 $M$ 的任一非零元 $m$ 都是生成元, 即 $Rm=M$.</p>
   <div class="proof">
-    <p>(⇒) 设 $m∈M$ 是非零元. 则 $Rm$ 是 $M$ 的非零子模, 由单模的定义知 $Rm=M$.</p>
+    <p>(⇒) 设 $m∈M$ 是非零元. 则 $Rm$ 是 $M$ 的非零子模, 由单模的定义知 $Rm=M$. <br /></p>
     <p>(⇐) 设 $N↪M$ 是非零子模. 取 $0≠n∈N$, 则 $Rn=M$, 故 $N=M$.</p>
   </div>
 </div>
 
+<div class="problem">
+  <p>设 $A$ 是有限维 $k$-代数, $M$ 是单 $A$-模. 则 $M$ 是有限维的(作为 $k$-线性空间).</p>
+  <div class="proof">
+    <p>由先前习题知, $M=Am$, 其中 $0≠m∈M$. $\dim_k M=\dim_k A_m=\dim_k A<∞$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $k$ 是域. 证明任一左 $M_n(k)$-模均为半单模.</p>
+</div>
+
+<div class="problem">
+  <p>半单模的子模和商模也是半单模.</p>
+  <div class="proof">
+    <p>由定理 1.3.3 知一个模是半单的等价于满足性质 <strong>P</strong>, 再根据阴历 1.3.5 立刻得到.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>$N$ 是 $M$ 的极大子模等价于 $M/N$ 是单模.</p>
+  <div class="proof">
+    <p>由子模对应定理立刻得到.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环. 证明单 $R$-模是 $_RR$ 的商模.</p>
+  <div class="proof">
+    <p>设 $M$ 是单 $R$-模, 则对于任意 $0≠m∈M$, 有 $Rm=M$. 定义环同态 $\varphi: {_RR}→M,\ r\mapsto rm$. 则 $\varphi$ 是满射, 由同态基本定理知 $M\cong {_RR}/\ker\varphi$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环. 证明正则模 $_RR$ 是单模当且仅当 $R$ 是除环.</p>
+  <div class="proof">
+    <p>(⇒) 设 $_RR$ 是单模. 则对于任意 $0≠a∈R$, 有 $Ra=R$. 于是存在 $r∈R$, 使得 $ra=1$. 故 $R$ 是除环(这里用到了有左逆的环里面, 左逆自动也是右逆). <br /></p>
+    <p>(⇐) 设 $R$ 是除环. 则对于任意 $0≠a∈R$, 有 $Ra=R$. 故 $_RR$ 是单模.</p>
+  </div>
+</div>
+
+<h2 id="14-wedderburn-artin-定理">1.4 Wedderburn-Artin 定理</h2>
 
   </article>
 
@@ -356,10 +470,95 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+    <div class="toc-row toc-level-2">
+      <a href="#12-模的构造">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">1.2 模的构造</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#双模结构">
+        <span class="toc-number">2.1.</span>
+        <span class="toc-title">双模结构</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#紧模">
+        <span class="toc-number">2.2.</span>
+        <span class="toc-title">紧模</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-12">
+        <span class="toc-number">2.3.</span>
+        <span class="toc-title">习题 1.2</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="toc-row toc-level-3">
       <a href="#习题-13">
-        <span class="toc-number">1.3.</span>
+        <span class="toc-number">2.4.</span>
         <span class="toc-title">习题 1.3</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#14-wedderburn-artin-定理">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">1.4 Wedderburn-Artin 定理</span>
       </a>
     </div>
   
@@ -412,7 +611,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/ExTriCat" title="NEXT: 外三角范畴">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex1_1" title="NEXT: 《基础代数学》作业 Week1-1">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
