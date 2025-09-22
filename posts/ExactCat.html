@@ -149,7 +149,16 @@ MathJax = {
     </li>
   </ol>
   <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/ExactCat/diagram_19d967f5bc143.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      <embed src="/website/svg/ExactCat/diagram_c52f64f98b692.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+</div>
+
+<p><strong>Remark.</strong> 考虑上面的交换图, 考虑 $p'$ 为根据左边方块的推出性质得到的态射 (满足 $p'f'=p, p'i'=0$), 则这个 $p'$ 恰好就是 $i'$ 的 cokernel. (这一点十分符合直觉也很有用, 可以作为构造 cokernel 的方法.)</p>
+
+<div class="proof">
+  <p>对于任意 $\alpha$ 满足 $α i'=0$, 由 $αf'i=0$ 可以根据 $p$ 作为 cokernel 的泛性质得到分解 $αf'=βp$. 利用左边推出方块诱导的分解态射的唯一性可以证明到右下角三角的交换性.</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_dd048d3004af1.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
     </div> <br /> </center>
 </div>
 
@@ -169,6 +178,97 @@ MathJax = {
 </div>
 
 <h2 id="图表定理">图表定理</h2>
+
+<p>以下这个命题是 Abel 范畴中扩张之间的态射的分解性质在正合范畴中的推广.</p>
+
+<div class="proposition">
+  <p>(ses 的态射的分解) 设 $(\mathcal{A},\mathcal{E})$ 是正合范畴. 设有短正合列之间的态射 $(a,b,c)$, 则有分解</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_20be9874b22ad.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>使得左上和右下都是推出拉回方块.</p>
+  <div class="proof">
+    <p>先用 $a:A'→A$ 作左上角的推出, 立即可以得到右上方块 (也可以用推出泛性质得到 $e$), 用推出泛性质可以得到 $b''$ 满足 $b''b'=b, b''m=f$. 最后只需要验证右下角方块交换 (PBPO 都可以用几个等价命题得到), 这个靠的是推出的泛性质里面分解态射的唯一性.</p>
+  </div>
+</div>
+
+<div class="corollary">
+  <p>(五引理, I) 给定 ses 的交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_505095d51acd2.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>如果 $a,c$ 是同构, 则 $b$ 也是同构.</p>
+  <div class="proof">
+    <p>考虑上一个命题的证明, $a$ 是同构, 从而也是 admissible monic, 则推出后得到的 $b'$ 也是 admissible monic. 另外 $c$ 是同构, 则也是 admissible monic, 它沿着 admissible epic $e$ 的拉回 $b''$ 也是 admissible monic. 于是 $b=b''b'$ 是两个 admissible monic 的复合, 也是 admissible monic. 类似地, $b$ 也是 admissible epic, 从而是同构.</p>
+  </div>
+  <div class="proof">
+    <p>(另一种证明) 同构的推出/拉回还是同构.</p>
+  </div>
+</div>
+
+<div class="corollary">
+  <p>(五引理加强, 二推三) 给定 ses 的交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_505095d51acd2.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>如果 $a,b,c$ 中有两个是同构, 则第三个也是同构.</p>
+  <div class="proof">
+    <p>只要证明 $a,b$ 是同构时 $c$ 也是同构. 显然由 cokernel 的泛性质知道 $c$ 被唯一确定. $cg'=gb$, 另外也存在唯一的 $c':C→ C'$ 使得 $c'g=g'b^{-1}$. 于是 $cc'g=cg'b^{-1}=g$, 由 $g$ 满得 $cc'=\mathrm{Id}_{C}$. 类似地 $c'c=\mathrm{Id}_{C'}$. 于是 $c$ 是同构.</p>
+  </div>
+</div>
+
+<div class="lemma">
+  <p>(Noether isomorphism $C/B≅(C/A)/(B/A)$). 考虑交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_2342f051e5c6f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>给定前两行和第二列短正合列, 则有第三列短正合列. 并且右上角方块是推出拉回方块.</p>
+  <div class="proof">
+    <p>$X→Y$ 由第一行的 cokernel 的泛性质给出, 得到右上角方块是推出拉回方块, 其余显然.</p>
+  </div>
+</div>
+
+<div class="corollary">
+  <p>(3×3 引理) 考虑三列短正合列的交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_4d1bc2a0bbe06.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>若下面条件之一满足: <br /></p>
+  <p>(1) 中间一行以及上下其中一行是短正合列; <br /></p>
+  <p>(2) 上下两行是短正合列且 $gf=0$. <br /></p>
+  <p>则另外一行也是短正合列.</p>
+</div>
+
+<h2 id="拟-abel-范畴-quasi-abelian-categories">拟 Abel 范畴 (Quasi-abelian categories)</h2>
+
+<div class="definition">
+  <p>(Quasi-abelian category) 一个加法范畴 $\mathcal{A}$ 称为 quasi-abelian, 如果:</p>
+  <ol>
+    <li>所有的态射都有 kernel 和 cokernel.</li>
+    <li>kernel 类对 pushout 封闭, cokernel 类对 pullback 封闭.</li>
+  </ol>
+</div>
+
+<p><strong>Remark.</strong> 显然这是一个自对偶的概念, 即 $\mathcal{A}$ 是 quasi-abelian 当且仅当 $\mathcal{A}^{^{\mathrm{op}}}$ 是 quasi-abelian.</p>
+
+<h2 id="幂等完备">幂等完备</h2>
+
+<div class="definition">
+  <p>(幂等完备) 一个加法范畴 $\mathcal{A}$ 是幂等完备的, 如果对于任意幂等元 $p:A→A$, 即 $p^2=p$, 都存在 $A$ 的一个分解 $A≅K⊕I$ 使得 $p≅\begin{bmatrix}0 & 0 \\ 0 & 1\end{bmatrix}$.</p>
+</div>
+
+<p><strong>Q:</strong> 为什么要定义这个概念?</p>
+
+<h2 id="容许态射和蛇引理">容许态射和蛇引理</h2>
+
+<div class="definition">
+  <p>(容许态射, admissible morphism) 正合范畴里的一个态射 $f:A→B$ 称为容许态射, 如果它可以分解为一个 admissible epic 后接一个 admissible monic, 即</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/ExactCat/diagram_c54403943997e.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+</div>
+
+<h2 id="正合范畴里的扩张理论">正合范畴里的扩张理论</h2>
 
 
   </article>
@@ -307,6 +407,74 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="#图表定理">
         <span class="toc-number">3.</span>
         <span class="toc-title">图表定理</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#拟-abel-范畴-quasi-abelian-categories">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">拟 Abel 范畴 (Quasi-abelian categories)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#幂等完备">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">幂等完备</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#容许态射和蛇引理">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">容许态射和蛇引理</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#正合范畴里的扩张理论">
+        <span class="toc-number">7.</span>
+        <span class="toc-title">正合范畴里的扩张理论</span>
       </a>
     </div>
   

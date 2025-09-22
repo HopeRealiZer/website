@@ -14,7 +14,7 @@
     Jekyll Latex</title>
 
 
-<meta name="description" content="Chapter 1 正合范畴与三角范畴拾遗">
+<meta name="description" content="Chapter 1 外三角范畴">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -85,29 +85,7 @@ MathJax = {
 
     <div class="divider"></div>
 
-    <h1 id="chapter-1-正合范畴与三角范畴拾遗">Chapter 1 正合范畴与三角范畴拾遗</h1>
-
-<h2 id="11-正合范畴">1.1 正合范畴</h2>
-
-<div class="definition">
-  <p>(Quillen 的正合范畴) 正合范畴 $(\mathcal{C},\mathcal{E})$ 包括一个加法范畴 $\mathcal{C}$ 和一族态射图 $\mathcal{E}$, $\mathcal{E}$ 中对象称为 $\mathcal{C}$ 中的</p>
-</div>
-
-<div class="proposition">
-  <p>inflation + deflation = isomorphism</p>
-</div>
-
-<p><strong>Remark.</strong> 加法范畴里面的 monomorphism + epimorphism 推不出这一点, 因为不一定存在 kernel 和 cokernel.</p>
-
-<div class="lemma">
-  <p>$0→X→X⊕Y→Y→0\in\mathcal{E}$.</p>
-</div>
-
-<div class="lemma">
-  <p>$\mathcal{E}$ 对于直和封闭, 此处直和指二元双积 $⊕$.</p>
-</div>
-
-<h1 id="chapter-2-外三角范畴">Chapter 2 外三角范畴</h1>
+    <h1 id="chapter-1-外三角范畴">Chapter 1 外三角范畴</h1>
 
 <div class="definition">
   <p>(外三角范畴的基本资料)</p>
@@ -115,9 +93,15 @@ MathJax = {
 \mathbb{E}: \mathcal{C}^{op} \times \mathcal{C} \to \mathbf{Ab}
 $$</p>
   <p>$$
-\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}'/\sim
+\mathfrak{s}: \mathbb{E}(Z,X) \to \mathcal{C}^{1→2→3}/\sim
 $$</p>
 </div>
+
+<div class="definition">
+  <p>(推出和拉回) $f_*=\mathbb{E}(Z,f), g^*=\mathbb{E}(g,X)$.</p>
+</div>
+
+<p><strong>Tips:</strong> 下推出, 上拉回.</p>
 
 <div class="definition">
   <p>(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: <br /></p>
@@ -287,28 +271,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#11-正合范畴">
-        <span class="toc-number">1.</span>
-        <span class="toc-title">1.1 正合范畴</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-2">
       <a href="#22-六项正合列">
-        <span class="toc-number">2.</span>
+        <span class="toc-number">1.</span>
         <span class="toc-title">2.2 六项正合列</span>
       </a>
     </div>
