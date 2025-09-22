@@ -9,12 +9,12 @@
 
 
 
-  <title>问题
+  <title>《基础代数学》第二章习题
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="基础代数学问题">
+<meta name="description" content="2.1 加法范畴">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/question">
+<link rel="canonical" href="/website/posts/BA_Exercise2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,21 +75,154 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>问题</h1>
+      <h1>《基础代数学》第二章习题</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 12, 2025
+        September 11, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="基础代数学问题">基础代数学问题</h2>
+    <h2 id="21-加法范畴">2.1 加法范畴</h2>
 
-<ol>
-  <li>在加法范畴中, 余积到积的自然态射 $\sigma$ 是单态射吗? (我觉得不一定是单态射, 但没有找到反例.)</li>
-</ol>
+<h3 id="余积积加法范畴">余积、积、加法范畴</h3>
+
+<p>余积定义中的唯一性要求是为了能让我们将一个态射拆开来研究 (态射在分量上的限制和起来决定了整个态射, 拆开不会损失信息). 反过来讲, 我们也可以将态射拼起来.</p>
+
+<p>PS: 还有弱余积的概念, 它不要求延拓态射的唯一性.</p>
+
+<p>余积的结构态射是嵌入 $e_i$, 积的结构态射是投射 $p_i$.</p>
+
+<p>预加法范畴强调零对象(用于定义零态射), 以及强调态射集的 Abel 群结构, 并且这个加法与态射的复合相容.</p>
+
+<p>加法范畴额外要求有限余积的存在性. 有很多好处:</p>
+<ul>
+  <li>可以进行坐标分解</li>
+</ul>
+
+<div class="proposition">
+  <p>(余积到积的自然态射) 在一个有积和余积且有零对象的范畴中有</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise2/diagram_d4bf90a78bb45.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <div class="proof">
+    <p>自然存在 $\sigma$ 和 $\sigma'$ 分别使得左右两边交换, 只需要验证它们相等. 由 $p_jσ e_i=p_j e_i'=\delta_{ij} = p_j'e_i=p_j σ' e_i, ∀ i,j$ 即得 $σ=σ'$.</p>
+  </div>
+</div>
+
+<p><strong>remark.</strong> 即便是在加法范畴中, 这个 $\sigma$ 也未必是单态射.</p>
+
+<p>在加法范畴里面, 对于有限(余)积对象, 到自己的单位态射有一个自然的分解 (坐标分解):
+$$
+\mathrm{Id}_{⨁_{1≤i≤n} X_i} = \sum_{1≤i≤n}e_ip_i', \quad \mathrm{Id}_{∏_{1≤i≤n} X_i} = \sum_{1≤i≤n}e_i'p_i.
+$$</p>
+
+<div class="proposition">
+  <p>(加法范畴中有限余积和有限积同构) $$
+    σ : \bigoplus_{1≤i≤n} X_i \xrightarrow{\sim} \prod_{1≤i≤n} X_i
+$$</p>
+</div>
+
+<div class="proof">
+  <p>考虑 $$
+    \sum_{1≤i≤n} e_i p_i : \prod_{1≤i≤n} X_i \to \bigoplus_{1≤i≤n} X_i.
+$$ 验证它是 $σ$ 的逆即可.</p>
+</div>
+
+<h3 id="mathjax_protectedjfxtyxrocm17sg9tfsqmathjax_protected-与-余积">$\mathrm{Hom}$ 与 (余)积</h3>
+
+<p>最经典的两个同构, 诠释了(余)积的泛性质(普适问题的解) :</p>
+
+<p>$$\begin{equation}
+\mathrm{Hom}_\mathcal{A}(\bigoplus_{i∈ I}M_i, N) \cong \prod_{i∈ I} \mathrm{Hom}_\mathcal{A}(M_i, N),\quad f \mapsto (f e_i)_{i∈ I}; 
+\end{equation}$$</p>
+
+<p>$$\begin{equation}
+\mathrm{Hom}_\mathcal{A}(M, \prod_{i∈ I}N_i) \cong \prod_{i∈ I} \mathrm{Hom}_\mathcal{A}(M, N_i),\quad f \mapsto (p_i f)_{i∈ I}.
+\end{equation}$$</p>
+
+<h3 id="习题-21">习题 2.1</h3>
+
+<div class="problem">
+  <p>加法范畴里面, 态射 $f$ 是单射当且仅当 $ft=0 ⇒ t=0$.</p>
+</div>
+
+<div class="proof">
+  <p>必要性显然.</p>
+  <p>对于充分性. 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单射.</p>
+</div>
+
+<div class="problem">
+  <p>[事实 2.1.2] 设范畴 $\mathcal{A}$ 是有余积和零对象的范畴. 则</p>
+  <ol>
+    <li>
+      <p>(投影态射存在唯一性) 存在唯一的态射 $p_i':⨁_{i∈I}X_i → X_i$ 使得 $p_j' e_i = δ_{ij} : X_i→X_j$. (结构态射有左逆)</p>
+    </li>
+    <li>
+      <p>结构态射是单态射, 投影态射是满态射.</p>
+    </li>
+    <li>
+      <p>态射 $f:⨁_{i∈I}X_i → Y$ 由 $f e_i$ 唯一决定, 其中 $e_i$ 是余积的结构态射.</p>
+    </li>
+    <li>
+      <p>(态射直和的存在唯一性) 给定态射 $f_i:X_i → Y_i$, 则存在唯一的态射 $f:⨁_{i∈I}X_i → ⨁_{i∈I}Y_i$ 使得 $ (⨁f_i) e_i^X = e_i^Y f_i $.</p>
+    </li>
+    <li>
+      <p>(态射直和和复合的相容性) $ (⨁g_i)(⨁f_i) = ⨁(g_i f_i) $.</p>
+    </li>
+    <li>
+      <p>(态射直和是满态射的判别法) 态射 $⨁f_i$ 是满态射当且仅当每个 $f_i$ 都是满态射.</p>
+    </li>
+  </ol>
+  <div class="proof">
+    <ol>
+      <li>
+        <p>根据余积泛性质即可.</p>
+      </li>
+      <li>
+        <p>由 1 立即得到.</p>
+      </li>
+      <li>
+        <p>余积的泛性质中的唯一性保证.</p>
+      </li>
+      <li>
+        <p>直接用一下 3 (一个范畴有余积, 就是说我们可以自由地把态射拼起来或者拆开, 并且保证不会损失信息).</p>
+      </li>
+      <li>
+        <p>按分量验证并考虑 4 的定义就行.</p>
+      </li>
+      <li>
+        <p>关键在于使用余积的泛性质 (或者说 3) 来把态射拆开来研究. $h(⨁f_i)=g(⨁f_i) ⟺ ∀ i, h(⨁f_i)e_i^X=g(⨁f_i)e_i^X ⟺ ∀ i, h e_i^Y f_i = g e_i^Y f_i$. 若所有的 $f_i$ 都是满的, 则 $h e_i^Y = g e_i^Y$ 对所有 $i$ 都成立, 由 3 可知 $h=g$. 反过来, 若 $⨁f_i$ 是满的. 由 $g f_i = h f_i ⟺ g p_i^Y (⨁f_i) e_i^X = h p_i^Y (⨁f_i) e_i^X ⟺ ∀ j, g p_i^Y (⨁f_i) e_j^X = h p_i^Y (⨁f_i) e_j^X ⟺ g p_i^Y (⨁f_i) = h p_i^Y (⨁f_i).$ 从而 $g=h$.</p>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="problem">
+  <p>加法范畴中典范同构 $σ_{X_1,X_2}: X_1 ⊕ X_2 → X_1 ∏ X_2$ 可表达为 $σ = (e_1', e_2') = e_1' p_1' + e_2' p_2'.$</p>
+  <div class="proof">
+    <p>注意到 $σ^{-1} = e_1p_1+e_2p_2$, 直接验证即可.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>在加法范畴中有 $c∘ (a,b)=(ca,cb)$.</p>
+  <div class="proof">
+    <p>按分量验证即可 (相当于考虑所有右复合 $-∘ e_i$).</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>加法范畴中有 $\pmatrix{f\\ g}∘ c=\pmatrix{fc \\ gc}$.</p>
+  <div class="proof">
+    <p>按分量验证即可 (相当于考虑所有左复合 $p_i ∘ -$). (所以这个成立实际上是用的积的性质)</p>
+  </div>
+</div>
+
+<h2 id="来自讨论班-正合范畴中的扩张">[来自讨论班] 正合范畴中的扩张</h2>
+
 
   </article>
 
@@ -188,9 +321,77 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#基础代数学问题">
+      <a href="#21-加法范畴">
         <span class="toc-number">1.</span>
-        <span class="toc-title">基础代数学问题</span>
+        <span class="toc-title">2.1 加法范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#余积积加法范畴">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">余积、积、加法范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#mathjax_protectedjfxtyxrocm17sg9tfsqmathjax_protected-与-余积">
+        <span class="toc-number">1.2.</span>
+        <span class="toc-title">$\mathrm{Hom}$ 与 (余)积</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-21">
+        <span class="toc-number">1.3.</span>
+        <span class="toc-title">习题 2.1</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#来自讨论班-正合范畴中的扩张">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">[来自讨论班] 正合范畴中的扩张</span>
       </a>
     </div>
   
@@ -243,13 +444,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/BA_Exercise1" title="NEXT: 《基础代数学》第一章习题">&lt;&lt;</a>
+      <a class="next" href="/website/posts/additive" title="NEXT: 2025年9月11日杂记">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/additive" title="PREV: 2025年9月11日杂记">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/TriCat_Exercise1" title="PREV: 《三角范畴与导出范畴》习题 - 第一章">&gt;&gt;</a>
     
   </div>
 </main>

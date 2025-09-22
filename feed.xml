@@ -628,7 +628,7 @@ $$&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/BA_Exercise/diagram_6096c12061c4c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_6096c12061c4c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;div class=&quot;proof&quot;&gt;
     &lt;ol&gt;
@@ -972,8 +972,8 @@ $$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_
 &lt;/div&gt;
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/BA_Exercise</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise</guid>
+          <link>http://localhost:4000/website/posts/BA_Exercise1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise1</guid>
         </item>
       
     
@@ -1039,7 +1039,7 @@ $$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_
 &lt;div class=&quot;proposition&quot;&gt;
   &lt;p&gt;(余积到积的自然态射) 在一个有积和余积且有零对象的范畴中有&lt;/p&gt;
   &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-      &lt;embed src=&quot;/website/svg/BA_Exercise/diagram_d4bf90a78bb45.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_d4bf90a78bb45.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
     &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;div class=&quot;proof&quot;&gt;
     &lt;p&gt;自然存在 $\sigma$ 和 $\sigma'$ 分别使得左右两边交换, 只需要验证它们相等. 由 $p_jσ e_i=p_j e_i'=\delta_{ij} = p_j'e_i=p_j σ' e_i, ∀ i,j$ 即得 $σ=σ'$.&lt;/p&gt;
@@ -1154,10 +1154,13 @@ $$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
     &lt;p&gt;按分量验证即可 (相当于考虑所有左复合 $p_i ∘ -$). (所以这个成立实际上是用的积的性质)&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;来自讨论班-正合范畴中的扩张&quot;&gt;[来自讨论班] 正合范畴中的扩张&lt;/h2&gt;
+
 </description>
           <pubDate>2025-09-11T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/BA_Exercise</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise</guid>
+          <link>http://localhost:4000/website/posts/BA_Exercise2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/BA_Exercise2</guid>
         </item>
       
     
