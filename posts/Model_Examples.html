@@ -180,6 +180,18 @@ X_0 → X_1 → \cdots → X_β → \cdots
   <li>更容易 check 一个函子是不是 Quillen functor.</li>
 </ul>
 
+<div class="theorem">
+  <p>设 $\mathcal{C}$ 是一个有 small colimits and limits 的范畴. 设 $\mathcal{W}$ 是 $\mathcal{C}$ 的一个子范畴, $I$ 和 $J$ 是 $\mathcal{C}$ 的态射集合. 则当且仅当以下条件成立时, 存在一个 $\mathcal{C}$ 上的 cofibrantly generated 模型结构, 使得 $\mathcal{W}$ 是 weak equivalences, $I$ 是 generating cofibrations, $J$ 是 generating trivial cofibrations:</p>
+  <ol>
+    <li>$\mathcal{W}$ 满足 2-out-of-3 且对于 retract 封闭.</li>
+    <li>$I$ 的 domain 都 small relative to $I$-cell.</li>
+    <li>$J$ 的 domain 都 small relative to $J$-cell.</li>
+    <li>$J\text{-cell}⊆\mathcal{W}∩I\text{-cof}$.</li>
+    <li>$I\text{-inj}⊆\mathcal{W}∩J\text{-inj}$.</li>
+    <li>Either $\mathcal{W}∩I\text{-cof}⊆J\text{-inj}$ or $\mathcal{W}∩J\text{-inj}⊆I\text{-inj}$.</li>
+  </ol>
+</div>
+
 <h2 id="22-模范畴的稳定范畴">2.2 模范畴的稳定范畴</h2>
 
 <p>最简单的非平凡模型结构: Frobenius 环上的模范畴, 上面有稳定模型结构.</p>
@@ -227,9 +239,83 @@ X_0 → X_1 → \cdots → X_β → \cdots
 <ul>
   <li>$I$ 是集合 $\mathfrak{a}→R$, 其中 $\mathfrak{a}$ 取遍所有的 left ideals of $R$.</li>
   <li>$J$ 是集合 $0→R$.</li>
-  <li>𝖥𝗂𝖻 =</li>
-  <li>𝖢𝗈𝖿𝗂𝖻</li>
+  <li>𝖥𝗂𝖻 = $J$-inj.</li>
+  <li>𝖢𝗈𝖿𝗂𝖻 = $I$-cof.</li>
+  <li>𝖶𝖾𝗊 = stable equivalences.</li>
 </ul>
+
+<p>下面我们证明上述定义的 𝖥𝗂𝖻, 𝖢𝗈𝖿𝗂𝖻, 𝖶𝖾𝗊 构成一个模型结构.</p>
+
+<div class="lemma">
+  <p>𝖥𝗂𝖻 = surj.</p>
+</div>
+
+<div class="lemma">
+  <p>设 $R$ 是 Frobenius ring. 则 𝖳𝖥𝗂𝖻 = surjection with projective kernel.</p>
+</div>
+
+<div class="proposition">
+  <p>设 $R$ 是任意一个环. 则一个态射 $p∈I\text{-inj}$ 当且仅当 $p$ 是一个 surjection with injective kernel. <br /> 从而如果 $R$ 是 Frobenius ring, 则 $I\text{-inj} = 𝖳𝖥𝗂𝖻$.</p>
+  <div class="proof">
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Examples/diagram_83f3029823167.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>另一个方向的证明要用到 Baer 判别法.</p>
+  </div>
+</div>
+
+<p>对于 cofibrations 也有类似的一些结果:</p>
+
+<div class="lemma">
+  <p>设 $R$ 是 Frobenius ring. $I$-cof = injection.</p>
+</div>
+
+<div class="lemma">
+  <p>设 $R$ 是 Frobenius ring. 则 $J$-cof = injection with projective cokernel. 特别地, $J$-cof 里面的态射都是 stable equivalences.</p>
+</div>
+
+<div class="theorem">
+  <p>设 $R$ 是 Frobenius ring. 则 $R$-mod 上有一个 cofibrantly generated model structure, 其中 𝖢𝗈𝖿𝗂𝖻=inj, 𝖥𝗂𝖻=surj, 𝖶𝖾𝗊=stable equivalences. <br /> 如果 $R$ 是 Noetherian, 则这个模型结构 finitely generated.</p>
+</div>
+
+<h2 id="23-chain-complexes-of-modules-over-a-ring">2.3 Chain Complexes of Modules over a Ring</h2>
+
+<p>考虑 $R$ 上的 chain complexes 范畴, 记作 $\text{Ch}(R)$. (这里的复形都是降链的)</p>
+
+<div class="lemma">
+  <p>$\text{Ch}(R)$ 里面所有的 objects 都 small. 每个有限表现模的有界复形都 finite.</p>
+</div>
+
+<p>给定一个 $R$-模 $M$, 我们定义以下两个复形:</p>
+<ul>
+  <li>$S^n(M)$ : 在度数 $n$ 处是 $M$, 其他度数都是零, 所有的微分都是零.</li>
+  <li>$D^n(M)$ : 在度数 $n$ 和 $n-1$ 处是 $M$, 其他度数都是零, 唯一非零的微分是 $d_n=\mathrm{Id}_M$.</li>
+</ul>
+
+<p>我们定义:</p>
+<ul>
+  <li>$I=\{S^{n-1}→D^n\}$</li>
+  <li>$J=\{0→D^n\}$</li>
+  <li>𝖥𝗂𝖻 = $J$-inj.</li>
+  <li>𝖢𝗈𝖿𝗂𝖻 = $I$-cof.</li>
+  <li>𝖶𝖾𝗊 = quasi-isomorphisms (homological isomorphisms).</li>
+</ul>
+
+<h2 id="24-topological-spaces">2.4 Topological Spaces</h2>
+
+<p>$\mathbf{Top}$ 和集合范畴、环的模范畴、环的模的 chain complexes 范畴的一个区别是: 不是所有 $\mathbf{Top}$ 中的对象都是 small 的.</p>
+
+<p>我们定义:</p>
+<ul>
+  <li>𝖶𝖾𝗊 = $\{f:X→Y∣ π_n(f,x) \text{ is an isomorphism, }∀n≥0,∀ x∈X\}$.</li>
+  <li>$I' = \{\text{boundary inclusions }S^{n-1}→D^n,∀n≥0\}$.</li>
+  <li>$J' = \{\text{inclusions }D^n→D^n×I \text{ which take } x \text{ to } (x,0),∀n≥0\}$.</li>
+  <li>𝖢𝗈𝖿𝗂𝖻 = $I'$-cof.</li>
+  <li>𝖥𝗂𝖻 = $J$-inj.</li>
+</ul>
+
+<h2 id="25-chain-complexes-of-comodules-over-a-hopf-algebra">2.5 Chain Complexes of Comodules over a Hopf Algebra</h2>
+
 
   </article>
 
@@ -404,6 +490,57 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
     </div>
   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#23-chain-complexes-of-modules-over-a-ring">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">2.3 Chain Complexes of Modules over a Ring</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#24-topological-spaces">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">2.4 Topological Spaces</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#25-chain-complexes-of-comodules-over-a-hopf-algebra">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">2.5 Chain Complexes of Comodules over a Hopf Algebra</span>
+      </a>
+    </div>
+  
 </nav>
   </div>
 
@@ -452,6 +589,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Hopf_Alg" title="NEXT: Hopf Algebra 基础知识">&lt;&lt;</a>
+      <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     

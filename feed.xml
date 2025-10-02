@@ -7,6 +7,56 @@
     
       
         <item>
+          <title>Hopf Algebra 基础知识</title>
+          <description>&lt;h2 id=&quot;algebra-的图表刻画&quot;&gt;Algebra 的图表刻画&lt;/h2&gt;
+
+&lt;p&gt;设 $A$ 是一个 $k$-vector space, 连同 $k$-linear maps 
+$$\begin{equation}
+m:A⊗A→A, \quad u:k→A.
+\end{equation}$$
+这两个 maps 给出 $A$ 上的一个 $k$-algebra 结构(此时 $m$ 称为 multiplication, $u$ 称为 unit map) , 当且仅当满足如下交换图:&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Hopf_Alg/diagram_a6e400a638fce.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;h2 id=&quot;coalgebra&quot;&gt;Coalgebra&lt;/h2&gt;
+&lt;p&gt;有了 algebra 的图表刻画, 那么我们就可以容易地得到 coalgebra 的概念.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Coalgebra)&lt;/strong&gt; &lt;br /&gt; 设 $C$ 是一个 $k$-vector space, 连同 $k$-linear maps $$\begin{equation}
+\Delta: C→C⊗C, \quad \epsilon: C→k.
+\end{equation}$$ $C$ 称为一个 coalgebra (此时 $Δ$ 称为 comultiplication(或 coproduct), $ε$ 称为 counit), 如果满足如下交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Hopf_Alg/diagram_6d21dda60119c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; The second diagram is called “coassociativity” of ∆.&lt;/p&gt;
+
+&lt;h4 id=&quot;coalgebra-的-sweedler-notation&quot;&gt;Coalgebra 的 Sweedler notation&lt;/h4&gt;
+
+&lt;h2 id=&quot;algebra-和-coalgebra-的对偶性&quot;&gt;Algebra 和 Coalgebra 的对偶性&lt;/h2&gt;
+
+&lt;p&gt;简单来讲, 给定一个 coalgebra, 它的向量空间对偶有自然的 algebra 的结构. 反之未必.&lt;/p&gt;
+
+&lt;h4 id=&quot;coalgebra-的对偶是-algebra&quot;&gt;Coalgebra 的对偶是 Algebra&lt;/h4&gt;
+
+&lt;p&gt;设 $C$ 是一个 $k$ 上的 coalgebra. Claim: 对偶空间 $C^*$ 上有自然的 $k$-algebra 结构.&lt;/p&gt;
+
+&lt;p&gt;对于 $f,g∈C^*=\mathrm{Hom}_k(C,k)$, 定义 $fg∈ C^*$ 为
+$$\begin{equation}
+[fg](c)=\sum f(c_{(1)})⊗ g(c_{(2)})=(f⊗g)∘Δ(c),
+\end{equation}$$&lt;/p&gt;
+</description>
+          <pubDate>2025-10-02T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Hopf_Alg</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Hopf_Alg</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>模型范畴例子</title>
           <description>&lt;p&gt;四个不同的例子:&lt;/p&gt;
 &lt;ul&gt;
@@ -103,6 +153,18 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;li&gt;更容易 check 一个函子是不是 Quillen functor.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{C}$ 是一个有 small colimits and limits 的范畴. 设 $\mathcal{W}$ 是 $\mathcal{C}$ 的一个子范畴, $I$ 和 $J$ 是 $\mathcal{C}$ 的态射集合. 则当且仅当以下条件成立时, 存在一个 $\mathcal{C}$ 上的 cofibrantly generated 模型结构, 使得 $\mathcal{W}$ 是 weak equivalences, $I$ 是 generating cofibrations, $J$ 是 generating trivial cofibrations:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$\mathcal{W}$ 满足 2-out-of-3 且对于 retract 封闭.&lt;/li&gt;
+    &lt;li&gt;$I$ 的 domain 都 small relative to $I$-cell.&lt;/li&gt;
+    &lt;li&gt;$J$ 的 domain 都 small relative to $J$-cell.&lt;/li&gt;
+    &lt;li&gt;$J\text{-cell}⊆\mathcal{W}∩I\text{-cof}$.&lt;/li&gt;
+    &lt;li&gt;$I\text{-inj}⊆\mathcal{W}∩J\text{-inj}$.&lt;/li&gt;
+    &lt;li&gt;Either $\mathcal{W}∩I\text{-cof}⊆J\text{-inj}$ or $\mathcal{W}∩J\text{-inj}⊆I\text{-inj}$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
 &lt;h2 id=&quot;22-模范畴的稳定范畴&quot;&gt;2.2 模范畴的稳定范畴&lt;/h2&gt;
 
 &lt;p&gt;最简单的非平凡模型结构: Frobenius 环上的模范畴, 上面有稳定模型结构.&lt;/p&gt;
@@ -150,9 +212,83 @@ X_0 → X_1 → \cdots → X_β → \cdots
 &lt;ul&gt;
   &lt;li&gt;$I$ 是集合 $\mathfrak{a}→R$, 其中 $\mathfrak{a}$ 取遍所有的 left ideals of $R$.&lt;/li&gt;
   &lt;li&gt;$J$ 是集合 $0→R$.&lt;/li&gt;
-  &lt;li&gt;𝖥𝗂𝖻 =&lt;/li&gt;
-  &lt;li&gt;𝖢𝗈𝖿𝗂𝖻&lt;/li&gt;
+  &lt;li&gt;𝖥𝗂𝖻 = $J$-inj.&lt;/li&gt;
+  &lt;li&gt;𝖢𝗈𝖿𝗂𝖻 = $I$-cof.&lt;/li&gt;
+  &lt;li&gt;𝖶𝖾𝗊 = stable equivalences.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;下面我们证明上述定义的 𝖥𝗂𝖻, 𝖢𝗈𝖿𝗂𝖻, 𝖶𝖾𝗊 构成一个模型结构.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;𝖥𝗂𝖻 = surj.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $R$ 是 Frobenius ring. 则 𝖳𝖥𝗂𝖻 = surjection with projective kernel.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;设 $R$ 是任意一个环. 则一个态射 $p∈I\text{-inj}$ 当且仅当 $p$ 是一个 surjection with injective kernel. &lt;br /&gt; 从而如果 $R$ 是 Frobenius ring, 则 $I\text{-inj} = 𝖳𝖥𝗂𝖻$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Examples/diagram_83f3029823167.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;另一个方向的证明要用到 Baer 判别法.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;对于 cofibrations 也有类似的一些结果:&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $R$ 是 Frobenius ring. $I$-cof = injection.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $R$ 是 Frobenius ring. 则 $J$-cof = injection with projective cokernel. 特别地, $J$-cof 里面的态射都是 stable equivalences.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;设 $R$ 是 Frobenius ring. 则 $R$-mod 上有一个 cofibrantly generated model structure, 其中 𝖢𝗈𝖿𝗂𝖻=inj, 𝖥𝗂𝖻=surj, 𝖶𝖾𝗊=stable equivalences. &lt;br /&gt; 如果 $R$ 是 Noetherian, 则这个模型结构 finitely generated.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;23-chain-complexes-of-modules-over-a-ring&quot;&gt;2.3 Chain Complexes of Modules over a Ring&lt;/h2&gt;
+
+&lt;p&gt;考虑 $R$ 上的 chain complexes 范畴, 记作 $\text{Ch}(R)$. (这里的复形都是降链的)&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$\text{Ch}(R)$ 里面所有的 objects 都 small. 每个有限表现模的有界复形都 finite.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;给定一个 $R$-模 $M$, 我们定义以下两个复形:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$S^n(M)$ : 在度数 $n$ 处是 $M$, 其他度数都是零, 所有的微分都是零.&lt;/li&gt;
+  &lt;li&gt;$D^n(M)$ : 在度数 $n$ 和 $n-1$ 处是 $M$, 其他度数都是零, 唯一非零的微分是 $d_n=\mathrm{Id}_M$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们定义:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$I=\{S^{n-1}→D^n\}$&lt;/li&gt;
+  &lt;li&gt;$J=\{0→D^n\}$&lt;/li&gt;
+  &lt;li&gt;𝖥𝗂𝖻 = $J$-inj.&lt;/li&gt;
+  &lt;li&gt;𝖢𝗈𝖿𝗂𝖻 = $I$-cof.&lt;/li&gt;
+  &lt;li&gt;𝖶𝖾𝗊 = quasi-isomorphisms (homological isomorphisms).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;24-topological-spaces&quot;&gt;2.4 Topological Spaces&lt;/h2&gt;
+
+&lt;p&gt;$\mathbf{Top}$ 和集合范畴、环的模范畴、环的模的 chain complexes 范畴的一个区别是: 不是所有 $\mathbf{Top}$ 中的对象都是 small 的.&lt;/p&gt;
+
+&lt;p&gt;我们定义:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;𝖶𝖾𝗊 = $\{f:X→Y∣ π_n(f,x) \text{ is an isomorphism, }∀n≥0,∀ x∈X\}$.&lt;/li&gt;
+  &lt;li&gt;$I' = \{\text{boundary inclusions }S^{n-1}→D^n,∀n≥0\}$.&lt;/li&gt;
+  &lt;li&gt;$J' = \{\text{inclusions }D^n→D^n×I \text{ which take } x \text{ to } (x,0),∀n≥0\}$.&lt;/li&gt;
+  &lt;li&gt;𝖢𝗈𝖿𝗂𝖻 = $I'$-cof.&lt;/li&gt;
+  &lt;li&gt;𝖥𝗂𝖻 = $J$-inj.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;25-chain-complexes-of-comodules-over-a-hopf-algebra&quot;&gt;2.5 Chain Complexes of Comodules over a Hopf Algebra&lt;/h2&gt;
+
 </description>
           <pubDate>2025-10-01T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Model_Examples</link>
