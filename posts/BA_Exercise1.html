@@ -362,7 +362,64 @@ $$</p>
 
 <h2 id="14-wedderburn-artin-定理">1.4 Wedderburn-Artin 定理</h2>
 
+<h3 id="基本性质-1">基本性质</h3>
+
 <p>Wedderburn-Artin 定理给出了半单代数的结构定理 (本书给出的是有限维 $k$-代数的情形), 此外本书还介绍了半单代数上单模的分类 (从而解决了所有 $A$-模的研究), 最后将半单代数的分类归结为有限维可除代数的分类.</p>
+
+<p>本节只考虑有限维 $k$-代数上的有限维模.</p>
+
+<p>半单代数 ⇔ 左正则模是半单模. (定义)</p>
+
+<p>单代数的定义就是正常的“单” (理想只有 $\{0\}$ 和它本身).</p>
+
+<div class="theorem">
+  <p>单代数是半单代数.</p>
+  <div class="proof">
+    <p>考虑证明所有极小左理想(左正则模的单子模)的和就是左正则模.</p>
+  </div>
+</div>
+
+<div class="lemma">
+  <p>对于 $k$-代数 $B$, 有 $k$-代数同构 $$
+(M_n(B))^{\mathrm{op}}\cong M_n(B^{\mathrm{op}}), \quad (b_{ij})\mapsto (b_{ji}).
+$$</p>
+</div>
+
+<h3 id="代数的直积分解">代数的直积分解</h3>
+
+<div class="lemma">
+  <p>对于 $k$-代数 $A$, $A$ 分解为 $n (n<∞)$ 个代数的直积当且仅当 $A$ 的单位元分解成 $n$ 个非零中心正交幂等元之和.</p>
+</div>
+
+<h3 id="wedderburn-artin-定理">Wedderburn-Artin 定理</h3>
+
+<div class="theorem">
+  <p>设 $A$ 是有限维 $k$-代数. 则下列条件等价:</p>
+  <ol>
+    <li>$A$ 是半单代数;</li>
+    <li>任一有限维左 $A$-模都是半单模;</li>
+    <li>$A$ 同构于可除 $k$-代数上全矩阵代数的直积;</li>
+    <li>$A$ 同构于单代数的直积.</li>
+  </ol>
+</div>
+
+<p><strong>Remark.</strong> 需要注意的一点是, 虽然在定义半单代数的时候是靠<strong>左</strong>正则模来定义的, 但是其实这个概念是<strong>不分左右</strong>的.</p>
+
+<div class="proof">
+  <p>(1)⇒(2) 半单模的商模是半单模, 半单模的和是半单模. <br /></p>
+  <p>(2)⇒(3) $$\begin{equation}
+A≅(\mathrm{End}_A(_AA))^{\mathrm{op}}\cong \bigoplus_{i=1}^r (\mathrm{End}_A(S_i^{m_i}))^{\mathrm{op}}\cong \bigoplus_{i=1}^r (M_{m_i}(\mathrm{End}_A(S_i)))^{\mathrm{op}}\cong \bigoplus_{i=1}^r M_{m_i}(\mathrm{End}_A(S_i)^{\mathrm{op}}),
+\end{equation}$$</p>
+  <p><br /></p>
+  <p>(3)⇒(4) 可除代数上的全矩阵代数是单代数. <br /></p>
+  <p>(4)⇒(1) 单代数是半单代数; 半单模等价于可以写成单子模的和.</p>
+</div>
+
+<h3 id="半单代数上的模">半单代数上的模</h3>
+
+<p>主要思想是半单代数上的单模可以归结为单代数上的单模进行研究, 而单代数上的单模在同构意义下唯一.</p>
+
+<h3 id="半单代数分解为单代数的直积的唯一性">半单代数分解为单代数的直积的唯一性</h3>
 
 <h3 id="习题-14">习题 1.4</h3>
 
@@ -444,6 +501,78 @@ $$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_
     <p>单代数在同构意义下只有唯一的单模 $V$. 于是 $M≅mV,N≅nV$. 于是 $M≅N⟺m=n⟺\dim_k M=\dim_k N$.</p>
   </div>
 </div>
+
+<h2 id="15-范畴与函子">1.5 范畴与函子</h2>
+
+<div class="theorem">
+  <p>(范畴等价的充要条件) 范畴 $\mathcal{C}$ 与范畴 $\mathcal{D}$ 等价当且仅当存在函子 $F:\mathcal{C}→\mathcal{D}$, 使得 $F$ 是稠密的、满忠实的函子.</p>
+</div>
+
+<h3 id="习题-15">习题 1.5</h3>
+
+<div class="problem">
+  <p>在一个范畴中, 如果存在零对象, 则它在同构意义下是唯一的.</p>
+  <div class="proof">
+    <p>设 $0,0'$ 是范畴 $\mathcal{C}$ 中的两个零对象. 则存在唯一的态射 $f:0→0'$, $g:0'→0$. 由零对象的定义知 $f,g$ 的复合只能是恒等态射(因为零对象到自己只有唯一的态射, 只能是恒等态射). 故 $0\cong 0'$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>左 $R$-模范畴 $R-\mathrm{Mod}$ 中的态射是单态射(满态射)当且仅当它是模的单同态(满同态).</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /></p>
+    <p>(有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:M→N$ 是单态射. 对于任意 $m∈M$, 考虑态射(模同态) $φ_m:R→M, r↦rm$. 若 $f(m)=0$, 则 $(f∘φ_m)(r)=f(rm)=rf(m)=0,∀ r∈ R$, 即有 $f∘φ_m=0=f∘φ_m$. 由 $f$ 是单态射可得 $φ_m=0$, 从而 $m=φ_m(1)=0$. 故 $f$ 是单同态. <br /></p>
+    <p>(或者也可以用下面一题一样的方法, 更方便) <br /></p>
+    <p>(满, ⇒) 设 $f:M→N$ 是满态射. 考虑自然投射 $π:N→N/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=N$. 故 $f$ 是满同态.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>群范畴 $\mathbf{Grp}$ 中的态射是单态射(满态射)当且仅当它是群的单同态(满同态).</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /></p>
+    <p>(有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:G→H$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪G$ 以及平凡同态 $0: \mathrm{Ker}f→G, g↦ e_G$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{e_G\}$. 故 $f$ 是单同态. <br /></p>
+    <p>(满, ⇒) 设 $f:A→B$ 是满态射. 考虑反证, 假设 $f$ 不是群满同态. <br /></p>
+    <p>如果 $\mathrm{Im}f \lhd B$, 则考虑自然投射 $π:B→B/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=B$. 矛盾. <br /></p>
+    <p>故考虑 $[B : \mathrm{Im}f]>2$. 下面来证明存在不同的两个群同态 $g,h: B→\mathrm{Sym}B$ 使得 $g∘f=h∘f$. <br /></p>
+    <p>考虑右陪集空间 $\mathrm{Im} f\backslash B$, 由于其元素个数大于 $2$, 故存在 $σ∈\mathrm{Sym}(\mathrm{Im}f\backslash B)$ 使得 $σ≠1$ 且 $σ$ 有不动点. 下面我们定义 $p∈\mathrm{Sym}(B)$. 首先固定一个右陪集的代表元集 $R$, 即对于任意的 $b∈ B$, $b$ 可以唯一地表示成 $b=cr$, 其中 $r∈R, c∈\mathrm{Im}f$. 现在对于任意的 $b=cr∈B$, 定义 $p(b)=cr'$, 其中 $r'∈R$ 是 $σ((\mathrm{Im}f) r)$ 的代表元. 显然 $p\in\mathrm{Sym}(B)$, 同时满足 $p≠1$ 且 $p$ 有不动点. <br /></p>
+    <p>下面定义 $$
+g: B\to\mathrm{Sym}(B),\quad b\mapsto [x\mapsto bx],
+$$ 以及 $$
+h: B\to\mathrm{Sym}(B),\quad b\mapsto pg(b)p^{-1}.
+$$</p>
+    <p>首先注意到 $g≠h$, 否则对于任意的 $b∈B$, 都有 $pg(b)=g(b)p$, 并且对于任意的 $x∈B$, 有 $p(bx)=bp(x)$, 取 $x$ 为 $p$ 的不动点, 则有 $p(bx)=bx$, 而 $p≠1$, 存在 $b∈B$ 使得等式不成立. 从而 $g≠h$. <br /></p>
+    <p>另外, 注意到对于任意的 $b∈B, x∈B$, 有 $$\begin{equation}
+(h∘f)(b)(x)= pg(f(b))p^{-1}(x)=p(f(b)p^{-1}(x))\overset{(*)}{=}f(b)p(p^{-1}(x))=f(b)x=(g∘f)(b)(x).
+\end{equation}$$</p>
+    <p>$(*)$ 这一步使用了 $p$ 的定义. 从而 $g∘f=h∘f$. 矛盾. <br /></p>
+  </div>
+</div>
+
+<h3 id="习题-15-拓展">习题 1.5 拓展</h3>
+
+<p>容易发现一个事情, 上面所说的各种(以集合为基础的)代数结构, 它们的单同态都和范畴意义下的单态射等价. 如果细致地考察, 我们需要考虑以下两个问题:</p>
+
+<ol>
+  <li>
+    <p>为什么集合意义下的单同态(即单射)与范畴意义下的单态射等价?</p>
+  </li>
+  <li>
+    <p>为什么(以集合为基础的)代数结构的范畴中的态射是单态射 当且仅当 它(看成集合范畴里面的态射)是集合范畴里面的单态射?</p>
+  </li>
+</ol>
+
+<p>(以集合为基础的代数结构上的单同态恰好就是集合意义下的单射, 这是定义, 不需要考虑)</p>
+
+<p>对于第一个问题, 首先我们考虑粗暴的证明方式 (和我们在上面习题中使用的方法类似)</p>
+
+<div class="proof">
+  <p>(单射 ⇒ 单态射) 单射有左逆, 从而是单态射. <br /></p>
+  <p>(单态射 ⇒ 单射) 设 $f:A→B$ 是单态射. 对于任意 $a_1,a_2∈A$, 若 $f(a_1)=f(a_2)$, 则有 $f∘φ_{a_1}=f∘φ_{a_2}$, 其中 $φ_{a_i}:\{*\}→A, *↦a_i$. 由 $f$ 是单态射可得 $φ_{a_1}=φ_{a_2}$, 从而 $a_1=a_2$. 故 $f$ 是单射.</p>
+</div>
+
 
   </article>
 
@@ -712,9 +841,145 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#习题-14">
+      <a href="#基本性质-1">
         <span class="toc-number">4.1.</span>
+        <span class="toc-title">基本性质</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#代数的直积分解">
+        <span class="toc-number">4.2.</span>
+        <span class="toc-title">代数的直积分解</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#wedderburn-artin-定理">
+        <span class="toc-number">4.3.</span>
+        <span class="toc-title">Wedderburn-Artin 定理</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#半单代数上的模">
+        <span class="toc-number">4.4.</span>
+        <span class="toc-title">半单代数上的模</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#半单代数分解为单代数的直积的唯一性">
+        <span class="toc-number">4.5.</span>
+        <span class="toc-title">半单代数分解为单代数的直积的唯一性</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-14">
+        <span class="toc-number">4.6.</span>
         <span class="toc-title">习题 1.4</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#15-范畴与函子">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">1.5 范畴与函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-15">
+        <span class="toc-number">5.1.</span>
+        <span class="toc-title">习题 1.5</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-15-拓展">
+        <span class="toc-number">5.2.</span>
+        <span class="toc-title">习题 1.5 拓展</span>
       </a>
     </div>
   

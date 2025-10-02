@@ -7,6 +7,1075 @@
     
       
         <item>
+          <title>模型范畴例子</title>
+          <description>&lt;p&gt;四个不同的例子:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Frobenius ring 上的模范畴&lt;/li&gt;
+  &lt;li&gt;环上的模的 chain complexes&lt;/li&gt;
+  &lt;li&gt;拓扑空间范畴&lt;/li&gt;
+  &lt;li&gt;Hopf algebra 上的 comodules 的 cochain complexes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;21-cofibrantly-generated-model-categories&quot;&gt;2.1 Cofibrantly Generated Model Categories&lt;/h2&gt;
+
+&lt;p&gt;这个部分是为后面讨论例子作的准备: 证明一个范畴有模型结构是很难的, 这个部分我们尝试去减少我们要 check 的条件.&lt;/p&gt;
+
+&lt;p&gt;主要工具: small object argument, 它告诉我们如何去构造 functorial factorizations. 为了引入这个工具, 我们需要一些处理 infinite compositions 的技术.&lt;/p&gt;
+
+&lt;h3 id=&quot;211-ordinals-cardinals-and-transfinite-compositions&quot;&gt;2.1.1 Ordinals, Cardinals, and Transfinite Compositions&lt;/h3&gt;
+
+&lt;p&gt;对于一个 ordinal, 我们可以自然地将它看成一个范畴: $α$ 到 $β$ 有唯一的一个态射当且仅当 $α≤β$.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{C}$ 是一个有所有 small colimits 的范畴, $λ$ 是一个 ordinal. 一个 $λ$-sequence in $\mathcal{C}$ 是一个 colimit-preserving functor $X:λ→\mathcal{C}$, 通常写作 $$\begin{equation}
+X_0 → X_1 → \cdots → X_β → \cdots
+\end{equation}$$ 由于 $X$ preserves colimits, 对于所有的 limit ordinals $γ&lt;λ$, 诱导的态射 $$\begin{equation}
+\mathrm{colim}_{β&lt;γ} X_β \rightarrow X_γ
+\end{equation}$$ 是一个同构. 我们称态射 $X_0→\mathrm{colim}_{β&lt;λ} X_β$ 为这个 $λ$-sequence 的 composition.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;回忆一下 cardinal 的定义: 对于一个集合 $A$, 它的 cardinality 是所有与 $A$ 有双射的 ordinals 中最小的 ordinal $|A|$. 一个 cardinal 是一个满足 $|κ|=κ$ 的 ordinal $κ$.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;令 $γ$ 是一个 cardinal. 一个 ordinal $α$ 是 $γ$-filtered, 如果它是一个 limit ordinal, 并且对于所有的 $A⊆α, |A|≤γ$, 都有 $\sup A&lt;α$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{C}$ 是一个有所有 small colimits 的范畴, $\mathcal{D}$ 是 $\mathcal{C}$ 的一些态射的 collection, $A$ 是 $\mathcal{C}$ 的一个对象. 设 $κ$ 是一个 cardinal. 我们说 $A$ 是 $κ$-small relative to $\mathcal{D}$, 如果对于所有的 $κ$-filtered ordinals $λ$ 和所有的 $λ$-sequences $X$ 使得对于 $β+1&lt;λ$ 都有 $X_β→X_{β+1}$ 属于 $\mathcal{D}$, 集合之间的映射 $$\begin{equation}
+\mathrm{colim}_{β&lt;λ} \mathcal{C}(A,X_β) \rightarrow \mathcal{C}(A, \mathrm{colim}_{β&lt;λ} X_β)
+\end{equation}$$ 是一个同构. 我们说 $A$ 是 small relative to $\mathcal{D}$, 如果存在一个 cardinal $κ$, 使得 $A$ 是 $κ$-small relative to $\mathcal{D}$. 我们说 $A$ 是 small, 如果它 small relative to $\mathcal{C}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Every set is small) &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;($R$-module is small, fintiely presented module is finite) &lt;br /&gt; 设 $A$ 是一个 $R$-module. 令 $κ=|A|(|A|+|R|)$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;212-relative-mathjax_protectedjekkmathjax_protected-cell-complexes-and-the-small-object-argument&quot;&gt;2.1.2 Relative $I$-cell complexes and the Small Object Argument&lt;/h3&gt;
+
+&lt;p&gt;知道某些对象是 small 的好处是可以帮助我们构造 functorial factorizations.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $I$ 是范畴 $\mathcal{C}$ 里的一个态射类.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;一个态射是 $I$-injective,&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $(F,U,φ):\mathcal{C}→\mathcal{D}$ 是一个 adjunction, $I$ 是 $\mathcal{C}$ 里的一个态射类, $J$ 是 $\mathcal{D}$ 里的一个态射类. 则&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$U(FI\text{-inj})⊆ I\text{-inj}$.&lt;/li&gt;
+    &lt;li&gt;$F(I\text{-cof})⊆FI\text{-cof}$.&lt;/li&gt;
+    &lt;li&gt;$F(UJ\text{-proj})⊆J\text{-proj}$.&lt;/li&gt;
+    &lt;li&gt;$U(J\text{-fib})⊆UJ\text{-fib}$.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(relative $I$-cell complex) &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;213-cofibrantly-generated-model-categories&quot;&gt;2.1.3 Cofibrantly Generated Model Categories&lt;/h3&gt;
+
+&lt;p&gt;关键技术点:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;什么是 cofibrantly generated model category.&lt;/li&gt;
+  &lt;li&gt;什么是 generating cofibrations 的集合 $I$.&lt;/li&gt;
+  &lt;li&gt;什么是 generating trivial cofibrations 的集合 $J$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个模型范畴. 我们说 $\mathcal{M}$ 是 cofibrantly generated, 如果存在两个集合 $I$ 和 $J$ 的态射, 使得&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$I$ 中态射的 domain 都 small relative to $I$-cell.&lt;/li&gt;
+    &lt;li&gt;$J$ 中态射的 domain 都 small relative to $J$-cell.&lt;/li&gt;
+    &lt;li&gt;$𝖥𝗂𝖻 = J\text{-inj}$.&lt;/li&gt;
+    &lt;li&gt;$𝖳𝖥𝗂𝖻 = I\text{-inj}$. 这里的 $I$ 和 $J$ 分别是 generating cofibrations 和 generating trivial cofibrations 的集合.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;知道一个模型范畴是 cofibrantly generated 有很多好处:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;更容易 check 一个函子是不是 Quillen functor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;22-模范畴的稳定范畴&quot;&gt;2.2 模范畴的稳定范畴&lt;/h2&gt;
+
+&lt;p&gt;最简单的非平凡模型结构: Frobenius 环上的模范畴, 上面有稳定模型结构.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;一个环 $R$ 是 (left) Frobenius ring, 如果所有的 projective left $R$-modules 都是 injective left $R$-modules, 反之亦然.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(Examples of Frobenius rings) &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;有限群的群代数 $k[G]$.&lt;/li&gt;
+    &lt;li&gt;finite graded connected Hopf algebra over a field.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;$f,g$ 稳定等价 (stably equivalent) , 如果 $f-g$ 通过一个 projective module 分解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 我们一般只对 Frobenius ring 的模范畴里面的稳定等价感兴趣.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;稳定等价是等价关系且与复合相容.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;$R$-modules 的 stable category 是一个 category, 它的对象是所有的 left $R$-modules, 态射是 stable equivalence classes of morphisms.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;目标: 给 $R$ 上的环范畴一个 (cofibrantly generated) 模型结构, 使得它的 homotopy category 就是 stable category.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;稳定等价对于 retract 封闭.&lt;/li&gt;
+    &lt;li&gt;稳定等价满足 2-out-of-3.&lt;/li&gt;
+    &lt;li&gt;对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是稳定等价.&lt;/li&gt;
+    &lt;li&gt;对于投射模 $P$, 自然投影 $M⊕P→P$ 是稳定等价.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;为了给定 $R$-mod 上一个 cofibrantly generated 模型结构, 我们需要一个 generating cofibrations 的集合 $I$ 和一个 generating trivial cofibrations 的集合 $J$.&lt;/p&gt;
+
+&lt;p&gt;为此, 我们定义:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$I$ 是集合 $\mathfrak{a}→R$, 其中 $\mathfrak{a}$ 取遍所有的 left ideals of $R$.&lt;/li&gt;
+  &lt;li&gt;$J$ 是集合 $0→R$.&lt;/li&gt;
+  &lt;li&gt;𝖥𝗂𝖻 =&lt;/li&gt;
+  &lt;li&gt;𝖢𝗈𝖿𝗂𝖻&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+          <pubDate>2025-10-01T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Model_Examples</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model_Examples</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>拓扑空间范畴是否自对偶</title>
+          <description>&lt;p&gt;模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.&lt;/p&gt;
+
+&lt;p&gt;path object 来自于拓扑空间里面的 $Y^[0,1]$ (即 所有 $[0,1]$ 到 $Y$ 的连续映射组成的空间, 拓扑是 compact-open 拓扑).&lt;/p&gt;
+
+&lt;p&gt;一个自然的问题是它们是不是互为对偶的.&lt;/p&gt;
+
+&lt;p&gt;要回答这个问题之前首先要问: 拓扑空间范畴是不是自对偶的?&lt;/p&gt;
+
+&lt;p&gt;我最开始想到的是, 在拓扑空间范畴里面可以自然地取任意 coproduct (我猜想这是因为在定义 open set, 也就是 topogical structure 的时候, 任意并实际上就和 coproduct 有关, 因为集合范畴的 coproduct 就是 union).&lt;/p&gt;
+
+&lt;p&gt;在学基础拓扑学的时候, 有积拓扑和箱拓扑的区别. 但是只有前者是范畴意义下的积 (同时它是使得自然投影都是连续的最粗的拓扑).&lt;/p&gt;
+
+&lt;p&gt;如何看待 cyliner object 和 path object 互为对偶?&lt;/p&gt;
+
+&lt;p&gt;高阳学长给出的回答是前者是 tensor 后者是 hom.&lt;/p&gt;
+</description>
+          <pubDate>2025-09-28T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/topol_dual</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/topol_dual</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>模型范畴入门列表</title>
+          <description>&lt;h2 id=&quot;基本功&quot;&gt;基本功&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;闭模型结构定义、基本性质（左右同伦、Quillen 定理）&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hovey 模型结构（Abel 范畴中的模型结构）、Hovey Triple 和 Hovey 模型结构一一对应、Cotorsion Pair 的构造&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Weakly Projective Model Category、和遗传完备 cotorsion pair 一一对应&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;将模范畴的导出范畴实现为 Abel 模型结构&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;将模范畴的同伦范畴实现为模型结构&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Hovey 模型结构的同伦范畴是三角范畴&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;参考资料&quot;&gt;参考资料&lt;/h2&gt;
+
+&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+
+&lt;p&gt;Q： 加法范畴上构造新的模型结构&lt;/p&gt;
+
+&lt;p&gt;Q：模型结构的应用&lt;/p&gt;
+
+&lt;h2 id=&quot;insights&quot;&gt;insights&lt;/h2&gt;
+
+&lt;p&gt;说模型结构, 其实就是在说 “同伦理论”, 这两个事情是同义词, 模型范畴是目前同伦理论最好的语言.&lt;/p&gt;
+
+&lt;p&gt;拓扑里面的同伦论, 其实是模型范畴在拓扑里面的一个应用.&lt;/p&gt;
+
+&lt;h2 id=&quot;suggestions&quot;&gt;suggestions&lt;/h2&gt;
+
+&lt;p&gt;多看多习惯, 一开始不习惯很正常.&lt;/p&gt;
+
+&lt;p&gt;目标: 看 20 遍模型的定义和基本性质证明.&lt;/p&gt;
+</description>
+          <pubDate>2025-09-27T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Model_List</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model_List</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>模型范畴定义和基本性质</title>
+          <description>&lt;h1 id=&quot;索引&quot;&gt;索引&lt;/h1&gt;
+
+&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;homotopy “category” $\mathrm{Ho}\ \mathcal{C}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;some special objects&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;cylinder object for $B$&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;path object for $X$。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;left homotopy&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;Q: 为什么这么定义?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;right homotopy&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;homotopic&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;homotopy equivalence&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Quillen functors&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;left Quillen functor&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;right Quillen functor&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Quillen adjunction&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;derived functors&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;total left derived functor&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;total right derived functor&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;基本性质&quot;&gt;基本性质&lt;/h2&gt;
+
+&lt;h1 id=&quot;1-模型范畴&quot;&gt;1 模型范畴&lt;/h1&gt;
+
+&lt;h2 id=&quot;11-模型范畴的定义&quot;&gt;1.1 模型范畴的定义&lt;/h2&gt;
+
+&lt;p&gt;给定范畴 $\mathcal{C}$, 我们用 $\mathrm{Mor}\mathcal{C}$ 表示态射范畴.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(retract of a morphism)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(functorial factorization(函子性分解)) 一对 $\mathrm{Mor}\mathcal{C}→\mathrm{Mor}\mathcal{C}$ 的函子 $(α,β)$, &lt;br /&gt; 使得 $f=β(f)∘α(f)$ for all $f∈\mathrm{Mor}\mathcal{C}$. &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(lifting property)&lt;/p&gt;
+  &lt;p&gt;$i$ 有 left lifting property with respect to $p$ (或 $p$ 有 right lifting property with respect to $i$) 如果对于任意交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_bbaf95c03292c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;存在 $h$ 使得图表交换.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(model structure (模型结构), [Hovey]) &lt;br /&gt; 一个范畴 $C$ 上的 model structure (模型结构) 是 &lt;br /&gt; 3 个子范畴 (weak equivalences, cofibrations, fibrations) + 2个 functorial factorizations $(α,β)$ 和 $(γ,δ)$ &lt;br /&gt; 满足以下公理: &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(CM1) (2-out-of-3) f, g, gf 中有两个是 weak equivalences 中则第三个也是. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(CM2) (retracts) 3 个子范畴都对 retract 封闭. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(CM3) (lifting) TC 对于 F 有 LLP; C 对于 TF 有 LLP. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(CM4) (factorization) 对于每个态射 $f$, $α(f)$ 是 C, $β(f)$ 是 TF; $γ(f)$ 是 TC, $δ(f)$ 是 F. &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(model category (模型范畴), [Hovey]) &lt;br /&gt; 模型范畴 = 模型结构 + 有 small limits and colimits.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里来谈论一下 cofibrant replacement 和 fibrant replacement.&lt;/p&gt;
+
+&lt;p&gt;记 initial object 为 $0$, terminal object 为 $*$.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(pointed model category (有基点的模型范畴)) initial object 和 terminal object 同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(cofibrant, fibrant) &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;一个对象 $X$ 被称为 cofibrant object, 如果 $0→X$ 是一个 cofibration. 余纤维对象类记为 $\mathcal{M}_c$ &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;一个对象 $Y$ 被称为 fibrant object, 如果 $Y→*$ 是一个 fibration. 纤维对象类记为 $\mathcal{M}_f$ &lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以下设 $\mathcal{M}$ 是一个模型范畴.&lt;/p&gt;
+
+&lt;p&gt;可以考虑模型范畴 $\mathcal{M}_*$, 对象是 $(X,v):*\overset{v}{\to}X$, 态射自然定义. 可以证明 $\mathcal{M}_*$ 有 small colimits and limits. (待具体自己验证)&lt;/p&gt;
+
+&lt;p&gt;我们可以考虑两个 functor: 第一个是由
+$$\begin{equation}
+\mathcal{M}→\mathcal{M}_*,\quad X↦ X_+=X∐ *,
+\end{equation}$$
+定义的 faithful (但不 full) 函子 (它给出了 $\mathcal{M}$ 到一个 pointed category $\mathcal{M}_*$ 的 faithful 嵌入). 另外我们自然地有一个 forgetful functor $U:\mathcal{M}_*→\mathcal{M}$. 并且前者是后者的 left adjoint (事实上, 以后可以知道它们构成一个 Quillen adjunction). 具体而言
+$$\begin{equation}
+\mathrm{Hom}_{\mathcal{M}_*}(X_+, [*→Y]) \cong \mathrm{Hom}_{\mathcal{M}}(X,Y).
+\end{equation}$$
+如果 $\mathcal{M}$ 本身就是 pointed, 那么这两个函子给出范畴等价 $\mathcal{M} \simeq \mathcal{M}_*$.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个模型范畴. 定义 $\mathcal{M}_*$ 中的态射 $f$ 是 weak equivalence (cofibration, fibration) 当且仅当 $Uf$ 是 $\mathcal{M}$ 中的 weak equivalence (cofibration, fibration). 则 $\mathcal{M}_*$ 是一个 (pointed) model category.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(待看)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面我们定义 cofibrant replacement 和 fibrant replacement.&lt;/p&gt;
+
+&lt;p&gt;对 $0→X$ 进行分解: $0→QX\overset{q_X}{\to}X$, 从而我们得到一个函子 $X↦QX$ 使得 $QX$ 是 cofibrant object, $q_X$ 是一个 trivial fibration. 这个 $QX$ 被称为 $X$ 的 cofibrant replacement.&lt;/p&gt;
+
+&lt;p&gt;类似地, 对 $X→*$ 进行分解: $X\overset{r_X}{\to}RX→*$, 从而我们得到一个函子 $X↦RX$ 使得 $RX$ 是 fibrant object, $r_X$ 是一个 trivial cofibration. 这个 $RX$ 被称为 $X$ 的 fibrant replacement.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; $Q$ 和 $R$ 能成为函子是靠分解的函子性. 另外这两个函子保持弱等价. $q: Q→\mathrm{Id}_\mathcal{M}$ 和 $r: \mathrm{Id}_\mathcal{M}→Q$ 可以看作自然变换.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(the Retract Argument) &lt;br /&gt; 设 $f$ 是模型范畴 $\mathcal{M}$ 中的态射, $f=g∘h$. &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;如果 $f$ 有 LLP with respect to $g$, 则 $f$ 是 $h$ 的 retract. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;如果 $f$ 有 RLP with respect to $h$, 则 $f$ 是 $g$ 的 retract. &lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;借助 the Retract Argument, 我们可以证明余纤维、纤维、弱等价其中两者可以确定第三者 (从而模型结构的定义实际上 overdetermined).&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个 model category. &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;{(trivial cofibration) cofibration}={ $f$ with LLP w.r.t. all trivial fibrations (fibrations)}. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;{(trivial fibration) fibration}={ $f$ with RLP w.r.t. all trivial cofibrations (cofibrations)}. &lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;显然只要证明如果一个态射 $f$ 对于所有 trivial fibrations 都有 LLP, 则 $f$ 是一个 cofibration. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;设 $f=p∘i$ 是分解, 其中 $p$ 是 trivial fibration, 根据上一条引理, 我们有 $f$ 是 $i$ 的 retract, 从而 $f$ 是一个 cofibration. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;其余情形类似可以证明.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个引理的一个自然推论就是所有 isomorphisms 都是 cofibrations, fibrations 和 weak equivalences.&lt;/p&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个 model category. &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;所有的 (trivial) cofibrations 对于 pushouts 封闭. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;所有的 (trivial) fibrations 对于 pullbacks 封闭.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;这是因为如果 $f$ 对于一个态射 $p$ 有 LLP, 则 $f$ 的 pushout 对于 $p$ 也有 LLP. (左边虚线是 LLP 给出, 右边是 pushout 的泛性质给出, 证明交换性要用到连接态射的唯一性)&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_c37f56b3c6f69.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面的 Ken Brown‘s Lemma 提供了一种检验 (特定对象之间的) 态射是否是弱等价的方法.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;(Ken Brown’s Lemma) &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个 model category. 设 $\mathcal{D}$ 是一个范畴, 它有一个由 “weak equivalences” 组成的子范畴, 即满足二推三性质. 设 $F:\mathcal{M}→\mathcal{D}$ 是一个函子. &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;若 $F$ 将 cofibrant objects 之间的 trivial cofibrations 都映为 weak equivalences, 则 $F$ 将所有 cofibrant objects 之间的 weak equivalences 都映为 weak equivalences. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;若 $F$ 将 fibrant objects 之间的 trivial fibrations 都映为 weak equivalences, 则 $F$ 将所有 fibrant objects 之间的 weak equivalences 都映为 weak equivalences.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $f:A→B$ 是 cofibrant objects 之间的 weak equivalence. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;$A$ 和 $B$ 是 cofibrant objects 意味着 $0→A$ 和 $0→B$ 是 cofibrations. 考虑推出&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_8a75ca49b2ebd.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;则 incluction maps $A\overset{i_a}{\to}A∐B$ 和 $B\overset{i_B}{\to}A∐B$ 都是 cofibrations. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;考虑 $(f, \mathrm{Id}_B): A∐B→B$, 考虑它的分解 $(f, \mathrm{Id}_B)=p∘q$, 其中 $q$ 是 cofibration, $p$ 是 trivial fibration. &lt;br /&gt;&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_007512ac0954a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中 $p∘q∘i_a=f$ 是 weak equivalence, $p$ 是 trivial fibration, 则 $q∘i_a$ 是 weak equivalence. &lt;br /&gt; 其中 $p∘q∘i_b=\mathrm{Id}_B$ 是 weak equivalence, $p$ 是 trivial fibration, 则 $q∘i_b$ 是 weak equivalence. &lt;br /&gt; 显然 $q∘i_a$ 和 $q∘i_b$ 都是 cofibrations, 则它们都是 trivial cofibrations. &lt;br /&gt; 此外, 易见 $C$ 是 cofibrant object. 于是根据假设可以得到, $F(q∘i_a)$ 和 $F(q∘i_b)$ 都是 weak equivalences. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;由于 $F(p∘q∘i_b)=F(\mathrm{Id}_B)$ 是 weak equivalence, $F(q∘i_b)$ 是 weak equivalence, 则 $F(p)$ 是一个 weak equivalence. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;从而 $F(f)=F(p∘q∘i_a)=F(p)∘F(q∘i_a)$ 是 weak equivalence. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;12-同伦范畴-the-homotopy-category&quot;&gt;1.2 同伦范畴 The Homotopy Category&lt;/h2&gt;
+
+&lt;p&gt;Hovey 的这一节是完全遵从 [Qui67] 的标准方法, 没有引入什么新的改进. 只有从 [DS95] 和 [DHK] 中借鉴了一些小的改进.&lt;/p&gt;
+
+&lt;p&gt;Q: 目前有没有什么新的东西?&lt;/p&gt;
+
+&lt;p&gt;最基本的结果: 局部化 $\mathrm{Ho}\ \mathcal{M}$ (by inverting the weak equivalences) 和 商范畴 $\mathcal{M}_{cf}/\sim$ (cofibrant 和 fibrant 对象商掉同伦关系) 是等价的.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(homotopy “category” $\mathrm{Ho}\ \mathcal{M}$) &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里加引号似乎是因为还没有证明这个是一个范畴, 后面要证明它不用传递到更高的宇宙. (???)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 如果上面这个定义里面谈及的 weak equivalences 是一个模型结构里面的, 那么我们可以很好地看出加了东西再取的商范畴(这里的同伦范畴)里面态射的结构: $X$ 和 $Y$ 之间的态射就是它们的 cofibrant replacement 之间的态射的同伦类.&lt;/p&gt;
+
+&lt;p&gt;函子 $γ: \mathcal{M}→\mathrm{Ho}\ \mathcal{M}$ 保持对象不变, 并将 $\mathcal{W}$ 里面的态射变为同构. 这个范畴 $\mathrm{Ho}\ \mathcal{M}$ 有以下的泛性质描述:&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个范畴, $\mathcal{W}$ 是一个子范畴.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;若函子 $F:\mathcal{M}→\mathcal{D}$ 将 $\mathcal{W}$ 里面的态射变为同构, 则存在唯一的函子 $\mathrm{Ho}\ F:\mathrm{Ho}\ \mathcal{M}→\mathcal{D}$ 使得 $(\mathrm{Ho}\ F)∘γ=F$. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;设函子 $δ:\mathcal{M}→\mathcal{E}$ 将 $\mathcal{W}$ 里面的态射变为同构, 并且满足 (1) 中同样的泛性质. 则有唯一的范畴同构 $\mathrm{Ho}\ \mathcal{M}\overset{F}{\to}\mathcal{E}$ 使得 $F∘γ=δ$.&lt;/li&gt;
+    &lt;li&gt;(1) 中的对应给出了下面两个对象是函子、态射是自然变换的范畴同构: $$
+\{\mathrm{Ho}\ F:\mathrm{Ho}\ \mathcal{M}→\mathcal{D}\}≅\{F:\mathcal{M}→\mathcal{D}\ |\ F(\mathcal{W})\subseteq \mathrm{Iso}(\mathcal{D})\}
+$$&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Notations.&lt;/strong&gt; 给定一个模型范畴 $M$. 记&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$\mathcal{M}_c$ 为所有 cofibrant objects 组成的满子范畴.&lt;/li&gt;
+  &lt;li&gt;$\mathcal{M}_f$ 为所有 fibrant objects 组成的满子范畴.&lt;/li&gt;
+  &lt;li&gt;$\mathcal{M}_{cf}$ 为所有既是 cofibrant objects 又是 fibrant objects 的对象组成的满子范畴.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;嵌入函子诱导范畴等价: $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}_{cf} \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}_c  \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M},
+\end{equation}$$ $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}_{cf} \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}_f  \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}.
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这个证明要用到 cofibrant replacement 和 fibrant replacement functors.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;保持弱等价的函子诱导出同伦范畴之间的函子.&lt;/p&gt;
+    &lt;p&gt;$Q$ 保持弱等价.&lt;/p&gt;
+    &lt;p&gt;$q$ 作为自然变换给出 $Q∘i→\mathrm{Id}_{\mathcal{M}_c}$ 和 $i∘Q→\mathrm{Id}_\mathcal{M}$ 之间的自然弱等价.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个模型范畴, $f,g:B→X$ 是两个态射. &lt;br /&gt;&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(cylinder object for $B$) &lt;br /&gt; cylinder object for $B$ 是一个分解, 将 fold map $∇:B∐B→B$ 分解为一个 cofibration $B∐B\overset{(i_0,i_1)}{\longrightarrow}B'$ 和一个 weak equivalence $B'\overset{s}{→}B$. &lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Q: 拓扑里面的同伦的定义是柱同伦(即左同伦). 这里的公理化定义可以完全刻画拓扑里面的同伦吗? 另外道路同伦(即右同伦)在拓扑里面的对应是什么?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 在 cylinder object 的定义里面用到的分解未必是模型范畴定义里面的函子性分解, 第二个态射未必是 fibration. 对于用定义中函子性分解得到的 cylinder object, 称其为 functorial cylinder object, 并有专门的记号. 对于 path object 也是类似的.&lt;/p&gt;
+
+&lt;p&gt;利用 model structure 中定义中的 functorial factorization, 我们可以总是得到 functorial cylinder object $B×I$, 满足 $B×I\overset{s}{→}B$ 是 trivial fibration.&lt;/p&gt;
+
+&lt;p&gt;接下来的故事是这样的: 之前提到的得到同伦范畴的方法无法看出结构, 也无法保证直接加入弱等价的逆之后得到的态射类是集合. 目前我们已经知道了对于模型范畴而言 $\mathrm{Ho}\ \mathcal{M} \simeq \mathrm{Ho}\ \mathcal{M}_{cf}$, 我们尝试从后者入手. 接下来我们会发现, 对于既是 cofibrant 又是 fibrant 的对象之间的态射, 同伦关系是它们之间的态射集上的等价关系, 于是我们可以考虑相应的商范畴 $\mathcal{M}_{cf}/\sim$. 并且之后可以证明 $$\mathrm{Ho}\ \mathcal{M}_{cf} \simeq \mathcal{M}_{cf}/\sim.$$&lt;/p&gt;
+
+&lt;p&gt;于是我们现在要解决两个问题:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;证明同伦关系是等价关系&lt;/li&gt;
+  &lt;li&gt;证明 $\mathrm{Ho}\ \mathcal{M}_{cf} \simeq \mathcal{M}_{cf}/\sim.$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以下我们有一些标准的结论 (来自 [Qui67]):&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个模型范畴, $f,g: B→X$ 是 $\mathcal{M}$ 中两个态射.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;若 $X$ 是 fibrant, 则 $f\overset{l}{\sim}g⇒fh\overset{l}{\sim}gh$; 若 $B$ 是 cofibrant, 则 $f\overset{r}{\sim}g⇒hf\overset{r}{\sim}hg$.&lt;/li&gt;
+    &lt;li&gt;若 $B$ 是 cofibrant, 则 left homotopy 是 $\mathcal{M}(B,X)$ 上的等价关系; 若 $X$ 是 fibrant, 则 right homotopy 是 $\mathcal{M}(B,X)$ 上的等价关系.&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;若 $B$ 是 cofibrant, $h:X→Y$ 是一个 trivial fibration 或者 fibrant objects 之间的 weak equivalence, 则 $h$ 诱导同构 $$\begin{equation}
+\mathcal{M}(B,X)/\overset{l}{\sim} \overset{\cong}{\to} \mathcal{M}(B,Y)/\overset{l}{\sim}.
+\end{equation}$$ 对偶地, 若 $X$ 是 fibrant, $h:A→ B$ 是一个 trivial cofibration 或者 cofibrant objects 之间的 weak equivalence, 则 $h$ 诱导同构 $$\begin{equation}
+\mathcal{M}(B,X)/\overset{r}{\sim} \overset{\cong}{\to} \mathcal{M}(A,X)/\overset{r}{\sim}.
+\end{equation}$$&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;如果 $B$ 是 cofibrant, 则 $f\overset{l}{\sim}g ⇒ f\overset{r}{\sim}g$. 并且, 对于 $X$ 的任意 path object $X'$, 都有从 $f$ 到 $g$ 的 right homotopy $K:B→X'$. &lt;br /&gt; 对偶地, 如果 $X$ 是 fibrant, 则 $f\overset{r}{\sim}g ⇒ f\overset{l}{\sim}g$. 并且, 对于 $B$ 的任意 cylinder object $B'$, 都有从 $f$ 到 $g$ 的 left homotopy $H:B'→X$.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;ol&gt;
+      &lt;li&gt;$X$ 是 fibrant 的话, $s$ 可以用一个 trivial fibration 来取代, 于是可以用 lifting property 来得到所需的 $H'$. 另一个情形类似.&lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_ced4ee7360810.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_793e6793d7987.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;ol&gt;
+      &lt;li&gt;自反性和对称性显然. 关于传递性的证明似乎关键是给定两个 cylinder object 之后如何通过 pushout 得到一个新的 cylinder object. 这里的证明似乎有点绕, 需要仔细看. (待补充)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个命题直接给出两个引理:&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是一个模型范畴, $B$ 是 cofibrant object, $X$ 是 fibrant object. 则 left homotopy 和 right homotopy 在 $\mathcal{M}(B,X)$ 上是同一个等价关系. &lt;br /&gt; 并且, 对于上面等价的态射, 都可以通过任意的 cylinder object 获取 left homotopy, 也可以通过任意的 path object 获取 right homotopy.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;$\mathcal{M}_{cf}$ 上态射的同伦关系是等价关系并且与复合兼容. 从而存在范畴 $\mathcal{M}_{cf}/\sim$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;13-quillen-functors-and-derived-functors&quot;&gt;1.3 Quillen Functors and Derived Functors&lt;/h2&gt;
+
+&lt;p&gt;学习目标:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;什么是 Quillen adjunctions or Quillen functors?&lt;/li&gt;
+  &lt;li&gt;Quillen functors 如何诱导出同伦范畴之间的函子(似乎叫 derived functor)?&lt;/li&gt;
+  &lt;li&gt;上述诱导过程的自然性如何?&lt;/li&gt;
+  &lt;li&gt;什么是 Quillen equivalence?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;131-quillen-functors&quot;&gt;1.3.1 Quillen Functors&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}, \mathcal{N}$ 是模型范畴.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;(left Quillen functor) &lt;br /&gt; 函子 $F:\mathcal{M}→\mathcal{N}$ 是 left Quillen functor, 如果 $F$ 是 left adjoint 并且 $F$ 保持 cofibrations 和 trivial cofibrations. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;(right Quillen functor) &lt;br /&gt; 函子 $U:\mathcal{N}→\mathcal{M}$ 是 right Quillen functor, 如果 $U$ 是 right adjoint 并且 $U$ 保持 fibrations 和 trivial fibrations. &lt;br /&gt;&lt;/li&gt;
+    &lt;li&gt;(Quillen adjunction) &lt;br /&gt; 设 $(F,U,φ)$ 是 $\mathcal{M}$ 和 $\mathcal{N}$ 之间的一个 adjunction. 如果 $F$ 是 left Quillen functor (等价地, $U$ 是 right Quillen functor, 需证明), 则称 $(F,U,φ)$ 是一个 Quillen adjunction. &lt;br /&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 根据 Ken Brown‘s lemma, left Quillen functor 保持所有 cofibrant objects 之间的 weak equivalences; right Quillen functor 保持所有 fibrant objects 之间的 weak equivalences. 这个结果对于后面定义 derived functors 很重要.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这个部分的很多内容实际上只需要用到 left adjoints 加上保持 cofibrant objects 及其之间的 weak equivalences 的性质再加上对偶的, 但是这样对条件的弱化并不能得到很好的东西, 还会丧失简洁性 (这都是 Hovey 说的).&lt;/p&gt;
+
+&lt;p&gt;最著名的例子是拓扑空间范畴 $\mathbf{Top}$ 和 simplicial sets 范畴 $\mathbf{sSet}$ 之间的 Quillen adjunction. 这里 $\mathbf{Top}$ 里面的模型结构是 Serre model structure, $\mathbf{sSet}$ 里面的模型结构是 Kan model structure.&lt;/p&gt;
+
+&lt;p&gt;简单的例子是 $\mathcal{M}_*$ 和 $\mathcal{M}$ 之间的; 以及 $\mathcal{M}^I$ 和 $\mathcal{M}$ 之间的.&lt;/p&gt;
+
+&lt;p&gt;下面的引理说明了为什么在 Quillen adjunction 的定义中 left Quillen functor 和 right Quillen functor 是等价的.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M},\mathcal{N}$ 是 model categories, $(F,U,φ)$ 是 $\mathcal{M}$ 和 $\mathcal{N}$ 之间的一个 adjunction. 则 $F$ 是 left Quillen functor 当且仅当 $U$ 是 right Quillen functor.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;这里需要使用伴随对去证明 $Ff$ has the left lifting property with respect to $p$ if and only if $f$ has the left lifting property with respect to $Up$. 但是我对这里的细节不是很清楚. 关键在于伴随对我没有非常熟悉. 具体而言,&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;132-derived-functors-and-naturality&quot;&gt;1.3.2 Derived Functors and Naturality&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M},\mathcal{N}$ 是模型范畴.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(total left derived functor) &lt;br /&gt; 设 $F:\mathcal{M}→\mathcal{N}$ 是一个 left Quillen functor. 定义 $F$ 的 total left derived functor $LF:\mathrm{Ho}\ \mathcal{M}→\mathrm{Ho}\ \mathcal{N}$ 为复合 $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}\overset{\mathrm{Ho}\ Q}{⟶}\mathrm{Ho}\ \mathcal{M}_c\overset{\mathrm{Ho}\ F}{⟶} \mathrm{Ho}\ \mathcal{N}.
+\end{equation}$$ 给定一个 left Quillen functors 之间的一个自然变换 $τ:F→F'$, 定义 $τ$ 的 total left derived natural transformation $Lτ:LF→LF'$ 为 $\mathrm{Ho}\ τ∘\mathrm{Ho}\ Q$, 故 $(Lτ)_X=τ_{QX}$.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(total right derived functor) &lt;br /&gt; 设 $U:\mathcal{N}→\mathcal{M}$ 是一个 right Quillen functor. 定义 $U$ 的 total right derived functor $RU:\mathrm{Ho}\ \mathcal{N}→\mathrm{Ho}\ \mathcal{M}$ 为复合 $$\begin{equation}
+\mathrm{Ho}\ \mathcal{N}\overset{\mathrm{Ho}\ R}{⟶}\mathrm{Ho}\ \mathcal{N}_f\overset{\mathrm{Ho}\ U}{⟶} \mathrm{Ho}\ \mathcal{M}.
+\end{equation}$$ 给定一个 right Quillen functors 之间的一个自然变换 $τ:U→U'$, 定义 $τ$ 的 total right derived natural transformation $Rτ:RU→RU'$ 为 $\mathrm{Ho}\ τ∘\mathrm{Ho}\ R$, 故 $(Rτ)_X=τ_{RX}$.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-27T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Model_Def_Prop</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model_Def_Prop</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>ARS 讨论班</title>
+          <description>&lt;h1 id=&quot;chapter-3-quiver&quot;&gt;Chapter 3 Quiver&lt;/h1&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Let $k$ be a field , $Q$ be an acyclic quiver. Then&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$\mathfrak{r}_{kQ}=J$&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Use the lemma:&lt;/p&gt;
+    &lt;div class=&quot;lemma&quot;&gt;
+      &lt;p&gt;Let $Λ$ be a left Artin ring, $\mathfrak{a}$ a nilpotent ideal of $Λ$, and $\Lambda/ \mathfrak{a}$ is a semisimple ring. Then $\mathfrak{a}= \mathrm{rad} Λ$.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;$P_i=kQe_i$’s are all the indecomposable projective $kQ$-modules.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;$kQ$ is a hereditary algebra.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Use the lemma:&lt;/p&gt;
+    &lt;div class=&quot;lemma&quot;&gt;
+      &lt;p&gt;$Λ$ be an Artin algebra. $Λ$ is hereditary ⇔ $\mathfrak{r}$ is projective as a left $Λ$-module.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;It is easy to see that $$
+\mathfrak{r}=\bigoplus_{i∈ Q_0} \mathfrak{r}e_i=\bigoplus_{i∈ Q_0} \bigoplus_{\substack{α∈ Q_1 \\ s(α)=i}} kQ\alpha.
+$$&lt;/p&gt;
+    &lt;p&gt;Since $kQα≅kQe_{t(α)}=P_{t(α)}$, $\mathfrak{r}$ is a projective $kQ$-module.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(reptesentation of a quiver) &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;$\mathbf{Rep}_k(Q)$&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;Given $k$, $Q$, and $h: (V,f)→(V',f')$. $h$ is monomorphism (epimorphism, isomorphism) ⇔ $h_i$ is monomorphism (epimorphism, isomorphism) for all $i∈Q_0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;$k$ is a field, $Q$ is a quiver. Then&lt;/p&gt;
+  &lt;p&gt;$$
+\mathbf{Rep}_k(Q) ≅ \mathrm{f.d.} (kQ) (≅  kQ\text1{-mod}, \text{if } Q \text{ is acyclic})
+$$&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-26T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/ARS</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ARS</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week2-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明代数闭域上(有限维)交换代数的单模必是 $1$ 维的.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A$ 是代数闭域 $k$ 上的有限维交换代数, $M$ 是 $A$ 上的单模. 则 $M$ 也是有限维的 (否则有真子模 $Am$, 其中 $m≠0$). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;对于任意的 $a∈A$, 考虑 $A$-模同态 (同时也是 $k$-线性映射) $$
+	f_a: M→M,\ m\mapsto am.
+$$ 特别地, $f_a∈\mathrm{End}_k(M)$. 由于 $A$ 是交换代数, $\{f_a\}_{a∈A}$ 是两两可交换的线性算子, 从而自然是可解李代数. 由于 $M$ 有限维且 $k$ 是代数闭域, 根据 Lie’s Theorem 知存在 $0≠m∈M$, 使得对于任意 $a∈A$, 有 $am=f_a(m)=λ_a m$, 其中 $λ_a∈k$. 由此可见 $km$ 是 $A$ 的子模, 由单模的定义知 $km=M$. 于是 $\dim_k M=1$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里的”有限维”条件是必须的. 否则可以考虑 $k(x)$ 上的单模 $k(x)$.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 $k$-代数 $A$ 是交换半单代数当且仅当 $A≅K_1×⋯×K_s$, 其中 $K_i$ 是 $k$ 的扩域.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 显然. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇒) (此证明假设了 $A$ 是有限维 $k$-代数) 由 Wedderburn-Artin 定理知 $A≅M_{n_1}(D_1)×⋯×M_{n_s}(D_s)$, 其中 $D_i$ 是有限维可除 $k$-代数. 由于 $A$ 是交换代数, 故 $n_i=1$, 即 $A≅D_1×⋯×D_s$. 再由交换性可知 $D_i$ 是交换代数, 从而是域, 并且是 $k$ 的扩域. (整体交换可以推到每个分量交换)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这题我只会证明有限维情形.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $H, G$ 均为有限 Abel 群, $\mathrm{char} k\nmid |H|, \mathrm{char} k\nmid |G|$, 且 $k$ 是代数闭域. 证明 $k[H]≅k[G]$ (作为 $k$-代数) 当且仅当 $|H|=|G|$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由 Maschke 定理知 $k[H], k[G]$ 均为半单代数. 由于 $H, G$ 是有限 Abel 群, 故 $k[H], k[G]$ 是交换代数. 由先前习题知 $k[H]≅k×⋯×k$ ($|H|$ 个), $k[G]≅k×⋯×k$ ($|G|$ 个). 故 $k[H]≅k[G]$ 当且仅当 $|H|=|G|$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $A=A_1×⋯×A_s$, $A_i$ 均为单代数, $M$ 是左 $A$-模, $1=e_1+⋯+e_s$ 是相应的单位元的中心分解. 证明 $M=\displaystyle\bigoplus_{i=1}^se_iM$, 且 $e_iM$ 是左 $A_i$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;对于任意 $m∈M$, 有 $m=1m=(e_1+⋯+e_s)m=e_1m+⋯+e_sm∈\sum_{i=1}^se_iM$. 从而 $M=∑_{i=1}^s e_iM$. 取 $m_i∈e_iM∩(\sum_{j≠i}e_jM)$, 则 $m_i=e_im_i=0$. 故 $M=\bigoplus_{i=1}^s e_iM$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;另外显然 $e_iM$ 是左 $A_i$-模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $D_i$ 是可除 $k$ 代数, $A=M_{n_1}(D_1)×⋯×M_{n_s}(D_s)$. 则正则 $A$-模有不可约分解 $$
+	{_AA}≅\bigoplus_{i=1}^s n_i (V_i,ρ_i),
+$$ 其中 $V_1,⋯,V_s$ 是全体互不同构的单 $A$-模, 使得 $$
+	\mathrm{ann}(V_i)=\prod_{j≠i}M_{n_j}(D_j);\quad\mathrm{End}_A(V_i)≅D_i^{\mathrm{op}};\quad \rho_i(A)≅ M_{n_i}(D_i).
+$$&lt;/p&gt;
+  &lt;!-- &lt;div class='proof'&gt;&lt;p&gt;由于 $V_i$ 是单 $A$-模, 根据 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除环, 从而也是可除 $k$-代数. 于是 $D_i≅(\mathrm{End}_A(V_i))^{^{\mathrm{op}}}$ 也是可除 $k$-代数, 从而 $A$ 是可除 $k$-代数上全矩阵环的直积. 由 Wedderburn-Artin 定理知 $A$ 是半单代数. 从而 $_AA$ 是半单模, 于是有不可约分解
+$$
+	{_AA}≅\bigoplus_{i=1}^s n_i (V_i,ρ_i).
+$$&lt;/p&gt;
+&lt;/div&gt; --&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $A_i=M_{n_i}(D_i)$. 则 $A_i$ 是单代数. 则 $A_i$ 有唯一的单模 $S_i$. 通过自然投射 $p_i:A→A_i$ 可以将 $S_i$ 提升为 $A$-模 $V_i$, 显然 $V_i$ 是不可约 $A$-模且 $\mathrm{ann}(V_i)=\prod_{j≠i}M_{n_j}(D_j)$. 由于 $A_iV_j=\delta_{ij}V_j$ 知 $V_i$ 两两不同构. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;由于 $A_i$ 是单代数, 从而是半单代数, 故 $A_i$ 作为 $A_i$-模有不可约分解 $A_i≅n_i S_i$. 作为 $A$-模, 有 $A_i≅n_i V_i$. 于是由 $A=A_1×⋯×A_s$ 可知 $$
+	{_AA}≅\bigoplus_{i=1}^s n_i V_i.
+$$ 其余显然.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M$ 是半单代数 $A$ 上的模. 则自同态代数 $\mathrm{End}_A(M)$ 也是半单代数.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M=\bigoplus_{i=1}^s n_i (V_i,ρ_i)$ 是 $M$ 的不可约分解, 其中 $V_1,⋯,V_s$ 是全体互不同构的单 $A$-模. 则 $$
+	\mathrm{End}_A(M)≅\prod_{i=1}^s M_{n_i}(\mathrm{End}_A(V_i)).
+$$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_i}(\mathrm{End}_A(V_i))$ 是可除 $k$-代数上的全矩阵环, 故 $\mathrm{End}_A(M)$ 是半单代数.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;半单代数的商代数是半单代数.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设半单代数 $A$, 考虑它的商代数 $A/I$, 其中 $I$ 是 $A$ 的双边理想. 对于任意的 $A/I$-模 $M$, 通过提升可以看作 $A$-模, 并且 $IM=0$. $M$ 作为 $A$ 模是半单模, 从而 $M$ 作为 $A/I$-模也是半单模 (这是因为任意的被 $I$ 零化的单 $A$-模自然成为单 $A/I$-模, 从而作为 $A$-模的半单分解就是作为 $A/I$-模的半单分解). 由此可见 $A/I$ 是半单代数.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M,N$ 均是单代数上的模. 则 $M≅N$ 当且仅当 $\dim_k M=\dim_k N$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;单代数在同构意义下只有唯一的单模 $V$. 于是 $M≅mV,N≅nV$. 于是 $M≅N⟺m=n⟺\dim_k M=\dim_k N$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-09-24T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex2_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex2_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>交响音乐简介</title>
+          <description>&lt;h2 id=&quot;交响音乐发展阶段&quot;&gt;交响音乐发展阶段&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;巴洛克时期 (1600-1750): 代表作曲家有巴赫 (Bach), 亨德尔 (Handel). 这一时期的交响曲形式尚未完全定型, 通常为三乐章结构, 包括快板、慢板和快板.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;古典主义时期 (1750-1820): 代表作曲家有海顿 (Haydn), 莫扎特 (Mozart), 贝多芬 (Beethoven). 这一时期的交响曲结构较为规范, 通常为四个乐章, 包括快板、慢板、谐谑曲和终曲.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;浪漫主义时期 (1820-1900): 代表作曲家有舒伯特 (Schubert), 门德尔松 (Mendelssohn), 勃拉姆斯 (Brahms), 柴可夫斯基 (Tchaikovsky). 这一时期的交响曲更加注重情感表达和个人风格, 乐章结构更加自由, 主题发展更加复杂.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;古典主义时期&quot;&gt;古典主义时期&lt;/h2&gt;
+
+&lt;p&gt;古典主义音乐艺术审美理想: 对称、平衡、和谐&lt;/p&gt;
+
+&lt;h4 id=&quot;交响乐四个乐章的典型结构-古典交响曲&quot;&gt;交响乐四个乐章的典型结构 (古典交响曲)&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一乐章: 通常采用奏鸣曲式, 以快板开始, 充满活力和动力. 例如贝多芬的《第五交响曲》第一乐章.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二乐章: 通常是慢板, 以抒情和柔和的旋律为主, 形成对比. 例如柴可夫斯基的《第六交响曲》第二乐章.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第三乐章: 通常是谐谑曲或小步舞曲, 节奏轻快, 充满趣味性. 例如莫扎特的《第四十交响曲》第三乐章.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第四乐章: 通常是终曲, 以快板结束, 充满激情和力量. 例如贝多芬的《第九交响曲》第四乐章.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;各类曲式&quot;&gt;各类曲式&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;三部曲式(): ABA, A 部分与 B 部分形成对比, A 部分再现.&lt;/li&gt;
+  &lt;li&gt;回旋曲式(): ABACA, A 部分反复出现, B, C 部分形成对比.&lt;/li&gt;
+  &lt;li&gt;变奏曲式(): A, A’, A’’, A’’’, … , 每次重复 A 部分时, 都会有一些变化.&lt;/li&gt;
+  &lt;li&gt;古典奏鸣曲式(sonata): A B A’, A 部分是主题, B 部分是发展, A’ 部分是再现, 可能会有 coda (尾声).
+    &lt;ul&gt;
+      &lt;li&gt;呈式部: 分为头部主题 + 链接段落(调性转换) + 副部主题 (和头部调性不一样) + 小尾奏&lt;/li&gt;
+      &lt;li&gt;发展部: 主题发展 (乐思展开)&lt;/li&gt;
+      &lt;li&gt;再现部: 头部主题 + 链接段落 + 副部主题 (调性变成和头部一样)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+          <pubDate>2025-09-23T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Symphony1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Symphony1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>模型范畴综述阅读笔记</title>
+          <description>&lt;p&gt;本笔记主要基于综述 [Hov07] Mark Hovey. Model Categories. American Mathematical Soc., 2007. &lt;a href=&quot;https://www.nzdr.ru/data/media/biblio/kolxoz/M/MA/MAct/Hovey%20M.%20Model%20categories%20(LN,%20Wesleyan%20U.,%201998)(213s)_MAct_.pdf&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;preface&quot;&gt;Preface&lt;/h1&gt;
+
+&lt;h4 id=&quot;三个推荐阅读材料&quot;&gt;三个推荐阅读材料&lt;/h4&gt;
+
+&lt;p&gt;[DHK] W. G. Dwyer, P. S. Hirschhorn, and D. M. Kan, Model categories and general abstract homotopy theory, in preparation.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;concentrates more on homotopy colimits and less on the relationship between a model category and its homotopy category.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[Hir97] P. S. Hirschhorn, Localization, cellularization, and homotopy colimits, preprint, 1997.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;concerned with localization of model categories, but also contains a significant amount of general theory.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;[GJ97] P. F. Goerss and J. F. Jardine, Simplicial homotopy theory, preprint, 1997.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;concentrates on simplicial examples.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;预备知识&quot;&gt;预备知识&lt;/h4&gt;
+
+&lt;p&gt;第七章需要 “the theory of homotopy limits of diagrams of simplicial sets” 的知识, 可以参考 [BK72] A. K. Bousfield and D. M. Kan, Homotopy limits, completions, and localizations, Lecture Notes in Mathematics, vol. 304, Springer-Verlag, Berlin-New York, 1972, v+348 pp.&lt;/p&gt;
+
+&lt;h4 id=&quot;问题&quot;&gt;问题&lt;/h4&gt;
+
+&lt;p&gt;When is the homotopy category of a model category a stable homotopy category in the sense of [HPS97]?&lt;/p&gt;
+
+&lt;p&gt;证明一个特定的范畴由模型结构很难, 但是 [Qui67] 给出了一个标准的方法, [DHK] 形式化了这个方法.&lt;/p&gt;
+
+&lt;p&gt;(可能的)最简单的非平凡模型范畴的例子: Frobenious 环上的模范畴.&lt;/p&gt;
+
+&lt;h4 id=&quot;论文结构&quot;&gt;论文结构&lt;/h4&gt;
+
+&lt;p&gt;(第五章和第六章是技术核心)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一章: 基本概念&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二章: 例子 (chain complexes over a ring, topological spaces, and chain complexes of comodules over a commutative Hopf algebra)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第三章: 例子 (the central example of simplicial sets.)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第四章: closed monoidal model categories&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;为什么有 internal tensor product 就能成为 monoidal category?&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;这个 tensor product 与 模型结构之间的 compatible 要求是什么?&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;什么叫可以考虑 monoidal model cateogry 上面的 modules 和 algebras?&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第五章:&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第六章:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;chapter-1-model-categories&quot;&gt;Chapter 1 Model Categories&lt;/h1&gt;
+
+&lt;h4 id=&quot;为什么要定义模型范畴&quot;&gt;为什么要定义模型范畴&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;为了让一个范畴里面的一些态射变成同构&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;(感觉这是一个技术性的理论)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;例如同伦等价、双有理等价&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;直接形式地把这些态射变成同构会导致一些问题&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;在局部化范畴里面两个对象之间的态射类未必是一个集合&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;Q: 这样为什么就不行?&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;这样很难理解局部化范畴里面的态射&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;model-categories-的发展历史&quot;&gt;Model Categories 的发展历史&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;[Qui67] 引入&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[Qui69] 改进定义&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[DHK] 再次改进&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;本文又改进: We modify their definition slightly to require that the functorial factorizations be part of the structure.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;11-the-definition-of-a-model-category&quot;&gt;1.1 The Definition of a Model Category&lt;/h2&gt;
+
+&lt;p&gt;给定范畴 $\mathcal{C}$, 我们用 $\mathrm{Mor}\mathcal{C}$ 表示态射范畴.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(retract of a morphism)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(functorial factorization(函子性分解)) 一对 $\mathrm{Mor}\mathcal{C}→\mathrm{Mor}\mathcal{C}$ 的函子 $(α,β)$, &lt;br /&gt; 使得 $f=β(f)∘α(f)$ for all $f∈\mathrm{Mor}\mathcal{C}$. &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(lifting property)&lt;/p&gt;
+  &lt;p&gt;$i$ 有 left lifting property with respect to $p$ (或 $p$ 有 right lifting property with respect to $i$) 如果对于任意交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Model_Hovey/diagram_bbaf95c03292c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;存在 $h$ 使得图表交换.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(model structure (模型结构), [Hovey]) &lt;br /&gt; 一个范畴 $C$ 上的 model structure (模型结构) 是 &lt;br /&gt; 3 个子范畴 (weak equivalences, cofibrations, fibrations) + 2个 functorial factorizations $(α,β)$ 和 $(γ,δ)$ &lt;br /&gt; 满足以下公理:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(2-out-of-3) f, g, gf 中有两个是 weak equivalences 中则第三个也是.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(retracts) 3 个子范畴都对 retract 封闭.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(lifting) TC 对于 F 有 LLP, C 对于 TF 有 RLP.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(factorization) 对于每个态射 $f$, $α(f)$ 是 C, $β(f)$ 是 TF; $γ(f)$ 是 TC, $δ(f)$ 是 F.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(model category (模型范畴), [Hovey]) &lt;br /&gt; 模型范畴 = 模型结构 + 有 small limits and colimits.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这个定义跟 Quillen 的定义有区别:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Quillen 区分了 model category 和 closed model category, Hovey 直接把 closed model category 叫做 model category. (目前没有发现这两个有什么本质区别)&lt;/li&gt;
+  &lt;li&gt;Quillen 只要求了有限 (co)limits, 但是 Hovey 要求了 small (co)limits (技术上更为方便).&lt;/li&gt;
+  &lt;li&gt;Quillen 的分解不是函子性的, Hovey 要求了函子性分解. (在目前的所有例子上都是函子性的)
+上面 3 点是 Hovey 自己说的, 我感觉还有一些区别 (和章璞老师讲义上的定义)&lt;/li&gt;
+  &lt;li&gt;现在文献里面都把 closed model category 叫做 model category 了, 很少有人提 [Qui67] 里面的 model category 了.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 模型范畴是 self-dual 的, 交换 cofibrations 和 fibrations 即可.&lt;/p&gt;
+
+&lt;div class=&quot;example&quot;&gt;
+  &lt;p&gt;(模型范畴的平凡例子) &lt;br /&gt; 考虑有 small limits and colimits 的范畴 $\mathcal{C}$, 定义所有同构都是 weak equivalences, 所有态射都是 cofibrations 和 fibrations.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;记 initial object 为 $0$, terminal object 为 $*$.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(pointed model category (有基点的模型范畴)) initial object 和 terminal object 同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;(cofibrant, fibrant) &lt;br /&gt; 一个对象 $X$ 被称为 cofibrant object, 如果 $0→X$ 是一个 cofibration. 余纤维对象类记为 $\mathcal{M}_c$ &lt;br /&gt; 一个对象 $Y$ 被称为 fibrant object, 如果 $Y→*$ 是一个 fibration. 纤维对象类记为 $\mathcal{M}_f$ &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里暂时没有像章璞老师的讲义一样定义 trivial object, 感觉是因为在这个定义下 $0→*$ 不知道是不是 weak equivalent.&lt;/p&gt;
+
+&lt;h2 id=&quot;12-the-homotopy-category&quot;&gt;1.2 The homotopy Category&lt;/h2&gt;
+
+&lt;p&gt;Hovey 的这一节是完全遵从 [Qui67] 的标准方法, 没有引入什么新的改进. 只有从 [DS95] 和 [DHK] 中借鉴了一些小的改进.&lt;/p&gt;
+
+&lt;p&gt;Q: 目前有没有什么新的东西?&lt;/p&gt;
+
+&lt;p&gt;最基本的结果: 局部化 $\mathrm{Ho}\ \mathcal{M}$ (by inverting the weak equivalences) 和 商范畴 $\mathcal{M}_{cf}/\sim$ (cofibrant 和 fibrant 对象商掉同伦关系) 是等价的.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Alert.&lt;/strong&gt; $\mathrm{Ho}\ \mathcal{M}$ 和 $\mathcal{M}_{cf}/\sim$ 不是同一个范畴, 只是等价.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{M}$ 是模型范畴, $f, g: B→X$ 是两个态射.&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;cylinder object&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;path object&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;left homotopy&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;right homotopy&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;homotopic&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;homotopic equivalence&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-23T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Model_Hovey</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model_Hovey</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>各类范畴的历史</title>
           <description>&lt;h2 id=&quot;三角范畴正合范畴外三角范畴&quot;&gt;三角范畴、正合范畴、外三角范畴&lt;/h2&gt;
 
@@ -464,7 +1533,7 @@ $$&lt;/p&gt;
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(外三角范畴的公理) 设 $(\mathcal{C},\mathbb{E},\mathfrak{s})$ 如上, 则称其为外三角范畴如果满足下列公理: &lt;br /&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;ET1&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;ET1&lt;/strong&gt; $\mathbb{E}$ 是加法双函子&lt;/p&gt;
   &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
   &lt;p&gt;&lt;strong&gt;ET2-1&lt;/strong&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -528,6 +1597,8 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Tips:&lt;/strong&gt; $(g∘-)=\mathrm{Hom}(-,g)$&lt;/p&gt;
 
 &lt;h1 id=&quot;chapter-3-图表定理&quot;&gt;Chapter 3 图表定理&lt;/h1&gt;
+
+&lt;h1 id=&quot;chapter-5-hovey-对应&quot;&gt;Chapter 5 Hovey 对应&lt;/h1&gt;
 
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
@@ -888,7 +1959,64 @@ $$&lt;/p&gt;
 
 &lt;h2 id=&quot;14-wedderburn-artin-定理&quot;&gt;1.4 Wedderburn-Artin 定理&lt;/h2&gt;
 
+&lt;h3 id=&quot;基本性质-1&quot;&gt;基本性质&lt;/h3&gt;
+
 &lt;p&gt;Wedderburn-Artin 定理给出了半单代数的结构定理 (本书给出的是有限维 $k$-代数的情形), 此外本书还介绍了半单代数上单模的分类 (从而解决了所有 $A$-模的研究), 最后将半单代数的分类归结为有限维可除代数的分类.&lt;/p&gt;
+
+&lt;p&gt;本节只考虑有限维 $k$-代数上的有限维模.&lt;/p&gt;
+
+&lt;p&gt;半单代数 ⇔ 左正则模是半单模. (定义)&lt;/p&gt;
+
+&lt;p&gt;单代数的定义就是正常的“单” (理想只有 $\{0\}$ 和它本身).&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;单代数是半单代数.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑证明所有极小左理想(左正则模的单子模)的和就是左正则模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;对于 $k$-代数 $B$, 有 $k$-代数同构 $$
+(M_n(B))^{\mathrm{op}}\cong M_n(B^{\mathrm{op}}), \quad (b_{ij})\mapsto (b_{ji}).
+$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;代数的直积分解&quot;&gt;代数的直积分解&lt;/h3&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;对于 $k$-代数 $A$, $A$ 分解为 $n (n&lt;∞)$ 个代数的直积当且仅当 $A$ 的单位元分解成 $n$ 个非零中心正交幂等元之和.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;wedderburn-artin-定理&quot;&gt;Wedderburn-Artin 定理&lt;/h3&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;设 $A$ 是有限维 $k$-代数. 则下列条件等价:&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;$A$ 是半单代数;&lt;/li&gt;
+    &lt;li&gt;任一有限维左 $A$-模都是半单模;&lt;/li&gt;
+    &lt;li&gt;$A$ 同构于可除 $k$-代数上全矩阵代数的直积;&lt;/li&gt;
+    &lt;li&gt;$A$ 同构于单代数的直积.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 需要注意的一点是, 虽然在定义半单代数的时候是靠&lt;strong&gt;左&lt;/strong&gt;正则模来定义的, 但是其实这个概念是&lt;strong&gt;不分左右&lt;/strong&gt;的.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(1)⇒(2) 半单模的商模是半单模, 半单模的和是半单模. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(2)⇒(3) $$\begin{equation}
+A≅(\mathrm{End}_A(_AA))^{\mathrm{op}}\cong \bigoplus_{i=1}^r (\mathrm{End}_A(S_i^{m_i}))^{\mathrm{op}}\cong \bigoplus_{i=1}^r (M_{m_i}(\mathrm{End}_A(S_i)))^{\mathrm{op}}\cong \bigoplus_{i=1}^r M_{m_i}(\mathrm{End}_A(S_i)^{\mathrm{op}}),
+\end{equation}$$&lt;/p&gt;
+  &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(3)⇒(4) 可除代数上的全矩阵代数是单代数. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(4)⇒(1) 单代数是半单代数; 半单模等价于可以写成单子模的和.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;半单代数上的模&quot;&gt;半单代数上的模&lt;/h3&gt;
+
+&lt;p&gt;主要思想是半单代数上的单模可以归结为单代数上的单模进行研究, 而单代数上的单模在同构意义下唯一.&lt;/p&gt;
+
+&lt;h3 id=&quot;半单代数分解为单代数的直积的唯一性&quot;&gt;半单代数分解为单代数的直积的唯一性&lt;/h3&gt;
 
 &lt;h3 id=&quot;习题-14&quot;&gt;习题 1.4&lt;/h3&gt;
 
@@ -970,6 +2098,78 @@ $$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_
     &lt;p&gt;单代数在同构意义下只有唯一的单模 $V$. 于是 $M≅mV,N≅nV$. 于是 $M≅N⟺m=n⟺\dim_k M=\dim_k N$.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;h2 id=&quot;15-范畴与函子&quot;&gt;1.5 范畴与函子&lt;/h2&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;(范畴等价的充要条件) 范畴 $\mathcal{C}$ 与范畴 $\mathcal{D}$ 等价当且仅当存在函子 $F:\mathcal{C}→\mathcal{D}$, 使得 $F$ 是稠密的、满忠实的函子.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;习题-15&quot;&gt;习题 1.5&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在一个范畴中, 如果存在零对象, 则它在同构意义下是唯一的.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $0,0'$ 是范畴 $\mathcal{C}$ 中的两个零对象. 则存在唯一的态射 $f:0→0'$, $g:0'→0$. 由零对象的定义知 $f,g$ 的复合只能是恒等态射(因为零对象到自己只有唯一的态射, 只能是恒等态射). 故 $0\cong 0'$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;左 $R$-模范畴 $R-\mathrm{Mod}$ 中的态射是单态射(满态射)当且仅当它是模的单同态(满同态).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:M→N$ 是单态射. 对于任意 $m∈M$, 考虑态射(模同态) $φ_m:R→M, r↦rm$. 若 $f(m)=0$, 则 $(f∘φ_m)(r)=f(rm)=rf(m)=0,∀ r∈ R$, 即有 $f∘φ_m=0=f∘φ_m$. 由 $f$ 是单态射可得 $φ_m=0$, 从而 $m=φ_m(1)=0$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(或者也可以用下面一题一样的方法, 更方便) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇒) 设 $f:M→N$ 是满态射. 考虑自然投射 $π:N→N/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=N$. 故 $f$ 是满同态.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;群范畴 $\mathbf{Grp}$ 中的态射是单态射(满态射)当且仅当它是群的单同态(满同态).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:G→H$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪G$ 以及平凡同态 $0: \mathrm{Ker}f→G, g↦ e_G$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{e_G\}$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇒) 设 $f:A→B$ 是满态射. 考虑反证, 假设 $f$ 不是群满同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;如果 $\mathrm{Im}f \lhd B$, 则考虑自然投射 $π:B→B/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=B$. 矛盾. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;故考虑 $[B : \mathrm{Im}f]&gt;2$. 下面来证明存在不同的两个群同态 $g,h: B→\mathrm{Sym}B$ 使得 $g∘f=h∘f$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;考虑右陪集空间 $\mathrm{Im} f\backslash B$, 由于其元素个数大于 $2$, 故存在 $σ∈\mathrm{Sym}(\mathrm{Im}f\backslash B)$ 使得 $σ≠1$ 且 $σ$ 有不动点. 下面我们定义 $p∈\mathrm{Sym}(B)$. 首先固定一个右陪集的代表元集 $R$, 即对于任意的 $b∈ B$, $b$ 可以唯一地表示成 $b=cr$, 其中 $r∈R, c∈\mathrm{Im}f$. 现在对于任意的 $b=cr∈B$, 定义 $p(b)=cr'$, 其中 $r'∈R$ 是 $σ((\mathrm{Im}f) r)$ 的代表元. 显然 $p\in\mathrm{Sym}(B)$, 同时满足 $p≠1$ 且 $p$ 有不动点. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;下面定义 $$
+g: B\to\mathrm{Sym}(B),\quad b\mapsto [x\mapsto bx],
+$$ 以及 $$
+h: B\to\mathrm{Sym}(B),\quad b\mapsto pg(b)p^{-1}.
+$$&lt;/p&gt;
+    &lt;p&gt;首先注意到 $g≠h$, 否则对于任意的 $b∈B$, 都有 $pg(b)=g(b)p$, 并且对于任意的 $x∈B$, 有 $p(bx)=bp(x)$, 取 $x$ 为 $p$ 的不动点, 则有 $p(bx)=bx$, 而 $p≠1$, 存在 $b∈B$ 使得等式不成立. 从而 $g≠h$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;另外, 注意到对于任意的 $b∈B, x∈B$, 有 $$\begin{equation}
+(h∘f)(b)(x)= pg(f(b))p^{-1}(x)=p(f(b)p^{-1}(x))\overset{(*)}{=}f(b)p(p^{-1}(x))=f(b)x=(g∘f)(b)(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$(*)$ 这一步使用了 $p$ 的定义. 从而 $g∘f=h∘f$. 矛盾. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;习题-15-拓展&quot;&gt;习题 1.5 拓展&lt;/h3&gt;
+
+&lt;p&gt;容易发现一个事情, 上面所说的各种(以集合为基础的)代数结构, 它们的单同态都和范畴意义下的单态射等价. 如果细致地考察, 我们需要考虑以下两个问题:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;为什么集合意义下的单同态(即单射)与范畴意义下的单态射等价?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;为什么(以集合为基础的)代数结构的范畴中的态射是单态射 当且仅当 它(看成集合范畴里面的态射)是集合范畴里面的单态射?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;(以集合为基础的代数结构上的单同态恰好就是集合意义下的单射, 这是定义, 不需要考虑)&lt;/p&gt;
+
+&lt;p&gt;对于第一个问题, 首先我们考虑粗暴的证明方式 (和我们在上面习题中使用的方法类似)&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(单射 ⇒ 单态射) 单射有左逆, 从而是单态射. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(单态射 ⇒ 单射) 设 $f:A→B$ 是单态射. 对于任意 $a_1,a_2∈A$, 若 $f(a_1)=f(a_2)$, 则有 $f∘φ_{a_1}=f∘φ_{a_2}$, 其中 $φ_{a_i}:\{*\}→A, *↦a_i$. 由 $f$ 是单态射可得 $φ_{a_1}=φ_{a_2}$, 从而 $a_1=a_2$. 故 $f$ 是单射.&lt;/p&gt;
+&lt;/div&gt;
+
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/BA_Exercise1</link>
@@ -1242,25 +2442,10 @@ $$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
   &lt;p&gt;设 $u : X \to Y$ 是预三角范畴 $\mathcal{C}$ 的态射。则 $u$ 是同构当且仅当 $ X \xrightarrow{u} Y \to 0 \to TX $ 是好三角。&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-    &lt;embed src=&quot;/website/svg/TriCat_Exercise1/diagram_1dc61560c37ea.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
-
 </description>
           <pubDate>2025-09-05T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/TriCat_Exercise1</link>
           <guid isPermaLink="true">http://localhost:4000/website/posts/TriCat_Exercise1</guid>
-        </item>
-      
-    
-      
-        <item>
-          <title>模型结构简介</title>
-          <description>
-</description>
-          <pubDate>2025-09-05T00:00:00+08:00</pubDate>
-          <link>http://localhost:4000/website/posts/Model</link>
-          <guid isPermaLink="true">http://localhost:4000/website/posts/Model</guid>
         </item>
       
     

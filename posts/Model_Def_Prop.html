@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>模型范畴定义和基本性质
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="索引">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Model_Def_Prop">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>模型范畴定义和基本性质</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        September 27, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h1 id="索引">索引</h1>
+
+<h2 id="定义">定义</h2>
+
+<ul>
+  <li>
+    <p>homotopy “category” $\mathrm{Ho}\ \mathcal{C}$</p>
+  </li>
+  <li>
+    <p>some special objects</p>
+
+    <ul>
+      <li>
+        <p>cylinder object for $B$</p>
+      </li>
+      <li>
+        <p>path object for $X$。</p>
+      </li>
+      <li>
+        <p>left homotopy</p>
+
+        <ul>
+          <li>Q: 为什么这么定义?</li>
+        </ul>
+      </li>
+      <li>
+        <p>right homotopy</p>
+      </li>
+      <li>
+        <p>homotopic</p>
+      </li>
+      <li>
+        <p>homotopy equivalence</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Quillen functors</p>
+
+    <ul>
+      <li>
+        <p>left Quillen functor</p>
+      </li>
+      <li>
+        <p>right Quillen functor</p>
+      </li>
+      <li>
+        <p>Quillen adjunction</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>derived functors</p>
+
+    <ul>
+      <li>
+        <p>total left derived functor</p>
+      </li>
+      <li>
+        <p>total right derived functor</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="基本性质">基本性质</h2>
+
+<h1 id="1-模型范畴">1 模型范畴</h1>
+
+<h2 id="11-模型范畴的定义">1.1 模型范畴的定义</h2>
+
+<p>给定范畴 $\mathcal{C}$, 我们用 $\mathrm{Mor}\mathcal{C}$ 表示态射范畴.</p>
+
+<div class="definition">
+  <p>(retract of a morphism)</p>
+</div>
+
+<div class="definition">
+  <p>(functorial factorization(函子性分解)) 一对 $\mathrm{Mor}\mathcal{C}→\mathrm{Mor}\mathcal{C}$ 的函子 $(α,β)$, <br /> 使得 $f=β(f)∘α(f)$ for all $f∈\mathrm{Mor}\mathcal{C}$. <br /></p>
+</div>
+
+<div class="definition">
+  <p>(lifting property)</p>
+  <p>$i$ 有 left lifting property with respect to $p$ (或 $p$ 有 right lifting property with respect to $i$) 如果对于任意交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Model_Def_Prop/diagram_bbaf95c03292c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>存在 $h$ 使得图表交换.</p>
+</div>
+
+<div class="definition">
+  <p>(model structure (模型结构), [Hovey]) <br /> 一个范畴 $C$ 上的 model structure (模型结构) 是 <br /> 3 个子范畴 (weak equivalences, cofibrations, fibrations) + 2个 functorial factorizations $(α,β)$ 和 $(γ,δ)$ <br /> 满足以下公理: <br /></p>
+  <p>(CM1) (2-out-of-3) f, g, gf 中有两个是 weak equivalences 中则第三个也是. <br /></p>
+  <p>(CM2) (retracts) 3 个子范畴都对 retract 封闭. <br /></p>
+  <p>(CM3) (lifting) TC 对于 F 有 LLP; C 对于 TF 有 LLP. <br /></p>
+  <p>(CM4) (factorization) 对于每个态射 $f$, $α(f)$ 是 C, $β(f)$ 是 TF; $γ(f)$ 是 TC, $δ(f)$ 是 F. <br /></p>
+</div>
+
+<div class="definition">
+  <p>(model category (模型范畴), [Hovey]) <br /> 模型范畴 = 模型结构 + 有 small limits and colimits.</p>
+</div>
+
+<p>这里来谈论一下 cofibrant replacement 和 fibrant replacement.</p>
+
+<p>记 initial object 为 $0$, terminal object 为 $*$.</p>
+
+<div class="definition">
+  <p>(pointed model category (有基点的模型范畴)) initial object 和 terminal object 同构.</p>
+</div>
+
+<div class="definition">
+  <p>(cofibrant, fibrant) <br /></p>
+  <ol>
+    <li>一个对象 $X$ 被称为 cofibrant object, 如果 $0→X$ 是一个 cofibration. 余纤维对象类记为 $\mathcal{M}_c$ <br /></li>
+    <li>一个对象 $Y$ 被称为 fibrant object, 如果 $Y→*$ 是一个 fibration. 纤维对象类记为 $\mathcal{M}_f$ <br /></li>
+  </ol>
+</div>
+
+<p>以下设 $\mathcal{M}$ 是一个模型范畴.</p>
+
+<p>可以考虑模型范畴 $\mathcal{M}_*$, 对象是 $(X,v):*\overset{v}{\to}X$, 态射自然定义. 可以证明 $\mathcal{M}_*$ 有 small colimits and limits. (待具体自己验证)</p>
+
+<p>我们可以考虑两个 functor: 第一个是由
+$$\begin{equation}
+\mathcal{M}→\mathcal{M}_*,\quad X↦ X_+=X∐ *,
+\end{equation}$$
+定义的 faithful (但不 full) 函子 (它给出了 $\mathcal{M}$ 到一个 pointed category $\mathcal{M}_*$ 的 faithful 嵌入). 另外我们自然地有一个 forgetful functor $U:\mathcal{M}_*→\mathcal{M}$. 并且前者是后者的 left adjoint (事实上, 以后可以知道它们构成一个 Quillen adjunction). 具体而言
+$$\begin{equation}
+\mathrm{Hom}_{\mathcal{M}_*}(X_+, [*→Y]) \cong \mathrm{Hom}_{\mathcal{M}}(X,Y).
+\end{equation}$$
+如果 $\mathcal{M}$ 本身就是 pointed, 那么这两个函子给出范畴等价 $\mathcal{M} \simeq \mathcal{M}_*$.</p>
+
+<div class="proposition">
+  <p>设 $\mathcal{M}$ 是一个模型范畴. 定义 $\mathcal{M}_*$ 中的态射 $f$ 是 weak equivalence (cofibration, fibration) 当且仅当 $Uf$ 是 $\mathcal{M}$ 中的 weak equivalence (cofibration, fibration). 则 $\mathcal{M}_*$ 是一个 (pointed) model category.</p>
+  <div class="proof">
+    <p>(待看)</p>
+  </div>
+</div>
+
+<p>下面我们定义 cofibrant replacement 和 fibrant replacement.</p>
+
+<p>对 $0→X$ 进行分解: $0→QX\overset{q_X}{\to}X$, 从而我们得到一个函子 $X↦QX$ 使得 $QX$ 是 cofibrant object, $q_X$ 是一个 trivial fibration. 这个 $QX$ 被称为 $X$ 的 cofibrant replacement.</p>
+
+<p>类似地, 对 $X→*$ 进行分解: $X\overset{r_X}{\to}RX→*$, 从而我们得到一个函子 $X↦RX$ 使得 $RX$ 是 fibrant object, $r_X$ 是一个 trivial cofibration. 这个 $RX$ 被称为 $X$ 的 fibrant replacement.</p>
+
+<p><strong>Remark.</strong> $Q$ 和 $R$ 能成为函子是靠分解的函子性. 另外这两个函子保持弱等价. $q: Q→\mathrm{Id}_\mathcal{M}$ 和 $r: \mathrm{Id}_\mathcal{M}→Q$ 可以看作自然变换.</p>
+
+<div class="lemma">
+  <p>(the Retract Argument) <br /> 设 $f$ 是模型范畴 $\mathcal{M}$ 中的态射, $f=g∘h$. <br /></p>
+  <ol>
+    <li>如果 $f$ 有 LLP with respect to $g$, 则 $f$ 是 $h$ 的 retract. <br /></li>
+    <li>如果 $f$ 有 RLP with respect to $h$, 则 $f$ 是 $g$ 的 retract. <br /></li>
+  </ol>
+</div>
+
+<p>借助 the Retract Argument, 我们可以证明余纤维、纤维、弱等价其中两者可以确定第三者 (从而模型结构的定义实际上 overdetermined).</p>
+
+<div class="lemma">
+  <p>设 $\mathcal{M}$ 是一个 model category. <br /></p>
+  <ol>
+    <li>{(trivial cofibration) cofibration}={ $f$ with LLP w.r.t. all trivial fibrations (fibrations)}. <br /></li>
+    <li>{(trivial fibration) fibration}={ $f$ with RLP w.r.t. all trivial cofibrations (cofibrations)}. <br /></li>
+  </ol>
+  <div class="proof">
+    <p>显然只要证明如果一个态射 $f$ 对于所有 trivial fibrations 都有 LLP, 则 $f$ 是一个 cofibration. <br /></p>
+    <p>设 $f=p∘i$ 是分解, 其中 $p$ 是 trivial fibration, 根据上一条引理, 我们有 $f$ 是 $i$ 的 retract, 从而 $f$ 是一个 cofibration. <br /></p>
+    <p>其余情形类似可以证明.</p>
+  </div>
+</div>
+
+<p>这个引理的一个自然推论就是所有 isomorphisms 都是 cofibrations, fibrations 和 weak equivalences.</p>
+
+<div class="corollary">
+  <p>设 $\mathcal{M}$ 是一个 model category. <br /></p>
+  <ol>
+    <li>所有的 (trivial) cofibrations 对于 pushouts 封闭. <br /></li>
+    <li>所有的 (trivial) fibrations 对于 pullbacks 封闭.</li>
+  </ol>
+  <div class="proof">
+    <p>这是因为如果 $f$ 对于一个态射 $p$ 有 LLP, 则 $f$ 的 pushout 对于 $p$ 也有 LLP. (左边虚线是 LLP 给出, 右边是 pushout 的泛性质给出, 证明交换性要用到连接态射的唯一性)</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Def_Prop/diagram_c37f56b3c6f69.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+  </div>
+</div>
+
+<p>下面的 Ken Brown‘s Lemma 提供了一种检验 (特定对象之间的) 态射是否是弱等价的方法.</p>
+
+<div class="lemma">
+  <p>(Ken Brown’s Lemma) <br /></p>
+  <p>设 $\mathcal{M}$ 是一个 model category. 设 $\mathcal{D}$ 是一个范畴, 它有一个由 “weak equivalences” 组成的子范畴, 即满足二推三性质. 设 $F:\mathcal{M}→\mathcal{D}$ 是一个函子. <br /></p>
+  <ol>
+    <li>若 $F$ 将 cofibrant objects 之间的 trivial cofibrations 都映为 weak equivalences, 则 $F$ 将所有 cofibrant objects 之间的 weak equivalences 都映为 weak equivalences. <br /></li>
+    <li>若 $F$ 将 fibrant objects 之间的 trivial fibrations 都映为 weak equivalences, 则 $F$ 将所有 fibrant objects 之间的 weak equivalences 都映为 weak equivalences.</li>
+  </ol>
+  <div class="proof">
+    <p>设 $f:A→B$ 是 cofibrant objects 之间的 weak equivalence. <br /></p>
+    <p>$A$ 和 $B$ 是 cofibrant objects 意味着 $0→A$ 和 $0→B$ 是 cofibrations. 考虑推出</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Def_Prop/diagram_8a75ca49b2ebd.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>则 incluction maps $A\overset{i_a}{\to}A∐B$ 和 $B\overset{i_B}{\to}A∐B$ 都是 cofibrations. <br /></p>
+    <p>考虑 $(f, \mathrm{Id}_B): A∐B→B$, 考虑它的分解 $(f, \mathrm{Id}_B)=p∘q$, 其中 $q$ 是 cofibration, $p$ 是 trivial fibration. <br /></p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Def_Prop/diagram_007512ac0954a.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>其中 $p∘q∘i_a=f$ 是 weak equivalence, $p$ 是 trivial fibration, 则 $q∘i_a$ 是 weak equivalence. <br /> 其中 $p∘q∘i_b=\mathrm{Id}_B$ 是 weak equivalence, $p$ 是 trivial fibration, 则 $q∘i_b$ 是 weak equivalence. <br /> 显然 $q∘i_a$ 和 $q∘i_b$ 都是 cofibrations, 则它们都是 trivial cofibrations. <br /> 此外, 易见 $C$ 是 cofibrant object. 于是根据假设可以得到, $F(q∘i_a)$ 和 $F(q∘i_b)$ 都是 weak equivalences. <br /></p>
+    <p>由于 $F(p∘q∘i_b)=F(\mathrm{Id}_B)$ 是 weak equivalence, $F(q∘i_b)$ 是 weak equivalence, 则 $F(p)$ 是一个 weak equivalence. <br /></p>
+    <p>从而 $F(f)=F(p∘q∘i_a)=F(p)∘F(q∘i_a)$ 是 weak equivalence. <br /></p>
+  </div>
+</div>
+
+<h2 id="12-同伦范畴-the-homotopy-category">1.2 同伦范畴 The Homotopy Category</h2>
+
+<p>Hovey 的这一节是完全遵从 [Qui67] 的标准方法, 没有引入什么新的改进. 只有从 [DS95] 和 [DHK] 中借鉴了一些小的改进.</p>
+
+<p>Q: 目前有没有什么新的东西?</p>
+
+<p>最基本的结果: 局部化 $\mathrm{Ho}\ \mathcal{M}$ (by inverting the weak equivalences) 和 商范畴 $\mathcal{M}_{cf}/\sim$ (cofibrant 和 fibrant 对象商掉同伦关系) 是等价的.</p>
+
+<div class="definition">
+  <p>(homotopy “category” $\mathrm{Ho}\ \mathcal{M}$) <br /></p>
+</div>
+
+<p><strong>Remark.</strong> 这里加引号似乎是因为还没有证明这个是一个范畴, 后面要证明它不用传递到更高的宇宙. (???)</p>
+
+<p><strong>Remark.</strong> 如果上面这个定义里面谈及的 weak equivalences 是一个模型结构里面的, 那么我们可以很好地看出加了东西再取的商范畴(这里的同伦范畴)里面态射的结构: $X$ 和 $Y$ 之间的态射就是它们的 cofibrant replacement 之间的态射的同伦类.</p>
+
+<p>函子 $γ: \mathcal{M}→\mathrm{Ho}\ \mathcal{M}$ 保持对象不变, 并将 $\mathcal{W}$ 里面的态射变为同构. 这个范畴 $\mathrm{Ho}\ \mathcal{M}$ 有以下的泛性质描述:</p>
+
+<div class="lemma">
+  <p>设 $\mathcal{M}$ 是一个范畴, $\mathcal{W}$ 是一个子范畴.</p>
+  <ol>
+    <li>若函子 $F:\mathcal{M}→\mathcal{D}$ 将 $\mathcal{W}$ 里面的态射变为同构, 则存在唯一的函子 $\mathrm{Ho}\ F:\mathrm{Ho}\ \mathcal{M}→\mathcal{D}$ 使得 $(\mathrm{Ho}\ F)∘γ=F$. <br /></li>
+    <li>设函子 $δ:\mathcal{M}→\mathcal{E}$ 将 $\mathcal{W}$ 里面的态射变为同构, 并且满足 (1) 中同样的泛性质. 则有唯一的范畴同构 $\mathrm{Ho}\ \mathcal{M}\overset{F}{\to}\mathcal{E}$ 使得 $F∘γ=δ$.</li>
+    <li>(1) 中的对应给出了下面两个对象是函子、态射是自然变换的范畴同构: $$
+\{\mathrm{Ho}\ F:\mathrm{Ho}\ \mathcal{M}→\mathcal{D}\}≅\{F:\mathcal{M}→\mathcal{D}\ |\ F(\mathcal{W})\subseteq \mathrm{Iso}(\mathcal{D})\}
+$$</li>
+  </ol>
+</div>
+
+<p><strong>Notations.</strong> 给定一个模型范畴 $M$. 记</p>
+<ul>
+  <li>$\mathcal{M}_c$ 为所有 cofibrant objects 组成的满子范畴.</li>
+  <li>$\mathcal{M}_f$ 为所有 fibrant objects 组成的满子范畴.</li>
+  <li>$\mathcal{M}_{cf}$ 为所有既是 cofibrant objects 又是 fibrant objects 的对象组成的满子范畴.</li>
+</ul>
+
+<div class="proposition">
+  <p>嵌入函子诱导范畴等价: $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}_{cf} \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}_c  \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M},
+\end{equation}$$ $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}_{cf} \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}_f  \overset{\sim}{\to} \mathrm{Ho}\ \mathcal{M}.
+\end{equation}$$</p>
+  <p><strong>Remark.</strong> 这个证明要用到 cofibrant replacement 和 fibrant replacement functors.</p>
+  <div class="proof">
+    <p>保持弱等价的函子诱导出同伦范畴之间的函子.</p>
+    <p>$Q$ 保持弱等价.</p>
+    <p>$q$ 作为自然变换给出 $Q∘i→\mathrm{Id}_{\mathcal{M}_c}$ 和 $i∘Q→\mathrm{Id}_\mathcal{M}$ 之间的自然弱等价.</p>
+  </div>
+</div>
+
+<div class="definition">
+  <p>设 $\mathcal{M}$ 是一个模型范畴, $f,g:B→X$ 是两个态射. <br /></p>
+  <ol>
+    <li>(cylinder object for $B$) <br /> cylinder object for $B$ 是一个分解, 将 fold map $∇:B∐B→B$ 分解为一个 cofibration $B∐B\overset{(i_0,i_1)}{\longrightarrow}B'$ 和一个 weak equivalence $B'\overset{s}{→}B$. <br /></li>
+  </ol>
+</div>
+
+<p>Q: 拓扑里面的同伦的定义是柱同伦(即左同伦). 这里的公理化定义可以完全刻画拓扑里面的同伦吗? 另外道路同伦(即右同伦)在拓扑里面的对应是什么?</p>
+
+<p><strong>Remark.</strong> 在 cylinder object 的定义里面用到的分解未必是模型范畴定义里面的函子性分解, 第二个态射未必是 fibration. 对于用定义中函子性分解得到的 cylinder object, 称其为 functorial cylinder object, 并有专门的记号. 对于 path object 也是类似的.</p>
+
+<p>利用 model structure 中定义中的 functorial factorization, 我们可以总是得到 functorial cylinder object $B×I$, 满足 $B×I\overset{s}{→}B$ 是 trivial fibration.</p>
+
+<p>接下来的故事是这样的: 之前提到的得到同伦范畴的方法无法看出结构, 也无法保证直接加入弱等价的逆之后得到的态射类是集合. 目前我们已经知道了对于模型范畴而言 $\mathrm{Ho}\ \mathcal{M} \simeq \mathrm{Ho}\ \mathcal{M}_{cf}$, 我们尝试从后者入手. 接下来我们会发现, 对于既是 cofibrant 又是 fibrant 的对象之间的态射, 同伦关系是它们之间的态射集上的等价关系, 于是我们可以考虑相应的商范畴 $\mathcal{M}_{cf}/\sim$. 并且之后可以证明 $$\mathrm{Ho}\ \mathcal{M}_{cf} \simeq \mathcal{M}_{cf}/\sim.$$</p>
+
+<p>于是我们现在要解决两个问题:</p>
+
+<ol>
+  <li>证明同伦关系是等价关系</li>
+  <li>证明 $\mathrm{Ho}\ \mathcal{M}_{cf} \simeq \mathcal{M}_{cf}/\sim.$</li>
+</ol>
+
+<p>以下我们有一些标准的结论 (来自 [Qui67]):</p>
+
+<div class="proposition">
+  <p>设 $\mathcal{M}$ 是一个模型范畴, $f,g: B→X$ 是 $\mathcal{M}$ 中两个态射.</p>
+  <ol>
+    <li></li>
+    <li>若 $X$ 是 fibrant, 则 $f\overset{l}{\sim}g⇒fh\overset{l}{\sim}gh$; 若 $B$ 是 cofibrant, 则 $f\overset{r}{\sim}g⇒hf\overset{r}{\sim}hg$.</li>
+    <li>若 $B$ 是 cofibrant, 则 left homotopy 是 $\mathcal{M}(B,X)$ 上的等价关系; 若 $X$ 是 fibrant, 则 right homotopy 是 $\mathcal{M}(B,X)$ 上的等价关系.</li>
+    <li>
+      <p>若 $B$ 是 cofibrant, $h:X→Y$ 是一个 trivial fibration 或者 fibrant objects 之间的 weak equivalence, 则 $h$ 诱导同构 $$\begin{equation}
+\mathcal{M}(B,X)/\overset{l}{\sim} \overset{\cong}{\to} \mathcal{M}(B,Y)/\overset{l}{\sim}.
+\end{equation}$$ 对偶地, 若 $X$ 是 fibrant, $h:A→ B$ 是一个 trivial cofibration 或者 cofibrant objects 之间的 weak equivalence, 则 $h$ 诱导同构 $$\begin{equation}
+\mathcal{M}(B,X)/\overset{r}{\sim} \overset{\cong}{\to} \mathcal{M}(A,X)/\overset{r}{\sim}.
+\end{equation}$$</p>
+    </li>
+    <li>如果 $B$ 是 cofibrant, 则 $f\overset{l}{\sim}g ⇒ f\overset{r}{\sim}g$. 并且, 对于 $X$ 的任意 path object $X'$, 都有从 $f$ 到 $g$ 的 right homotopy $K:B→X'$. <br /> 对偶地, 如果 $X$ 是 fibrant, 则 $f\overset{r}{\sim}g ⇒ f\overset{l}{\sim}g$. 并且, 对于 $B$ 的任意 cylinder object $B'$, 都有从 $f$ 到 $g$ 的 left homotopy $H:B'→X$.</li>
+  </ol>
+  <div class="proof">
+    <ol>
+      <li>$X$ 是 fibrant 的话, $s$ 可以用一个 trivial fibration 来取代, 于是可以用 lifting property 来得到所需的 $H'$. 另一个情形类似.</li>
+    </ol>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Def_Prop/diagram_ced4ee7360810.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Def_Prop/diagram_793e6793d7987.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <ol>
+      <li>自反性和对称性显然. 关于传递性的证明似乎关键是给定两个 cylinder object 之后如何通过 pushout 得到一个新的 cylinder object. 这里的证明似乎有点绕, 需要仔细看. (待补充)</li>
+    </ol>
+  </div>
+</div>
+
+<p>这个命题直接给出两个引理:</p>
+
+<div class="lemma">
+  <p>设 $\mathcal{M}$ 是一个模型范畴, $B$ 是 cofibrant object, $X$ 是 fibrant object. 则 left homotopy 和 right homotopy 在 $\mathcal{M}(B,X)$ 上是同一个等价关系. <br /> 并且, 对于上面等价的态射, 都可以通过任意的 cylinder object 获取 left homotopy, 也可以通过任意的 path object 获取 right homotopy.</p>
+</div>
+
+<div class="lemma">
+  <p>$\mathcal{M}_{cf}$ 上态射的同伦关系是等价关系并且与复合兼容. 从而存在范畴 $\mathcal{M}_{cf}/\sim$.</p>
+</div>
+
+<h2 id="13-quillen-functors-and-derived-functors">1.3 Quillen Functors and Derived Functors</h2>
+
+<p>学习目标:</p>
+<ol>
+  <li>什么是 Quillen adjunctions or Quillen functors?</li>
+  <li>Quillen functors 如何诱导出同伦范畴之间的函子(似乎叫 derived functor)?</li>
+  <li>上述诱导过程的自然性如何?</li>
+  <li>什么是 Quillen equivalence?</li>
+</ol>
+
+<h3 id="131-quillen-functors">1.3.1 Quillen Functors</h3>
+
+<div class="definition">
+  <p>设 $\mathcal{M}, \mathcal{N}$ 是模型范畴.</p>
+  <ol>
+    <li>(left Quillen functor) <br /> 函子 $F:\mathcal{M}→\mathcal{N}$ 是 left Quillen functor, 如果 $F$ 是 left adjoint 并且 $F$ 保持 cofibrations 和 trivial cofibrations. <br /></li>
+    <li>(right Quillen functor) <br /> 函子 $U:\mathcal{N}→\mathcal{M}$ 是 right Quillen functor, 如果 $U$ 是 right adjoint 并且 $U$ 保持 fibrations 和 trivial fibrations. <br /></li>
+    <li>(Quillen adjunction) <br /> 设 $(F,U,φ)$ 是 $\mathcal{M}$ 和 $\mathcal{N}$ 之间的一个 adjunction. 如果 $F$ 是 left Quillen functor (等价地, $U$ 是 right Quillen functor, 需证明), 则称 $(F,U,φ)$ 是一个 Quillen adjunction. <br /></li>
+  </ol>
+</div>
+
+<p><strong>Remark.</strong> 根据 Ken Brown‘s lemma, left Quillen functor 保持所有 cofibrant objects 之间的 weak equivalences; right Quillen functor 保持所有 fibrant objects 之间的 weak equivalences. 这个结果对于后面定义 derived functors 很重要.</p>
+
+<p><strong>Remark.</strong> 这个部分的很多内容实际上只需要用到 left adjoints 加上保持 cofibrant objects 及其之间的 weak equivalences 的性质再加上对偶的, 但是这样对条件的弱化并不能得到很好的东西, 还会丧失简洁性 (这都是 Hovey 说的).</p>
+
+<p>最著名的例子是拓扑空间范畴 $\mathbf{Top}$ 和 simplicial sets 范畴 $\mathbf{sSet}$ 之间的 Quillen adjunction. 这里 $\mathbf{Top}$ 里面的模型结构是 Serre model structure, $\mathbf{sSet}$ 里面的模型结构是 Kan model structure.</p>
+
+<p>简单的例子是 $\mathcal{M}_*$ 和 $\mathcal{M}$ 之间的; 以及 $\mathcal{M}^I$ 和 $\mathcal{M}$ 之间的.</p>
+
+<p>下面的引理说明了为什么在 Quillen adjunction 的定义中 left Quillen functor 和 right Quillen functor 是等价的.</p>
+
+<div class="lemma">
+  <p>设 $\mathcal{M},\mathcal{N}$ 是 model categories, $(F,U,φ)$ 是 $\mathcal{M}$ 和 $\mathcal{N}$ 之间的一个 adjunction. 则 $F$ 是 left Quillen functor 当且仅当 $U$ 是 right Quillen functor.</p>
+  <div class="proof">
+    <p>这里需要使用伴随对去证明 $Ff$ has the left lifting property with respect to $p$ if and only if $f$ has the left lifting property with respect to $Up$. 但是我对这里的细节不是很清楚. 关键在于伴随对我没有非常熟悉. 具体而言,</p>
+  </div>
+</div>
+
+<h2 id="132-derived-functors-and-naturality">1.3.2 Derived Functors and Naturality</h2>
+
+<div class="definition">
+  <p>设 $\mathcal{M},\mathcal{N}$ 是模型范畴.</p>
+  <ol>
+    <li>
+      <p>(total left derived functor) <br /> 设 $F:\mathcal{M}→\mathcal{N}$ 是一个 left Quillen functor. 定义 $F$ 的 total left derived functor $LF:\mathrm{Ho}\ \mathcal{M}→\mathrm{Ho}\ \mathcal{N}$ 为复合 $$\begin{equation}
+\mathrm{Ho}\ \mathcal{M}\overset{\mathrm{Ho}\ Q}{⟶}\mathrm{Ho}\ \mathcal{M}_c\overset{\mathrm{Ho}\ F}{⟶} \mathrm{Ho}\ \mathcal{N}.
+\end{equation}$$ 给定一个 left Quillen functors 之间的一个自然变换 $τ:F→F'$, 定义 $τ$ 的 total left derived natural transformation $Lτ:LF→LF'$ 为 $\mathrm{Ho}\ τ∘\mathrm{Ho}\ Q$, 故 $(Lτ)_X=τ_{QX}$.</p>
+    </li>
+    <li>
+      <p>(total right derived functor) <br /> 设 $U:\mathcal{N}→\mathcal{M}$ 是一个 right Quillen functor. 定义 $U$ 的 total right derived functor $RU:\mathrm{Ho}\ \mathcal{N}→\mathrm{Ho}\ \mathcal{M}$ 为复合 $$\begin{equation}
+\mathrm{Ho}\ \mathcal{N}\overset{\mathrm{Ho}\ R}{⟶}\mathrm{Ho}\ \mathcal{N}_f\overset{\mathrm{Ho}\ U}{⟶} \mathrm{Ho}\ \mathcal{M}.
+\end{equation}$$ 给定一个 right Quillen functors 之间的一个自然变换 $τ:U→U'$, 定义 $τ$ 的 total right derived natural transformation $Rτ:RU→RU'$ 为 $\mathrm{Ho}\ τ∘\mathrm{Ho}\ R$, 故 $(Rτ)_X=τ_{RX}$.</p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#定义">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">定义</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#基本性质">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">基本性质</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#11-模型范畴的定义">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">1.1 模型范畴的定义</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#12-同伦范畴-the-homotopy-category">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">1.2 同伦范畴 The Homotopy Category</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#13-quillen-functors-and-derived-functors">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">1.3 Quillen Functors and Derived Functors</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#131-quillen-functors">
+        <span class="toc-number">5.1.</span>
+        <span class="toc-title">1.3.1 Quillen Functors</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#132-derived-functors-and-naturality">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">1.3.2 Derived Functors and Naturality</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Model_List" title="NEXT: 模型范畴入门列表">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/ARS" title="PREV: ARS 讨论班">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

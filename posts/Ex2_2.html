@@ -9,12 +9,12 @@
 
 
 
-  <title>模型结构简介
+  <title>《基础代数学》作业 Week2-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="">
+<meta name="description" content="  证明代数闭域上(有限维)交换代数的单模必是 $1$ 维的.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Model">
+<link rel="canonical" href="/website/posts/Ex2_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,17 +75,95 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>模型结构简介</h1>
+      <h1>《基础代数学》作业 Week2-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 5, 2025
+        September 24, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    
+    <div class="problem">
+  <p>证明代数闭域上(有限维)交换代数的单模必是 $1$ 维的.</p>
+  <div class="proof">
+    <p>设 $A$ 是代数闭域 $k$ 上的有限维交换代数, $M$ 是 $A$ 上的单模. 则 $M$ 也是有限维的 (否则有真子模 $Am$, 其中 $m≠0$). <br /></p>
+    <p>对于任意的 $a∈A$, 考虑 $A$-模同态 (同时也是 $k$-线性映射) $$
+	f_a: M→M,\ m\mapsto am.
+$$ 特别地, $f_a∈\mathrm{End}_k(M)$. 由于 $A$ 是交换代数, $\{f_a\}_{a∈A}$ 是两两可交换的线性算子, 从而自然是可解李代数. 由于 $M$ 有限维且 $k$ 是代数闭域, 根据 Lie’s Theorem 知存在 $0≠m∈M$, 使得对于任意 $a∈A$, 有 $am=f_a(m)=λ_a m$, 其中 $λ_a∈k$. 由此可见 $km$ 是 $A$ 的子模, 由单模的定义知 $km=M$. 于是 $\dim_k M=1$.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 这里的”有限维”条件是必须的. 否则可以考虑 $k(x)$ 上的单模 $k(x)$.</p>
+
+<div class="problem">
+  <p>证明 $k$-代数 $A$ 是交换半单代数当且仅当 $A≅K_1×⋯×K_s$, 其中 $K_i$ 是 $k$ 的扩域.</p>
+  <div class="proof">
+    <p>(⇐) 显然. <br /></p>
+    <p>(⇒) (此证明假设了 $A$ 是有限维 $k$-代数) 由 Wedderburn-Artin 定理知 $A≅M_{n_1}(D_1)×⋯×M_{n_s}(D_s)$, 其中 $D_i$ 是有限维可除 $k$-代数. 由于 $A$ 是交换代数, 故 $n_i=1$, 即 $A≅D_1×⋯×D_s$. 再由交换性可知 $D_i$ 是交换代数, 从而是域, 并且是 $k$ 的扩域. (整体交换可以推到每个分量交换)</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 这题我只会证明有限维情形.</p>
+
+<div class="problem">
+  <p>设 $H, G$ 均为有限 Abel 群, $\mathrm{char} k\nmid |H|, \mathrm{char} k\nmid |G|$, 且 $k$ 是代数闭域. 证明 $k[H]≅k[G]$ (作为 $k$-代数) 当且仅当 $|H|=|G|$.</p>
+  <div class="proof">
+    <p>由 Maschke 定理知 $k[H], k[G]$ 均为半单代数. 由于 $H, G$ 是有限 Abel 群, 故 $k[H], k[G]$ 是交换代数. 由先前习题知 $k[H]≅k×⋯×k$ ($|H|$ 个), $k[G]≅k×⋯×k$ ($|G|$ 个). 故 $k[H]≅k[G]$ 当且仅当 $|H|=|G|$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $A=A_1×⋯×A_s$, $A_i$ 均为单代数, $M$ 是左 $A$-模, $1=e_1+⋯+e_s$ 是相应的单位元的中心分解. 证明 $M=\displaystyle\bigoplus_{i=1}^se_iM$, 且 $e_iM$ 是左 $A_i$-模.</p>
+  <div class="proof">
+    <p>对于任意 $m∈M$, 有 $m=1m=(e_1+⋯+e_s)m=e_1m+⋯+e_sm∈\sum_{i=1}^se_iM$. 从而 $M=∑_{i=1}^s e_iM$. 取 $m_i∈e_iM∩(\sum_{j≠i}e_jM)$, 则 $m_i=e_im_i=0$. 故 $M=\bigoplus_{i=1}^s e_iM$. <br /></p>
+    <p>另外显然 $e_iM$ 是左 $A_i$-模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $D_i$ 是可除 $k$ 代数, $A=M_{n_1}(D_1)×⋯×M_{n_s}(D_s)$. 则正则 $A$-模有不可约分解 $$
+	{_AA}≅\bigoplus_{i=1}^s n_i (V_i,ρ_i),
+$$ 其中 $V_1,⋯,V_s$ 是全体互不同构的单 $A$-模, 使得 $$
+	\mathrm{ann}(V_i)=\prod_{j≠i}M_{n_j}(D_j);\quad\mathrm{End}_A(V_i)≅D_i^{\mathrm{op}};\quad \rho_i(A)≅ M_{n_i}(D_i).
+$$</p>
+  <!-- <div class='proof'><p>由于 $V_i$ 是单 $A$-模, 根据 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除环, 从而也是可除 $k$-代数. 于是 $D_i≅(\mathrm{End}_A(V_i))^{^{\mathrm{op}}}$ 也是可除 $k$-代数, 从而 $A$ 是可除 $k$-代数上全矩阵环的直积. 由 Wedderburn-Artin 定理知 $A$ 是半单代数. 从而 $_AA$ 是半单模, 于是有不可约分解
+$$
+	{_AA}≅\bigoplus_{i=1}^s n_i (V_i,ρ_i).
+$$</p>
+</div> -->
+  <div class="proof">
+    <p>设 $A_i=M_{n_i}(D_i)$. 则 $A_i$ 是单代数. 则 $A_i$ 有唯一的单模 $S_i$. 通过自然投射 $p_i:A→A_i$ 可以将 $S_i$ 提升为 $A$-模 $V_i$, 显然 $V_i$ 是不可约 $A$-模且 $\mathrm{ann}(V_i)=\prod_{j≠i}M_{n_j}(D_j)$. 由于 $A_iV_j=\delta_{ij}V_j$ 知 $V_i$ 两两不同构. <br /></p>
+    <p>由于 $A_i$ 是单代数, 从而是半单代数, 故 $A_i$ 作为 $A_i$-模有不可约分解 $A_i≅n_i S_i$. 作为 $A$-模, 有 $A_i≅n_i V_i$. 于是由 $A=A_1×⋯×A_s$ 可知 $$
+	{_AA}≅\bigoplus_{i=1}^s n_i V_i.
+$$ 其余显然.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $M$ 是半单代数 $A$ 上的模. 则自同态代数 $\mathrm{End}_A(M)$ 也是半单代数.</p>
+  <div class="proof">
+    <p>设 $M=\bigoplus_{i=1}^s n_i (V_i,ρ_i)$ 是 $M$ 的不可约分解, 其中 $V_1,⋯,V_s$ 是全体互不同构的单 $A$-模. 则 $$
+	\mathrm{End}_A(M)≅\prod_{i=1}^s M_{n_i}(\mathrm{End}_A(V_i)).
+$$ 由 Schur 引理知 $\mathrm{End}_A(V_i)$ 是可除 $k$-代数, 从而 $M_{n_i}(\mathrm{End}_A(V_i))$ 是可除 $k$-代数上的全矩阵环, 故 $\mathrm{End}_A(M)$ 是半单代数.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>半单代数的商代数是半单代数.</p>
+  <div class="proof">
+    <p>设半单代数 $A$, 考虑它的商代数 $A/I$, 其中 $I$ 是 $A$ 的双边理想. 对于任意的 $A/I$-模 $M$, 通过提升可以看作 $A$-模, 并且 $IM=0$. $M$ 作为 $A$ 模是半单模, 从而 $M$ 作为 $A/I$-模也是半单模 (这是因为任意的被 $I$ 零化的单 $A$-模自然成为单 $A/I$-模, 从而作为 $A$-模的半单分解就是作为 $A/I$-模的半单分解). 由此可见 $A/I$ 是半单代数.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $M,N$ 均是单代数上的模. 则 $M≅N$ 当且仅当 $\dim_k M=\dim_k N$.</p>
+  <div class="proof">
+    <p>单代数在同构意义下只有唯一的单模 $V$. 于是 $M≅mV,N≅nV$. 于是 $M≅N⟺m=n⟺\dim_k M=\dim_k N$.</p>
+  </div>
+</div>
+
 
   </article>
 
@@ -224,13 +302,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/TriCat_Exercise1" title="NEXT: 《三角范畴与导出范畴》习题 - 第一章">&lt;&lt;</a>
+      <a class="next" href="/website/posts/ARS" title="NEXT: ARS 讨论班">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/test" title="PREV: Test">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Symphony1" title="PREV: 交响音乐简介">&gt;&gt;</a>
     
   </div>
 </main>

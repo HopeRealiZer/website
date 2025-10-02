@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>模型范畴综述阅读笔记
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="本笔记主要基于综述 [Hov07] Mark Hovey. Model Categories. American Mathematical Soc., 2007. 链接">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Model_Hovey">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>模型范畴综述阅读笔记</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        September 23, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p>本笔记主要基于综述 [Hov07] Mark Hovey. Model Categories. American Mathematical Soc., 2007. <a href="https://www.nzdr.ru/data/media/biblio/kolxoz/M/MA/MAct/Hovey%20M.%20Model%20categories%20(LN,%20Wesleyan%20U.,%201998)(213s)_MAct_.pdf">链接</a></p>
+
+<h1 id="preface">Preface</h1>
+
+<h4 id="三个推荐阅读材料">三个推荐阅读材料</h4>
+
+<p>[DHK] W. G. Dwyer, P. S. Hirschhorn, and D. M. Kan, Model categories and general abstract homotopy theory, in preparation.</p>
+
+<ul>
+  <li>concentrates more on homotopy colimits and less on the relationship between a model category and its homotopy category.</li>
+</ul>
+
+<p>[Hir97] P. S. Hirschhorn, Localization, cellularization, and homotopy colimits, preprint, 1997.</p>
+
+<ul>
+  <li>concerned with localization of model categories, but also contains a significant amount of general theory.</li>
+</ul>
+
+<p>[GJ97] P. F. Goerss and J. F. Jardine, Simplicial homotopy theory, preprint, 1997.</p>
+
+<ul>
+  <li>concentrates on simplicial examples.</li>
+</ul>
+
+<h4 id="预备知识">预备知识</h4>
+
+<p>第七章需要 “the theory of homotopy limits of diagrams of simplicial sets” 的知识, 可以参考 [BK72] A. K. Bousfield and D. M. Kan, Homotopy limits, completions, and localizations, Lecture Notes in Mathematics, vol. 304, Springer-Verlag, Berlin-New York, 1972, v+348 pp.</p>
+
+<h4 id="问题">问题</h4>
+
+<p>When is the homotopy category of a model category a stable homotopy category in the sense of [HPS97]?</p>
+
+<p>证明一个特定的范畴由模型结构很难, 但是 [Qui67] 给出了一个标准的方法, [DHK] 形式化了这个方法.</p>
+
+<p>(可能的)最简单的非平凡模型范畴的例子: Frobenious 环上的模范畴.</p>
+
+<h4 id="论文结构">论文结构</h4>
+
+<p>(第五章和第六章是技术核心)</p>
+
+<ul>
+  <li>
+    <p>第一章: 基本概念</p>
+  </li>
+  <li>
+    <p>第二章: 例子 (chain complexes over a ring, topological spaces, and chain complexes of comodules over a commutative Hopf algebra)</p>
+  </li>
+  <li>
+    <p>第三章: 例子 (the central example of simplicial sets.)</p>
+  </li>
+  <li>
+    <p>第四章: closed monoidal model categories</p>
+
+    <ul>
+      <li>
+        <p>为什么有 internal tensor product 就能成为 monoidal category?</p>
+      </li>
+      <li>
+        <p>这个 tensor product 与 模型结构之间的 compatible 要求是什么?</p>
+      </li>
+      <li>
+        <p>什么叫可以考虑 monoidal model cateogry 上面的 modules 和 algebras?</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>第五章:</p>
+  </li>
+  <li>
+    <p>第六章:</p>
+  </li>
+</ul>
+
+<h1 id="chapter-1-model-categories">Chapter 1 Model Categories</h1>
+
+<h4 id="为什么要定义模型范畴">为什么要定义模型范畴</h4>
+
+<ul>
+  <li>
+    <p>为了让一个范畴里面的一些态射变成同构</p>
+
+    <ul>
+      <li>
+        <p>(感觉这是一个技术性的理论)</p>
+      </li>
+      <li>
+        <p>例如同伦等价、双有理等价</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>直接形式地把这些态射变成同构会导致一些问题</p>
+
+    <ul>
+      <li>
+        <p>在局部化范畴里面两个对象之间的态射类未必是一个集合</p>
+
+        <ul>
+          <li>Q: 这样为什么就不行?</li>
+        </ul>
+      </li>
+      <li>
+        <p>这样很难理解局部化范畴里面的态射</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="model-categories-的发展历史">Model Categories 的发展历史</h4>
+
+<ul>
+  <li>
+    <p>[Qui67] 引入</p>
+  </li>
+  <li>
+    <p>[Qui69] 改进定义</p>
+  </li>
+  <li>
+    <p>[DHK] 再次改进</p>
+  </li>
+  <li>
+    <p>本文又改进: We modify their definition slightly to require that the functorial factorizations be part of the structure.</p>
+  </li>
+</ul>
+
+<h2 id="11-the-definition-of-a-model-category">1.1 The Definition of a Model Category</h2>
+
+<p>给定范畴 $\mathcal{C}$, 我们用 $\mathrm{Mor}\mathcal{C}$ 表示态射范畴.</p>
+
+<div class="definition">
+  <p>(retract of a morphism)</p>
+</div>
+
+<div class="definition">
+  <p>(functorial factorization(函子性分解)) 一对 $\mathrm{Mor}\mathcal{C}→\mathrm{Mor}\mathcal{C}$ 的函子 $(α,β)$, <br /> 使得 $f=β(f)∘α(f)$ for all $f∈\mathrm{Mor}\mathcal{C}$. <br /></p>
+</div>
+
+<div class="definition">
+  <p>(lifting property)</p>
+  <p>$i$ 有 left lifting property with respect to $p$ (或 $p$ 有 right lifting property with respect to $i$) 如果对于任意交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Model_Hovey/diagram_bbaf95c03292c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>存在 $h$ 使得图表交换.</p>
+</div>
+
+<div class="definition">
+  <p>(model structure (模型结构), [Hovey]) <br /> 一个范畴 $C$ 上的 model structure (模型结构) 是 <br /> 3 个子范畴 (weak equivalences, cofibrations, fibrations) + 2个 functorial factorizations $(α,β)$ 和 $(γ,δ)$ <br /> 满足以下公理:</p>
+  <ol>
+    <li>
+      <p>(2-out-of-3) f, g, gf 中有两个是 weak equivalences 中则第三个也是.</p>
+    </li>
+    <li>
+      <p>(retracts) 3 个子范畴都对 retract 封闭.</p>
+    </li>
+    <li>
+      <p>(lifting) TC 对于 F 有 LLP, C 对于 TF 有 RLP.</p>
+    </li>
+    <li>
+      <p>(factorization) 对于每个态射 $f$, $α(f)$ 是 C, $β(f)$ 是 TF; $γ(f)$ 是 TC, $δ(f)$ 是 F.</p>
+    </li>
+  </ol>
+</div>
+
+<div class="definition">
+  <p>(model category (模型范畴), [Hovey]) <br /> 模型范畴 = 模型结构 + 有 small limits and colimits.</p>
+</div>
+
+<p><strong>Remark.</strong> 这个定义跟 Quillen 的定义有区别:</p>
+<ol>
+  <li>Quillen 区分了 model category 和 closed model category, Hovey 直接把 closed model category 叫做 model category. (目前没有发现这两个有什么本质区别)</li>
+  <li>Quillen 只要求了有限 (co)limits, 但是 Hovey 要求了 small (co)limits (技术上更为方便).</li>
+  <li>Quillen 的分解不是函子性的, Hovey 要求了函子性分解. (在目前的所有例子上都是函子性的)
+上面 3 点是 Hovey 自己说的, 我感觉还有一些区别 (和章璞老师讲义上的定义)</li>
+  <li>现在文献里面都把 closed model category 叫做 model category 了, 很少有人提 [Qui67] 里面的 model category 了.</li>
+</ol>
+
+<p><strong>Remark.</strong> 模型范畴是 self-dual 的, 交换 cofibrations 和 fibrations 即可.</p>
+
+<div class="example">
+  <p>(模型范畴的平凡例子) <br /> 考虑有 small limits and colimits 的范畴 $\mathcal{C}$, 定义所有同构都是 weak equivalences, 所有态射都是 cofibrations 和 fibrations.</p>
+</div>
+
+<p>记 initial object 为 $0$, terminal object 为 $*$.</p>
+
+<div class="definition">
+  <p>(pointed model category (有基点的模型范畴)) initial object 和 terminal object 同构.</p>
+</div>
+
+<div class="definition">
+  <p>(cofibrant, fibrant) <br /> 一个对象 $X$ 被称为 cofibrant object, 如果 $0→X$ 是一个 cofibration. 余纤维对象类记为 $\mathcal{M}_c$ <br /> 一个对象 $Y$ 被称为 fibrant object, 如果 $Y→*$ 是一个 fibration. 纤维对象类记为 $\mathcal{M}_f$ <br /></p>
+</div>
+
+<p><strong>Remark.</strong> 这里暂时没有像章璞老师的讲义一样定义 trivial object, 感觉是因为在这个定义下 $0→*$ 不知道是不是 weak equivalent.</p>
+
+<h2 id="12-the-homotopy-category">1.2 The homotopy Category</h2>
+
+<p>Hovey 的这一节是完全遵从 [Qui67] 的标准方法, 没有引入什么新的改进. 只有从 [DS95] 和 [DHK] 中借鉴了一些小的改进.</p>
+
+<p>Q: 目前有没有什么新的东西?</p>
+
+<p>最基本的结果: 局部化 $\mathrm{Ho}\ \mathcal{M}$ (by inverting the weak equivalences) 和 商范畴 $\mathcal{M}_{cf}/\sim$ (cofibrant 和 fibrant 对象商掉同伦关系) 是等价的.</p>
+
+<p><strong>Alert.</strong> $\mathrm{Ho}\ \mathcal{M}$ 和 $\mathcal{M}_{cf}/\sim$ 不是同一个范畴, 只是等价.</p>
+
+<div class="definition">
+  <p>设 $\mathcal{M}$ 是模型范畴, $f, g: B→X$ 是两个态射.</p>
+  <ol>
+    <li>
+      <p>cylinder object</p>
+    </li>
+    <li>
+      <p>path object</p>
+    </li>
+    <li>
+      <p>left homotopy</p>
+    </li>
+    <li>
+      <p>right homotopy</p>
+    </li>
+    <li>
+      <p>homotopic</p>
+    </li>
+    <li>
+      <p>homotopic equivalence</p>
+    </li>
+  </ol>
+</div>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#三个推荐阅读材料">
+        <span class="toc-number">0.0.1.</span>
+        <span class="toc-title">三个推荐阅读材料</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#预备知识">
+        <span class="toc-number">0.0.2.</span>
+        <span class="toc-title">预备知识</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#问题">
+        <span class="toc-number">0.0.3.</span>
+        <span class="toc-title">问题</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#论文结构">
+        <span class="toc-number">0.0.4.</span>
+        <span class="toc-title">论文结构</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#为什么要定义模型范畴">
+        <span class="toc-number">0.0.5.</span>
+        <span class="toc-title">为什么要定义模型范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#model-categories-的发展历史">
+        <span class="toc-number">0.0.6.</span>
+        <span class="toc-title">Model Categories 的发展历史</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#11-the-definition-of-a-model-category">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">1.1 The Definition of a Model Category</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#12-the-homotopy-category">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">1.2 The homotopy Category</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Symphony1" title="NEXT: 交响音乐简介">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/CatHistory" title="PREV: 各类范畴的历史">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

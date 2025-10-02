@@ -9,12 +9,12 @@
 
 
 
-  <title>《三角范畴与导出范畴》习题 - 第一章
+  <title>模型范畴例子
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="关键知识复习">
+<meta name="description" content="四个不同的例子:  Frobenius ring 上的模范畴  环上的模的 chain complexes  拓扑空间范畴  Hopf algebra 上的 comodules 的 cochain complexes">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/TriCat_Exercise1">
+<link rel="canonical" href="/website/posts/Model_Examples">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,91 +75,161 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>《三角范畴与导出范畴》习题 - 第一章</h1>
+      <h1>模型范畴例子</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 5, 2025
+        October 1, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="关键知识复习">关键知识复习</h2>
-
-<h3 id="1-三角范畴的相关公理">1. 三角范畴的相关公理</h3>
-
+    <p>四个不同的例子:</p>
 <ul>
-  <li>
-    <p>(TR1) 好三角同构封闭 + 态射嵌入好三角第一项 + 恒等态射对应三角 $ X \xrightarrow{\text{Id}_X} X \to 0 \to TX $</p>
-  </li>
-  <li>
-    <p>(TR2) 顺时针旋转</p>
-  </li>
-  <li>
-    <p>(TR3) 态射定理: 给定两个好三角和态射 $f, g$ 使得图表交换, 则存在 $h$ 使得整个图表交换.</p>
-
-    <p>Q: 存在的 $h$ 是否唯一? A: 不唯一. 例子见书注记 1.1.4.</p>
-  </li>
-  <li>
-    <p>(TR4) 八面体公理</p>
-  </li>
+  <li>Frobenius ring 上的模范畴</li>
+  <li>环上的模的 chain complexes</li>
+  <li>拓扑空间范畴</li>
+  <li>Hopf algebra 上的 comodules 的 cochain complexes</li>
 </ul>
 
-<h3 id="2-上同调函子">2. 上同调函子</h3>
+<h2 id="21-cofibrantly-generated-model-categories">2.1 Cofibrantly Generated Model Categories</h2>
 
-<ul>
-  <li>联系了三角范畴和 Abel 范畴, 把好三角展开成一个正合列</li>
-</ul>
+<p>这个部分是为后面讨论例子作的准备: 证明一个范畴有模型结构是很难的, 这个部分我们尝试去减少我们要 check 的条件.</p>
 
-<div class="theorem">
-  <p>$\mathrm{Hom}_{\mathcal{C}}(M,-)$ 和 $\mathrm{Hom}_{\mathcal{C}}(-,M)$ 都是上同调函子</p>
+<p>主要工具: small object argument, 它告诉我们如何去构造 functorial factorizations. 为了引入这个工具, 我们需要一些处理 infinite compositions 的技术.</p>
+
+<h3 id="211-ordinals-cardinals-and-transfinite-compositions">2.1.1 Ordinals, Cardinals, and Transfinite Compositions</h3>
+
+<p>对于一个 ordinal, 我们可以自然地将它看成一个范畴: $α$ 到 $β$ 有唯一的一个态射当且仅当 $α≤β$.</p>
+
+<div class="definition">
+  <p>设 $\mathcal{C}$ 是一个有所有 small colimits 的范畴, $λ$ 是一个 ordinal. 一个 $λ$-sequence in $\mathcal{C}$ 是一个 colimit-preserving functor $X:λ→\mathcal{C}$, 通常写作 $$\begin{equation}
+X_0 → X_1 → \cdots → X_β → \cdots
+\end{equation}$$ 由于 $X$ preserves colimits, 对于所有的 limit ordinals $γ<λ$, 诱导的态射 $$\begin{equation}
+\mathrm{colim}_{β<γ} X_β \rightarrow X_γ
+\end{equation}$$ 是一个同构. 我们称态射 $X_0→\mathrm{colim}_{β<λ} X_β$ 为这个 $λ$-sequence 的 composition.</p>
 </div>
 
-<h3 id="3-预三角范畴的基本性质">3. 预三角范畴的基本性质</h3>
+<p>回忆一下 cardinal 的定义: 对于一个集合 $A$, 它的 cardinality 是所有与 $A$ 有双射的 ordinals 中最小的 ordinal $|A|$. 一个 cardinal 是一个满足 $|κ|=κ$ 的 ordinal $κ$.</p>
 
-<ul>
-  <li>
-    <p>态射嵌入好三角其实可以嵌入任何一个位置, 嵌入 $-Σ^{-1}u $ 并考虑使用 (TR2) 旋转即可.</p>
-  </li>
-  <li>
-    <p>相邻复合为 0.</p>
-  </li>
-  <li>
-    <p>态射定理其实只要任意两个位置的态射就可以得到第三个位置的态射, 从而得到三角射. 这个证明只要使用 (TR2) 旋转和 (TR3) 态射定理即可.</p>
-  </li>
-  <li>
-    <p>三角射中两个态射同构则是三角同构. 证明使用 Hom 函子. 这个证明有点意思:</p>
-  </li>
-</ul>
-
-<div class="proof">
-  <p>我们目前有交换图</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/TriCat_Exercise1/diagram_8be184f8e3b01.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>现在我们使用 Hom 函子, 得到交换图</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/TriCat_Exercise1/diagram_3d955a2e0f76f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>f 和 g 是同构, 则 $f \circ -$ 和 $g \circ -$ 也是同构. 由五引理可知 $h \circ -$ 也是同构, 特别地是满射. 于是存在 $h' : Z' \to Z$ 使得 $h \circ h' = \text{Id}_{Z'}$. 同理存在 $h'' : Z \to Z'$ 使得 $h'' \circ h = \text{Id}_Z$. 于是 $h$ 是同构.</p>
+<div class="definition">
+  <p>令 $γ$ 是一个 cardinal. 一个 ordinal $α$ 是 $γ$-filtered, 如果它是一个 limit ordinal, 并且对于所有的 $A⊆α, |A|≤γ$, 都有 $\sup A<α$.</p>
 </div>
 
-<p>这里的证明用了一个好方法:</p>
-
-<blockquote>
-  <p>要证明有左逆就证明前项复合是满射, 要证明有右逆就证明后项复合是满射.</p>
-</blockquote>
-
-<ul>
-  <li>逆时针旋转</li>
-</ul>
-
-<h2 id="习题">习题</h2>
-<div class="problem">
-  <p>设 $u : X \to Y$ 是预三角范畴 $\mathcal{C}$ 的态射。则 $u$ 是同构当且仅当 $ X \xrightarrow{u} Y \to 0 \to TX $ 是好三角。</p>
+<div class="definition">
+  <p>设 $\mathcal{C}$ 是一个有所有 small colimits 的范畴, $\mathcal{D}$ 是 $\mathcal{C}$ 的一些态射的 collection, $A$ 是 $\mathcal{C}$ 的一个对象. 设 $κ$ 是一个 cardinal. 我们说 $A$ 是 $κ$-small relative to $\mathcal{D}$, 如果对于所有的 $κ$-filtered ordinals $λ$ 和所有的 $λ$-sequences $X$ 使得对于 $β+1<λ$ 都有 $X_β→X_{β+1}$ 属于 $\mathcal{D}$, 集合之间的映射 $$\begin{equation}
+\mathrm{colim}_{β<λ} \mathcal{C}(A,X_β) \rightarrow \mathcal{C}(A, \mathrm{colim}_{β<λ} X_β)
+\end{equation}$$ 是一个同构. 我们说 $A$ 是 small relative to $\mathcal{D}$, 如果存在一个 cardinal $κ$, 使得 $A$ 是 $κ$-small relative to $\mathcal{D}$. 我们说 $A$ 是 small, 如果它 small relative to $\mathcal{C}$.</p>
 </div>
 
+<div class="example">
+  <p>(Every set is small) <br /></p>
+</div>
+
+<div class="example">
+  <p>($R$-module is small, fintiely presented module is finite) <br /> 设 $A$ 是一个 $R$-module. 令 $κ=|A|(|A|+|R|)$.</p>
+</div>
+
+<h3 id="212-relative-mathjax_protectedjekkmathjax_protected-cell-complexes-and-the-small-object-argument">2.1.2 Relative $I$-cell complexes and the Small Object Argument</h3>
+
+<p>知道某些对象是 small 的好处是可以帮助我们构造 functorial factorizations.</p>
+
+<div class="definition">
+  <p>设 $I$ 是范畴 $\mathcal{C}$ 里的一个态射类.</p>
+  <ol>
+    <li>一个态射是 $I$-injective,</li>
+  </ol>
+</div>
+
+<div class="lemma">
+  <p>设 $(F,U,φ):\mathcal{C}→\mathcal{D}$ 是一个 adjunction, $I$ 是 $\mathcal{C}$ 里的一个态射类, $J$ 是 $\mathcal{D}$ 里的一个态射类. 则</p>
+  <ol>
+    <li>$U(FI\text{-inj})⊆ I\text{-inj}$.</li>
+    <li>$F(I\text{-cof})⊆FI\text{-cof}$.</li>
+    <li>$F(UJ\text{-proj})⊆J\text{-proj}$.</li>
+    <li>$U(J\text{-fib})⊆UJ\text{-fib}$.</li>
+  </ol>
+</div>
+
+<div class="definition">
+  <p>(relative $I$-cell complex) <br /></p>
+</div>
+
+<h3 id="213-cofibrantly-generated-model-categories">2.1.3 Cofibrantly Generated Model Categories</h3>
+
+<p>关键技术点:</p>
+<ol>
+  <li>什么是 cofibrantly generated model category.</li>
+  <li>什么是 generating cofibrations 的集合 $I$.</li>
+  <li>什么是 generating trivial cofibrations 的集合 $J$.</li>
+</ol>
+
+<div class="definition">
+  <p>设 $\mathcal{M}$ 是一个模型范畴. 我们说 $\mathcal{M}$ 是 cofibrantly generated, 如果存在两个集合 $I$ 和 $J$ 的态射, 使得</p>
+  <ol>
+    <li>$I$ 中态射的 domain 都 small relative to $I$-cell.</li>
+    <li>$J$ 中态射的 domain 都 small relative to $J$-cell.</li>
+    <li>$𝖥𝗂𝖻 = J\text{-inj}$.</li>
+    <li>$𝖳𝖥𝗂𝖻 = I\text{-inj}$. 这里的 $I$ 和 $J$ 分别是 generating cofibrations 和 generating trivial cofibrations 的集合.</li>
+  </ol>
+</div>
+
+<p>知道一个模型范畴是 cofibrantly generated 有很多好处:</p>
+<ul>
+  <li>更容易 check 一个函子是不是 Quillen functor.</li>
+</ul>
+
+<h2 id="22-模范畴的稳定范畴">2.2 模范畴的稳定范畴</h2>
+
+<p>最简单的非平凡模型结构: Frobenius 环上的模范畴, 上面有稳定模型结构.</p>
+
+<div class="definition">
+  <p>一个环 $R$ 是 (left) Frobenius ring, 如果所有的 projective left $R$-modules 都是 injective left $R$-modules, 反之亦然.</p>
+</div>
+
+<div class="example">
+  <p>(Examples of Frobenius rings) <br /></p>
+  <ol>
+    <li>有限群的群代数 $k[G]$.</li>
+    <li>finite graded connected Hopf algebra over a field.</li>
+  </ol>
+</div>
+
+<div class="definition">
+  <p>$f,g$ 稳定等价 (stably equivalent) , 如果 $f-g$ 通过一个 projective module 分解.</p>
+</div>
+
+<p><strong>Remark.</strong> 我们一般只对 Frobenius ring 的模范畴里面的稳定等价感兴趣.</p>
+
+<div class="lemma">
+  <p>稳定等价是等价关系且与复合相容.</p>
+</div>
+
+<div class="definition">
+  <p>$R$-modules 的 stable category 是一个 category, 它的对象是所有的 left $R$-modules, 态射是 stable equivalence classes of morphisms.</p>
+</div>
+
+<p>目标: 给 $R$ 上的环范畴一个 (cofibrantly generated) 模型结构, 使得它的 homotopy category 就是 stable category.</p>
+
+<div class="lemma">
+  <ol>
+    <li>稳定等价对于 retract 封闭.</li>
+    <li>稳定等价满足 2-out-of-3.</li>
+    <li>对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是稳定等价.</li>
+    <li>对于投射模 $P$, 自然投影 $M⊕P→P$ 是稳定等价.</li>
+  </ol>
+</div>
+
+<p>为了给定 $R$-mod 上一个 cofibrantly generated 模型结构, 我们需要一个 generating cofibrations 的集合 $I$ 和一个 generating trivial cofibrations 的集合 $J$.</p>
+
+<p>为此, 我们定义:</p>
+<ul>
+  <li>$I$ 是集合 $\mathfrak{a}→R$, 其中 $\mathfrak{a}$ 取遍所有的 left ideals of $R$.</li>
+  <li>$J$ 是集合 $0→R$.</li>
+  <li>𝖥𝗂𝖻 =</li>
+  <li>𝖢𝗈𝖿𝗂𝖻</li>
+</ul>
 
   </article>
 
@@ -257,10 +327,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+    
+    
     <div class="toc-row toc-level-2">
-      <a href="#关键知识复习">
+      <a href="#21-cofibrantly-generated-model-categories">
         <span class="toc-number">1.</span>
-        <span class="toc-title">关键知识复习</span>
+        <span class="toc-title">2.1 Cofibrantly Generated Model Categories</span>
       </a>
     </div>
   
@@ -275,9 +347,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#1-三角范畴的相关公理">
+      <a href="#211-ordinals-cardinals-and-transfinite-compositions">
         <span class="toc-number">1.1.</span>
-        <span class="toc-title">1. 三角范畴的相关公理</span>
+        <span class="toc-title">2.1.1 Ordinals, Cardinals, and Transfinite Compositions</span>
       </a>
     </div>
   
@@ -292,9 +364,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#2-上同调函子">
+      <a href="#212-relative-mathjax_protectedjekkmathjax_protected-cell-complexes-and-the-small-object-argument">
         <span class="toc-number">1.2.</span>
-        <span class="toc-title">2. 上同调函子</span>
+        <span class="toc-title">2.1.2 Relative $I$-cell complexes and the Small Object Argument</span>
       </a>
     </div>
   
@@ -309,9 +381,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#3-预三角范畴的基本性质">
+      <a href="#213-cofibrantly-generated-model-categories">
         <span class="toc-number">1.3.</span>
-        <span class="toc-title">3. 预三角范畴的基本性质</span>
+        <span class="toc-title">2.1.3 Cofibrantly Generated Model Categories</span>
       </a>
     </div>
   
@@ -326,9 +398,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#习题">
+      <a href="#22-模范畴的稳定范畴">
         <span class="toc-number">2.</span>
-        <span class="toc-title">习题</span>
+        <span class="toc-title">2.2 模范畴的稳定范畴</span>
       </a>
     </div>
   
@@ -381,13 +453,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/BA_Exercise2" title="NEXT: 《基础代数学》第二章习题">&lt;&lt;</a>
-      <span>&middot;</span>
-    
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/test" title="PREV: Test">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/topol_dual" title="PREV: 拓扑空间范畴是否自对偶">&gt;&gt;</a>
     
   </div>
 </main>
