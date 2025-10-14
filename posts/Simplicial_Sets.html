@@ -9,12 +9,12 @@
 
 
 
-  <title>拓扑空间范畴是否自对偶
+  <title>Simplicial Sets 上的模型结构
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.">
+<meta name="description" content="3.1 Simplicial Sets">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/topol_dual">
+<link rel="canonical" href="/website/posts/Simplicial_Sets">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,31 +75,80 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>拓扑空间范畴是否自对偶</h1>
+      <h1>Simplicial Sets 上的模型结构</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 28, 2025
+        October 3, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <p>模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.</p>
+    <h2 id="31-simplicial-sets">3.1 Simplicial Sets</h2>
 
-<p>path object 来自于拓扑空间里面的 $Y^[0,1]$ (即 所有 $[0,1]$ 到 $Y$ 的连续映射组成的空间, 拓扑是 compact-open 拓扑).</p>
+<p>Simplicial category $Δ$ 的对象是
+$$\begin{equation}
 
-<p>一个自然的问题是它们是不是互为对偶的.</p>
+[n]=\{ 0,1,\cdots,n \},\quad n≥0,
 
-<p>要回答这个问题之前首先要问: 拓扑空间范畴是不是自对偶的?</p>
+\end
+{equation}$$
+态射是 weekly order-preserving maps (单调递增, 不要求严格). 显然 $Δ$ 构成一个范畴.</p>
 
-<p>我最开始想到的是, 在拓扑空间范畴里面可以自然地取任意 coproduct (我猜想这是因为在定义 open set, 也就是 topogical structure 的时候, 任意并实际上就和 coproduct 有关, 因为集合范畴的 coproduct 就是 union).</p>
+<p>$Δ$ 有两个子范畴 $Δ_{+}, Δ_{-}$, 它们的态射分别是单射和满射. $Δ$ 中 所有的态射都可以分解为一个单射复合一个满射.</p>
 
-<p>在学基础拓扑学的时候, 有积拓扑和箱拓扑的区别. 但是只有前者是范畴意义下的积 (同时它是使得自然投影都是连续的最粗的拓扑).</p>
+<p>$Δ$ 的生成元是 coface maps $d^i$ 和 codegeneracy maps $s^i$ :</p>
 
-<p>如何看待 cyliner object 和 path object 互为对偶?</p>
+<p>$$\begin{equation}
+d^i: [n-1]→[n]∈Δ_+, \text{where the image of } d^i \text{ misses } i,
+\end{equation}$$
+$$\begin{equation}
+s^i: [n]→[n-1]∈Δ_-, \text{where } s^i \text{ maps } i \text{ and } i+1 \text{ to } i.
+\end{equation}$$</p>
 
-<p>高阳学长给出的回答是前者是 tensor 后者是 hom.</p>
+<p>这些态射满足以下 cosimplicial identities:</p>
+
+<p>$$\begin{equation}
+d^j d^i = d^i d^{j-1}, \quad i< j,
+\end{equation}$$</p>
+
+<p>$$\begin{equation}
+s^j d^i = \begin{cases} d^i s^{j-1}, & i< j \\
+\mathrm{Id}, & i=j \text{ or } i=j+1 \\
+d^{i-1} s^j, & i>j+1 \end{cases},
+\end{equation}$$</p>
+
+<p>$$\begin{equation}
+s^j s^i = s^{i-1} s^j, \quad i>j,
+\end{equation}$$</p>
+
+<p>设 $\mathcal{C}$ 是任意一个范畴, 则定义 the category of cosimplicial objects in $\mathcal{C}$ 为函子范畴 $\mathcal{C}^Δ$, the category of simplicial objects in $\mathcal{C}$ 为函子范畴 $\mathcal{C}^{Δ^{op}}$. 最重要的例子是集合范畴上的 simplicial objects, 我们使用记号 $\mathbf{SSet}=\mathcal{C}^{\Delta^{^{\mathrm{op}}}}$, $\mathbf{SSet}$ 称为 the category of simplicial sets.</p>
+
+<p>对于一个 simplicial set $K$, 记
+$$\begin{equation}
+K_n := K[n],
+\end{equation}$$
+并称 $K_n$ 是 $K$ 的 $n$-simplices 的集合.</p>
+
+<div class="lemma">
+  <p>每个 simplicial set 都 small.</p>
+</div>
+
+<div class="lemma">
+  <p>Finite simplicial set 都 finite.</p>
+</div>
+
+<p>(我还没搞清楚第一个 finite 是什么意思)</p>
+
+<p>有一个非常重要的函子
+$$\begin{equation}
+Δ[-]: Δ → \mathbf{SSet}, \quad [n] \mapsto Δ[n] = Δ(-,[n]) = \mathrm{Hom}_Δ(-,[n]).
+\end{equation}$$
+每一个 $Δ[n]$ 其实就是一个反变的 Yoneda 函子 (看成从 $Δ^{^{\mathrm{op}}}$ 出发的话就是共变的). 于是根据 Yoneda Lemma 我们有自然同构
+$$\begin{equation}
+\mathbf{SSet}(Δ[n], K)≅ K_n, 
+\end{equation}$$</p>
 
   </article>
 
@@ -189,6 +238,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#31-simplicial-sets">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">3.1 Simplicial Sets</span>
+      </a>
+    </div>
+  
 </nav>
   </div>
 
@@ -238,13 +302,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex3_1" title="NEXT: 《基础代数学》作业 Week3-1">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Monoidal_Model" title="NEXT: Monoidal Model Categories">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Model_List" title="PREV: 模型范畴入门列表">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Hopf_Alg" title="PREV: Hopf Algebra 基础知识">&gt;&gt;</a>
     
   </div>
 </main>

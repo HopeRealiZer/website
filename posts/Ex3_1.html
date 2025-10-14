@@ -9,12 +9,12 @@
 
 
 
-  <title>拓扑空间范畴是否自对偶
+  <title>《基础代数学》作业 Week3-1
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.">
+<meta name="description" content="  在一个范畴中, 如果存在零对象, 则它在同构意义下是唯一的.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/topol_dual">
+<link rel="canonical" href="/website/posts/Ex3_1">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,31 +75,65 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>拓扑空间范畴是否自对偶</h1>
+      <h1>《基础代数学》作业 Week3-1</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 28, 2025
+        September 29, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <p>模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.</p>
+    <div class="problem">
+  <p>在一个范畴中, 如果存在零对象, 则它在同构意义下是唯一的.</p>
+  <div class="proof">
+    <p>设 $0,0'$ 是范畴 $\mathcal{C}$ 中的两个零对象. 则存在唯一的态射 $f:0→0'$, $g:0'→0$. 由零对象的定义知 $f,g$ 的复合只能是恒等态射(因为零对象到自己只有唯一的态射, 只能是恒等态射). 故 $0\cong 0'$.</p>
+  </div>
+</div>
 
-<p>path object 来自于拓扑空间里面的 $Y^[0,1]$ (即 所有 $[0,1]$ 到 $Y$ 的连续映射组成的空间, 拓扑是 compact-open 拓扑).</p>
+<div class="problem">
+  <p>左 $R$-模范畴 $R-\mathrm{Mod}$ 中的态射是单态射(满态射)当且仅当它是模的单同态(满同态).</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /></p>
+    <p>(有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:M→N$ 是单态射. 对于任意 $m∈M$, 考虑态射(模同态) $φ_m:R→M, r↦rm$. 若 $f(m)=0$, 则 $(f∘φ_m)(r)=f(rm)=rf(m)=0,∀ r∈ R$, 即有 $f∘φ_m=0=f∘φ_m$. 由 $f$ 是单态射可得 $φ_m=0$, 从而 $m=φ_m(1)=0$. 故 $f$ 是单同态. <br /></p>
+    <p>(或者也可以用下面一题一样的方法, 更方便) <br /></p>
+    <p>(满, ⇒) 设 $f:M→N$ 是满态射. 考虑自然投射 $π:N→N/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=N$. 故 $f$ 是满同态.</p>
+  </div>
+</div>
 
-<p>一个自然的问题是它们是不是互为对偶的.</p>
+<div class="problem">
+  <p>群范畴 $\mathbf{Grp}$ 中的态射是单态射(满态射)当且仅当它是群的单同态(满同态).</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /></p>
+    <p>(有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:G→H$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪G$ 以及平凡同态 $0: \mathrm{Ker}f→G, g↦ e_G$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{e_G\}$. 故 $f$ 是单同态. <br /></p>
+    <p>(满, ⇒) 设 $f:A→B$ 是满态射. 考虑反证, 假设 $f$ 不是群满同态. <br /></p>
+    <p>如果 $\mathrm{Im}f \lhd B$, 则考虑自然投射 $π:B→B/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=B$. 矛盾. <br /></p>
+    <p>故考虑 $[B : \mathrm{Im}f]>2$. 下面来证明存在不同的两个群同态 $g,h: B→\mathrm{Sym}B$ 使得 $g∘f=h∘f$. <br /></p>
+    <p>考虑右陪集空间 $\mathrm{Im} f\backslash B$, 由于其元素个数大于 $2$, 故存在 $σ∈\mathrm{Sym}(\mathrm{Im}f\backslash B)$ 使得 $σ≠1$ 且 $σ$ 有不动点. 下面我们定义 $p∈\mathrm{Sym}(B)$. 首先固定一个右陪集的代表元集 $R$, 即对于任意的 $b∈ B$, $b$ 可以唯一地表示成 $b=cr$, 其中 $r∈R, c∈\mathrm{Im}f$. 现在对于任意的 $b=cr∈B$, 定义 $p(b)=cr'$, 其中 $r'∈R$ 是 $σ((\mathrm{Im}f) r)$ 的代表元. 显然 $p\in\mathrm{Sym}(B)$, 同时满足 $p≠1$ 且 $p$ 有不动点. <br /></p>
+    <p>下面定义 $$
+g: B\to\mathrm{Sym}(B),\quad b\mapsto [x\mapsto bx],
+$$ 以及 $$
+h: B\to\mathrm{Sym}(B),\quad b\mapsto pg(b)p^{-1}.
+$$</p>
+    <p>首先注意到 $g≠h$, 否则对于任意的 $b∈B$, 都有 $pg(b)=g(b)p$, 并且对于任意的 $x∈B$, 有 $p(bx)=bp(x)$, 取 $x$ 为 $p$ 的不动点, 则有 $p(bx)=bx$, 而 $p≠1$, 存在 $b∈B$ 使得等式不成立. 从而 $g≠h$. <br /></p>
+    <p>另外, 注意到对于任意的 $b∈B, x∈B$, 有 $$\begin{equation}
+(h∘f)(b)(x)= pg(f(b))p^{-1}(x)=p(f(b)p^{-1}(x))\overset{(*)}{=}f(b)p(p^{-1}(x))=f(b)x=(g∘f)(b)(x).
+\end{equation}$$</p>
+    <p>$(*)$ 这一步使用了 $p$ 的定义. 从而 $g∘f=h∘f$. 矛盾. <br /></p>
+  </div>
+</div>
 
-<p>要回答这个问题之前首先要问: 拓扑空间范畴是不是自对偶的?</p>
-
-<p>我最开始想到的是, 在拓扑空间范畴里面可以自然地取任意 coproduct (我猜想这是因为在定义 open set, 也就是 topogical structure 的时候, 任意并实际上就和 coproduct 有关, 因为集合范畴的 coproduct 就是 union).</p>
-
-<p>在学基础拓扑学的时候, 有积拓扑和箱拓扑的区别. 但是只有前者是范畴意义下的积 (同时它是使得自然投影都是连续的最粗的拓扑).</p>
-
-<p>如何看待 cyliner object 和 path object 互为对偶?</p>
-
-<p>高阳学长给出的回答是前者是 tensor 后者是 hom.</p>
+<div class="problem">
+  <p>环范畴 $\mathbf{Ring}$ 中的态射是单态射当且仅当它是环的单同态; 但是, 环范畴 $\mathbf{Ring}$ 中的满态射未必是环的满同态.</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /> (有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:R→S$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪R$ 以及平凡同态 $0: \mathrm{Ker}f→R, r↦ 0_R$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{0_R\}$. 故 $f$ 是单同态. <br /></p>
+    <p>(满, ⇏) 设 $f:\mathbb{Z}→\mathbb{Q}$ 是自然嵌入. 则 $f$ 是满态射 (考虑 $f,g:\mathbb{Q}→R$ 是环同态, 若它们限制到 $\mathbb{Z}$ 上相等, 则对于任意的 $\frac{m}{n}\in\mathbb{Q}$, $m,n\in\mathbb{Z}$, 如果 $f(\frac{m}{n})≠g(\frac{m}{n})$, 则 $f(m)≠g(m)$, 矛盾), 但是不是环满同态.</p>
+  </div>
+</div>
 
   </article>
 
@@ -238,13 +272,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex3_1" title="NEXT: 《基础代数学》作业 Week3-1">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Model_Examples" title="NEXT: 模型范畴例子">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Model_List" title="PREV: 模型范畴入门列表">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/topol_dual" title="PREV: 拓扑空间范畴是否自对偶">&gt;&gt;</a>
     
   </div>
 </main>

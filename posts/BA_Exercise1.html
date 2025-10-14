@@ -551,6 +551,15 @@ $$</p>
   </div>
 </div>
 
+<div class="problem">
+  <p>环范畴 $\mathbf{Ring}$ 中的态射是单态射当且仅当它是环的单同态; 但是, 环范畴 $\mathbf{Ring}$ 中的满态射未必是环的满同态.</p>
+  <div class="proof">
+    <p>(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). <br /> (有右逆可能要用到选择公理) <br /></p>
+    <p>(单, ⇒) 设 $f:R→S$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪R$ 以及平凡同态 $0: \mathrm{Ker}f→R, r↦ 0_R$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{0_R\}$. 故 $f$ 是单同态. <br /></p>
+    <p>(满, ⇏) 设 $f:\mathbb{Z}→\mathbb{Q}$ 是自然嵌入. 则 $f$ 是满态射 (考虑 $f,g:\mathbb{Q}→R$ 是环同态, 若它们限制到 $\mathbb{Z}$ 上相等, 则对于任意的 $\frac{m}{n}\in\mathbb{Q}$, $m,n\in\mathbb{Z}$, 如果 $f(\frac{m}{n})≠g(\frac{m}{n})$, 则 $f(m)≠g(m)$, 矛盾), 但是不是环满同态.</p>
+  </div>
+</div>
+
 <h3 id="习题-15-拓展">习题 1.5 拓展</h3>
 
 <p>容易发现一个事情, 上面所说的各种(以集合为基础的)代数结构, 它们的单同态都和范畴意义下的单态射等价. 如果细致地考察, 我们需要考虑以下两个问题:</p>
@@ -573,6 +582,88 @@ $$</p>
   <p>(单态射 ⇒ 单射) 设 $f:A→B$ 是单态射. 对于任意 $a_1,a_2∈A$, 若 $f(a_1)=f(a_2)$, 则有 $f∘φ_{a_1}=f∘φ_{a_2}$, 其中 $φ_{a_i}:\{*\}→A, *↦a_i$. 由 $f$ 是单态射可得 $φ_{a_1}=φ_{a_2}$, 从而 $a_1=a_2$. 故 $f$ 是单射.</p>
 </div>
 
+<h2 id="16-正合性">1.6 正合性</h2>
+
+<h3 id="习题-16">习题 1.6</h3>
+
+<div class="problem">
+  <p>设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:M→Y$ 是模同态且满足 $gh=0$. 则存在唯一的模同态 $α:M→X$, 使得 $fα=h$.</p>
+  <div class="proof">
+    <p>(这实际上就是 kernel 的泛性质) <br /> 对任意的 $m∈M$, 由于 $g(h(m))=0$ 且 $\ker g = \operatorname{im} f$, 故存在唯一的(唯一性由 $f$ 单保证) $x_m∈X$, 使得 $f(x_m)=h(m)$. 定义映射 $α:M→X,\ m↦x_m$. 容易验证 $α$ 是模同态且 $fα=h$. <br /></p>
+    <p>这样的态射的唯一性由 $f$ 是单态射保证.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:Y→M$ 是模同态且满足 $hf=0$. 则存在唯一的模同态 $β:Z→M$, 使得 $βg=h$.</p>
+  <div class="proof">
+    <p>(这实际上就是 cokernel 的泛性质) <br /> 对任意的 $z∈Z$, 由于 $g$ 是满射, 故存在 $y∈Y$, 使得 $g(y)=z$. 定义映射 $β:Z→M,\ z↦h(y)$. 由于 $hf=0$, 故 $h(y)$ 不依赖于 $y$ 的选取 ($y$ 的选取只会差一个 $\ker g=\operatorname{im}f$ 里面的元素). 容易验证 $β$ 是模同态且 $βg=h$. <br /> 这样的态射的唯一性由 $g$ 是满态射保证.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>说明不存在非零同态 $π:\mathbb{Z}_m\to\mathbb{Z} (m>1)$.</p>
+  <div class="solution">
+    <p>$mf(1)=f(m)=f(0)=0$, 从而 $f(1)=0$, 故 $f=0$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>说明正合列 $0→m\mathbb{Z}\xrightarrow{i} \mathbb{Z} (m>1)$ 在反变函子 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 作用下不是正合列. 从而 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 不是反变正合函子.</p>
+  <div class="proof">
+    <p>如果是正合列, 则存在同态 $g:\mathbb{Z}→\mathbb{Z}$ 使得 $gi=f$, 其中 $f:m\mathbb{Z}\to\mathbb{Z}, mn↦n$, 这是不可能的 (因为 $f(1)$ 只能是整数, 不可能使得 $f(m)=1$).</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>在如下 $R$-模同态的图中</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise1/diagram_9c0c84a5228b6.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>上下两行是短正合列且左边方块交换. 则存在唯一的模同态 $h:Z→Z'$ 使得右边方块交换. 并且, 若 $f$ 是满同态, 则有正合列 $0\to\ker f\xrightarrow{\widetilde{a}}\ker g\xrightarrow{\widetilde{b}}\ker h→ 0$. 若 $h$ 是单同态, 则有正合列 $0\to\mathrm{coker} f\xrightarrow{\overline{a}}\mathrm{coker} g\xrightarrow{\overline{b}}\mathrm{coker} h→ 0$.</p>
+  <div class="proof">
+    <p>根据上面证明过的 cokernel 的泛性质, 以及短正合列的定义, 可知 $h$ 的存在性和唯一性. <br /> 剩下两个是蛇引理的自然推论.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>在如下 $R$-模同态的图中</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise1/diagram_4a89d738f264b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>上下两行是短正合列且右边方块交换. 则存在唯一的模同态 $f:X→X'$ 使得左边方块交换.</p>
+  <div class="proof">
+    <p>根据上面证明过的 kernel 的泛性质, 以及短正合列的定义, 可知 $f$ 的存在性和唯一性.</p>
+  </div>
+</div>
+
+<h2 id="17-jordan-hölder-定理">1.7 Jordan-Hölder 定理</h2>
+
+<h3 id="习题-17">习题 1.7</h3>
+
+<div class="problem">
+  <p>设 $S$ 是单 $R$-模, $M$ 是任一 $R$-模. 若 $nS≅nM$, 则 $S≅M$.</p>
+  <div class="proof">
+    <p>显然 $nS$ 的合成因子是 $n$ 个 $S$, 合成列如下 $$\begin{equation}
+0⊊S⊊S^2⊊⋯⊊nS,
+\end{equation}$$</p>
+    <p>由 Jordan-Hölder 定理知 $nM$ 的合成因子也是 $n$ 个 $S$. <br /></p>
+    <p>$nM$ 有子模序列 $$\begin{equation}
+0⊊M⊊M^2⊊⋯⊊nM,
+\end{equation}$$ 它和上面的合成列有等价的加细, 而合成列已经无法加细且两个子模序列长度相同, 故这也是合成列. 从而合成因子 $M=M/0≅S$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $M$ 是有合成列的 $R$-模, $S$ 是单 $R$-模且 $\mathrm{Hom}_R(M,S)≠0$. 则 $S$ 是 $M$ 的一个合成因子.</p>
+  <div class="proof">
+    <p>设 $M=M_0⊋M_1⊋⋯⊋M_t=0$ 是 $M$ 的一个合成列. 于是我们有短正合列 $$\begin{equation}
+0→M_{i+1}→M_i→M_i/M_{i+1}→0, \quad i=0,1,⋯,t-1.
+\end{equation}$$ 作用左正合函子 $\mathrm{Hom}_R(-,S)$ 在上面短正合列上, 得到正合列 $$\begin{equation}
+0→\mathrm{Hom}_R(M_i/M_{i+1},S)→\mathrm{Hom}_R(M_i,S)→\mathrm{Hom}_R(M_{i+1},S), \quad i=0,1,⋯,t-1.
+\end{equation}$$ 如果所有的 $\mathrm{Hom}_R(M_i/M_{i+1},S)=0$, 则由正合列可知 $\mathrm{Hom}_R(M_i,S)↪\mathrm{Hom}_R(M_{i+1},S)$ 是嵌入, 从而由 $\mathrm{Hom}_R(M_0,S)≠0$ 可以得到 $\mathrm{Hom}_R(M_t,S)≠0$, 矛盾. <br /></p>
+  </div>
+</div>
 
   </article>
 
@@ -980,6 +1071,74 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="#习题-15-拓展">
         <span class="toc-number">5.2.</span>
         <span class="toc-title">习题 1.5 拓展</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#16-正合性">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">1.6 正合性</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-16">
+        <span class="toc-number">6.1.</span>
+        <span class="toc-title">习题 1.6</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#17-jordan-hölder-定理">
+        <span class="toc-number">7.</span>
+        <span class="toc-title">1.7 Jordan-Hölder 定理</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-17">
+        <span class="toc-number">7.1.</span>
+        <span class="toc-title">习题 1.7</span>
       </a>
     </div>
   

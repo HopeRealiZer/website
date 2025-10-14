@@ -7,6 +7,277 @@
     
       
         <item>
+          <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</title>
+          <description>
+</description>
+          <pubDate>2025-10-14T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/AT_Lec_Ex1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AT_Lec_Ex1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week5-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $S$ 是单 $R$-模, $M$ 是任一 $R$-模. 若 $nS≅nM$, 则 $S≅M$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;显然 $nS$ 的合成因子是 $n$ 个 $S$, 合成列如下 $$\begin{equation}
+0⊊S⊊S^2⊊⋯⊊nS,
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;由 Jordan-Hölder 定理知 $nM$ 的合成因子也是 $n$ 个 $S$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;$nM$ 有子模序列 $$\begin{equation}
+0⊊M⊊M^2⊊⋯⊊nM,
+\end{equation}$$ 它和上面的合成列有等价的加细, 而合成列已经无法加细且两个子模序列长度相同, 故这也是合成列. 从而合成因子 $M=M/0≅S$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M$ 是有合成列的 $R$-模, $S$ 是单 $R$-模且 $\mathrm{Hom}_R(M,S)≠0$. 则 $S$ 是 $M$ 的一个合成因子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M=M_0⊋M_1⊋⋯⊋M_t=0$ 是 $M$ 的一个合成列. 于是我们有短正合列 $$\begin{equation}
+0→M_{i+1}→M_i→M_i/M_{i+1}→0, \quad i=0,1,⋯,t-1.
+\end{equation}$$ 作用左正合函子 $\mathrm{Hom}_R(-,S)$ 在上面短正合列上, 得到正合列 $$\begin{equation}
+0→\mathrm{Hom}_R(M_i/M_{i+1},S)→\mathrm{Hom}_R(M_i,S)→\mathrm{Hom}_R(M_{i+1},S), \quad i=0,1,⋯,t-1.
+\end{equation}$$ 如果所有的 $\mathrm{Hom}_R(M_i/M_{i+1},S)=0$, 则由正合列可知 $\mathrm{Hom}_R(M_i,S)↪\mathrm{Hom}_R(M_{i+1},S)$ 是嵌入, 从而由 $\mathrm{Hom}_R(M_0,S)≠0$ 可以得到 $\mathrm{Hom}_R(M_t,S)≠0$, 矛盾. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-13T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex5_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex5_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week3-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:M→Y$ 是模同态且满足 $gh=0$. 则存在唯一的模同态 $α:M→X$, 使得 $fα=h$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(这实际上就是 kernel 的泛性质) &lt;br /&gt; 对任意的 $m∈M$, 由于 $g(h(m))=0$ 且 $\ker g = \operatorname{im} f$, 故存在唯一的(唯一性由 $f$ 单保证) $x_m∈X$, 使得 $f(x_m)=h(m)$. 定义映射 $α:M→X,\ m↦x_m$. 容易验证 $α$ 是模同态且 $fα=h$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;这样的态射的唯一性由 $f$ 是单态射保证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:Y→M$ 是模同态且满足 $hf=0$. 则存在唯一的模同态 $β:Z→M$, 使得 $βg=h$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(这实际上就是 cokernel 的泛性质) &lt;br /&gt; 对任意的 $z∈Z$, 由于 $g$ 是满射, 故存在 $y∈Y$, 使得 $g(y)=z$. 定义映射 $β:Z→M,\ z↦h(y)$. 由于 $hf=0$, 故 $h(y)$ 不依赖于 $y$ 的选取 ($y$ 的选取只会差一个 $\ker g=\operatorname{im}f$ 里面的元素). 容易验证 $β$ 是模同态且 $βg=h$. &lt;br /&gt; 这样的态射的唯一性由 $g$ 是满态射保证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;说明不存在非零同态 $π:\mathbb{Z}_m\to\mathbb{Z} (m&gt;1)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;$mf(1)=f(m)=f(0)=0$, 从而 $f(1)=0$, 故 $f=0$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;说明正合列 $0→m\mathbb{Z}\xrightarrow{i} \mathbb{Z} (m&gt;1)$ 在反变函子 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 作用下不是正合列. 从而 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 不是反变正合函子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;如果是正合列, 则存在同态 $g:\mathbb{Z}→\mathbb{Z}$ 使得 $gi=f$, 其中 $f:m\mathbb{Z}\to\mathbb{Z}, mn↦n$, 这是不可能的 (因为 $f(1)$ 只能是整数, 不可能使得 $f(m)=1$).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在如下 $R$-模同态的图中&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex3_2/diagram_9c0c84a5228b6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;上下两行是短正合列且左边方块交换. 则存在唯一的模同态 $h:Z→Z'$ 使得右边方块交换. 并且, 若 $f$ 是满同态, 则有正合列 $0\to\ker f\xrightarrow{\widetilde{a}}\ker g\xrightarrow{\widetilde{b}}\ker h→ 0$. 若 $h$ 是单同态, 则有正合列 $0\to\mathrm{coker} f\xrightarrow{\overline{a}}\mathrm{coker} g\xrightarrow{\overline{b}}\mathrm{coker} h→ 0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据上面证明过的 cokernel 的泛性质, 以及短正合列的定义, 可知 $h$ 的存在性和唯一性. &lt;br /&gt; 剩下两个是蛇引理的自然推论.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在如下 $R$-模同态的图中&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex3_2/diagram_4a89d738f264b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;上下两行是短正合列且右边方块交换. 则存在唯一的模同态 $f:X→X'$ 使得左边方块交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据上面证明过的 kernel 的泛性质, 以及短正合列的定义, 可知 $f$ 的存在性和唯一性.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-10T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex3_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex3_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Monoidal Model Categories</title>
+          <description>&lt;p&gt;对于环上的模范畴进行推广, 环范畴的推广是 monoidal category, 模范畴的推广是 model category.&lt;/p&gt;
+
+&lt;p&gt;mondial model category 的例子:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Simplicial sets&lt;/li&gt;
+  &lt;li&gt;Pointed simplicial sets&lt;/li&gt;
+  &lt;li&gt;chain complexes of modules over a commutative ring&lt;/li&gt;
+  &lt;li&gt;chain complexs of comodules over a commutative Hopf algebra&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;拓扑空间范畴不是 monoidal model category. 但是 $k$-spaces 和 compactly generated topological spaces 是 monoidal model category.&lt;/p&gt;
+
+&lt;h2 id=&quot;41-closed-monoidal-categories-and-closed-modules&quot;&gt;4.1 Closed Monoidal Categories and Closed Modules&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algebra&lt;/th&gt;
+      &lt;th&gt;Category&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rings&lt;/td&gt;
+      &lt;td&gt;monoidal categories&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;commutative rings&lt;/td&gt;
+      &lt;td&gt;symmetric monoidal categories&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;modules over a ring&lt;/td&gt;
+      &lt;td&gt;modules over a monoidal category&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;algebras over a ring&lt;/td&gt;
+      &lt;td&gt;algebras over a monoidal category&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;central and commutative algebras over a commutative ring&lt;/td&gt;
+      &lt;td&gt;central and symmetric algebras over a symmetric monoidal category&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;一个范畴 $\mathcal{C}$ 上的 monoidal structure 是&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;一个 tensor product bifunctor $$\begin{equation}
+\mathcal{C}\times\mathcal{C} \xrightarrow{\otimes} \mathcal{C},
+\end{equation}$$&lt;/li&gt;
+    &lt;li&gt;一个 unit onject $S∈\mathcal{C}$,&lt;/li&gt;
+    &lt;li&gt;一个 natural associativity isomorphism $$\begin{equation}
+a: (X⊗Y)⊗Z \xrightarrow{\cong} X⊗(Y⊗Z),
+\end{equation}$$&lt;/li&gt;
+    &lt;li&gt;一个 natural left unit isomorphism $$\begin{equation}
+l: S⊗X \xrightarrow{\cong} X,
+\end{equation}$$&lt;/li&gt;
+    &lt;li&gt;一个 natural right unit isomorphism $$\begin{equation}
+r: X⊗S \xrightarrow{\cong} X,
+\end{equation}$$&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;满足交换图:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Monoidal_Model/diagram_f3b2a5a0d4e71.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;设 $\mathcal{C},\mathcal{D},\mathcal{E}$ 是范畴. 一个从 $\mathcal{C}×\mathcal{D}$ 到 $\mathcal{E}$ 的 adjunction of two variables 是一个五元组 $(\otimes,\mathrm{Hom}_r,\mathrm{Hom}_l,φ_r,φ_l)$, 其中&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$\otimes: \mathcal{C}×\mathcal{D} \to \mathcal{E}$ 是双函子,&lt;/li&gt;
+    &lt;li&gt;$\mathrm{Hom}_r: \mathcal{D}^{op}×\mathcal{E} \to \mathcal{C}$ 是双函子,&lt;/li&gt;
+    &lt;li&gt;$\mathrm{Hom}_l: \mathcal{C}^{op}×\mathcal{E} \to \mathcal{D}$ 是双函子,&lt;/li&gt;
+    &lt;li&gt;$φ_r$ 和 $φ_l$ 是自然同构 $$\begin{equation}
+\mathcal{C}(C, \mathrm{Hom}_r(D,E))
+\xrightarrow[\cong]{\varphi_r^{-1}}
+\mathcal{E}(C \otimes D, E)
+\xrightarrow[\cong]{\varphi_\ell}
+\mathcal{D}(D, \mathrm{Hom}_\ell(C,E)).
+\end{equation}$$&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-04T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Monoidal_Model</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Monoidal_Model</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Simplicial Sets 上的模型结构</title>
+          <description>&lt;h2 id=&quot;31-simplicial-sets&quot;&gt;3.1 Simplicial Sets&lt;/h2&gt;
+
+&lt;p&gt;Simplicial category $Δ$ 的对象是
+$$\begin{equation}
+
+[n]=\{ 0,1,\cdots,n \},\quad n≥0,
+
+\end
+{equation}$$
+态射是 weekly order-preserving maps (单调递增, 不要求严格). 显然 $Δ$ 构成一个范畴.&lt;/p&gt;
+
+&lt;p&gt;$Δ$ 有两个子范畴 $Δ_{+}, Δ_{-}$, 它们的态射分别是单射和满射. $Δ$ 中 所有的态射都可以分解为一个单射复合一个满射.&lt;/p&gt;
+
+&lt;p&gt;$Δ$ 的生成元是 coface maps $d^i$ 和 codegeneracy maps $s^i$ :&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+d^i: [n-1]→[n]∈Δ_+, \text{where the image of } d^i \text{ misses } i,
+\end{equation}$$
+$$\begin{equation}
+s^i: [n]→[n-1]∈Δ_-, \text{where } s^i \text{ maps } i \text{ and } i+1 \text{ to } i.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;这些态射满足以下 cosimplicial identities:&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+d^j d^i = d^i d^{j-1}, \quad i&lt; j,
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+s^j d^i = \begin{cases} d^i s^{j-1}, &amp; i&lt; j \\
+\mathrm{Id}, &amp; i=j \text{ or } i=j+1 \\
+d^{i-1} s^j, &amp; i&gt;j+1 \end{cases},
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+s^j s^i = s^{i-1} s^j, \quad i&gt;j,
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;设 $\mathcal{C}$ 是任意一个范畴, 则定义 the category of cosimplicial objects in $\mathcal{C}$ 为函子范畴 $\mathcal{C}^Δ$, the category of simplicial objects in $\mathcal{C}$ 为函子范畴 $\mathcal{C}^{Δ^{op}}$. 最重要的例子是集合范畴上的 simplicial objects, 我们使用记号 $\mathbf{SSet}=\mathcal{C}^{\Delta^{^{\mathrm{op}}}}$, $\mathbf{SSet}$ 称为 the category of simplicial sets.&lt;/p&gt;
+
+&lt;p&gt;对于一个 simplicial set $K$, 记
+$$\begin{equation}
+K_n := K[n],
+\end{equation}$$
+并称 $K_n$ 是 $K$ 的 $n$-simplices 的集合.&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;每个 simplicial set 都 small.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;Finite simplicial set 都 finite.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;(我还没搞清楚第一个 finite 是什么意思)&lt;/p&gt;
+
+&lt;p&gt;有一个非常重要的函子
+$$\begin{equation}
+Δ[-]: Δ → \mathbf{SSet}, \quad [n] \mapsto Δ[n] = Δ(-,[n]) = \mathrm{Hom}_Δ(-,[n]).
+\end{equation}$$
+每一个 $Δ[n]$ 其实就是一个反变的 Yoneda 函子 (看成从 $Δ^{^{\mathrm{op}}}$ 出发的话就是共变的). 于是根据 Yoneda Lemma 我们有自然同构
+$$\begin{equation}
+\mathbf{SSet}(Δ[n], K)≅ K_n, 
+\end{equation}$$&lt;/p&gt;
+</description>
+          <pubDate>2025-10-03T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Simplicial_Sets</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Simplicial_Sets</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Hopf Algebra 基础知识</title>
           <description>&lt;h2 id=&quot;algebra-的图表刻画&quot;&gt;Algebra 的图表刻画&lt;/h2&gt;
 
@@ -125,9 +396,32 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;/ol&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 显然以上几个态射类都对于 pushout (或 pullback) 以及 transfinite composition 封闭, 这主要是 LLP 或 RLP 的性质.&lt;/p&gt;
+
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;(relative $I$-cell complex) &lt;br /&gt;&lt;/p&gt;
 &lt;/div&gt;
+
+&lt;p&gt;Relative $I$-cell complexes 有以下性质:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;它是特殊的一类 $I$-cof, 即 $I$-cell ⊆ $I$-cof (一般的 $I$-cof 我们难以描述, 但是 relative $I$-cell complexes 我们可以比较容易地描述).&lt;/li&gt;
+  &lt;li&gt;$I$-cell 满足对于 transfinite composition 的封闭性.&lt;/li&gt;
+  &lt;li&gt;$I$ 中态射的 coproduct 的 pushout 都在 $I$-cell 里面 (特别地, pushout 都在).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 第三点的证明很有意思, 态射的 coproduct 的 pushout 可以看成 (随便取一个次序, 具体操作是将指标集合对应到一个 ordinal) 每一个单项的 pushout 的 transfinite composition.&lt;/p&gt;
+
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Model_Examples/diagram_633d31c5071eb.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(The Small Object Argument)&lt;/strong&gt; &lt;br /&gt; 设 $C$ 是一个有所有 small colimit 的范畴. $I$ 是 $C$ 里面的一个态射类. 如果 $I$ 里面的每一个态射的 domain 相对于 $I$-cell 都是 small 的. 则对于任意态射 $f$, 都有函子性分解 $(\gamma,\delta)$, 即 $f=δ(f)∘γ(f)$, 使得 $δ(f)∈I$-inj, $γ(f)∈I$-cell.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 我觉得这个特别神奇, 因为居然只要知道 $I$ 这样一个随意的一个态射类, 就可以给所有的态射都构造出一个 functorial factorization.&lt;/p&gt;
+
+&lt;p&gt;推论的证明使用了 The Retract Argument ($f$ 如果有函子性分解 $f=pi$, 如果 $f$ 对于 $p$ 有 LLP, 则 $f$ 是 $i$ 的 retract).&lt;/p&gt;
 
 &lt;h3 id=&quot;213-cofibrantly-generated-model-categories&quot;&gt;2.1.3 Cofibrantly Generated Model Categories&lt;/h3&gt;
 
@@ -193,18 +487,29 @@ X_0 → X_1 → \cdots → X_β → \cdots
 
 &lt;div class=&quot;definition&quot;&gt;
   &lt;p&gt;$R$-modules 的 stable category 是一个 category, 它的对象是所有的 left $R$-modules, 态射是 stable equivalence classes of morphisms.&lt;/p&gt;
+  &lt;p&gt;一个态射 $f$ 被称为 stable equivalence, 如果它在 stable category 里面是同构.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;目标: 给 $R$ 上的环范畴一个 (cofibrantly generated) 模型结构, 使得它的 homotopy category 就是 stable category.&lt;/p&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
   &lt;ol&gt;
-    &lt;li&gt;稳定等价对于 retract 封闭.&lt;/li&gt;
-    &lt;li&gt;稳定等价满足 2-out-of-3.&lt;/li&gt;
-    &lt;li&gt;对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是稳定等价.&lt;/li&gt;
-    &lt;li&gt;对于投射模 $P$, 自然投影 $M⊕P→P$ 是稳定等价.&lt;/li&gt;
+    &lt;li&gt;stable equivalences 对于 retract 封闭.&lt;/li&gt;
+    &lt;li&gt;stable equivalences 满足 2-out-of-3.&lt;/li&gt;
+    &lt;li&gt;对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是 stable equivalence.&lt;/li&gt;
+    &lt;li&gt;对于投射模 $P$, 自然投影 $M⊕P→M$ 是 stable equivalence.&lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;证明使用了两个很重要的事实: 一是同构对于 retract 封闭, 二是函子保持 retract.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 我觉得这里的 stable equivalences 不仅满足 2-out-of-3, 如果两个态射的复合是 stable equivalence, 那么这两个态射都是 stable equivalences. 这是同构的性质.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 第四个 Hovey 上写的是 $M⊕P→P$, 我觉得他写错了.&lt;/p&gt;
 
 &lt;p&gt;为了给定 $R$-mod 上一个 cofibrantly generated 模型结构, 我们需要一个 generating cofibrations 的集合 $I$ 和一个 generating trivial cofibrations 的集合 $J$.&lt;/p&gt;
 
@@ -227,6 +532,8 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;p&gt;设 $R$ 是 Frobenius ring. 则 𝖳𝖥𝗂𝖻 = surjection with projective kernel.&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里是不是自然出现了遗传性条件?&lt;/p&gt;
+
 &lt;div class=&quot;proposition&quot;&gt;
   &lt;p&gt;设 $R$ 是任意一个环. 则一个态射 $p∈I\text{-inj}$ 当且仅当 $p$ 是一个 surjection with injective kernel. &lt;br /&gt; 从而如果 $R$ 是 Frobenius ring, 则 $I\text{-inj} = 𝖳𝖥𝗂𝖻$.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
@@ -234,13 +541,28 @@ X_0 → X_1 → \cdots → X_β → \cdots
         &lt;embed src=&quot;/website/svg/Model_Examples/diagram_83f3029823167.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
       &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
     &lt;p&gt;另一个方向的证明要用到 Baer 判别法.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Model_Examples/diagram_377bf9bad737b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;p&gt;对于 cofibrations 也有类似的一些结果:&lt;/p&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;设 $R$ 是 Frobenius ring. $I$-cof = injection.&lt;/p&gt;
+  &lt;p&gt;设 $R$ 是任意 ring. $I$-cof = injection.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;主要是根据上面证明过的 $I$-inj 就是 surjection with injective kernel. 所以只要证明 injection 等价于 LLP with respect to 所有的 surjection with injective kernel 就可以了. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;证明 injection 对于所有的 surjection with injective kernel 有 LLP, 直接根据上面一条引理的证明即可. 也就是说, 我们可以总结出如下交换图表:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Model_Examples/diagram_ed036e8f1661a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;对于另外一个方向, 即证明对于所有 subjection with injective kernel 都有 LLP 的态射是 injection. 考虑从 domain 嵌入到一个 injective module, 这时 LLP 相当于给出一个提升, 而一个态射前项复合一个态射是 injection 意味着它自己是 injection. 图表如下:&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Model_Examples/diagram_b59ee40a2de10.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
@@ -251,6 +573,10 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;p&gt;设 $R$ 是 Frobenius ring. 则 $R$-mod 上有一个 cofibrantly generated model structure, 其中 𝖢𝗈𝖿𝗂𝖻=inj, 𝖥𝗂𝖻=surj, 𝖶𝖾𝗊=stable equivalences. &lt;br /&gt; 如果 $R$ 是 Noetherian, 则这个模型结构 finitely generated.&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;p&gt;事实上, 只有 Frobenius 环上的模范畴能作为这样的 $I$ 和 $J$ 给出的 cofibrantly generated 模型范畴. 可以证明 $I$ 和 $J$ 给出的几种态射类的定义保证了 injective module 等价于 projective module, 并且保证了只有 stable equivalneces 可以作为 weak equivalences.&lt;/p&gt;
+
+&lt;p&gt;Frobenius 环范畴上的每个对象都是 fibrant 和 cofibrant.&lt;/p&gt;
+
 &lt;h2 id=&quot;23-chain-complexes-of-modules-over-a-ring&quot;&gt;2.3 Chain Complexes of Modules over a Ring&lt;/h2&gt;
 
 &lt;p&gt;考虑 $R$ 上的 chain complexes 范畴, 记作 $\text{Ch}(R)$. (这里的复形都是降链的)&lt;/p&gt;
@@ -259,11 +585,13 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;p&gt;$\text{Ch}(R)$ 里面所有的 objects 都 small. 每个有限表现模的有界复形都 finite.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;给定一个 $R$-模 $M$, 我们定义以下两个复形:&lt;/p&gt;
+&lt;p&gt;给定一个 $R$-模 $M$, 我们定义以下两个复形 (更可以看成是从模范畴到复形范畴到函子):&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;$S^n(M)$ : 在度数 $n$ 处是 $M$, 其他度数都是零, 所有的微分都是零.&lt;/li&gt;
   &lt;li&gt;$D^n(M)$ : 在度数 $n$ 和 $n-1$ 处是 $M$, 其他度数都是零, 唯一非零的微分是 $d_n=\mathrm{Id}_M$.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;并且记 $S^n=S^n(R), D^n=D^n(R)$.&lt;/p&gt;
 
 &lt;p&gt;我们定义:&lt;/p&gt;
 &lt;ul&gt;
@@ -273,6 +601,12 @@ X_0 → X_1 → \cdots → X_β → \cdots
   &lt;li&gt;𝖢𝗈𝖿𝗂𝖻 = $I$-cof.&lt;/li&gt;
   &lt;li&gt;𝖶𝖾𝗊 = quasi-isomorphisms (homological isomorphisms).&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;𝖶𝖾𝗊 对于 retract 封闭 且 满足 2-out-of-3.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;定义函子 $D^n$ 的一个非常重要的点是, $D^n$ 是 evalution 函子 $\mathrm{Ev}_n$ 点左伴随.&lt;/p&gt;
 
 &lt;h2 id=&quot;24-topological-spaces&quot;&gt;2.4 Topological Spaces&lt;/h2&gt;
 
@@ -293,6 +627,65 @@ X_0 → X_1 → \cdots → X_β → \cdots
           <pubDate>2025-10-01T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Model_Examples</link>
           <guid isPermaLink="true">http://localhost:4000/website/posts/Model_Examples</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week3-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在一个范畴中, 如果存在零对象, 则它在同构意义下是唯一的.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $0,0'$ 是范畴 $\mathcal{C}$ 中的两个零对象. 则存在唯一的态射 $f:0→0'$, $g:0'→0$. 由零对象的定义知 $f,g$ 的复合只能是恒等态射(因为零对象到自己只有唯一的态射, 只能是恒等态射). 故 $0\cong 0'$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;左 $R$-模范畴 $R-\mathrm{Mod}$ 中的态射是单态射(满态射)当且仅当它是模的单同态(满同态).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:M→N$ 是单态射. 对于任意 $m∈M$, 考虑态射(模同态) $φ_m:R→M, r↦rm$. 若 $f(m)=0$, 则 $(f∘φ_m)(r)=f(rm)=rf(m)=0,∀ r∈ R$, 即有 $f∘φ_m=0=f∘φ_m$. 由 $f$ 是单态射可得 $φ_m=0$, 从而 $m=φ_m(1)=0$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(或者也可以用下面一题一样的方法, 更方便) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇒) 设 $f:M→N$ 是满态射. 考虑自然投射 $π:N→N/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=N$. 故 $f$ 是满同态.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;群范畴 $\mathbf{Grp}$ 中的态射是单态射(满态射)当且仅当它是群的单同态(满同态).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:G→H$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪G$ 以及平凡同态 $0: \mathrm{Ker}f→G, g↦ e_G$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{e_G\}$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇒) 设 $f:A→B$ 是满态射. 考虑反证, 假设 $f$ 不是群满同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;如果 $\mathrm{Im}f \lhd B$, 则考虑自然投射 $π:B→B/\mathrm{Im}f$, 则 $π∘f=0$. 由 $f$ 是满态射可知 $π=0$, 从而 $\mathrm{Im}f=B$. 矛盾. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;故考虑 $[B : \mathrm{Im}f]&gt;2$. 下面来证明存在不同的两个群同态 $g,h: B→\mathrm{Sym}B$ 使得 $g∘f=h∘f$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;考虑右陪集空间 $\mathrm{Im} f\backslash B$, 由于其元素个数大于 $2$, 故存在 $σ∈\mathrm{Sym}(\mathrm{Im}f\backslash B)$ 使得 $σ≠1$ 且 $σ$ 有不动点. 下面我们定义 $p∈\mathrm{Sym}(B)$. 首先固定一个右陪集的代表元集 $R$, 即对于任意的 $b∈ B$, $b$ 可以唯一地表示成 $b=cr$, 其中 $r∈R, c∈\mathrm{Im}f$. 现在对于任意的 $b=cr∈B$, 定义 $p(b)=cr'$, 其中 $r'∈R$ 是 $σ((\mathrm{Im}f) r)$ 的代表元. 显然 $p\in\mathrm{Sym}(B)$, 同时满足 $p≠1$ 且 $p$ 有不动点. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;下面定义 $$
+g: B\to\mathrm{Sym}(B),\quad b\mapsto [x\mapsto bx],
+$$ 以及 $$
+h: B\to\mathrm{Sym}(B),\quad b\mapsto pg(b)p^{-1}.
+$$&lt;/p&gt;
+    &lt;p&gt;首先注意到 $g≠h$, 否则对于任意的 $b∈B$, 都有 $pg(b)=g(b)p$, 并且对于任意的 $x∈B$, 有 $p(bx)=bp(x)$, 取 $x$ 为 $p$ 的不动点, 则有 $p(bx)=bx$, 而 $p≠1$, 存在 $b∈B$ 使得等式不成立. 从而 $g≠h$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;另外, 注意到对于任意的 $b∈B, x∈B$, 有 $$\begin{equation}
+(h∘f)(b)(x)= pg(f(b))p^{-1}(x)=p(f(b)p^{-1}(x))\overset{(*)}{=}f(b)p(p^{-1}(x))=f(b)x=(g∘f)(b)(x).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;$(*)$ 这一步使用了 $p$ 的定义. 从而 $g∘f=h∘f$. 矛盾. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;环范畴 $\mathbf{Ring}$ 中的态射是单态射当且仅当它是环的单同态; 但是, 环范畴 $\mathbf{Ring}$ 中的满态射未必是环的满同态.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt; (有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:R→S$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪R$ 以及平凡同态 $0: \mathrm{Ker}f→R, r↦ 0_R$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{0_R\}$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇏) 设 $f:\mathbb{Z}→\mathbb{Q}$ 是自然嵌入. 则 $f$ 是满态射 (考虑 $f,g:\mathbb{Q}→R$ 是环同态, 若它们限制到 $\mathbb{Z}$ 上相等, 则对于任意的 $\frac{m}{n}\in\mathbb{Q}$, $m,n\in\mathbb{Z}$, 如果 $f(\frac{m}{n})≠g(\frac{m}{n})$, 则 $f(m)≠g(m)$, 矛盾), 但是不是环满同态.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-09-29T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex3_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex3_1</guid>
         </item>
       
     
@@ -556,9 +949,25 @@ $$\begin{equation}
   &lt;/ol&gt;
   &lt;div class=&quot;proof&quot;&gt;
     &lt;p&gt;这是因为如果 $f$ 对于一个态射 $p$ 有 LLP, 则 $f$ 的 pushout 对于 $p$ 也有 LLP. (左边虚线是 LLP 给出, 右边是 pushout 的泛性质给出, 证明交换性要用到连接态射的唯一性)&lt;/p&gt;
-    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
-        &lt;embed src=&quot;/website/svg/Model_Def_Prop/diagram_c37f56b3c6f69.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
-      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;!-- 
+% https://q.uiver.app/#q=WzAsNyxbMCwwLCJcXGJ1bGxldCJdLFswLDIsIlxcYnVsbGV0Il0sWzIsMCwiXFxidWxsZXQiXSxbNCwwLCJcXGJ1bGxldCJdLFs0LDIsIlxcYnVsbGV0Il0sWzIsMiwiXFxidWxsZXQiXSxbMSwxLCJcXG1hdGhybXtQT30iXSxbMCwxLCJmIiwyXSxbMCwyXSxbMiwzXSxbMyw0LCJwIl0sWzIsNSwiZyIsMix7ImxhYmVsX3Bvc2l0aW9uIjozMH1dLFsxLDVdLFs1LDRdLFsxLDMsInNfMSIsMCx7ImxhYmVsX3Bvc2l0aW9uIjo3MCwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzUsMywic18yIiwyLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&amp;]
+	\bullet \&amp;\&amp; \bullet \&amp;\&amp; \bullet \\
+	\&amp; {\mathrm{PO}} \\
+	\bullet \&amp;\&amp; \bullet \&amp;\&amp; \bullet
+	\arrow[from=1-1, to=1-3]
+	\arrow[&quot;f&quot;', from=1-1, to=3-1]
+	\arrow[from=1-3, to=1-5]
+	\arrow[&quot;g&quot;'{pos=0.3}, from=1-3, to=3-3]
+	\arrow[&quot;p&quot;, from=1-5, to=3-5]
+	\arrow[&quot;{s_1}&quot;{pos=0.7}, dashed, from=3-1, to=1-5]
+	\arrow[from=3-1, to=3-3]
+
+	\arrow[&quot;{s_2}&quot;', dashed, from=3-3, to=1-5]
+	\arrow[from=3-3, to=3-5]
+    
+\end{tikzcd}
+--&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -758,6 +1167,9 @@ $$&lt;/li&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
+
+&lt;h3 id=&quot;133-quillen-equivalences&quot;&gt;1.3.3 Quillen Equivalences&lt;/h3&gt;
+
 </description>
           <pubDate>2025-09-27T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Model_Def_Prop</link>
@@ -2284,6 +2696,15 @@ $$&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;环范畴 $\mathbf{Ring}$ 中的态射是单态射当且仅当它是环的单同态; 但是, 环范畴 $\mathbf{Ring}$ 中的满态射未必是环的满同态.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇐) 同态是单同态(满同态)自然是集合意义下的单射(满射), 从而自然有集合意义下的左逆(右逆), 从而自然是范畴意义下的单态射(满态射). &lt;br /&gt; (有右逆可能要用到选择公理) &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(单, ⇒) 设 $f:R→S$ 是单态射. 考虑自然嵌入 $i:\mathrm{Ker}f↪R$ 以及平凡同态 $0: \mathrm{Ker}f→R, r↦ 0_R$, 则 $f∘i=f∘0$. 由 $f$ 是单态射可得 $i=0$, 从而 $\mathrm{Ker}f=\{0_R\}$. 故 $f$ 是单同态. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(满, ⇏) 设 $f:\mathbb{Z}→\mathbb{Q}$ 是自然嵌入. 则 $f$ 是满态射 (考虑 $f,g:\mathbb{Q}→R$ 是环同态, 若它们限制到 $\mathbb{Z}$ 上相等, 则对于任意的 $\frac{m}{n}\in\mathbb{Q}$, $m,n\in\mathbb{Z}$, 如果 $f(\frac{m}{n})≠g(\frac{m}{n})$, 则 $f(m)≠g(m)$, 矛盾), 但是不是环满同态.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
 &lt;h3 id=&quot;习题-15-拓展&quot;&gt;习题 1.5 拓展&lt;/h3&gt;
 
 &lt;p&gt;容易发现一个事情, 上面所说的各种(以集合为基础的)代数结构, 它们的单同态都和范畴意义下的单态射等价. 如果细致地考察, 我们需要考虑以下两个问题:&lt;/p&gt;
@@ -2306,6 +2727,88 @@ $$&lt;/p&gt;
   &lt;p&gt;(单态射 ⇒ 单射) 设 $f:A→B$ 是单态射. 对于任意 $a_1,a_2∈A$, 若 $f(a_1)=f(a_2)$, 则有 $f∘φ_{a_1}=f∘φ_{a_2}$, 其中 $φ_{a_i}:\{*\}→A, *↦a_i$. 由 $f$ 是单态射可得 $φ_{a_1}=φ_{a_2}$, 从而 $a_1=a_2$. 故 $f$ 是单射.&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;h2 id=&quot;16-正合性&quot;&gt;1.6 正合性&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-16&quot;&gt;习题 1.6&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:M→Y$ 是模同态且满足 $gh=0$. 则存在唯一的模同态 $α:M→X$, 使得 $fα=h$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(这实际上就是 kernel 的泛性质) &lt;br /&gt; 对任意的 $m∈M$, 由于 $g(h(m))=0$ 且 $\ker g = \operatorname{im} f$, 故存在唯一的(唯一性由 $f$ 单保证) $x_m∈X$, 使得 $f(x_m)=h(m)$. 定义映射 $α:M→X,\ m↦x_m$. 容易验证 $α$ 是模同态且 $fα=h$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;这样的态射的唯一性由 $f$ 是单态射保证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:Y→M$ 是模同态且满足 $hf=0$. 则存在唯一的模同态 $β:Z→M$, 使得 $βg=h$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(这实际上就是 cokernel 的泛性质) &lt;br /&gt; 对任意的 $z∈Z$, 由于 $g$ 是满射, 故存在 $y∈Y$, 使得 $g(y)=z$. 定义映射 $β:Z→M,\ z↦h(y)$. 由于 $hf=0$, 故 $h(y)$ 不依赖于 $y$ 的选取 ($y$ 的选取只会差一个 $\ker g=\operatorname{im}f$ 里面的元素). 容易验证 $β$ 是模同态且 $βg=h$. &lt;br /&gt; 这样的态射的唯一性由 $g$ 是满态射保证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;说明不存在非零同态 $π:\mathbb{Z}_m\to\mathbb{Z} (m&gt;1)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;$mf(1)=f(m)=f(0)=0$, 从而 $f(1)=0$, 故 $f=0$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;说明正合列 $0→m\mathbb{Z}\xrightarrow{i} \mathbb{Z} (m&gt;1)$ 在反变函子 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 作用下不是正合列. 从而 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 不是反变正合函子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;如果是正合列, 则存在同态 $g:\mathbb{Z}→\mathbb{Z}$ 使得 $gi=f$, 其中 $f:m\mathbb{Z}\to\mathbb{Z}, mn↦n$, 这是不可能的 (因为 $f(1)$ 只能是整数, 不可能使得 $f(m)=1$).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在如下 $R$-模同态的图中&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_9c0c84a5228b6.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;上下两行是短正合列且左边方块交换. 则存在唯一的模同态 $h:Z→Z'$ 使得右边方块交换. 并且, 若 $f$ 是满同态, 则有正合列 $0\to\ker f\xrightarrow{\widetilde{a}}\ker g\xrightarrow{\widetilde{b}}\ker h→ 0$. 若 $h$ 是单同态, 则有正合列 $0\to\mathrm{coker} f\xrightarrow{\overline{a}}\mathrm{coker} g\xrightarrow{\overline{b}}\mathrm{coker} h→ 0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据上面证明过的 cokernel 的泛性质, 以及短正合列的定义, 可知 $h$ 的存在性和唯一性. &lt;br /&gt; 剩下两个是蛇引理的自然推论.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在如下 $R$-模同态的图中&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_4a89d738f264b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;上下两行是短正合列且右边方块交换. 则存在唯一的模同态 $f:X→X'$ 使得左边方块交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据上面证明过的 kernel 的泛性质, 以及短正合列的定义, 可知 $f$ 的存在性和唯一性.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;17-jordan-hölder-定理&quot;&gt;1.7 Jordan-Hölder 定理&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-17&quot;&gt;习题 1.7&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $S$ 是单 $R$-模, $M$ 是任一 $R$-模. 若 $nS≅nM$, 则 $S≅M$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;显然 $nS$ 的合成因子是 $n$ 个 $S$, 合成列如下 $$\begin{equation}
+0⊊S⊊S^2⊊⋯⊊nS,
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;由 Jordan-Hölder 定理知 $nM$ 的合成因子也是 $n$ 个 $S$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;$nM$ 有子模序列 $$\begin{equation}
+0⊊M⊊M^2⊊⋯⊊nM,
+\end{equation}$$ 它和上面的合成列有等价的加细, 而合成列已经无法加细且两个子模序列长度相同, 故这也是合成列. 从而合成因子 $M=M/0≅S$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M$ 是有合成列的 $R$-模, $S$ 是单 $R$-模且 $\mathrm{Hom}_R(M,S)≠0$. 则 $S$ 是 $M$ 的一个合成因子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M=M_0⊋M_1⊋⋯⊋M_t=0$ 是 $M$ 的一个合成列. 于是我们有短正合列 $$\begin{equation}
+0→M_{i+1}→M_i→M_i/M_{i+1}→0, \quad i=0,1,⋯,t-1.
+\end{equation}$$ 作用左正合函子 $\mathrm{Hom}_R(-,S)$ 在上面短正合列上, 得到正合列 $$\begin{equation}
+0→\mathrm{Hom}_R(M_i/M_{i+1},S)→\mathrm{Hom}_R(M_i,S)→\mathrm{Hom}_R(M_{i+1},S), \quad i=0,1,⋯,t-1.
+\end{equation}$$ 如果所有的 $\mathrm{Hom}_R(M_i/M_{i+1},S)=0$, 则由正合列可知 $\mathrm{Hom}_R(M_i,S)↪\mathrm{Hom}_R(M_{i+1},S)$ 是嵌入, 从而由 $\mathrm{Hom}_R(M_0,S)≠0$ 可以得到 $\mathrm{Hom}_R(M_t,S)≠0$, 矛盾. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/BA_Exercise1</link>

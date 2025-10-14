@@ -152,9 +152,32 @@ X_0 → X_1 → \cdots → X_β → \cdots
   </ol>
 </div>
 
+<p><strong>Remark.</strong> 显然以上几个态射类都对于 pushout (或 pullback) 以及 transfinite composition 封闭, 这主要是 LLP 或 RLP 的性质.</p>
+
 <div class="definition">
   <p>(relative $I$-cell complex) <br /></p>
 </div>
+
+<p>Relative $I$-cell complexes 有以下性质:</p>
+<ul>
+  <li>它是特殊的一类 $I$-cof, 即 $I$-cell ⊆ $I$-cof (一般的 $I$-cof 我们难以描述, 但是 relative $I$-cell complexes 我们可以比较容易地描述).</li>
+  <li>$I$-cell 满足对于 transfinite composition 的封闭性.</li>
+  <li>$I$ 中态射的 coproduct 的 pushout 都在 $I$-cell 里面 (特别地, pushout 都在).</li>
+</ul>
+
+<p><strong>Remark.</strong> 第三点的证明很有意思, 态射的 coproduct 的 pushout 可以看成 (随便取一个次序, 具体操作是将指标集合对应到一个 ordinal) 每一个单项的 pushout 的 transfinite composition.</p>
+
+<center> <br /> <div class="tikz-diagram">
+    <embed src="/website/svg/Model_Examples/diagram_633d31c5071eb.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+  </div> <br /> </center>
+
+<div class="theorem">
+  <p><strong>(The Small Object Argument)</strong> <br /> 设 $C$ 是一个有所有 small colimit 的范畴. $I$ 是 $C$ 里面的一个态射类. 如果 $I$ 里面的每一个态射的 domain 相对于 $I$-cell 都是 small 的. 则对于任意态射 $f$, 都有函子性分解 $(\gamma,\delta)$, 即 $f=δ(f)∘γ(f)$, 使得 $δ(f)∈I$-inj, $γ(f)∈I$-cell.</p>
+</div>
+
+<p><strong>Remark.</strong> 我觉得这个特别神奇, 因为居然只要知道 $I$ 这样一个随意的一个态射类, 就可以给所有的态射都构造出一个 functorial factorization.</p>
+
+<p>推论的证明使用了 The Retract Argument ($f$ 如果有函子性分解 $f=pi$, 如果 $f$ 对于 $p$ 有 LLP, 则 $f$ 是 $i$ 的 retract).</p>
 
 <h3 id="213-cofibrantly-generated-model-categories">2.1.3 Cofibrantly Generated Model Categories</h3>
 
@@ -220,18 +243,29 @@ X_0 → X_1 → \cdots → X_β → \cdots
 
 <div class="definition">
   <p>$R$-modules 的 stable category 是一个 category, 它的对象是所有的 left $R$-modules, 态射是 stable equivalence classes of morphisms.</p>
+  <p>一个态射 $f$ 被称为 stable equivalence, 如果它在 stable category 里面是同构.</p>
 </div>
 
 <p>目标: 给 $R$ 上的环范畴一个 (cofibrantly generated) 模型结构, 使得它的 homotopy category 就是 stable category.</p>
 
 <div class="lemma">
   <ol>
-    <li>稳定等价对于 retract 封闭.</li>
-    <li>稳定等价满足 2-out-of-3.</li>
-    <li>对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是稳定等价.</li>
-    <li>对于投射模 $P$, 自然投影 $M⊕P→P$ 是稳定等价.</li>
+    <li>stable equivalences 对于 retract 封闭.</li>
+    <li>stable equivalences 满足 2-out-of-3.</li>
+    <li>对于投射模 $P$, 自然嵌入 $M→M⊕P$ 是 stable equivalence.</li>
+    <li>对于投射模 $P$, 自然投影 $M⊕P→M$ 是 stable equivalence.</li>
   </ol>
 </div>
+
+<div class="proof">
+  <ol>
+    <li>证明使用了两个很重要的事实: 一是同构对于 retract 封闭, 二是函子保持 retract.</li>
+  </ol>
+</div>
+
+<p><strong>Remark.</strong> 我觉得这里的 stable equivalences 不仅满足 2-out-of-3, 如果两个态射的复合是 stable equivalence, 那么这两个态射都是 stable equivalences. 这是同构的性质.</p>
+
+<p><strong>Remark.</strong> 第四个 Hovey 上写的是 $M⊕P→P$, 我觉得他写错了.</p>
 
 <p>为了给定 $R$-mod 上一个 cofibrantly generated 模型结构, 我们需要一个 generating cofibrations 的集合 $I$ 和一个 generating trivial cofibrations 的集合 $J$.</p>
 
@@ -254,6 +288,8 @@ X_0 → X_1 → \cdots → X_β → \cdots
   <p>设 $R$ 是 Frobenius ring. 则 𝖳𝖥𝗂𝖻 = surjection with projective kernel.</p>
 </div>
 
+<p><strong>Remark.</strong> 这里是不是自然出现了遗传性条件?</p>
+
 <div class="proposition">
   <p>设 $R$ 是任意一个环. 则一个态射 $p∈I\text{-inj}$ 当且仅当 $p$ 是一个 surjection with injective kernel. <br /> 从而如果 $R$ 是 Frobenius ring, 则 $I\text{-inj} = 𝖳𝖥𝗂𝖻$.</p>
   <div class="proof">
@@ -261,13 +297,28 @@ X_0 → X_1 → \cdots → X_β → \cdots
         <embed src="/website/svg/Model_Examples/diagram_83f3029823167.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
       </div> <br /> </center>
     <p>另一个方向的证明要用到 Baer 判别法.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Model_Examples/diagram_377bf9bad737b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
   </div>
 </div>
 
 <p>对于 cofibrations 也有类似的一些结果:</p>
 
 <div class="lemma">
-  <p>设 $R$ 是 Frobenius ring. $I$-cof = injection.</p>
+  <p>设 $R$ 是任意 ring. $I$-cof = injection.</p>
+</div>
+
+<div class="proof">
+  <p>主要是根据上面证明过的 $I$-inj 就是 surjection with injective kernel. 所以只要证明 injection 等价于 LLP with respect to 所有的 surjection with injective kernel 就可以了. <br /></p>
+  <p>证明 injection 对于所有的 surjection with injective kernel 有 LLP, 直接根据上面一条引理的证明即可. 也就是说, 我们可以总结出如下交换图表:</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Model_Examples/diagram_ed036e8f1661a.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>对于另外一个方向, 即证明对于所有 subjection with injective kernel 都有 LLP 的态射是 injection. 考虑从 domain 嵌入到一个 injective module, 这时 LLP 相当于给出一个提升, 而一个态射前项复合一个态射是 injection 意味着它自己是 injection. 图表如下:</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Model_Examples/diagram_b59ee40a2de10.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
 </div>
 
 <div class="lemma">
@@ -278,6 +329,10 @@ X_0 → X_1 → \cdots → X_β → \cdots
   <p>设 $R$ 是 Frobenius ring. 则 $R$-mod 上有一个 cofibrantly generated model structure, 其中 𝖢𝗈𝖿𝗂𝖻=inj, 𝖥𝗂𝖻=surj, 𝖶𝖾𝗊=stable equivalences. <br /> 如果 $R$ 是 Noetherian, 则这个模型结构 finitely generated.</p>
 </div>
 
+<p>事实上, 只有 Frobenius 环上的模范畴能作为这样的 $I$ 和 $J$ 给出的 cofibrantly generated 模型范畴. 可以证明 $I$ 和 $J$ 给出的几种态射类的定义保证了 injective module 等价于 projective module, 并且保证了只有 stable equivalneces 可以作为 weak equivalences.</p>
+
+<p>Frobenius 环范畴上的每个对象都是 fibrant 和 cofibrant.</p>
+
 <h2 id="23-chain-complexes-of-modules-over-a-ring">2.3 Chain Complexes of Modules over a Ring</h2>
 
 <p>考虑 $R$ 上的 chain complexes 范畴, 记作 $\text{Ch}(R)$. (这里的复形都是降链的)</p>
@@ -286,11 +341,13 @@ X_0 → X_1 → \cdots → X_β → \cdots
   <p>$\text{Ch}(R)$ 里面所有的 objects 都 small. 每个有限表现模的有界复形都 finite.</p>
 </div>
 
-<p>给定一个 $R$-模 $M$, 我们定义以下两个复形:</p>
+<p>给定一个 $R$-模 $M$, 我们定义以下两个复形 (更可以看成是从模范畴到复形范畴到函子):</p>
 <ul>
   <li>$S^n(M)$ : 在度数 $n$ 处是 $M$, 其他度数都是零, 所有的微分都是零.</li>
   <li>$D^n(M)$ : 在度数 $n$ 和 $n-1$ 处是 $M$, 其他度数都是零, 唯一非零的微分是 $d_n=\mathrm{Id}_M$.</li>
 </ul>
+
+<p>并且记 $S^n=S^n(R), D^n=D^n(R)$.</p>
 
 <p>我们定义:</p>
 <ul>
@@ -300,6 +357,12 @@ X_0 → X_1 → \cdots → X_β → \cdots
   <li>𝖢𝗈𝖿𝗂𝖻 = $I$-cof.</li>
   <li>𝖶𝖾𝗊 = quasi-isomorphisms (homological isomorphisms).</li>
 </ul>
+
+<div class="lemma">
+  <p>𝖶𝖾𝗊 对于 retract 封闭 且 满足 2-out-of-3.</p>
+</div>
+
+<p>定义函子 $D^n$ 的一个非常重要的点是, $D^n$ 是 evalution 函子 $\mathrm{Ev}_n$ 点左伴随.</p>
 
 <h2 id="24-topological-spaces">2.4 Topological Spaces</h2>
 
@@ -596,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/topol_dual" title="PREV: 拓扑空间范畴是否自对偶">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Ex3_1" title="PREV: 《基础代数学》作业 Week3-1">&gt;&gt;</a>
     
   </div>
 </main>

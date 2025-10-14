@@ -9,12 +9,12 @@
 
 
 
-  <title>拓扑空间范畴是否自对偶
+  <title>《基础代数学》作业 Week3-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.">
+<meta name="description" content="  设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:M→Y$ 是模同态且满足 $gh=0$. 则存在唯一的模同态 $α:M→X$, 使得 $fα=h$.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/topol_dual">
+<link rel="canonical" href="/website/posts/Ex3_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,31 +75,66 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>拓扑空间范畴是否自对偶</h1>
+      <h1>《基础代数学》作业 Week3-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        September 28, 2025
+        October 10, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <p>模型范畴中定义的 cylinder object 来自于拓扑空间里面的 $X×[0,1]$.</p>
+    <div class="problem">
+  <p>设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:M→Y$ 是模同态且满足 $gh=0$. 则存在唯一的模同态 $α:M→X$, 使得 $fα=h$.</p>
+  <div class="proof">
+    <p>(这实际上就是 kernel 的泛性质) <br /> 对任意的 $m∈M$, 由于 $g(h(m))=0$ 且 $\ker g = \operatorname{im} f$, 故存在唯一的(唯一性由 $f$ 单保证) $x_m∈X$, 使得 $f(x_m)=h(m)$. 定义映射 $α:M→X,\ m↦x_m$. 容易验证 $α$ 是模同态且 $fα=h$. <br /></p>
+    <p>这样的态射的唯一性由 $f$ 是单态射保证.</p>
+  </div>
+</div>
 
-<p>path object 来自于拓扑空间里面的 $Y^[0,1]$ (即 所有 $[0,1]$ 到 $Y$ 的连续映射组成的空间, 拓扑是 compact-open 拓扑).</p>
+<div class="problem">
+  <p>设 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是左 $R$-模短正合列. 设 $M$ 是左 $R$-模, $h:Y→M$ 是模同态且满足 $hf=0$. 则存在唯一的模同态 $β:Z→M$, 使得 $βg=h$.</p>
+  <div class="proof">
+    <p>(这实际上就是 cokernel 的泛性质) <br /> 对任意的 $z∈Z$, 由于 $g$ 是满射, 故存在 $y∈Y$, 使得 $g(y)=z$. 定义映射 $β:Z→M,\ z↦h(y)$. 由于 $hf=0$, 故 $h(y)$ 不依赖于 $y$ 的选取 ($y$ 的选取只会差一个 $\ker g=\operatorname{im}f$ 里面的元素). 容易验证 $β$ 是模同态且 $βg=h$. <br /> 这样的态射的唯一性由 $g$ 是满态射保证.</p>
+  </div>
+</div>
 
-<p>一个自然的问题是它们是不是互为对偶的.</p>
+<div class="problem">
+  <p>说明不存在非零同态 $π:\mathbb{Z}_m\to\mathbb{Z} (m>1)$.</p>
+  <div class="solution">
+    <p>$mf(1)=f(m)=f(0)=0$, 从而 $f(1)=0$, 故 $f=0$.</p>
+  </div>
+</div>
 
-<p>要回答这个问题之前首先要问: 拓扑空间范畴是不是自对偶的?</p>
+<div class="problem">
+  <p>说明正合列 $0→m\mathbb{Z}\xrightarrow{i} \mathbb{Z} (m>1)$ 在反变函子 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 作用下不是正合列. 从而 $\mathrm{Hom}_{\mathbb{Z}}(-,\mathbb{Z})$ 不是反变正合函子.</p>
+  <div class="proof">
+    <p>如果是正合列, 则存在同态 $g:\mathbb{Z}→\mathbb{Z}$ 使得 $gi=f$, 其中 $f:m\mathbb{Z}\to\mathbb{Z}, mn↦n$, 这是不可能的 (因为 $f(1)$ 只能是整数, 不可能使得 $f(m)=1$).</p>
+  </div>
+</div>
 
-<p>我最开始想到的是, 在拓扑空间范畴里面可以自然地取任意 coproduct (我猜想这是因为在定义 open set, 也就是 topogical structure 的时候, 任意并实际上就和 coproduct 有关, 因为集合范畴的 coproduct 就是 union).</p>
+<div class="problem">
+  <p>在如下 $R$-模同态的图中</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Ex3_2/diagram_9c0c84a5228b6.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>上下两行是短正合列且左边方块交换. 则存在唯一的模同态 $h:Z→Z'$ 使得右边方块交换. 并且, 若 $f$ 是满同态, 则有正合列 $0\to\ker f\xrightarrow{\widetilde{a}}\ker g\xrightarrow{\widetilde{b}}\ker h→ 0$. 若 $h$ 是单同态, 则有正合列 $0\to\mathrm{coker} f\xrightarrow{\overline{a}}\mathrm{coker} g\xrightarrow{\overline{b}}\mathrm{coker} h→ 0$.</p>
+  <div class="proof">
+    <p>根据上面证明过的 cokernel 的泛性质, 以及短正合列的定义, 可知 $h$ 的存在性和唯一性. <br /> 剩下两个是蛇引理的自然推论.</p>
+  </div>
+</div>
 
-<p>在学基础拓扑学的时候, 有积拓扑和箱拓扑的区别. 但是只有前者是范畴意义下的积 (同时它是使得自然投影都是连续的最粗的拓扑).</p>
-
-<p>如何看待 cyliner object 和 path object 互为对偶?</p>
-
-<p>高阳学长给出的回答是前者是 tensor 后者是 hom.</p>
+<div class="problem">
+  <p>在如下 $R$-模同态的图中</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/Ex3_2/diagram_4a89d738f264b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>上下两行是短正合列且右边方块交换. 则存在唯一的模同态 $f:X→X'$ 使得左边方块交换.</p>
+  <div class="proof">
+    <p>根据上面证明过的 kernel 的泛性质, 以及短正合列的定义, 可知 $f$ 的存在性和唯一性.</p>
+  </div>
+</div>
 
   </article>
 
@@ -238,13 +273,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex3_1" title="NEXT: 《基础代数学》作业 Week3-1">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex5_1" title="NEXT: 《基础代数学》作业 Week5-1">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Model_List" title="PREV: 模型范畴入门列表">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Monoidal_Model" title="PREV: Monoidal Model Categories">&gt;&gt;</a>
     
   </div>
 </main>
