@@ -9,12 +9,12 @@
 
 
 
-  <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology
+  <title>《代数拓扑》第一次作业
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="">
+<meta name="description" content="  [P330, T1] Show that if $h, h' : X \to Y$ are homotopic and $k, k' : Y \to Z$ are homotopic, then $k \circ h$ and $k' \circ h'$ are homotopic.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/AT_Lec_Ex1">
+<link rel="canonical" href="/website/posts/AT_Ex1">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,17 +75,93 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</h1>
+      <h1>《代数拓扑》第一次作业</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 14, 2025
+        October 23, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    
+    <div class="problem">
+  <p>[P330, T1] Show that if $h, h' : X \to Y$ are homotopic and $k, k' : Y \to Z$ are homotopic, then $k \circ h$ and $k' \circ h'$ are homotopic.</p>
+  <div class="proof">
+    <p>Suppose $H : X \times I \to Y$ is a homotopy from $h$ to $h'$, and $K : Y \times I \to Z$ is a homotopy from $k$ to $k'$. Define a map $F : X \times I \to Z$ by $$\begin{equation}
+ F(x,t)=K(H(x,t),t). 
+\end{equation}$$ It is clear that $F$ is continuous, and $$\begin{equation}
+F(x,0) = K(H(x,0),0) = K(h(x),0) = k(h(x)),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = K(H(x,1),1) = K(h'(x),1) = k'(h'(x)).
+\end{equation}$$ Thus, $F$ is a homotopy from $k \circ h$ to $k' \circ h'$, as desired.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>[P330, T2] Given spaces $X$ and $Y$, let $[X, Y]$ denote the set of homotopy classes of maps of $X$ into $Y$. <br /></p>
+  <p>(a) Let $I = [0, 1]$. Show that for any $X$, the set $[X, I]$ has a single element. <br /></p>
+  <p>(b) Show that if $Y$ is path connected, the set $[I, Y]$ has a single element.</p>
+  <div class="proof">
+    <p>This problem is a special case of the next problem. So we only prove the next problem.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>[P331, T3] A space $X$ is said to be <em>contractible</em> if the identity map $i_X : X \to X$ is nullhomotopic.<br /></p>
+  <p>(a) Show that $I$ and $\mathbb{R}$ are contractible. <br /></p>
+  <p>(b) Show that a contractible space is path connected. <br /></p>
+  <p>(c) Show that if $Y$ is contractible, then for any $X$, the set $[X, Y]$ has a single element. <br /></p>
+  <p>(d) Show that if $X$ is contractible and $Y$ is path connected, then $[X, Y]$ has a single element.</p>
+  <div class="proof">
+    <p>(a) We will prove that any star-shaped subset of $\mathbb{R}^n$ is contractible, which includes $I$ and $\mathbb{R}$ as special cases. Suppose $X \subseteq \mathbb{R}^n$ is star-shaped with respect to a point $x_0 \in X$. Define a homotopy $H : X \times I \to X$ by $$\begin{equation}
+H(x,t) = (1-t)x + t x_0.
+\end{equation}$$ It is clear that $H$ is continuous, and $$\begin{equation}
+H(x,0) = x,
+\end{equation}$$ $$\begin{equation}
+H(x,1) = x_0.
+\end{equation}$$ Thus, $H$ is a homotopy from the identity map on $X$ to the constant map at $x_0$, showing that $X$ is contractible. <br /></p>
+    <p>(b) Let $X$ be a contractible space. For any two points $x_1, x_2 \in X$, since the identity map on $X$ is nullhomotopic, there exists a homotopy $H : X \times I \to X$ such that $$\begin{equation}
+H(x,0) = x,
+\end{equation}$$ $$\begin{equation}
+H(x,1) = x_0,
+\end{equation}$$ for some fixed point $x_0 \in X$. Define a path $\gamma : I \to X$ by $$\begin{equation}
+\gamma(t) = \begin{cases}
+H(x_1, 2t), & \text{if } 0 \leq t \leq \frac{1}{2}, \\
+H(x_2, 2-2t), & \text{if } \frac{1}{2} \leq t \leq 1.
+\end{cases}
+\end{equation}$$ It is clear that $\gamma$ is continuous, and $\gamma(0) = x_1$, $\gamma(1) = x_2$. Thus, $X$ is path connected. <br /></p>
+    <p>(c) Let $Y$ be a contractible space, and let $f, g : X \to Y$ be any two continuous maps. Since the identity map on $Y$ is nullhomotopic, there exists a homotopy $H : Y \times I \to Y$ such that $$\begin{equation}
+H(y,0) = y,
+\end{equation}$$ $$\begin{equation}
+H(y,1) = y_0,
+\end{equation}$$ for some fixed point $y_0 \in Y$. Define a homotopy $F : X \times I \to Y$ by $$\begin{equation}
+F(x,t) = \begin{cases}
+H(f(x), 2t), & \text{if } 0 \leq t \leq \frac{1}{2}, \\
+H(g(x), 2-2t), & \text{if } \frac{1}{2} \leq t \leq 1.
+\end{cases}
+\end{equation}$$ It is clear that $F$ is continuous (use the pasting lemma [Theorem 18.3]), and $$\begin{equation}
+F(x,0) = f(x),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = g(x).
+\end{equation}$$ Thus, $F$ is a homotopy from $f$ to $g$, showing that $[X, Y]$ has a single element. <br /></p>
+    <p>(d) Let $X$ be a contractible space and $Y$ be a path connected space. Let $f, g : X \to Y$ be any two continuous maps. Since $X$ is contractible, there exists a homotopy $H : X \times I \to X$ such that $$\begin{equation}  
+H(x,0) = x, H(x,1) = x_0,
+\end{equation}$$ <br /> for some fixed point $x_0 \in X$. Since $Y$ is path connected, there exists a path $\gamma : I \to Y$ such that $$\begin{equation}  
+\gamma(0) = f(x_0), \gamma(1) = g(x_0).
+\end{equation}$$ <br /> Define a homotopy $F : X \times I \to Y$ by $$\begin{equation}
+F(x,t) = \begin{cases}
+f(H(x, 3t)), & \text{if } 0 ≤ t ≤ \frac{1}{3}, \\
+\gamma(3t-1), & \text{if } \frac{1}{3} ≤ t ≤ \frac{2}{3}, \\
+g(H(x, 3-3t)), & \text{if } \frac{2}{3} ≤ t ≤ 1.
+\end{cases}
+\end{equation}$$ It is clear that $F$ is continuous (use the pasting lemma [Theorem 18.3]), and $$\begin{equation}
+F(x,0) = F(H(x,0)) = f(x),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = F(H(x,0)) = g(x).
+\end{equation}$$ Thus, $F$ is a homotopy from $f$ to $g$, showing that $[X, Y]$ has a single element.</p>
+  </div>
+</div>
 
   </article>
 
@@ -224,13 +300,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex5_2" title="NEXT: 《基础代数学》作业 Week5-2">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex6_2" title="NEXT: 《基础代数学》作业 Week6-2">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex5_1" title="PREV: 《基础代数学》作业 Week5-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Model_History" title="PREV: Model_history">&gt;&gt;</a>
     
   </div>
 </main>

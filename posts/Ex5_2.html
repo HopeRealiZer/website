@@ -9,12 +9,12 @@
 
 
 
-  <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology
+  <title>《基础代数学》作业 Week5-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="">
+<meta name="description" content="  设 $M_1, M_2, N$ 都是 $M$ 的子模, 且 $M_2⊆ M_1$, $N+M_1=N+M_2, N∩M_1=N∩ M_2$. 则 $M_1=M_2$.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/AT_Lec_Ex1">
+<link rel="canonical" href="/website/posts/Ex5_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,17 +75,82 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</h1>
+      <h1>《基础代数学》作业 Week5-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 14, 2025
+        October 15, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    
+    <div class="problem">
+  <p>设 $M_1, M_2, N$ 都是 $M$ 的子模, 且 $M_2⊆ M_1$, $N+M_1=N+M_2, N∩M_1=N∩ M_2$. 则 $M_1=M_2$.</p>
+  <div class="proof">
+    <p>考虑如下交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex5_2/diagram_fba62dfe9cb5b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>其中第一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故左边方块交换), 由条件知它是相等(同构); 最后一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故右边方块交换), 根据同构定理(见图中括号)以及条件知它是相等(同构). 故上图的确是两行正合列构成的交换图. 由五引理可知中间的嵌入也是同构, 从而 $M_1=M_2$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明 Noether 模的满自同态是同构.</p>
+  <div class="proof">
+    <p>设 $M$ 是 Noether 模, $f:M→M$ 是满同态. 考虑如下自然的子模升链: $$\begin{equation}
+\ker f ⊆ \ker f^2 ⊆ ⋯ ⊆ \ker f^n ⊆ ⋯
+\end{equation}$$ 由 $M$ 是 Noether 模可知上面子模升链驻定, 即存在 $s\in\mathbb{N}$ 使得 $\ker f^s=\ker f^{s+1}$. 由 $f$ 是满同态可知 $f^s$ 也是满同态. 对于任意 $m∈\ker f$, 存在 $v∈ M$ 使得 $f^s(v)=m$, 从而 $0=f(m)=f^{s+1}(v)=f^s(v)=m$, 即 $\ker f = 0$, 故 $f$ 是单同态. 于是 $f$ 是同构.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 这里用到了一个论断: 单态射 + 满态射 = 同构. 这个论断在一般的范畴中不成立, 具有这种性质的范畴叫做 <strong>平衡范畴</strong> (balanced category). 环范畴不是平衡范畴; 加法范畴也未必是平衡范畴. Abel 范畴都是平衡范畴, 一个简单的看法是考虑短正合列的可裂性, 例如, 考虑 Abel 范畴中既是满又单的态射 $f$, 考虑短正合列:</p>
+<center> <br /> <div class="tikz-diagram">
+    <embed src="/website/svg/Ex5_2/diagram_bea51082e2798.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+  </div> <br /> </center>
+
+<p>显然 $N→0$ 是可裂满, 所以 $f$ 是可裂单, 即 $f$ 有左逆 (也就是说在 Abel 范畴里面单态射等价于有左逆). 同理在 Abel 范畴里面满态射等价于有右逆. 于是 $f$ 有左逆又有右逆, 故 $f$ 是同构.</p>
+
+<div class="problem">
+  <p>证明主理想整环是 Noether 环.</p>
+  <div class="proof">
+    <p>主理想整环的每个理想都是主理想, 从而是有限生成的, 于是主理想整环是 Noether 环.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $f:A→B$ 是环的满同态且 $A$ 是 Artin 环. 则 $B$ 是 Artin 环.</p>
+  <div class="proof">
+    <p>对于任意的 Abel 群 $M$, 我们有自同态环 $\mathrm{End}_{\mathbf{Ab}}(M)$ (赋予自然的环结构), 从而有反变 Hom 函子 $\mathrm{Hom}_{\mathbf{Ring}}(-, \mathrm{End}_{\mathbf{Ab}}(M))$</p>
+    <p>, 将其作用到满同态 $A→B$ 上, 以得到单同态 $\mathrm{Hom}_{\mathbf{Ring}}(B,\mathrm{End}_{\mathbf{Ab}}(M))\xrightarrow{-∘f}\mathrm{Hom}_{\mathbf{Ring}}(A,\mathrm{End}_{\mathbf{Ab}}(M))$. 从而所有的 $B$-模 $M$ 可以自然地视为 $A$-模且结构保持不变 (其实上述给出了一个 $B$-Mod 到 $A$-Mod 的忠实函子). 特别地, 左正则模 $_BB$ 可以自然地视为左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模, 从而 $_BB$ 也是 Artin 模(*), 故 $B$ 是 Artin 环.</p>
+  </div>
+  <div class="proof">
+    <p>(不使用函子语言的证明) 由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模. 任意取 $_BB$ 的子模降链, 也是 $_AB$ 的子模降链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 如果从$\mathrm{Hom}_{\mathbf{Ring}}(-,\mathrm{End}_{\mathbf{Ab}}(M))$是“反变左正合函子”考虑是行不通的, 因为环范畴 $\mathbf{Ring}$ 不是 Abel 范畴, 没有正合列概念. 但是实际上, Hom 函子的左正合性只是它在能定义正合列的范畴里面的方便说法, 其实 $\mathrm{Hom}(-,?)$ 将满态射 $A→ B$ 变为单态射 $\mathrm{Hom}(B,?)↪\mathrm{Hom}(A,?)$ 是 (反变) Hom 函子的一个普遍性质, 因为它本质上是满态射的定义.</p>
+
+<p>Q: 如何从范畴角度刻画有限生成? 如何从模范畴中读出环的信息, 如 Noether, Artin 等性质?</p>
+
+<p>我的想法: Artin 性质就是模范畴中不可以一直有非平凡的子对象. Noether 和 有限生成暂时看不出来.</p>
+
+<div class="problem">
+  <p>设 $f:A→B$ 是环的满同态且 $A$ 是 Noether 环. 则 $B$ 是 Noether 环.</p>
+  <div class="proof">
+    <p>由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Noether 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Noether 模. 任意取 $_BB$ 的子模升链, 也是 $_AB$ 的子模升链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 上面两个习题中的满态射条件其实都可以加强到 $_AB$ 是有限生成的.</p>
+
+<div class="problem">
+  <p>设 $R$ 是左 Artin 环, 则任一有限生成左 $R$-模 $M$ 有合成因子.</p>
+  <div class="proof">
+    <p>因为 $R$ 是左 Artin 环, 从而 $R$ 也是左 Noether 环. 由于 $M$ 是有限生成左 $R$-模, 故 $M$ 是左 Artin 模也是左 Noether 模, 从而 $M$ 有合成因子.</p>
+  </div>
+</div>
 
   </article>
 
@@ -224,13 +289,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex5_2" title="NEXT: 《基础代数学》作业 Week5-2">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex6_1" title="NEXT: 《基础代数学》作业 Week6-1">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex5_1" title="PREV: 《基础代数学》作业 Week5-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/AT_Lec_Ex1" title="PREV: Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology">&gt;&gt;</a>
     
   </div>
 </main>

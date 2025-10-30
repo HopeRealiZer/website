@@ -9,12 +9,12 @@
 
 
 
-  <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology
+  <title>《基础代数学》作业 Week6-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="">
+<meta name="description" content="  Prove that finite dimensional algebras are IBN rings.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/AT_Lec_Ex1">
+<link rel="canonical" href="/website/posts/Ex6_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,17 +75,56 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</h1>
+      <h1>《基础代数学》作业 Week6-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 14, 2025
+        October 25, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    
+    <div class="problem">
+  <p>Prove that finite dimensional algebras are IBN rings.</p>
+  <div class="proof">
+    <p>Just consider the dimension.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>The following statements about a module $P$ are equivalent:<br /> (1) $P$ is projective; <br /> (2) For any surjective homomorphism $\pi:M→P$, $\pi$ is split surjective; <br /> (3) For any surjective homomorphism $\pi:M→P$, $P$ is a direct summand of $M$.</p>
+  <div class="proof">
+    <p>(1) ⇒ (2) Given a surjective homomorphism $\pi:M→P$, consider the identity homomorphism $1_P:P→P$. By the definition of projective module, there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. Thus, $\pi$ is split surjective. <br /></p>
+    <p>(2) ⇒ (3) Given a surjective homomorphism $\pi:M→P$, by (2), there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. It is clear that $M= \ker \pi ⊕ \operatorname{im} f$, so that $P≅\operatorname{im} f$ is a direct summand of $M$. <br /></p>
+    <p>(3) ⇒ (1) Consider a surjective homomorphism $\pi:F→P$ where $F$ is a free module. By (3), $P$ is a direct summand of $F$. Since free modules are projective, $P$ is also projective (direct summands of a projective module are also projective).</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Let $e$ be an idempotent element of a ring $R$. Prove that the left $R$-module $Re$ is projective.</p>
+  <div class="proof">
+    <p>We have $$\begin{equation}
+Re⊕R(1-e)=R(e+1-e)=R.
+\end{equation}$$ Since $_RR$ is a free module, it is projective. Thus, its direct summand $Re$ is also projective.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Prove that a finite dimensional algebra $A$ is semisimple if and only if every finite dimensional $A$-module is projective.</p>
+  <div class="proof">
+    <p>(⇒) Since $A$ is semisimple, every finite dimensional $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every finite dimensional $A$-module is projective (by the previous problem). <br /></p>
+    <p>(⇐) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the surjective homomorphism $\pi:A→A/M$. Since $A/M$ is projective, $\pi$ is split surjective, so that $A≅M⊕\operatorname{im} f$ for some homomorphism $f:A/M→A$. Thus, $_AA$ is semisimple.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Find all the finite dimensional indecomposable projective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.</p>
+  <div class="solution">
+    <p>The only finite dimensional indecomposable projective module of $A$ is $A$ itself. Now we prove this.<br /></p>
+    <p>We have shown in class that all the finite dimensional indecomposable modules of $A$ are $M_i = ⟨x^{n-i}⟩/⟨x^n⟩, i = 1, 2, \cdots, n$. It is clear that $M_n = A$ is projective. Now we show that for any $1 ≤ i < n$, $M_i$ is not projective. Consider the surjective homomorphism $\pi:A→M_i$ defined by $\pi(1 + ⟨x^n⟩) = x^{n-i} + ⟨x^n⟩$. If $M_i$ is projective, then $\pi$ is split surjective, and $M_i$ will be a direct summand of $A$. However, since $A$ is indecomposable, this is impossible. Thus, $M_i$ is not projective for any $1 ≤ i < n$.</p>
+  </div>
+</div>
 
   </article>
 
@@ -224,13 +263,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex5_2" title="NEXT: 《基础代数学》作业 Week5-2">&lt;&lt;</a>
-      <span>&middot;</span>
-    
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex5_1" title="PREV: 《基础代数学》作业 Week5-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/AT_Ex1" title="PREV: 《代数拓扑》第一次作业">&gt;&gt;</a>
     
   </div>
 </main>

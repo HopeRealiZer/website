@@ -7,6 +7,271 @@
     
       
         <item>
+          <title>《基础代数学》作业 Week6-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that finite dimensional algebras are IBN rings.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Just consider the dimension.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;The following statements about a module $P$ are equivalent:&lt;br /&gt; (1) $P$ is projective; &lt;br /&gt; (2) For any surjective homomorphism $\pi:M→P$, $\pi$ is split surjective; &lt;br /&gt; (3) For any surjective homomorphism $\pi:M→P$, $P$ is a direct summand of $M$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) ⇒ (2) Given a surjective homomorphism $\pi:M→P$, consider the identity homomorphism $1_P:P→P$. By the definition of projective module, there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. Thus, $\pi$ is split surjective. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) ⇒ (3) Given a surjective homomorphism $\pi:M→P$, by (2), there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. It is clear that $M= \ker \pi ⊕ \operatorname{im} f$, so that $P≅\operatorname{im} f$ is a direct summand of $M$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(3) ⇒ (1) Consider a surjective homomorphism $\pi:F→P$ where $F$ is a free module. By (3), $P$ is a direct summand of $F$. Since free modules are projective, $P$ is also projective (direct summands of a projective module are also projective).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $e$ be an idempotent element of a ring $R$. Prove that the left $R$-module $Re$ is projective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We have $$\begin{equation}
+Re⊕R(1-e)=R(e+1-e)=R.
+\end{equation}$$ Since $_RR$ is a free module, it is projective. Thus, its direct summand $Re$ is also projective.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that a finite dimensional algebra $A$ is semisimple if and only if every finite dimensional $A$-module is projective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) Since $A$ is semisimple, every finite dimensional $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every finite dimensional $A$-module is projective (by the previous problem). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the surjective homomorphism $\pi:A→A/M$. Since $A/M$ is projective, $\pi$ is split surjective, so that $A≅M⊕\operatorname{im} f$ for some homomorphism $f:A/M→A$. Thus, $_AA$ is semisimple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Find all the finite dimensional indecomposable projective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;The only finite dimensional indecomposable projective module of $A$ is $A$ itself. Now we prove this.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;We have shown in class that all the finite dimensional indecomposable modules of $A$ are $M_i = ⟨x^{n-i}⟩/⟨x^n⟩, i = 1, 2, \cdots, n$. It is clear that $M_n = A$ is projective. Now we show that for any $1 ≤ i &lt; n$, $M_i$ is not projective. Consider the surjective homomorphism $\pi:A→M_i$ defined by $\pi(1 + ⟨x^n⟩) = x^{n-i} + ⟨x^n⟩$. If $M_i$ is projective, then $\pi$ is split surjective, and $M_i$ will be a direct summand of $A$. However, since $A$ is indecomposable, this is impossible. Thus, $M_i$ is not projective for any $1 ≤ i &lt; n$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-25T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex6_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex6_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《代数拓扑》第一次作业</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;[P330, T1] Show that if $h, h' : X \to Y$ are homotopic and $k, k' : Y \to Z$ are homotopic, then $k \circ h$ and $k' \circ h'$ are homotopic.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Suppose $H : X \times I \to Y$ is a homotopy from $h$ to $h'$, and $K : Y \times I \to Z$ is a homotopy from $k$ to $k'$. Define a map $F : X \times I \to Z$ by $$\begin{equation}
+ F(x,t)=K(H(x,t),t). 
+\end{equation}$$ It is clear that $F$ is continuous, and $$\begin{equation}
+F(x,0) = K(H(x,0),0) = K(h(x),0) = k(h(x)),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = K(H(x,1),1) = K(h'(x),1) = k'(h'(x)).
+\end{equation}$$ Thus, $F$ is a homotopy from $k \circ h$ to $k' \circ h'$, as desired.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;[P330, T2] Given spaces $X$ and $Y$, let $[X, Y]$ denote the set of homotopy classes of maps of $X$ into $Y$. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(a) Let $I = [0, 1]$. Show that for any $X$, the set $[X, I]$ has a single element. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(b) Show that if $Y$ is path connected, the set $[I, Y]$ has a single element.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;This problem is a special case of the next problem. So we only prove the next problem.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;[P331, T3] A space $X$ is said to be &lt;em&gt;contractible&lt;/em&gt; if the identity map $i_X : X \to X$ is nullhomotopic.&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(a) Show that $I$ and $\mathbb{R}$ are contractible. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(b) Show that a contractible space is path connected. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(c) Show that if $Y$ is contractible, then for any $X$, the set $[X, Y]$ has a single element. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(d) Show that if $X$ is contractible and $Y$ is path connected, then $[X, Y]$ has a single element.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(a) We will prove that any star-shaped subset of $\mathbb{R}^n$ is contractible, which includes $I$ and $\mathbb{R}$ as special cases. Suppose $X \subseteq \mathbb{R}^n$ is star-shaped with respect to a point $x_0 \in X$. Define a homotopy $H : X \times I \to X$ by $$\begin{equation}
+H(x,t) = (1-t)x + t x_0.
+\end{equation}$$ It is clear that $H$ is continuous, and $$\begin{equation}
+H(x,0) = x,
+\end{equation}$$ $$\begin{equation}
+H(x,1) = x_0.
+\end{equation}$$ Thus, $H$ is a homotopy from the identity map on $X$ to the constant map at $x_0$, showing that $X$ is contractible. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(b) Let $X$ be a contractible space. For any two points $x_1, x_2 \in X$, since the identity map on $X$ is nullhomotopic, there exists a homotopy $H : X \times I \to X$ such that $$\begin{equation}
+H(x,0) = x,
+\end{equation}$$ $$\begin{equation}
+H(x,1) = x_0,
+\end{equation}$$ for some fixed point $x_0 \in X$. Define a path $\gamma : I \to X$ by $$\begin{equation}
+\gamma(t) = \begin{cases}
+H(x_1, 2t), &amp; \text{if } 0 \leq t \leq \frac{1}{2}, \\
+H(x_2, 2-2t), &amp; \text{if } \frac{1}{2} \leq t \leq 1.
+\end{cases}
+\end{equation}$$ It is clear that $\gamma$ is continuous, and $\gamma(0) = x_1$, $\gamma(1) = x_2$. Thus, $X$ is path connected. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(c) Let $Y$ be a contractible space, and let $f, g : X \to Y$ be any two continuous maps. Since the identity map on $Y$ is nullhomotopic, there exists a homotopy $H : Y \times I \to Y$ such that $$\begin{equation}
+H(y,0) = y,
+\end{equation}$$ $$\begin{equation}
+H(y,1) = y_0,
+\end{equation}$$ for some fixed point $y_0 \in Y$. Define a homotopy $F : X \times I \to Y$ by $$\begin{equation}
+F(x,t) = \begin{cases}
+H(f(x), 2t), &amp; \text{if } 0 \leq t \leq \frac{1}{2}, \\
+H(g(x), 2-2t), &amp; \text{if } \frac{1}{2} \leq t \leq 1.
+\end{cases}
+\end{equation}$$ It is clear that $F$ is continuous (use the pasting lemma [Theorem 18.3]), and $$\begin{equation}
+F(x,0) = f(x),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = g(x).
+\end{equation}$$ Thus, $F$ is a homotopy from $f$ to $g$, showing that $[X, Y]$ has a single element. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(d) Let $X$ be a contractible space and $Y$ be a path connected space. Let $f, g : X \to Y$ be any two continuous maps. Since $X$ is contractible, there exists a homotopy $H : X \times I \to X$ such that $$\begin{equation}  
+H(x,0) = x, H(x,1) = x_0,
+\end{equation}$$ &lt;br /&gt; for some fixed point $x_0 \in X$. Since $Y$ is path connected, there exists a path $\gamma : I \to Y$ such that $$\begin{equation}  
+\gamma(0) = f(x_0), \gamma(1) = g(x_0).
+\end{equation}$$ &lt;br /&gt; Define a homotopy $F : X \times I \to Y$ by $$\begin{equation}
+F(x,t) = \begin{cases}
+f(H(x, 3t)), &amp; \text{if } 0 ≤ t ≤ \frac{1}{3}, \\
+\gamma(3t-1), &amp; \text{if } \frac{1}{3} ≤ t ≤ \frac{2}{3}, \\
+g(H(x, 3-3t)), &amp; \text{if } \frac{2}{3} ≤ t ≤ 1.
+\end{cases}
+\end{equation}$$ It is clear that $F$ is continuous (use the pasting lemma [Theorem 18.3]), and $$\begin{equation}
+F(x,0) = F(H(x,0)) = f(x),
+\end{equation}$$ $$\begin{equation}
+F(x,1) = F(H(x,0)) = g(x).
+\end{equation}$$ Thus, $F$ is a homotopy from $f$ to $g$, showing that $[X, Y]$ has a single element.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-23T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/AT_Ex1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/AT_Ex1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Model_history</title>
+          <description>
+</description>
+          <pubDate>2025-10-22T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Model_History</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Model_History</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week6-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到 $R$ 中的不可逆元为全体严格上三角矩阵, 显然是一个理想, 于是 $R$ 是局部环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $R$ be an Artinian ring or a Noetherian ring. Then $M$ can be decomposed into a finite direct sum of indecomposable modules.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If $M$ is itself indecomposable, then we are done. Otherwise, we have a nontrivial decomposition $M=M_1⊕M_2$. If one of $M_1,M_2$ is indecomposable, we keep it and decompose the other one. If both of them are decomposable, we decompose both of them. Since $R$ is Artinian or Noetherian, this process must stop in finite steps, yielding a decomposition of $M$ into a finite direct sum of indecomposable modules.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that the homomorphic image of a local ring is still a local ring.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Let $R$ be a local ring with unique maximal ideal $\mathfrak{m}$ (also the the set of all non-invertible elements of $R$), and let $f:R→S$ be a surjective ring homomorphism. We want to show that $S$ is also a local ring. Notice that $S≅R/I$ for some ideal $I$ of $R$, and we have $I⊆\mathfrak{m}$. It is obvious that $\mathfrak{m}/I$ is an ideal of $R/I$. Now we want to show that it is exactly the set of non-invertable elements in $R/I$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;First, any element in the ideal $\mathfrak{m}/I$ is non-invertible, since otherwise $\mathfrak{m}/I=R/I$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;Conversely, if an element $r+I∈R/I, r∉I$ is non-invertible, then $r$ is non-invertible in $R$, hence $r∈\mathfrak{m}$, so that $r+I∈\mathfrak{m}/I$, as desired. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that a finite dimensional algebra $A$ is a local ring if and only if the left regular module $_AA$ is indecomposable.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $A$ is a finite dimensional, $A$ has composition series. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇒) If $_AA$ is decomposable, i.e., $_AA=M_1⊕M_2$ for some nontrivial submodules $M_1,M_2$, then consider the idempotent endomorphism $e:A→A$ defined by $e(a)=a_1$ where $a=a_1+a_2$ with $a_i∈M_i$. It is clear that $e$ is neither $0$ nor $1$, contradicting the fact that in a local ring, the only idempotent elements are $0$ and $1$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) If $A$ is not a local ring, then there exists an idempotent element $e∈A$ such that $e≠0,1$. Consider the left ideals $Ae$ and $A(1-e)$. It is clear that $_AA=Ae⊕A(1-e)$, contradicting the indecomposability of $_AA$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-20T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex6_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex6_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week5-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M_1, M_2, N$ 都是 $M$ 的子模, 且 $M_2⊆ M_1$, $N+M_1=N+M_2, N∩M_1=N∩ M_2$. 则 $M_1=M_2$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑如下交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex5_2/diagram_fba62dfe9cb5b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中第一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故左边方块交换), 由条件知它是相等(同构); 最后一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故右边方块交换), 根据同构定理(见图中括号)以及条件知它是相等(同构). 故上图的确是两行正合列构成的交换图. 由五引理可知中间的嵌入也是同构, 从而 $M_1=M_2$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 Noether 模的满自同态是同构.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M$ 是 Noether 模, $f:M→M$ 是满同态. 考虑如下自然的子模升链: $$\begin{equation}
+\ker f ⊆ \ker f^2 ⊆ ⋯ ⊆ \ker f^n ⊆ ⋯
+\end{equation}$$ 由 $M$ 是 Noether 模可知上面子模升链驻定, 即存在 $s\in\mathbb{N}$ 使得 $\ker f^s=\ker f^{s+1}$. 由 $f$ 是满同态可知 $f^s$ 也是满同态. 对于任意 $m∈\ker f$, 存在 $v∈ M$ 使得 $f^s(v)=m$, 从而 $0=f(m)=f^{s+1}(v)=f^s(v)=m$, 即 $\ker f = 0$, 故 $f$ 是单同态. 于是 $f$ 是同构.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里用到了一个论断: 单态射 + 满态射 = 同构. 这个论断在一般的范畴中不成立, 具有这种性质的范畴叫做 &lt;strong&gt;平衡范畴&lt;/strong&gt; (balanced category). 环范畴不是平衡范畴; 加法范畴也未必是平衡范畴. Abel 范畴都是平衡范畴, 一个简单的看法是考虑短正合列的可裂性, 例如, 考虑 Abel 范畴中既是满又单的态射 $f$, 考虑短正合列:&lt;/p&gt;
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/Ex5_2/diagram_bea51082e2798.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;显然 $N→0$ 是可裂满, 所以 $f$ 是可裂单, 即 $f$ 有左逆 (也就是说在 Abel 范畴里面单态射等价于有左逆). 同理在 Abel 范畴里面满态射等价于有右逆. 于是 $f$ 有左逆又有右逆, 故 $f$ 是同构.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明主理想整环是 Noether 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;主理想整环的每个理想都是主理想, 从而是有限生成的, 于是主理想整环是 Noether 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $f:A→B$ 是环的满同态且 $A$ 是 Artin 环. 则 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;对于任意的 Abel 群 $M$, 我们有自同态环 $\mathrm{End}_{\mathbf{Ab}}(M)$ (赋予自然的环结构), 从而有反变 Hom 函子 $\mathrm{Hom}_{\mathbf{Ring}}(-, \mathrm{End}_{\mathbf{Ab}}(M))$&lt;/p&gt;
+    &lt;p&gt;, 将其作用到满同态 $A→B$ 上, 以得到单同态 $\mathrm{Hom}_{\mathbf{Ring}}(B,\mathrm{End}_{\mathbf{Ab}}(M))\xrightarrow{-∘f}\mathrm{Hom}_{\mathbf{Ring}}(A,\mathrm{End}_{\mathbf{Ab}}(M))$. 从而所有的 $B$-模 $M$ 可以自然地视为 $A$-模且结构保持不变 (其实上述给出了一个 $B$-Mod 到 $A$-Mod 的忠实函子). 特别地, 左正则模 $_BB$ 可以自然地视为左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模, 从而 $_BB$ 也是 Artin 模(*), 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(不使用函子语言的证明) 由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模. 任意取 $_BB$ 的子模降链, 也是 $_AB$ 的子模降链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 如果从$\mathrm{Hom}_{\mathbf{Ring}}(-,\mathrm{End}_{\mathbf{Ab}}(M))$是“反变左正合函子”考虑是行不通的, 因为环范畴 $\mathbf{Ring}$ 不是 Abel 范畴, 没有正合列概念. 但是实际上, Hom 函子的左正合性只是它在能定义正合列的范畴里面的方便说法, 其实 $\mathrm{Hom}(-,?)$ 将满态射 $A→ B$ 变为单态射 $\mathrm{Hom}(B,?)↪\mathrm{Hom}(A,?)$ 是 (反变) Hom 函子的一个普遍性质, 因为它本质上是满态射的定义.&lt;/p&gt;
+
+&lt;p&gt;Q: 如何从范畴角度刻画有限生成? 如何从模范畴中读出环的信息, 如 Noether, Artin 等性质?&lt;/p&gt;
+
+&lt;p&gt;我的想法: Artin 性质就是模范畴中不可以一直有非平凡的子对象. Noether 和 有限生成暂时看不出来.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $f:A→B$ 是环的满同态且 $A$ 是 Noether 环. 则 $B$ 是 Noether 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Noether 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Noether 模. 任意取 $_BB$ 的子模升链, 也是 $_AB$ 的子模升链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 上面两个习题中的满态射条件其实都可以加强到 $_AB$ 是有限生成的.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是左 Artin 环, 则任一有限生成左 $R$-模 $M$ 有合成因子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;因为 $R$ 是左 Artin 环, 从而 $R$ 也是左 Noether 环. 由于 $M$ 是有限生成左 $R$-模, 故 $M$ 是左 Artin 模也是左 Noether 模, 从而 $M$ 有合成因子.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex5_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex5_2</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</title>
           <description>
 </description>
@@ -2808,6 +3073,164 @@ $$&lt;/p&gt;
 0→\mathrm{Hom}_R(M_i/M_{i+1},S)→\mathrm{Hom}_R(M_i,S)→\mathrm{Hom}_R(M_{i+1},S), \quad i=0,1,⋯,t-1.
 \end{equation}$$ 如果所有的 $\mathrm{Hom}_R(M_i/M_{i+1},S)=0$, 则由正合列可知 $\mathrm{Hom}_R(M_i,S)↪\mathrm{Hom}_R(M_{i+1},S)$ 是嵌入, 从而由 $\mathrm{Hom}_R(M_0,S)≠0$ 可以得到 $\mathrm{Hom}_R(M_t,S)≠0$, 矛盾. &lt;br /&gt;&lt;/p&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;18-artin-模与-noether-模&quot;&gt;1.8 Artin 模与 Noether 模&lt;/h2&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M_1, M_2, N$ 都是 $M$ 的子模, 且 $M_2⊆ M_1$, $N+M_1=N+M_2, N∩M_1=N∩ M_2$. 则 $M_1=M_2$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑如下交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_fba62dfe9cb5b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中第一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故左边方块交换), 由条件知它是相等(同构); 最后一列是由嵌入 $M_2↪M_1$ 自然诱导的嵌入(故右边方块交换), 根据同构定理(见图中括号)以及条件知它是相等(同构). 故上图的确是两行正合列构成的交换图. 由五引理可知中间的嵌入也是同构, 从而 $M_1=M_2$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 Noether 模的满自同态是同构.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;设 $M$ 是 Noether 模, $f:M→M$ 是满同态. 考虑如下自然的子模升链: $$\begin{equation}
+\ker f ⊆ \ker f^2 ⊆ ⋯ ⊆ \ker f^n ⊆ ⋯
+\end{equation}$$ 由 $M$ 是 Noether 模可知上面子模升链驻定, 即存在 $s\in\mathbb{N}$ 使得 $\ker f^s=\ker f^{s+1}$. 由 $f$ 是满同态可知 $f^s$ 也是满同态. 对于任意 $m∈\ker f$, 存在 $v∈ M$ 使得 $f^s(v)=m$, 从而 $0=f(m)=f^{s+1}(v)=f^s(v)=m$, 即 $\ker f = 0$, 故 $f$ 是单同态. 于是 $f$ 是同构.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 这里用到了一个论断: 单态射 + 满态射 = 同构. 这个论断在一般的范畴中不成立, 具有这种性质的范畴叫做 &lt;strong&gt;平衡范畴&lt;/strong&gt; (balanced category). 环范畴不是平衡范畴; 加法范畴也未必是平衡范畴. Abel 范畴都是平衡范畴, 一个简单的看法是考虑短正合列的可裂性, 例如, 考虑 Abel 范畴中既是满又单的态射 $f$, 考虑短正合列:&lt;/p&gt;
+&lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+    &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_bea51082e2798.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+  &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+
+&lt;p&gt;显然 $N→0$ 是可裂满, 所以 $f$ 是可裂单, 即 $f$ 有左逆 (也就是说在 Abel 范畴里面单态射等价于有左逆). 同理在 Abel 范畴里面满态射等价于有右逆. 于是 $f$ 有左逆又有右逆, 故 $f$ 是同构.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明主理想整环是 Noether 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;主理想整环的每个理想都是主理想, 从而是有限生成的, 于是主理想整环是 Noether 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $f:A→B$ 是环的满同态且 $A$ 是 Artin 环. 则 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;对于任意的 Abel 群 $M$, 我们有自同态环 $\mathrm{End}_{\mathbf{Ab}}(M)$ (赋予自然的环结构), 从而有反变 Hom 函子 $\mathrm{Hom}_{\mathbf{Ring}}(-, \mathrm{End}_{\mathbf{Ab}}(M))$&lt;/p&gt;
+    &lt;p&gt;, 将其作用到满同态 $A→B$ 上, 以得到单同态 $\mathrm{Hom}_{\mathbf{Ring}}(B,\mathrm{End}_{\mathbf{Ab}}(M))\xrightarrow{-∘f}\mathrm{Hom}_{\mathbf{Ring}}(A,\mathrm{End}_{\mathbf{Ab}}(M))$. 从而所有的 $B$-模 $M$ 可以自然地视为 $A$-模且结构保持不变 (其实上述给出了一个 $B$-Mod 到 $A$-Mod 的忠实函子). 特别地, 左正则模 $_BB$ 可以自然地视为左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模, 从而 $_BB$ 也是 Artin 模(*), 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(不使用函子语言的证明) 由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Artin 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Artin 模. 任意取 $_BB$ 的子模降链, 也是 $_AB$ 的子模降链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 如果从$\mathrm{Hom}_{\mathbf{Ring}}(-,\mathrm{End}_{\mathbf{Ab}}(M))$是“反变左正合函子”考虑是行不通的, 因为环范畴 $\mathbf{Ring}$ 不是 Abel 范畴, 没有正合列概念. 但是实际上, Hom 函子的左正合性只是它在能定义正合列的范畴里面的方便说法, 其实 $\mathrm{Hom}(-,?)$ 将满态射 $A→ B$ 变为单态射 $\mathrm{Hom}(B,?)↪\mathrm{Hom}(A,?)$ 是 (反变) Hom 函子的一个普遍性质, 因为它本质上是满态射的定义.&lt;/p&gt;
+
+&lt;p&gt;Q: 如何从范畴角度刻画有限生成? 如何从模范畴中读出环的信息, 如 Noether, Artin 等性质?&lt;/p&gt;
+
+&lt;p&gt;我的想法: Artin 性质就是模范畴中不可以一直有非平凡的子对象. Noether 和 有限生成暂时看不出来.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $f:A→B$ 是环的满同态且 $A$ 是 Noether 环. 则 $B$ 是 Noether 环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由提升, 做正则模 $_BB$ 自然就是左 $A$-模 $_AB$. 由于 $A$ 是 Noether 环, 故 $_AB$ (由 $A↠B$ 是满态射知这是有限生成 $A$-模) 是 Noether 模. 任意取 $_BB$ 的子模升链, 也是 $_AB$ 的子模升链, 故驻定. 于是 $_BB$ 也是 Artin 模, 故 $B$ 是 Artin 环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 上面两个习题中的满态射条件其实都可以加强到 $_AB$ 是有限生成的.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是左 Artin 环, 则任一有限生成左 $R$-模 $M$ 有合成因子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;因为 $R$ 是左 Artin 环, 从而 $R$ 也是左 Noether 环. 由于 $M$ 是有限生成左 $R$-模, 故 $M$ 是左 Artin 模也是左 Noether 模, 从而 $M$ 有合成因子.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;19-krull-schmidt-remak-定理&quot;&gt;1.9 Krull-Schmidt-Remak 定理&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-19&quot;&gt;习题 1.9&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到 $R$ 中的不可逆元为全体严格上三角矩阵, 显然是一个理想, 于是 $R$ 是局部环.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $R$ be an Artinian ring or a Noetherian ring. Then $M$ can be decomposed into a finite direct sum of indecomposable modules.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;If $M$ is itself indecomposable, then we are done. Otherwise, we have a nontrivial decomposition $M=M_1⊕M_2$. If one of $M_1,M_2$ is indecomposable, we keep it and decompose the other one. If both of them are decomposable, we decompose both of them. Since $R$ is Artinian or Noetherian, this process must stop in finite steps, yielding a decomposition of $M$ into a finite direct sum of indecomposable modules.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that the homomorphic image of a local ring is still a local ring.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Let $R$ be a local ring with unique maximal ideal $\mathfrak{m}$ (also the the set of all non-invertible elements of $R$), and let $f:R→S$ be a surjective ring homomorphism. We want to show that $S$ is also a local ring. Notice that $S≅R/I$ for some ideal $I$ of $R$, and we have $I⊆\mathfrak{m}$. It is obvious that $\mathfrak{m}/I$ is an ideal of $R/I$. Now we want to show that it is exactly the set of non-invertable elements in $R/I$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;First, any element in the ideal $\mathfrak{m}/I$ is non-invertible, since otherwise $\mathfrak{m}/I=R/I$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;Conversely, if an element $r+I∈R/I, r∉I$ is non-invertible, then $r$ is non-invertible in $R$, hence $r∈\mathfrak{m}$, so that $r+I∈\mathfrak{m}/I$, as desired. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that a finite dimensional algebra $A$ is a local ring if and only if the left regular module $_AA$ is indecomposable.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $A$ is a finite dimensional, $A$ has composition series. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇒) If $_AA$ is decomposable, i.e., $_AA=M_1⊕M_2$ for some nontrivial submodules $M_1,M_2$, then consider the idempotent endomorphism $e:A→A$ defined by $e(a)=a_1$ where $a=a_1+a_2$ with $a_i∈M_i$. It is clear that $e$ is neither $0$ nor $1$, contradicting the fact that in a local ring, the only idempotent elements are $0$ and $1$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) If $A$ is not a local ring, then there exists an idempotent element $e∈A$ such that $e≠0,1$. Consider the left ideals $Ae$ and $A(1-e)$. It is clear that $_AA=Ae⊕A(1-e)$, contradicting the indecomposability of $_AA$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;110-投射模与自由模&quot;&gt;1.10 投射模与自由模&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-110&quot;&gt;习题 1.10&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that finite dimensional algebras are IBN rings.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Just consider the dimension.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;The following statements about a module $P$ are equivalent:&lt;br /&gt; (1) $P$ is projective; &lt;br /&gt; (2) For any surjective homomorphism $\pi:M→P$, $\pi$ is split surjective; &lt;br /&gt; (3) For any surjective homomorphism $\pi:M→P$, $P$ is a direct summand of $M$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) ⇒ (2) Given a surjective homomorphism $\pi:M→P$, consider the identity homomorphism $1_P:P→P$. By the definition of projective module, there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. Thus, $\pi$ is split surjective. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) ⇒ (3) Given a surjective homomorphism $\pi:M→P$, by (2), there exists a homomorphism $f:P→M$ such that $\pi∘f=1_P$. It is clear that $M= \ker \pi ⊕ \operatorname{im} f$, so that $P≅\operatorname{im} f$ is a direct summand of $M$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(3) ⇒ (1) Consider a surjective homomorphism $\pi:F→P$ where $F$ is a free module. By (3), $P$ is a direct summand of $F$. Since free modules are projective, $P$ is also projective (direct summands of a projective module are also projective).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $e$ be an idempotent element of a ring $R$. Prove that the left $R$-module $Re$ is projective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We have $$\begin{equation}
+Re⊕R(1-e)=R(e+1-e)=R.
+\end{equation}$$ Since $_RR$ is a free module, it is projective. Thus, its direct summand $Re$ is also projective.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that a finite dimensional algebra $A$ is semisimple if and only if every finite dimensional $A$-module is projective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) Since $A$ is semisimple, every finite dimensional $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every finite dimensional $A$-module is projective (by the previous problem). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the surjective homomorphism $\pi:A→A/M$. Since $A/M$ is projective, $\pi$ is split surjective, so that $A≅M⊕\operatorname{im} f$ for some homomorphism $f:A/M→A$. Thus, $_AA$ is semisimple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Find all the finite dimensional indecomposable projective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;The only finite dimensional indecomposable projective module of $A$ is $A$ itself. Now we prove this.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;We have shown in class that all the finite dimensional indecomposable modules of $A$ are $M_i = ⟨x^{n-i}⟩/⟨x^n⟩, i = 1, 2, \cdots, n$. It is clear that $M_n = A$ is projective. Now we show that for any $1 ≤ i &lt; n$, $M_i$ is not projective. Consider the surjective homomorphism $\pi:A→M_i$ defined by $\pi(1 + ⟨x^n⟩) = x^{n-i} + ⟨x^n⟩$. If $M_i$ is projective, then $\pi$ is split surjective, and $M_i$ will be a direct summand of $A$. However, since $A$ is indecomposable, this is impossible. Thus, $M_i$ is not projective for any $1 ≤ i &lt; n$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;111-内射模&quot;&gt;1.11 内射模&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-111&quot;&gt;习题 1.11&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $M$ be a left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>

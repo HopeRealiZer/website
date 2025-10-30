@@ -9,12 +9,12 @@
 
 
 
-  <title>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology
+  <title>《基础代数学》作业 Week6-1
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="">
+<meta name="description" content="  设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/AT_Lec_Ex1">
+<link rel="canonical" href="/website/posts/Ex6_1">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,17 +75,47 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>Haynes Miller 代数拓扑讲义习题 - Chapter 1 Singular Homology</h1>
+      <h1>《基础代数学》作业 Week6-1</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 14, 2025
+        October 20, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    
+    <div class="problem">
+  <p>设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.</p>
+  <div class="proof">
+    <p>注意到 $R$ 中的不可逆元为全体严格上三角矩阵, 显然是一个理想, 于是 $R$ 是局部环.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Let $R$ be an Artinian ring or a Noetherian ring. Then $M$ can be decomposed into a finite direct sum of indecomposable modules.</p>
+  <div class="proof">
+    <p>If $M$ is itself indecomposable, then we are done. Otherwise, we have a nontrivial decomposition $M=M_1⊕M_2$. If one of $M_1,M_2$ is indecomposable, we keep it and decompose the other one. If both of them are decomposable, we decompose both of them. Since $R$ is Artinian or Noetherian, this process must stop in finite steps, yielding a decomposition of $M$ into a finite direct sum of indecomposable modules.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Prove that the homomorphic image of a local ring is still a local ring.</p>
+  <div class="proof">
+    <p>Let $R$ be a local ring with unique maximal ideal $\mathfrak{m}$ (also the the set of all non-invertible elements of $R$), and let $f:R→S$ be a surjective ring homomorphism. We want to show that $S$ is also a local ring. Notice that $S≅R/I$ for some ideal $I$ of $R$, and we have $I⊆\mathfrak{m}$. It is obvious that $\mathfrak{m}/I$ is an ideal of $R/I$. Now we want to show that it is exactly the set of non-invertable elements in $R/I$. <br /></p>
+    <p>First, any element in the ideal $\mathfrak{m}/I$ is non-invertible, since otherwise $\mathfrak{m}/I=R/I$. <br /></p>
+    <p>Conversely, if an element $r+I∈R/I, r∉I$ is non-invertible, then $r$ is non-invertible in $R$, hence $r∈\mathfrak{m}$, so that $r+I∈\mathfrak{m}/I$, as desired. <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Prove that a finite dimensional algebra $A$ is a local ring if and only if the left regular module $_AA$ is indecomposable.</p>
+  <div class="proof">
+    <p>Since $A$ is a finite dimensional, $A$ has composition series. <br /></p>
+    <p>(⇒) If $_AA$ is decomposable, i.e., $_AA=M_1⊕M_2$ for some nontrivial submodules $M_1,M_2$, then consider the idempotent endomorphism $e:A→A$ defined by $e(a)=a_1$ where $a=a_1+a_2$ with $a_i∈M_i$. It is clear that $e$ is neither $0$ nor $1$, contradicting the fact that in a local ring, the only idempotent elements are $0$ and $1$. <br /></p>
+    <p>(⇐) If $A$ is not a local ring, then there exists an idempotent element $e∈A$ such that $e≠0,1$. Consider the left ideals $Ae$ and $A(1-e)$. It is clear that $_AA=Ae⊕A(1-e)$, contradicting the indecomposability of $_AA$.</p>
+  </div>
+</div>
 
   </article>
 
@@ -224,13 +254,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex5_2" title="NEXT: 《基础代数学》作业 Week5-2">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Model_History" title="NEXT: Model_history">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex5_1" title="PREV: 《基础代数学》作业 Week5-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Ex5_2" title="PREV: 《基础代数学》作业 Week5-2">&gt;&gt;</a>
     
   </div>
 </main>
