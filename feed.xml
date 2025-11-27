@@ -7,6 +7,1002 @@
     
       
         <item>
+          <title>《基础代数学》作业 Week11-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 由于在 $X$ 处正合, 于是 $\mathrm{Ker}x=0$, 于是 $x$ 是单态射. 由于在 $Y$ 处正合, 于是有 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex11_1/diagram_f43a65e661c3c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;由于 $yx=0$, 存在唯一的态射 $s:X→\mathrm{Ker}y$ 使得 $x=k_ys$, 由于 $x$ 是单态射, 于是 $s$ 是单态射. 同时由于 $\mathrm{Ker}y≅\mathrm{Im}x$, 这个 $s$ 同时也是满单分解给出的态射, 于是 $s$ 也是满态射, 从而 $s$ 是同构. 于是 $x$ 是 $y$ 的 kernel.&lt;/p&gt;
+    &lt;p&gt;&lt;br /&gt; (⇐) 只需要验证在 $Y$ 处正合, 即验证 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑如下交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex11_1/diagram_e2e0a3ea52635.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;取 $x$ 的满单分解, 由于 $ym_x=0$ (由 $ym_x\widetilde{x}=0$ 及 $\widetilde{x}$ 单可得), 根据 $x$ 是 $y$ 的 kernel, 存在唯一的态射 $s$ 使得 $xs=m_x$. 于是 $x=m_x\widetilde{x}=xs\widetilde{x}$, 根据 $x$ 单可得 $s\widetilde{x}=\mathrm{Id}_X$. 同理可得 $\mathrm{Id}_{\mathrm{Im}(x)}=\widetilde{x}s$. 从而 $s, \widetilde{x}$ 是同构, 即得 $\mathrm{Im}x≅\mathrm{Ker}y$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $X \xrightarrow{x} Y \overset{x}{\twoheadrightarrow} Z \rightarrow 0$, 它是正合列当且仅当 $y$ 是 $x$ 的余核.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;与上一题完全类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设下图的两行均是 Abel 范畴中的正合列, 且左边的方块交换：&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex11_1/diagram_da7a075a2e01f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则存在唯一的态射 $h$ 使得右边的方块也交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由上面的习题知 $y$ 是 $x$ 的 cokernel, 于是由 $y'gx=y'x'f=0$ 得存在唯一的态射 $h$ 使得 $y'g=hy$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设下图的两行均是 Abel 范畴中的正合列, 且右边的方块交换：&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex11_1/diagram_161ab360cbc3b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则存在唯一的态射 $f$ 使得左边的方块也交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由上面的习题知 $x'$ 是 $y'$ 的 kernel, 于是由 $y'gx=hyx=0$ 得存在唯一的态射 $f$ 使得 $gx=x'f$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex11_1/diagram_1b5b3b7e980d8.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中 $Q$ 是投射对象, $q:Q→P$ 是满态射, 根据可裂条件可得存在 $t:P→Q$ 使得 $qt=\mathrm{Id}_P$. 由于 $Q$ 是投射对象, 故存在 $s:Q→ M$ 使得 $gs=pq$. 由于 $p=pqt=gst$, 从而 $P$ 是投射对象.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $I$ 是内射对象. 若任意短正合列 $0 \longrightarrow I \longrightarrow M \longrightarrow N \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多内射对象时, 逆命题也成立.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;与上一题证明完全类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-11-24T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex11_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex11_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week10-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 证明态射范畴 $\mathrm{Mor}(\mathcal{A})$ 也是 Abel 范畴.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;已经知道 $\mathrm{Mor}(\mathcal{A})$ 是加法范畴, 下面只需要证明 $\mathrm{Mor}(\mathcal{A})$ 有 kernel 和 cokernel, 且 image 和 coimage 自然同构. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;给定 $\mathrm{Mor}(\mathcal{A})$ 中的任一态射 $(\alpha,\beta):(X,f,Y)→(X',f',Y')$, 自然有下面的交换图, 其中虚线都是由 kernel 和 cokernel 的泛性质自然诱导出来的.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex10_2/diagram_7466fa3b95b4a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;下面先证明 $(k_\alpha, k_\beta)$ 是 $(\alpha, \beta)$ 的 kernel (即逐分量取 kernel 就是 kernel). 首先显然有 $(\alpha, \beta)\circ(k_\alpha, k_\beta) = (0,0)$. 设有态射 $(s,t):(Z,h,W)→(X,f,Y)$ 满足 $(\alpha,\beta)∘(s,t)=(0,0)$. 则有 $\alpha s=0$ 且 $\beta t=0$. 由 $k_\alpha$ 和 $k_\beta$ 是分别是 $\alpha$ 和 $\beta$ 的 kernel, 存在唯一态射 $u:Z→\ker \alpha$ 和 $v:W→\ker \beta$ 使得 $k_\alpha u=s$ 且 $k_\beta v=t$. 由此得到态射 $(u,v):(Z,h,W)→(\ker \alpha, k_\alpha, \ker \beta)$ (这确实是态射范畴中的态射, 因为 $k_{\beta}k_{\alpha,\beta}u=fk_α u=fs=th=k_β vh$, 由于 $k_\beta$ 是单态射, 于是有 $k_{\alpha,\beta}u=vh$). 这样 $(u,v)$ 的唯一性由 $u$ 和 $v$ 的唯一性保证. 这样就证明了 $(\alpha,\beta)$ 的 kernel 是 $(k_\alpha, k_\beta)$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;同理可以证明, 逐项求 cokernel 也得到态射范畴中的 cokernel. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;从而对于 image 和 coimage 也是逐项求即可. 由于在 Abel 范畴中 image 和 coimage 自然同构, 故在态射范畴中也自然同构. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是有足够多投射对象的 Abel 范畴. 则 $\mathrm{Mor}(\mathcal{A})$ 的任意投射对象 $(U,f,V)$ 均是 $(P, \mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项, 其中 $P$ 和 $Q$ 是 $\mathcal{A}$ 的投射对象. 特别地, $U$ 和 $V$ 均是 $\mathcal{A}$ 的投射对象.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由于 $\mathcal{A}$ 有足够多投射对象, 存在 $\mathcal{A}$ 中的投射对象 $P$ 和满态射 $p:P→U$, 以及投射对象 $Q$ 和满态射 $q:Q→V$. 考虑如下 $\mathrm{Mor}(\mathcal{A})$ 中的态射 $(p, (fp,q))$:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex10_2/diagram_3b002a4a5dfb5.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;注意到 $P⊕Q$ 是投射对象并且 $(fp,q):P⊕Q→V$ 是满态射. 于是上面的态射是满态射, 由于 $(U,f,V)$ 是投射对象, 于是 $(U,f,V)$ 是 $(P,\begin{pmatrix}\mathrm{Id}_P \\ 0\end{pmatrix}, P⊕Q)≅(P,\mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-11-19T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex10_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex10_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>凸优化笔记</title>
+          <description>&lt;p&gt;既凸又凹就是线性. 故等式约束一定是线性约束.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;凸优化的任何局部最优为全局最优.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;设 $f_0$ 可微. 则 $x∈ D$ 最优当且仅当 $∀ y∈D, ∇f_0(x)⋅(y-x)≥0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;corollary&quot;&gt;
+  &lt;p&gt;无约束凸优化问题里面 $∇f_0(x)=0$ 当且仅当 $x$ 是最优解.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;对于带有等式约束 $Ax=b$ 的凸优化问题, 最优解 $x$ 满足 $∇f_0(x)⟂\mathrm{Ker}A$. 即存在 $\nu$ 使得 $∇f_0(x)+A^T ν=0$. 这是 KKT 条件的特例.&lt;/p&gt;
+
+&lt;h1 id=&quot;带约束优化问题基础-kkt-条件&quot;&gt;带约束优化问题基础: KKT 条件&lt;/h1&gt;
+
+&lt;p&gt;问题形式:&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\begin{aligned}
+    \min\quad &amp;f(x)\\
+    \text{s.t.} &amp;\begin{cases}
+        c_i(x) ≥ 0, \quad i∈\mathcal{I},\\ 
+        c_i(x) = 0,  \quad i∈\mathcal{E}.
+    \end{cases}
+\end{aligned}
+\end{equation}$$&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(tangent vector, tangent cone)&lt;/strong&gt; &lt;br /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;tangent vector 就是直接描述的从点 $x$ 出发的可行域中的曲线可能的初始速度方向, 用于刻画局部可行的扰动方向. 即对于 local minimizer, 显然有
+$$\begin{equation}
+∇ f(x_*)⋅ d≥ 0, ∀ d∈ T_D(x_*). 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;只不过这个定义直接从可行扰动出发, 直观直接, 但是难以处理, 所以我们需要下面的定义. 它给出了在 LICQ 情况下的更好的刻画.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(linearized feasible directions)&lt;/strong&gt; &lt;br /&gt; $$\begin{equation}
+\mathcal{F}(x) = \{ d ∣ ∇c_i(x)⋅d=0, ∀ i∈\mathcal{E}; ∇c_i(x)⋅d≥0, ∀ \mathcal{I}∩\mathcal{A}(x) \}.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;一般情况下只有 $T_D(x)⊆\mathcal{F}(x)$. 只有在满足 LICQ 的时候才成立等式.&lt;/p&gt;
+
+&lt;p&gt;($T_D(x)$ 是锥但是未必是凸锥; $\mathcal{F}(x)$ 一定是闭凸锥.)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 我感觉这里的 LICQ 有非常浓的几何意味, 会和流形上局部切空间的分析相关.&lt;/p&gt;
+
+&lt;p&gt;另外值得注意的是, 如果记矩阵 $C=[∇c_i]_{i∈\mathcal{E}}, B=[∇c_i]_{i∈\mathcal{I}∩\mathcal{A}(x)}$ (并排放置列向量), 则有
+$$\begin{equation}
+\mathcal{F}(x) = \{d∣ B^Td≥0, C^Td=0\} = K^*. 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;所以在 LICQ 成立的情况下, 对于任何的 $d∈\mathcal{F}(x_*)$, 一定要有 $∇f(x_*)⋅d≥ 0$, 换一个说法就是
+$$\begin{equation}
+    ∇f(x_*)∈ (\mathcal{F}(x_*))^* = (K^*)^*.
+\end{equation}$$
+这里使用了后面会介绍的对偶说法.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;拉格朗日函数定义为&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\mathcal{L}(x,\lambda) = f(x) - \sum_{i∈ \mathcal{E}∪\mathcal{I}} \lambda_i c_i(x).
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;KKT 条件就是在 LICQ 情况下取局部最小值的一阶必要条件.&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;假设所有的函数都可微. 令 $x_*$ 是局部最小值点 (local minimizer), 并且假设 LICQ 条件成立. 则存在 $λ_i$ 使得在 $(x,λ)$ 上有下面的 KKT 条件成立 $$\begin{equation}
+\begin{aligned}
+    &amp; \nabla_x \mathcal{L} = \nabla f(x_*) - \sum_i \lambda_i∇ c_i(x_*) = 0, \\ 
+    &amp; c_i(x_*) = 0, ∀ i∈ \mathcal{E},\quad c_i(x_*)≥ 0, ∀ i∈ \mathcal{I}, \\ 
+    &amp; \lambda_i ≥ 0, ∀ i∈ \mathcal{I}, \\ 
+    &amp; \lambda_i c_i(x_*) = 0, ∀ i∈ \mathcal{I}. 
+\end{aligned}
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;严谨证明这件事情需要用到 Farkas 引理 (虽然 KKT 条件在直观上非常容易理解).&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Farkas 引理)&lt;/strong&gt; &lt;br /&gt; 令 $B$ 和 $C$ 分别是 $n×m$ 和 $n×p$ 的实矩阵. 令 $p\in\mathbb{R}^n$. 这下面两个命题有且仅有一个成立: &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(1) $$\begin{equation}
+    g∈ \{By+Cω∣ y≥ 0\}
+    \end{equation}$$&lt;/p&gt;
+  &lt;p&gt;(2) 存在 $d∈ \mathbb{R}^n$ 使得 $$\begin{equation}
+    g⋅d&lt;0, B^Td≥ 0, C^Td=0.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; Farkas 引理本身就很有对偶的意味. 我们定义一个闭凸锥
+$$\begin{equation}
+    K = \{By+Cω∣ y≥ 0\},
+\end{equation}$$
+考虑它的对偶锥
+$$\begin{equation}
+    K^* = \{d ∣ d⋅g≥0,∀g∈ K\}.
+\end{equation}$$
+我们将可以证明
+$$\begin{equation}
+    K^* = \{d∣ B^Td≥ 0, C^Td=0\}. 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;所以上面的 Farkas 引理只不过就是两个情况的罗列: 一个向量在锥 $K$ 里面或者不在 $K$ 里面, 只是在表述的时候表述为在 $K$ 里面或者不在 $(K^*)^*$ 里面.&lt;/p&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(KKT 条件的证明) &lt;br /&gt; 有了 Farkas 引理, 根据取极小值的必要条件 $ ∇f(x_*)∈ (\mathcal{F}(x_*))^*$ 知道没法成立第二个条件, 所以成立第一个条件, 也就是说 $∇ f(x_*)∈ K$. 换句话说就是 $$\begin{equation}
+∇ f(x_*) = \sum_{i\in\mathcal{A}}\lambda_i∇ c_i(x_*),
+\end{equation}$$ 其中 $\lambda_i≥ 0, ∀ i\in\mathcal{A}∩\mathcal{I}$. 只要定义 $\lambda_i=0, ∀ i∈ \mathcal{I}\backslash \mathcal{A}$ 即可.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;对于凸优化而言, KKT 条件(一阶必要条件)也是充分的.&lt;/p&gt;
+</description>
+          <pubDate>2025-11-18T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Convex_Opt</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Convex_Opt</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week10-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 若 $f : X \to Y$ 是满态射, 则对于任意态射 $g : Y \to Z$, 典范态射&lt;br /&gt; $$\begin{equation}
+\operatorname{Im} g \longrightarrow \operatorname{Im}(g f)
+\end{equation}$$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;考虑 $g$ 和 $gf$ 的满单分解.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex10_1/diagram_3cfecaf9caf35.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;由于 $\widetilde{g}fk=0$, 根据 $\widetilde{gf}$ 作为 $k$ 的 cokernel 的泛性质, 存在唯一态射 $c:\mathrm{Im}gf → \mathrm{Im}g$ 使得 $c \widetilde{gf} = \widetilde{g} f$. 由于 $\widetilde{g}f$ 是满的, 从而 $c$ 也是满的. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;下面证明 $m_gc=m_{gf}$. 计算有 $$\begin{equation}
+	m_g c \widetilde{gf} = m_g \widetilde{g} f = g f = m_{gf} \widetilde{gf}.
+\end{equation}$$ 由于 $\widetilde{gf}$ 是满的, 故 $m_g c = m_{gf}$. 由 $m_g$ 和 $m_{gf}$ 是单的, 可知 $c$ 也是单的. &lt;br /&gt; 综上, $c$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 则有典范同构&lt;br /&gt; $$\begin{equation}
+\prod_{1 \le i \le n} \ker f_i \cong \ker\!\left(\prod_{1 \le i \le n} f_i\right)
+\end{equation}$$ 若 $\mathcal{A}$ 有无限积, 则此式对无限积也成立. 特别地, 若 $\mathcal{A}$ 有无限积, 则 $\prod_{i \in I} f_i$ 是单态射当且仅当每个 $f_i\,(i \in I)$ 均是单态射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;直接考虑指标集 $I$, 设 $\mathcal{A}$ 有关于指标集 $I$ 的积.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex10_1/diagram_a16f19b8be894.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;自然有上图右边两个方块. 下面验证 $∏ \ker f_i$ 是 $∏ f_i$ 的核. 设有态射 $g:Z→∏ X_j$ 满足 $∏ f_i ∘ g=0$. 则对于任意 $i$, 有 $f_i ∘ p^X_i ∘ g = p^Y_i ∘ ∏ f_i ∘ g = 0$. 由 $k_i$ 是 $f_i$ 的核, 存在唯一态射 $h_i:Z→\ker f_i$ 使得 $k_i ∘ h_i = p^X_i ∘ g$. 由积的泛性质, 存在唯一态射 $∏ h_i:Z→∏ \ker f_i$ 使得 $p^K_i ∘ ∏ h_i = h_i$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;下面证明 $∏ k_i ∘ ∏ h_i = g$. 计算有 $$\begin{equation}
+	p^X_i ∘ ∏ k_i ∘ ∏ h_i = k_i ∘ p^K_i ∘ ∏ h_i = k_i ∘ h_i = p^X_i ∘ g.
+\end{equation}$$ 根据 $∏X_i$ 的泛性质, 可知 $∏ k_i ∘ ∏ h_i = g$. $∏ h_i$ 的唯一性由 $\ker f_i$ 的泛性质以及 $\prod\ker f_i$ 的泛性质保证(即每个分量下去都是唯一的, 回来也是唯一的). &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有单态射 $g : Y \hookrightarrow X$ 和态射 $h : Z \to Y$. 则有典范单态射&lt;br /&gt; $$\begin{equation}
+\operatorname{Coker} h \longrightarrow \operatorname{Coker}(g h).
+\end{equation}$$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到有交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex10_1/diagram_0b9ab4229edc9.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中 $c$ 是典范同构. 对两列正合列使用五引理得 $c'$ 是单态射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 按道理说应该不能用五引理, Abel 范畴里面的版本还没证明. 我不知道这里有没有循环论证.&lt;/p&gt;
+
+</description>
+          <pubDate>2025-11-17T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex10_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex10_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025年11月17日杂记 - Optimal Control</title>
+          <description>&lt;h2 id=&quot;方法比较&quot;&gt;方法比较&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;non linear Hamilton-Jacobi partial differential approach&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;理论完备、可以找到全局最小值&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;计算复杂度高, 维数灾难&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Lagrange principle&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;计算复杂度低, 适合高维问题&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;只能找到局部最优解, 通常伴随正则化方法会引入额外误差&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;(so far) has no efficient implementation in the natural stochastic setting with adapted Markov controls, while the Hamilton-Jacobi PDE approach directly extends to such stochastic controls; as a consequence computations of stochastic controls is basically limited to low dimensional problems.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+          <pubDate>2025-11-17T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Optimal_Control</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Optimal_Control</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025年11月13日杂记 - 输运</title>
+          <description>&lt;p&gt;描述输运有拉格朗日和欧拉两种视角.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;拉格朗日视角: 跟踪每一个粒子的运动轨迹, 关注粒子的位置和速度随时间的变化. 适用于粒子数目较少的系统.&lt;/li&gt;
+  &lt;li&gt;欧拉视角: 关注空间中每个位置的流体性质随时间的变化, 适用于粒子数目较多的系统.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最优输运问题&quot;&gt;最优输运问题&lt;/h2&gt;
+
+&lt;p&gt;Monge 问题中质量不可分割.&lt;/p&gt;
+
+&lt;p&gt;Kantorovich 问题是它的推广, 质量可分割.&lt;/p&gt;
+
+&lt;h2 id=&quot;感觉需要学习的东西&quot;&gt;感觉需要学习的东西&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Convex problems often have strong duality.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;优化对偶&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+          <pubDate>2025-11-13T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/LileiLec</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/LileiLec</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week9-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于加法范畴之间的加法函子 $F$, $F$ 是忠实的当且仅当 $F$ 将非零态射映为非零态射.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 显然. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $f,g:X→Y$ 满足 $Ff=Fg$. 则 $F(f-g)=0$. 由题设 $f-g=0$, 即 $f=g$. 故 $F$ 是忠实的.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 证明有如下交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/Ex9_2/diagram_bae307752c88e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;直接按分量验证, 即考虑右复合 $\tilde{e_i}:FX_i→ FX_1⊕FX_2 (i=1,2)$ 之后的情况 ($(\tilde{e_1},\tilde{e_2})$ 是 $FX_1,FX_2$ 的 coproduct). 注意到 $$\begin{equation}
+	((Fe_1')p_1+(Fe_2')p_2)\sigma_{FX_1,FX_2}\tilde{e_i}=((Fe_1')p_1+(Fe_2')p_2)( \tilde{e_1}' \tilde{p_1}' + \tilde{e_2}' \tilde{p_2}')\tilde{e_i}=Fe_i' p_i' \tilde{e_i}=Fe_i'.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;另一方面有,&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+	F\sigma_{X_1,X_2}(Fe_1,Fe_2)\tilde{e_i}=F\sigma_{X_1,X_2}Fe_i=F((e_1' p_1' + e_2' p_2')e_i)=Fe_i'.
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;根据 coproduct 的定义(定义中的唯一性), 交换图成立.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 则 $F$ 是加法函子当且仅当对于 $\mathcal{A}$ 中任意两个对象 $X$ 与 $Y$, 有 $Fe_1Fp_1'+Fe_2Fp_2'=\mathrm{Id}_{F(X⊕Y)}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 这是加法函子的定义. $$\begin{equation}
+	\mathrm{Id}_{F(X_1⊕X_2)}=F\mathrm{Id}_{X⊕Y} = F(e_1 p_1' + e_2 p_2') = Fe_1 Fp_1' + Fe_2 Fp_2'.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;(⇐) 只要证明 $F$ 保持有限余积, 即对于任意对象 $X,Y$, 有同构 $$\begin{equation}
+	(Fe_1, Fe_2): FX ⊕ FY \xrightarrow{\sim} F(X⊕Y).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;只要证明 $(Fe_1,Fe_2)$ 和 $\binom{Fp_1'}{Fp_2'}$ 互为逆即可. 计算有 $$\begin{equation}
+	\binom{Fp_1'}{Fp_2'}(Fe_1,Fe_2) = \binom{Fp_1'Fe_1 \quad Fp_1'Fe_2}{Fp_2'Fe_1 \quad Fp_2'Fe_2} = \binom{\mathrm{Id}_{FX} \quad 0}{0 \quad \mathrm{Id}_{FY}} = \mathrm{Id}_{FX ⊕ FY}.
+\end{equation}$$ 另一方面, $$\begin{equation}
+	(Fe_1,Fe_2)\binom{Fp_1'}{Fp_2'} = Fe_1 Fp_1' + Fe_2 Fp_2' = \mathrm{Id}_{F(X⊕Y)}.
+\end{equation}$$ 从而得证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</description>
+          <pubDate>2025-11-12T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex9_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex9_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week9-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴里面, 态射 $f$ 是单态射当且仅当 $ft=0 ⇒ t=0$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;(⇒)显然. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(⇐) 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单态射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;[事实 2.1.2] 设范畴 $\mathcal{A}$ 是有余积和零对象的范畴. 则&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;p&gt;(投影态射存在唯一性) 存在唯一的态射 $p_i':⨁_{i∈I}X_i → X_i$ 使得 $p_j' e_i = δ_{ij} : X_i→X_j$. (结构态射有左逆)&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;结构态射是单态射, 投影态射是满态射.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;态射 $f:⨁_{i∈I}X_i → Y$ 由 $f e_i$ 唯一决定, 其中 $e_i$ 是余积的结构态射.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和的存在唯一性) 给定态射 $f_i:X_i → Y_i$, 则存在唯一的态射 $f:⨁_{i∈I}X_i → ⨁_{i∈I}Y_i$ 使得 $ (⨁f_i) e_i^X = e_i^Y f_i $.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和和复合的相容性) $ (⨁g_i)(⨁f_i) = ⨁(g_i f_i) $.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;(态射直和是满态射的判别法) 态射 $⨁f_i$ 是满态射当且仅当每个 $f_i$ 都是满态射.&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;根据余积泛性质即可.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;由 1 立即得到.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;余积的泛性质中的唯一性保证.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;直接用一下 3 (一个范畴有余积, 就是说我们可以自由地把态射拼起来或者拆开, 并且保证不会损失信息).&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;按分量验证并考虑 4 的定义就行.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;关键在于使用余积的泛性质 (或者说 3) 来把态射拆开来研究. $h(⨁f_i)=g(⨁f_i) ⟺ ∀ i, h(⨁f_i)e_i^X=g(⨁f_i)e_i^X ⟺ ∀ i, h e_i^Y f_i = g e_i^Y f_i$. 若所有的 $f_i$ 都是满的, 则 $h e_i^Y = g e_i^Y$ 对所有 $i$ 都成立, 由 3 可知 $h=g$. 反过来, 若 $⨁f_i$ 是满的. 由 $g f_i = h f_i ⟺ g p_i^Y (⨁f_i) e_i^X = h p_i^Y (⨁f_i) e_i^X ⟺ ∀ j, g p_i^Y (⨁f_i) e_j^X = h p_i^Y (⨁f_i) e_j^X ⟺ g p_i^Y (⨁f_i) = h p_i^Y (⨁f_i).$ 从而 $g=h$.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴中典范同构 $σ_{X_1,X_2}: X_1 ⊕ X_2 → X_1 ∏ X_2$ 可表达为 $σ = (e_1', e_2') = e_1' p_1' + e_2' p_2'.$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到 $σ^{-1} = e_1p_1+e_2p_2$, 直接验证即可.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;在加法范畴中有 $c∘ (a,b)=(ca,cb)$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;按分量验证即可 (相当于考虑所有右复合 $-∘ e_i$).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;加法范畴中有 $\pmatrix{f\\ g}∘ c=\pmatrix{fc \\ gc}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;按分量验证即可 (相当于考虑所有左复合 $p_i ∘ -$). (所以这个成立实际上是用的积的性质)&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\bigoplus_{1≤i≤n}\eta_i: \bigoplus_{1≤i≤n} X_i → \bigoplus_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\prod_{1≤i≤n}\eta_i: \prod_{1≤i≤n} X_i → \prod_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-11-10T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex9_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex9_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>2025年11月06日杂记 - 采样</title>
+          <description>&lt;h1 id=&quot;采样问题&quot;&gt;采样问题&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;采样(sampling)&lt;/strong&gt; 简单讲就是从一个给定的概率分布里面去随机生成样本.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;生成模型&lt;/strong&gt; 解决的问题是, 给定一个数据集, 我们想去学习到这个数据背后的概率分布.&lt;/p&gt;
+
+&lt;p&gt;GPT 说这两个问题互为反问题. 我从最终目的的角度看, 在真实的世界中, 它们其实要解决的问题是一样的 (因为大部分分布都是无法表达的复杂分布, 就算是在 sampling 问题中, 按道理说我们一开始能有的信息按道理说也就是一些样本点?)&lt;/p&gt;
+
+&lt;p&gt;我这里似乎说得不对, 因为一些基于物理问题的采样问题其实应该是有理论支撑的, 比如解决湍流、分子动力学、量子波函数近似(这些具体问题我还不清楚), 应该是有理论, 但是数学上没法明确地解析地解出分布.&lt;/p&gt;
+
+&lt;p&gt;所以我总结如下:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;生成模型是解决我们之后如何采样的问题 (在一个没有理论的世界中去学习背后的理论, 就比如真实图片的分布规律), 是在从一堆数据中学习概率分布. 往往之后要用学到的这个概率分布去生成和数据集类似的数据, 所以叫生成模型.&lt;/li&gt;
+  &lt;li&gt;采样是解决生成样本的问题. 简单的情况是给定概率分布, 直接采样. 但是很多时候概率分布复杂, 要么由具体理论(难解的公式), 要么是没有理论的数据.&lt;/li&gt;
+  &lt;li&gt;在具体的实践中, 生成模型的方法可以用到采样中去, 因为在具体分布无法表达的情况下, 可以用生成模型学习分布, 当学习到的过程(从无序/噪声到目标分布)是可逆的, 那么就可以用来采样.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;感觉下来我需要尝试去学习的事情:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;根据具体的物理问题, 基于现有物理理论进行 sampling.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;比如 SDE 解决天气模拟 (这里能出现 SDE 我很惊讶)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;量子采样&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;生成模型的一些方法&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Normalizing Flow&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Diffusion Model&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;GAN&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;附录: 常见采样方法&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;方法&lt;/th&gt;
+      &lt;th&gt;思想&lt;/th&gt;
+      &lt;th&gt;优点&lt;/th&gt;
+      &lt;th&gt;缺点&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;直接采样&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;通过显式分布函数反演采样&lt;/td&gt;
+      &lt;td&gt;精确、简单&lt;/td&gt;
+      &lt;td&gt;仅适用于低维、可反演分布&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;拒绝采样&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;从包络分布筛选样本&lt;/td&gt;
+      &lt;td&gt;理论简单、实现容易&lt;/td&gt;
+      &lt;td&gt;高维效率极低&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;重要性采样&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;用加权修正近似目标分布&lt;/td&gt;
+      &lt;td&gt;可用于估计期望&lt;/td&gt;
+      &lt;td&gt;权重方差大、不稳定&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;MCMC&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;构造马尔可夫链收敛到目标分布&lt;/td&gt;
+      &lt;td&gt;通用、高维适用&lt;/td&gt;
+      &lt;td&gt;收敛慢、样本相关性强&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;变分近似&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;优化近似分布最小化 KL 散度&lt;/td&gt;
+      &lt;td&gt;计算快、易并行&lt;/td&gt;
+      &lt;td&gt;存在近似偏差&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;flow-matching-笔记&quot;&gt;Flow Matching 笔记&lt;/h1&gt;
+
+&lt;h2 id=&quot;related-work-diffusion-model&quot;&gt;Related Work: Diffusion Model&lt;/h2&gt;
+
+&lt;p&gt;自回归(Autoregressive (AR))相对于整批预测(Parallel (batch) prediction)的好处: 不会出现四不像的问题. 但是用于图像生成效率太低.&lt;/p&gt;
+
+</description>
+          <pubDate>2025-11-06T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Sampling</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Sampling</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week8-2</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有范畴等价 $F:\mathcal{C}→\mathcal{D}$, $F^{-1}$ 是其拟逆. 则 $(F,F^{-1})$ 和 $(F^{-1},F)$ 是伴随对.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;记 $G:=F^{-1}$. 只需证明 $(F,G)$ 是伴随对. 设我们有自然同构 $τ:GF→\mathrm{Id}_{\mathcal{C}}, θ:FG→\mathrm{Id}_{\mathcal{D}}$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;构造自然同构 $θ':FG→\mathrm{Id}_{\mathcal{D}}$ 为 $$\begin{equation}
+Θ_A':=\left[  FGA\xrightarrow{FGθ_A^{-1}}FGFGA\xrightarrow{Fτ_{GA}}FGA\xrightarrow{θ_A}A  \right].
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;构造自然映射(自然性由 $F,G$ 是函子以及自然变换的自然性给出) $$\begin{equation}
+\Phi_{X,Y}:\mathrm{Hom}_{\mathcal{D}}(FX,Y)→\mathrm{Hom}_{\mathcal{C}}(X,GY), f↦\left[ X\xrightarrow{τ^{-1}_X} GFX\xrightarrow{Gf}GY \right].
+\end{equation}$$ $$\begin{equation}
+\Psi_{X,Y}:\mathrm{Hom}_{\mathcal{C}}(X,GY)→\mathrm{Hom}_{\mathcal{D}}(FX,Y), g↦\left[ FX\xrightarrow{Fg}FGY\xrightarrow{Θ'_Y}Y \right].
+\end{equation}$$ 可以证明 $\Psi_{X,Y}$ 和 $\Phi_{X,Y}$ 互为逆映射(关键证明见后面手写推导), 从而得到自然同构(对于 $X,Y$ 自然) $$\begin{equation}
+\mathrm{Hom}_{\mathcal{D}}(FX,Y)≅\mathrm{Hom}_{\mathcal{C}}(X,GY).
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_RM_S$ 和 $_SN_T$ 是双模. &lt;br /&gt; (1) 若 $_SN$ 和 $_RM$ 均是投射模, 则 $M⊗_SN$ 是投射左 $R$-模; &lt;br /&gt; (2) 若 $N_T$ 和 $M_S$ 均是投射模, 则 $M⊗_SN$ 是投射右 $T$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) 我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $L$ 是自然的. 于是, 给定任意 $R$-模满态射 $g:L↠L'$, 要证明映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 只要证明 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射. 由于 $M$ 是投射左 $R$-模, 故映射 $\mathrm{Hom}_R(M,g)$ 是满态射. 由于 $N$ 是投射左 $S$-模, 故映射 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射, 从而映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 即 $M⊗_S N$ 是投射左 $R$-模. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) 类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_RM_S$ 和 $_RL_U$ 是双模. 若 $M_S$ 是平坦模且 $_RL$ 是内射模, 则 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 给定任意 $S$-模单态射 $g:N↪N'$, 要证明映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 只要证明 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射. 由于 $M_S$ 是平坦模, 故映射 $\mathrm{Id}_M⊗_S g$ 是单态射. 由于 $_RL$ 是内射模, 故映射 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射, 从而映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 即 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_SN_T$ 和 $_UL_T$ 是双模. 若 $_SN$ 是平坦模且 $L_T$ 是内射模, 则 $\mathrm{Hom}_T(N,L)$ 是内射右 $S$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;类似于上一题, 用右模上的 Tensor-Hom 伴随对.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在证明下一个问题之前, 我们证明一个引理:&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+\mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
+\end{equation}$$ 是正合列.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 由函子性质. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex8_2/diagram_f64500b370041.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:S\mathbf{-Mod}→R\mathbf{-Mod}, G:R\mathbf{-Mod}→S\mathbf{-Mod}$, 且 $(F,G)$ 是伴随对. 则 $F$ 是右正合函子, $G$ 是左正合函子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;我们证明 $G$ 是左正合函子, $F$ 的情形类似. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;任意给定 $S$-模的正合列 $$\begin{equation}
+0→X\xrightarrow{f}Y\xrightarrow{g}Z,
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;我们要证明 $G$ 作用后得到的列 $$\begin{equation}
+0→GX\xrightarrow{Gf}GY\xrightarrow{Gg}GZ
+\end{equation}$$ 是正合列. 由引理, 只需证明对于任意 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+0→\mathrm{Hom}_R(M,GX)\xrightarrow{Gf∘-}\mathrm{Hom}_R(M,GY)\xrightarrow{Gg∘-}\mathrm{Hom}_R(M,GZ)
+\end{equation}$$ 是正合列. 由于 $(F,G)$ 是伴随对, 故有同构 $$\begin{equation}
+\mathrm{Hom}_R(M,GN)≅\mathrm{Hom}_S(FM,N)
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列同构于列 $$\begin{equation}
+0→\mathrm{Hom}_S(FM,X)\xrightarrow{f∘-}\mathrm{Hom}_S(FM,Y)\xrightarrow{g∘-}\mathrm{Hom}_S(FM,Z),
+\end{equation}$$ 由 $\mathrm{Hom}_S(FM,-)$ 函子的左正合性知这是正合列. 由此可知 $G$ 作用后得到的列是正合列, 即 $G$ 是左正合函子.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-11-05T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex8_2</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex8_2</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week8-1</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M$ 和 $N$ 是 $k$ 上的线性空间, 分别有 $k$-基 $\{a_i\}_{i∈ I}, \{b_j\}_{j∈ J}$. 证明 $M⊗_k N$ 有 $k$-基 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由张量积的定义可知 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 生成 $M⊗_k N$. 现证明其线性无关. 设 $$\begin{equation}
+\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j)=0, \text{仅有有限项可能非零}.
+\end{equation}$$ 对于任意的 $k$ 线性映射 $f:M→k,g:N→k$, 可以得到 $k$-平衡映射 $$\begin{equation}
+h:M×N→k, (m,n)↦f(m)g(n).
+\end{equation}$$ 由张量积的定义可知存在唯一的 $k$-线性映射 $\bar{h}:M⊗_k N→k$ 使得 $\bar{h}(m⊗ n)=h(m,n)$. 于是 $$\begin{equation}
+0=\bar{h}(\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j))=\sum_{i∈ I,j∈ J} k_{ij}f(a_i)g(b_j).
+\end{equation}$$ 取 $f,g$ 使得 $f(a_{i_0})=1,f(a_i)=0 (i≠i_0), g(b_{j_0})=1,g(b_j)=0 (j≠j_0)$, 可得 $k_{i_0j_0}=0$. 由于 $i_0,j_0$ 任意, 故所有 $k_{ij}=0$. 于是 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 线性无关, 从而是 $M⊗_k N$ 的 $k$-基.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 $\mathbb{Z}_m(m≥2)$ 作为 $\mathbb{Z}$-模不是平坦模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑短正合列 $0→\mathbb{Z}↪\mathbb{Q}↠\mathbb{Q}/\mathbb{Z}→0$, 作用张量函子 $\mathbb{Z}_m⊗_{\mathbb{Z}}-$ 后得到列 $0→\mathbb{Z}_m→ 0→0→0$, 不是正合列, 故 $\mathbb{Z}_m$ 不是平坦模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明主理想整环 $D$ 上的模 $M$ 是平坦模当且仅当 $M$ 是无挠模, 即若 $0≠d∈D, 0≠m∈M$, 则 $dm≠0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) (只用到 $D$ 是整环). 假设存在 $0≠d∈D, 0≠m∈M$ 使得 $dm=0$. 考虑单态射 (由整性保证) $$\begin{equation}
+f:D→D, x↦dx.
+\end{equation}$$ 作用张量函子 $-⊗_D M$ 后得到映射 $$\begin{equation}
+f⊗ 1_M:M→M, m'↦dm',
+\end{equation}$$ 不是单射, 矛盾. 于是 $M$ 是无挠模. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $M$ 是无挠模. 考虑使用 Baer 判别法. 对于 $D$ 的任一非平凡理想 $\mathfrak{a}$, 由于 $D$ 是主理想整环, 存在 $0≠a∈D$ 使得 $\mathfrak{a}=⟨a⟩=Da$. 我们有嵌入 $i:Da↪D$. 作用张量函子 $-⊗_D M$ 后, 进一步由同构 $D⊗_DM≅ M$ 得到交换图&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex8_1/diagram_6c8ac26a1e027.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;于是 $i⊗ 1_M$ 是单态射, 故 $M$ 是平坦模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-11-03T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex8_1</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex8_1</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>OT-Flow</title>
+          <description>&lt;h1 id=&quot;概述&quot;&gt;概述&lt;/h1&gt;
+
+&lt;p&gt;OT-Flow 是用最优传输(optimal transport, OT)理论求解归一化流(normalizing flow)的一种方法.&lt;/p&gt;
+
+&lt;h2 id=&quot;归一化流&quot;&gt;归一化流&lt;/h2&gt;
+
+&lt;h3 id=&quot;什么是归一化流&quot;&gt;什么是归一化流&lt;/h3&gt;
+
+&lt;p&gt;归一化流是一个可逆映射 $f:\mathbb{R}^d→\mathbb{R}^d$, 可以将一个概率分布变换为标准正态分布. 核心是满足公式&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\log ρ_0(\mathbf{x}) = \log ρ_1(f(\mathbf{x})) + \log |\det J_f(\mathbf{x})|.
+\end{equation}$$&lt;/p&gt;
+
+&lt;h3 id=&quot;求归一化流的方式&quot;&gt;求归一化流的方式&lt;/h3&gt;
+
+&lt;h4 id=&quot;1-组合可逆层形成神经网络并训练其权重&quot;&gt;1. 组合可逆层形成神经网络并训练其权重&lt;/h4&gt;
+
+&lt;p&gt;这个看上去求出来的就是所谓的“离散归一化流”, 但是我没有很清楚.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-通过神经常微分方程-neural-ode-求解&quot;&gt;2. 通过神经常微分方程 (Neural ODE) 求解&lt;/h4&gt;
+
+&lt;p&gt;论文中说在连续归一化流(CNF)的情况下可以使用 Neural ODE 来求解. 但是我的疑惑在于是不是对于所有的概率分布都能用 Neural ODE 来求解? 还是说只能求解某一类概率分布? (因为感觉在归一化流在求解出来之前不太好给它分类说是不是 CNF)&lt;/p&gt;
+
+&lt;p&gt;Neural ODE 如下:&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+\partial_t
+\begin{bmatrix}
+\mathbf{z}(\mathbf{x},t) \\[4pt]
+\ell(\mathbf{x},t)
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{v}(\mathbf{z}(\mathbf{x},t), t; \boldsymbol{\theta}) \\[4pt]
+\operatorname{tr}\!\big(\nabla \mathbf{v}(\mathbf{z}(\mathbf{x},t), t; \boldsymbol{\theta})\big)
+\end{bmatrix},
+\qquad
+\begin{bmatrix}
+\mathbf{z}(\mathbf{x},0) \\[4pt]
+\ell(\mathbf{x},0)
+\end{bmatrix}
+=
+\begin{bmatrix}
+\mathbf{x} \\[4pt]
+0
+\end{bmatrix}.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;这个玩意有两个变量但是却是 ODE 应该是因为我们是可以对于每一个 $x$ 单独去求解.&lt;/p&gt;
+
+&lt;p&gt;这里多的一个 $l(\mathbf{x},t)$ 分量我感觉很奇特, 因为按照我一开始的想法, 有了 $z$ 按道理说就知道了流长什么样子, 求 $z$ 的时候也没用到 $l$, 说明这个 $l$ 在理论上是多余的.&lt;/p&gt;
+
+&lt;p&gt;往后看我知道这个 $l$ 是为了帮助我们用模型去训练参数 θ ($l$ 在训练目标中出现).&lt;/p&gt;
+
+&lt;p&gt;问题: z 是怎么被求出来的?&lt;/p&gt;
+
+&lt;p&gt;我目前没想通的一个点: 为什么要训练出来一个特定的 $f$, 解出来的随便的一个 $f$ 不行吗?&lt;/p&gt;
+
+&lt;h4 id=&quot;背景知识补充-对数似然与负对数似然&quot;&gt;背景知识补充: 对数似然与负对数似然&lt;/h4&gt;
+
+&lt;p&gt;在机器学习, 特别是密度估计和生成模型中, 对数似然 (log-likelihood) 和负对数似然 (negative log-likelihood, NLL) 是衡量模型好坏的核心指标.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;似然&lt;/strong&gt; &lt;br /&gt;
+设模型由参数 $θ$ 描述, 给出一个概率分布 $p_M(x;θ)$. 似然函数定义为在给定参数 $θ$ 下, 观测数据 $D={x_1,x_2,...,x_n}$ 出现的概率: 假设数据点独立同分布, 则似然函数为
+$$\begin{equation}
+L(θ;D) = \prod_{i=1}^n p_M(x_i;θ).
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;对数似然&lt;/strong&gt; &lt;br /&gt;
+似然的缺点是数值上可能非常小, 容易导致浮点数下溢. 为了克服这个问题, 通常使用对数似然函数:
+$$\begin{equation}
+\log L(θ;D) = \sum_{i=1}^n \log p_M(x_i;θ).
+\end{equation}$$
+对数似然将乘积转化为求和, 计算更加稳定.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;负对数似然&lt;/strong&gt; &lt;br /&gt;
+在机器学习中, 大家习惯于&lt;strong&gt;最小化损失函数&lt;/strong&gt;, 于是通常使用负对数似然:
+$$\begin{equation}
+\text{NLL}(θ;D) = -\log L(θ;D) = -\sum_{i=1}^n \log p_M(x_i;θ).
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;期望负对数似然&lt;/strong&gt; &lt;br /&gt;
+当数据量非常大或者从一个真实数据分布 $p_0(x)$ 中采样数据时, 常考虑期望的负对数似然: 从真实分布 $p_0(x)$ 中随机抽取一个数据点 $x$ 时, 它在模型下的负对数概率的平均值是多少, 即
+$$\begin{equation}
+\mathbb{E}_{x∼p_0}[-\log p_M(x;θ)] = -\int p_0(x) \log p_M(x;θ) \, dx.
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;背景知识补充-kl-kullback-leibler-散度&quot;&gt;背景知识补充: KL (Kullback-Leibler) 散度&lt;/h4&gt;
+
+&lt;p&gt;KL 散度 $D_{KL}(p_0 || p_M)$ 衡量两个概率分布 $p_0$ 和 $p_M$ 之间的差异. 它定义为
+$$\begin{equation}
+D_{KL}(p_0 || p_M) = \mathbb{E}_{x∼p_0}\left[\log \frac{p_0(x)}{p_M(x;θ)}\right] = \int p_0(x) \log \frac{p_0(x)}{p_M(x;θ)} \, dx.
+\end{equation}$$&lt;/p&gt;
+</description>
+          <pubDate>2025-11-02T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/OT_Flow</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/OT_Flow</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>量子力学基础</title>
+          <description>&lt;h2 id=&quot;量子力学的假设&quot;&gt;量子力学的假设&lt;/h2&gt;
+
+&lt;h3 id=&quot;状态空间&quot;&gt;状态空间&lt;/h3&gt;
+
+&lt;p&gt;最简单也是我们最关心的量子力学系统是量子比特. 描述量子比特的物理系统是真实存在的, 目前我们可以忽略特定实现进行抽象的讨论.&lt;/p&gt;
+
+&lt;h3 id=&quot;演化&quot;&gt;演化&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;封闭量子系统的演化可用酉变换来描述.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;封闭量子系统中态的演化由薛定谔方程描述:&lt;/strong&gt;
+$$\begin{equation}
+\mathrm{i}ħ\frac{\mathrm{d}|\psi⟩}{\mathrm{d}} = H |\psi⟩,
+\end{equation}$$&lt;/p&gt;
+</description>
+          <pubDate>2025-10-30T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Quantum_Mechanics_Basic</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Quantum_Mechanics_Basic</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>《基础代数学》作业 Week7</title>
+          <description>&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $M$ be a &lt;strong&gt;finite dimensional&lt;/strong&gt; left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Functors&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex7_/diagram_d57553fe5a4cd.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;are contravariant functors between the category of finite dimensional left $A$-modules and the category of finite dimensional right $A$-modules. It is clear that $D$ is a duality, i.e., $D∘D≅1$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇒) Suppose that $_AM$ is projective. Consider any injective homomorphism $i:N→N'$ of right $A$-modules and any homomorphism $f:N→D(M)$. By applying $D$, we have&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex7_/diagram_30e1dde34696f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Since $_AM$ is projective, there exists a homomorphism $M→ D(N')$ such that the above diagram commutes. By applying $D$ again, we have the following commutative diagram:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/Ex7_/diagram_c234ec47db7b1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Thus, $D(M)$ is an injective right $A$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) Similar.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 似乎只能在小模范畴上做.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $e$ be an idempotent element of a finite dimensional $k$-algebra $A$. Then $D(eA)$ is an injective left $A$-module, and any injective left $A$-module is of this form.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $eA$ is a projective right $A$-module ($A_A≅eA⊕(1-e)A$), by the previous problem, $D(eA)$ is an injective left $A$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;For any injective left $A$-module $I$, by the previous problem, $D(I)$ is a projective right $A$-module. Since any projective right $A$-module is a direct summand of a free right $A$-module, say $A^{⊕n}$, there exists an idempotent element $e∈A^{⊕n}$ such that $D(I)≅eA$. Thus, $I≅D(eA)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $S$ be a simple module over a finite dimensional algebra $A$. Then $S$ can be embedded into an indecomposable injective $A$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We have that $D(S)$ is a finite dimensional right $A$-module. There exists a projective right $A$-module $P$ such that $D(S)$ is a quotient module of $P$. By applying $D$ again, we have an injective homomorphism $S→D(P)$. Since $P$ is a projective right $A$-module, $D(P)$ is an injective left $A$-module. Decomposing $D(P)$ into a direct sum of indecomposable injective left $A$-modules (fintie direct sum is the same as finite product), we see that $S$ can be embedded into one of them (since $S$ is simple).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $A$ be a finite dimensional algebra. Then TFAE:&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(1) $A$ is semisimple; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(2) Every left $A$-module is projective; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(3) Any short exact sequence of $A$-modules splits; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(4) Every left $A$-module is injective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) ⇒ (2) Since $A$ is semisimple, every left $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every left $A$-module is projective (by an earlier problem). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) ⇒ (3) By the property of split short exact sequences in abelian categories. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(3) ⇒ (4) For any left $A$-module $I$, any short exact sequence $0→I→M→N→0$ splits, so $I$ is injective. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(4) ⇒ (1) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the short exact sequence $0→M→A→A/M→0$. Since $M$ is injective, the above short exact sequence splits, so that $A≅M⊕A/M$. Thus, $_AA$ is semisimple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Solve the indecomposable injective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;We have shown that the only finite dimensional indecomposable projective module of $A$ is $A$ itself. By an earlier problem, the only indecomposable injective module of $A$ is $D(A)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module by using Baer’s criterion. If $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) We first show that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. By Baer’s criterion, we need to show that for any ideal $I$ of $\mathbb{Z}_m$ and any homomorphism $h:I→\mathbb{Z}_m$, it can be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$. Since $\mathbb{Z}_m$ is a principal ideal ring, we have $I=⟨\bar{d}⟩$ for some $d∣m$. Let $h(\bar{d})=\bar{c}$. Since $\bar{c}⋅\overline{m/d}=h(\bar{m})=\bar{0}$, $\overline{c/d}$ is well defined in $\mathbb{Z}_m$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;We define a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$ by $h'(\bar{1})=\overline{c/d}$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) Now we show that if $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module. We only need to find an ideal $I$ of $\mathbb{Z}_m$ and a homomorphism $h:I→\mathbb{Z}_d$ such that it can not be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$. Since $d$ and $m/d$ has common prime factor, there exists a prime number $p$ such that $p∣d$ and $p∣m/d$. Let $I=⟨\overline{m/d}⟩$. We define a homomorphism $h:I→\mathbb{Z}_d$ by $h(\overline{m/d})=\bar{1}$. If there exists an extension homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$, then we have $$\begin{equation}
+\bar{1}=h(\overline{m/d})=h'(\overline{m/d})=p h'(\overline{\frac{m}{dp}}).
+\end{equation}$$ So $$\begin{equation}
+0≠ \overline{d/p} = \overline{d/p}h(\overline{m/d})= \overline{d/p}h'(\overline{m/d})= \overline{d} h'(\overline{\frac{m}{dp}}) = \bar{0}.
+\end{equation}$$ Thus, such extension homomorphism $h'$ does not exist, and by Baer’s criterion, $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that $R$-module $M$ is an injective module if and only if for any left ideal $L$ of $R$ and any homomorphism $h:L→M$, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) Since $M$ is injective, the homomorphism $h:L→M$ can be extended to a homomorphism $h':R→M$. Let $m=h'(1)$. Then for any $l∈L$, we have $h(l)=h'(l)=h'(l⋅1)=l⋅h'(1)=lm$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) We use Baer’s criterion to prove this. For any left ideal $L$ of $R$ and any homomorphism $h:L→M$, by the assumption, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$. Now we can define a homomorphism $h':R→M$ by $h'(r)=rm$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $M$ is injective.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2025-10-29T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Ex7_</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Ex7_</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>《基础代数学》作业 Week6-2</title>
           <description>&lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;Prove that finite dimensional algebras are IBN rings.&lt;/p&gt;
@@ -144,8 +1140,16 @@ F(x,1) = F(H(x,0)) = g(x).
     
       
         <item>
-          <title>Model_history</title>
-          <description>
+          <title>模型范畴的历史</title>
+          <description>&lt;h1 id=&quot;经典同伦论&quot;&gt;经典同伦论&lt;/h1&gt;
+
+&lt;h2 id=&quot;拓扑上的同伦&quot;&gt;拓扑上的同伦&lt;/h2&gt;
+
+&lt;h2 id=&quot;代数上的同伦&quot;&gt;代数上的同伦&lt;/h2&gt;
+
+&lt;h1 id=&quot;模型范畴的提出&quot;&gt;模型范畴的提出&lt;/h1&gt;
+
+&lt;h1 id=&quot;现代新进展&quot;&gt;现代新进展&lt;/h1&gt;
 </description>
           <pubDate>2025-10-22T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Model_History</link>
@@ -3230,7 +4234,200 @@ Re⊕R(1-e)=R(e+1-e)=R.
 &lt;h3 id=&quot;习题-111&quot;&gt;习题 1.11&lt;/h3&gt;
 
 &lt;div class=&quot;problem&quot;&gt;
-  &lt;p&gt;Let $M$ be a left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.&lt;/p&gt;
+  &lt;p&gt;Let $M$ be a &lt;strong&gt;finite dimensional&lt;/strong&gt; left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Functors&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_d57553fe5a4cd.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;are contravariant functors between the category of finite dimensional left $A$-modules and the category of finite dimensional right $A$-modules. It is clear that $D$ is a duality, i.e., $D∘D≅1$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇒) Suppose that $_AM$ is projective. Consider any injective homomorphism $i:N→N'$ of right $A$-modules and any homomorphism $f:N→D(M)$. By applying $D$, we have&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_30e1dde34696f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Since $_AM$ is projective, there exists a homomorphism $M→ D(N')$ such that the above diagram commutes. By applying $D$ again, we have the following commutative diagram:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_c234ec47db7b1.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;Thus, $D(M)$ is an injective right $A$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) Similar.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 似乎只能在小模范畴上做.&lt;/p&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $e$ be an idempotent element of a finite dimensional $k$-algebra $A$. Then $D(eA)$ is an injective left $A$-module, and any injective left $A$-module is of this form.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;Since $eA$ is a projective right $A$-module ($A_A≅eA⊕(1-e)A$), by the previous problem, $D(eA)$ is an injective left $A$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;For any injective left $A$-module $I$, by the previous problem, $D(I)$ is a projective right $A$-module. Since any projective right $A$-module is a direct summand of a free right $A$-module, say $A^{⊕n}$, there exists an idempotent element $e∈A^{⊕n}$ such that $D(I)≅eA$. Thus, $I≅D(eA)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $S$ be a simple module over a finite dimensional algebra $A$. Then $S$ can be embedded into an indecomposable injective $A$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;We have that $D(S)$ is a finite dimensional right $A$-module. There exists a projective right $A$-module $P$ such that $D(S)$ is a quotient module of $P$. By applying $D$ again, we have an injective homomorphism $S→D(P)$. Since $P$ is a projective right $A$-module, $D(P)$ is an injective left $A$-module. Decomposing $D(P)$ into a direct sum of indecomposable injective left $A$-modules (fintie direct sum is the same as finite product), we see that $S$ can be embedded into one of them (since $S$ is simple).&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Let $A$ be a finite dimensional algebra. Then TFAE:&lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(1) $A$ is semisimple; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(2) Every left $A$-module is projective; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(3) Any short exact sequence of $A$-modules splits; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(4) Every left $A$-module is injective.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) ⇒ (2) Since $A$ is semisimple, every left $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every left $A$-module is projective (by an earlier problem). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) ⇒ (3) By the property of split short exact sequences in abelian categories. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(3) ⇒ (4) For any left $A$-module $I$, any short exact sequence $0→I→M→N→0$ splits, so $I$ is injective. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(4) ⇒ (1) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the short exact sequence $0→M→A→A/M→0$. Since $M$ is injective, the above short exact sequence splits, so that $A≅M⊕A/M$. Thus, $_AA$ is semisimple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Solve the indecomposable injective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.&lt;/p&gt;
+  &lt;div class=&quot;solution&quot;&gt;
+    &lt;p&gt;We have shown that the only finite dimensional indecomposable projective module of $A$ is $A$ itself. By an earlier problem, the only indecomposable injective module of $A$ is $D(A)$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module by using Baer’s criterion. If $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) We first show that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. By Baer’s criterion, we need to show that for any ideal $I$ of $\mathbb{Z}_m$ and any homomorphism $h:I→\mathbb{Z}_m$, it can be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$. Since $\mathbb{Z}_m$ is a principal ideal ring, we have $I=⟨\bar{d}⟩$ for some $d∣m$. Let $h(\bar{d})=\bar{c}$. Since $\bar{c}⋅\overline{m/d}=h(\bar{m})=\bar{0}$, $\overline{c/d}$ is well defined in $\mathbb{Z}_m$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;We define a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$ by $h'(\bar{1})=\overline{c/d}$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) Now we show that if $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module. We only need to find an ideal $I$ of $\mathbb{Z}_m$ and a homomorphism $h:I→\mathbb{Z}_d$ such that it can not be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$. Since $d$ and $m/d$ has common prime factor, there exists a prime number $p$ such that $p∣d$ and $p∣m/d$. Let $I=⟨\overline{m/d}⟩$. We define a homomorphism $h:I→\mathbb{Z}_d$ by $h(\overline{m/d})=\bar{1}$. If there exists an extension homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$, then we have $$\begin{equation}
+\bar{1}=h(\overline{m/d})=h'(\overline{m/d})=p h'(\overline{\frac{m}{dp}}).
+\end{equation}$$ So $$\begin{equation}
+0≠ \overline{d/p} = \overline{d/p}h(\overline{m/d})= \overline{d/p}h'(\overline{m/d})= \overline{d} h'(\overline{\frac{m}{dp}}) = \bar{0}.
+\end{equation}$$ Thus, such extension homomorphism $h'$ does not exist, and by Baer’s criterion, $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;Prove that $R$-module $M$ is an injective module if and only if for any left ideal $L$ of $R$ and any homomorphism $h:L→M$, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) Since $M$ is injective, the homomorphism $h:L→M$ can be extended to a homomorphism $h':R→M$. Let $m=h'(1)$. Then for any $l∈L$, we have $h(l)=h'(l)=h'(l⋅1)=l⋅h'(1)=lm$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) We use Baer’s criterion to prove this. For any left ideal $L$ of $R$ and any homomorphism $h:L→M$, by the assumption, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$. Now we can define a homomorphism $h':R→M$ by $h'(r)=rm$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $M$ is injective.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;112-张量积与平坦模&quot;&gt;1.12 张量积与平坦模&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-112&quot;&gt;习题 1.12&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $M$ 和 $N$ 是 $k$ 上的线性空间, 分别有 $k$-基 $\{a_i\}_{i∈ I}, \{b_j\}_{j∈ J}$. 证明 $M⊗_k N$ 有 $k$-基 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由张量积的定义可知 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 生成 $M⊗_k N$. 现证明其线性无关. 设 $$\begin{equation}
+\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j)=0, \text{仅有有限项可能非零}.
+\end{equation}$$ 对于任意的 $k$ 线性映射 $f:M→k,g:N→k$, 可以得到 $k$-平衡映射 $$\begin{equation}
+h:M×N→k, (m,n)↦f(m)g(n).
+\end{equation}$$ 由张量积的定义可知存在唯一的 $k$-线性映射 $\bar{h}:M⊗_k N→k$ 使得 $\bar{h}(m⊗ n)=h(m,n)$. 于是 $$\begin{equation}
+0=\bar{h}(\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j))=\sum_{i∈ I,j∈ J} k_{ij}f(a_i)g(b_j).
+\end{equation}$$ 取 $f,g$ 使得 $f(a_{i_0})=1,f(a_i)=0 (i≠i_0), g(b_{j_0})=1,g(b_j)=0 (j≠j_0)$, 可得 $k_{i_0j_0}=0$. 由于 $i_0,j_0$ 任意, 故所有 $k_{ij}=0$. 于是 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 线性无关, 从而是 $M⊗_k N$ 的 $k$-基.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 $\mathbb{Z}_m(m≥2)$ 作为 $\mathbb{Z}$-模不是平坦模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑短正合列 $0→\mathbb{Z}↪\mathbb{Q}↠\mathbb{Q}/\mathbb{Z}→0$, 作用张量函子 $\mathbb{Z}_m⊗_{\mathbb{Z}}-$ 后得到列 $0→\mathbb{Z}_m→ 0→0→0$, 不是正合列, 故 $\mathbb{Z}_m$ 不是平坦模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明主理想整环 $D$ 上的模 $M$ 是平坦模当且仅当 $M$ 是无挠模, 即若 $0≠d∈D, 0≠m∈M$, 则 $dm≠0$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) (只用到 $D$ 是整环). 假设存在 $0≠d∈D, 0≠m∈M$ 使得 $dm=0$. 考虑单态射 (由整性保证) $$\begin{equation}
+f:D→D, x↦dx.
+\end{equation}$$ 作用张量函子 $-⊗_D M$ 后得到映射 $$\begin{equation}
+f⊗ 1_M:M→M, m'↦dm',
+\end{equation}$$ 不是单射, 矛盾. 于是 $M$ 是无挠模. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $M$ 是无挠模. 考虑使用 Baer 判别法. 对于 $D$ 的任一非平凡理想 $\mathfrak{a}$, 由于 $D$ 是主理想整环, 存在 $0≠a∈D$ 使得 $\mathfrak{a}=⟨a⟩=Da$. 我们有嵌入 $i:Da↪D$. 作用张量函子 $-⊗_D M$ 后, 进一步由同构 $D⊗_DM≅ M$ 得到交换图&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_6c8ac26a1e027.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;于是 $i⊗ 1_M$ 是单态射, 故 $M$ 是平坦模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有范畴等价 $F:\mathcal{C}→\mathcal{D}$, $F^{-1}$ 是其拟逆. 则 $(F,F^{-1})$ 和 $(F^{-1},F)$ 是伴随对.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;记 $G:=F^{-1}$. 只需证明 $(F,G)$ 是伴随对. 设我们有自然同构 $τ:GF→\mathrm{Id}_{\mathcal{C}}, θ:FG→\mathrm{Id}_{\mathcal{D}}$.&lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;构造自然同构 $θ':FG→\mathrm{Id}_{\mathcal{D}}$ 为 $$\begin{equation}
+Θ_A':=\left[  FGA\xrightarrow{FGθ_A^{-1}}FGFGA\xrightarrow{Fτ_{GA}}FGA\xrightarrow{θ_A}A  \right].
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;构造自然映射(自然性由 $F,G$ 是函子以及自然变换的自然性给出) $$\begin{equation}
+\Phi_{X,Y}:\mathrm{Hom}_{\mathcal{D}}(FX,Y)→\mathrm{Hom}_{\mathcal{C}}(X,GY), f↦\left[ X\xrightarrow{τ^{-1}_X} GFX\xrightarrow{Gf}GY \right].
+\end{equation}$$ $$\begin{equation}
+\Psi_{X,Y}:\mathrm{Hom}_{\mathcal{C}}(X,GY)→\mathrm{Hom}_{\mathcal{D}}(FX,Y), g↦\left[ FX\xrightarrow{Fg}FGY\xrightarrow{Θ'_Y}Y \right].
+\end{equation}$$ 可以证明 $\Psi_{X,Y}$ 和 $\Phi_{X,Y}$ 互为逆映射(关键证明见后面手写推导), 从而得到自然同构(对于 $X,Y$ 自然) $$\begin{equation}
+\mathrm{Hom}_{\mathcal{D}}(FX,Y)≅\mathrm{Hom}_{\mathcal{C}}(X,GY).
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_RM_S$ 和 $_SN_T$ 是双模. &lt;br /&gt; (1) 若 $_SN$ 和 $_RM$ 均是投射模, 则 $M⊗_SN$ 是投射左 $R$-模; &lt;br /&gt; (2) 若 $N_T$ 和 $M_S$ 均是投射模, 则 $M⊗_SN$ 是投射右 $T$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(1) 我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $L$ 是自然的. 于是, 给定任意 $R$-模满态射 $g:L↠L'$, 要证明映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 只要证明 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射. 由于 $M$ 是投射左 $R$-模, 故映射 $\mathrm{Hom}_R(M,g)$ 是满态射. 由于 $N$ 是投射左 $S$-模, 故映射 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射, 从而映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 即 $M⊗_S N$ 是投射左 $R$-模. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(2) 类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_RM_S$ 和 $_RL_U$ 是双模. 若 $M_S$ 是平坦模且 $_RL$ 是内射模, 则 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 给定任意 $S$-模单态射 $g:N↪N'$, 要证明映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 只要证明 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射. 由于 $M_S$ 是平坦模, 故映射 $\mathrm{Id}_M⊗_S g$ 是单态射. 由于 $_RL$ 是内射模, 故映射 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射, 从而映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 即 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $_SN_T$ 和 $_UL_T$ 是双模. 若 $_SN$ 是平坦模且 $L_T$ 是内射模, 则 $\mathrm{Hom}_T(N,L)$ 是内射右 $S$-模.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;类似于上一题, 用右模上的 Tensor-Hom 伴随对.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在证明下一个问题之前, 我们证明一个引理:&lt;/p&gt;
+
+&lt;div class=&quot;lemma&quot;&gt;
+  &lt;p&gt;设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+\mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
+\end{equation}$$ 是正合列.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 由函子性质. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_f64500b370041.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:S\mathbf{-Mod}→R\mathbf{-Mod}, G:R\mathbf{-Mod}→S\mathbf{-Mod}$, 且 $(F,G)$ 是伴随对. 则 $F$ 是右正合函子, $G$ 是左正合函子.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;我们证明 $G$ 是左正合函子, $F$ 的情形类似. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;任意给定 $S$-模的正合列 $$\begin{equation}
+0→X\xrightarrow{f}Y\xrightarrow{g}Z,
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;我们要证明 $G$ 作用后得到的列 $$\begin{equation}
+0→GX\xrightarrow{Gf}GY\xrightarrow{Gg}GZ
+\end{equation}$$ 是正合列. 由引理, 只需证明对于任意 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+0→\mathrm{Hom}_R(M,GX)\xrightarrow{Gf∘-}\mathrm{Hom}_R(M,GY)\xrightarrow{Gg∘-}\mathrm{Hom}_R(M,GZ)
+\end{equation}$$ 是正合列. 由于 $(F,G)$ 是伴随对, 故有同构 $$\begin{equation}
+\mathrm{Hom}_R(M,GN)≅\mathrm{Hom}_S(FM,N)
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列同构于列 $$\begin{equation}
+0→\mathrm{Hom}_S(FM,X)\xrightarrow{f∘-}\mathrm{Hom}_S(FM,Y)\xrightarrow{g∘-}\mathrm{Hom}_S(FM,Z),
+\end{equation}$$ 由 $\mathrm{Hom}_S(FM,-)$ 函子的左正合性知这是正合列. 由此可知 $G$ 作用后得到的列是正合列, 即 $G$ 是左正合函子.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-09-15T00:00:00+08:00</pubDate>
@@ -3342,12 +4539,12 @@ $$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
 &lt;h3 id=&quot;习题-21&quot;&gt;习题 2.1&lt;/h3&gt;
 
 &lt;div class=&quot;problem&quot;&gt;
-  &lt;p&gt;加法范畴里面, 态射 $f$ 是单射当且仅当 $ft=0 ⇒ t=0$.&lt;/p&gt;
+  &lt;p&gt;加法范畴里面, 态射 $f$ 是单态射当且仅当 $ft=0 ⇒ t=0$.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;proof&quot;&gt;
-  &lt;p&gt;必要性显然.&lt;/p&gt;
-  &lt;p&gt;对于充分性. 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单射.&lt;/p&gt;
+  &lt;p&gt;(⇒)显然. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;(⇐) 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单态射.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;problem&quot;&gt;
@@ -3417,8 +4614,220 @@ $$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;来自讨论班-正合范畴中的扩张&quot;&gt;[来自讨论班] 正合范畴中的扩张&lt;/h2&gt;
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\bigoplus_{1≤i≤n}\eta_i: \bigoplus_{1≤i≤n} X_i → \bigoplus_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\prod_{1≤i≤n}\eta_i: \prod_{1≤i≤n} X_i → \prod_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;22-加法函子&quot;&gt;2.2 加法函子&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-22&quot;&gt;习题 2.2&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;对于加法范畴之间的加法函子 $F$, $F$ 是忠实的当且仅当 $F$ 将非零态射映为非零态射.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 显然. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;(⇐) 设 $f,g:X→Y$ 满足 $Ff=Fg$. 则 $F(f-g)=0$. 由题设 $f-g=0$, 即 $f=g$. 故 $F$ 是忠实的.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 证明有如下交换图&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_bae307752c88e.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;直接按分量验证, 即考虑右复合 $\tilde{e_i}:FX_i→ FX_1⊕FX_2 (i=1,2)$ 之后的情况 ($(\tilde{e_1},\tilde{e_2})$ 是 $FX_1,FX_2$ 的 coproduct). 注意到 $$\begin{equation}
+	((Fe_1')p_1+(Fe_2')p_2)\sigma_{FX_1,FX_2}\tilde{e_i}=((Fe_1')p_1+(Fe_2')p_2)( \tilde{e_1}' \tilde{p_1}' + \tilde{e_2}' \tilde{p_2}')\tilde{e_i}=Fe_i' p_i' \tilde{e_i}=Fe_i'.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;另一方面有,&lt;/p&gt;
+    &lt;p&gt;$$\begin{equation}
+	F\sigma_{X_1,X_2}(Fe_1,Fe_2)\tilde{e_i}=F\sigma_{X_1,X_2}Fe_i=F((e_1' p_1' + e_2' p_2')e_i)=Fe_i'.
+\end{equation}$$&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;p&gt;根据 coproduct 的定义(定义中的唯一性), 交换图成立.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 则 $F$ 是加法函子当且仅当对于 $\mathcal{A}$ 中任意两个对象 $X$ 与 $Y$, 有 $Fe_1Fp_1'+Fe_2Fp_2'=\mathrm{Id}_{F(X⊕Y)}$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 这是加法函子的定义. $$\begin{equation}
+	\mathrm{Id}_{F(X_1⊕X_2)}=F\mathrm{Id}_{X⊕Y} = F(e_1 p_1' + e_2 p_2') = Fe_1 Fp_1' + Fe_2 Fp_2'.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;(⇐) 只要证明 $F$ 保持有限余积, 即对于任意对象 $X,Y$, 有同构 $$\begin{equation}
+	(Fe_1, Fe_2): FX ⊕ FY \xrightarrow{\sim} F(X⊕Y).
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;只要证明 $(Fe_1,Fe_2)$ 和 $\binom{Fp_1'}{Fp_2'}$ 互为逆即可. 计算有 $$\begin{equation}
+	\binom{Fp_1'}{Fp_2'}(Fe_1,Fe_2) = \binom{Fp_1'Fe_1 \quad Fp_1'Fe_2}{Fp_2'Fe_1 \quad Fp_2'Fe_2} = \binom{\mathrm{Id}_{FX} \quad 0}{0 \quad \mathrm{Id}_{FY}} = \mathrm{Id}_{FX ⊕ FY}.
+\end{equation}$$ 另一方面, $$\begin{equation}
+	(Fe_1,Fe_2)\binom{Fp_1'}{Fp_2'} = Fe_1 Fp_1' + Fe_2 Fp_2' = \mathrm{Id}_{F(X⊕Y)}.
+\end{equation}$$ 从而得证.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;23-abel-范畴&quot;&gt;2.3 Abel 范畴&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-23&quot;&gt;习题 2.3&lt;/h3&gt;
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 若 $f : X \to Y$ 是满态射, 则对于任意态射 $g : Y \to Z$, 典范态射&lt;br /&gt; $$\begin{equation}
+\operatorname{Im} g \longrightarrow \operatorname{Im}(g f)
+\end{equation}$$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proof&quot;&gt;
+  &lt;p&gt;考虑 $g$ 和 $gf$ 的满单分解.&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_3cfecaf9caf35.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;由于 $\widetilde{g}fk=0$, 根据 $\widetilde{gf}$ 作为 $k$ 的 cokernel 的泛性质, 存在唯一态射 $c:\mathrm{Im}gf → \mathrm{Im}g$ 使得 $c \widetilde{gf} = \widetilde{g} f$. 由于 $\widetilde{g}f$ 是满的, 从而 $c$ 也是满的. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;下面证明 $m_gc=m_{gf}$. 计算有 $$\begin{equation}
+	m_g c \widetilde{gf} = m_g \widetilde{g} f = g f = m_{gf} \widetilde{gf}.
+\end{equation}$$ 由于 $\widetilde{gf}$ 是满的, 故 $m_g c = m_{gf}$. 由 $m_g$ 和 $m_{gf}$ 是单的, 可知 $c$ 也是单的. &lt;br /&gt; 综上, $c$ 是同构.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 则有典范同构&lt;br /&gt; $$\begin{equation}
+\prod_{1 \le i \le n} \ker f_i \cong \ker\!\left(\prod_{1 \le i \le n} f_i\right)
+\end{equation}$$ 若 $\mathcal{A}$ 有无限积, 则此式对无限积也成立. 特别地, 若 $\mathcal{A}$ 有无限积, 则 $\prod_{i \in I} f_i$ 是单态射当且仅当每个 $f_i\,(i \in I)$ 均是单态射.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;直接考虑指标集 $I$, 设 $\mathcal{A}$ 有关于指标集 $I$ 的积.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_a16f19b8be894.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;自然有上图右边两个方块. 下面验证 $∏ \ker f_i$ 是 $∏ f_i$ 的核. 设有态射 $g:Z→∏ X_j$ 满足 $∏ f_i ∘ g=0$. 则对于任意 $i$, 有 $f_i ∘ p^X_i ∘ g = p^Y_i ∘ ∏ f_i ∘ g = 0$. 由 $k_i$ 是 $f_i$ 的核, 存在唯一态射 $h_i:Z→\ker f_i$ 使得 $k_i ∘ h_i = p^X_i ∘ g$. 由积的泛性质, 存在唯一态射 $∏ h_i:Z→∏ \ker f_i$ 使得 $p^K_i ∘ ∏ h_i = h_i$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;下面证明 $∏ k_i ∘ ∏ h_i = g$. 计算有 $$\begin{equation}
+	p^X_i ∘ ∏ k_i ∘ ∏ h_i = k_i ∘ p^K_i ∘ ∏ h_i = k_i ∘ h_i = p^X_i ∘ g.
+\end{equation}$$ 根据 $∏X_i$ 的泛性质, 可知 $∏ k_i ∘ ∏ h_i = g$. $∏ h_i$ 的唯一性由 $\ker f_i$ 的泛性质以及 $\prod\ker f_i$ 的泛性质保证(即每个分量下去都是唯一的, 回来也是唯一的). &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设有单态射 $g : Y \hookrightarrow X$ 和态射 $h : Z \to Y$. 则有典范单态射&lt;br /&gt; $$\begin{equation}
+\operatorname{Coker} h \longrightarrow \operatorname{Coker}(g h).
+\end{equation}$$&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;注意到有交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_0b9ab4229edc9.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中 $c$ 是典范同构. 对两列正合列使用五引理得 $c'$ 是单态射.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 按道理说应该不能用五引理, Abel 范畴里面的版本还没证明. 我不知道这里有没有循环论证.&lt;/p&gt;
+
+&lt;h2 id=&quot;24-态射范畴&quot;&gt;2.4 态射范畴&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-24&quot;&gt;习题 2.4&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 证明态射范畴 $\mathrm{Mor}(\mathcal{A})$ 也是 Abel 范畴.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;已经知道 $\mathrm{Mor}(\mathcal{A})$ 是加法范畴, 下面只需要证明 $\mathrm{Mor}(\mathcal{A})$ 有 kernel 和 cokernel, 且 image 和 coimage 自然同构. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;给定 $\mathrm{Mor}(\mathcal{A})$ 中的任一态射 $(\alpha,\beta):(X,f,Y)→(X',f',Y')$, 自然有下面的交换图, 其中虚线都是由 kernel 和 cokernel 的泛性质自然诱导出来的.&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_7466fa3b95b4a.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;下面先证明 $(k_\alpha, k_\beta)$ 是 $(\alpha, \beta)$ 的 kernel (即逐分量取 kernel 就是 kernel). 首先显然有 $(\alpha, \beta)\circ(k_\alpha, k_\beta) = (0,0)$. 设有态射 $(s,t):(Z,h,W)→(X,f,Y)$ 满足 $(\alpha,\beta)∘(s,t)=(0,0)$. 则有 $\alpha s=0$ 且 $\beta t=0$. 由 $k_\alpha$ 和 $k_\beta$ 是分别是 $\alpha$ 和 $\beta$ 的 kernel, 存在唯一态射 $u:Z→\ker \alpha$ 和 $v:W→\ker \beta$ 使得 $k_\alpha u=s$ 且 $k_\beta v=t$. 由此得到态射 $(u,v):(Z,h,W)→(\ker \alpha, k_\alpha, \ker \beta)$ (这确实是态射范畴中的态射, 因为 $k_{\beta}k_{\alpha,\beta}u=fk_α u=fs=th=k_β vh$, 由于 $k_\beta$ 是单态射, 于是有 $k_{\alpha,\beta}u=vh$). 这样 $(u,v)$ 的唯一性由 $u$ 和 $v$ 的唯一性保证. 这样就证明了 $(\alpha,\beta)$ 的 kernel 是 $(k_\alpha, k_\beta)$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;同理可以证明, 逐项求 cokernel 也得到态射范畴中的 cokernel. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;从而对于 image 和 coimage 也是逐项求即可. 由于在 Abel 范畴中 image 和 coimage 自然同构, 故在态射范畴中也自然同构. &lt;br /&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是有足够多投射对象的 Abel 范畴. 则 $\mathrm{Mor}(\mathcal{A})$ 的任意投射对象 $(U,f,V)$ 均是 $(P, \mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项, 其中 $P$ 和 $Q$ 是 $\mathcal{A}$ 的投射对象. 特别地, $U$ 和 $V$ 均是 $\mathcal{A}$ 的投射对象.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由于 $\mathcal{A}$ 有足够多投射对象, 存在 $\mathcal{A}$ 中的投射对象 $P$ 和满态射 $p:P→U$, 以及投射对象 $Q$ 和满态射 $q:Q→V$. 考虑如下 $\mathrm{Mor}(\mathcal{A})$ 中的态射 $(p, (fp,q))$:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_3b002a4a5dfb5.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;注意到 $P⊕Q$ 是投射对象并且 $(fp,q):P⊕Q→V$ 是满态射. 于是上面的态射是满态射, 由于 $(U,f,V)$ 是投射对象, 于是 $(U,f,V)$ 是 $(P,\begin{pmatrix}\mathrm{Id}_P \\ 0\end{pmatrix}, P⊕Q)≅(P,\mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;25&quot;&gt;2.5&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-25&quot;&gt;习题 2.5&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;(⇒) 由于在 $X$ 处正合, 于是 $\mathrm{Ker}x=0$, 于是 $x$ 是单态射. 由于在 $Y$ 处正合, 于是有 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_f43a65e661c3c.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;由于 $yx=0$, 存在唯一的态射 $s:X→\mathrm{Ker}y$ 使得 $x=k_ys$, 由于 $x$ 是单态射, 于是 $s$ 是单态射. 同时由于 $\mathrm{Ker}y≅\mathrm{Im}x$, 这个 $s$ 同时也是满单分解给出的态射, 于是 $s$ 也是满态射, 从而 $s$ 是同构. 于是 $x$ 是 $y$ 的 kernel.&lt;/p&gt;
+    &lt;p&gt;&lt;br /&gt; (⇐) 只需要验证在 $Y$ 处正合, 即验证 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑如下交换图:&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_e2e0a3ea52635.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;取 $x$ 的满单分解, 由于 $ym_x=0$ (由 $ym_x\widetilde{x}=0$ 及 $\widetilde{x}$ 单可得), 根据 $x$ 是 $y$ 的 kernel, 存在唯一的态射 $s$ 使得 $xs=m_x$. 于是 $x=m_x\widetilde{x}=xs\widetilde{x}$, 根据 $x$ 单可得 $s\widetilde{x}=\mathrm{Id}_X$. 同理可得 $\mathrm{Id}_{\mathrm{Im}(x)}=\widetilde{x}s$. 从而 $s, \widetilde{x}$ 是同构, 即得 $\mathrm{Im}x≅\mathrm{Ker}y$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $X \xrightarrow{x} Y \overset{x}{\twoheadrightarrow} Z \rightarrow 0$, 它是正合列当且仅当 $y$ 是 $x$ 的余核.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;与上一题完全类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设下图的两行均是 Abel 范畴中的正合列, 且左边的方块交换：&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_da7a075a2e01f.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则存在唯一的态射 $h$ 使得右边的方块也交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由上面的习题知 $y$ 是 $x$ 的 cokernel, 于是由 $y'gx=y'x'f=0$ 得存在唯一的态射 $h$ 使得 $y'g=hy$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设下图的两行均是 Abel 范畴中的正合列, 且右边的方块交换：&lt;/p&gt;
+  &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+      &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_161ab360cbc3b.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+    &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+  &lt;p&gt;则存在唯一的态射 $f$ 使得左边的方块也交换.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;由上面的习题知 $x'$ 是 $y'$ 的 kernel, 于是由 $y'gx=hyx=0$ 得存在唯一的态射 $f$ 使得 $gx=x'f$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图&lt;/p&gt;
+    &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
+        &lt;embed src=&quot;/website/svg/BA_Exercise2/diagram_1b5b3b7e980d8.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
+      &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
+    &lt;p&gt;其中 $Q$ 是投射对象, $q:Q→P$ 是满态射, 根据可裂条件可得存在 $t:P→Q$ 使得 $qt=\mathrm{Id}_P$. 由于 $Q$ 是投射对象, 故存在 $s:Q→ M$ 使得 $gs=pq$. 由于 $p=pqt=gst$, 从而 $P$ 是投射对象.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $I$ 是内射对象. 若任意短正合列 $0 \longrightarrow I \longrightarrow M \longrightarrow N \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多内射对象时, 逆命题也成立.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;与上一题证明完全类似.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-09-11T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/BA_Exercise2</link>

@@ -820,7 +820,200 @@ Re⊕R(1-e)=R(e+1-e)=R.
 <h3 id="习题-111">习题 1.11</h3>
 
 <div class="problem">
-  <p>Let $M$ be a left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.</p>
+  <p>Let $M$ be a <strong>finite dimensional</strong> left module over a finite dimensional algebra $A$. Let $D=\mathrm{Hom}_k(-,k)$. Then $M$ is a projective module if and only if $D(M)$ is an injective right $A$-module.</p>
+  <div class="proof">
+    <p>Functors</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise1/diagram_d57553fe5a4cd.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>are contravariant functors between the category of finite dimensional left $A$-modules and the category of finite dimensional right $A$-modules. It is clear that $D$ is a duality, i.e., $D∘D≅1$. <br /></p>
+    <p>(⇒) Suppose that $_AM$ is projective. Consider any injective homomorphism $i:N→N'$ of right $A$-modules and any homomorphism $f:N→D(M)$. By applying $D$, we have</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise1/diagram_30e1dde34696f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>Since $_AM$ is projective, there exists a homomorphism $M→ D(N')$ such that the above diagram commutes. By applying $D$ again, we have the following commutative diagram:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise1/diagram_c234ec47db7b1.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>Thus, $D(M)$ is an injective right $A$-module. <br /></p>
+    <p>(⇐) Similar.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 似乎只能在小模范畴上做.</p>
+
+<div class="problem">
+  <p>Let $e$ be an idempotent element of a finite dimensional $k$-algebra $A$. Then $D(eA)$ is an injective left $A$-module, and any injective left $A$-module is of this form.</p>
+  <div class="proof">
+    <p>Since $eA$ is a projective right $A$-module ($A_A≅eA⊕(1-e)A$), by the previous problem, $D(eA)$ is an injective left $A$-module. <br /></p>
+    <p>For any injective left $A$-module $I$, by the previous problem, $D(I)$ is a projective right $A$-module. Since any projective right $A$-module is a direct summand of a free right $A$-module, say $A^{⊕n}$, there exists an idempotent element $e∈A^{⊕n}$ such that $D(I)≅eA$. Thus, $I≅D(eA)$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Let $S$ be a simple module over a finite dimensional algebra $A$. Then $S$ can be embedded into an indecomposable injective $A$-module.</p>
+  <div class="proof">
+    <p>We have that $D(S)$ is a finite dimensional right $A$-module. There exists a projective right $A$-module $P$ such that $D(S)$ is a quotient module of $P$. By applying $D$ again, we have an injective homomorphism $S→D(P)$. Since $P$ is a projective right $A$-module, $D(P)$ is an injective left $A$-module. Decomposing $D(P)$ into a direct sum of indecomposable injective left $A$-modules (fintie direct sum is the same as finite product), we see that $S$ can be embedded into one of them (since $S$ is simple).</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Let $A$ be a finite dimensional algebra. Then TFAE:<br /></p>
+  <p>(1) $A$ is semisimple; <br /></p>
+  <p>(2) Every left $A$-module is projective; <br /></p>
+  <p>(3) Any short exact sequence of $A$-modules splits; <br /></p>
+  <p>(4) Every left $A$-module is injective.</p>
+  <div class="proof">
+    <p>(1) ⇒ (2) Since $A$ is semisimple, every left $A$-module is semisimple. Then all surjective homomorphisms are split surjective (this is because the homomorphic image of $\pi$ will be isomorphic to the direct complement of $\ker \pi$), so every left $A$-module is projective (by an earlier problem). <br /></p>
+    <p>(2) ⇒ (3) By the property of split short exact sequences in abelian categories. <br /></p>
+    <p>(3) ⇒ (4) For any left $A$-module $I$, any short exact sequence $0→I→M→N→0$ splits, so $I$ is injective. <br /></p>
+    <p>(4) ⇒ (1) We want to show that $_AA$ is semisimple. For any submodule $M$ of $_AA$, consider the short exact sequence $0→M→A→A/M→0$. Since $M$ is injective, the above short exact sequence splits, so that $A≅M⊕A/M$. Thus, $_AA$ is semisimple.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Solve the indecomposable injective modules of $A=k[x]/⟨x^n⟩ (n≥2)$.</p>
+  <div class="solution">
+    <p>We have shown that the only finite dimensional indecomposable projective module of $A$ is $A$ itself. By an earlier problem, the only indecomposable injective module of $A$ is $D(A)$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Prove that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module by using Baer’s criterion. If $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.</p>
+  <div class="proof">
+    <p>(1) We first show that $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. By Baer’s criterion, we need to show that for any ideal $I$ of $\mathbb{Z}_m$ and any homomorphism $h:I→\mathbb{Z}_m$, it can be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$. Since $\mathbb{Z}_m$ is a principal ideal ring, we have $I=⟨\bar{d}⟩$ for some $d∣m$. Let $h(\bar{d})=\bar{c}$. Since $\bar{c}⋅\overline{m/d}=h(\bar{m})=\bar{0}$, $\overline{c/d}$ is well defined in $\mathbb{Z}_m$. <br /></p>
+    <p>We define a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_m$ by $h'(\bar{1})=\overline{c/d}$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $\mathbb{Z}_m$ is an injective $\mathbb{Z}_m$-module. <br /></p>
+    <p>(2) Now we show that if $d ∣ m$ and $d$ and $m/d$ has common prime factor, then $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module. We only need to find an ideal $I$ of $\mathbb{Z}_m$ and a homomorphism $h:I→\mathbb{Z}_d$ such that it can not be extended to a homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$. Since $d$ and $m/d$ has common prime factor, there exists a prime number $p$ such that $p∣d$ and $p∣m/d$. Let $I=⟨\overline{m/d}⟩$. We define a homomorphism $h:I→\mathbb{Z}_d$ by $h(\overline{m/d})=\bar{1}$. If there exists an extension homomorphism $h':\mathbb{Z}_m→\mathbb{Z}_d$, then we have $$\begin{equation}
+\bar{1}=h(\overline{m/d})=h'(\overline{m/d})=p h'(\overline{\frac{m}{dp}}).
+\end{equation}$$ So $$\begin{equation}
+0≠ \overline{d/p} = \overline{d/p}h(\overline{m/d})= \overline{d/p}h'(\overline{m/d})= \overline{d} h'(\overline{\frac{m}{dp}}) = \bar{0}.
+\end{equation}$$ Thus, such extension homomorphism $h'$ does not exist, and by Baer’s criterion, $\mathbb{Z}_d$ is not an injective $\mathbb{Z}_m$-module.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Prove that $R$-module $M$ is an injective module if and only if for any left ideal $L$ of $R$ and any homomorphism $h:L→M$, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$.</p>
+  <div class="proof">
+    <p>(⇒) Since $M$ is injective, the homomorphism $h:L→M$ can be extended to a homomorphism $h':R→M$. Let $m=h'(1)$. Then for any $l∈L$, we have $h(l)=h'(l)=h'(l⋅1)=l⋅h'(1)=lm$. <br /></p>
+    <p>(⇐) We use Baer’s criterion to prove this. For any left ideal $L$ of $R$ and any homomorphism $h:L→M$, by the assumption, there exists $m∈M$ such that $h(l)=lm,∀ l∈ L$. Now we can define a homomorphism $h':R→M$ by $h'(r)=rm$. It is clear that $h'$ is an extension of $h$. Thus, by Baer’s criterion, $M$ is injective.</p>
+  </div>
+</div>
+
+<h2 id="112-张量积与平坦模">1.12 张量积与平坦模</h2>
+
+<h3 id="习题-112">习题 1.12</h3>
+
+<div class="problem">
+  <p>设 $M$ 和 $N$ 是 $k$ 上的线性空间, 分别有 $k$-基 $\{a_i\}_{i∈ I}, \{b_j\}_{j∈ J}$. 证明 $M⊗_k N$ 有 $k$-基 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$.</p>
+  <div class="proof">
+    <p>由张量积的定义可知 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 生成 $M⊗_k N$. 现证明其线性无关. 设 $$\begin{equation}
+\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j)=0, \text{仅有有限项可能非零}.
+\end{equation}$$ 对于任意的 $k$ 线性映射 $f:M→k,g:N→k$, 可以得到 $k$-平衡映射 $$\begin{equation}
+h:M×N→k, (m,n)↦f(m)g(n).
+\end{equation}$$ 由张量积的定义可知存在唯一的 $k$-线性映射 $\bar{h}:M⊗_k N→k$ 使得 $\bar{h}(m⊗ n)=h(m,n)$. 于是 $$\begin{equation}
+0=\bar{h}(\sum_{i∈ I,j∈ J} k_{ij}(a_i⊗ b_j))=\sum_{i∈ I,j∈ J} k_{ij}f(a_i)g(b_j).
+\end{equation}$$ 取 $f,g$ 使得 $f(a_{i_0})=1,f(a_i)=0 (i≠i_0), g(b_{j_0})=1,g(b_j)=0 (j≠j_0)$, 可得 $k_{i_0j_0}=0$. 由于 $i_0,j_0$ 任意, 故所有 $k_{ij}=0$. 于是 $\{a_i⊗ b_j\}_{i∈ I,j∈ J}$ 线性无关, 从而是 $M⊗_k N$ 的 $k$-基.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明 $\mathbb{Z}_m(m≥2)$ 作为 $\mathbb{Z}$-模不是平坦模.</p>
+  <div class="proof">
+    <p>考虑短正合列 $0→\mathbb{Z}↪\mathbb{Q}↠\mathbb{Q}/\mathbb{Z}→0$, 作用张量函子 $\mathbb{Z}_m⊗_{\mathbb{Z}}-$ 后得到列 $0→\mathbb{Z}_m→ 0→0→0$, 不是正合列, 故 $\mathbb{Z}_m$ 不是平坦模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明主理想整环 $D$ 上的模 $M$ 是平坦模当且仅当 $M$ 是无挠模, 即若 $0≠d∈D, 0≠m∈M$, 则 $dm≠0$.</p>
+  <div class="proof">
+    <p>(⇒) (只用到 $D$ 是整环). 假设存在 $0≠d∈D, 0≠m∈M$ 使得 $dm=0$. 考虑单态射 (由整性保证) $$\begin{equation}
+f:D→D, x↦dx.
+\end{equation}$$ 作用张量函子 $-⊗_D M$ 后得到映射 $$\begin{equation}
+f⊗ 1_M:M→M, m'↦dm',
+\end{equation}$$ 不是单射, 矛盾. 于是 $M$ 是无挠模. <br /></p>
+    <p>(⇐) 设 $M$ 是无挠模. 考虑使用 Baer 判别法. 对于 $D$ 的任一非平凡理想 $\mathfrak{a}$, 由于 $D$ 是主理想整环, 存在 $0≠a∈D$ 使得 $\mathfrak{a}=⟨a⟩=Da$. 我们有嵌入 $i:Da↪D$. 作用张量函子 $-⊗_D M$ 后, 进一步由同构 $D⊗_DM≅ M$ 得到交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise1/diagram_6c8ac26a1e027.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>于是 $i⊗ 1_M$ 是单态射, 故 $M$ 是平坦模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设有范畴等价 $F:\mathcal{C}→\mathcal{D}$, $F^{-1}$ 是其拟逆. 则 $(F,F^{-1})$ 和 $(F^{-1},F)$ 是伴随对.</p>
+  <div class="proof">
+    <p>记 $G:=F^{-1}$. 只需证明 $(F,G)$ 是伴随对. 设我们有自然同构 $τ:GF→\mathrm{Id}_{\mathcal{C}}, θ:FG→\mathrm{Id}_{\mathcal{D}}$.<br /></p>
+    <p>构造自然同构 $θ':FG→\mathrm{Id}_{\mathcal{D}}$ 为 $$\begin{equation}
+Θ_A':=\left[  FGA\xrightarrow{FGθ_A^{-1}}FGFGA\xrightarrow{Fτ_{GA}}FGA\xrightarrow{θ_A}A  \right].
+\end{equation}$$</p>
+    <p>构造自然映射(自然性由 $F,G$ 是函子以及自然变换的自然性给出) $$\begin{equation}
+\Phi_{X,Y}:\mathrm{Hom}_{\mathcal{D}}(FX,Y)→\mathrm{Hom}_{\mathcal{C}}(X,GY), f↦\left[ X\xrightarrow{τ^{-1}_X} GFX\xrightarrow{Gf}GY \right].
+\end{equation}$$ $$\begin{equation}
+\Psi_{X,Y}:\mathrm{Hom}_{\mathcal{C}}(X,GY)→\mathrm{Hom}_{\mathcal{D}}(FX,Y), g↦\left[ FX\xrightarrow{Fg}FGY\xrightarrow{Θ'_Y}Y \right].
+\end{equation}$$ 可以证明 $\Psi_{X,Y}$ 和 $\Phi_{X,Y}$ 互为逆映射(关键证明见后面手写推导), 从而得到自然同构(对于 $X,Y$ 自然) $$\begin{equation}
+\mathrm{Hom}_{\mathcal{D}}(FX,Y)≅\mathrm{Hom}_{\mathcal{C}}(X,GY).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $_RM_S$ 和 $_SN_T$ 是双模. <br /> (1) 若 $_SN$ 和 $_RM$ 均是投射模, 则 $M⊗_SN$ 是投射左 $R$-模; <br /> (2) 若 $N_T$ 和 $M_S$ 均是投射模, 则 $M⊗_SN$ 是投射右 $T$-模.</p>
+  <div class="proof">
+    <p>(1) 我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $L$ 是自然的. 于是, 给定任意 $R$-模满态射 $g:L↠L'$, 要证明映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 只要证明 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射. 由于 $M$ 是投射左 $R$-模, 故映射 $\mathrm{Hom}_R(M,g)$ 是满态射. 由于 $N$ 是投射左 $S$-模, 故映射 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射, 从而映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 即 $M⊗_S N$ 是投射左 $R$-模. <br /></p>
+    <p>(2) 类似.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $_RM_S$ 和 $_RL_U$ 是双模. 若 $M_S$ 是平坦模且 $_RL$ 是内射模, 则 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.</p>
+  <div class="proof">
+    <p>我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 给定任意 $S$-模单态射 $g:N↪N'$, 要证明映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 只要证明 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射. 由于 $M_S$ 是平坦模, 故映射 $\mathrm{Id}_M⊗_S g$ 是单态射. 由于 $_RL$ 是内射模, 故映射 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射, 从而映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 即 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $_SN_T$ 和 $_UL_T$ 是双模. 若 $_SN$ 是平坦模且 $L_T$ 是内射模, 则 $\mathrm{Hom}_T(N,L)$ 是内射右 $S$-模.</p>
+  <div class="proof">
+    <p>类似于上一题, 用右模上的 Tensor-Hom 伴随对.</p>
+  </div>
+</div>
+
+<p>在证明下一个问题之前, 我们证明一个引理:</p>
+
+<div class="lemma">
+  <p>设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+\mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
+\end{equation}$$ 是正合列.</p>
+  <div class="proof">
+    <p>(⇒) 由函子性质. <br /></p>
+    <p>(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise1/diagram_f64500b370041.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $F:S\mathbf{-Mod}→R\mathbf{-Mod}, G:R\mathbf{-Mod}→S\mathbf{-Mod}$, 且 $(F,G)$ 是伴随对. 则 $F$ 是右正合函子, $G$ 是左正合函子.</p>
+  <div class="proof">
+    <p>我们证明 $G$ 是左正合函子, $F$ 的情形类似. <br /></p>
+    <p>任意给定 $S$-模的正合列 $$\begin{equation}
+0→X\xrightarrow{f}Y\xrightarrow{g}Z,
+\end{equation}$$</p>
+    <p>我们要证明 $G$ 作用后得到的列 $$\begin{equation}
+0→GX\xrightarrow{Gf}GY\xrightarrow{Gg}GZ
+\end{equation}$$ 是正合列. 由引理, 只需证明对于任意 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+0→\mathrm{Hom}_R(M,GX)\xrightarrow{Gf∘-}\mathrm{Hom}_R(M,GY)\xrightarrow{Gg∘-}\mathrm{Hom}_R(M,GZ)
+\end{equation}$$ 是正合列. 由于 $(F,G)$ 是伴随对, 故有同构 $$\begin{equation}
+\mathrm{Hom}_R(M,GN)≅\mathrm{Hom}_S(FM,N)
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列同构于列 $$\begin{equation}
+0→\mathrm{Hom}_S(FM,X)\xrightarrow{f∘-}\mathrm{Hom}_S(FM,Y)\xrightarrow{g∘-}\mathrm{Hom}_S(FM,Z),
+\end{equation}$$ 由 $\mathrm{Hom}_S(FM,-)$ 函子的左正合性知这是正合列. 由此可知 $G$ 作用后得到的列是正合列, 即 $G$ 是左正合函子.</p>
+  </div>
 </div>
 
   </article>
@@ -1416,6 +1609,40 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="#习题-111">
         <span class="toc-number">11.1.</span>
         <span class="toc-title">习题 1.11</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#112-张量积与平坦模">
+        <span class="toc-number">12.</span>
+        <span class="toc-title">1.12 张量积与平坦模</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-112">
+        <span class="toc-number">12.1.</span>
+        <span class="toc-title">习题 1.12</span>
       </a>
     </div>
   

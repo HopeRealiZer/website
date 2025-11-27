@@ -9,12 +9,12 @@
 
 
 
-  <title>《基础代数学》作业 Week6-1
+  <title>《基础代数学》作业 Week8-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="  设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.">
+<meta name="description" content="  设有范畴等价 $F:\mathcal{C}→\mathcal{D}$, $F^{-1}$ 是其拟逆. 则 $(F,F^{-1})$ 和 $(F^{-1},F)$ 是伴随对.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Ex6_1">
+<link rel="canonical" href="/website/posts/Ex8_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,45 +75,90 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>《基础代数学》作业 Week6-1</h1>
+      <h1>《基础代数学》作业 Week8-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 20, 2025
+        November 5, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
     <div class="problem">
-  <p>设 $R$ 是域 $k$ 上所有对角元相等的上三角矩阵全体 (固定阶数) 作成的集合. 证明 $R$ 是局部环.</p>
+  <p>设有范畴等价 $F:\mathcal{C}→\mathcal{D}$, $F^{-1}$ 是其拟逆. 则 $(F,F^{-1})$ 和 $(F^{-1},F)$ 是伴随对.</p>
   <div class="proof">
-    <p>注意到 $R$ 中的不可逆元为全体严格上三角矩阵, 显然是一个理想, 于是 $R$ 是局部环.</p>
+    <p>记 $G:=F^{-1}$. 只需证明 $(F,G)$ 是伴随对. 设我们有自然同构 $τ:GF→\mathrm{Id}_{\mathcal{C}}, θ:FG→\mathrm{Id}_{\mathcal{D}}$.<br /></p>
+    <p>构造自然同构 $θ':FG→\mathrm{Id}_{\mathcal{D}}$ 为 $$\begin{equation}
+Θ_A':=\left[  FGA\xrightarrow{FGθ_A^{-1}}FGFGA\xrightarrow{Fτ_{GA}}FGA\xrightarrow{θ_A}A  \right].
+\end{equation}$$</p>
+    <p>构造自然映射(自然性由 $F,G$ 是函子以及自然变换的自然性给出) $$\begin{equation}
+\Phi_{X,Y}:\mathrm{Hom}_{\mathcal{D}}(FX,Y)→\mathrm{Hom}_{\mathcal{C}}(X,GY), f↦\left[ X\xrightarrow{τ^{-1}_X} GFX\xrightarrow{Gf}GY \right].
+\end{equation}$$ $$\begin{equation}
+\Psi_{X,Y}:\mathrm{Hom}_{\mathcal{C}}(X,GY)→\mathrm{Hom}_{\mathcal{D}}(FX,Y), g↦\left[ FX\xrightarrow{Fg}FGY\xrightarrow{Θ'_Y}Y \right].
+\end{equation}$$ 可以证明 $\Psi_{X,Y}$ 和 $\Phi_{X,Y}$ 互为逆映射(关键证明见后面手写推导), 从而得到自然同构(对于 $X,Y$ 自然) $$\begin{equation}
+\mathrm{Hom}_{\mathcal{D}}(FX,Y)≅\mathrm{Hom}_{\mathcal{C}}(X,GY).
+\end{equation}$$</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>Let $R$ be an Artinian ring or a Noetherian ring. Then $M$ can be decomposed into a finite direct sum of indecomposable modules.</p>
+  <p>设 $_RM_S$ 和 $_SN_T$ 是双模. <br /> (1) 若 $_SN$ 和 $_RM$ 均是投射模, 则 $M⊗_SN$ 是投射左 $R$-模; <br /> (2) 若 $N_T$ 和 $M_S$ 均是投射模, 则 $M⊗_SN$ 是投射右 $T$-模.</p>
   <div class="proof">
-    <p>If $M$ is itself indecomposable, then we are done. Otherwise, we have a nontrivial decomposition $M=M_1⊕M_2$. If one of $M_1,M_2$ is indecomposable, we keep it and decompose the other one. If both of them are decomposable, we decompose both of them. Since $R$ is Artinian or Noetherian, this process must stop in finite steps, yielding a decomposition of $M$ into a finite direct sum of indecomposable modules.</p>
+    <p>(1) 我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $L$ 是自然的. 于是, 给定任意 $R$-模满态射 $g:L↠L'$, 要证明映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 只要证明 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射. 由于 $M$ 是投射左 $R$-模, 故映射 $\mathrm{Hom}_R(M,g)$ 是满态射. 由于 $N$ 是投射左 $S$-模, 故映射 $\mathrm{Hom}_S(N,\mathrm{Hom}_R(M,g))$ 是满态射, 从而映射 $\mathrm{Hom}_R(M⊗_S N,g)$ 是满态射, 即 $M⊗_S N$ 是投射左 $R$-模. <br /></p>
+    <p>(2) 类似.</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>Prove that the homomorphic image of a local ring is still a local ring.</p>
+  <p>设 $_RM_S$ 和 $_RL_U$ 是双模. 若 $M_S$ 是平坦模且 $_RL$ 是内射模, 则 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.</p>
   <div class="proof">
-    <p>Let $R$ be a local ring with unique maximal ideal $\mathfrak{m}$ (also the the set of all non-invertible elements of $R$), and let $f:R→S$ be a surjective ring homomorphism. We want to show that $S$ is also a local ring. Notice that $S≅R/I$ for some ideal $I$ of $R$, and we have $I⊆\mathfrak{m}$. It is obvious that $\mathfrak{m}/I$ is an ideal of $R/I$. Now we want to show that it is exactly the set of non-invertable elements in $R/I$. <br /></p>
-    <p>First, any element in the ideal $\mathfrak{m}/I$ is non-invertible, since otherwise $\mathfrak{m}/I=R/I$. <br /></p>
-    <p>Conversely, if an element $r+I∈R/I, r∉I$ is non-invertible, then $r$ is non-invertible in $R$, hence $r∈\mathfrak{m}$, so that $r+I∈\mathfrak{m}/I$, as desired. <br /></p>
+    <p>我们有伴随对 $(M⊗_S-, \mathrm{Hom}_R(M,-))$, 即有同构 $$\begin{equation}
+\mathrm{Hom}_R(M⊗_SN, L)≅\mathrm{Hom}_S(N, \mathrm{Hom}_R(M,L))
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 给定任意 $S$-模单态射 $g:N↪N'$, 要证明映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 只要证明 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射. 由于 $M_S$ 是平坦模, 故映射 $\mathrm{Id}_M⊗_S g$ 是单态射. 由于 $_RL$ 是内射模, 故映射 $\mathrm{Hom}_R(\mathrm{Id}_M⊗_S g,L)$ 是满态射, 从而映射 $\mathrm{Hom}_S(g,\mathrm{Hom}_R(M,L))$ 是满态射, 即 $\mathrm{Hom}_R(M,L)$ 是内射左 $S$-模.</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>Prove that a finite dimensional algebra $A$ is a local ring if and only if the left regular module $_AA$ is indecomposable.</p>
+  <p>设 $_SN_T$ 和 $_UL_T$ 是双模. 若 $_SN$ 是平坦模且 $L_T$ 是内射模, 则 $\mathrm{Hom}_T(N,L)$ 是内射右 $S$-模.</p>
   <div class="proof">
-    <p>Since $A$ is a finite dimensional, $A$ has composition series. <br /></p>
-    <p>(⇒) If $_AA$ is decomposable, i.e., $_AA=M_1⊕M_2$ for some nontrivial submodules $M_1,M_2$, then consider the idempotent endomorphism $e:A→A$ defined by $e(a)=a_1$ where $a=a_1+a_2$ with $a_i∈M_i$. It is clear that $e$ is neither $0$ nor $1$, contradicting the fact that in a local ring, the only idempotent elements are $0$ and $1$. <br /></p>
-    <p>(⇐) If $A$ is not a local ring, then there exists an idempotent element $e∈A$ such that $e≠0,1$. Consider the left ideals $Ae$ and $A(1-e)$. It is clear that $_AA=Ae⊕A(1-e)$, contradicting the indecomposability of $_AA$.</p>
+    <p>类似于上一题, 用右模上的 Tensor-Hom 伴随对.</p>
+  </div>
+</div>
+
+<p>在证明下一个问题之前, 我们证明一个引理:</p>
+
+<div class="lemma">
+  <p>设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+\mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
+\end{equation}$$ 是正合列.</p>
+  <div class="proof">
+    <p>(⇒) 由函子性质. <br /></p>
+    <p>(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex8_2/diagram_f64500b370041.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $F:S\mathbf{-Mod}→R\mathbf{-Mod}, G:R\mathbf{-Mod}→S\mathbf{-Mod}$, 且 $(F,G)$ 是伴随对. 则 $F$ 是右正合函子, $G$ 是左正合函子.</p>
+  <div class="proof">
+    <p>我们证明 $G$ 是左正合函子, $F$ 的情形类似. <br /></p>
+    <p>任意给定 $S$-模的正合列 $$\begin{equation}
+0→X\xrightarrow{f}Y\xrightarrow{g}Z,
+\end{equation}$$</p>
+    <p>我们要证明 $G$ 作用后得到的列 $$\begin{equation}
+0→GX\xrightarrow{Gf}GY\xrightarrow{Gg}GZ
+\end{equation}$$ 是正合列. 由引理, 只需证明对于任意 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+0→\mathrm{Hom}_R(M,GX)\xrightarrow{Gf∘-}\mathrm{Hom}_R(M,GY)\xrightarrow{Gg∘-}\mathrm{Hom}_R(M,GZ)
+\end{equation}$$ 是正合列. 由于 $(F,G)$ 是伴随对, 故有同构 $$\begin{equation}
+\mathrm{Hom}_R(M,GN)≅\mathrm{Hom}_S(FM,N)
+\end{equation}$$ 对于 $N$ 是自然的. 于是, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列同构于列 $$\begin{equation}
+0→\mathrm{Hom}_S(FM,X)\xrightarrow{f∘-}\mathrm{Hom}_S(FM,Y)\xrightarrow{g∘-}\mathrm{Hom}_S(FM,Z),
+\end{equation}$$ 由 $\mathrm{Hom}_S(FM,-)$ 函子的左正合性知这是正合列. 由此可知 $G$ 作用后得到的列是正合列, 即 $G$ 是左正合函子.</p>
   </div>
 </div>
 
@@ -254,13 +299,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Model_History" title="NEXT: 模型范畴的历史">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Sampling" title="NEXT: 2025年11月06日杂记 - 采样">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex5_2" title="PREV: 《基础代数学》作业 Week5-2">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Ex8_1" title="PREV: 《基础代数学》作业 Week8-1">&gt;&gt;</a>
     
   </div>
 </main>

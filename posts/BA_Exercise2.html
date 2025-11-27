@@ -146,12 +146,12 @@ $$ 验证它是 $σ$ 的逆即可.</p>
 <h3 id="习题-21">习题 2.1</h3>
 
 <div class="problem">
-  <p>加法范畴里面, 态射 $f$ 是单射当且仅当 $ft=0 ⇒ t=0$.</p>
+  <p>加法范畴里面, 态射 $f$ 是单态射当且仅当 $ft=0 ⇒ t=0$.</p>
 </div>
 
 <div class="proof">
-  <p>必要性显然.</p>
-  <p>对于充分性. 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单射.</p>
+  <p>(⇒)显然. <br /></p>
+  <p>(⇐) 对于任意的 $fg=fh$, 有 $0 = -fg + fg = -fg + fh = f(h-g)$. 由题设 $h-g=0$, 即 $h=g$. 故 $f$ 是单态射.</p>
 </div>
 
 <div class="problem">
@@ -221,8 +221,220 @@ $$ 验证它是 $σ$ 的逆即可.</p>
   </div>
 </div>
 
-<h2 id="来自讨论班-正合范畴中的扩张">[来自讨论班] 正合范畴中的扩张</h2>
+<div class="problem">
+  <p>设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\bigoplus_{1≤i≤n}\eta_i: \bigoplus_{1≤i≤n} X_i → \bigoplus_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).</p>
+  <div class="proof">
+    <p>根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.</p>
+  </div>
+</div>
 
+<div class="problem">
+  <p>设 $n$ 是正整数. 在加法范畴中, $$\begin{equation}
+\prod_{1≤i≤n}\eta_i: \prod_{1≤i≤n} X_i → \prod_{1≤i≤n} Y_i
+\end{equation}$$ 是满态射(单态射, 同构) 当且仅当每个 $\eta_i:X_i → Y_i$ 都是满态射(单态射, 同构).</p>
+  <div class="proof">
+    <p>根据有限余积和有限积的同构, 以及事实 2.1.2 和事实 2.1.4, 以及 Abel 范畴是平衡范畴即得.</p>
+  </div>
+</div>
+
+<h2 id="22-加法函子">2.2 加法函子</h2>
+
+<h3 id="习题-22">习题 2.2</h3>
+
+<div class="problem">
+  <p>对于加法范畴之间的加法函子 $F$, $F$ 是忠实的当且仅当 $F$ 将非零态射映为非零态射.</p>
+  <div class="proof">
+    <p>(⇒) 显然. <br /></p>
+    <p>(⇐) 设 $f,g:X→Y$ 满足 $Ff=Fg$. 则 $F(f-g)=0$. 由题设 $f-g=0$, 即 $f=g$. 故 $F$ 是忠实的.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 证明有如下交换图</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise2/diagram_bae307752c88e.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <div class="proof">
+    <p>直接按分量验证, 即考虑右复合 $\tilde{e_i}:FX_i→ FX_1⊕FX_2 (i=1,2)$ 之后的情况 ($(\tilde{e_1},\tilde{e_2})$ 是 $FX_1,FX_2$ 的 coproduct). 注意到 $$\begin{equation}
+	((Fe_1')p_1+(Fe_2')p_2)\sigma_{FX_1,FX_2}\tilde{e_i}=((Fe_1')p_1+(Fe_2')p_2)( \tilde{e_1}' \tilde{p_1}' + \tilde{e_2}' \tilde{p_2}')\tilde{e_i}=Fe_i' p_i' \tilde{e_i}=Fe_i'.
+\end{equation}$$</p>
+    <p>另一方面有,</p>
+    <p>$$\begin{equation}
+	F\sigma_{X_1,X_2}(Fe_1,Fe_2)\tilde{e_i}=F\sigma_{X_1,X_2}Fe_i=F((e_1' p_1' + e_2' p_2')e_i)=Fe_i'.
+\end{equation}$$</p>
+  </div>
+  <p>根据 coproduct 的定义(定义中的唯一性), 交换图成立.</p>
+</div>
+
+<div class="problem">
+  <p>设 $F:\mathcal{A}→\mathcal{B}$ 是加法范畴之间的函子. 则 $F$ 是加法函子当且仅当对于 $\mathcal{A}$ 中任意两个对象 $X$ 与 $Y$, 有 $Fe_1Fp_1'+Fe_2Fp_2'=\mathrm{Id}_{F(X⊕Y)}$.</p>
+  <div class="proof">
+    <p>(⇒) 这是加法函子的定义. $$\begin{equation}
+	\mathrm{Id}_{F(X_1⊕X_2)}=F\mathrm{Id}_{X⊕Y} = F(e_1 p_1' + e_2 p_2') = Fe_1 Fp_1' + Fe_2 Fp_2'.
+\end{equation}$$</p>
+    <p>(⇐) 只要证明 $F$ 保持有限余积, 即对于任意对象 $X,Y$, 有同构 $$\begin{equation}
+	(Fe_1, Fe_2): FX ⊕ FY \xrightarrow{\sim} F(X⊕Y).
+\end{equation}$$</p>
+    <p>只要证明 $(Fe_1,Fe_2)$ 和 $\binom{Fp_1'}{Fp_2'}$ 互为逆即可. 计算有 $$\begin{equation}
+	\binom{Fp_1'}{Fp_2'}(Fe_1,Fe_2) = \binom{Fp_1'Fe_1 \quad Fp_1'Fe_2}{Fp_2'Fe_1 \quad Fp_2'Fe_2} = \binom{\mathrm{Id}_{FX} \quad 0}{0 \quad \mathrm{Id}_{FY}} = \mathrm{Id}_{FX ⊕ FY}.
+\end{equation}$$ 另一方面, $$\begin{equation}
+	(Fe_1,Fe_2)\binom{Fp_1'}{Fp_2'} = Fe_1 Fp_1' + Fe_2 Fp_2' = \mathrm{Id}_{F(X⊕Y)}.
+\end{equation}$$ 从而得证.</p>
+  </div>
+</div>
+
+<h2 id="23-abel-范畴">2.3 Abel 范畴</h2>
+
+<h3 id="习题-23">习题 2.3</h3>
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴. 若 $f : X \to Y$ 是满态射, 则对于任意态射 $g : Y \to Z$, 典范态射<br /> $$\begin{equation}
+\operatorname{Im} g \longrightarrow \operatorname{Im}(g f)
+\end{equation}$$ 是同构.</p>
+</div>
+
+<div class="proof">
+  <p>考虑 $g$ 和 $gf$ 的满单分解.</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise2/diagram_3cfecaf9caf35.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>由于 $\widetilde{g}fk=0$, 根据 $\widetilde{gf}$ 作为 $k$ 的 cokernel 的泛性质, 存在唯一态射 $c:\mathrm{Im}gf → \mathrm{Im}g$ 使得 $c \widetilde{gf} = \widetilde{g} f$. 由于 $\widetilde{g}f$ 是满的, 从而 $c$ 也是满的. <br /></p>
+  <p>下面证明 $m_gc=m_{gf}$. 计算有 $$\begin{equation}
+	m_g c \widetilde{gf} = m_g \widetilde{g} f = g f = m_{gf} \widetilde{gf}.
+\end{equation}$$ 由于 $\widetilde{gf}$ 是满的, 故 $m_g c = m_{gf}$. 由 $m_g$ 和 $m_{gf}$ 是单的, 可知 $c$ 也是单的. <br /> 综上, $c$ 是同构.</p>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴. 则有典范同构<br /> $$\begin{equation}
+\prod_{1 \le i \le n} \ker f_i \cong \ker\!\left(\prod_{1 \le i \le n} f_i\right)
+\end{equation}$$ 若 $\mathcal{A}$ 有无限积, 则此式对无限积也成立. 特别地, 若 $\mathcal{A}$ 有无限积, 则 $\prod_{i \in I} f_i$ 是单态射当且仅当每个 $f_i\,(i \in I)$ 均是单态射.</p>
+</div>
+
+<div class="problem">
+  <p>直接考虑指标集 $I$, 设 $\mathcal{A}$ 有关于指标集 $I$ 的积.</p>
+  <div class="proof">
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_a16f19b8be894.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>自然有上图右边两个方块. 下面验证 $∏ \ker f_i$ 是 $∏ f_i$ 的核. 设有态射 $g:Z→∏ X_j$ 满足 $∏ f_i ∘ g=0$. 则对于任意 $i$, 有 $f_i ∘ p^X_i ∘ g = p^Y_i ∘ ∏ f_i ∘ g = 0$. 由 $k_i$ 是 $f_i$ 的核, 存在唯一态射 $h_i:Z→\ker f_i$ 使得 $k_i ∘ h_i = p^X_i ∘ g$. 由积的泛性质, 存在唯一态射 $∏ h_i:Z→∏ \ker f_i$ 使得 $p^K_i ∘ ∏ h_i = h_i$. <br /></p>
+    <p>下面证明 $∏ k_i ∘ ∏ h_i = g$. 计算有 $$\begin{equation}
+	p^X_i ∘ ∏ k_i ∘ ∏ h_i = k_i ∘ p^K_i ∘ ∏ h_i = k_i ∘ h_i = p^X_i ∘ g.
+\end{equation}$$ 根据 $∏X_i$ 的泛性质, 可知 $∏ k_i ∘ ∏ h_i = g$. $∏ h_i$ 的唯一性由 $\ker f_i$ 的泛性质以及 $\prod\ker f_i$ 的泛性质保证(即每个分量下去都是唯一的, 回来也是唯一的). <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设有单态射 $g : Y \hookrightarrow X$ 和态射 $h : Z \to Y$. 则有典范单态射<br /> $$\begin{equation}
+\operatorname{Coker} h \longrightarrow \operatorname{Coker}(g h).
+\end{equation}$$</p>
+  <div class="proof">
+    <p>注意到有交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_0b9ab4229edc9.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>其中 $c$ 是典范同构. 对两列正合列使用五引理得 $c'$ 是单态射.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 按道理说应该不能用五引理, Abel 范畴里面的版本还没证明. 我不知道这里有没有循环论证.</p>
+
+<h2 id="24-态射范畴">2.4 态射范畴</h2>
+
+<h3 id="习题-24">习题 2.4</h3>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴. 证明态射范畴 $\mathrm{Mor}(\mathcal{A})$ 也是 Abel 范畴.</p>
+  <div class="proof">
+    <p>已经知道 $\mathrm{Mor}(\mathcal{A})$ 是加法范畴, 下面只需要证明 $\mathrm{Mor}(\mathcal{A})$ 有 kernel 和 cokernel, 且 image 和 coimage 自然同构. <br /></p>
+    <p>给定 $\mathrm{Mor}(\mathcal{A})$ 中的任一态射 $(\alpha,\beta):(X,f,Y)→(X',f',Y')$, 自然有下面的交换图, 其中虚线都是由 kernel 和 cokernel 的泛性质自然诱导出来的.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_7466fa3b95b4a.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>下面先证明 $(k_\alpha, k_\beta)$ 是 $(\alpha, \beta)$ 的 kernel (即逐分量取 kernel 就是 kernel). 首先显然有 $(\alpha, \beta)\circ(k_\alpha, k_\beta) = (0,0)$. 设有态射 $(s,t):(Z,h,W)→(X,f,Y)$ 满足 $(\alpha,\beta)∘(s,t)=(0,0)$. 则有 $\alpha s=0$ 且 $\beta t=0$. 由 $k_\alpha$ 和 $k_\beta$ 是分别是 $\alpha$ 和 $\beta$ 的 kernel, 存在唯一态射 $u:Z→\ker \alpha$ 和 $v:W→\ker \beta$ 使得 $k_\alpha u=s$ 且 $k_\beta v=t$. 由此得到态射 $(u,v):(Z,h,W)→(\ker \alpha, k_\alpha, \ker \beta)$ (这确实是态射范畴中的态射, 因为 $k_{\beta}k_{\alpha,\beta}u=fk_α u=fs=th=k_β vh$, 由于 $k_\beta$ 是单态射, 于是有 $k_{\alpha,\beta}u=vh$). 这样 $(u,v)$ 的唯一性由 $u$ 和 $v$ 的唯一性保证. 这样就证明了 $(\alpha,\beta)$ 的 kernel 是 $(k_\alpha, k_\beta)$. <br /></p>
+    <p>同理可以证明, 逐项求 cokernel 也得到态射范畴中的 cokernel. <br /></p>
+    <p>从而对于 image 和 coimage 也是逐项求即可. 由于在 Abel 范畴中 image 和 coimage 自然同构, 故在态射范畴中也自然同构. <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是有足够多投射对象的 Abel 范畴. 则 $\mathrm{Mor}(\mathcal{A})$ 的任意投射对象 $(U,f,V)$ 均是 $(P, \mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项, 其中 $P$ 和 $Q$ 是 $\mathcal{A}$ 的投射对象. 特别地, $U$ 和 $V$ 均是 $\mathcal{A}$ 的投射对象.</p>
+  <div class="proof">
+    <p>由于 $\mathcal{A}$ 有足够多投射对象, 存在 $\mathcal{A}$ 中的投射对象 $P$ 和满态射 $p:P→U$, 以及投射对象 $Q$ 和满态射 $q:Q→V$. 考虑如下 $\mathrm{Mor}(\mathcal{A})$ 中的态射 $(p, (fp,q))$:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_3b002a4a5dfb5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>注意到 $P⊕Q$ 是投射对象并且 $(fp,q):P⊕Q→V$ 是满态射. 于是上面的态射是满态射, 由于 $(U,f,V)$ 是投射对象, 于是 $(U,f,V)$ 是 $(P,\begin{pmatrix}\mathrm{Id}_P \\ 0\end{pmatrix}, P⊕Q)≅(P,\mathrm{Id}_P,P)⊕(0,0,Q)$ 的直和项.</p>
+  </div>
+</div>
+
+<h2 id="25">2.5</h2>
+
+<h3 id="习题-25">习题 2.5</h3>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.</p>
+  <div class="proof">
+    <p>(⇒) 由于在 $X$ 处正合, 于是 $\mathrm{Ker}x=0$, 于是 $x$ 是单态射. 由于在 $Y$ 处正合, 于是有 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_f43a65e661c3c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>由于 $yx=0$, 存在唯一的态射 $s:X→\mathrm{Ker}y$ 使得 $x=k_ys$, 由于 $x$ 是单态射, 于是 $s$ 是单态射. 同时由于 $\mathrm{Ker}y≅\mathrm{Im}x$, 这个 $s$ 同时也是满单分解给出的态射, 于是 $s$ 也是满态射, 从而 $s$ 是同构. 于是 $x$ 是 $y$ 的 kernel.</p>
+    <p><br /> (⇐) 只需要验证在 $Y$ 处正合, 即验证 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑如下交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_e2e0a3ea52635.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>取 $x$ 的满单分解, 由于 $ym_x=0$ (由 $ym_x\widetilde{x}=0$ 及 $\widetilde{x}$ 单可得), 根据 $x$ 是 $y$ 的 kernel, 存在唯一的态射 $s$ 使得 $xs=m_x$. 于是 $x=m_x\widetilde{x}=xs\widetilde{x}$, 根据 $x$ 单可得 $s\widetilde{x}=\mathrm{Id}_X$. 同理可得 $\mathrm{Id}_{\mathrm{Im}(x)}=\widetilde{x}s$. 从而 $s, \widetilde{x}$ 是同构, 即得 $\mathrm{Im}x≅\mathrm{Ker}y$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $X \xrightarrow{x} Y \overset{x}{\twoheadrightarrow} Z \rightarrow 0$, 它是正合列当且仅当 $y$ 是 $x$ 的余核.</p>
+  <div class="proof">
+    <p>与上一题完全类似.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设下图的两行均是 Abel 范畴中的正合列, 且左边的方块交换：</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise2/diagram_da7a075a2e01f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>则存在唯一的态射 $h$ 使得右边的方块也交换.</p>
+  <div class="proof">
+    <p>由上面的习题知 $y$ 是 $x$ 的 cokernel, 于是由 $y'gx=y'x'f=0$ 得存在唯一的态射 $h$ 使得 $y'g=hy$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设下图的两行均是 Abel 范畴中的正合列, 且右边的方块交换：</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise2/diagram_161ab360cbc3b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>则存在唯一的态射 $f$ 使得左边的方块也交换.</p>
+  <div class="proof">
+    <p>由上面的习题知 $x'$ 是 $y'$ 的 kernel, 于是由 $y'gx=hyx=0$ 得存在唯一的态射 $f$ 使得 $gx=x'f$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.</p>
+  <div class="proof">
+    <p>考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. <br /></p>
+    <p>当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise2/diagram_1b5b3b7e980d8.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>其中 $Q$ 是投射对象, $q:Q→P$ 是满态射, 根据可裂条件可得存在 $t:P→Q$ 使得 $qt=\mathrm{Id}_P$. 由于 $Q$ 是投射对象, 故存在 $s:Q→ M$ 使得 $gs=pq$. 由于 $p=pqt=gst$, 从而 $P$ 是投射对象.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是 Abel 范畴, $I$ 是内射对象. 若任意短正合列 $0 \longrightarrow I \longrightarrow M \longrightarrow N \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多内射对象时, 逆命题也成立.</p>
+  <div class="proof">
+    <p>与上一题证明完全类似.</p>
+  </div>
+</div>
 
   </article>
 
@@ -389,9 +601,128 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#来自讨论班-正合范畴中的扩张">
+      <a href="#22-加法函子">
         <span class="toc-number">2.</span>
-        <span class="toc-title">[来自讨论班] 正合范畴中的扩张</span>
+        <span class="toc-title">2.2 加法函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-22">
+        <span class="toc-number">2.1.</span>
+        <span class="toc-title">习题 2.2</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#23-abel-范畴">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">2.3 Abel 范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-23">
+        <span class="toc-number">3.1.</span>
+        <span class="toc-title">习题 2.3</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#24-态射范畴">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">2.4 态射范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-24">
+        <span class="toc-number">4.1.</span>
+        <span class="toc-title">习题 2.4</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#25">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">2.5</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-25">
+        <span class="toc-number">5.1.</span>
+        <span class="toc-title">习题 2.5</span>
       </a>
     </div>
   
