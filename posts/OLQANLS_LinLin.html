@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>论文精读 - Operator-Level Quantum Acceleration of Non-Logconcave Sampling
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="论文背景">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/OLQANLS_LinLin">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>论文精读 - Operator-Level Quantum Acceleration of Non-Logconcave Sampling</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        December 1, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h1 id="论文背景">论文背景</h1>
+
+<p>问题: 给定一个势函数 $V:\mathbb{R}^d→\mathbb{R}$ 和一个 inverse temperature $\beta>0$, 目标是从 Gibbs 分布
+$$\begin{equation}
+    σ \propto e^{-βV}    
+\end{equation}$$
+采样 (有时称为 classical Gibbs sampling).</p>
+
+<p>看上去这个概率分布是直接给出的, 但是高维的时候直接采样会遇到高维积分等本质难题.</p>
+
+<h1 id="基础知识补充">基础知识补充</h1>
+
+<h2 id="随机过程基础知识发现这些全都用不上">随机过程基础知识(发现这些全都用不上)</h2>
+
+<h3 id="基本定义">基本定义</h3>
+
+<p><strong>可测空间</strong>: $(S, \mathcal{S})$, 其中 $S$ 是集合, $\mathcal{S}$ 是 $S$ 上的 σ-代数.</p>
+
+<p>测度: 测度是一个特殊的可测映射 $μ:(S, \mathcal{S})→([0,+∞], \mathcal{B}([0,+∞]))$, 满足:</p>
+<ol>
+  <li>$μ(∅) = 0$.</li>
+  <li>可数可加性: 对任意可数个两两不交的集合 $A_1, A_2, ... ∈ \mathcal{S}$, 有
+$$\begin{equation}
+    μ\left(\bigcup_{i=1}^{∞} A_i\right) = \sum_{i=1}^{∞} μ(A_i).
+\end{equation}$$</li>
+</ol>
+
+<p><strong>测度空间</strong>: $(S, \mathcal{S}, μ)$, 其中 $μ$ 是定义在 $(S, \mathcal{S})$ 上的测度.</p>
+
+<p><strong>概率空间</strong>: $(\Omega, \mathcal{F}, \mathbb{P})$, 其中 $\mathbb{P}$ 是定义在 $(\Omega, \mathcal{F})$ 上的概率测度, 满足 $\mathbb{P}(\Omega) = 1$.</p>
+
+<p>随机变量: 定义在概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上, 值域为可测空间 $(S, \mathcal{S})$ 的可测映射 $X:(\Omega, \mathcal{F})→(S, \mathcal{S})$.</p>
+
+<p>随机变量(狭义): 定义在概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上, 值域为实数集 $\mathbb{R}$ 的可测映射 $X:(\Omega, \mathcal{F})→(\mathbb{R}, \mathcal{B}(\mathbb{R}))$.</p>
+
+<p>概率分布: 随机变量 $X$ 的概率分布是测度 $μ$ 定义为概率测度的 push-forward:
+$$\begin{equation}
+    μ(A) = \mathbb{P}(X^{-1}(A)), \quad ∀ A ∈ \mathcal{S}.
+\end{equation}$$</p>
+
+<h3 id="markov-process">Markov process</h3>
+
+<p>$$\begin{equation}
+\mathbf{P}\left\{X_{t+1}=y\mid H_{t-1}\cap\{X_t=x\}\right\}=\mathbf{P}\left\{X_{t+1}=y\mid X_t=x\right\}=P(x,y).
+\end{equation}$$</p>
+
+<p>因为“马尔可夫性”是一种关于“信息”的性质，而不是关于“路径值”的性质。
+所以必须用 filtration（信息随时间增长的 σ-域流）才能精确定义。</p>
+
+<h3 id="布朗运动">布朗运动</h3>
+
+<div class="definition">
+  <p><strong>[Brownian motion, Wiener process]</strong> <br /></p>
+  <p>一个随机过程 $\{W_t\}_{t≥0}$ 被称为标准布朗运动, 如果满足以下四条性质:</p>
+  <ol>
+    <li>$W_0 = 0$ 几乎必然成立.</li>
+    <li>对于任意的 $0 ≤ s < t$, 增量 $W_t - W_s$ 服从正态分布 $\mathcal{N}(0, t-s)$.</li>
+    <li>对于任意的 $0 ≤ t_0 < t_1 < ... < t_n$, 增量 $W_{t_1} - W_{t_0}, W_{t_2} - W_{t_1}, ..., W_{t_n} - W_{t_{n-1}}$ 相互独立.</li>
+    <li>对于几乎所有(almost surely)的样本路径, $t \mapsto W_t(ω)$ 是连续函数.</li>
+  </ol>
+</div>
+
+<p>布朗运动 = 从 0 开始、增量是独立的高斯随机变量，并且路径连续的随机过程.</p>
+
+<p>路径虽然连续但是几乎处处不可微.</p>
+
+<p>重要的性质是: $(\mathrm{d}W_t)^2 ≈ \mathrm{d}t$, 其中 $\mathrm{d}W_t$ 的意思是 $W_{t+\mathrm{d}t} - W_t$.</p>
+
+<h3 id="随机微积分-itô-calculus">随机微积分 (Itô calculus)</h3>
+
+<p>最基础的构造:</p>
+
+<p>$$\begin{equation}
+    \int_0^t f(s)\mathrm{d}W_s := \lim_{n→∞} \sum_{i=0}^{n-1} f(t_i)(W_{t_{i+1}} - W_{t_i}),
+\end{equation}$$</p>
+
+<p>这里必须在左端点取值, 这是 Itô 积分的定义. (与前向欧拉相关联)</p>
+
+<h3 id="sde">SDE</h3>
+
+<p>SDE 给的是样本轨迹 / path dynamics.</p>
+
+<div class="definition">
+  <p><strong>(stochastic differential equation, SDE)</strong> <br /> 设 $b:\mathbb{R}^d→\mathbb{R}^d$, $σ:\mathbb{R}^d→\mathbb{R}^{d×m}$. 考虑如下的随机微分方程: $$\begin{equation}
+    \mathrm{d}X_t = b(X_t)\mathrm{d}t + σ(X_t)\mathrm{d}W_t,
+\end{equation}$$ 其中 $W_t$ 是 $m$ 维标准布朗运动. 该方程称为 $d$ 维 Itô SDE.</p>
+</div>
+
+<p>SDE 描述了一个随机过程的演化. 其中 $b$ 称为 drift coefficient, $σ$ 称为 diffusion coefficient.</p>
+
+<h3 id="概率分布">概率分布</h3>
+
+<p>一个随机变量的概率分布是样本集 $\Omega$ 上的概率测度 $\mathbb{P}$ 由随机变量 push-forward 到值域上的测度.</p>
+
+<p>具体形式化:</p>
+
+<p>设 $(\Omega, \mathcal{F}, \mathbb{P})$ 是概率空间, $X:\Omega→ S$ 是值域为可测空间 $(S, \mathcal{S})$ 的随机变量. 则 $X$ 的概率分布是测度 $\mu$ 定义为
+$$\begin{equation}
+    \mu(A) = \mathbb{P}(X^{-1}(A)), \quad ∀ A ∈ \mathcal{S}.
+\end{equation}$$</p>
+
+<h3 id="平稳分布-stationary-distribution">平稳分布 (stationary distribution)</h3>
+<p>对于一个随机过程 $X_t$ (通常是马尔可夫过程), 如果存在一个概率分布 $π$ 满足: 当 $X_0$ 服从 $π$ 时, 对任意的 $t≥0$, $X_t$ 仍然服从 $π$. 则称 $π$ 是该随机过程的平稳分布.</p>
+
+<h3 id="fokker-planck-equation">Fokker-Planck equation</h3>
+
+<p>Fokker–Planck 给的是分布 dynamics / law 的演化.</p>
+
+<p>给定 SDE
+$$\begin{equation}
+\mathrm{d}X_t = b(X_t)\mathrm{d}t + σ(X_t)\mathrm{d}W_t,
+\end{equation}$$
+Fokker-Planck 方程描述了 $X_t$ 的概率密度函数 $ρ(x,t)$ 随时间的演化:
+$$\begin{equation}
+    \partial_t ρ(t,x) = L^* ρ(t,x),
+\end{equation}$$
+其中 $L^*$ 是生成元 $L$ 的伴随算子.</p>
+
+<p>平稳分布是 Fokker-Planck 方程的稳态解, 即满足 $L^* ρ = 0$ 的概率密度函数 $ρ$.</p>
+
+<h3 id="detailed-balance-condition">Detailed balance condition</h3>
+
+<h2 id="langevin-dynamics">Langevin dynamics</h2>
+
+<p>Langevin dynamics 是一种马尔可夫过程, 它的平稳分布是目标分布 $σ$. 它的 SDE 形式为
+$$\begin{equation}
+    dX_t = -∇V(X_t)dt + \sqrt{2/β}dW_t,    
+\end{equation}$$
+其中 $W_t$ 是标准布朗运动. 它的 Fokker-Planck 方程为
+$$\begin{equation}
+    \frac{∂ρ}{∂t} = ∇⋅(ρ∇V) + \frac{1}{β}Δρ.    
+\end{equation}$$</p>
+
+<h1 id="解决总体思路">解决总体思路</h1>
+
+<p>Gibbs 采样的分布其实是 overdamped Langevin equation 
+$$\begin{equation}
+    dX_t = -∇V(X_t)dt + \sqrt{2/β}dW_t
+\end{equation}$$
+的平稳分布.</p>
+
+<p>下面的 Fokker-Planck equation 描述了概率密度函数 $ρ(x,t)$ 的演化:
+$$\begin{equation}
+    \frac{∂ρ}{∂t} = \mathcal{L}(\rho) := ∇⋅(ρ∇V) + \frac{1}{β}Δρ.    
+\end{equation}$$
+里面的 $\mathcal{L}$ 是半群生成元 (semigroup generator). (P.S. 这篇文章里面用的记号和大部分常用教材不一致, 通常这里是 $\mathcal{L}^*$) $\mathcal{L}$ 的标准 $L^2$ 伴随算子是
+$$\begin{equation}
+    \mathcal{L}^† = -∇V⋅∇ + \frac{1}{β}Δ.
+\end{equation}$$</p>
+
+<p>一个重要的性质是 $\mathcal{L}^†$ 关于 $σ$-weighted inner product 自伴.</p>
+
+<p>Gibbs 测度就是这个 dynamics 的平稳分布, 即满足 $\mathcal{L}(\sigma) = 0$ 的概率密度函数 $\sigma$.</p>
+
+<p>论文里面定义了一个 Witten Laplacian 
+$$\begin{equation}
+    \mathcal{H} = -σ^{-1/2}∘ \mathcal{L} ∘ σ^{1/2} = -\frac{1}{β}Δ + \left(\frac{\beta \Vert∇V\Vert^2}{4} - \frac{1}{2} ΔV\right),
+\end{equation}$$
+它关于标准 $L^2$ 内积自伴.</p>
+
+<p>(它是 metastability 研究中的标准工具)</p>
+
+<p>在 detailed balance 情况下(等价于 $\mathcal{L}^†$ 关于 $σ$-inner product 是自伴的), $\mathcal{H}$ 在 $L^2(\mathrm{d}x)$ 上的 spectra 与 $-\mathcal{L}$ (或者 $-\mathcal{L}^†$) 在 $L^2(σ\mathrm{d}x)$ 上的 spectra 一致.</p>
+
+<p>$\mathcal{H}$ 的 kernel 就是 encoded Gibbs state $|\sqrt{σ}⟩$, 满足 $⟨x|\sqrt{σ}⟩=\sqrt{\sigma(x)}$ (这是一个标准 $L^2$-inner product 下的归一化态).</p>
+
+<p>这里说 encoded 是因为并不是直接得到 Gibbs distribution, 而是把它的平方根编码到一个量子态里面, 使得“测量=抽样”.</p>
+
+<p>在理论模型里面, 我们有 $|\sqrt{σ}⟩∈L^2(\mathbb{R}^d, \mathrm{d}x)$, $|x⟩$ 其实不是 $L^2(\mathbb{R}^d, \mathrm{d}x)$ 里面的一个态, 它其实是 Dirac 泛函 (分布) $δ_x$, 并且这里的 $x$ 是一个参量, 表示位置, $⟨x|\sqrt{σ}⟩$ 也不是通常的内积, 结果不是一个值, 而是表示输入不同 $x$ 时的函数值, 从而 $⟨x|\sqrt{σ}⟩$ 表示的是位置表象下的波函数 $\sqrt{σ(x)}$.</p>
+
+<p>按照论文的 assumption, 当 Langevin dynamics 是 ergodic 的时候, $|\sqrt{\sigma}⟩$ 是 $\mathcal{H}$ 的唯一基态, 它有 spectral gap (谱隙, 表示离它的本征值, 也就是 $0$, 最近的本征值和它的差距) $\text{Gap}(\mathcal{H}) = \text{Gap}(\mathcal{L}^†)$.</p>
+
+<p>所以现在, 我们就把采样 Gibbs distribution 的问题, 转化成了制备 $\mathcal{H}$ 的基态 $|\sqrt{σ}⟩$ 的问题.</p>
+
+<p>在 $\mathcal{H}$ 的形式化定义里面, 需要对 $V$ 求二阶导, 而 Langevin dynamics 只需要对 $V$ 求一阶导. 下面的分解顺便解决了这个问题:
+$$\begin{equation}
+    \mathcal{H} = \sum_{j=1}^d L_j^† L_j, \quad L_j = -i\frac{1}{\sqrt{β}} ∂_{x_j} -i \frac{\sqrt{β}}{2} ∂_{x_j}V, ∀ j=1,2,...,d.
+\end{equation}$$</p>
+
+<p>注意到每个 $L_j$ 都零化 $|\sqrt{σ}⟩$, 也就是说 $|\sqrt{\sigma}⟩$ 是每一项 $L_j^† L_j$ 的基态 (但此时未必是唯一的基态), 只要将每一项 $L_j^† L_j$ 的基态空间作交, 就得到 $|\sqrt{σ}⟩$. 把所有的 $L_i$ 放到一起, 定义
+$$\begin{equation}
+    \mathbb{L}:= [L_1^T, L_2^T, ..., L_d^T]^T,
+\end{equation}$$
+这样就有 $\mathcal{H} = \mathbb{L}^†\mathbb{L}$. (构造 $\mathbb{L}$ 只需要一阶导数)</p>
+
+<p>进一步, 寻找 $\mathcal{H}$ 的基态 (encoded Gibbs state) $|\sqrt{\sigma}⟩$ 相当于准备 $\mathbb{L}$ 的唯一的对应于 singular value $0$ 的 right singular vector. $\mathbb{L}$ 的 singular value gap 是 $\text{Gap}(\mathbb{L}) = \sqrt{\text{Gap}(\mathcal{H})} = 1 / \sqrt{C_{\text{PI}}}$. <strong>这是 operator level 的 quantum speedup 的来源</strong>(我觉得这个是一个需要理解的关键点, 似乎这个技术可以扩展). 这里 speedup 是源于 QSVT 算法的特性, 它的时间复杂度与 singular value gap 成反比, 所以如果 singular value gap 变大, 就可以加速制备基态的过程(详情可见 https://doi.org/10.1145/3313276.3316366. 的 3.4).</p>
+
+<p>并且我觉得还有一个需要理解的问题是, 如果进行这样的分解(类似于取平方根, 关键在于让 spectral gap 取根号)就可以加速, 为什么不直接在传统方法(也就是直接解 Fokker-Planck 方程)上进行类似的分解呢? (感觉主要需要去分析两个复杂度和 $C_{\text{PI}}$ 有关的 Classical algorithm: ULA 和 Proximal (https://chewisinho.github.io))</p>
+
+<p>ULA (Unadjusted Langevin Algorithm) 就是直接对 Langevin dynamics 进行 Euler-Maruyama 离散化, 我感觉就是模拟动力学过程, 直观上是梯度下降 + 高斯噪声. 这时 spectral gap 是和动力学过程本身有关的, 没有办法取根号.</p>
+
+<p>Proximal 算法是一个 Gibbs 采样的增广变量技巧, $C_{\text{PI}}$ 出现在迭代的分析里面. (还没有仔细看)</p>
+
+<p>回到算法, 算法的主要步骤是:</p>
+
+<ol>
+  <li>
+    <p>准备一个 warm start 态 $|\phi⟩$ (与目标态有较大重叠的态), 这一点容易做到, 因为我们不可能对于目标分布没有一点点知识.</p>
+  </li>
+  <li>
+    <p>用量子电路对离散化的矩阵 $\mathbb{L}$ 进行 block-encoding, 也就是 把 $\mathbb{L}$ 嵌入到一个更大的酉矩阵里面.</p>
+  </li>
+  <li>
+    <p>使用 QSVT 去 filter out $|\phi⟩$ 中的非零 singular value 部分, 得到目标态 $|g⟩≈|\sqrt{σ}⟩$.</p>
+  </li>
+  <li>
+    <p>在计算基上测量 $|g⟩$, 得到 Gibbs 采样结果.</p>
+  </li>
+</ol>
+
+<p>下面具体要说明一下在量子计算框架(我们的框架是门模型(qubit)框架)下, 第四步是什么意思: 上述步骤得到的量子态 $|g⟩$ 假设是 $n$ 个 qubit 的, 它在计算基上的表示为
+$$\begin{equation}
+    |g⟩ ≈ \sum_{k\in\{0,1\}^n} g_k |k⟩,
+\end{equation}$$ 
+其中 $|k⟩$ 是 computational basis. 一次测量就是对每个 qubit 进行一次标准读出, 每次会得到一个 $n$ 位的二进制字符串 $k$. Born 规则告诉我们, 有分布
+$$\begin{equation}
+    P(\text{输出} k) = |g_k|^2,
+\end{equation}$$
+所以第四步采样的本质是在概率分布 $\{p_k = |g_k|^2\}$ 中抽样一个索引 $k$. 下面要做的就是解码, 在做这一点之前, 首先要进行一些概念上的澄清.</p>
+
+<p>在理论上, $|\sqrt{σ}⟩$ 是一个连续的对象, 在空间 $L^2(\mathbb{R}^d, \mathrm{d}x)$ 里面. 但是在门模型量子电路上, 我们处理的是有限维的 $(\mathbb{C}^{2})^{⊗n}≅ \mathbb{C}^{2^n}$. 为了让连续的函数进入我们的量子电路, 需要以下两个步骤:</p>
+
+<ol>
+  <li>
+    <p>截断 (truncation): 把 $\mathbb{R}^d$ 截断到一个有限的区域 (通常是一个大立方体) $Ω = [-a,a]^d$ 里面.</p>
+  </li>
+  <li>
+    <p>离散化 (discretization): 把 $Ω$ 的每一维都划分成 $N=2^q$ 个等距小格, 于是 $Ω$ 被划分成 $N^d$ 个小立方体单元格, 或者网格点, 这时就得到一个有限维空间 $\mathbb{C}^{N^d}$, 从而可以嵌入到 $n=qd$ 个 qubit 的计算空间里面.</p>
+  </li>
+</ol>
+
+<p>这时, 每个索引 $k$ (一个 $n$ 位的二进制字符串) 可以被看作是 $d$ 维空间里面的一个网格点的坐标, 记为 $x_k∈Ω$. 于是我们就可以把 $|g_k|^2$ 看作是位置 $x_k$ 处的概率密度值. 而在这样的计算基下, $|g⟩$ 近似于截断和离散化之后的
+$$\begin{equation}
+    |\sqrt{σ}⟩ ≈ \sum_{k} \sqrt{σ(x_k)} |x_k⟩,
+\end{equation}$$
+从而 $|g_k|^2≈\sigma(x_k)$. 也就是说对于得到的 $|g⟩$ 进行计算基测量, 得到的索引 $k$ 就是从截断和离散化之后的 Gibbs 分布中采样得到的结果, 从而这时测量就自动实现了 Gibbs 采样.</p>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#随机过程基础知识发现这些全都用不上">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">随机过程基础知识(发现这些全都用不上)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#基本定义">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">基本定义</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#markov-process">
+        <span class="toc-number">1.2.</span>
+        <span class="toc-title">Markov process</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#布朗运动">
+        <span class="toc-number">1.3.</span>
+        <span class="toc-title">布朗运动</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#随机微积分-itô-calculus">
+        <span class="toc-number">1.4.</span>
+        <span class="toc-title">随机微积分 (Itô calculus)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#sde">
+        <span class="toc-number">1.5.</span>
+        <span class="toc-title">SDE</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#概率分布">
+        <span class="toc-number">1.6.</span>
+        <span class="toc-title">概率分布</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#平稳分布-stationary-distribution">
+        <span class="toc-number">1.7.</span>
+        <span class="toc-title">平稳分布 (stationary distribution)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#fokker-planck-equation">
+        <span class="toc-number">1.8.</span>
+        <span class="toc-title">Fokker-Planck equation</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#detailed-balance-condition">
+        <span class="toc-number">1.9.</span>
+        <span class="toc-title">Detailed balance condition</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#langevin-dynamics">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">Langevin dynamics</span>
+      </a>
+    </div>
+  
+    
+    
+    
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Ex12_1" title="NEXT: 《基础代数学》作业 Week12-1">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Ex11_2" title="PREV: 《基础代数学》作业 Week11-2">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

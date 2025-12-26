@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>量子物理中的数学结构
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="1️⃣ Mathematical description of a physical system">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Math_Structure_in_Quantum">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>量子物理中的数学结构</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        December 18, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h1 id="1️⃣-mathematical-description-of-a-physical-system">1️⃣ Mathematical description of a physical system</h1>
+
+<h2 id="11-mathematical-description-of-classical-hamiltonian-systems">1.1 Mathematical description of classical Hamiltonian systems</h2>
+
+<h4 id="kinematics-运动学">Kinematics (运动学)</h4>
+
+<p><strong>状态</strong>: 经典哈密顿系统中的一个状态 (configuration, or state) 被 phase space manifold $\Gamma$ 中的一个点 $\{p,q\}$ 所描述, 其中 $q$ 是广义坐标, $p$ 是共轭动量. 考虑简单情况时假设 $\Gamma$ 是 compact 的, 这对应着系统 confined in a bounded region of space and the energy is bounded.</p>
+
+<p>具体而言, 上面的 $p,q$ 都可以看成一堆实值函数 $p_i,q_i : \Gamma → \mathbb{R}$, 其中 $i=1,2,\ldots,n$, 表示第 $i$ 个自由度的动量和坐标.</p>
+
+<p><strong>可观测量</strong>: 系统的可观测量 (observables) 包括 $p,q$ 以及上面的多项式, 于是可以考虑它们关于一致范数 $\Vert\cdot\Vert_\infty$ 的闭包, 从而也就是所有的实值连续函数 $C_{\mathbb{R}}(\Gamma)$. 这里本质用到了 Stone-Weierstrass 定理(满足区分点性质由相空间的定义可知, 即如果所有的动量和位置都一样那就是同一个点) :</p>
+
+<div class="theorem">
+  <p><strong>(Stone-Weierstrass)</strong> 设 $X$ 是紧 Hausdorff 空间, $A$ 是 $C(X,\mathbb{R})$ 的一个子代数, 且满足:<br /> $\quad\bullet$ $A$ 包含常函数;<br /> $\quad\bullet$ $A$ 能够区分点: 对任意不同的 $x,y∈ X$, 存在 $f∈ A$ 使得 $f(x)≠ f(y)$.<br /> 则 $A$ 在一致范数下在 $C(X,\mathbb{R})$ 中稠密, 即 $$\begin{equation}
+    \overline{A}^{\Vert\cdot\Vert_\infty} = C(X,\mathbb{R}).
+\end{equation}$$</p>
+</div>
+
+<p><strong>对偶关系</strong>: 一方面, 一个状态 $P$ 决定了每个可观测量的值, 这就是直接的. 另一方面, 每个点 $P\in\Gamma$ 唯一地被上面所有可观测量的值决定, 这是因为 Urysohn theorem 保证了连续函数可以区分点(但其实根据 phase space 定义知道连续函数可以区分点, 从而更直接).</p>
+
+<h4 id="dynamics-动力学">Dynamics (动力学)</h4>
+
+<p>不是观测量自己随时间变, 而是相空间中的点在动, 观测量只是被拉回. 即给定初始点 $(q,p)$, 我们有时间演化给出的轨道
+$$\begin{equation}
+    \Phi_t : \Gamma → \Gamma, \quad (q,p) \mapsto (q_t, p_t),
+\end{equation}$$
+这是一个相空间上的流 (Hamiltonian flow). 而可观测量 $f$ 在时间 $t$ 的值
+$$\begin{equation}
+    f_t = f∘ \Phi_t
+\end{equation}$$
+是流对可观测量的拉回 (pull-back).</p>
+
+<p>canonical variables 的演化由 Hamilton 方程给出:
+$$\begin{equation}
+    \dot{q} = \frac{\partial H}{\partial p}, \quad \dot{p} = -\frac{\partial H}{\partial q},
+\end{equation}$$</p>
+
+<h3 id="代数结构">代数结构</h3>
+
+<h4 id="经典可观测量的代数性质">经典可观测量的代数性质</h4>
+
+<p>经典可观测量其实生成了一个交换代数 $\mathcal{A}$ (相空间上的复值连续函数, 其实由实值的完全决定), 我们下面想说明这个东西上面其实有一个<strong>交换 $C^*$-代数结构</strong>:</p>
+
+<ul>
+  <li>
+    <p>有加法、乘法和数乘, 并且有单位元;</p>
+
+    <ul>
+      <li>是交换代数;</li>
+    </ul>
+  </li>
+  <li>
+    <p>是 Banach algebra:</p>
+
+    <ul>
+      <li>
+        <p>有 sup-norm
+  $$\begin{equation}
+        \Vert f ‖ = \sup_{x∈\Gamma}|f(x)|, 
+    \end{equation}$$
+  关于这个 norm 成为 Banach 空间;</p>
+      </li>
+      <li>
+        <p>并且乘法关于 norm topology 是连续的, 即
+  $$\begin{equation}
+        \Vert fg ‖ ≤ \Vert f ‖ \cdot \Vert g ‖, \quad ∀ f,g ∈ \mathcal{A}.
+    \end{equation}$$</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>是 Banach $\star$-algebra:</p>
+
+    <ul>
+      <li>有 involution ($\star$) operation $f^\star(x) = \overline{f}(x)$.</li>
+    </ul>
+  </li>
+  <li>
+    <p>是 $C^*$-algebra:</p>
+
+    <ul>
+      <li>满足 $C^*$-condition
+  $$\begin{equation}
+        \Vert f^\star f ‖ = \Vert f ‖^2, \quad ∀ f ∈ \mathcal{A}.
+    \end{equation}$$</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="状态作为线性泛函">状态作为线性泛函</h4>
+
+<p>上面提到的状态是 phase space $\Gamma$ 中的一个点, 而这其实是一个理想化假设, 在这样的假设下:</p>
+<ul>
+  <li>状态都是纯态, 相当于对应 Dirac 测度</li>
+  <li>测量完全精确, 即零方差</li>
+</ul>
+
+<p>为了去理想化, 引入统计的观点, 每个状态其实给定的是每个可观测量下的多次测量结果 (有点非本体论的感觉), 先说结论: <strong>每个状态是 $\mathcal{A}$ 上的一个 normalized positive linear functional.</strong></p>
+
+<p>具体而言, 对于一个(我们想要定义的真正)状态 $\omega$, 它其实就是给出了每个可观测量的期望值(多次测量的平均值)的一个东西, 即对任意的 $f∈ \mathcal{A}$, 我们会有
+$$\begin{equation}
+    ω(f):=\lim_{n\to\infty}⟨f⟩_n^{(\omega)},
+\end{equation}$$
+(这里的定义并非完全在数学上公理化, 但是在物理上合理, 自然有 $\omega(f^*)=\overline{\omega(f)}$, 因为期望值中被平均的东西的来源就是可观测量在 phase space 上的一些值; 类似地还有如果一个可观测量 $f$ 本身在 phase space 上都是非负值, 那么它的期望值也应该是非负值, 这给出了 positive condition 的直观理解.)</p>
+
+<p>自然可以定义方差(mean square deviation, or variance)
+$$\begin{equation}
+    (\Delta_\omega f)^2 := ω(f - ω(f))^2.
+\end{equation}$$</p>
+
+<p>这样的 $\omega$ 是 $\mathbb{C}$-linear 的, 并且满足 positive condition
+$$\begin{equation}
+    \omega(f^*f)≥ 0, \quad ∀ f ∈ \mathcal{A},
+\end{equation}$$
+这进一步给出了 Cauchy-Schwarz 不等式
+$$\begin{equation}
+    |\omega(f^*g)|^2 ≤ \omega(f^*f) \cdot \omega(g^*g), \quad ∀ f,g ∈ \mathcal{A}.
+\end{equation}$$</p>
+
+<p>根据 positive condition, 有 $\omega(\mathbf{1})>0$ (除非 $\omega$ 是平凡态, 即在所有的可观测量上都给出零值), 于是可以归一化使得 $\omega(\mathbf{1})=1$.</p>
+
+<p>于是, <strong>经典系统的状态就是 $\mathcal{A}$ 上的 normalized positive linear functional</strong>.</p>
+
+<p>当 $\mathcal{A}=C(\Gamma)$ 是由 compact (Hausdorff) phase space $\Gamma$ (其实只需要紧性, Hausdorff 为的是使用 Urysohn theorem) 上的连续函数给出的时候, state 是连续(有界)线形泛函: 首先紧性给出了连续函数的有界性, 从而有 $‖f‖_∞<\infty$. 另外, 我们对于任意的 $f∈\mathcal{A}$ 逐点有
+$$\begin{equation}
+-‖f‖_∞ ≤ f(x) ≤ ‖f‖_∞, \quad ∀ x ∈ \Gamma,
+\end{equation}$$
+于是
+$$\begin{equation}
+-‖f‖_∞\cdot\mathbf{1}≤ f ≤ ‖f‖_∞\cdot\mathbf{1},
+\end{equation}$$
+两边作用 $\omega$, 并且根据线性性和正性, 有
+$$\begin{equation}
+-‖f‖_∞\omega(\mathbf{1}) ≤ \omega(f) ≤ ‖f‖_∞\omega(\mathbf{1}),
+\end{equation}$$
+由于 $\omega$ 已经归一化, 于是就有
+$$\begin{equation}
+|\omega(f)| ≤ ‖f‖_∞.
+\end{equation}$$
+从而
+$$\begin{equation}
+    ‖\omega‖ = \sup_{f≠0} \frac{|\omega(f)|}{‖f‖_∞} ≤ 1 < ∞,
+\end{equation}$$
+这就说明了 $\omega$ 是有界(连续)的线性泛函.</p>
+
+<p><strong>状态集合的具体刻画</strong>: 当我们考虑 compact Hausdorff 的 phase space $\Gamma$ 的时候, 上面的连续函数构成的交换 $C^*$-代数 $\mathcal{A}=C(\Gamma)$ 上的 normalized positive linear functional, 即 state $\omega$, 自动是连续泛函. 这时候, 根据如下 Riesz-Markov representation theorem:</p>
+
+<div class="theorem">
+  <p><strong>(Riesz-Markov representation theorem)</strong> <br /> 设 $\Gamma$ 是紧 Hausdorff 空间, 则有一一对应 $$\begin{equation}
+\{C(\Gamma) \text{上的连续正线性泛函}\} ⟷ \{\text{在} \Gamma \text{上的有限正 Borel 测度}\},
+\end{equation}$$ 加上归一化条件, 则有一一对应 $$\begin{equation}
+\{C(\Gamma) \text{上的归一化的连续正线性泛函}\} ⟷ \{\text{在} \Gamma \text{上的概率测度}\}.
+\end{equation}$$ 具体而言, 给定 $\omega$, 存在唯一的概率测度 $μ_ω$ 使得对任意的 $f∈ C(\Gamma)$ 有 $$\begin{equation}
+    \omega(f) = \int_\Gamma f(x) \, dμ_ω(x).
+\end{equation}$$</p>
+</div>
+
+<p>我们知道, 一个 state $\omega$ 其实就对应着 phase space $\Gamma$ 上的一个概率测度 $μ_ω$. 这其实就是在说, 我们上面给出的(广义)<strong>状态 $\omega$, 就是 phase space 上的一个概率分布</strong>, 这就自然地包含了统计的观点. 并且, 从这个角度看, 之前狭义的状态(phase space 上的一个点)其实就是 Dirac 测度, 这就是概率论中的退化分布, 我们称它为纯态 (pure state), 它们不能写成其他状态的凸线性组合.</p>
+
+<p><strong>Remark(与量子情形的比较).</strong> 这里的概率分布、测量的不确定性是由统计给出的, 是考虑了现实的测量误差之后的结果. 量子力学中就算是纯态也有着内在的不确定性, 是不考虑统计就有的, 量子理论中考虑统计/现实得到的一般的 state 的描述是密度矩阵, 相当于两重不确定性. 另外, 在量子情形下, $C^*$-代数是非交换的, 没有 Riesz-Markov representation theorem, 替代使用的是 GNS construction, 这也是量子情形下 state 的描述.</p>
+
+<p><strong>态的演化</strong>: 一般状态的演化通过可观测量的演化给出
+$$\begin{equation}
+    \omega_t(f) = \omega(f_t) = \omega(f ∘ \Phi_t), \quad ∀ f ∈ \mathcal{A}.
+\end{equation}$$
+这等价于将对应的概率测度 $μ_ω$ 关于 Hamilton 流 $\Phi_t$ 作 push-forward:
+$$\begin{equation}
+    μ_{\omega_t} = (\Phi_t)_\# μ_ω.
+\end{equation}$$
+这是因为 
+$$\begin{equation}
+    \omega_t(f) = \omega(f ∘ \Phi_t) = \int_\Gamma f( \Phi_t(x)) \, dμ_ω(x) = \int_\Gamma f(y) \, d((\Phi_t)_\# μ_ω)(y).
+\end{equation}$$</p>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#11-mathematical-description-of-classical-hamiltonian-systems">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">1.1 Mathematical description of classical Hamiltonian systems</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#kinematics-运动学">
+        <span class="toc-number">1.0.1.</span>
+        <span class="toc-title">Kinematics (运动学)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#dynamics-动力学">
+        <span class="toc-number">1.0.2.</span>
+        <span class="toc-title">Dynamics (动力学)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#代数结构">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">代数结构</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#经典可观测量的代数性质">
+        <span class="toc-number">1.1.1.</span>
+        <span class="toc-title">经典可观测量的代数性质</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#状态作为线性泛函">
+        <span class="toc-number">1.1.2.</span>
+        <span class="toc-title">状态作为线性泛函</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Ex15_1" title="NEXT: 《基础代数学》作业 Week15-1">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Ex14_2" title="PREV: 《基础代数学》作业 Week14-2">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

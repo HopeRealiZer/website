@@ -9,12 +9,12 @@
 
 
 
-  <title>凸优化笔记
+  <title>《基础代数学》作业 Week12-1
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="既凸又凹就是线性. 故等式约束一定是线性约束.">
+<meta name="description" content="  设 $f : X \to Y$ 是链映射. 则有复形的正合列">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Convex_Opt">
+<link rel="canonical" href="/website/posts/Ex12_1">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,138 +75,117 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>凸优化笔记</h1>
+      <h1>《基础代数学》作业 Week12-1</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        November 18, 2025
+        December 1, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <p>既凸又凹就是线性. 故等式约束一定是线性约束.</p>
-
-<div class="theorem">
-  <p>凸优化的任何局部最优为全局最优.</p>
+    <div class="problem">
+  <p>设 $f : X \to Y$ 是链映射. 则有复形的正合列</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \ker f \longrightarrow X \longrightarrow \operatorname{Im} f \longrightarrow 0
+\end{equation}$$</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \operatorname{Im} f \longrightarrow Y \longrightarrow \operatorname{Coker} f \longrightarrow 0
+\end{equation}$$</p>
+  <p>和</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \ker f \longrightarrow X \longrightarrow Y \longrightarrow \operatorname{Coker} f \longrightarrow 0
+\end{equation}$$</p>
+  <div class="proof">
+    <p>上述都是显然的, 因为我们已经证明了在复形范畴中取 kernel 和 cokernel 是逐分支进行的.</p>
+  </div>
 </div>
 
-<div class="theorem">
-  <p>设 $f_0$ 可微. 则 $x∈ D$ 最优当且仅当 $∀ y∈D, ∇f_0(x)⋅(y-x)≥0$.</p>
+<div class="problem">
+  <p>设 $M$ 是 $R$-模. 对每个 $n \in \mathbb{Z}$, 定义 $C^n = M$. 求复形</p>
+  <p>$$\begin{equation}
+C^\bullet := (C^n, 0)
+\end{equation}$$</p>
+  <p>的各次上同调群 $H^n(C^\bullet)$.</p>
+  <div class="proof">
+    <p>对于任意的 $n$, 由于微分全为零, 故有 $H^n(C^\bullet) = \ker 0 / \mathrm{Im} 0 \cong M$.</p>
+  </div>
 </div>
 
-<div class="corollary">
-  <p>无约束凸优化问题里面 $∇f_0(x)=0$ 当且仅当 $x$ 是最优解.</p>
+<div class="problem">
+  <p>给定 $R$-模短正合列</p>
+  <p>$$\begin{equation}
+0 \longrightarrow M' \xrightarrow{\alpha} M \xrightarrow{\beta} M'' \longrightarrow 0
+\end{equation}$$</p>
+  <p>将其视为 $M$ 是零次分支的复形, 求这个复形的各次上同调群.</p>
+  <div class="proof">
+    <p>由于是正合列, 于是所有上同调群都是 $0$.</p>
+  </div>
 </div>
 
-<p>对于带有等式约束 $Ax=b$ 的凸优化问题, 最优解 $x$ 满足 $∇f_0(x)⟂\mathrm{Ker}A$. 即存在 $\nu$ 使得 $∇f_0(x)+A^T ν=0$. 这是 KKT 条件的特例.</p>
-
-<h1 id="带约束优化问题基础-kkt-条件">带约束优化问题基础: KKT 条件</h1>
-
-<p>问题形式:</p>
-
-<p>$$\begin{equation}
-\begin{aligned}
-    \min\quad &f(x)\\
-    \text{s.t.} &\begin{cases}
-        c_i(x) ≥ 0, \quad i∈\mathcal{I},\\ 
-        c_i(x) = 0,  \quad i∈\mathcal{E}.
-    \end{cases}
-\end{aligned}
+<div class="problem">
+  <p>设 $\delta$ 是模 $M$ 的一个微分, 即 $\delta$ 是 $M$ 的自同态且满足 $\delta^2 = 0$. 求复形</p>
+  <p>$$\begin{equation}
+0 \longrightarrow M \xrightarrow{\delta} M \longrightarrow 0
 \end{equation}$$</p>
-
-<div class="definition">
-  <p><strong>(tangent vector, tangent cone)</strong> <br /></p>
+  <p>的各次上同调群.</p>
+  <div class="proof">
+    <p>不妨记第一个 $0$ 是第 0 次分支. 于是有 $H^1 \cong \mathrm{Ker} \delta$ 且 $H^2 \cong \mathrm{Coker} \delta$. 其他次上同调群均为零.</p>
+  </div>
 </div>
 
-<p>tangent vector 就是直接描述的从点 $x$ 出发的可行域中的曲线可能的初始速度方向, 用于刻画局部可行的扰动方向. 即对于 local minimizer, 显然有
-$$\begin{equation}
-∇ f(x_*)⋅ d≥ 0, ∀ d∈ T_D(x_*). 
+<div class="problem">
+  <p>设 $u : (C^\bullet, d) \longrightarrow (C'^\bullet, d')$ 是链映射. 定义 $u$ 的映射锥 $\operatorname{Cone}(u)$ 如下复形:</p>
+  <p>其第 $n$ 次分支为</p>
+  <p>$$\begin{equation}
+\operatorname{Cone}(u)^n = C^{n+1} \oplus C'^n, \quad \forall n \in \mathbb{Z}
 \end{equation}$$</p>
-
-<p>只不过这个定义直接从可行扰动出发, 直观直接, 但是难以处理, 所以我们需要下面的定义. 它给出了在 LICQ 情况下的更好的刻画.</p>
-
-<div class="definition">
-  <p><strong>(linearized feasible directions)</strong> <br /> $$\begin{equation}
-\mathcal{F}(x) = \{ d ∣ ∇c_i(x)⋅d=0, ∀ i∈\mathcal{E}; ∇c_i(x)⋅d≥0, ∀ \mathcal{I}∩\mathcal{A}(x) \}.
+  <p>第 $n$ 次微分为</p>
+  <p>$$\begin{equation}
+\begin{pmatrix}
+- d^{n+1} & 0 \\
+u^{n+1} & d'^n
+\end{pmatrix} : C^{n+1} \oplus C'^n \longrightarrow C^{n+2} \oplus C'^{n+1}
 \end{equation}$$</p>
+  <p>验证 $\operatorname{Cone}(u)$ 确是复形.</p>
+  <div class="proof">
+    <p>只要验证微分的平方为零即可. 对任意的 $(x,y) \in C^{n+1} \oplus C'^n$, 有 $$\begin{equation}
+\begin{pmatrix}
+- d^{n+2} & 0 \\
+u^{n+2} & d'^{n+1}
+\end{pmatrix}
+\begin{pmatrix}
+- d^{n+1} & 0 \\
+u^{n+1} & d'^n
+\end{pmatrix}
+=
+\begin{pmatrix}
+d^{n+2} d^{n+1} & 0 \\
+- u^{n+2} d^{n+1} + d'^{n+1} u^{n+1} & d'^{n+1} d'^n
+\end{pmatrix}=0.
+\end{equation}$$</p>
+    <p>其中左上和右下是 0 因为 $d$ 和 $d'$ 是复形的微分, 右上是 0 是显然的, 左下是 0 是因为 $u$ 是链映射.</p>
+  </div>
 </div>
 
-<p>一般情况下只有 $T_D(x)⊆\mathcal{F}(x)$. 只有在满足 LICQ 的时候才成立等式.</p>
-
-<p>($T_D(x)$ 是锥但是未必是凸锥; $\mathcal{F}(x)$ 一定是闭凸锥.)</p>
-
-<p><strong>Remark.</strong> 我感觉这里的 LICQ 有非常浓的几何意味, 会和流形上局部切空间的分析相关.</p>
-
-<p>另外值得注意的是, 如果记矩阵 $C=[∇c_i]_{i∈\mathcal{E}}, B=[∇c_i]_{i∈\mathcal{I}∩\mathcal{A}(x)}$ (并排放置列向量), 则有
-$$\begin{equation}
-\mathcal{F}(x) = \{d∣ B^Td≥0, C^Td=0\} = K^*. 
+<div class="problem">
+  <p>设 $(C,d)$ 是 $k$-模上的有界复形, 其中 $k$ 是域. 令</p>
+  <p>$$\begin{equation}
+r_i = \dim_k C^i, \qquad \rho_i = \dim_k H^i(C)
 \end{equation}$$</p>
-
-<p>所以在 LICQ 成立的情况下, 对于任何的 $d∈\mathcal{F}(x_*)$, 一定要有 $∇f(x_*)⋅d≥ 0$, 换一个说法就是
-$$\begin{equation}
-    ∇f(x_*)∈ (\mathcal{F}(x_*))^* = (K^*)^*.
-\end{equation}$$
-这里使用了后面会介绍的对偶说法.</p>
-
-<hr />
-
-<p>拉格朗日函数定义为</p>
-
-<p>$$\begin{equation}
-\mathcal{L}(x,\lambda) = f(x) - \sum_{i∈ \mathcal{E}∪\mathcal{I}} \lambda_i c_i(x).
+  <p>证明</p>
+  <p>$$\begin{equation}
+\sum (-1)^i r_i = \sum (-1)^i \rho_i
 \end{equation}$$</p>
-
-<p>KKT 条件就是在 LICQ 情况下取局部最小值的一阶必要条件.</p>
-
-<div class="theorem">
-  <p>假设所有的函数都可微. 令 $x_*$ 是局部最小值点 (local minimizer), 并且假设 LICQ 条件成立. 则存在 $λ_i$ 使得在 $(x,λ)$ 上有下面的 KKT 条件成立 $$\begin{equation}
-\begin{aligned}
-    & \nabla_x \mathcal{L} = \nabla f(x_*) - \sum_i \lambda_i∇ c_i(x_*) = 0, \\ 
-    & c_i(x_*) = 0, ∀ i∈ \mathcal{E},\quad c_i(x_*)≥ 0, ∀ i∈ \mathcal{I}, \\ 
-    & \lambda_i ≥ 0, ∀ i∈ \mathcal{I}, \\ 
-    & \lambda_i c_i(x_*) = 0, ∀ i∈ \mathcal{I}. 
-\end{aligned}
+  <div class="proof">
+    <p>由于 $\mathrm{Im}d^i≅C^i / \mathrm{Ker}d^i$, 以及 $H^i=\mathrm{Ker}d^i / \mathrm{Im}d^{i-1}$, 我们有 $$\begin{equation}
+r_i = \dim_k \mathrm{Im} d^i + \dim_k \mathrm{Ker} d^i = \dim_k \mathrm{Im} d^i + \dim_k H^i + \dim_k \mathrm{Im} d^{i-1},
+\end{equation}$$ 从而 (这个求和依赖于有界性, 都是有限求和) $$\begin{equation}
+\sum (-1)^i r_i = \sum (-1)^i \rho_i + \sum (-1)^i \dim_k \mathrm{Im} d^i + \sum (-1)^i \dim_k \mathrm{Im} d^{i-1} = \sum (-1)^i \rho_i.
 \end{equation}$$</p>
+  </div>
 </div>
-
-<p>严谨证明这件事情需要用到 Farkas 引理 (虽然 KKT 条件在直观上非常容易理解).</p>
-
-<div class="lemma">
-  <p><strong>(Farkas 引理)</strong> <br /> 令 $B$ 和 $C$ 分别是 $n×m$ 和 $n×p$ 的实矩阵. 令 $p\in\mathbb{R}^n$. 这下面两个命题有且仅有一个成立: <br /></p>
-  <p>(1) $$\begin{equation}
-    g∈ \{By+Cω∣ y≥ 0\}
-    \end{equation}$$</p>
-  <p>(2) 存在 $d∈ \mathbb{R}^n$ 使得 $$\begin{equation}
-    g⋅d<0, B^Td≥ 0, C^Td=0.
-\end{equation}$$</p>
-</div>
-
-<p><strong>Remark.</strong> Farkas 引理本身就很有对偶的意味. 我们定义一个闭凸锥
-$$\begin{equation}
-    K = \{By+Cω∣ y≥ 0\},
-\end{equation}$$
-考虑它的对偶锥
-$$\begin{equation}
-    K^* = \{d ∣ d⋅g≥0,∀g∈ K\}.
-\end{equation}$$
-我们将可以证明
-$$\begin{equation}
-    K^* = \{d∣ B^Td≥ 0, C^Td=0\}. 
-\end{equation}$$</p>
-
-<p>所以上面的 Farkas 引理只不过就是两个情况的罗列: 一个向量在锥 $K$ 里面或者不在 $K$ 里面, 只是在表述的时候表述为在 $K$ 里面或者不在 $(K^*)^*$ 里面.</p>
-
-<div class="proof">
-  <p>(KKT 条件的证明) <br /> 有了 Farkas 引理, 根据取极小值的必要条件 $ ∇f(x_*)∈ (\mathcal{F}(x_*))^*$ 知道没法成立第二个条件, 所以成立第一个条件, 也就是说 $∇ f(x_*)∈ K$. 换句话说就是 $$\begin{equation}
-∇ f(x_*) = \sum_{i\in\mathcal{A}}\lambda_i∇ c_i(x_*),
-\end{equation}$$ 其中 $\lambda_i≥ 0, ∀ i\in\mathcal{A}∩\mathcal{I}$. 只要定义 $\lambda_i=0, ∀ i∈ \mathcal{I}\backslash \mathcal{A}$ 即可.</p>
-</div>
-
-<hr />
-
-<p>对于凸优化而言, KKT 条件(一阶必要条件)也是充分的.</p>
-
 
   </article>
 
@@ -296,15 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 </nav>
   </div>
 
@@ -354,13 +324,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex10_2" title="NEXT: 《基础代数学》作业 Week10-2">&lt;&lt;</a>
+      <a class="next" href="/website/posts/BA_Exercise3" title="NEXT: 《基础代数学》第三章习题">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex10_1" title="PREV: 《基础代数学》作业 Week10-1">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/OLQANLS_LinLin" title="PREV: 论文精读 - Operator-Level Quantum Acceleration of Non-Logconcave Sampling">&gt;&gt;</a>
     
   </div>
 </main>

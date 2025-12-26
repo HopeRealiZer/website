@@ -9,12 +9,12 @@
 
 
 
-  <title>《基础代数学》作业 Week11-1
+  <title>《基础代数学》作业 Week15-1
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="  设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.">
+<meta name="description" content="  设 $s,t$ 均为正整数. 计算 $\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t)$.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Ex11_1">
+<link rel="canonical" href="/website/posts/Ex15_1">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,77 +75,95 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>《基础代数学》作业 Week11-1</h1>
+      <h1>《基础代数学》作业 Week15-1</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        November 24, 2025
+        December 22, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
     <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.</p>
+  <p>设 $s,t$ 均为正整数. 计算 $\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t)$.</p>
   <div class="proof">
-    <p>(⇒) 由于在 $X$ 处正合, 于是 $\mathrm{Ker}x=0$, 于是 $x$ 是单态射. 由于在 $Y$ 处正合, 于是有 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑交换图:</p>
-    <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_f43a65e661c3c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-      </div> <br /> </center>
-    <p>由于 $yx=0$, 存在唯一的态射 $s:X→\mathrm{Ker}y$ 使得 $x=k_ys$, 由于 $x$ 是单态射, 于是 $s$ 是单态射. 同时由于 $\mathrm{Ker}y≅\mathrm{Im}x$, 这个 $s$ 同时也是满单分解给出的态射, 于是 $s$ 也是满态射, 从而 $s$ 是同构. 于是 $x$ 是 $y$ 的 kernel.</p>
-    <p><br /> (⇐) 只需要验证在 $Y$ 处正合, 即验证 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑如下交换图:</p>
-    <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_e2e0a3ea52635.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-      </div> <br /> </center>
-    <p>取 $x$ 的满单分解, 由于 $ym_x=0$ (由 $ym_x\widetilde{x}=0$ 及 $\widetilde{x}$ 单可得), 根据 $x$ 是 $y$ 的 kernel, 存在唯一的态射 $s$ 使得 $xs=m_x$. 于是 $x=m_x\widetilde{x}=xs\widetilde{x}$, 根据 $x$ 单可得 $s\widetilde{x}=\mathrm{Id}_X$. 同理可得 $\mathrm{Id}_{\mathrm{Im}(x)}=\widetilde{x}s$. 从而 $s, \widetilde{x}$ 是同构, 即得 $\mathrm{Im}x≅\mathrm{Ker}y$.</p>
+    <p>考虑 $\mathbb{Z}_t$ 的投射分解 $$\begin{equation}
+	0 \rightarrow \mathbb{Z} \xrightarrow{\times t} \mathbb{Z} \xrightarrow{\pi} \mathbb{Z}_t \rightarrow 0,
+\end{equation}$$ 将 $\mathbb{Z}_s \otimes_{\mathbb{Z}} -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} \xrightarrow{\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)} \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} \rightarrow 0,
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\operatorname{Tor}_0^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) \cong \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} / \mathrm{Im}(\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)) \cong \mathbb{Z}_{s}⊗\mathbb{Z}_t ,
+\end{equation}$$ $$\begin{equation}
+	\operatorname{Tor}_1^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) \cong \mathrm{Ker}(\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)) \cong \{[x]_s \in \mathbb{Z}_s \mid tx \equiv 0 \mod s\} \cong \mathbb{Z}_{\gcd(s,t)},
+\end{equation}$$ $$\begin{equation}
+	\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) = 0, \quad \forall n \ge 2.
+\end{equation}$$</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $X \xrightarrow{x} Y \overset{x}{\twoheadrightarrow} Z \rightarrow 0$, 它是正合列当且仅当 $y$ 是 $x$ 的余核.</p>
+  <p>对任意 Abel 群 $M$, 计算 $\operatorname{Tor}_1^{\mathbb{Z}}(M,\mathbb{Z}_t)$, 并说明其是扭群.</p>
   <div class="proof">
-    <p>与上一题完全类似.</p>
+    <p>考虑 $\mathbb{Z}_t$ 的投射分解 $$\begin{equation}
+	0 \rightarrow \mathbb{Z} \xrightarrow{\times t} \mathbb{Z} \xrightarrow{\pi} \mathbb{Z}_t \rightarrow 0,
+\end{equation}$$ 将 $M \otimes_{\mathbb{Z}} -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow M \otimes_{\mathbb{Z}} \mathbb{Z} \xrightarrow{\mathrm{Id}_{M} \otimes (\times t)} M \otimes_{\mathbb{Z}} \mathbb{Z} \rightarrow 0,
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\operatorname{Tor}_1^{\mathbb{Z}}(M,\mathbb{Z}_t) \cong \mathrm{Ker}(\mathrm{Id}_{M} \otimes (\times t)) \cong \{m \in M \mid tm = 0\}.
+\end{equation}$$</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设下图的两行均是 Abel 范畴中的正合列, 且左边的方块交换：</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/Ex11_1/diagram_da7a075a2e01f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>则存在唯一的态射 $h$ 使得右边的方块也交换.</p>
+  <p>设 $M$ 是右 $R$-模. 则下述等价: <br /></p>
+  <p>(i) $M$ 是平坦模. <br /></p>
+  <p>(ii) $\operatorname{Tor}_n^R(M,-)=0$, 对所有 $n \ge 1$ 成立. <br /></p>
+  <p>(iii) $\operatorname{Tor}_1^R(M,-)=0$.</p>
   <div class="proof">
-    <p>由上面的习题知 $y$ 是 $x$ 的 cokernel, 于是由 $y'gx=y'x'f=0$ 得存在唯一的态射 $h$ 使得 $y'g=hy$.</p>
+    <p>(i) $\Rightarrow$ (ii): 由平坦模的定义可知, $M \otimes_R -$ 是正合函子, 故 $\mathrm{Tor}_n$ 函子导出的长正合列其实是短正合列, 即 $\operatorname{Tor}_n^R(M,-)=0$, 对所有 $n \ge 1$ 成立. <br /></p>
+    <p>(ii) $\Rightarrow$ (iii): 显然. <br /></p>
+    <p>(iii) $\Rightarrow$ (i): 设 $0 \rightarrow A \xrightarrow{f} B \xrightarrow{g} C \rightarrow 0$ 是任意短正合列. 由 $\operatorname{Tor}_1^R(M,-)=0$ 可知, 我们有正合列: $$\begin{equation}
+	0=\operatorname{Tor}_1^R(M,C)→ M \otimes_R A \xrightarrow{\mathrm{Id}_M \otimes f} M \otimes_R B \xrightarrow{\mathrm{Id}_M \otimes g} M \otimes_R C \rightarrow 0,
+\end{equation}$$ 从而 $M \otimes_R -$ 是正合函子, 故 $M$ 是平坦模.</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设下图的两行均是 Abel 范畴中的正合列, 且右边的方块交换：</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/Ex11_1/diagram_161ab360cbc3b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>则存在唯一的态射 $f$ 使得左边的方块也交换.</p>
+  <p>设 $R$ 是环. 则对于任意一簇右 $R$-模 $M_i$, $i \in I$, 和任意左 $R$-模 $N$, 有同构 $\operatorname{Tor}_n^R(\bigoplus_{i \in I} M_i,N) \cong \bigoplus_{i \in I} \operatorname{Tor}_n^R(M_i,N)$, 对所有 $n \ge 0$ 成立.</p>
   <div class="proof">
-    <p>由上面的习题知 $x'$ 是 $y'$ 的 kernel, 于是由 $y'gx=hyx=0$ 得存在唯一的态射 $f$ 使得 $gx=x'f$.</p>
+    <p>对于每一个 $M_i$, 取其投射分解 $\cdots → P_i^1 → P_i^0 → M_i → 0$. 下面我们来构造 $\bigoplus_{i∈I} M_i$ 的投射分解. 由于 $\mathcal{A}$ 有无限余积且有足够多投射对象, 故 $\bigoplus_{i∈I} P_i^0$ 存在且为投射对象. 于是我们有系列满态射 $\bigoplus_{i∈I} P_i^0 → P_j^0 → M_j$, 从而由余积的泛性质, 可以得到满态射 $\bigoplus_{i∈I} P_i^0 → \bigoplus_{i∈I} M_i$. 记其为 $\pi$, 并且(态射余积的定义) $π = \bigoplus_{i∈ I}\pi_i$, 容易发现它的 kernel 为 $\bigoplus_{i∈I} \operatorname{Ker} \pi_i$. 反复应用此过程, 我们就得到了 $\bigoplus_{i∈I} M_i$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} P_i^1 \rightarrow \bigoplus_{i \in I} P_i^0 \xrightarrow{\pi} \bigoplus_{i \in I} M_i \rightarrow 0.
+\end{equation}$$ 将 $- \otimes_R N$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	\cdots → \left(\bigoplus_{i \in I} P_i^n\right) \otimes_R N → \cdots → \left(\bigoplus_{i \in I} P_i^1\right) \otimes_R N → \left(\bigoplus_{i \in I} P_i^0\right) \otimes_R N → 0.
+\end{equation}$$ 由于 $- \otimes_R N$ 保持直和, 故上式同构于 $$\begin{equation}
+	\cdots → \bigoplus_{i \in I} (P_i^n \otimes_R N) → \cdots → \bigoplus_{i \in I} (P_i^1 \otimes_R N) → \bigoplus_{i \in I} (P_i^0 \otimes_R N) → 0.	
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Tor}^R_n(\bigoplus_{i \in I} M_i,N) \cong \mathrm{H}_n(\bigoplus_{i \in I} (P_i^\bullet \otimes_R N)).
+\end{equation}$$ 由于链复形的 direct sum 是逐度取直和, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}_n(\bigoplus_{i \in I} (P_i^\bullet \otimes_R N)) \cong \bigoplus_{i \in I} \mathrm{H}_n(P_i^\bullet \otimes_R N) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M_i,N).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Tor}^R_n(\bigoplus_{i \in I} M_i,N) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M_i,N).
+\end{equation}$$</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.</p>
+  <p>设 $R$ 是环. 则对于任意右 $R$-模 $M$ 和任意一簇左 $R$-模 $N_i$, $i \in I$, 有同构 $\operatorname{Tor}_n^R(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \operatorname{Tor}_n^R(M,N_i)$, 对所有 $n \ge 0$ 成立.</p>
   <div class="proof">
-    <p>考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. <br /></p>
-    <p>当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图</p>
-    <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_1b5b3b7e980d8.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-      </div> <br /> </center>
-    <p>其中 $Q$ 是投射对象, $q:Q→P$ 是满态射, 根据可裂条件可得存在 $t:P→Q$ 使得 $qt=\mathrm{Id}_P$. 由于 $Q$ 是投射对象, 故存在 $s:Q→ M$ 使得 $gs=pq$. 由于 $p=pqt=gst$, 从而 $P$ 是投射对象.</p>
-  </div>
-</div>
-
-<div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴, $I$ 是内射对象. 若任意短正合列 $0 \longrightarrow I \longrightarrow M \longrightarrow N \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多内射对象时, 逆命题也成立.</p>
-  <div class="proof">
-    <p>与上一题证明完全类似.</p>
+    <p>对于每一个 $N_i$, 取其投射分解 $\cdots → P_i^1 → P_i^0 → N_i → 0$. 下面我们来构造 $\bigoplus_{i∈I} N_i$ 的投射分解. 由于 $\mathcal{A}$ 有无限余积且有足够多投射对象, 故 $\bigoplus_{i∈I} P_i^0$ 存在且为投射对象. 于是我们有系列满态射 $\bigoplus_{i∈I} P_i^0 → P_j^0 → N_j$, 从而由余积的泛性质, 可以得到满态射 $\bigoplus_{i∈I} P_i^0 → \bigoplus_{i∈I} N_i$. 记其为 $\pi$, 并且(态射余积的定义) $π = \bigoplus_{i∈ I}\pi_i$, 容易发现它的 kernel 为 $\bigoplus_{i∈I} \operatorname{Ker} \pi_i$. 反复应用此过程, 我们就得到了 $\bigoplus_{i∈I} N_i$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} P_i^1 \rightarrow \bigoplus_{i \in I} P_i^0 \xrightarrow{\pi} \bigoplus_{i \in I} N_i \rightarrow 0.
+\end{equation}$$ 将 $M \otimes_R -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	\cdots \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^1 \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^0 \rightarrow 0.
+\end{equation}$$ 由于 $M \otimes_R -$ 保持直和, 故上式同构于 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^1 \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^0 \rightarrow 0.	
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Tor}^R_n(M,\bigoplus_{i \in I} N_i) \cong \mathrm{H}_n(\bigoplus_{i \in I} M \otimes_R P_i^\bullet).
+\end{equation}$$ 由于链复形的 direct sum 是逐度取直和, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}_n(\bigoplus_{i \in I} M \otimes_R P_i^\bullet) \cong \bigoplus_{i \in I} \mathrm{H}_n(M \otimes_R P_i^\bullet) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M,N_i).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Tor}^R_n(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M,N_i).
+\end{equation}$$</p>
   </div>
 </div>
 
@@ -286,13 +304,10 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex11_2" title="NEXT: 《基础代数学》作业 Week11-2">&lt;&lt;</a>
-      <span>&middot;</span>
-    
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex10_2" title="PREV: 《基础代数学》作业 Week10-2">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Math_Structure_in_Quantum" title="PREV: 量子物理中的数学结构">&gt;&gt;</a>
     
   </div>
 </main>

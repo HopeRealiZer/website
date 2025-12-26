@@ -436,6 +436,41 @@ $$ 验证它是 $σ$ 的逆即可.</p>
   </div>
 </div>
 
+<h2 id="26-正合函子">2.6 正合函子</h2>
+
+<h3 id="习题-26">习题 2.6</h3>
+
+<div class="problem">
+  <p>设 $\mathcal{A},\mathcal{B}$ 是 Abel 范畴, $F:\mathcal{A}→\mathcal{B}$ 是正合、满忠实函子. 令 $\operatorname{Im}F=\{Y\in\mathcal{B}∣ FX,X∈\mathcal{A}\}$. 则 $\operatorname{Im}F$ 是 Abel 范畴.</p>
+  <div class="proof">
+    <p>由于 $F$ 是加法函子, 从而 $F$ 将零对象映为零对象并且保持有限余积, 从而 $\operatorname{Im} f$ 有零对象和有限余积, 并且态射集的加法结构自然从 $\mathcal{B}$ 继承, 于是 $\operatorname{Im}F$ 是加法范畴. <br /></p>
+    <p>由于 $F$ 是正合函子, 故 $F$ 保持正合列, 从而保持 kernel 和 cokernel, 于是 $\operatorname{Im}F$ 有 kernel 和 cokernel. <br /></p>
+    <p>并且由于 $F$ 是满忠实函子, 根据 $\mathcal{A}$ 是 Abel 范畴, 可知 $\operatorname{Im}F$ 中的任意态射的 image 和 coimage 自然同构. <br /></p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 题目中虽然没有直接说 $\operatorname{Im}F$ 是满子范畴, 但是这由 $F$ 是满忠实函子可知.</p>
+
+<p><strong>Remark.</strong> 这里值得注意的一件事情是, 与 Abel 范畴等价的范畴未必是 Abel 范畴. 所以虽然注意到 $F:\mathcal{A}→\operatorname{Im}F$ 是满忠实稠密函子, 从而是范畴等价, 也没法直接说明 $\operatorname{Im}F$ 是 Abel 范畴.</p>
+
+<div class="problem">
+  <p>设 $F:\mathcal{A}→\mathcal{B}$ 是 Abel 范畴之间正合、满忠实的函子. 则 $F$ 反射正合列. 即, 若 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 是 $\mathcal{A}$ 中的态射序列且 $FX\xrightarrow{Ff}FY\xrightarrow{Fg}FZ$ 是 $\mathcal{B}$ 中的正合列, 则 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 也是 $\mathcal{A}$ 中的正合列.</p>
+  <div class="proof">
+    <p>注意到 $F:\mathcal{A}\to\operatorname{Im}F$ 满忠实稠密, 从而是范畴等价. 设拟逆为 $G$. 由于 $F$ 还是正合函子, 从而 $FX\xrightarrow{Ff}FY\xrightarrow{Fg}FZ$ 在 $\operatorname{Im}F$ 中是正合列当且仅当在 $\mathcal{B}$ 中是正合列. 作用 $G$ 即可得 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 在 $\mathcal{A}$ 中是正合列.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>Abel 范畴 $\mathcal{A}$ 中的态射序列 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是可裂短正合列当且仅当对于任一对象 $W$, 下述 Abel 群的同态序列 $$\begin{equation}
+0 \longrightarrow \operatorname{Hom}_{\mathcal{A}}(Z, W) \overset{\mathrm{Hom}(g,W)}{\longrightarrow} \operatorname{Hom}_{\mathcal{A}}(Y, W) \overset{\mathrm{Hom}(f,W)}{\longrightarrow} \operatorname{Hom}_{\mathcal{A}}(X, W) \longrightarrow 0
+\end{equation}$$ 是 $\mathbf{Ab}$ 中的正合列.</p>
+  <div class="proof">
+    <p>(⇒) 由 Hom 函子是左正合函子可知序列在 $\operatorname{Hom}_{\mathcal{A}}(Z, W)$ 和 $\operatorname{Hom}_{\mathcal{A}}(Y, W)$ 处正合. 只要证明 $\mathrm{Hom}(f,W) = - ∘ f$ 是满态射. 由于短正合列可裂, 存在态射 $f':Y\to X$ 使得 $f'f=\mathrm{Id}_X$. 于是, 对于任意的态射 $s\in\mathrm{Hom}_\mathcal{A}(X,W)$, 存在态射 $sf'∈ \mathrm{Hom}_\mathcal{A}(Y,W)$ 使得 $$\mathrm{Hom}(f,W)(sf')=sf'f= s\mathrm{Id}_X=s.$$ 于是 $\mathrm{Hom}(f,W)$ 是满态射. <br /></p>
+    <p>(⇐) 根据 Hom 函子的反射正合性可知 $0→X\xrightarrow{f}Y\xrightarrow{g}Z→0$ 是正合列. 下面只要证明该列可裂. 令 $W=X$, 由于 $\mathrm{Hom}(f,W)$ 是满态射, 于是存在 $f'\in\mathrm{Hom}_\mathcal{A}(Y,X)$ 使得 $f'f=\mathrm{Hom}(f,W)(f')=\mathrm{Id}_X$. 于是该列可裂.</p>
+  </div>
+</div>
+
+
   </article>
 
   <!-- New Sidebar Column -->
@@ -723,6 +758,40 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="#习题-25">
         <span class="toc-number">5.1.</span>
         <span class="toc-title">习题 2.5</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#26-正合函子">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">2.6 正合函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-26">
+        <span class="toc-number">6.1.</span>
+        <span class="toc-title">习题 2.6</span>
       </a>
     </div>
   

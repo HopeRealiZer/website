@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>《基础代数学》第三章习题
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="3.1 复形范畴">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/BA_Exercise3">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>《基础代数学》第三章习题</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        December 2, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="31-复形范畴">3.1 复形范畴</h2>
+
+<div class="proposition">
+  <p>上同调函子 $̋\mathrm{H}^n:C(\mathcal{A})→\mathcal{A}$ 保持余积, 即 $$\begin{equation}
+\mathrm{H}^n(\prod_{\alpha} X_{\alpha}^\bullet) \cong \prod_{\alpha} \mathrm{H}^n(X_{\alpha}^\bullet).
+\end{equation}$$</p>
+</div>
+
+<div class="proposition">
+  <p>上同调函子 $̋\mathrm{H}^n:C(\mathcal{A})→\mathcal{A}$ 和正合函子可交换.</p>
+</div>
+
+<h3 id="习题-31">习题 3.1</h3>
+
+<div class="problem">
+  <p>设 $f : X \to Y$ 是链映射. 则有复形的正合列</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \ker f \longrightarrow X \longrightarrow \operatorname{Im} f \longrightarrow 0
+\end{equation}$$</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \operatorname{Im} f \longrightarrow Y \longrightarrow \operatorname{Coker} f \longrightarrow 0
+\end{equation}$$</p>
+  <p>和</p>
+  <p>$$\begin{equation}
+0 \longrightarrow \ker f \longrightarrow X \longrightarrow Y \longrightarrow \operatorname{Coker} f \longrightarrow 0
+\end{equation}$$</p>
+  <div class="proof">
+    <p>上述都是显然的, 因为我们已经证明了在复形范畴中取 kernel 和 cokernel 是逐分支进行的.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $M$ 是 $R$-模. 对每个 $n \in \mathbb{Z}$, 定义 $C^n = M$. 求复形</p>
+  <p>$$\begin{equation}
+C^\bullet := (C^n, 0)
+\end{equation}$$</p>
+  <p>的各次上同调群 $H^n(C^\bullet)$.</p>
+  <div class="proof">
+    <p>对于任意的 $n$, 由于微分全为零, 故有 $H^n(C^\bullet) = \ker 0 / \mathrm{Im} 0 \cong M$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>给定 $R$-模短正合列</p>
+  <p>$$\begin{equation}
+0 \longrightarrow M' \xrightarrow{\alpha} M \xrightarrow{\beta} M'' \longrightarrow 0
+\end{equation}$$</p>
+  <p>将其视为 $M$ 是零次分支的复形, 求这个复形的各次上同调群.</p>
+  <div class="proof">
+    <p>由于是正合列, 于是所有上同调群都是 $0$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\delta$ 是模 $M$ 的一个微分, 即 $\delta$ 是 $M$ 的自同态且满足 $\delta^2 = 0$. 求复形</p>
+  <p>$$\begin{equation}
+0 \longrightarrow M \xrightarrow{\delta} M \longrightarrow 0
+\end{equation}$$</p>
+  <p>的各次上同调群.</p>
+  <div class="proof">
+    <p>不妨记第一个 $0$ 是第 0 次分支. 于是有 $H^1 \cong \mathrm{Ker} \delta$ 且 $H^2 \cong \mathrm{Coker} \delta$. 其他次上同调群均为零.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $u : (C^\bullet, d) \longrightarrow (C'^\bullet, d')$ 是链映射. 定义 $u$ 的映射锥 $\operatorname{Cone}(u)$ 如下复形:</p>
+  <p>其第 $n$ 次分支为</p>
+  <p>$$\begin{equation}
+\operatorname{Cone}(u)^n = C^{n+1} \oplus C'^n, \quad \forall n \in \mathbb{Z}
+\end{equation}$$</p>
+  <p>第 $n$ 次微分为</p>
+  <p>$$\begin{equation}
+\begin{pmatrix}
+- d^{n+1} & 0 \\
+u^{n+1} & d'^n
+\end{pmatrix} : C^{n+1} \oplus C'^n \longrightarrow C^{n+2} \oplus C'^{n+1}
+\end{equation}$$</p>
+  <p>验证 $\operatorname{Cone}(u)$ 确是复形.</p>
+  <div class="proof">
+    <p>只要验证微分的平方为零即可. 对任意的 $(x,y) \in C^{n+1} \oplus C'^n$, 有 $$\begin{equation}
+\begin{pmatrix}
+- d^{n+2} & 0 \\
+u^{n+2} & d'^{n+1}
+\end{pmatrix}
+\begin{pmatrix}
+- d^{n+1} & 0 \\
+u^{n+1} & d'^n
+\end{pmatrix}
+=
+\begin{pmatrix}
+d^{n+2} d^{n+1} & 0 \\
+- u^{n+2} d^{n+1} + d'^{n+1} u^{n+1} & d'^{n+1} d'^n
+\end{pmatrix}=0.
+\end{equation}$$</p>
+    <p>其中左上和右下是 0 因为 $d$ 和 $d'$ 是复形的微分, 右上是 0 是显然的, 左下是 0 是因为 $u$ 是链映射.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $(C,d)$ 是 $k$-模上的有界复形, 其中 $k$ 是域. 令</p>
+  <p>$$\begin{equation}
+r_i = \dim_k C^i, \qquad \rho_i = \dim_k H^i(C)
+\end{equation}$$</p>
+  <p>证明</p>
+  <p>$$\begin{equation}
+\sum (-1)^i r_i = \sum (-1)^i \rho_i
+\end{equation}$$</p>
+  <div class="proof">
+    <p>由于 $\mathrm{Im}d^i≅C^i / \mathrm{Ker}d^i$, 以及 $H^i=\mathrm{Ker}d^i / \mathrm{Im}d^{i-1}$, 我们有 $$\begin{equation}
+r_i = \dim_k \mathrm{Im} d^i + \dim_k \mathrm{Ker} d^i = \dim_k \mathrm{Im} d^i + \dim_k H^i + \dim_k \mathrm{Im} d^{i-1},
+\end{equation}$$ 从而 (这个求和依赖于有界性, 都是有限求和) $$\begin{equation}
+\sum (-1)^i r_i = \sum (-1)^i \rho_i + \sum (-1)^i \dim_k \mathrm{Im} d^i + \sum (-1)^i \dim_k \mathrm{Im} d^{i-1} = \sum (-1)^i \rho_i.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<h2 id="32-同调代数基本定理">3.2 同调代数基本定理</h2>
+
+<h3 id="习题-32">习题 3.2</h3>
+
+<div class="problem">
+  <p>设有 $k$-代数 $A$ 的模范畴上复形短正合列</p>
+  <p>$$\begin{equation}
+0 \longrightarrow X \longrightarrow Y \longrightarrow Z \longrightarrow 0
+\end{equation}$$</p>
+  <p>若 $Y$ 是无环复形, 且 $H^{100}(X) = k$ 求 $H^{99}(Z)$.</p>
+  <div class="proof">
+    <p>由同调代数基本定理, 有长正合列 $$\begin{equation}
+\cdots \longrightarrow H^{99}(Y) \longrightarrow H^{99}(Z) \longrightarrow H^{100}(X) \longrightarrow H^{100}(Y) \longrightarrow \cdots
+\end{equation}$$ 由于 $Y$ 是无环复形, 故 $H^{99}(Y) = H^{100}(Y) = 0$. 由此可知 $H^{99}(Z) \cong H^{100}(X) \cong k$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $f : X \to Y$ 是链映射. 如果 $\ker f$ 和 $\operatorname{Coker} f$ 均为无环复形, 则 $f$ 是拟同构.</p>
+  <div class="proof">
+    <p>有上链复形的短正合列 $0→\mathrm{Ker}f →X→\mathrm{Im}f→ 0$ 和 $0→\mathrm{Im}f →Y→\mathrm{Coker}f→ 0$. 由同调代数基本定理, 以及 $\mathrm{Ker}f$ 和 $\mathrm{Coker}f$ 均为无环复形, 可知 $H^n(X) \cong H^n(\mathrm{Im}f) \cong H^n(Y)$ 对任意的 $n$ 成立(两个同构由 $f$ 满单分解的两个态射作用上同调函子之后得到). 因此 $f$ 是拟同构(要用一下 $\mathrm{H}^n$ 是函子).</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设在一个 Abel 范畴中有如下三个短正合行构成的交换图:</p>
+  <center> <br /> <div class="tikz-diagram">
+      <embed src="/website/svg/BA_Exercise3/diagram_9ea16429ebc5e.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+    </div> <br /> </center>
+  <p>证明: <br /></p>
+  <p>(1) 如果中间的列正合, 则右端的列为正合当且仅当左端的列为正合. <br /></p>
+  <p>(2) 如果两端的列都正合, 而且复合态射 $B' \to B''$ 是零态射, 则中间的列也正合.</p>
+  <div class="proof">
+    <p>(1) 由中间的列正合 (从而复合态射 $B'→ B''$ 是零态射) 和交换图可知, $B'→ C'→C''$ 是零态射, 而 $B'→C'$ 是满态射 (由第一行正合), 所以复合态射 $C'→C''$ 是零态射. 同理可证复合态射 $A'→A''$ 是零态射. <br /></p>
+    <p>于是, 可以看作上链复形的短正合列 $0→A_*→B_*→C_*→0$, 其中 $A_*, B_*, C_*$ 分别是左、中、右端的列构成的复形. 注意到, 正合性等价于复形是无环复形. <br /></p>
+    <p>由同调代数基本定理可知 (其实是课本给出的推论), 若中间的列正合 ($B_*$ 是无环复形), 则左端的列为无环复形当且仅当右端的列为无环复形. <br /></p>
+    <p>(2) 同理, 可看作上链复形的短正合列 $0→A_*→B_*→C_*→0$. 由同调代数基本定理可知, 若两端的列都正合 ($A_*, C_*$ 均为无环复形), 则中间的列也为正合列 ($B_*$ 也是无环复形).</p>
+  </div>
+</div>
+
+<h2 id="33-同伦范畴">3.3 同伦范畴</h2>
+
+<h3 id="习题-33">习题 3.3</h3>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是加法范畴. 同伦关系是 $C(\mathcal{A})$ 中的一个等价关系, 并验证</p>
+  <p>$$\begin{equation}
+f \sim g \Longrightarrow fh \sim gh, \quad \forall h \text{(如果可以合成)}
+\end{equation}$$</p>
+  <p>$$\begin{equation}
+f \sim g \Longrightarrow kf \sim kg, \quad \forall k \text{(如果可以合成)}
+\end{equation}$$</p>
+  <div class="proof">
+    <p>自反性和交换性由定义是直接的. 对于传递性, 若 $f∼g, g∼h$, 那么就有 $f-g∼0, g-h∼0$, 于是由加法范畴显然可得 $f-h∼0$, 也即是 $f∼h$. <br /></p>
+    <p>对于第一个蕴含式, 设 $f∼g$, 则存在态射系 $s^n : X^n → Y^{n-1}$ 使得对任意的 $n$ 有 $f^n - g^n = d_Y^{n-1} s^n + s^{n+1} d_X^n$. 对任意的 $m$ 有 $$\begin{equation}
+(fh)^m - (gh)^m = (f^m - g^m) h^m = d_Y^{m-1} s^m h^m + s^{m+1} d_X^m h^m = d_Y^{m-1} (s^m h^m) + (s^{m+1} h^{m+1}) d_Z^m,
+\end{equation}$$ 于是 $fh ∼ gh$ (这里设 $h$ 是从上链复形 $Z$ 到 $X$ 的链映射). 另一个同理. <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>两个复形通常的直和仍是这两个复形在同伦范畴中的直和.</p>
+  <div class="proof">
+    <p>对于任意一族链复形映射 $\{\varphi_i: X_i→ Y \}_{i∈ I}$, 存在唯一的态射 $\varphi:\bigoplus_{i∈I}X_i→ Y$ 使得 对任意的 $i∈ I$ 有 $\varphi e_i = \varphi_i$, 其中 $e_i:X_i→\oplus_{i∈I}X_i$ 是嵌入结构态射. <br /></p>
+    <p>考虑满函子 $$\begin{equation}
+[\bullet] : C(\mathcal{A}) → K(\mathcal{A}), \quad X \mapsto X, \quad f \mapsto [f]:=\{ g ∣ g∼ f \}.
+\end{equation}$$</p>
+    <p>于是任取 $K(\mathcal{A})$ 里面的一族链复形态射 $\{ [\varphi_i]: [X_i] → [Y] \}_{i∈ I}$, 由满性可知存在 $\varphi_i: X_i → Y$ 使得 $[\varphi_i]$ 是其同伦类. 由上面的性质可知存在唯一的态射 $\varphi:\bigoplus_{i∈I}X_i→ Y$ 使得对任意的 $i∈ I$ 有 $\varphi e_i = \varphi_i$. 于是有 $$\begin{equation}
+[\varphi] [e_i] = [\varphi e_i] = [\varphi_i], \quad ∀ i∈ I.
+\end{equation}$$</p>
+    <p>下面只要证明 $[\varphi]$ 的唯一性: 若存在 $\psi:\bigoplus_{i∈I}X_i→ Y$ 使得对任意的 $i∈ I$ 有 $[\psi] [e_i] = [\varphi_i]$, 则有 $[(ψ - φ) e_i] = 0]$, 从而 $(ψ - φ) e_i ∼ 0$. 由同伦定义知, 存在态射系 $s_i^n : X_i^n → Y^{n-1}$ 使得对任意的 $n$ 有 $$\begin{equation}
+(ψ^n-φ^n)e_i^n=((ψ - φ) e_i)^n = d_Y^{n-1} s_i^n + s_i^{n+1} d_{X_i}^n.
+\end{equation}$$ 考虑态射系 $s^n : (\bigoplus_{i∈I}X_i)^n → Y^{n-1}$ 定义为 $s^n|_{X_i^n} = s_i^n$. 则对任意的 $n$ 有 $$\begin{equation}
+(ψ^n-φ^n) = d_Y^{n-1} s^n + s^{n+1} d_{\bigoplus_{i∈I}X_i}^n.
+\end{equation}$$ 于是 $ψ ∼ φ$, 也即是 $[ψ] = [φ]$. 综上所述, 直和在同伦范畴中也是直和.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 为 Abel 范畴. 则</p>
+  <p>$$\begin{equation}
+H^n : K(\mathcal{A}) \longrightarrow \mathcal{A}
+\end{equation}$$</p>
+  <p>是共变加法函子.</p>
+  <div class="proof">
+    <p>显然是共变函子(同伦的链映射诱导出相同的同调群态射). 只要证明 $H^n$ 保持加法结构即可. 设 $[f], [g] : X \to Y$ 是 $K(\mathcal{A})$ 中的两个态射. 则有 $$\begin{equation}
+H^n([f] + [g]) = H^n([f + g]) = H^n(f + g) = H^n(f) + H^n(g) = H^n([f]) + H^n([g]).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>若链映射 $\alpha$ 与 $\beta$ 同伦, 则在同伦范畴中有</p>
+  <p>$$\begin{equation}
+\operatorname{Cone}(\alpha) \cong \operatorname{Cone}(\beta)
+\end{equation}$$</p>
+  <div class="proof">
+    <p>设 $\alpha, \beta : X \to Y$ 是同伦的链映射. 则存在态射系 $s^n : X^n \to Y^{n-1}$ 使得对任意的 $n$ 有 $$\begin{equation}
+\alpha^n - \beta^n = d_Y^{n-1} s^n + s^{n+1} d_X^n.
+\end{equation}$$ 定义态射系 $h^n : \operatorname{Cone}(\alpha)^n \to \operatorname{Cone}(\beta)^n$ 如下: $$\begin{equation}
+h^n = \begin{pmatrix}
+\operatorname{Id}_{X^{n+1}} & 0 \\
+s^{n+1} & \operatorname{Id}_{Y^n}
+\end{pmatrix}.
+\end{equation}$$ 则 $h = \{ h^n \}$ 是链映射(直接验证即可). 类似地, 定义态射系 $k^n : \operatorname{Cone}(\beta)^n \to \operatorname{Cone}(\alpha)^n$ 如下: $$\begin{equation}
+k^n = \begin{pmatrix}
+\operatorname{Id}_{X^{n+1}} & 0 \\
+- s^{n+1} & \operatorname{Id}_{Y^n}
+\end{pmatrix}.
+\end{equation}$$ 则 $k = \{ k^n \}$ 也是链映射. 显然有 $kh = \operatorname{Id}_{\operatorname{Cone}(\alpha)}$ 且 $hk = \operatorname{Id}_{\operatorname{Cone}(\beta)}$. 于是在同伦范畴中有 $\operatorname{Cone}(\alpha) \cong \operatorname{Cone}(\beta)$.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 按照我的证明, 似乎这个同构在链复形范畴里面也成立? 这个让我十分奇怪.</p>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是加法范畴, $(C,d)$ 是 $\mathcal{A}$ 上的复形. 称 $(C,d)$ 为可裂复形, 如果存在 $\mathcal{A}$ 中态射</p>
+  <p>$$\begin{equation}
+s^{n+1} : C^{n+1} \longrightarrow C^n, \quad \forall n \in \mathbb{Z}
+\end{equation}$$</p>
+  <p>使得对每个 $n$ 有</p>
+  <p>$$\begin{equation}
+d^n s^{n+1} d^n = d^n.
+\end{equation}$$</p>
+  <p>举例说明可裂复形未必是无环复形. 验证 Abel 群的复形</p>
+  <p>$$\begin{equation}
+\cdots \longrightarrow \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \cdots
+\end{equation}$$</p>
+  <p>是无环复形, 但不是可裂复形.</p>
+  <div class="proof">
+    <p>考虑复形 $$\begin{equation}
+⋯→\mathbb{C}^2\xrightarrow{P_1}\mathbb{C}^2\xrightarrow{P_2}\mathbb{C}^2\xrightarrow{P_1}\mathbb{C}^2→⋯,
+\end{equation}$$ 令 $s^n=\mathrm{Id}_{\mathbb{C}^2}, ∀ n$, 则这个复形是可裂复形. 但显然它不是无环复形, 因为 $H^n(C) \cong \mathbb{C}^2 / \mathrm{Im} P_i \cong \mathbb{C} \neq 0$ 对任意的 $n$ 成立. <br /></p>
+    <p>显然复形 $$\begin{equation}
+\cdots \longrightarrow \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \cdots
+\end{equation}$$ 是无环复形. 下面证明它不是可裂复形. 假设存在态射系 $s^{n+1} : \mathbb{Z}_4 \to \mathbb{Z}_4$ 使得对每个 $n$ 有 $2 s^{n+1} (2) = 2$. 则 $2=4s^{n+1}(1)=0$, 矛盾.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 为 Abel 范畴. 证明无环的可裂复形恰是 $K(\mathcal{A})$ 中的零对象.</p>
+  <div class="proof">
+    <p>首先证明 $K(\mathcal{A})$ 中的零对象是无环的可裂复形. 设 $(C,d)$ 是 $K(\mathcal{A})$ 中的零对象, 即 $\mathrm{Id}_C$ 是零伦的, 即存在态射系 $s^n : C^n \to C^{n-1}$ 使得对任意的 $n$ 有 $\mathrm{Id}_{C^n} = d^{n-1} s^n + s^{n+1} d^n$, 于是 $d^n = d^n s^{n+1}d^n$, 故 $(C,d)$ 是可裂复形. 另外, 由于 $Id_C$ 与零态射同伦, 它与零态射也诱导出相同的同调群态射, 即 $\mathrm{Id}_{H^n(C)} = 0$, 故 $H^n(C) = 0$ 对任意的 $n$ 成立, 也即是 $(C,d)$ 是无环复形. <br /></p>
+    <p>下面证明无环的可裂复形是 $K(\mathcal{A})$ 中的零对象. 设 $(C,d)$ 是无环的可裂复形, 只要证明它到其他复形以及其他复形到它的态射都是零伦的即可, 这只需要证明 $\mathrm{Id}_C$ 是零伦的. 由可裂性, 存在态射系 $s^{n+1} : C^{n+1} \to C^n$ 使得对每个 $n$ 有 $d^n s^{n+1} d^n = d^n$. 由于 $(C,d)$ 是无环复形, 故有 $\mathrm{Im} d^{n-1} = \mathrm{Ker} d^n$.</p>
+    <p>先证明 $K(\mathcal A)$ 中的零对象是无环的可裂复形. 设 $(C,d)$ 是 $K(\mathcal A)$ 中的零对象，即 $\mathrm{Id}_C$ 为零伦. 因此存在态射系 $s^n : C^n \to C^{n-1}$ 使得对任意 $n$ 有 $$
+\mathrm{Id}_{C^n}=d^{n-1}s^n+s^{n+1}d^n.
+$$ 两侧同时右乘 $d^n$ 得 $$
+d^n=d^n s^{n+1} d^n,
+$$ 故 $(C,d)$ 为可裂复形. 另一方面，由于 $\mathrm{Id}_C$ 与零态射同伦，它们作用在同调群上相同，即 $$
+\mathrm{Id}_{H^n(C)}=0,
+$$ 从而 $H^n(C)=0$ 对任意 $n$ 成立，即 $(C,d)$ 为无环复形. 因此，$K(\mathcal A)$ 中的零对象必为无环的可裂复形.</p>
+    <p>现在证明无环的可裂复形为 $K(\mathcal A)$ 中的零对象. 设 $(C,d)$ 为无环的可裂复形. 只需证明 $\mathrm{Id}_C$ 为零伦. 由可裂性，存在态射系 $s^{n+1}:C^{n+1}\to C^n$ 使得 $d^n s^{n+1} d^n = d^n$. 定义 $$
+\varphi^n := s^{n+1} d^n : C^n \to C^n.
+$$ 则有 $\varphi^n$ 是幂等的. 不妨设 $\mathrm{Im}\varphi^n\xrightarrow{m_{\varphi^n}}X_n\xrightarrow{\widetilde{\varphi^n}}\mathrm{Im}\varphi^n$ 是恒等态射, 即有下面的交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_648dbd81b108b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而有可裂短正合列 $$\begin{equation}
+0 \longrightarrow \mathrm{Ker} \varphi^n \xrightarrow{m_{\varphi^n}'} C^n \xrightarrow{\widetilde{\varphi^n}} \mathrm{Im} \varphi^n \longrightarrow 0,
+\end{equation}$$ 其中 $m_{\varphi^n}'$ 是 $\mathrm{Ker} \varphi^n$ 的嵌入结构态射. 注意到 $$\begin{equation}
+\mathrm{Ker} d^n⊆ \mathrm{Ker} \varphi^n ⊆ \mathrm{Ker} (d^n\varphi^n) = \mathrm{Ker} d^n,
+\end{equation}$$ 因此 $\mathrm{Ker} \varphi^n = \mathrm{Ker} d^n$. 从而有 $$\begin{equation}
+C^n \cong \mathrm{Ker} d^n \oplus \mathrm{Im} \varphi^n = \mathrm{Ker} d^n \oplus \mathrm{Im} d^{n-1}.
+\end{equation}$$</p>
+    <p>于是复形 $X$ 可以写成如下直和 $$\begin{equation}
+\bigoplus_{n \in \mathbb{Z}}
+\left[
+\cdots \longrightarrow 0 \longrightarrow 
+\operatorname{im}(\varphi^n) 
+\xrightarrow{\,d^n\,} 
+\ker(d^{n+1}) 
+\longrightarrow 0 \longrightarrow \cdots
+\right].
+\end{equation}$$</p>
+    <p>注意到每个直和分支都是零伦的, 因为</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_cb165858fbff5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而 $X$ 是零对象.</p>
+  </div>
+</div>
+
+<h2 id="34-投射分解和内射分解">3.4 投射分解和内射分解</h2>
+
+<h3 id="习题-34">习题 3.4</h3>
+
+<div class="problem">
+  <p>设 $m$ 是正整数. 写出 $\mathbb{Z}$-模 $\mathbb{Z}_m$ 的一个投射分解.</p>
+  <div class="proof">
+    <p>注意到 $\mathbb{Z}$ 是自由模从而是投射模, 我们有如下投射分解:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_bf8ffbc3a7cd9.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $D$ 是主理想整环, $M$ 是有限生成 $D$-模. 写出 $M$ 的一个投射分解.</p>
+  <div class="proof">
+    <p>主理想整环上的投射模都是自由模, 于是就有如下交换图给出的投射分解:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_005d385f2cfc6.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>(使用的每一个(自由)投射模都是有限生成的(有限秩), 关键在于主理想整环上的有限生成模的子模也是有限生成模.)</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>写出 $\mathbb{Z}_4$-模 $\mathbb{Z}_2$ 的一个投射分解.</p>
+  <div class="proof">
+    <p>注意到 $\mathbb{Z}_4$-模 $\mathbb{Z}_4$ 是投射模, 我们有如下投射分解:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_4dd8bec9e581c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明内射分解的比较定理.</p>
+  <div class="proof">
+    <p>先陈述要证明的内容: 设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴. 给定态射 $f:M→N$, 以及 $N$ 的内射分解 $0→N→J$ 以及正合列 $0→M→I$, 则有链复形 $I$ 和 $J$ 之间的链映射 $\alpha$ 使得下面的交换图交换:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_4207b5e3867e5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>并且这样的链映射 $\alpha$ 在同伦意义下是唯一的. <br /></p>
+    <p><strong>首先证明这样链映射的存在性.</strong> <br /></p>
+    <p>由于 $i$ 是单态射, 由 $J_0$ 是内射对象, 存在态射 $\alpha_0 : I_0 → J_0$ 使得 $\alpha_0 i = i' f$. <br /></p>
+    <p>现在假设我们已经有了态射 $\{\alpha_k : I_k → J_k\}_{k=0}^n$ 使得对任意的 $0≤ k ≤ n$ 有 $d'^{k-1} \alpha_{k-1} = \alpha_{k} d^{k-1}$ ($\alpha_{-1}$ 代表 $f$, $d^{-1}$ 和 $d'^{-1}$ 分别代表 $i$ 和 $i'$).</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_1151a84b8e5e4.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>如上图考虑 $d^n$ 的满单分解, 注意到 $\widetilde{d^n}$ 是 $d^{n-1}$ 的 cokernel, 以及 $d'^n\alpha_n d^{n-1} = d'^n d'^{n-1}\alpha_{n-1}=0$, 因此存在态射 $t_n : \operatorname{Im} d^n \to J_{n+1}$ 使得 $t_n \widetilde{d^n} = d'^n \alpha_n$. 由于 $J_{n+1}$ 是内射对象, 存在态射 $\alpha_{n+1} : I_{n+1} \to J_{n+1}$ 使得 $\alpha_{n+1} \sigma_n = t_n$. 于是有 $$\begin{equation}
+    \alpha_{n+1} d^n = \alpha_{n+1} \sigma_n \widetilde{d^n} = t_n \widetilde{d^n} = d'^n \alpha_n.
+\end{equation}$$</p>
+    <p>由数学归纳法, 我们就得到了链映射 $\alpha : I \to J$. <br /></p>
+    <p><strong>下面证明这样的链映射在同伦意义下是唯一的.</strong> <br /></p>
+    <p>假设还有链映射 $\beta : I \to J$ 也使得最开始的交换图交换.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_bc18d4a5a1b6b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>首先, 由于 $(\alpha_0 - \beta_0) i = i' f - i' f = 0$, 以及 $i'$ 是 $\widetilde{d^0}$ 的 kernel, 存在态射 $h_0 : \operatorname{Im} d^0 \to J_0$ 使得 $h_0 \widetilde{d^0} = \alpha_0 - \beta_0$. 由于 $\sigma_0$ 是单态射以及 $J_0$ 是内射对象, 存在态射 $s_0 : I_1 \to J_0$ 使得 $s_0 \sigma_0 = h_0$. 于是有 $$\begin{equation}
+    (\alpha_0 - \beta_0) = h_0 \widetilde{d^0} = s_0 \sigma_0 \widetilde{d^0} = s_0 d^0.
+\end{equation}$$ 这实际上给出了 $\alpha\overset{s}{\sim}\beta$ 的第一步. <br /></p>
+    <p>假设已经有 $\{s_k: I_{k+1}→ J_k\}_{k=0}^{n}$ 使得对任意的 $0≤ k ≤ n$ 有 $\alpha_k - \beta_k = s_k d^k + d'^{k-1} s_{k-1}$ (其中 $s_{-1}$ 代表零态射). 于是有 $$\begin{equation}
+(\alpha_{n+1}-\beta_{n+1}) d^n = d'^{n} (\alpha_n - \beta_n) = d'^{n} (s_n d^n + d'^{n-1} s_{n-1}) = d'^{n} s_n d^n,
+\end{equation}$$ 从而有 $$\begin{equation}
+(\alpha_{n+1}-\beta_{n+1}-d'^ns_n) d^n = 0.
+\end{equation}$$</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_153c919441dc3.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>由于 $\widetilde{d^{n+1}}$ 是 $d^n$ 的 cokernel, 以及 $(\alpha_{n+1}-\beta_{n+1}-d'^ns_n) d^n = 0$, 存在态射 $h_{n+1} : \operatorname{Im} d^{n+1} \to J_{n+1}$ 使得 $h_{n+1} \widetilde{d^{n+1}} = \alpha_{n+1}-\beta_{n+1}-d'^ns_n$. 由于 $\sigma_{n+1}$ 是单态射以及 $J_{n+1}$ 是内射对象, 存在态射 $s_{n+1} : I_{n+2} \to J_{n+1}$ 使得 $s_{n+1} \sigma_{n+1} = h_{n+1}$. 于是有 $$\begin{equation}
+    \alpha_{n+1}-\beta_{n+1} = h_{n+1} \widetilde{d^{n+1}} + d'^n s_n = s_{n+1} \sigma_{n+1} \widetilde{d^{n+1}} + d'^n s_n = s_{n+1} d^{n+1} + d'^n s_n.
+\end{equation}$$</p>
+    <p>由数学归纳法, 我们就得到了 $\alpha\overset{s}{\sim}\beta$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明内射分解的唯一性.</p>
+  <div class="proof">
+    <p>对于有足够多内射对象的 Abel 范畴 $\mathcal{A}$ 中的任意对象 $M$, 其内射分解在同伦意义下是唯一的: 若 $0 \to M \xrightarrow{i} I$ 和 $0 \to M \xrightarrow{i'} I'$ 是 $M$ 的两个内射分解, 则存在链映射 $\alpha : I \to I'$ 以及 $\beta : I' \to I$ 使得 $\alpha i = i'$ 以及 $\beta i' = i$. 这样 $\alpha\beta$ 给出了内射分解 $I'$ 到其自身的一个链映射, 并且满足 $\alpha\beta i' = i'$. 同时, 恒等映射 $\mathrm{Id}_{I'}$ 也是内射分解 $I'$ 到其自身的一个链映射, 并且满足 $\mathrm{Id}_{I'} i' = i'$. 由内射分解的比较定理, 我们有 $\alpha\beta \overset{s}{\sim} \mathrm{Id}_{I'}$. 同理可得 $\beta\alpha \overset{t}{\sim} \mathrm{Id}_{I}$. 因此任意两个内射分解之间有同伦等价, 因此内射分解在同伦意义下是唯一的.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明内射分解的马蹄引理.</p>
+  <div class="proof">
+    <p>给定有足够多内射对象的 Abel 范畴 $\mathcal{A}$ 中的正合列 $0 \rightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \rightarrow 0$,以及内射分解 $0→X\xrightarrow{i'}I'$ 和 $0→Z\xrightarrow{i''}I''$, 下面来证明有内射分解 $0→Y\xrightarrow{i}I$ 使得 $I^n=I'^n⊕I''^n$.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_bd31619f9d7e1.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>注意到 $f$ 是单态射, 由 $I'^0$ 是内射对象, 存在态射 $h : Y → I'^0$ 使得 $h f = i'$. 定义态射 $i : Y → I'^0 ⊕ I''^0$ 为 $i=\begin{pmatrix}h\\i'' g \end{pmatrix}$, 容易验证我们就得到了如上两行正合列的交换图. 由于 $i'$ 和 $i''$ 都是单态射, 由蛇引理 (或者五引理) 可知 $i$ 也是单态射. 并且进一步由蛇引理有如下正合列的交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_7fcf39477e088.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>这样就只要重复上面的步骤就完成了证明.</p>
+  </div>
+</div>
+
+<h2 id="35-导出函子">3.5 导出函子</h2>
+
+<h3 id="习题-35">习题 3.5</h3>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 和 $\mathcal{B}$ 是 Abel 范畴, 且 $\mathcal{A}$ 有足够多内射对象. 设 $F : \mathcal{A} \longrightarrow \mathcal{B}$ 是反变加法函子. 则左导出(反变)函子 $L_n F : \mathcal{A} \longrightarrow \mathcal{B}, \quad n \ge 0$ 满足如下性质. <br /></p>
+  <p>(LD1) 如果 $F$ 右正合, 则 $L_0 F \cong F$. <br /></p>
+  <p>(LD2) 如果 $M$ 是内射对象, 则 $(L_n F)(M) = 0, \quad \forall n \ge 1$. <br /></p>
+  <p>(LD3) 设</p>
+  <p>$$\begin{equation}
+0 \longrightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \longrightarrow 0
+\end{equation}$$</p>
+  <p>是 $\mathcal{A}$ 中的正合列. 则在 $\mathcal{B}$ 中存在长正合列</p>
+  <p>$$\begin{equation}
+\cdots \longrightarrow (L_{n+1}F)(X)
+\xrightarrow{c_n}
+(L_n F)(Z)
+\xrightarrow{(L_n F)g}
+(L_n F)(Y)
+\xrightarrow{(L_n F)f}
+(L_n F)(X)
+\longrightarrow \cdots
+\end{equation}$$</p>
+  <p>$$\begin{equation}
+\cdots \longrightarrow (L_1 F)(X)
+\xrightarrow{c_0}
+(L_0 F)(Z)
+\xrightarrow{(L_0 F)g}
+(L_0 F)(Y)
+\xrightarrow{(L_0 F)f}
+(L_0 F)(X)
+\longrightarrow 0
+\end{equation}$$</p>
+  <p>(LD4) 连接态射 $c_n : (L_{n+1}F)(X) \longrightarrow (L_n F)(Z)$ 是自然的.</p>
+  <div class="proof">
+    <p>(LD1) 如果 $F$ 右正合, 则 $$\begin{equation}
+    ⋯→ FI_1 \xrightarrow{Fd^0} FI_0 \xrightarrow{F\varepsilon} FM → 0
+\end{equation}$$ 是正合列, 因此 $$\begin{equation}
+(L_0 F)M = \mathrm{Ker}(F\varepsilon) / \mathrm{Im}(Fd^0) \cong FM.
+\end{equation}$$ 并且这个同构对于 $M$ 是函子的, 即 $L_0 F \cong F$. <br /></p>
+    <p>(LD2) 因为 $M$ 是内射对象, 于是可以取内射分解使得 $I^0=M, \varepsilon=\mathrm{Id}_M, I^i=0, ∀ i≥1$. 于是根据定义即得. <br /></p>
+    <p>(LD3) 设 $0→X→I_X$ 和 $0→Z→I_Z$ 分别是 $X$ 和 $Z$ 的内射分解. 由内射分解的马蹄引理, 存在 $Y$ 的内射分解 $0→Y→I_Y$, 并且有 $\mathcal{A}$ 上链复形的链可裂短正合列(未必是复形范畴上的可裂短正合列) $0→I_X→I_Y→I_Z→0$. 由于 $F$ 是反变加法函子, 有 $\mathcal{B}$ 上链复形的链可裂短正合列 $0→FI_Z→FI_Y→FI_X→0$. 由同调代数基本定理就得到所要的长正合列. <br /></p>
+    <p>(LD4) 给定 $\mathcal{A}$ 中的短正合列的交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_f04ae5dfd86a5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>我们断言有复形短正合列的交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_d535f0ceb3190.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>这个直接在态射范畴里面看就行. 有了这个交换图之后, 我们作用 $F$, 就可以得到复形短正合列的交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_41f7e483a55d9.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>这样长正合列中连接态射的自然性就由同调代数基本定理中的连接态射的自然性保证.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>[维数移位] 设 $\mathcal{A}$ 和 $\mathcal{B}$ 是 Abel 范畴, 且 $\mathcal{A}$ 有足够多内射对象. 设 $F : \mathcal{A} \longrightarrow \mathcal{B}$ 是反变加法函子, $M$ 是 $\mathcal{A}$ 中对象. 设</p>
+  <p>$$\begin{equation}
+0 \longrightarrow M \xrightarrow{\varepsilon} I^0 \xrightarrow{d^0} I^1 \longrightarrow \cdots 
+\xrightarrow{d^{n-1}} I^n \xrightarrow{d^n} I^{n+1} \longrightarrow \cdots
+\end{equation}$$</p>
+  <p>是 $M$ 的一个内射分解. 令 $K_m := \operatorname{Im} d^m , \quad m \ge 0$. 则有</p>
+  <p>$$\begin{equation}
+(L_n F)M = (L_{n-1} F)K_0 , \forall n \ge 2 ;\quad (L_n F)M = (L_{n-m-1} F)K_m , \forall n \ge m + 2.
+\end{equation}$$</p>
+  <div class="proof">
+    <p>直接注意到 $0→ K_0↪I^1→ ⋯→I^m→ \xrightarrow{d^m} I^{m+1}\to\cdots$ 是 $K_0$ 的内射分解. 由左导出函子的定义即知 $(L_nF)M=(L_{n-1}F)K_0, ∀ n≥2$. 反复应用此式即可得出 $(L_n F)M = (L_{n-m-1} F)K_m , \forall n \ge m + 2$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>右正合反变函子的左导出函子由 (LD1)–(LD4) 这四条性质在自然同构的意义下唯一确定. 具体地说, 设 $\mathcal{A}$ 和 $\mathcal{B}$ 是 Abel 范畴, 且 $\mathcal{A}$ 有足够多内射对象. 设 $F : \mathcal{A} \longrightarrow \mathcal{B}$ 是右正合反变函子. 如果有一列反变函子 $F_n : \mathcal{A} \longrightarrow \mathcal{B} , \quad n \ge 0$ 也满足 (LD1)–(LD4) 这四条性质(特别地, 由于 $F$ 右正合, 有 $F_0 \cong F$), 则 $F_n \cong L_n F , \quad \forall n \ge 0$.</p>
+  <div class="proof">
+    <p>对 $n$ 运用数学归纳法. 当 $n=0$ 时, 由 (LD1) 可知 $F_0 \cong F \cong L_0 F$. <br /></p>
+    <p>设 $f:N→M$ 是 $\mathcal{A}$ 中态射. 考虑如下两行均正合的态射图, 其中 $I^0, J^0$ 均为内射对象(取为内射对象是为了用到 (LD2), 从而使得得到的长正合列后面每三项有一个 $0$, 从而得到一堆同构):</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_c4e23bc55c4ff.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而存在态射 $g,h$ 使得上图交换. 由 (LD1)–(LD4) 得到如下行正合的态射图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/BA_Exercise3/diagram_cde9e71a7d850.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>由于 $(Fc)\delta_0=0$ 以及 $F_1M$ 是 $Fc$ 的 kernel, 知存在态射 $\eta_M$ 使得前两行交换. 由五引理知 $\eta_M$ 是同构. 同理, 存在同构 $\eta_N$ 使得上图后两行交换. 下面证明最左边的平行四边形交换, 即 $(F_1f)\eta_M=\eta_N(L_1F)f$. 事实上, $$\begin{equation}
+    \partial'_0(\eta_N(L_1F)f - (F_1f)\eta_M) = (Fh)\delta_0\eta_M - \delta'_0(Fg)\eta_M = (Fh)(Fc) - (Fd^0)(Fg) = 0,
+\end{equation}$$ 由于 $\partial'_0$ 是单态射, 故 $\eta_N(L_1F)f = (F_1f)\eta_M$. 这就证明了 $F_1≅ L_1F$. <br /></p>
+    <p>当 $n≥2$, 由 (LD3) 得到 $F_n M≅ F_{n-1} C^0$; 由 $L_nF$ 的维数移位得到 $(L_nF)M ≅ (L_{n-1}F)C^0$. 由归纳假设 $F_{n-1}≅ L_{n-1}F$, 故 $F_n M≅ (L_nF)M$. 每一步都是自然的, 从而得到 $F_n≅ L_nF$.</p>
+  </div>
+</div>
+
+<h2 id="36-mathjax_protectedjfxtyxrocm17rxh0fv5ujamathjax_protected-函子">3.6 $\mathrm{Ext}^n$ 函子</h2>
+
+<h3 id="习题-36">习题 3.6</h3>
+
+<div class="problem">
+  <p>计算 $\operatorname{Ext}_{\mathbb{Z}}^n(\mathbb{Z}_m,\mathbb{Z})$, 其中 $m \ge 1$, $n \ge 0$.</p>
+  <div class="proof">
+    <p>我们有 $\mathbb{Z}_m$ 的投射分解 $$\begin{equation}
+	\cdots → 0 \rightarrow \mathbb{Z} \xrightarrow{\times m} \mathbb{Z} \xrightarrow{\pi} \mathbb{Z}_m \rightarrow 0.
+\end{equation}$$ 将 $\mathrm{Hom}_{\mathbb{Z}}(- ,\mathbb{Z})$ 作用到删项投射分解, 得到如下链复形($()^*$ 表示在右边复合): $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}) \xrightarrow{(\times m)^*} \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}) \rightarrow 0 \rightarrow \cdots
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\mathrm{Ext}^0_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}) \cong \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}) = 0,
+\end{equation}$$ $$\begin{equation}
+	\mathrm{Ext}^1_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}) \cong \mathrm{Hom}_{\mathbb{Z}}(\mathbb{Z},\mathbb{Z}) / \mathrm{Im}((\times m)^*) \cong \mathbb{Z}/m\mathbb{Z} \cong \mathbb{Z}_m,
+\end{equation}$$ $$\begin{equation}
+	\mathrm{Ext}^n_{\mathbb{Z}}(\mathbb{Z}_m,\mathbb{Z}) = 0, \quad \forall n \ge 2.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $D$ 是主理想整环. 令 $M = D/\langle a \rangle$, $N$ 是 $D$-模. 证明 $\operatorname{Ext}_D^1(M,N) \cong N/aN$. 特别地, 如果 $N = D/\langle b \rangle$, 则 $\operatorname{Ext}_D^1(M,N) \cong D/\langle \gcd(a,b) \rangle$.</p>
+  <div class="proof">
+    <p>我们有 $M$ 的投射分解 $$\begin{equation}
+	0 \rightarrow D \xrightarrow{\times a} D \xrightarrow{\pi} M \rightarrow 0.
+\end{equation}$$ 将 $\mathrm{Hom}_D(- ,N)$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_D(D,N) \xrightarrow{(\times a)^*} \mathrm{Hom}_D(D,N) \rightarrow 0.
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\mathrm{Ext}^1_D(M,N) \cong \mathrm{Hom}_D(D,N) / \mathrm{Im}((\times a)^*) \cong N/aN.
+\end{equation}$$ (因为有 $\mathrm{Hom}_D(D,N) \cong N$.) <br /></p>
+    <p>特别地, 如果 $N = D/\langle b \rangle$, 则 $$\begin{equation}
+	\mathrm{Ext}^1_D(M,N) \cong (D/\langle b \rangle)/a(D/\langle b \rangle) \cong D/(⟨b⟩ + ⟨a⟩) \cong D/\langle \gcd(a,b) \rangle.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $A := k[x]/\langle x^s \rangle$ $(r \ge 2)$, $M := k[x]/\langle x^r \rangle$, $N := k[x]/\langle x^t \rangle$, 其中 $1 \le r,t \le s$. 计算 $\operatorname{Ext}_A^n(M,N)$ $(n \ge 0)$.</p>
+  <div class="proof">
+    <p>我们有 $M$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow  A \xrightarrow{\times x^{s-r}}A \xrightarrow{\times x^r} A \xrightarrow{\times x^{s-r}} A \xrightarrow{\times x^r} A \xrightarrow{\pi} M \rightarrow 0.
+\end{equation}$$ 将 $\mathrm{Hom}_A(- ,N)$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_A(A,N) \xrightarrow{(\times x^{r})^*} \mathrm{Hom}_A(A,N) \xrightarrow{(\times x^{s-r})^*} \mathrm{Hom}_A(A,N) \rightarrow \cdots
+\end{equation}$$</p>
+    <p>根据 $\mathrm{Hom}_A(A,N) \cong N$, 我们有 $$\begin{equation}
+	0 \rightarrow N \xrightarrow{\times x^{r}} N \xrightarrow{\times x^{s-r}} N \xrightarrow{\times x^{r}} N \xrightarrow{\times x^{s-r}} N \rightarrow \cdots
+\end{equation}$$</p>
+    <p>为了方便, 记 $[f(x)] = ⟨f(x) + ⟨x^s⟩⟩$, 则 $N≅[x^{s-t}]$. 于是上述链复形可写为 $$\begin{equation}
+	0 \rightarrow [x^{s-t}] \xrightarrow{\times x^{r}} [x^{s-t}] \xrightarrow{\times x^{s-r}} [x^{s-t}] \xrightarrow{\times x^{r}} [x^{s-t}] \xrightarrow{\times x^{s-r}} [x^{s-t}] \rightarrow \cdots
+\end{equation}$$</p>
+    <p>从而, 我们有 $$\begin{equation}
+\mathrm{Ext}^0_A(M,N) \cong \mathrm{Ker}(\times x^{r}) = \begin{cases}
+[x^{s-t}], & r \ge t ;\\
+[x^{s-r}], & r < t ;
+\end{cases}  = [x^{s-\min(r,t)}],
+\end{equation}$$ $$\begin{equation}
+\mathrm{Ext}^{2n+1}_A(M,N) \cong \mathrm{Ker}(\times x^{s-r}) / \mathrm{Im}(\times x^{r}) = \begin{cases}
+[x^t], & r + t > s \text{且} r < t ;\\
+[x^r], & r + t > s \text{且} r ≥ t ;\\
+[x^{s-t}], & r + t ≤ s \text{且} t < r ;\\
+[x^{s-r}], & r + t ≤ s \text{且} t ≥ r ;
+\end{cases}=[x^{s - \min(s - r, s-t, r, t)}],
+\end{equation}$$ $$\begin{equation}
+\mathrm{Ext}^{2n}_A(M,N) \cong \mathrm{Ker}(\times x^{r}) / \mathrm{Im}(\times x^{s-r}) = [x^{s - \min(s - r, s-t, r, t)}],
+\end{equation}$$</p>
+    <p>综上可得,</p>
+    <p>$$\begin{equation}
+\mathrm{Ext}^n_A(M,N) = [x^{s - \min(s - r, s-t, r, t)}], \quad \forall n \ge 1.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是有无限余积并且有足够多投射对象的 Abel 范畴. 则对于任意一簇对象 $M_i$, $i \in I$, 和任意对象 $N$, 有同构 $\operatorname{Ext}_{\mathcal{A}}^n(\bigoplus_{i \in I} M_i, N) \cong \prod_{i \in I} \operatorname{Ext}_{\mathcal{A}}^n(M_i,N)$, $\forall n \ge 0$.</p>
+  <div class="proof">
+    <p>对于每一个 $M_i$, 取其投射分解 $P_i\xrightarrow{\pi_i} M_i→ 0$, 下面我们来构造 $\bigoplus_{i∈I} M_i$ 的投射分解. 由于 $\mathcal{A}$ 有无限余积且有足够多投射对象, 故 $\bigoplus_{i∈I} P_i^0$ 存在且为投射对象. 于是我们有系列满态射 $\bigoplus_{i∈I} P_i^0 → P_j^0 → M_j$, 从而由余积的泛性质, 可以得到满态射 $\bigoplus_{i∈I} P_i^0 → \bigoplus_{i∈I} M_i$. 记其为 $\pi$, 并且(态射余积的定义) $π = \bigoplus_{i∈ I}\pi_i$, 容易发现它的 kernel 为 $\bigoplus_{i∈I} \operatorname{Ker} \pi_i$. 反复应用此过程, 我们就得到了 $\bigoplus_{i∈I} M_i$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} P_i^1 \rightarrow \bigoplus_{i \in I} P_i^0 \xrightarrow{\pi} \bigoplus_{i \in I} M_i \rightarrow 0.
+\end{equation}$$ 将 $\mathrm{Hom}_{\mathcal{A}}(- ,N)$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_{\mathcal{A}}(\bigoplus_{i \in I} P_i^0,N) \rightarrow \mathrm{Hom}_{\mathcal{A}}(\bigoplus_{i \in I} P_i^1,N) \rightarrow \cdots \rightarrow \mathrm{Hom}_{\mathcal{A}}(\bigoplus_{i \in I} P_i^n,N) \rightarrow \cdots
+\end{equation}$$ 由于 $\mathrm{Hom}_{\mathcal{A}}(\bigoplus_{i \in I} P_i^n,N) \cong \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^n,N)$, 故上式同构于 $$\begin{equation}
+	0 \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^0,N) \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^1,N) \rightarrow \cdots \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^n,N) \rightarrow \cdots
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Ext}^n_{\mathcal{A}}(\bigoplus_{i \in I} M_i,N) \cong \mathrm{H}^n(\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)).
+\end{equation}$$ 由于链复形的 product 是逐度取积, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}^n(\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)) \cong \prod_{i \in I} \mathrm{H}^n(\mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)) \cong \prod_{i \in I} \mathrm{Ext}^n_{\mathcal{A}}(M_i,N).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Ext}^n_{\mathcal{A}}(\bigoplus_{i \in I} M_i,N) \cong \prod_{i \in I} \mathrm{Ext}^n_{\mathcal{A}}(M_i,N).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 一般而言, 上同调函子 $\mathrm{H}^n$ 不保持积. 但是题目里面的 $\mathrm{H}^n$ 和 $\prod$ 交换并不是保持积的意思, 因为上面题目里面的 $\mathrm{H}^n$ 是作用在特定复形 $\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)$ 上的上同调函子, 而不是作用在任意对象上的函子(也就是说不是 $\mathrm{H}^n:\mathcal{A}→\mathbf{Ab}$, 只是混用了符号). 事实上, 由于每一个 $\mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)$ 都是一个链复形, 故 $\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(P_i^\bullet,N)$ 也是一个链复形, 因此我们可以定义作用在该链复形上的上同调函子 $\mathrm{H}^n$. <em>不过我不是很清楚我上面是不是说清楚了.</em></p>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是有无限积并且有足够多内射对象的 Abel 范畴. 则对于任意对象 $M$ 和任意一簇对象 $N_i$, $i \in I$, 有同构 $\operatorname{Ext}_{\mathcal{A}}^n(M,\prod_{i \in I} N_i) \cong \prod_{i \in I} \operatorname{Ext}_{\mathcal{A}}^n(M,N_i)$, $\forall n \ge 0$.</p>
+  <div class="proof">
+    <p>对于每一个 $N_i$, 取其内射分解 $0→ N_i \xrightarrow{\varepsilon_i} I_i^0 → I_i^1 → ⋯$. 下面我们来构造 $\prod_{i∈I} N_i$ 的内射分解. 由于 $\mathcal{A}$ 有无限积且有足够多内射对象, 故 $\prod_{i∈I} I_i^0$ 存在且为内射对象. 于是我们有系列单态射 $N_j \xrightarrow{\varepsilon_j} I_j^0 \to \prod_{i∈I} I_i^0$, 从而由积的泛性质, 可以得到单态射 $\prod_{i∈I} N_i \xrightarrow{\varepsilon} \prod_{i∈I} I_i^0$. 记其为 $ε$, 并且(态射积的定义) $ε = \prod_{i∈ I}\varepsilon_i$, 容易发现它的 cokernel 为 $\prod_{i∈I} \operatorname{Coker} \varepsilon_i$. 反复应用此过程, 我们就得到了 $\prod_{i∈I} N_i$ 的内射分解 $$\begin{equation}
+	0 \rightarrow \prod_{i \in I} N_i \xrightarrow{\varepsilon} \prod_{i \in I} I_i^0 \rightarrow \prod_{i \in I} I_i^1 \rightarrow \cdots \rightarrow \prod_{i \in I} I_i^n \rightarrow \cdots
+\end{equation}$$ 将 $\mathrm{Hom}_{\mathcal{A}}(M , -)$ 作用到删项内射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_{\mathcal{A}}(M, \prod_{i \in I} I_i^0) \rightarrow \mathrm{Hom}_{\mathcal{A}}(M, \prod_{i \in I} I_i^1) \rightarrow \cdots \rightarrow \mathrm{Hom}_{\mathcal{A}}(M, \prod_{i \in I} I_i^n) \rightarrow \cdots
+\end{equation}$$ 由于 $\mathrm{Hom}_{\mathcal{A}}(M, \prod_{i \in I} I_i^n) \cong \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^n)$, 故上式同构于</p>
+    <p>$$\begin{equation}
+	0 \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^0) \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^1) \rightarrow \cdots \rightarrow \prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^n) \rightarrow \cdots	
+\end{equation}$$</p>
+    <p>从而得到 $$\begin{equation}
+	\mathrm{Ext}^n_{\mathcal{A}}(M,\prod_{i \in I} N_i) \cong \mathrm{H}^n(\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^\bullet)).
+\end{equation}$$ 由于链复形的 product 是逐度取积, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}^n(\prod_{i \in I} \mathrm{Hom}_{\mathcal{A}}(M, I_i^\bullet)) \cong \prod_{i \in I} \mathrm{H}^n(\mathrm{Hom}_{\mathcal{A}}(M, I_i^\bullet)) \cong \prod_{i \in I} \mathrm{Ext}^n_{\mathcal{A}}(M,N_i).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Ext}^n_{\mathcal{A}}(M,\prod_{i \in I} N_i) \cong \prod_{i \in I} \mathrm{Ext}^n_{\mathcal{A}}(M,N_i).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是(左)Noether 环. 则对于任意有限生成(左)$R$-模 $M$ 和任意一簇(左)$R$-模 $N_i$, $i \in I$, 有同构 $\operatorname{Ext}_{\mathcal{A}}^n(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \operatorname{Ext}_{\mathcal{A}}^n(M,N_i)$, $\forall n \ge 0$.</p>
+  <div class="proof">
+    <p>这题关键在于左 Noether 环上的有限生成模是紧的, 即有同构 $$\begin{equation}
+	\mathrm{Hom}_R(M, \bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \mathrm{Hom}_R(M, N_i).
+\end{equation}$$</p>
+    <p>取 $N_i$ 的内射分解 $0→ N_i \xrightarrow{\varepsilon_i} I_i^0 → I_i^1 → ⋯$. 由于左 Noether 环上的有限生成模是紧的, 故有同构 $$\begin{equation}
+	\mathrm{Hom}_R(M, \bigoplus_{i \in I} I_i^n) \cong \bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^n).
+\end{equation}$$ 将 $\mathrm{Hom}_R(M , -)$ 作用到删项内射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathrm{Hom}_R(M, \bigoplus_{i \in I} I_i^0) \rightarrow \mathrm{Hom}_R(M, \bigoplus_{i \in I} I_i^1) \rightarrow \cdots \rightarrow \mathrm{Hom}_R(M, \bigoplus_{i \in I} I_i^n) \rightarrow \cdots
+\end{equation}$$ 由于上面同构, 故上式同构于 $$\begin{equation}
+	0 \rightarrow \bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^0) \rightarrow \bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^1) \rightarrow \cdots \rightarrow \bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^n) \rightarrow \cdots	
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Ext}^n_R(M,\bigoplus_{i \in I} N_i) \cong \mathrm{H}^n(\bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^\bullet)).
+\end{equation}$$ 由于链复形的 direct sum 是逐度取直和, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}^n(\bigoplus_{i \in I} \mathrm{Hom}_R(M, I_i^\bullet)) \cong \bigoplus_{i \in I} \mathrm{H}^n(\mathrm{Hom}_R(M, I_i^\bullet)) \cong \bigoplus_{i \in I} \mathrm{Ext}^n_R(M,N_i).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Ext}^n_R(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \mathrm{Ext}^n_R(M,N_i).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<h2 id="37-mathjax_protectedjfxtyxrocm17vg9yfv9ujamathjax_protected-函子">3.7 $\mathrm{Tor}_n$ 函子</h2>
+
+<h3 id="习题-37">习题 3.7</h3>
+
+<div class="problem">
+  <p>设 $s,t$ 均为正整数. 计算 $\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t)$.</p>
+  <div class="proof">
+    <p>考虑 $\mathbb{Z}_t$ 的投射分解 $$\begin{equation}
+	0 \rightarrow \mathbb{Z} \xrightarrow{\times t} \mathbb{Z} \xrightarrow{\pi} \mathbb{Z}_t \rightarrow 0,
+\end{equation}$$ 将 $\mathbb{Z}_s \otimes_{\mathbb{Z}} -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} \xrightarrow{\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)} \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} \rightarrow 0,
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\operatorname{Tor}_0^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) \cong \mathbb{Z}_s \otimes_{\mathbb{Z}} \mathbb{Z} / \mathrm{Im}(\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)) \cong \mathbb{Z}_{s}⊗\mathbb{Z}_t ,
+\end{equation}$$ $$\begin{equation}
+	\operatorname{Tor}_1^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) \cong \mathrm{Ker}(\mathrm{Id}_{\mathbb{Z}_s} \otimes (\times t)) \cong \{[x]_s \in \mathbb{Z}_s \mid tx \equiv 0 \mod s\} \cong \mathbb{Z}_{\gcd(s,t)},
+\end{equation}$$ $$\begin{equation}
+	\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t) = 0, \quad \forall n \ge 2.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>对任意 Abel 群 $M$, 计算 $\operatorname{Tor}_1^{\mathbb{Z}}(M,\mathbb{Z}_t)$, 并说明其是扭群.</p>
+  <div class="proof">
+    <p>考虑 $\mathbb{Z}_t$ 的投射分解 $$\begin{equation}
+	0 \rightarrow \mathbb{Z} \xrightarrow{\times t} \mathbb{Z} \xrightarrow{\pi} \mathbb{Z}_t \rightarrow 0,
+\end{equation}$$ 将 $M \otimes_{\mathbb{Z}} -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	0 \rightarrow M \otimes_{\mathbb{Z}} \mathbb{Z} \xrightarrow{\mathrm{Id}_{M} \otimes (\times t)} M \otimes_{\mathbb{Z}} \mathbb{Z} \rightarrow 0,
+\end{equation}$$ 于是得到 $$\begin{equation}
+	\operatorname{Tor}_1^{\mathbb{Z}}(M,\mathbb{Z}_t) \cong \mathrm{Ker}(\mathrm{Id}_{M} \otimes (\times t)) \cong \{m \in M \mid tm = 0\}.
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $M$ 是右 $R$-模. 则下述等价: <br /></p>
+  <p>(i) $M$ 是平坦模. <br /></p>
+  <p>(ii) $\operatorname{Tor}_n^R(M,-)=0$, 对所有 $n \ge 1$ 成立. <br /></p>
+  <p>(iii) $\operatorname{Tor}_1^R(M,-)=0$.</p>
+  <div class="proof">
+    <p>(i) $\Rightarrow$ (ii): 由平坦模的定义可知, $M \otimes_R -$ 是正合函子, 故 $\mathrm{Tor}_n$ 函子导出的长正合列其实是短正合列, 即 $\operatorname{Tor}_n^R(M,-)=0$, 对所有 $n \ge 1$ 成立. <br /></p>
+    <p>(ii) $\Rightarrow$ (iii): 显然. <br /></p>
+    <p>(iii) $\Rightarrow$ (i): 设 $0 \rightarrow A \xrightarrow{f} B \xrightarrow{g} C \rightarrow 0$ 是任意短正合列. 由 $\operatorname{Tor}_1^R(M,-)=0$ 可知, 我们有正合列: $$\begin{equation}
+	0=\operatorname{Tor}_1^R(M,C)→ M \otimes_R A \xrightarrow{\mathrm{Id}_M \otimes f} M \otimes_R B \xrightarrow{\mathrm{Id}_M \otimes g} M \otimes_R C \rightarrow 0,
+\end{equation}$$ 从而 $M \otimes_R -$ 是正合函子, 故 $M$ 是平坦模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环. 则对于任意一簇右 $R$-模 $M_i$, $i \in I$, 和任意左 $R$-模 $N$, 有同构 $\operatorname{Tor}_n^R(\bigoplus_{i \in I} M_i,N) \cong \bigoplus_{i \in I} \operatorname{Tor}_n^R(M_i,N)$, 对所有 $n \ge 0$ 成立.</p>
+  <div class="proof">
+    <p>对于每一个 $M_i$, 取其投射分解 $\cdots → P_i^1 → P_i^0 → M_i → 0$. 下面我们来构造 $\bigoplus_{i∈I} M_i$ 的投射分解. 由于 $\mathcal{A}$ 有无限余积且有足够多投射对象, 故 $\bigoplus_{i∈I} P_i^0$ 存在且为投射对象. 于是我们有系列满态射 $\bigoplus_{i∈I} P_i^0 → P_j^0 → M_j$, 从而由余积的泛性质, 可以得到满态射 $\bigoplus_{i∈I} P_i^0 → \bigoplus_{i∈I} M_i$. 记其为 $\pi$, 并且(态射余积的定义) $π = \bigoplus_{i∈ I}\pi_i$, 容易发现它的 kernel 为 $\bigoplus_{i∈I} \operatorname{Ker} \pi_i$. 反复应用此过程, 我们就得到了 $\bigoplus_{i∈I} M_i$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} P_i^1 \rightarrow \bigoplus_{i \in I} P_i^0 \xrightarrow{\pi} \bigoplus_{i \in I} M_i \rightarrow 0.
+\end{equation}$$ 将 $- \otimes_R N$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	\cdots → \left(\bigoplus_{i \in I} P_i^n\right) \otimes_R N → \cdots → \left(\bigoplus_{i \in I} P_i^1\right) \otimes_R N → \left(\bigoplus_{i \in I} P_i^0\right) \otimes_R N → 0.
+\end{equation}$$ 由于 $- \otimes_R N$ 保持直和, 故上式同构于 $$\begin{equation}
+	\cdots → \bigoplus_{i \in I} (P_i^n \otimes_R N) → \cdots → \bigoplus_{i \in I} (P_i^1 \otimes_R N) → \bigoplus_{i \in I} (P_i^0 \otimes_R N) → 0.	
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Tor}^R_n(\bigoplus_{i \in I} M_i,N) \cong \mathrm{H}_n(\bigoplus_{i \in I} (P_i^\bullet \otimes_R N)).
+\end{equation}$$ 由于链复形的 direct sum 是逐度取直和, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}_n(\bigoplus_{i \in I} (P_i^\bullet \otimes_R N)) \cong \bigoplus_{i \in I} \mathrm{H}_n(P_i^\bullet \otimes_R N) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M_i,N).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Tor}^R_n(\bigoplus_{i \in I} M_i,N) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M_i,N).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环. 则对于任意右 $R$-模 $M$ 和任意一簇左 $R$-模 $N_i$, $i \in I$, 有同构 $\operatorname{Tor}_n^R(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \operatorname{Tor}_n^R(M,N_i)$, 对所有 $n \ge 0$ 成立.</p>
+  <div class="proof">
+    <p>对于每一个 $N_i$, 取其投射分解 $\cdots → P_i^1 → P_i^0 → N_i → 0$. 下面我们来构造 $\bigoplus_{i∈I} N_i$ 的投射分解. 由于 $\mathcal{A}$ 有无限余积且有足够多投射对象, 故 $\bigoplus_{i∈I} P_i^0$ 存在且为投射对象. 于是我们有系列满态射 $\bigoplus_{i∈I} P_i^0 → P_j^0 → N_j$, 从而由余积的泛性质, 可以得到满态射 $\bigoplus_{i∈I} P_i^0 → \bigoplus_{i∈I} N_i$. 记其为 $\pi$, 并且(态射余积的定义) $π = \bigoplus_{i∈ I}\pi_i$, 容易发现它的 kernel 为 $\bigoplus_{i∈I} \operatorname{Ker} \pi_i$. 反复应用此过程, 我们就得到了 $\bigoplus_{i∈I} N_i$ 的投射分解 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} P_i^1 \rightarrow \bigoplus_{i \in I} P_i^0 \xrightarrow{\pi} \bigoplus_{i \in I} N_i \rightarrow 0.
+\end{equation}$$ 将 $M \otimes_R -$ 作用到删项投射分解, 得到如下链复形: $$\begin{equation}
+	\cdots \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^n \rightarrow \cdots \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^1 \rightarrow M \otimes_R \bigoplus_{i \in I} P_i^0 \rightarrow 0.
+\end{equation}$$ 由于 $M \otimes_R -$ 保持直和, 故上式同构于 $$\begin{equation}
+	\cdots \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^n \rightarrow \cdots \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^1 \rightarrow \bigoplus_{i \in I} M \otimes_R P_i^0 \rightarrow 0.	
+\end{equation}$$ 从而得到 $$\begin{equation}
+	\mathrm{Tor}^R_n(M,\bigoplus_{i \in I} N_i) \cong \mathrm{H}_n(\bigoplus_{i \in I} M \otimes_R P_i^\bullet).
+\end{equation}$$ 由于链复形的 direct sum 是逐度取直和, 从而保持 kernel 和 image, 故 $$\begin{equation}
+	\mathrm{H}_n(\bigoplus_{i \in I} M \otimes_R P_i^\bullet) \cong \bigoplus_{i \in I} \mathrm{H}_n(M \otimes_R P_i^\bullet) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M,N_i).	
+\end{equation}$$ 于是 $$\begin{equation}
+	\mathrm{Tor}^R_n(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M,N_i).
+\end{equation}$$</p>
+  </div>
+</div>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#31-复形范畴">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">3.1 复形范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-31">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">习题 3.1</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#32-同调代数基本定理">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">3.2 同调代数基本定理</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-32">
+        <span class="toc-number">2.1.</span>
+        <span class="toc-title">习题 3.2</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#33-同伦范畴">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">3.3 同伦范畴</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-33">
+        <span class="toc-number">3.1.</span>
+        <span class="toc-title">习题 3.3</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#34-投射分解和内射分解">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">3.4 投射分解和内射分解</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-34">
+        <span class="toc-number">4.1.</span>
+        <span class="toc-title">习题 3.4</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#35-导出函子">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">3.5 导出函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-35">
+        <span class="toc-number">5.1.</span>
+        <span class="toc-title">习题 3.5</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#36-mathjax_protectedjfxtyxrocm17rxh0fv5ujamathjax_protected-函子">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">3.6 $\mathrm{Ext}^n$ 函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-36">
+        <span class="toc-number">6.1.</span>
+        <span class="toc-title">习题 3.6</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#37-mathjax_protectedjfxtyxrocm17vg9yfv9ujamathjax_protected-函子">
+        <span class="toc-number">7.</span>
+        <span class="toc-title">3.7 $\mathrm{Tor}_n$ 函子</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#习题-37">
+        <span class="toc-number">7.1.</span>
+        <span class="toc-title">习题 3.7</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Ex12_2" title="NEXT: 《基础代数学》作业 Week12-2">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Ex12_1" title="PREV: 《基础代数学》作业 Week12-1">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

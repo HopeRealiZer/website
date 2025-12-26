@@ -9,12 +9,12 @@
 
 
 
-  <title>《基础代数学》作业 Week11-1
+  <title>《基础代数学》作业 Week13-2
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="  设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.">
+<meta name="description" content="  设 $m$ 是正整数. 写出 $\mathbb{Z}$-模 $\mathbb{Z}_m$ 的一个投射分解.">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Ex11_1">
+<link rel="canonical" href="/website/posts/Ex13_2">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,79 +75,110 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>《基础代数学》作业 Week11-1</h1>
+      <h1>《基础代数学》作业 Week13-2</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        November 24, 2025
+        December 10, 2025
       </p>
     </div>
 
     <div class="divider"></div>
 
     <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $0 \rightarrow X \overset{x}{\hookrightarrow} Y \xrightarrow{y} Z$, 它是正合列当且仅当 $x$ 是 $y$ 的核.</p>
+  <p>设 $m$ 是正整数. 写出 $\mathbb{Z}$-模 $\mathbb{Z}_m$ 的一个投射分解.</p>
   <div class="proof">
-    <p>(⇒) 由于在 $X$ 处正合, 于是 $\mathrm{Ker}x=0$, 于是 $x$ 是单态射. 由于在 $Y$ 处正合, 于是有 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑交换图:</p>
+    <p>注意到 $\mathbb{Z}$ 是自由模从而是投射模, 我们有如下投射分解:</p>
     <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_f43a65e661c3c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+        <embed src="/website/svg/Ex13_2/diagram_bf8ffbc3a7cd9.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
       </div> <br /> </center>
-    <p>由于 $yx=0$, 存在唯一的态射 $s:X→\mathrm{Ker}y$ 使得 $x=k_ys$, 由于 $x$ 是单态射, 于是 $s$ 是单态射. 同时由于 $\mathrm{Ker}y≅\mathrm{Im}x$, 这个 $s$ 同时也是满单分解给出的态射, 于是 $s$ 也是满态射, 从而 $s$ 是同构. 于是 $x$ 是 $y$ 的 kernel.</p>
-    <p><br /> (⇐) 只需要验证在 $Y$ 处正合, 即验证 $\mathrm{Ker}y=\mathrm{Im}x$. 考虑如下交换图:</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $D$ 是主理想整环, $M$ 是有限生成 $D$-模. 写出 $M$ 的一个投射分解.</p>
+  <div class="proof">
+    <p>主理想整环上的投射模都是自由模, 于是就有如下交换图给出的投射分解:</p>
     <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_e2e0a3ea52635.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+        <embed src="/website/svg/Ex13_2/diagram_005d385f2cfc6.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
       </div> <br /> </center>
-    <p>取 $x$ 的满单分解, 由于 $ym_x=0$ (由 $ym_x\widetilde{x}=0$ 及 $\widetilde{x}$ 单可得), 根据 $x$ 是 $y$ 的 kernel, 存在唯一的态射 $s$ 使得 $xs=m_x$. 于是 $x=m_x\widetilde{x}=xs\widetilde{x}$, 根据 $x$ 单可得 $s\widetilde{x}=\mathrm{Id}_X$. 同理可得 $\mathrm{Id}_{\mathrm{Im}(x)}=\widetilde{x}s$. 从而 $s, \widetilde{x}$ 是同构, 即得 $\mathrm{Im}x≅\mathrm{Ker}y$.</p>
+    <p>(使用的每一个(自由)投射模都是有限生成的(有限秩), 关键在于主理想整环上的有限生成模的子模也是有限生成模.)</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴. 对于态射列 $X \xrightarrow{x} Y \overset{x}{\twoheadrightarrow} Z \rightarrow 0$, 它是正合列当且仅当 $y$ 是 $x$ 的余核.</p>
+  <p>写出 $\mathbb{Z}_4$-模 $\mathbb{Z}_2$ 的一个投射分解.</p>
   <div class="proof">
-    <p>与上一题完全类似.</p>
-  </div>
-</div>
-
-<div class="problem">
-  <p>设下图的两行均是 Abel 范畴中的正合列, 且左边的方块交换：</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/Ex11_1/diagram_da7a075a2e01f.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>则存在唯一的态射 $h$ 使得右边的方块也交换.</p>
-  <div class="proof">
-    <p>由上面的习题知 $y$ 是 $x$ 的 cokernel, 于是由 $y'gx=y'x'f=0$ 得存在唯一的态射 $h$ 使得 $y'g=hy$.</p>
-  </div>
-</div>
-
-<div class="problem">
-  <p>设下图的两行均是 Abel 范畴中的正合列, 且右边的方块交换：</p>
-  <center> <br /> <div class="tikz-diagram">
-      <embed src="/website/svg/Ex11_1/diagram_161ab360cbc3b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
-    </div> <br /> </center>
-  <p>则存在唯一的态射 $f$ 使得左边的方块也交换.</p>
-  <div class="proof">
-    <p>由上面的习题知 $x'$ 是 $y'$ 的 kernel, 于是由 $y'gx=hyx=0$ 得存在唯一的态射 $f$ 使得 $gx=x'f$.</p>
-  </div>
-</div>
-
-<div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.</p>
-  <div class="proof">
-    <p>考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. <br /></p>
-    <p>当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图</p>
+    <p>注意到 $\mathbb{Z}_4$-模 $\mathbb{Z}_4$ 是投射模, 我们有如下投射分解:</p>
     <center> <br /> <div class="tikz-diagram">
-        <embed src="/website/svg/Ex11_1/diagram_1b5b3b7e980d8.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+        <embed src="/website/svg/Ex13_2/diagram_4dd8bec9e581c.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
       </div> <br /> </center>
-    <p>其中 $Q$ 是投射对象, $q:Q→P$ 是满态射, 根据可裂条件可得存在 $t:P→Q$ 使得 $qt=\mathrm{Id}_P$. 由于 $Q$ 是投射对象, 故存在 $s:Q→ M$ 使得 $gs=pq$. 由于 $p=pqt=gst$, 从而 $P$ 是投射对象.</p>
   </div>
 </div>
 
 <div class="problem">
-  <p>设 $\mathcal{A}$ 是 Abel 范畴, $I$ 是内射对象. 若任意短正合列 $0 \longrightarrow I \longrightarrow M \longrightarrow N \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多内射对象时, 逆命题也成立.</p>
+  <p>证明内射分解的比较定理.</p>
   <div class="proof">
-    <p>与上一题证明完全类似.</p>
+    <p>先陈述要证明的内容: 设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴. 给定态射 $f:M→N$, 以及 $N$ 的内射分解 $0→N→J$ 以及正合列 $0→M→I$, 则有链复形 $I$ 和 $J$ 之间的链映射 $\alpha$ 使得下面的交换图交换:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_4207b5e3867e5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>并且这样的链映射 $\alpha$ 在同伦意义下是唯一的. <br /></p>
+    <p><strong>首先证明这样链映射的存在性.</strong> <br /></p>
+    <p>由于 $i$ 是单态射, 由 $J_0$ 是内射对象, 存在态射 $\alpha_0 : I_0 → J_0$ 使得 $\alpha_0 i = i' f$. <br /></p>
+    <p>现在假设我们已经有了态射 $\{\alpha_k : I_k → J_k\}_{k=0}^n$ 使得对任意的 $0≤ k ≤ n$ 有 $d'^{k-1} \alpha_{k-1} = \alpha_{k} d^{k-1}$ ($\alpha_{-1}$ 代表 $f$, $d^{-1}$ 和 $d'^{-1}$ 分别代表 $i$ 和 $i'$).</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_1151a84b8e5e4.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>如上图考虑 $d^n$ 的满单分解, 注意到 $\widetilde{d^n}$ 是 $d^{n-1}$ 的 cokernel, 以及 $d'^n\alpha_n d^{n-1} = d'^n d'^{n-1}\alpha_{n-1}=0$, 因此存在态射 $t_n : \operatorname{Im} d^n \to J_{n+1}$ 使得 $t_n \widetilde{d^n} = d'^n \alpha_n$. 由于 $J_{n+1}$ 是内射对象, 存在态射 $\alpha_{n+1} : I_{n+1} \to J_{n+1}$ 使得 $\alpha_{n+1} \sigma_n = t_n$. 于是有 $$\begin{equation}
+    \alpha_{n+1} d^n = \alpha_{n+1} \sigma_n \widetilde{d^n} = t_n \widetilde{d^n} = d'^n \alpha_n.
+\end{equation}$$</p>
+    <p>由数学归纳法, 我们就得到了链映射 $\alpha : I \to J$. <br /></p>
+    <p><strong>下面证明这样的链映射在同伦意义下是唯一的.</strong> <br /></p>
+    <p>假设还有链映射 $\beta : I \to J$ 也使得最开始的交换图交换.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_bc18d4a5a1b6b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>首先, 由于 $(\alpha_0 - \beta_0) i = i' f - i' f = 0$, 以及 $i'$ 是 $\widetilde{d^0}$ 的 kernel, 存在态射 $h_0 : \operatorname{Im} d^0 \to J_0$ 使得 $h_0 \widetilde{d^0} = \alpha_0 - \beta_0$. 由于 $\sigma_0$ 是单态射以及 $J_0$ 是内射对象, 存在态射 $s_0 : I_1 \to J_0$ 使得 $s_0 \sigma_0 = h_0$. 于是有 $$\begin{equation}
+    (\alpha_0 - \beta_0) = h_0 \widetilde{d^0} = s_0 \sigma_0 \widetilde{d^0} = s_0 d^0.
+\end{equation}$$ 这实际上给出了 $\alpha\overset{s}{\sim}\beta$ 的第一步. <br /></p>
+    <p>假设已经有 $\{s_k: I_{k+1}→ J_k\}_{k=0}^{n}$ 使得对任意的 $0≤ k ≤ n$ 有 $\alpha_k - \beta_k = s_k d^k + d'^{k-1} s_{k-1}$ (其中 $s_{-1}$ 代表零态射). 于是有 $$\begin{equation}
+(\alpha_{n+1}-\beta_{n+1}) d^n = d'^{n} (\alpha_n - \beta_n) = d'^{n} (s_n d^n + d'^{n-1} s_{n-1}) = d'^{n} s_n d^n,
+\end{equation}$$ 从而有 $$\begin{equation}
+(\alpha_{n+1}-\beta_{n+1}-d'^ns_n) d^n = 0.
+\end{equation}$$</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_153c919441dc3.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>由于 $\widetilde{d^{n+1}}$ 是 $d^n$ 的 cokernel, 以及 $(\alpha_{n+1}-\beta_{n+1}-d'^ns_n) d^n = 0$, 存在态射 $h_{n+1} : \operatorname{Im} d^{n+1} \to J_{n+1}$ 使得 $h_{n+1} \widetilde{d^{n+1}} = \alpha_{n+1}-\beta_{n+1}-d'^ns_n$. 由于 $\sigma_{n+1}$ 是单态射以及 $J_{n+1}$ 是内射对象, 存在态射 $s_{n+1} : I_{n+2} \to J_{n+1}$ 使得 $s_{n+1} \sigma_{n+1} = h_{n+1}$. 于是有 $$\begin{equation}
+    \alpha_{n+1}-\beta_{n+1} = h_{n+1} \widetilde{d^{n+1}} + d'^n s_n = s_{n+1} \sigma_{n+1} \widetilde{d^{n+1}} + d'^n s_n = s_{n+1} d^{n+1} + d'^n s_n.
+\end{equation}$$</p>
+    <p>由数学归纳法, 我们就得到了 $\alpha\overset{s}{\sim}\beta$.</p>
   </div>
 </div>
+
+<div class="problem">
+  <p>证明内射分解的唯一性.</p>
+  <div class="proof">
+    <p>对于有足够多内射对象的 Abel 范畴 $\mathcal{A}$ 中的任意对象 $M$, 其内射分解在同伦意义下是唯一的: 若 $0 \to M \xrightarrow{i} I$ 和 $0 \to M \xrightarrow{i'} I'$ 是 $M$ 的两个内射分解, 则存在链映射 $\alpha : I \to I'$ 以及 $\beta : I' \to I$ 使得 $\alpha i = i'$ 以及 $\beta i' = i$. 这样 $\alpha\beta$ 给出了内射分解 $I'$ 到其自身的一个链映射, 并且满足 $\alpha\beta i' = i'$. 同时, 恒等映射 $\mathrm{Id}_{I'}$ 也是内射分解 $I'$ 到其自身的一个链映射, 并且满足 $\mathrm{Id}_{I'} i' = i'$. 由内射分解的比较定理, 我们有 $\alpha\beta \overset{s}{\sim} \mathrm{Id}_{I'}$. 同理可得 $\beta\alpha \overset{t}{\sim} \mathrm{Id}_{I}$. 因此任意两个内射分解之间有同伦等价, 因此内射分解在同伦意义下是唯一的.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明内射分解的马蹄引理.</p>
+  <div class="proof">
+    <p>给定有足够多内射对象的 Abel 范畴 $\mathcal{A}$ 中的正合列 $0 \rightarrow X \xrightarrow{f} Y \xrightarrow{g} Z \rightarrow 0$,以及内射分解 $0→X\xrightarrow{i'}I'$ 和 $0→Z\xrightarrow{i''}I''$, 下面来证明有内射分解 $0→Y\xrightarrow{i}I$ 使得 $I^n=I'^n⊕I''^n$.</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_bd31619f9d7e1.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>注意到 $f$ 是单态射, 由 $I'^0$ 是内射对象, 存在态射 $h : Y → I'^0$ 使得 $h f = i'$. 定义态射 $i : Y → I'^0 ⊕ I''^0$ 为 $i=\begin{pmatrix}h\\i'' g \end{pmatrix}$, 容易验证我们就得到了如上两行正合列的交换图. 由于 $i'$ 和 $i''$ 都是单态射, 由蛇引理 (或者五引理) 可知 $i$ 也是单态射. 并且进一步由蛇引理有如下正合列的交换图:</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_2/diagram_7fcf39477e088.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>这样就只要重复上面的步骤就完成了证明.</p>
+  </div>
+</div>
+
 
   </article>
 
@@ -286,13 +317,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Ex11_2" title="NEXT: 《基础代数学》作业 Week11-2">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Ex14_1" title="NEXT: 《基础代数学》作业 Week14-1">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex10_2" title="PREV: 《基础代数学》作业 Week10-2">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Ex13_1" title="PREV: 《基础代数学》作业 Week13-1">&gt;&gt;</a>
     
   </div>
 </main>

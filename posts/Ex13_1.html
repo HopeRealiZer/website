@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>《基础代数学》作业 Week13-1
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="  设 $\mathcal{A}$ 是加法范畴. 同伦关系是 $C(\mathcal{A})$ 中的一个等价关系, 并验证">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Ex13_1">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>《基础代数学》作业 Week13-1</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        December 7, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="problem">
+  <p>设 $\mathcal{A}$ 是加法范畴. 同伦关系是 $C(\mathcal{A})$ 中的一个等价关系, 并验证</p>
+  <p>$$\begin{equation}
+f \sim g \Longrightarrow fh \sim gh, \quad \forall h \text{(如果可以合成)}
+\end{equation}$$</p>
+  <p>$$\begin{equation}
+f \sim g \Longrightarrow kf \sim kg, \quad \forall k \text{(如果可以合成)}
+\end{equation}$$</p>
+  <div class="proof">
+    <p>自反性和交换性由定义是直接的. 对于传递性, 若 $f∼g, g∼h$, 那么就有 $f-g∼0, g-h∼0$, 于是由加法范畴显然可得 $f-h∼0$, 也即是 $f∼h$. <br /></p>
+    <p>对于第一个蕴含式, 设 $f∼g$, 则存在态射系 $s^n : X^n → Y^{n-1}$ 使得对任意的 $n$ 有 $f^n - g^n = d_Y^{n-1} s^n + s^{n+1} d_X^n$. 对任意的 $m$ 有 $$\begin{equation}
+(fh)^m - (gh)^m = (f^m - g^m) h^m = d_Y^{m-1} s^m h^m + s^{m+1} d_X^m h^m = d_Y^{m-1} (s^m h^m) + (s^{m+1} h^{m+1}) d_Z^m,
+\end{equation}$$ 于是 $fh ∼ gh$ (这里设 $h$ 是从上链复形 $Z$ 到 $X$ 的链映射). 另一个同理. <br /></p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>两个复形通常的直和仍是这两个复形在同伦范畴中的直和.</p>
+  <div class="proof">
+    <p>对于任意一族链复形映射 $\{\varphi_i: X_i→ Y \}_{i∈ I}$, 存在唯一的态射 $\varphi:\bigoplus_{i∈I}X_i→ Y$ 使得 对任意的 $i∈ I$ 有 $\varphi e_i = \varphi_i$, 其中 $e_i:X_i→\oplus_{i∈I}X_i$ 是嵌入结构态射. <br /></p>
+    <p>考虑满函子 $$\begin{equation}
+[\bullet] : C(\mathcal{A}) → K(\mathcal{A}), \quad X \mapsto X, \quad f \mapsto [f]:=\{ g ∣ g∼ f \}.
+\end{equation}$$</p>
+    <p>于是任取 $K(\mathcal{A})$ 里面的一族链复形态射 $\{ [\varphi_i]: [X_i] → [Y] \}_{i∈ I}$, 由满性可知存在 $\varphi_i: X_i → Y$ 使得 $[\varphi_i]$ 是其同伦类. 由上面的性质可知存在唯一的态射 $\varphi:\bigoplus_{i∈I}X_i→ Y$ 使得对任意的 $i∈ I$ 有 $\varphi e_i = \varphi_i$. 于是有 $$\begin{equation}
+[\varphi] [e_i] = [\varphi e_i] = [\varphi_i], \quad ∀ i∈ I.
+\end{equation}$$</p>
+    <p>下面只要证明 $[\varphi]$ 的唯一性: 若存在 $\psi:\bigoplus_{i∈I}X_i→ Y$ 使得对任意的 $i∈ I$ 有 $[\psi] [e_i] = [\varphi_i]$, 则有 $[(ψ - φ) e_i] = 0]$, 从而 $(ψ - φ) e_i ∼ 0$. 由同伦定义知, 存在态射系 $s_i^n : X_i^n → Y^{n-1}$ 使得对任意的 $n$ 有 $$\begin{equation}
+(ψ^n-φ^n)e_i^n=((ψ - φ) e_i)^n = d_Y^{n-1} s_i^n + s_i^{n+1} d_{X_i}^n.
+\end{equation}$$ 考虑态射系 $s^n : (\bigoplus_{i∈I}X_i)^n → Y^{n-1}$ 定义为 $s^n|_{X_i^n} = s_i^n$. 则对任意的 $n$ 有 $$\begin{equation}
+(ψ^n-φ^n) = d_Y^{n-1} s^n + s^{n+1} d_{\bigoplus_{i∈I}X_i}^n.
+\end{equation}$$ 于是 $ψ ∼ φ$, 也即是 $[ψ] = [φ]$. 综上所述, 直和在同伦范畴中也是直和.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 为 Abel 范畴. 则</p>
+  <p>$$\begin{equation}
+H^n : K(\mathcal{A}) \longrightarrow \mathcal{A}
+\end{equation}$$</p>
+  <p>是共变加法函子.</p>
+  <div class="proof">
+    <p>显然是共变函子(同伦的链映射诱导出相同的同调群态射). 只要证明 $H^n$ 保持加法结构即可. 设 $[f], [g] : X \to Y$ 是 $K(\mathcal{A})$ 中的两个态射. 则有 $$\begin{equation}
+H^n([f] + [g]) = H^n([f + g]) = H^n(f + g) = H^n(f) + H^n(g) = H^n([f]) + H^n([g]).
+\end{equation}$$</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>若链映射 $\alpha$ 与 $\beta$ 同伦, 则在同伦范畴中有</p>
+  <p>$$\begin{equation}
+\operatorname{Cone}(\alpha) \cong \operatorname{Cone}(\beta)
+\end{equation}$$</p>
+  <div class="proof">
+    <p>设 $\alpha, \beta : X \to Y$ 是同伦的链映射. 则存在态射系 $s^n : X^n \to Y^{n-1}$ 使得对任意的 $n$ 有 $$\begin{equation}
+\alpha^n - \beta^n = d_Y^{n-1} s^n + s^{n+1} d_X^n.
+\end{equation}$$ 定义态射系 $h^n : \operatorname{Cone}(\alpha)^n \to \operatorname{Cone}(\beta)^n$ 如下: $$\begin{equation}
+h^n = \begin{pmatrix}
+\operatorname{Id}_{X^{n+1}} & 0 \\
+s^{n+1} & \operatorname{Id}_{Y^n}
+\end{pmatrix}.
+\end{equation}$$ 则 $h = \{ h^n \}$ 是链映射(直接验证即可). 类似地, 定义态射系 $k^n : \operatorname{Cone}(\beta)^n \to \operatorname{Cone}(\alpha)^n$ 如下: $$\begin{equation}
+k^n = \begin{pmatrix}
+\operatorname{Id}_{X^{n+1}} & 0 \\
+- s^{n+1} & \operatorname{Id}_{Y^n}
+\end{pmatrix}.
+\end{equation}$$ 则 $k = \{ k^n \}$ 也是链映射. 显然有 $kh = \operatorname{Id}_{\operatorname{Cone}(\alpha)}$ 且 $hk = \operatorname{Id}_{\operatorname{Cone}(\beta)}$. 于是在同伦范畴中有 $\operatorname{Cone}(\alpha) \cong \operatorname{Cone}(\beta)$.</p>
+  </div>
+</div>
+
+<p><strong>Remark.</strong> 按照我的证明, 似乎这个同构在链复形范畴里面也成立? 这个让我十分奇怪.</p>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 是加法范畴, $(C,d)$ 是 $\mathcal{A}$ 上的复形. 称 $(C,d)$ 为可裂复形, 如果存在 $\mathcal{A}$ 中态射</p>
+  <p>$$\begin{equation}
+s^{n+1} : C^{n+1} \longrightarrow C^n, \quad \forall n \in \mathbb{Z}
+\end{equation}$$</p>
+  <p>使得对每个 $n$ 有</p>
+  <p>$$\begin{equation}
+d^n s^{n+1} d^n = d^n.
+\end{equation}$$</p>
+  <p>举例说明可裂复形未必是无环复形. 验证 Abel 群的复形</p>
+  <p>$$\begin{equation}
+\cdots \longrightarrow \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \cdots
+\end{equation}$$</p>
+  <p>是无环复形, 但不是可裂复形.</p>
+  <div class="proof">
+    <p>考虑复形 $$\begin{equation}
+⋯→\mathbb{C}^2\xrightarrow{P_1}\mathbb{C}^2\xrightarrow{P_2}\mathbb{C}^2\xrightarrow{P_1}\mathbb{C}^2→⋯,
+\end{equation}$$ 令 $s^n=\mathrm{Id}_{\mathbb{C}^2}, ∀ n$, 则这个复形是可裂复形. 但显然它不是无环复形, 因为 $H^n(C) \cong \mathbb{C}^2 / \mathrm{Im} P_i \cong \mathbb{C} \neq 0$ 对任意的 $n$ 成立. <br /></p>
+    <p>显然复形 $$\begin{equation}
+\cdots \longrightarrow \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \mathbb{Z}_4 \xrightarrow{2} \cdots
+\end{equation}$$ 是无环复形. 下面证明它不是可裂复形. 假设存在态射系 $s^{n+1} : \mathbb{Z}_4 \to \mathbb{Z}_4$ 使得对每个 $n$ 有 $2 s^{n+1} (2) = 2$. 则 $2=4s^{n+1}(1)=0$, 矛盾.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $\mathcal{A}$ 为 Abel 范畴. 证明无环的可裂复形恰是 $K(\mathcal{A})$ 中的零对象.</p>
+  <div class="proof">
+    <p>首先证明 $K(\mathcal{A})$ 中的零对象是无环的可裂复形. 设 $(C,d)$ 是 $K(\mathcal{A})$ 中的零对象, 即 $\mathrm{Id}_C$ 是零伦的, 即存在态射系 $s^n : C^n \to C^{n-1}$ 使得对任意的 $n$ 有 $\mathrm{Id}_{C^n} = d^{n-1} s^n + s^{n+1} d^n$, 于是 $d^n = d^n s^{n+1}d^n$, 故 $(C,d)$ 是可裂复形. 另外, 由于 $Id_C$ 与零态射同伦, 它与零态射也诱导出相同的同调群态射, 即 $\mathrm{Id}_{H^n(C)} = 0$, 故 $H^n(C) = 0$ 对任意的 $n$ 成立, 也即是 $(C,d)$ 是无环复形. <br /></p>
+    <p>下面证明无环的可裂复形是 $K(\mathcal{A})$ 中的零对象. 设 $(C,d)$ 是无环的可裂复形, 只要证明它到其他复形以及其他复形到它的态射都是零伦的即可, 这只需要证明 $\mathrm{Id}_C$ 是零伦的. 由可裂性, 存在态射系 $s^{n+1} : C^{n+1} \to C^n$ 使得对每个 $n$ 有 $d^n s^{n+1} d^n = d^n$. 由于 $(C,d)$ 是无环复形, 故有 $\mathrm{Im} d^{n-1} = \mathrm{Ker} d^n$.</p>
+    <p>先证明 $K(\mathcal A)$ 中的零对象是无环的可裂复形. 设 $(C,d)$ 是 $K(\mathcal A)$ 中的零对象，即 $\mathrm{Id}_C$ 为零伦. 因此存在态射系 $s^n : C^n \to C^{n-1}$ 使得对任意 $n$ 有 $$
+\mathrm{Id}_{C^n}=d^{n-1}s^n+s^{n+1}d^n.
+$$ 两侧同时右乘 $d^n$ 得 $$
+d^n=d^n s^{n+1} d^n,
+$$ 故 $(C,d)$ 为可裂复形. 另一方面，由于 $\mathrm{Id}_C$ 与零态射同伦，它们作用在同调群上相同，即 $$
+\mathrm{Id}_{H^n(C)}=0,
+$$ 从而 $H^n(C)=0$ 对任意 $n$ 成立，即 $(C,d)$ 为无环复形. 因此，$K(\mathcal A)$ 中的零对象必为无环的可裂复形.</p>
+    <p>现在证明无环的可裂复形为 $K(\mathcal A)$ 中的零对象. 设 $(C,d)$ 为无环的可裂复形. 只需证明 $\mathrm{Id}_C$ 为零伦. 由可裂性，存在态射系 $s^{n+1}:C^{n+1}\to C^n$ 使得 $d^n s^{n+1} d^n = d^n$. 定义 $$
+\varphi^n := s^{n+1} d^n : C^n \to C^n.
+$$ 则有 $\varphi^n$ 是幂等的. 不妨设 $\mathrm{Im}\varphi^n\xrightarrow{m_{\varphi^n}}X_n\xrightarrow{\widetilde{\varphi^n}}\mathrm{Im}\varphi^n$ 是恒等态射, 即有下面的交换图</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_1/diagram_648dbd81b108b.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而有可裂短正合列 $$\begin{equation}
+0 \longrightarrow \mathrm{Ker} \varphi^n \xrightarrow{m_{\varphi^n}'} C^n \xrightarrow{\widetilde{\varphi^n}} \mathrm{Im} \varphi^n \longrightarrow 0,
+\end{equation}$$ 其中 $m_{\varphi^n}'$ 是 $\mathrm{Ker} \varphi^n$ 的嵌入结构态射. 注意到 $$\begin{equation}
+\mathrm{Ker} d^n⊆ \mathrm{Ker} \varphi^n ⊆ \mathrm{Ker} (d^n\varphi^n) = \mathrm{Ker} d^n,
+\end{equation}$$ 因此 $\mathrm{Ker} \varphi^n = \mathrm{Ker} d^n$. 从而有 $$\begin{equation}
+C^n \cong \mathrm{Ker} d^n \oplus \mathrm{Im} \varphi^n = \mathrm{Ker} d^n \oplus \mathrm{Im} d^{n-1}.
+\end{equation}$$</p>
+    <p>于是复形 $X$ 可以写成如下直和 $$\begin{equation}
+\bigoplus_{n \in \mathbb{Z}}
+\left[
+\cdots \longrightarrow 0 \longrightarrow 
+\operatorname{im}(\varphi^n) 
+\xrightarrow{\,d^n\,} 
+\ker(d^{n+1}) 
+\longrightarrow 0 \longrightarrow \cdots
+\right].
+\end{equation}$$</p>
+    <p>注意到每个直和分支都是零伦的, 因为</p>
+    <center> <br /> <div class="tikz-diagram">
+        <embed src="/website/svg/Ex13_1/diagram_cb165858fbff5.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
+      </div> <br /> </center>
+    <p>从而 $X$ 是零对象.</p>
+  </div>
+</div>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Ex13_2" title="NEXT: 《基础代数学》作业 Week13-2">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Ex12_2" title="PREV: 《基础代数学》作业 Week12-2">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>
