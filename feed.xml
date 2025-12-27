@@ -7,6 +7,35 @@
     
       
         <item>
+          <title>20251227表示论研讨会</title>
+          <description>&lt;h2 id=&quot;惠昌常---new-view-to-study-representations-of-algebras-centralizer-algebras-of-matrices&quot;&gt;惠昌常 - New view to study representations of algebras: Centralizer algebras of matrices&lt;/h2&gt;
+
+&lt;p&gt;代数等价中的三种基本等价:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Morita 等价: 模范畴等价&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Stable 等价: 模范畴的稳定范畴等价&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Derived 等价: 模范畴的导出范畴等价&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;稳定等价最困难.&lt;/p&gt;
+
+&lt;p&gt;稳定等价的 &lt;strong&gt;AR 猜想&lt;/strong&gt;:&lt;/p&gt;
+</description>
+          <pubDate>2025-12-27T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Seminar</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Seminar</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>《基础代数学》作业 Week15-1</title>
           <description>&lt;div class=&quot;problem&quot;&gt;
   &lt;p&gt;设 $s,t$ 均为正整数. 计算 $\operatorname{Tor}_n^{\mathbb{Z}}(\mathbb{Z}_s,\mathbb{Z}_t)$.&lt;/p&gt;
@@ -1526,6 +1555,30 @@ C^n \cong \mathrm{Ker} d^n \oplus \mathrm{Im} \varphi^n = \mathrm{Ker} d^n \oplu
 	\mathrm{Tor}^R_n(M,\bigoplus_{i \in I} N_i) \cong \bigoplus_{i \in I} \mathrm{Tor}^R_n(M,N_i).
 \end{equation}$$&lt;/p&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;38-同调维数&quot;&gt;3.8 同调维数&lt;/h2&gt;
+
+&lt;h3 id=&quot;习题-38&quot;&gt;习题 3.8&lt;/h3&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;写出并证明内射维数的刻画.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $A$ 是有限维代数. 则 $\operatorname{gl.dim} A = 0$ 当且仅当 $A$ 是半单代数.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;证明 $\operatorname{gl.dim} \mathbb{Z} = 1$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是环, $\operatorname{inj.dim}(_R R) &lt; \infty$, $P$ 是投射左 $R$-模的双边无限的无环复形. 则复形 $\operatorname{Hom}_R(P,R)$ 是正合列.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;problem&quot;&gt;
+  &lt;p&gt;设 $R$ 是环, $I$ 是内射左 $R$-模的双边无限的无环复形. 若 $\operatorname{proj.dim}(_R M) &lt; \infty$, 则 $\operatorname{Hom}_R(M,I)$ 是正合列.&lt;/p&gt;
 &lt;/div&gt;
 </description>
           <pubDate>2025-12-02T00:00:00+08:00</pubDate>
