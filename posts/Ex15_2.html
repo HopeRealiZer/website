@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>《基础代数学》作业 Week15-2
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="  写出并证明内射维数的刻画.">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Ex15_2">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>《基础代数学》作业 Week15-2</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        December 24, 2025
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="problem">
+  <p>写出并证明内射维数的刻画.</p>
+  <div class="definition">
+    <p>设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴, $N$ 是 $\mathcal{A}$ 的对象, $d$ 是非负整数. <br /> 称 $N$ 的投射维数不超过 $d$, 记作 $\operatorname{inj.dim}(N) ≤ d$, 如果存在 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^d \rightarrow 0$. <br /> 称 $N$ 的内射维数为 $d$, 记作 $\operatorname{inj.dim}(N) = d$, 如果 $\operatorname{inj.dim}(N) ≤ d$ 且不存在 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-1} \rightarrow 0$. <br /> 若 $N$ 没有有限长的内射分解, 则称 $N$ 的内射维数为无穷, 记作 $\operatorname{inj.dim}(N) = \infty$.</p>
+  </div>
+  <div class="proposition">
+    <p>设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴, $N$ 是 $\mathcal{A}$ 的对象, $d$ 是非负整数. 则下述命题等价: <br /></p>
+    <p>(i) $\operatorname{inj.dim}(N) ≤ d$; <br /></p>
+    <p>(ii) 对 $\mathcal{A}$ 中任意对象 $M$ 有 $\operatorname{ext}_{\mathcal{A}}^{n}(M,N) = 0, ∀n ≥ d+1$; <br /></p>
+    <p>(iii) 对 $\mathcal{A}$ 中任意对象 $M$ 有 $\operatorname{ext}_{\mathcal{A}}^{d+1}(M,N) = 0$; <br /></p>
+    <p>(iv) 若 $0 → N \xrightarrow{t^0} I^0 \xrightarrow{t^1} I^1 \rightarrow \cdots \rightarrow I^{d-1} \xrightarrow{t^d} I^d \rightarrow 0$ 是 $\mathcal{A}$ 中正合列, 且 $I^0,⋯,I^{d-1}$ 均为内射对象, 则 $I^d$ 也是内射对象.</p>
+    <div class="proof">
+      <p>(i) $\Rightarrow$ (ii): 由定义显然. <br /></p>
+      <p>(ii) $\Rightarrow$ (iii): 显然. <br /></p>
+      <p>(iii) $\Rightarrow$ (iv): 令 $C^i = \mathrm{Im}t^i, i=0,\cdots, d$ (不妨记 $C^0:= N, C^d:=I^d$), 则可得到正合列 $$\begin{equation}
+	0→C^{i}→I^i→C^{i+1}→0, \quad i=0,\cdots,d-1.
+\end{equation}$$ 根据推论 3.6.2 的 (RD3) 导出的长正合列, 对于 $\mathcal{A}$ 中任意对象 $M$, 有正合列 $$\begin{equation}
+	0=\operatorname{ext}_{\mathcal{A}}^{d-i}(M,I^{i})→\operatorname{ext}_{\mathcal{A}}^{d-i}(M,C^{i+1})→\operatorname{ext}_{\mathcal{A}}^{d-i+1}(M,C^{i})→\operatorname{ext}_{\mathcal{A}}^{d-i+1}(M,I^{i})=0,\quad i=0,\cdots,d-1.
+\end{equation}$$ 于是有 $$\begin{equation}
+	\operatorname{ext}_{\mathcal{A}}^{1}(M,I^d) = \operatorname{ext}_{\mathcal{A}}^{2}(M,C^{d-1}) = \cdots = \operatorname{ext}_{\mathcal{A}}^{d+1}(M,C^0) = \operatorname{ext}_{\mathcal{A}}^{d+1}(M,N) = 0.
+\end{equation}$$ 从而 $I^d$ 是内射对象. <br /></p>
+      <p>(iv) $\Rightarrow$ (i): 取正合列 $0 → N \xrightarrow{\varepsilon} I^0 \rightarrow I^1 \rightarrow \cdots → I^{d-1}$, 其中 $I^0,⋯,I^{d-1}$ 均为内射对象. 令 $I^d = \mathrm{Coker}(I^{d-2}→ I^{d-1})$, 则由 (iv) 可知 $I^d$ 也是内射对象. 从而得到 $N$ 的内射分解 $0 → N \xrightarrow{\varepsilon} I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-1} \rightarrow I^d \rightarrow 0$. 故 $\operatorname{inj.dim}(N) ≤ d$.</p>
+    </div>
+  </div>
+  <div class="proposition">
+    <p>设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴, $N$ 是 $\mathcal{A}$ 的对象, $d$ 是非负整数. 则下述命题等价: <br /></p>
+    <p>(i) $\operatorname{inj.dim}(N) = d$; <br /></p>
+    <p>(ii) 对 $\mathcal{A}$ 中任意对象 $M$ 有 $\operatorname{ext}_{\mathcal{A}}^{n}(M,N) = 0, ∀n ≥ d+1$, 且存在对象 $M'$ 使得 $\operatorname{ext}_{\mathcal{A}}^{d}(M',N) \neq 0$; <br /></p>
+    <p>(iii) 对 $\mathcal{A}$ 中任意对象 $M$ 有 $\operatorname{ext}_{\mathcal{A}}^{d+1}(M,N) = 0$, 且存在对象 $M'$ 使得 $\operatorname{ext}_{\mathcal{A}}^{d}(M',N) \neq 0$; <br /></p>
+    <p>(iv) 存在 $\mathcal{A}$ 中的正合列 $0 → N \xrightarrow{t^0} I^0 \xrightarrow{t^1} I^1 \rightarrow \cdots \rightarrow I^{d-1} \xrightarrow{t^d} I^d \rightarrow 0$, 其中 $I^0,⋯,I^{d-1}$ 均为内射对象, 则 $I^d$ 也为内射对象, 且 $t^d$ 非可裂满.</p>
+    <div class="proof">
+      <p>(i) $\Rightarrow$ (ii): 第一部分显然. 对于第二部分, 取 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-1} \xrightarrow{t^d} I^d→ 0$, 作用 $\mathrm{Hom}_{\mathcal{A}}(I^d,-)$ 得到复形 $$\begin{equation}
+	0 → \mathrm{Hom}_{\mathcal{A}}(I^d,N) → \mathrm{Hom}_{\mathcal{A}}(I^d,I^0) → \mathrm{Hom}_{\mathcal{A}}(I^d,I^1) → \cdots → \mathrm{Hom}_{\mathcal{A}}(I^d,I^{d-1}) \xrightarrow{\mathrm{Hom}_{\mathcal{A}}(I^d,t^d)} \mathrm{Hom}_{\mathcal{A}}(I^d,I^d) → 0.
+\end{equation}$$ 我们断言 $\mathrm{ext}_{\mathcal{A}}^{d}(I^d,N)=\mathrm{Hom}_{\mathcal{A}}(I^d,I^d)/\mathrm{Im\ }\mathrm{Hom}_{\mathcal{A}}(I^d,t^d)≠0 $. 否则 $\mathrm{Hom}_{\mathcal{A}}(I^d,t^d)$ 为满态射, 故存在 $s: I^d → I^{d-1}$ 使得 $t^d s = \mathrm{Id}_{I^d}$, 即 $t^d$ 可裂满. 因而存在 $I'$ 使得 $I^{d-1}≅ \mathrm{Ker}t^d⊕I'$, 于是得到 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-2} \rightarrow I' → 0$, 矛盾. <br /></p>
+      <p>(ii) $\Rightarrow$ (iii): 显然. <br /></p>
+      <p>(iii) $\Rightarrow$ (iv): 只要证明 $t^d$ 非可裂满即可. 否则, 有 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-2} \rightarrow I' → 0$, 从而 $\operatorname{ext}_{\mathcal{A}}^{d}(M,N) = 0, ∀ M∈\mathcal{A}$, 矛盾. <br /></p>
+      <p>(iv) $\Rightarrow$ (i): 由上个命题可知 $\operatorname{inj.dim}(N) ≤ d$. 若 $\operatorname{inj.dim}(N) ≤ d-1$, 则存在 $N$ 的内射分解 $0 → N \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^{d-2} \rightarrow I^{d-1} → 0$, 由 (iv) 可知 $0: I^{d-1}→ 0$ 非可裂满, 矛盾. 故 $\operatorname{inj.dim}(N) = d$.</p>
+    </div>
+  </div>
+  <div class="proposition">
+    <p>设 $\mathcal{A}$ 是有足够多内射对象的 Abel 范畴, $0→X→Y→Z→0$ 是 $\mathcal{A}$ 中的短正合列. 则当 $\operatorname{inj.dim}(X), \operatorname{inj.dim}(Y), \operatorname{inj.dim}(Z)$ 三者中有两者为有限时, 第三者也为有限. 进一步, 我们有 <br /> (1) $\operatorname{inj.dim}(Y) ≤ \max\{\operatorname{inj.dim}(X), \operatorname{inj.dim}(Z)\}$; <br /> (2) $\operatorname{inj.dim}(X) ≤ \max\{\operatorname{inj.dim}(Y), \operatorname{inj.dim}(Z)+1\}$; <br /> (3) $\operatorname{inj.dim}(Z) ≤ \max\{\operatorname{inj.dim}(Y), \operatorname{inj.dim}(X)-1\}$.</p>
+    <div class="proof">
+      <p>设 $\operatorname{inj.dim}(X) = d_X, \operatorname{inj.dim}(Y) = d_Y, \operatorname{inj.dim}(Z) = d_Z$. <br /> (1) 考虑推论 3.6.2 的 (RD3) 导出的长正合列, 对于 $\mathcal{A}$ 中任意对象 $M$, 有正合列 $$\begin{equation}
+	\cdots → \operatorname{ext}_{\mathcal{A}}^{\max\{d_X,d_Z\}+1}(M,X) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_X,d_Z\}+1}(M,Y) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_X,d_Z\}+1}(M,Z) → \cdots
+\end{equation}$$ 由内射维数的刻画可知, 上式中两端项均为零, 故中间项也为零. 由内射维数的刻画可知, $\operatorname{inj.dim}(Y) ≤ \max\{\operatorname{inj.dim}(X), \operatorname{inj.dim}(Z)\}$. <br /></p>
+      <p>(2) 考虑推论 3.6.2 的 (RD3) 导出的长正合列, 对于 $\mathcal{A}$ 中任意对象 $M$, 有正合列 $$\begin{equation}
+	\cdots → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_Z+1\}}(M,Z) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_Z+1\}+1}(M,X) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_Z+1\}+1}(M,Y) → \cdots
+\end{equation}$$ 由内射维数的刻画可知, 上式中两端项均为零, 故中间项也为零. 由内射维数的刻画可知, $\operatorname{inj.dim}(X) ≤ \max\{\operatorname{inj.dim}(Y), \operatorname{inj.dim}(Z)+1\}$. <br /></p>
+      <p>(3) 考虑推论 3.6.2 的 (RD3) 导出的长正合列, 对于 $\mathcal{A}$ 中任意对象 $M$, 有正合列 $$\begin{equation}
+	\cdots → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_X-1\}+1}(M,Y) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_X-1\}+1}(M,Z) → \operatorname{ext}_{\mathcal{A}}^{\max\{d_Y,d_X-1\}+2}(M,X) → \cdots
+\end{equation}$$ 由内射维数的刻画可知, 上式中两端项均为零, 故中间项也为零. 由内射维数的刻画可知, $\operatorname{inj.dim}(Z) ≤ \max\{\operatorname{inj.dim}(Y), \operatorname{inj.dim}(X)-1\}$. <br /></p>
+    </div>
+  </div>
+  <p><strong>Reamrk.</strong> 课本推论 3.8.4 有错误.</p>
+</div>
+
+<div class="problem">
+  <p>设 $A$ 是有限维代数. 则 $\operatorname{gl.dim} A = 0$ 当且仅当 $A$ 是半单代数.</p>
+  <div class="proof">
+    <p>由此前习题可知, 有限维代数 $A$ 是半单代数当且仅当任意 $A$-模都是投射模, 根据整体维数定义可知 $\operatorname{gl.dim} A = 0$ 当且仅当 $A$ 是半单代数.</p>
+  </div>
+</div>
+
+<p>证明下一题需要一个引理, 它是课本定理 1.10.4 的推广. 课本应对有限秩情形使用了归纳法, 这里使用超限归纳(transfinite induction) 来处理任意秩情形.</p>
+
+<div class="lemma">
+  <p>主理想整环 $D$ 上的自由模的非零子模都是自由 $D$-模.</p>
+  <div class="proof">
+    <p>设 $F$ 是主理想整环 $D$ 上的自由模, 且 $\operatorname{rank} F = \kappa$, 其中 $\kappa$ 是某个基数. 设 $N$ 是 $F$ 的非零子模. 我们使用超限归纳法证明 $N$ 是自由 $D$-模. <br /></p>
+    <p>我们可以假设 $$\begin{equation}
+	F = \bigoplus_{\alpha < \kappa} D e_\alpha.
+\end{equation}$$ 对于每个序数 $\beta\leq\kappa$, 可以定义子模 $$\begin{equation}
+	F_\beta = \bigoplus_{\alpha < \beta} D e_\alpha⊆ F,
+\end{equation}$$ 并定义 $$\begin{equation}
+	N_\beta = N ∩ F_\beta ⊆ N.
+\end{equation}$$ 则 $(F_\beta)_{\beta\leq\kappa}$ 是一个递增滤过, $(N_\beta)_{\beta\leq\kappa}$ 也一样, 且 $$\begin{equation}
+	N = N_\kappa = \bigcup_{\beta < \kappa} N_\beta.
+\end{equation}$$</p>
+    <p>(1) 有限情形在课本定理 1.10.4 中已证明. <br /></p>
+    <p>(2) 证明后继步保持结论: 固定一个 $\alpha<\kappa$, 设 $N_{α}$ 是自由模, 我们来证明 $N_{α+1}$ 也是自由模. <br /></p>
+    <p>Claim: $N_{α+1}/N_{α}$ 是 $D$ 的理想. <br /></p>
+    <p>如果有此 Claim, 考虑短正合列 $$\begin{equation}
+	0 → N_{α} → N_{α+1} → N_{α+1}/N_{α} → 0,
+\end{equation}$$ 由于 $N_{α+1}/N_{α}$ 是 $D$ 的理想, 且 $D$ 是主理想整环, 故 $N_{α+1}/N_{α}$ 是 $0$ 或者 $D$ (不论哪种情况都是投射模), 从而短正合列可裂, 故 $N_{α+1} \cong N_{α} \oplus (N_{α+1}/N_{α})$ 是自由模. <br /></p>
+    <p>下面来证明 Claim. 取任意 $x ∈ N_{α+1}$, 记其在 $F_{α+1}=F_α⊕De_α$ 中的唯一表示为 $x = x' + d e_{α}$, 其中 $x' ∈ F_{α}, d ∈ D$. 于是可以考虑态射 $\pi_\alpha: N_{\alpha+1}→ D, x↦d$ (显然是 $D$-模同态), 并且注意到 $\mathrm{Im}\ \pi_\alpha \cong N_{α+1}/N_{α}$, 这就是 $D$ 的一个理想. <br /></p>
+    <p>(3) 证明极限步保持结论: 固定一个极限序数 $\lambda ≤ \kappa$, 设对所有 $\beta < \lambda$, $N_{\beta}$ 都是自由模, 我们来证明 $N_{\lambda}$ 也是自由模. <br /></p>
+    <p>根据归纳假设以及之前的证明, 我们可以给出下面的直和补 $$\begin{equation}
+	N_{\beta+1} \cong N_{\beta} \oplus C_{\beta}, \quad \forall \beta < \lambda,
+\end{equation}$$ 其中 $C_\beta$ 为 $D$ 或者 $0$.</p>
+    <p>下面我们来证明 $$\begin{equation}
+	N_{\lambda} \cong \bigoplus_{\beta < \lambda} C_{\beta}.
+\end{equation}$$</p>
+    <p>对于任意的 $x∈N_λ$, 根据直和的定义(本质都是有限和), 存在某个 $\gamma < \lambda$ 使得 $x ∈ N_{\gamma}$, 并且我们有 $$\begin{equation}
+	N_{\gamma} \cong \bigoplus_{\beta < \gamma} C_{\beta} \subseteq \bigoplus_{\beta < \lambda} C_{\beta},
+\end{equation}$$ 从而 $x$ 是有限多个 $C_{\beta}(\beta<\lambda)$ 元素的和, 且表示唯一, 于是就有 $$\begin{equation}
+	N_{\lambda} \cong \bigoplus_{\beta < \lambda} C_{\beta}.
+\end{equation}$$ 因此 $N_{\lambda}$ 是自由模. <br /></p>
+    <p>综上, 由超限归纳法可知, $N = N_{\kappa}$ 是自由模.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>证明 $\operatorname{gl.dim} \mathbb{Z} = 1$.</p>
+  <div class="proof">
+    <p>对于任意 $\mathbb{Z}$-模 $M$, 存在自由 $\mathbb{Z}$-模 $F$ 使得有短正合列 $0 → K → F → M → 0$. 由于 $\mathbb{Z}$ 是主理想整环, 故由引理可知 $K$ 是自由 $\mathbb{Z}$-模, 从而 $\operatorname{proj.dim}(_{\mathbb{Z}} M) ≤ 1$. 因此 $\operatorname{gl.dim} \mathbb{Z} ≤ 1$. <br /></p>
+    <p>另一方面, 注意到存在非投射 $\mathbb{Z}$-模, 例如 $\mathbb{Z}_2$ (直接注意到 $\mathbb{Z}\xrightarrow{\pi}\mathbb{Z}_2$ 非可裂满). 故 $\operatorname{gl.dim} \mathbb{Z} \ge 1$. 综上, $\operatorname{gl.dim} \mathbb{Z} = 1$.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环, $\operatorname{inj.dim}(_R R) < \infty$, $P$ 是投射左 $R$-模的双边无限的无环复形. 则复形 $\operatorname{Hom}_R(P,R)$ 是正合列.</p>
+  <div class="proof">
+    <p>设 $\operatorname{inj.dim}(_R R) = d$. 则存在 $R$ 的内射分解 $$\begin{equation}
+	0 → R \rightarrow I^0 \rightarrow I^1 \rightarrow \cdots \rightarrow I^d → 0.
+\end{equation}$$ 将 $\operatorname{Hom}_R(P,-)$ 作用到上式, 由于 $P$ 的每一项都是投射左 $R$-模, 故得到复形的正合列(链映射容易给出, 逐项正合从而整体也是正合) $$\begin{equation}
+	0 → \operatorname{Hom}_R(P,R) → \operatorname{Hom}_R(P,I^0) → \operatorname{Hom}_R(P,I^1) → \cdots → \operatorname{Hom}_R(P,I^d) → 0.
+\end{equation}$$ 由于每个 $I^i$ 都是内射左 $R$-模, 故 $\operatorname{Hom}_R(P,I^i) (i=0,\cdots,d)$ 是无环复形. 根据九引理, 可知 $\operatorname{Hom}_R(P,R)$ 也是无环复形, 即正合列.</p>
+  </div>
+</div>
+
+<div class="problem">
+  <p>设 $R$ 是环, $I$ 是内射左 $R$-模的双边无限的无环复形. 若 $\operatorname{proj.dim}(_R M) < \infty$, 则 $\operatorname{Hom}_R(M,I)$ 是正合列.</p>
+  <div class="proof">
+    <p>设 $\operatorname{proj.dim}(_R M) = d$. 则存在 $M$ 的投射分解 $$\begin{equation}
+	0 → P_d → P_{d-1} → \cdots → P_1 → P_0 → M → 0.
+\end{equation}$$ 将 $\operatorname{Hom}_R(-,I)$ 作用到上式, 由于 $I$ 的每一项都是内射左 $R$-模, 故得到复形的正合列(链映射容易给出, 逐项正合从而整体也是正合) $$\begin{equation}
+	0 → \operatorname{Hom}_R(M,I) → \operatorname{Hom}_R(P_0,I) → \operatorname{Hom}_R(P_1,I) → \cdots → \operatorname{Hom}_R(P_d,I) → 0.	
+\end{equation}$$ 由于每个 $P_i$ 都是投射左 $R$-模, 故 $\operatorname{Hom}_R(P_i,I) (i=0,\cdots,d)$ 是无环复形. 根据九引理, 可知 $\operatorname{Hom}_R(M,I)$ 也是无环复形, 即正合列.</p>
+  </div>
+</div>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Seminar" title="NEXT: 20251227表示论研讨会">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Ex15_1" title="PREV: 《基础代数学》作业 Week15-1">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2025
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>
