@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>Vacchini 的 Open Quantum Systems 读书笔记
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="  目标：1–2 周内拿到全书的概念地图 + 主要定理/结构 + 典型模型清单；细节（推导、技术 lemma、繁琐计算）先做“可回溯标注”，等你做具体科研问题时再精读。">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Vacchini_OQS">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>Vacchini 的 Open Quantum Systems 读书笔记</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        February 6, 2026
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <blockquote>
+  <p>目标：<strong>1–2 周内拿到全书的概念地图 + 主要定理/结构 + 典型模型清单</strong>；细节（推导、技术 lemma、繁琐计算）先做“可回溯标注”，等你做具体科研问题时再精读。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="0-你最终要产出的-4-个科研友好成果">0. 你最终要产出的 4 个“科研友好”成果</h2>
+<ol>
+  <li><strong>一页概念地图</strong>：本书有哪些“核心对象/结构”，它们怎么连起来（定义 → 性质 → 例子 → 应用）。</li>
+  <li><strong>术语—公式—用途索引（可检索）</strong>：每个关键词对应 <em>它解决什么问题</em> + <em>出现在哪些章</em>。</li>
+  <li><strong>模型库</strong>：书里出现的典型 open-system 模型（如 dephasing、spin-bath、Bloch equations 等）的“输入/输出/适用假设/可解性”表。</li>
+  <li><strong>问题驱动的回读路线</strong>：未来你做题/读论文时，知道“要回到书的哪一节”。</li>
+</ol>
+
+<hr />
+
+<h2 id="1-三遍阅读法每遍都有明确停下条件">1. 三遍阅读法（每遍都有明确“停下条件”）</h2>
+<h3 id="pass-a3090-分钟只为拿到全书地图">Pass A：30–90 分钟（只为拿到全书地图）</h3>
+<ul>
+  <li>只做三件事：
+    <ul>
+      <li>看目录（Contents）把章/节标题写成树</li>
+      <li>看 Preface：作者想讲什么、两部分如何衔接</li>
+      <li>快速扫每章开头 Introduction/Abstract（不做推导）</li>
+    </ul>
+  </li>
+  <li><strong>停下条件</strong>：你能用 10 句话说明“这本书从哪里出发，要走到哪里”。</li>
+</ul>
+
+<blockquote>
+  <p>对 Vacchini 这本书：作者明确分 <strong>Part I: Foundations of Quantum Mechanics</strong> 与 <strong>Part II: Open Quantum Systems Theory</strong>，并强调从“量子作为概率论”建立到“开放系统动力学/记忆效应”的路径。</p>
+</blockquote>
+
+<hr />
+
+<h3 id="pass-b13-天抓每章骨架定义结构定理例子">Pass B：1–3 天（抓每章“骨架：定义—结构—定理—例子”）</h3>
+<p>对每章按同一模板扫读（见 §4 模板），只拿：</p>
+<ul>
+  <li><strong>本章的 3–7 个核心对象</strong>（空间、态、映射、生成元、相关函数…）</li>
+  <li><strong>1 个主定理/结构结论</strong>（例如 GKSL/Lindblad 结构、Choi 同构等）</li>
+  <li><strong>2 个你能复述的典型例子/模型</strong></li>
+  <li><strong>3 个“以后会回读”的技术点</strong>（只标注，不硬啃）</li>
+</ul>
+
+<hr />
+
+<h3 id="pass-c37-天把骨架变成科研可用">Pass C：3–7 天（把“骨架”变成科研可用）</h3>
+<ul>
+  <li>把各章的核心对象连成一张“依赖图”</li>
+  <li>统一符号（你自己的符号表）</li>
+  <li>形成“从问题出发该去哪一节”的回读索引（见 §5）</li>
+</ul>
+
+<hr />
+
+<h2 id="2-这本书的官方主线与章节定位你先知道每章干什么">2. 这本书的“官方主线”与章节定位（你先知道每章干什么）</h2>
+<p>依据目录结构（你读时按“问题导向”挑段落，而不是线性啃）：</p>
+
+<h3 id="part-iquantum-foundations为-part-ii-铺-cp测量态-可观测对偶">Part I：Quantum foundations（为 Part II 铺 CP、测量、态-可观测对偶）</h3>
+<ul>
+  <li><strong>Ch.1 Quantum Mechanics as Quantum Probability</strong>：把 QM 当概率论搭框架:contentReference[oaicite:1]{index=1}</li>
+  <li><strong>Ch.2 States / Observables（statistical operator, POVM 等）</strong></li>
+  <li><strong>Ch.3 Maps（量子映射、complete positivity、操作/测量扰动、表示法）</strong>:contentReference[oaicite:2]{index=2}</li>
+</ul>
+
+<h3 id="part-iiopen-quantum-systems核心是-reduced-dynamics--semigroupgksl--近似与非马尔可夫">Part II：Open quantum systems（核心是 reduced dynamics + semigroup/GKSL + 近似与非马尔可夫）</h3>
+<ul>
+  <li><strong>Ch.4 Composite Systems（纠缠、正映射、Choi-Jamiolkowski）</strong>:contentReference[oaicite:3]{index=3}</li>
+  <li><strong>Ch.5 Dynamical Evolution（reduced dynamics、quantum dynamical semigroups、可解模型、投影算子/NZ 方程）</strong>:contentReference[oaicite:4]{index=4}</li>
+  <li><strong>Ch.6 Weak-Coupling Master Equation（Born–Markov、Lindblad form、Bloch equations、多时相关函数、荧光/反聚束）</strong>:contentReference[oaicite:5]{index=5}</li>
+  <li><strong>Ch.7 Memory Effects（量子马尔可夫性、distinguishability revivals、divisibility、time-local 与 memory-kernel 方程）</strong>:contentReference[oaicite:6]{index=6}</li>
+</ul>
+
+<blockquote>
+  <p>作者还给了“非顺序阅读”的概念链接图（Fig.1），提示你可以按概念网络跳读，而不必线性读完:contentReference[oaicite:7]{index=7}。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="3-针对这本书的最快科研可用阅读路线两种口味">3. 针对这本书的“最快科研可用”阅读路线（两种口味）</h2>
+<h3 id="路线-s偏做开放系统主方程为科研基础最快进入-gksl">路线 S（偏“做开放系统/主方程”为科研基础：最快进入 GKSL）</h3>
+<ol>
+  <li>先读 <strong>Ch.5.3（quantum dynamical semigroups + generator 结构）</strong>:contentReference[oaicite:8]{index=8}</li>
+  <li>补齐“为什么要 CP”：回读 <strong>Ch.3.2.1 complete positivity + operations</strong>:contentReference[oaicite:9]{index=9}</li>
+  <li>再读 <strong>Ch.6 Born–Markov → Lindblad form</strong>:contentReference[oaicite:10]{index=10}</li>
+  <li>最后读 <strong>Ch.7 divisibility / 信息回流</strong>:contentReference[oaicite:11]{index=11}</li>
+</ol>
+
+<h3 id="路线-f偏基础更严谨把态测量映射一次性搞顺">路线 F（偏“基础更严谨”：把态/测量/映射一次性搞顺）</h3>
+<ol>
+  <li>Ch.1 → Ch.2（QM 作为概率论、态与可观测）</li>
+  <li>Ch.3（maps/CP/测量）</li>
+  <li>Ch.4（复合系统、Choi、纠缠检测）</li>
+  <li>然后再进入 Ch.5–7</li>
+</ol>
+
+<hr />
+
+<h2 id="4-每章-20-分钟骨架笔记模板建议你复制到笔记软件">4. “每章 20 分钟骨架笔记”模板（建议你复制到笔记软件）</h2>
+<blockquote>
+  <p>你每章只填这些格子，不许写长篇推导。</p>
+</blockquote>
+
+<h3 id="chapter-x标题">Chapter X：标题</h3>
+<p><strong>1) 本章要解决的核心问题（≤2 句）</strong></p>
+<ul>
+  <li>Q:</li>
+</ul>
+
+<p><strong>2) 核心对象/定义（3–7 个）</strong></p>
+<ul>
+  <li>Object A =</li>
+  <li>Object B =</li>
+  <li>…</li>
+</ul>
+
+<p><strong>3) 主结论/结构（1–2 条）</strong></p>
+<ul>
+  <li>Theorem/Structure:</li>
+  <li>直观含义（口语化）：</li>
+</ul>
+
+<p><strong>4) 关键公式（最多 5 条，只记“用途”）</strong></p>
+<ul>
+  <li>(Eq1) 用途：</li>
+  <li>…</li>
+</ul>
+
+<p><strong>5) 典型例子/模型（至少 2 个）</strong></p>
+<ul>
+  <li>Example 1：输入/输出/假设/你能复述的结论</li>
+  <li>Example 2：…</li>
+</ul>
+
+<p><strong>6) 我现在跳过但要回读的技术点（3 条以内）</strong></p>
+<ul>
+  <li>TODO-1：</li>
+  <li>TODO-2：</li>
+  <li>TODO-3：</li>
+</ul>
+
+<p><strong>7) 与其他章的接口（这章依赖什么、供给什么）</strong></p>
+<ul>
+  <li>depends on:</li>
+  <li>feeds into:</li>
+</ul>
+
+<hr />
+
+<h2 id="5-问题驱动回读索引怎么建科研时最值钱">5. “问题驱动回读索引”怎么建（科研时最值钱）</h2>
+<p>当你在论文/项目里遇到一个问题，把它归类到以下桶里，并回到对应章：</p>
+
+<ul>
+  <li><strong>“为什么必须 CP / Kraus / Choi？”</strong> → Ch.3 + Ch.4（maps 与 Choi 同构）:contentReference[oaicite:12]{index=12}</li>
+  <li><strong>“我有个 master equation，它什么时候是 Lindblad/GKSL？”</strong> → Ch.5.3（semigroup + generator）与 Ch.6.2.2（weak coupling 得到 Lindblad form）:contentReference[oaicite:13]{index=13}:contentReference[oaicite:14]{index=14}</li>
+  <li><strong>“Born–Markov / secular / rotating frame 到底在丢什么？”</strong> → Ch.6（近似链条 + 物理条件）:contentReference[oaicite:15]{index=15}</li>
+  <li><strong>“非马尔可夫怎么刻画？divisibility/信息回流是什么？”</strong> → Ch.7:contentReference[oaicite:16]{index=16}</li>
+</ul>
+
+<hr />
+
+<h2 id="6-读书时的硬约束防止你陷入细节泥潭">6. 读书时的“硬约束”：防止你陷入细节泥潭</h2>
+<ul>
+  <li>每一节最多允许你写 <strong>1 个“我不懂的问题”</strong>，超过就先跳过。</li>
+  <li>看到长推导：
+    <ul>
+      <li>只问一句：<strong>它在证明哪件事？用了哪些假设？结论用在哪？</strong></li>
+      <li>然后把推导标成 TODO，并记录“回读触发条件”（例如：当你要推某个模型的系数时回来看）。</li>
+    </ul>
+  </li>
+  <li>你对一个概念真正“掌握”的最低标准：<strong>能用它做一次判断</strong><br />
+例如：“这个动力学映射是否可能 CP-divisible？”</li>
+</ul>
+
+<hr />
+
+<h2 id="7-建议你对-vacchini-这本书的第一周计划可直接照做">7. 建议你对 Vacchini 这本书的“第一周计划”（可直接照做）</h2>
+<ul>
+  <li>Day 1：Pass A（目录 + Preface + Fig.1 概念图）:contentReference[oaicite:17]{index=17}</li>
+  <li>Day 2：Ch.5.3（semigroup + generator）+ 章末总结化</li>
+  <li>Day 3：Ch.3.2.1（CP）+ Ch.4.4（Choi 同构）:contentReference[oaicite:18]{index=18}</li>
+  <li>Day 4：Ch.6.2（Born–Markov → Lindblad form）:contentReference[oaicite:19]{index=19}</li>
+  <li>Day 5：Ch.7.3–7.4（distinguishability / divisibility / time-local vs kernel）:contentReference[oaicite:20]{index=20}</li>
+  <li>Day 6–7：把你的“术语—公式—用途索引”和“模型库”整理成可检索文档；列出 10 条回读触发条件</li>
+</ul>
+
+<hr />
+
+<h2 id="8-你下一步怎么用我不增加你的阅读负担">8. 你下一步怎么用我（不增加你的阅读负担）</h2>
+<p>你每读完一节，发我：</p>
+<ul>
+  <li>你填好的“模板 §4”（哪怕很粗糙）</li>
+  <li>你卡住的 <strong>唯一</strong> 一个问题（必须可定位到一个定义/等式/推导步骤）
+我会按“骨架优先”的标准帮你：</li>
+  <li>补全缺的桥梁（为什么要这样定义/这样近似）</li>
+  <li>给最短的可操作例子</li>
+  <li>指出哪些细节可以安全跳过、哪些是不能跳的关键点</li>
+</ul>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#0-你最终要产出的-4-个科研友好成果">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">0. 你最终要产出的 4 个“科研友好”成果</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#1-三遍阅读法每遍都有明确停下条件">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">1. 三遍阅读法（每遍都有明确“停下条件”）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#pass-a3090-分钟只为拿到全书地图">
+        <span class="toc-number">2.1.</span>
+        <span class="toc-title">Pass A：30–90 分钟（只为拿到全书地图）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#pass-b13-天抓每章骨架定义结构定理例子">
+        <span class="toc-number">2.2.</span>
+        <span class="toc-title">Pass B：1–3 天（抓每章“骨架：定义—结构—定理—例子”）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#pass-c37-天把骨架变成科研可用">
+        <span class="toc-number">2.3.</span>
+        <span class="toc-title">Pass C：3–7 天（把“骨架”变成科研可用）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#2-这本书的官方主线与章节定位你先知道每章干什么">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">2. 这本书的“官方主线”与章节定位（你先知道每章干什么）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#part-iquantum-foundations为-part-ii-铺-cp测量态-可观测对偶">
+        <span class="toc-number">3.1.</span>
+        <span class="toc-title">Part I：Quantum foundations（为 Part II 铺 CP、测量、态-可观测对偶）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#part-iiopen-quantum-systems核心是-reduced-dynamics--semigroupgksl--近似与非马尔可夫">
+        <span class="toc-number">3.2.</span>
+        <span class="toc-title">Part II：Open quantum systems（核心是 reduced dynamics + semigroup/GKSL + 近似与非马尔可夫）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#3-针对这本书的最快科研可用阅读路线两种口味">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">3. 针对这本书的“最快科研可用”阅读路线（两种口味）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#路线-s偏做开放系统主方程为科研基础最快进入-gksl">
+        <span class="toc-number">4.1.</span>
+        <span class="toc-title">路线 S（偏“做开放系统/主方程”为科研基础：最快进入 GKSL）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#路线-f偏基础更严谨把态测量映射一次性搞顺">
+        <span class="toc-number">4.2.</span>
+        <span class="toc-title">路线 F（偏“基础更严谨”：把态/测量/映射一次性搞顺）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#4-每章-20-分钟骨架笔记模板建议你复制到笔记软件">
+        <span class="toc-number">5.</span>
+        <span class="toc-title">4. “每章 20 分钟骨架笔记”模板（建议你复制到笔记软件）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#chapter-x标题">
+        <span class="toc-number">5.1.</span>
+        <span class="toc-title">Chapter X：标题</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#5-问题驱动回读索引怎么建科研时最值钱">
+        <span class="toc-number">6.</span>
+        <span class="toc-title">5. “问题驱动回读索引”怎么建（科研时最值钱）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#6-读书时的硬约束防止你陷入细节泥潭">
+        <span class="toc-number">7.</span>
+        <span class="toc-title">6. 读书时的“硬约束”：防止你陷入细节泥潭</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#7-建议你对-vacchini-这本书的第一周计划可直接照做">
+        <span class="toc-number">8.</span>
+        <span class="toc-title">7. 建议你对 Vacchini 这本书的“第一周计划”（可直接照做）</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#8-你下一步怎么用我不增加你的阅读负担">
+        <span class="toc-number">9.</span>
+        <span class="toc-title">8. 你下一步怎么用我（不增加你的阅读负担）</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/ReadingMethod" title="NEXT: 阅读方法论 - 试行版">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Stochastic_Process" title="PREV: Discrete Time Stochastic Processes">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2026
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

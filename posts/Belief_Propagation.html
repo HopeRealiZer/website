@@ -9,12 +9,12 @@
 
 
 
-  <title>量子力学基础
+  <title>信念传播 (Belief Propagation)
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="量子力学的假设">
+<meta name="description" content="前置概念">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Quantum_Mechanics_Basic">
+<link rel="canonical" href="/website/posts/Belief_Propagation">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,30 +75,70 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>量子力学基础</h1>
+      <h1>信念传播 (Belief Propagation)</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 30, 2025
+        January 15, 2026
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="量子力学的假设">量子力学的假设</h2>
+    <h2 id="前置概念">前置概念</h2>
 
-<h3 id="状态空间">状态空间</h3>
+<div class="definition">
+  <p><strong>(Random Field)</strong></p>
+</div>
 
-<p>最简单也是我们最关心的量子力学系统是量子比特. 描述量子比特的物理系统是真实存在的, 目前我们可以忽略特定实现进行抽象的讨论.</p>
+<div class="definition">
+  <p><strong>(Markov Random Field)</strong> 设 $G=(V,E)$ 是一个无向图, 其中 $V$ 是节点集合, $E$ 是边集合. 设 $\{X_v | v∈ V\}$ 是一组随机变量, 每个随机变量 $X_v$ 取值于某个状态空间 $\mathcal{X}_v$. 如果对于任意的节点 $v∈ V$, 给定其邻居节点的状态, $X_v$ 的条件概率分布只依赖于其邻居节点的状态, 即 $$\begin{equation}
+    P(X_v | X_{V\setminus\{v\}}) = P(X_v | X_{N(v)}),
+\end{equation}$$ 其中 $N(v)$ 是节点 $v$ 的邻居节点集合, 则称 $\{X_v | v∈ V\}$ 构成了图 $G$ 上的马尔可夫随机场 (Markov Random Field, MRF).</p>
+</div>
 
-<h3 id="演化">演化</h3>
-
-<p><strong>封闭量子系统的演化可用酉变换来描述.</strong></p>
-
-<p><strong>封闭量子系统中态的演化由薛定谔方程描述:</strong>
+<p>介绍一下条件独立符号: 对于随机变量 $X,Y,Z$, 如果 $X$ 在给定 $Z$ 的条件下与 $Y$ 条件独立, 则记作
 $$\begin{equation}
-\mathrm{i}ħ\frac{\mathrm{d}|\psi⟩}{\mathrm{d}} = H |\psi⟩,
+    X ⊥ Y | Z.
 \end{equation}$$</p>
+
+<p>Markov 性质有三个层次, 分别是 pairwise, local, global:</p>
+
+<ul>
+  <li>
+    <p>pairwise Markov property: 对于任意不相邻的节点 $u,v∈ V$, 有
+$$\begin{equation}
+    X_u ⊥ X_v | X_{V\setminus\{u,v\}}.
+\end{equation}$$</p>
+  </li>
+  <li>
+    <p>local Markov property: 对于任意节点 $v∈ V$, 有
+$$\begin{equation}
+    X_v ⊥ X_{V\setminus(\{v\} ∪ N(v))} | X_{N(v)}.
+\end{equation}$$</p>
+  </li>
+  <li>
+    <p>global Markov property: 对于任意不相交的节点集合 $A,B,S ⊆ V$, 如果 $S$ 将 $A$ 和 $B$ 分离 (即在图中删除 $S$ 后, $A$ 和 $B$ 不再连通), 则有
+$$\begin{equation}
+    X_A ⊥ X_B | X_S.
+\end{equation}$$</p>
+  </li>
+</ul>
+
+<p>显然, global Markov property ⇒ local Markov property ⇒ pairwise Markov property.</p>
+
+<p>但是如果概率分布是严格正的 (strictly positive), 则三者等价. 这里的严格正是指对于任意可能的状态组合 $x∈ \prod_{v∈ V} \mathcal{X}_v$, 有
+$$\begin{equation}
+    P(X_V = x) > 0.
+\end{equation}$$</p>
+
+<div class="definition">
+  <p><strong>(Gibbs Random Field)</strong> 设 $G=(V,E)$ 是一个无向图, 其中 $V$ 是节点集合, $E$ 是边集合. 设 $\{X_v | v∈ V\}$ 是一组随机变量, 每个随机变量 $X_v$ 取值于某个状态空间 $\mathcal{X}_v$. 如果存在一组势函数 (potential functions) $\{\psi_C : \prod_{v∈ C} \mathcal{X}_v → \mathbb{R}^+ | C ∈ \mathcal{C}\}$, 其中 $\mathcal{C}$ 是图 $G$ 上的所有团 (cliques) 的集合, 使得联合概率分布可以表示为 $$\begin{equation}
+    P(X_V = x) = \frac{1}{Z} \prod_{C∈ \mathcal{C}} \psi_C(x_C),
+\end{equation}$$ 其中 $x_C$ 是 $x$ 在团 $C$ 上的投影, $Z$ 是归一化常数 (partition function), 则称 $\{X_v | v∈ V\}$ 构成了图 $G$ 上的 Gibbs 随机场 (Gibbs Random Field).</p>
+</div>
+
+<p>Hammersley-Clifford 定理说明, 对于严格正的概率分布, Markov Random Field 和 Gibbs Random Field 是等价的.</p>
 
   </article>
 
@@ -197,43 +237,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#量子力学的假设">
+      <a href="#前置概念">
         <span class="toc-number">1.</span>
-        <span class="toc-title">量子力学的假设</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#状态空间">
-        <span class="toc-number">1.1.</span>
-        <span class="toc-title">状态空间</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#演化">
-        <span class="toc-number">1.2.</span>
-        <span class="toc-title">演化</span>
+        <span class="toc-title">前置概念</span>
       </a>
     </div>
   
@@ -286,13 +292,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/OT_Flow" title="NEXT: OT-Flow">&lt;&lt;</a>
+      <a class="next" href="/website/posts/PGM" title="NEXT: Probabilistic Graphical Models">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex7_" title="PREV: 《基础代数学》作业 Week7">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Math_of_Quantum" title="PREV: 量子系统的数学描述">&gt;&gt;</a>
     
   </div>
 </main>

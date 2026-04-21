@@ -9,12 +9,12 @@
 
 
 
-  <title>Useful Tools
+  <title>量子场论鹦鹉学舌
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="网站搜集">
+<meta name="description" content="概念简要清单">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Collection_of_Websites">
+<link rel="canonical" href="/website/posts/QFT_bite">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,90 +75,209 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>Useful Tools</h1>
+      <h1>量子场论鹦鹉学舌</h1>
       <p class="author">
-        Chencheng Zhang
+        Huang Ruizhi
         <br/>
-        May 10, 2025
+        January 10, 2026
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="网站搜集">网站搜集</h2>
+    <h2 id="概念简要清单">概念简要清单</h2>
 
-<h3 id="mathjax_protectedjfxmyvrlwcqmathjax_protected-相关">$\LaTeX$ 相关</h3>
+<h3 id="一what-exites">一、What exites</h3>
 
-<h4 id="识别">识别</h4>
+<ol>
+  <li>
+    <p>场 (field)</p>
 
-<p><a href="https://detexify.kirelabs.org/classify.html">de$\TeX$ify</a>: 手写识别符号, package 等.</p>
+    <p>场是基本存在物, 不是粒子; 粒子只是场的激发 (excitation)</p>
 
-<p><a href="https://simpletex.cn/">Simple $\TeX$</a>: 免费, 高效的 OCR.</p>
+    <p>QFT 的第一性原理:</p>
+    <blockquote>
+      <p>Everything is a field.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>真空 (vacuum)</p>
 
-<h4 id="绘图">绘图</h4>
+    <p>真空不是空的, 而是场的基态 (ground state)</p>
 
-<p><a href="https://q.uiver.app/">quiver</a>: 实现基本的 <code class="language-plaintext highlighter-rouge">tikz-cd</code> 功能, 但需要<a href="https://raw.githubusercontent.com/varkor/quiver/master/package/quiver.sty">额外的宏包 <code class="language-plaintext highlighter-rouge">quiver.sty</code></a>. 支持 <code class="language-plaintext highlighter-rouge">html</code> 嵌入.</p>
+    <p>真空涨落 (vacuum fluctuation): 真空中场的量子涨落, 导致虚粒子对 (virtual particle-antiparticle pair) 的产生和湮灭</p>
 
-<p><a href="https://tikzcd.yichuanshen.de/">tikzcd.yichuanshen</a>: 实现基本的 <code class="language-plaintext highlighter-rouge">tikz-cd</code> 功能, 无需额外宏包, 但是操作低效.</p>
+    <p>所有的相互作用、重整化、反常都源于真空结构的复杂性</p>
+  </li>
+  <li>
+    <p>相对论性局域性 (relativistic locality)</p>
 
-<p><a href="https://www.mathcha.io/editor">mathcha</a>: 强大的 <code class="language-plaintext highlighter-rouge">tikzpicture</code> 制作网站.</p>
+    <p>QFT 结合了量子力学和狭义相对论的原则, 要求物理过程在时空中是局域的, 且遵守光锥结构</p>
 
-<p><a href="https://webdemo.myscript.com/">手写识别</a>: 识别公式, 多语言, 甚至 PPT.</p>
+    <p>禁止超光速信号传递, 保持因果关系</p>
+  </li>
+</ol>
 
-<p><a href="https://pandoc.org/"><code class="language-plaintext highlighter-rouge">pan-doc</code></a>: 著名的 <code class="language-plaintext highlighter-rouge">pan-doc</code>, 啥都能转换.</p>
+<h3 id="二-how-things-evolve">二、 How things evolve</h3>
 
-<h4 id="色彩">色彩</h4>
+<ol>
+  <li>
+    <p>作用量原理 (principle of least action)</p>
 
-<p><a href="https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/latexcolors/latexcolors.pdf"><code class="language-plaintext highlighter-rouge">latexcolors</code></a></p>
+    <p>所有动力学都由一个泛函 $S[\phi]$ 决定.</p>
 
-<h4 id="unicode-mathjax_protectedjfxmyvrlwcqmathjax_protected">Unicode $\LaTeX$</h4>
+    <p>数学上是变分, 物理上是一切动力学的母语</p>
+  </li>
+  <li>
+    <p>路径积分 (path integral)</p>
 
-<p>Unicode 名称查询: <a href="https://w3c.github.io/xml-entities/unicode-names">在线: 符号 → 名称</a>, <a href="https://milde.users.sourceforge.net/LUCR/Math/unimathsymbols.pdf">PDF</a>, <a href="Unicode_math_Table">输入快捷字典</a>.</p>
+    <p>所有可能历史的量子叠加.</p>
 
-<p>输入法: 使用 vscode 插件 <a href="https://marketplace.visualstudio.com/items?itemName=GuidoTapia2.unicode-math-vscode">Fast Unicode Math Characters</a>, <a href="https://marketplace.visualstudio.com/items?itemName=oijaz.unicode-latex">Unicode $\LaTeX$</a>; <a href="https://live.lean-lang.org/">L∃∀N 在线</a>.</p>
+    <blockquote>
+      <p>量子不是轨道, 而是求和.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>对易关系 (commutatino relations)</p>
 
-<p>Unicode Math: <a href="https://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode">Wiki</a>, <a href="https://ctan.math.illinois.edu/fonts/erewhon-math/unimath-erewhon.pdf">ctan</a></p>
+    <p>量子性的代数化表达, 决定玻色子/费米子的根本差异.</p>
+  </li>
+</ol>
 
-<p>其他 Unicode: <a href="https://www.dickimaw-books.com/latex/symbol-lookup.php">符号查询 (高级)</a>, <a href="https://www.compart.com/en/unicode/">Unicode 大全</a>, <a href="https://westonruter.github.io/ipa-chart/keyboard/">IPA</a>, <a href="https://cool-letters-generator.blogspot.com/">炫酷文字生成</a>.</p>
+<h3 id="三对称性-真正的主线">三、对称性 (真正的主线)</h3>
 
-<h4 id="bibmathjax_protectedjfxuzvgkmathjax_protected-转换">Bib$\TeX$ 转换</h4>
+<ol>
+  <li>
+    <p>对称性 (Symmetry)</p>
 
-<p><a href="https://bibtex.online/">Converter A</a>, <a href="https://asouqi.github.io/bibtex-converter/">Converter B</a>.</p>
+    <blockquote>
+      <p>Zee: Physics is symmetry + breaking.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>连续对称性与诺特定理 (Noether‘s theorem)</p>
 
-<h2 id="multilanguage">Multilanguage</h2>
+    <p>每个连续对称性对应一个守恒量 (conserved quantity)</p>
 
-<h3 id="special-latin-orthography">Special Latin Orthography</h3>
+    <p>例: 平移对称性对应动量守恒, 旋转对称性对应角动量守恒</p>
+  </li>
+  <li>
+    <p>局域对称性/规范对称性 (Gauge symmetry)</p>
 
-<p>For Drançais, Deutsch, Español, Dansk, etc. <a href="https://unicodelookup.com/">link</a>.</p>
+    <p>力不是加进去的, 而是被迫出现的.</p>
+  </li>
+</ol>
 
-<ul>
-  <li>Ä À Â Å Æ Ç É È Ê Ë Î Ï Ñ Ö Ô Ø Œ ẞ Ù Û Ü Ÿ</li>
-  <li>ä à â å æ ç é è ê ë î ï ñ ö ô ø œ ß ù û ü ÿ</li>
-</ul>
+<h3 id="四相互作用的真正来源-why-force-exists">四、相互作用的真正来源 (Why force exists)</h3>
 
-<p>For Čeština</p>
+<ol>
+  <li>
+    <p>规范场 (gauge field)</p>
 
-<ul>
-  <li>Á Č Ď É Ě Í Ň Ó Ř Š Ť Ú Ů Ý Ž</li>
-  <li>á č ď é ě í ň ó ř š ť ú ů ý ž</li>
-</ul>
+    <p>为了保持局域对称性而不得不引入的自由度</p>
+  </li>
+  <li>
+    <p>规范耦合 (gauge coupling)</p>
 
-<p>For Polski</p>
+    <p>耦合常数 (gauge coupling) 是相互作用的强度</p>
+  </li>
+  <li>
+    <p>自发对称性破缺 (spontaneous symmetry breaking)</p>
 
-<ul>
-  <li>Ą Ć Ę Ł Ń Ó Ś Ź Ż</li>
-  <li>ą ć ę ł ń ó ś ź ż</li>
-</ul>
+    <p>真空态不具备拉氏量的对称性, 导致粒子获得质量, 以及出现新的集体激发模式 (如希格斯玻色子)</p>
 
-<p>Special brackets: ⟨ ⟩ « »</p>
+    <p>方程有对称性, 真空没有.</p>
+  </li>
+  <li>
+    <p>Higgs机制 (Higgs mechanism)</p>
 
-<h3 id="hellas">Hellas</h3>
+    <p>规范不变性 + 真空结构 → 质量产生机制</p>
+  </li>
+</ol>
 
-<p><a href="https://www.foundalis.com/lan/hw/grkhandw.htm">Handwriting</a> and <a href="https://www.foundalis.com/lan/grkalpha.htm">pronounciation</a>.</p>
+<h3 id="五量子场论的技术心脏-how-we-compute--control-infinities">五、量子场论的技术心脏 (How we compute &amp; control infinities)</h3>
 
-<h3 id="cyrillic-eg-rus">Cyrillic (e.g. RUS)</h3>
+<ol>
+  <li>
+    <p>重整化 (Renormalization)</p>
 
-<p><a href="https://www.lexilogos.com/keyboard/russian.htm">Cyrillic-Latin Converter</a>.</p>
+    <p>处理无穷大的数学技术, 通过引入尺度依赖的参数来重新定义物理量</p>
+
+    <p>使得理论在不同能量尺度下都能给出有限且可预测的结果</p>
+
+    <blockquote>
+      <p>Zee: Renormalization is physics, not pathology.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>重整化群 (Renormalization group)</p>
+  </li>
+  <li>
+    <p>有效场论 (Effective field theory)</p>
+
+    <p>低能现象的描述, 忽略高能自由度的影响, 通过重整化群流体现不同尺度下物理规律的变化</p>
+
+    <p>不问终极真理, 只描述给定尺度下的物理.</p>
+  </li>
+</ol>
+
+<h2 id="实用学习组块">实用学习组块</h2>
+
+<ol>
+  <li>
+    <p>场与真空 (fields and vacuum)</p>
+  </li>
+  <li>
+    <p>相对论: 洛伦兹不变 + 因果性 (Lorentz invariance + causality)</p>
+  </li>
+  <li>
+    <p>量子: 对易关系 + 产生/湮灭 (commutation relations + creation/annihilation)</p>
+  </li>
+  <li>
+    <p>拉氏量 / 作用量 (Lagrangian / action)</p>
+  </li>
+  <li>
+    <p>路径积分与关联函数 (path integral and correlators)</p>
+  </li>
+  <li>
+    <p>传播子与费曼图 (propagators and Feynman diagrams)</p>
+  </li>
+  <li>
+    <p>规范对称性与规范场 (gauge symmetry and gauge fields)</p>
+  </li>
+  <li>
+    <p>RG / EFT (renormalization group / effective field theory)</p>
+  </li>
+</ol>
+
+<h2 id="czn-推荐话题">czn 推荐话题</h2>
+
+<h3 id="二次量子化">二次量子化</h3>
+
+<p>二次量子化的核心意思是: 把场 (field) 当成基本对象来量子化, 从而自然得到粒子的产生 (creation) 与湮灭 (annihilation)、多粒子态 (multi-particle states) 与统计 (statistics).</p>
+
+<p>基本对象: 场 (field) $\phi(\mathbf{x},t)$</p>
+
+<p>量子化: 把场提升为算符 (operator) $\hat{\phi}(\mathbf{x},t)$</p>
+
+<p>结果: 状态空间不再是一个粒子的希尔伯特空间, 而是 Fock 空间 (Fock space), 包含任意粒子数的态
+$$\begin{equation}
+\mathcal{F} = \mathbb{C} ⊕ \mathcal{H}_1 ⊕ \mathcal{H}_2 ⊕ \cdots,
+\end{equation}$$</p>
+
+<h3 id="对称性与诺特定理">对称性与诺特定理</h3>
+
+<h3 id="散射矩阵">散射矩阵</h3>
+
+<h3 id="费曼图">费曼图</h3>
+
+<h3 id="重整化">重整化</h3>
+
+<h2 id="具体学习笔记">具体学习笔记</h2>
+
+<h3 id="路径积分">路径积分</h3>
+
+<p>路径积分把 “经典力学的最小作用量原理” 解释成 “量子干涉筛选出的主导路径”.</p>
 
   </article>
 
@@ -257,9 +376,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#网站搜集">
+      <a href="#概念简要清单">
         <span class="toc-number">1.</span>
-        <span class="toc-title">网站搜集</span>
+        <span class="toc-title">概念简要清单</span>
       </a>
     </div>
   
@@ -274,9 +393,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#mathjax_protectedjfxmyvrlwcqmathjax_protected-相关">
+      <a href="#一what-exites">
         <span class="toc-number">1.1.</span>
-        <span class="toc-title">$\LaTeX$ 相关</span>
+        <span class="toc-title">一、What exites</span>
       </a>
     </div>
   
@@ -290,10 +409,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-4">
-      <a href="#识别">
-        <span class="toc-number">1.1.1.</span>
-        <span class="toc-title">识别</span>
+    <div class="toc-row toc-level-3">
+      <a href="#二-how-things-evolve">
+        <span class="toc-number">1.2.</span>
+        <span class="toc-title">二、 How things evolve</span>
       </a>
     </div>
   
@@ -307,10 +426,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-4">
-      <a href="#绘图">
-        <span class="toc-number">1.1.2.</span>
-        <span class="toc-title">绘图</span>
+    <div class="toc-row toc-level-3">
+      <a href="#三对称性-真正的主线">
+        <span class="toc-number">1.3.</span>
+        <span class="toc-title">三、对称性 (真正的主线)</span>
       </a>
     </div>
   
@@ -324,10 +443,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-4">
-      <a href="#色彩">
-        <span class="toc-number">1.1.3.</span>
-        <span class="toc-title">色彩</span>
+    <div class="toc-row toc-level-3">
+      <a href="#四相互作用的真正来源-why-force-exists">
+        <span class="toc-number">1.4.</span>
+        <span class="toc-title">四、相互作用的真正来源 (Why force exists)</span>
       </a>
     </div>
   
@@ -341,27 +460,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-4">
-      <a href="#unicode-mathjax_protectedjfxmyvrlwcqmathjax_protected">
-        <span class="toc-number">1.1.4.</span>
-        <span class="toc-title">Unicode $\LaTeX$</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-4">
-      <a href="#bibmathjax_protectedjfxuzvgkmathjax_protected-转换">
-        <span class="toc-number">1.1.5.</span>
-        <span class="toc-title">Bib$\TeX$ 转换</span>
+    <div class="toc-row toc-level-3">
+      <a href="#五量子场论的技术心脏-how-we-compute--control-infinities">
+        <span class="toc-number">1.5.</span>
+        <span class="toc-title">五、量子场论的技术心脏 (How we compute &amp; control infinities)</span>
       </a>
     </div>
   
@@ -376,9 +478,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#multilanguage">
+      <a href="#实用学习组块">
         <span class="toc-number">2.</span>
-        <span class="toc-title">Multilanguage</span>
+        <span class="toc-title">实用学习组块</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#czn-推荐话题">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">czn 推荐话题</span>
       </a>
     </div>
   
@@ -393,9 +512,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#special-latin-orthography">
-        <span class="toc-number">2.1.</span>
-        <span class="toc-title">Special Latin Orthography</span>
+      <a href="#二次量子化">
+        <span class="toc-number">3.1.</span>
+        <span class="toc-title">二次量子化</span>
       </a>
     </div>
   
@@ -410,9 +529,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#hellas">
-        <span class="toc-number">2.2.</span>
-        <span class="toc-title">Hellas</span>
+      <a href="#对称性与诺特定理">
+        <span class="toc-number">3.2.</span>
+        <span class="toc-title">对称性与诺特定理</span>
       </a>
     </div>
   
@@ -427,9 +546,77 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#cyrillic-eg-rus">
-        <span class="toc-number">2.3.</span>
-        <span class="toc-title">Cyrillic (e.g. RUS)</span>
+      <a href="#散射矩阵">
+        <span class="toc-number">3.3.</span>
+        <span class="toc-title">散射矩阵</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#费曼图">
+        <span class="toc-number">3.4.</span>
+        <span class="toc-title">费曼图</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#重整化">
+        <span class="toc-number">3.5.</span>
+        <span class="toc-title">重整化</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#具体学习笔记">
+        <span class="toc-number">4.</span>
+        <span class="toc-title">具体学习笔记</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#路径积分">
+        <span class="toc-number">4.1.</span>
+        <span class="toc-title">路径积分</span>
       </a>
     </div>
   
@@ -482,13 +669,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/Unicode_math_Table" title="NEXT: Unicode Math Table">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Math_of_Quantum" title="NEXT: 量子系统的数学描述">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/template" title="PREV: $\LaTeX$ Template (v 1.3.0)">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Seminar" title="PREV: 20251227表示论研讨会">&gt;&gt;</a>
     
   </div>
 </main>

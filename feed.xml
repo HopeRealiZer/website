@@ -7,6 +7,1360 @@
     
       
         <item>
+          <title>阅读方法论 - 试行版</title>
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;目标：在短时间内建立&lt;strong&gt;可用地图&lt;/strong&gt;（主干 + 接口 + 索引），以后做具体科研问题时再按需补证明细节。&lt;br /&gt;
+使用方式：按“0 → 1 → 2 → 3（可选）”执行，并把每一步的产出填进下面的表/卡片。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;0-本次速读的交付物必须产出&quot;&gt;0. 本次速读的交付物（必须产出）&lt;/h2&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;一句话主旨&lt;/strong&gt;（核心问题/主定理/贡献）&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;三段式脉络&lt;/strong&gt;：输入（对象/假设）→ 方法（技术栈）→ 输出（结论/应用）&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;章节依赖图&lt;/strong&gt;（谁依赖谁）&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;主结果目录&lt;/strong&gt;（只记标题/条件/结论 + 页码）&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;工具箱清单&lt;/strong&gt;（10 个会反复用的定义/技巧/引理 + 页码）&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;&lt;strong&gt;索引式笔记&lt;/strong&gt;（每章 5 行卡片 + 页码）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-扫面建模3090-分钟不看证明&quot;&gt;1. 扫面建模（30–90 分钟，不看证明）&lt;/h2&gt;
+&lt;h3 id=&quot;11-先填这三块&quot;&gt;1.1 先填这三块&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;书名：&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;作者/版本：&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;你研究中可能用到的方向/关键词：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;12-一句话主旨用这书做什么描述&quot;&gt;1.2 一句话主旨（用“这书做什么”描述）&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;本书主要研究：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[对象/问题]&lt;/code&gt;，目标是得到：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[主结论/框架]&lt;/code&gt;，核心方法是：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[技术栈]&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;一句话主旨：&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;作者动机（导言/序言摘取 2–4 条）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;13-三段式脉络输入方法输出&quot;&gt;1.3 三段式脉络（输入→方法→输出）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;输入（对象/假设/setting）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;方法（工具/范式/技巧栈）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;输出（主定理/分类/算法/应用）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;14-目录扫一遍每章一句话不超过-20-字&quot;&gt;1.4 目录扫一遍：每章一句话（不超过 20 字）&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;只看目录、每章开头/结尾、定理标题、例子标题；见到证明直接跳过。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;章&lt;/th&gt;
+      &lt;th&gt;标题&lt;/th&gt;
+      &lt;th&gt;本章一句话（做什么）&lt;/th&gt;
+      &lt;th&gt;关键输出（1–3条）&lt;/th&gt;
+      &lt;th&gt;依赖哪些章/概念&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;…&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-主干打通24-小时学接口不抠技巧&quot;&gt;2. 主干打通（2–4 小时：学“接口”，不抠“技巧”）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;每章只抓三类：&lt;strong&gt;关键对象 Objects&lt;/strong&gt;、&lt;strong&gt;桥命题 Bridges&lt;/strong&gt;、&lt;strong&gt;常用范式 Patterns&lt;/strong&gt;。&lt;br /&gt;
+每章产出一张“5 行卡片”。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;21-章节卡片模板复制-n-份每章一张&quot;&gt;2.1 章节卡片模板（复制 N 份，每章一张）&lt;/h3&gt;
+&lt;h4 id=&quot;chapter-x-章节标题&quot;&gt;Chapter X: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;章节标题&lt;/code&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;本章目标（1 句）：&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;新增对象/定义（≤3个，写直觉 + 页码）：&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;D1&lt;/code&gt;：直觉/用途：…（p. ）&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;D2&lt;/code&gt;：直觉/用途：…（p. ）&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;D3&lt;/code&gt;：直觉/用途：…（p. ）&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;关键桥命题（≤3个，条件→结论 + “用来干嘛” + 页码）：&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T1&lt;/code&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(条件) ⇒ (结论)&lt;/code&gt;；用途：…（p. ）&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T2&lt;/code&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(条件) ⇒ (结论)&lt;/code&gt;；用途：…（p. ）&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T3&lt;/code&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(条件) ⇒ (结论)&lt;/code&gt;；用途：…（p. ）&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;方法套路/证明范式（1–2条）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;代表性例子/模型（1–2条 + 页码）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;与前后章接口：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;依赖输入：&lt;/strong&gt;来自 Chapter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;输出给后章：&lt;/strong&gt;供 Chapter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; 使用的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;以后查细节的关键词（用于检索）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-章节依赖图必须画出来&quot;&gt;3. 章节依赖图（必须画出来）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;形式随意：用箭头写依赖即可。核心是：&lt;strong&gt;后面要用的东西，前面在哪里定义/证明&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;31-依赖图文本版&quot;&gt;3.1 依赖图（文本版）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ch1 → Ch2：因为 Ch2 需要 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;Ch2 → Ch4：因为 Ch4 需要 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;Ch3 → Ch5：因为 Ch5 需要 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;32-接口表查缺补漏用&quot;&gt;3.2 “接口表”（查缺补漏用）&lt;/h3&gt;
+&lt;p&gt;| 你未来遇到的问题类型 | 需要的接口/工具 | 在哪一章/哪一节 | 页码 |
+|—|—|—|—|
+|  |  |  |  |
+|  |  |  |  |&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4-主结果目录只记标题条件结论--页码&quot;&gt;4. 主结果目录（只记标题/条件/结论 + 页码）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;不写证明。目的：以后精确定位。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;结果编号&lt;/th&gt;
+      &lt;th&gt;类型（Thm/Prop/Lem/Def）&lt;/th&gt;
+      &lt;th&gt;名称/主题&lt;/th&gt;
+      &lt;th&gt;条件（最小必要）&lt;/th&gt;
+      &lt;th&gt;结论（1行）&lt;/th&gt;
+      &lt;th&gt;页码&lt;/th&gt;
+      &lt;th&gt;被后文用到的位置&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-工具箱清单科研最有用10-个常用模块&quot;&gt;5. 工具箱清单（科研最有用：10 个“常用模块”）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;标准：后面反复出现/能当黑箱用/是跨章桥梁。每条都要带页码。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;工具/定义/引理：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt; — 用途：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（p. ）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6-代表性证明可选但强烈建议精读-1-个&quot;&gt;6. 代表性证明（可选但强烈建议：精读 1 个）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;目的：学作者“怎么证明”，而不是背细节。选一个核心定理或后文反复引用的 lemma。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;选择的证明：&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Thm/Prop __&lt;/code&gt;（p. ）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;证明主策略（10 行以内）：&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;使用的黑箱工具（来自哪里）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;__&lt;/code&gt;（Ch__ / p. ）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;可替换模块（未来你可能换掉的步骤）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;你真正需要记住的“套路”：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7-自测3-分钟口试脚本判断你是否抓到主线&quot;&gt;7. 自测：3 分钟口试脚本（判断你是否抓到主线）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;不看书，试着讲清楚；讲不顺就回去改“每章一句话”和“依赖图”，不要去抠证明。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;主问题：&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;主结果：&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;方法链条：&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;每章贡献（按顺序一句话）：&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Ch1：&lt;/li&gt;
+      &lt;li&gt;Ch2：&lt;/li&gt;
+      &lt;li&gt;…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;我未来做科研会用到的 3 个入口：&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8-时间配比建议科研向&quot;&gt;8. 时间配比建议（科研向）&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;10%：扫面建模（目录/导言/章首章末/标题）&lt;/li&gt;
+  &lt;li&gt;60%：主干打通（章卡片 + 桥命题 + 例子）&lt;/li&gt;
+  &lt;li&gt;20%：一个代表性证明（学技法）&lt;/li&gt;
+  &lt;li&gt;10%：整理索引（页码/关键词/接口表）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;9-阅读纪律防翻车规则&quot;&gt;9. 阅读纪律（防翻车规则）&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;规则1：&lt;strong&gt;第一遍见证明就跳&lt;/strong&gt;；目标是建“索引”，不是做题。&lt;/li&gt;
+  &lt;li&gt;规则2：每章最多收录 &lt;strong&gt;3 个定义 + 3 个桥命题&lt;/strong&gt;，其余先放过。&lt;/li&gt;
+  &lt;li&gt;规则3：所有你“以后一定会回来看”的点，必须落到 &lt;strong&gt;页码 + 关键词&lt;/strong&gt;。&lt;/li&gt;
+  &lt;li&gt;规则4：一切细节学习以“问题驱动”进行：缺接口再回书里补。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+</description>
+          <pubDate>2026-02-06T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/ReadingMethod</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/ReadingMethod</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Vacchini 的 Open Quantum Systems 读书笔记</title>
+          <description>&lt;blockquote&gt;
+  &lt;p&gt;目标：&lt;strong&gt;1–2 周内拿到全书的概念地图 + 主要定理/结构 + 典型模型清单&lt;/strong&gt;；细节（推导、技术 lemma、繁琐计算）先做“可回溯标注”，等你做具体科研问题时再精读。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;0-你最终要产出的-4-个科研友好成果&quot;&gt;0. 你最终要产出的 4 个“科研友好”成果&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;一页概念地图&lt;/strong&gt;：本书有哪些“核心对象/结构”，它们怎么连起来（定义 → 性质 → 例子 → 应用）。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;术语—公式—用途索引（可检索）&lt;/strong&gt;：每个关键词对应 &lt;em&gt;它解决什么问题&lt;/em&gt; + &lt;em&gt;出现在哪些章&lt;/em&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;模型库&lt;/strong&gt;：书里出现的典型 open-system 模型（如 dephasing、spin-bath、Bloch equations 等）的“输入/输出/适用假设/可解性”表。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;问题驱动的回读路线&lt;/strong&gt;：未来你做题/读论文时，知道“要回到书的哪一节”。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-三遍阅读法每遍都有明确停下条件&quot;&gt;1. 三遍阅读法（每遍都有明确“停下条件”）&lt;/h2&gt;
+&lt;h3 id=&quot;pass-a3090-分钟只为拿到全书地图&quot;&gt;Pass A：30–90 分钟（只为拿到全书地图）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;只做三件事：
+    &lt;ul&gt;
+      &lt;li&gt;看目录（Contents）把章/节标题写成树&lt;/li&gt;
+      &lt;li&gt;看 Preface：作者想讲什么、两部分如何衔接&lt;/li&gt;
+      &lt;li&gt;快速扫每章开头 Introduction/Abstract（不做推导）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;停下条件&lt;/strong&gt;：你能用 10 句话说明“这本书从哪里出发，要走到哪里”。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;对 Vacchini 这本书：作者明确分 &lt;strong&gt;Part I: Foundations of Quantum Mechanics&lt;/strong&gt; 与 &lt;strong&gt;Part II: Open Quantum Systems Theory&lt;/strong&gt;，并强调从“量子作为概率论”建立到“开放系统动力学/记忆效应”的路径。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;pass-b13-天抓每章骨架定义结构定理例子&quot;&gt;Pass B：1–3 天（抓每章“骨架：定义—结构—定理—例子”）&lt;/h3&gt;
+&lt;p&gt;对每章按同一模板扫读（见 §4 模板），只拿：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;本章的 3–7 个核心对象&lt;/strong&gt;（空间、态、映射、生成元、相关函数…）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1 个主定理/结构结论&lt;/strong&gt;（例如 GKSL/Lindblad 结构、Choi 同构等）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;2 个你能复述的典型例子/模型&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3 个“以后会回读”的技术点&lt;/strong&gt;（只标注，不硬啃）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;pass-c37-天把骨架变成科研可用&quot;&gt;Pass C：3–7 天（把“骨架”变成科研可用）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;把各章的核心对象连成一张“依赖图”&lt;/li&gt;
+  &lt;li&gt;统一符号（你自己的符号表）&lt;/li&gt;
+  &lt;li&gt;形成“从问题出发该去哪一节”的回读索引（见 §5）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2-这本书的官方主线与章节定位你先知道每章干什么&quot;&gt;2. 这本书的“官方主线”与章节定位（你先知道每章干什么）&lt;/h2&gt;
+&lt;p&gt;依据目录结构（你读时按“问题导向”挑段落，而不是线性啃）：&lt;/p&gt;
+
+&lt;h3 id=&quot;part-iquantum-foundations为-part-ii-铺-cp测量态-可观测对偶&quot;&gt;Part I：Quantum foundations（为 Part II 铺 CP、测量、态-可观测对偶）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.1 Quantum Mechanics as Quantum Probability&lt;/strong&gt;：把 QM 当概率论搭框架:contentReference[oaicite:1]{index=1}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.2 States / Observables（statistical operator, POVM 等）&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.3 Maps（量子映射、complete positivity、操作/测量扰动、表示法）&lt;/strong&gt;:contentReference[oaicite:2]{index=2}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;part-iiopen-quantum-systems核心是-reduced-dynamics--semigroupgksl--近似与非马尔可夫&quot;&gt;Part II：Open quantum systems（核心是 reduced dynamics + semigroup/GKSL + 近似与非马尔可夫）&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.4 Composite Systems（纠缠、正映射、Choi-Jamiolkowski）&lt;/strong&gt;:contentReference[oaicite:3]{index=3}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.5 Dynamical Evolution（reduced dynamics、quantum dynamical semigroups、可解模型、投影算子/NZ 方程）&lt;/strong&gt;:contentReference[oaicite:4]{index=4}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.6 Weak-Coupling Master Equation（Born–Markov、Lindblad form、Bloch equations、多时相关函数、荧光/反聚束）&lt;/strong&gt;:contentReference[oaicite:5]{index=5}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ch.7 Memory Effects（量子马尔可夫性、distinguishability revivals、divisibility、time-local 与 memory-kernel 方程）&lt;/strong&gt;:contentReference[oaicite:6]{index=6}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;作者还给了“非顺序阅读”的概念链接图（Fig.1），提示你可以按概念网络跳读，而不必线性读完:contentReference[oaicite:7]{index=7}。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-针对这本书的最快科研可用阅读路线两种口味&quot;&gt;3. 针对这本书的“最快科研可用”阅读路线（两种口味）&lt;/h2&gt;
+&lt;h3 id=&quot;路线-s偏做开放系统主方程为科研基础最快进入-gksl&quot;&gt;路线 S（偏“做开放系统/主方程”为科研基础：最快进入 GKSL）&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;先读 &lt;strong&gt;Ch.5.3（quantum dynamical semigroups + generator 结构）&lt;/strong&gt;:contentReference[oaicite:8]{index=8}&lt;/li&gt;
+  &lt;li&gt;补齐“为什么要 CP”：回读 &lt;strong&gt;Ch.3.2.1 complete positivity + operations&lt;/strong&gt;:contentReference[oaicite:9]{index=9}&lt;/li&gt;
+  &lt;li&gt;再读 &lt;strong&gt;Ch.6 Born–Markov → Lindblad form&lt;/strong&gt;:contentReference[oaicite:10]{index=10}&lt;/li&gt;
+  &lt;li&gt;最后读 &lt;strong&gt;Ch.7 divisibility / 信息回流&lt;/strong&gt;:contentReference[oaicite:11]{index=11}&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;路线-f偏基础更严谨把态测量映射一次性搞顺&quot;&gt;路线 F（偏“基础更严谨”：把态/测量/映射一次性搞顺）&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Ch.1 → Ch.2（QM 作为概率论、态与可观测）&lt;/li&gt;
+  &lt;li&gt;Ch.3（maps/CP/测量）&lt;/li&gt;
+  &lt;li&gt;Ch.4（复合系统、Choi、纠缠检测）&lt;/li&gt;
+  &lt;li&gt;然后再进入 Ch.5–7&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4-每章-20-分钟骨架笔记模板建议你复制到笔记软件&quot;&gt;4. “每章 20 分钟骨架笔记”模板（建议你复制到笔记软件）&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;你每章只填这些格子，不许写长篇推导。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;chapter-x标题&quot;&gt;Chapter X：标题&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;1) 本章要解决的核心问题（≤2 句）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Q:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;2) 核心对象/定义（3–7 个）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Object A =&lt;/li&gt;
+  &lt;li&gt;Object B =&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;3) 主结论/结构（1–2 条）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Theorem/Structure:&lt;/li&gt;
+  &lt;li&gt;直观含义（口语化）：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;4) 关键公式（最多 5 条，只记“用途”）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;(Eq1) 用途：&lt;/li&gt;
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;5) 典型例子/模型（至少 2 个）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Example 1：输入/输出/假设/你能复述的结论&lt;/li&gt;
+  &lt;li&gt;Example 2：…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;6) 我现在跳过但要回读的技术点（3 条以内）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;TODO-1：&lt;/li&gt;
+  &lt;li&gt;TODO-2：&lt;/li&gt;
+  &lt;li&gt;TODO-3：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;7) 与其他章的接口（这章依赖什么、供给什么）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;depends on:&lt;/li&gt;
+  &lt;li&gt;feeds into:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5-问题驱动回读索引怎么建科研时最值钱&quot;&gt;5. “问题驱动回读索引”怎么建（科研时最值钱）&lt;/h2&gt;
+&lt;p&gt;当你在论文/项目里遇到一个问题，把它归类到以下桶里，并回到对应章：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;“为什么必须 CP / Kraus / Choi？”&lt;/strong&gt; → Ch.3 + Ch.4（maps 与 Choi 同构）:contentReference[oaicite:12]{index=12}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;“我有个 master equation，它什么时候是 Lindblad/GKSL？”&lt;/strong&gt; → Ch.5.3（semigroup + generator）与 Ch.6.2.2（weak coupling 得到 Lindblad form）:contentReference[oaicite:13]{index=13}:contentReference[oaicite:14]{index=14}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;“Born–Markov / secular / rotating frame 到底在丢什么？”&lt;/strong&gt; → Ch.6（近似链条 + 物理条件）:contentReference[oaicite:15]{index=15}&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;“非马尔可夫怎么刻画？divisibility/信息回流是什么？”&lt;/strong&gt; → Ch.7:contentReference[oaicite:16]{index=16}&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6-读书时的硬约束防止你陷入细节泥潭&quot;&gt;6. 读书时的“硬约束”：防止你陷入细节泥潭&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;每一节最多允许你写 &lt;strong&gt;1 个“我不懂的问题”&lt;/strong&gt;，超过就先跳过。&lt;/li&gt;
+  &lt;li&gt;看到长推导：
+    &lt;ul&gt;
+      &lt;li&gt;只问一句：&lt;strong&gt;它在证明哪件事？用了哪些假设？结论用在哪？&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;然后把推导标成 TODO，并记录“回读触发条件”（例如：当你要推某个模型的系数时回来看）。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;你对一个概念真正“掌握”的最低标准：&lt;strong&gt;能用它做一次判断&lt;/strong&gt;&lt;br /&gt;
+例如：“这个动力学映射是否可能 CP-divisible？”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7-建议你对-vacchini-这本书的第一周计划可直接照做&quot;&gt;7. 建议你对 Vacchini 这本书的“第一周计划”（可直接照做）&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Day 1：Pass A（目录 + Preface + Fig.1 概念图）:contentReference[oaicite:17]{index=17}&lt;/li&gt;
+  &lt;li&gt;Day 2：Ch.5.3（semigroup + generator）+ 章末总结化&lt;/li&gt;
+  &lt;li&gt;Day 3：Ch.3.2.1（CP）+ Ch.4.4（Choi 同构）:contentReference[oaicite:18]{index=18}&lt;/li&gt;
+  &lt;li&gt;Day 4：Ch.6.2（Born–Markov → Lindblad form）:contentReference[oaicite:19]{index=19}&lt;/li&gt;
+  &lt;li&gt;Day 5：Ch.7.3–7.4（distinguishability / divisibility / time-local vs kernel）:contentReference[oaicite:20]{index=20}&lt;/li&gt;
+  &lt;li&gt;Day 6–7：把你的“术语—公式—用途索引”和“模型库”整理成可检索文档；列出 10 条回读触发条件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8-你下一步怎么用我不增加你的阅读负担&quot;&gt;8. 你下一步怎么用我（不增加你的阅读负担）&lt;/h2&gt;
+&lt;p&gt;你每读完一节，发我：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;你填好的“模板 §4”（哪怕很粗糙）&lt;/li&gt;
+  &lt;li&gt;你卡住的 &lt;strong&gt;唯一&lt;/strong&gt; 一个问题（必须可定位到一个定义/等式/推导步骤）
+我会按“骨架优先”的标准帮你：&lt;/li&gt;
+  &lt;li&gt;补全缺的桥梁（为什么要这样定义/这样近似）&lt;/li&gt;
+  &lt;li&gt;给最短的可操作例子&lt;/li&gt;
+  &lt;li&gt;指出哪些细节可以安全跳过、哪些是不能跳的关键点&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+          <pubDate>2026-02-06T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Vacchini_OQS</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Vacchini_OQS</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Discrete Time Stochastic Processes</title>
+          <description>&lt;h2 id=&quot;1-基本定义-stochastic-process-filtration-stopping-time&quot;&gt;1 基本定义: Stochastic Process; Filtration; Stopping Time&lt;/h2&gt;
+
+&lt;h3 id=&quot;stochastic-process&quot;&gt;Stochastic Process&lt;/h3&gt;
+
+&lt;p&gt;不同时刻构成的集合记为 $\mathbf{T}$.&lt;/p&gt;
+
+&lt;p&gt;本文考虑离散时间的随机过程, 即 $\mathbf{T} = \{0,1,\cdots\}$ 或者 $\mathbf{T} = \{0,1,\cdots,T\}, T&lt;∞$.&lt;/p&gt;
+
+&lt;p&gt;随机过程的定义里面很重要的一个东西是样本空间 $\Omega$, 它通俗的理解就是“世界参数”的集合, 里面的每一个元素(样本), 都编码了一个“世界剧本”. $X_t$ 就是在说在某个剧本下 $t$ 时刻都状态.&lt;/p&gt;
+
+&lt;p&gt;于是, 随机过程的定义有三种等价形式:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;一族随机变量 $X=(X_t)_{t\in\mathbf{T}}$, 每个 $X_t$ 定义在同一个概率空间 $(\Omega,\mathcal{F},P)$ 上.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一个随机变量
+$$\begin{equation}
+    X: \Omega× \mathbf{T} → \mathbb{R}, \quad (\omega,t) ↦ X_t(\omega),
+\end{equation}$$
+其中 $\Omega\times\mathbf{T}$ 上的 $\sigma$-代数是 $\mathcal{F} \otimes 2^\mathbf{T}$,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;样本空间上的可测映射
+$$\begin{equation}
+    X: \Omega → \mathbb{R}^\mathbf{T}, \quad \omega ↦ (X_t(\omega))_{t\in\mathbf{T}},
+\end{equation}$$
+其中 $\mathbb{R}^\mathbf{T}$ 上的 $\sigma$-代数是 product Borel $\sigma$-代数.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;filtration&quot;&gt;Filtration&lt;/h3&gt;
+
+&lt;p&gt;滤过 (filtration) 是一个随时间增加的 $\sigma$-代数族, 用来表示信息随着时间的推移而增加. 形式化定义如下:&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Filtration)&lt;/strong&gt; 滤过是 $\Omega$ 上一个索引集合为 $\mathbf{T}$ 的 $\sigma$-代数族 $$\begin{equation}
+    \mathbb{F} = (\mathcal{F}_t)_{t\in\mathbf{T}},
+\end{equation}$$ 满足对于任意 $s,t\in\mathbf{T}$, 若 $s ≤ t$, 则 $\mathcal{F}_s \subseteq \mathcal{F}_t$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(filtered space, adapted process)&lt;/strong&gt; 一个带有滤过的可测空间称为滤过空间 (filtered space). 一个随机过程 $X$ 称为 $\mathbb{F}$-adapted, 如果对于每个 $t\in\mathbf{T}$, $X_t$ 是 $\mathcal{F}_t$-可测的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;stopping-time&quot;&gt;Stopping Time&lt;/h3&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(random time)&lt;/strong&gt; 随机时间 (random time) 是一个可测映射 $$\begin{equation}
+    \tau: \Omega → \mathbf{T} ∪ \{∞\}.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(stopping time)&lt;/strong&gt; 停止时间 (stopping time) 是一个随机时间 $\tau$, 满足对于每个 $t\in\mathbf{T}$, 事件 $\{\tau ≤ t\} \in \mathcal{F}_t$, 其中 $\{\tau≤t\} = \{\omega ∈ \Omega: \tau(\omega) ≤ t\}$.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;停止时间的直观理解是, 在时间 $t$ 时刻, 我们可以仅凭借 $\mathcal{F}_t$ 中的信息来判断是否“停止” (即 $\tau ≤ t$).&lt;/p&gt;
+
+&lt;h3 id=&quot;stochastic-integral&quot;&gt;Stochastic Integral&lt;/h3&gt;
+
+</description>
+          <pubDate>2026-01-24T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Stochastic_Process</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Stochastic_Process</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Markov Chain 笔记</title>
+          <description>&lt;h2 id=&quot;离散马尔可夫链&quot;&gt;离散马尔可夫链&lt;/h2&gt;
+
+&lt;h3 id=&quot;有限状态离散马尔可夫链&quot;&gt;有限状态离散马尔可夫链&lt;/h3&gt;
+
+&lt;p&gt;先考虑最简单的模型, 即有限状态离散马尔可夫链, 且是 time-homogeneous 的 (即转移概率不随时间变化).&lt;/p&gt;
+
+&lt;h4 id=&quot;detailed-balanced-条件--平稳分布&quot;&gt;detailed balanced 条件 ⇒ 平稳分布&lt;/h4&gt;
+
+&lt;p&gt;detailed balance 条件
+$$\begin{equation}
+    p(x) T(x→x') = p(x') T(x'→x)
+\end{equation}$$
+可以推出平稳分布:
+$$\begin{equation}
+    \sum_x p(x) T(x→x') = p(x').
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;直观上就是每条边的流入等于流出, 所以整体上每个节点的流入等于流出, 即平稳. 这显然是一个非常特殊的情况.&lt;/p&gt;
+
+&lt;p&gt;对于一般的马尔可夫链, 只要 &lt;strong&gt;存在分布 $π$&lt;/strong&gt; 满足 detailed balance 条件, 那么 $π$ 就是平稳分布. 证明只需要一行:
+$$\begin{equation}
+    \sum_x π(x) T(x→x') = \sum_x π(x') T(x'→x) = π(x').
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;上面加粗是因为, 得是分布才行, 一个例子是 $\mathbb{Z}$ 上的简单随机游走, 它的转移概率是对称的, 满足 detailed balance 条件, 但是不存在(概率意义上的)平稳分布.&lt;/p&gt;
+
+&lt;h4 id=&quot;平稳分布的存在性&quot;&gt;平稳分布的存在性&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;性质&lt;/strong&gt;: 概率转移矩阵 $P$ 的每一行和为 $1$, 因为每一行表示从某个状态出发到所有可能状态的转移概率分布. 所以 $P$ 有右特征向量 $\mathbf{1}$, 对应特征值 $1$. (注意, 特征值不分左右, 因为一个矩阵的特征值和它的转置的特征值是一样的, 这时因为 determinant 是转置不变的.)&lt;/p&gt;
+
+&lt;p&gt;于是考虑左特征向量 $π$ 满足 $π P = π$, 即 $π$ 是 $P$ 的左特征向量, 对应特征值 $1$. 这时如果 $π_i ≥ 0$ 并且 $\sum_i π_i = 1$ (其实只要处理分量非负), 那么 $π$ 就是平稳分布.&lt;/p&gt;
+
+&lt;p&gt;下面来证明一定可以找到分量非负的左特征向量 $\pi$ 对应特征值 $1$. 方便的方式是使用不动点定理.&lt;/p&gt;
+
+&lt;p&gt;考虑概率单纯形 
+$$\begin{equation}
+    Δ = \{μ ∣ μ≥0, \sum_i μ_i = 1 \},
+\end{equation}$$
+它在映射 $T(u)=μP$ 下是 invariant 的. 因为这里是有限维情形(有限状态), 所以 $Δ$ 是一个紧凸集. 由于 $T$ 是紧凸集到自身的连续映射, 根据 Brouwer 不动点定理, 存在 $π ∈ Δ$ 使得 $T(π)=π P=π$. 这就证明了平稳分布的存在性.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;. 写到这里突然有个无关的疑问, Brouwer 不动点定理的紧凸集条件可不可以削弱. 问了一下 GPT 说是改成 star-shaped 或是 contractible 都不行.&lt;/p&gt;
+
+&lt;p&gt;并且其实我们可以具体构造出平稳分布, 使用 Cesàro average:
+$$\begin{equation}
+    \bar{\mu}_N := \frac{1}{N} \sum_{t=0}^{N-1} \mu_t = \frac{1}{N} \sum_{t=0}^{N-1} \mu_0 P^t,
+\end{equation}$$
+其中 $μ_0$ 是任意初始分布.&lt;/p&gt;
+
+&lt;p&gt;这些的确是概率分布 (落在 $Δ$ 里面), 因为都是概率的凸组合. 考虑 (这还不足以说明是平稳分布, 因为还没证明收敛)
+$$\begin{equation}
+    \bar{\mu}_N P - \bar{\mu}_N = \frac{1}{N} (\mu_0 P^N - \mu_0). 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;根据 $\Delta$ 的紧性, 存在子列 $N_k$ 使得 $\bar{\mu}_{N_k} → π$, 利用上面的恒等式可得
+$$\begin{equation}
+    \lim_{k→∞} (\bar{\mu}_{N_k} P - \bar{\mu}_{N_k}) = \lim_{k→∞} \frac{1}{N_k} (\mu_0 P^{N_k} - \mu_0) = 0,
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;由于矩阵乘法是连续的, 所以和极限可交换, 于是有
+$$\begin{equation}
+    π P - π = (\lim_{k→∞} \bar{\mu}_{N_k})(P-I) = \lim_{k→∞} (\bar{\mu}_{N_k} P - \bar{\mu}_{N_k}) = 0,
+\end{equation}$$
+即 $π P = π$. 这就构造出了一个平稳分布.&lt;/p&gt;
+
+&lt;h4 id=&quot;概率转移矩阵的特征值性质&quot;&gt;概率转移矩阵的特征值性质&lt;/h4&gt;
+
+&lt;p&gt;上面我们已经证明了概率转移矩阵 $P$ 有特征值 $1$, 下面我们来证明其实所有的特征值模长都不大于 $1$.&lt;/p&gt;
+
+&lt;p&gt;定义向量无穷范数 $‖x‖_∞ = \max_i|x_i|$, 诱导矩阵范数
+$$\begin{equation}
+    \|A\|_\infty = \max_{‖x‖_\infty≠0} \frac{‖Ax‖_\infty}{‖x‖_\infty} = \max_i \sum_j |A_{ij}|.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;由于 $P_{ij}≥ 0$ 且每行和均为 $1$, 所以
+$$\begin{equation}
+    \|P\|_\infty = \max_i \sum_j |P_{ij}| = \max_i \sum_j P_{ij} = 1.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;这表示
+$$\begin{equation}
+    ‖Pv‖_\infty ≤ ‖v‖_\infty, \quad ∀ v ∈ \mathbb{R}^n.
+\end{equation}$$
+从而可以看出, 对于任意特征值 $λ$ 和对应特征向量 $v$ (非零), 有
+$$\begin{equation}
+    |λ| ‖v‖_\infty = ‖λ v‖_\infty = ‖Pv‖_\infty ≤ ‖v‖_\infty,
+\end{equation}$$
+即 $|λ| ≤ 1$.&lt;/p&gt;
+
+&lt;h4 id=&quot;不可约情形下平稳分布的唯一性&quot;&gt;不可约情形下平稳分布的唯一性&lt;/h4&gt;
+
+&lt;p&gt;不可约指的是任意状态都能到达任意状态. 从有向图上看就是强连通图. 从矩阵角度看就是不存在一个非平凡子集 $S$ 使得对于 $i ∈ S, j ∉ S$, 有 $P_{ij}=0$, 也即不可能通过行列置换把 $P$ 写成上三角矩阵.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Perron-Frobenius 定理)&lt;/strong&gt; 对于不可约 (irreducible) 的概率转移矩阵 $P$, 存在唯一的特征值 $λ_1=1$, 对应 $λ_1$ 的左特征向量 $π$ 满足 $π_i&gt;0$ 从而可以满足 $\sum_i π_i=1$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;我们考虑对应特征值 $1$ 的归一化的左特征向量 $\pi$, 它代表一个平稳分布. 一个关键的注意点是, $\pi$ 的所有分量都是正的, 否则根据平稳分布的定义其它分量到它的转移概率都是 $0$, 从而和不可约性矛盾. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;基于此, 如果有两个不同的平稳分布 (即归一化左特征向量) $π$ 和 $π'$, 尝试利用它们构造出一个有 $0$ 分量的平稳分布, 从而得到矛盾. 具体地, 设 $α = \min_i \frac{π_i}{π'_i} &gt; 0$, 那么考虑 $π'' = π - α π'$, 它是一个非零的左特征向量对应特征值 $1$, 并且至少有一个分量为 $0$. 但是根据上面的论证, 这是不可能的. 所以平稳分布是唯一的.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;到此, 我们证明了不可约情形下的离散马尔可夫过程一定有唯一的平稳分布. 但是, 未必所有的初始分布都会收敛到这个平稳分布, 例如很容易可以想到一些周期性振荡的例子, 这种情况下虽然还是特征值 $1$ 只有一重, 但是其它特征值可能在单位圆上, 导致振荡.&lt;/p&gt;
+
+&lt;h4 id=&quot;遍历性与平稳分布的可达性&quot;&gt;遍历性与平稳分布的可达性&lt;/h4&gt;
+
+&lt;p&gt;为了保证所有初始分布都收敛到平稳分布, 需要进一步的条件, 即非周期性 (aperiodicity).&lt;/p&gt;
+
+&lt;p&gt;不可约 + 非周期 = 遍历 (ergodic)&lt;/p&gt;
+
+&lt;p&gt;下面先给出具体定义:&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(周期)&lt;/strong&gt; 对于状态 $i∈ \mathcal{S}$ , 定义它的周期为 $$\begin{equation}
+        d(i) = \text{gcd}\{n ≥ 1 ∣ P^n_{ii} &gt; 0 \},
+    \end{equation}$$ 即从状态 $i$ 出发经过 $n$ 步回到 $i$ 的所有可能步数的最大公约数. 如果 $d(i) ≥ 2$, 则称状态 $i$ 是周期性的 (periodic), 否则称为非周期性的 (aperiodic). 如果对于所有状态 $i$ 都有 $d(i)=1$, 则称马尔可夫链是非周期性的.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;. 我们考虑事情往往是在再返类(recurrent class)上面考虑的, 即不怎么考虑那些无法回到自己的状态.&lt;/p&gt;
+
+&lt;p&gt;一个状态是非周期的实质是, 当 $t$ 足够大时, 从该状态出发 $t$ 步回到自己的概率总是大于 $0$.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(遍历性)&lt;/strong&gt; 如果马尔可夫链是不可约且非周期的, 则称其为遍历的 (ergodic). &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;或者可以从矩阵上进行定义: 如果存在某个正整数 $m$ 使得对于所有状态 $i,j$ 都有 $P^m_{ij} &gt; 0$, 则称马尔可夫链是遍历的. 这样的矩阵也叫本原的 (primitive).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;. Primitive 推导非周期性依赖于 $P$ 是概率转移矩阵 (非负且行和为 $1$) 这一点, 这使得把它乘在一个正矩阵左边还是正矩阵.&lt;/p&gt;
+
+&lt;p&gt;证明 primitive ⟺ 不可约 + 非周期: 证明不可约是定义, 证明 primitive 用上面的 remark; 反过来, 证明 primitive 要用非周期的实质, 来吧任意两点之间不可约给出的不同的返回时间拼成同一个时间.&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;对于一个满足遍历性(不可约非周期)的马尔可夫链, $P$ 除了一个特征值 $1$ 之外其他特征值模长都小于 $1$.&lt;/p&gt;
+  &lt;div class=&quot;proof&quot;&gt;
+    &lt;p&gt;这时 $P$ 是 primitive 的矩阵. 从而存在某个 $k$ 使得 $P^k$ 逐项正. 我们分几个步骤来证明. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;1) &lt;strong&gt;Doeblin minorization&lt;/strong&gt;: 存在 $0&lt;\alpha≤1$ 和某个分布 $ν$ 使得对于所有状态 $i,j$ 都有 $$\begin{equation}
+    P^k_{ij} ≥ α ν_j.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;只要令 $ϵ:=\min_{i,j}P^k_{ij}\leq\frac{1}{n}$, 则可以取 $α= n ϵ$ 和 $ν_j = \frac{1}{n}$. &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;2) &lt;strong&gt;构造分解&lt;/strong&gt;: $$\begin{equation}
+    P^k = α \mathbf{1} ν + (1-α) R,
+\end{equation}$$ 其中 $R = \frac{1}{1-α}(P^k - α \mathbf{1} ν)$ 是一个概率转移矩阵 (容易验证). &lt;br /&gt;&lt;/p&gt;
+    &lt;p&gt;3) &lt;strong&gt;和为 $0$ 的空间上的严格收缩&lt;/strong&gt;: 对于任意满足 $x\mathbf{1}=0$ 的向量 $x$ , 有 $$\begin{equation}
+    x P^k = (1-α) x R,
+\end{equation}$$ 从而有 $$\begin{equation}
+    ‖x P^k‖_1 = (1-α) ‖xR‖_1≤ (1-α) ‖x‖_1.
+\end{equation}$$&lt;/p&gt;
+    &lt;p&gt;4) &lt;strong&gt;非 $1$ 特征值模长小于 $1$&lt;/strong&gt;: 设 $λ$ 是 $P$ 的某个特征值, 且 $λ≠1$, 对应左特征向量 $v$. 则有 $$\begin{equation}
+    λ v\mathbf{1} = v P \mathbf{1} = v \mathbf{1} ⇒ v \mathbf{1} = 0.
+\end{equation}$$ 于是根据 3) 有 $$\begin{equation}
+    |λ|^k ‖v‖_1 = ‖v P^k‖_1 ≤ (1-α) ‖v‖_1,
+\end{equation}$$ 即 $|λ| ≤ (1-α)^{1/k} &lt; 1$.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;根据这个命题, 我们可以想象, 任意分布往唯一的平稳分布收缩的过程, 就是不断乘以 $P$, 由于非 $1$ 特征值模长都小于 $1$, 所以最终都会收敛到对应特征值 $1$ 的特征向量, 即平稳分布.&lt;/p&gt;
+
+&lt;p&gt;另外我们也可以根据上面的和为 $0$ 的空间上的严格收缩 (任意两个概率分布的差值都在这个空间里面, 所以这个不等式用来估计 TV 距离或 $l^1$ 距离特别好), 直接证明任意初始分布都会收敛到平稳分布.&lt;/p&gt;
+
+&lt;p&gt;取任意初始分布 $\mu_0$, 定义迭代 $\mu_m := T^m(\mu_0) = \mu_0 P^{mk}$, 这里 $P^k$ 是正矩阵. 则对于任意 $m&gt;n$ 有
+$$\begin{equation}
+    ‖\mu_m - \mu_n‖_1 = ‖T^n(\mu_{m-n} - \mu_0)‖_1 ≤ ‖ \mu_{m-n} - \mu_0‖_1 (1-α)^n≤ (1-α)^n. 
+\end{equation}$$
+从而 $\{\mu_m\}$ 是 Cauchy 列, 收敛到某个分布 $π$. 由于 $T$ 是连续的, 所以
+$$\begin{equation}
+    π = \lim_{m→∞} \mu_m = \lim_{m→∞} T(\mu_{m-1}) = T( \lim_{m→∞} \mu_{m-1}) = T(π) = π P^k,
+\end{equation}$$
+即 $π$ 是 $P^k$ 的平稳分布.&lt;/p&gt;
+
+&lt;p&gt;注意到
+$$\begin{equation}
+    (π P)P^k = π P^{k+1} = (π P^k) P = π P,
+\end{equation}$$
+所以 $π P$ 也是 $P^k$ 的平稳分布. 由于 $P^k$ 的平稳分布唯一, 所以 $π P = π$, 即 $π$ 也是 $P$ 的平稳分布.&lt;/p&gt;
+
+&lt;p&gt;最后证明任意初始分布 $\mu_0$ 都收敛到 $π$ (之前证明的是一直作用 $P^k$ 都收敛, 这里要证明作用 $P$). 对于一般的 $t = mk+r, 0≤ r &lt; k$, 我们有
+$$\begin{equation}
+    ‖\mu_0 P^t - π‖_1 = ‖(\mu_0 P^r - π) P^{mk}‖_1 ≤ ‖\mu_0 P^r - π‖_1 (1-α)^m≤ (1-α)^m→ 0, \quad \text{as } t→∞. 
+\end{equation}$$
+因此任意初始分布都收敛到平稳分布 $π$.&lt;/p&gt;
+
+&lt;h4 id=&quot;mixing-time&quot;&gt;mixing time&lt;/h4&gt;
+
+&lt;p&gt;上面已经证明了对于不可约非周期的离散马尔可夫链, 任意初始分布都会收敛到唯一的平稳分布. 下面我们来定量地分析收敛的速度, 即 mixing time, 它与马尔可夫链的谱隙 (spectral gap) 也就是非 $1$ 特征值中模长最大的那个特征值有关.&lt;/p&gt;
+
+</description>
+          <pubDate>2026-01-20T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Markov_Chain</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Markov_Chain</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Probabilistic Graphical Models</title>
+          <description>&lt;h2 id=&quot;总览&quot;&gt;总览&lt;/h2&gt;
+
+&lt;p&gt;随机变量之间的连线表示它们之间不是独立的, 所以马尔可夫随机场的概念是非常自然的.&lt;/p&gt;
+
+&lt;p&gt;主要有三个话题:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Representation: how to specify a model&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;inference: how to ask the model questions&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Marginal inference&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;MAP (maximum a posteriori) inference&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;learning: how to fit a model to real-world data&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1️⃣-representation&quot;&gt;1️⃣ Representation&lt;/h2&gt;
+
+&lt;h3 id=&quot;bayesian-networks&quot;&gt;Bayesian Networks&lt;/h3&gt;
+
+&lt;p&gt;贝叶斯网络是有向无环图 (DAG), 节点表示随机变量, 有向边表示条件依赖关系. 每个节点都有一个条件概率分布 (CPD), 描述该节点在给定其父节点(可能多个)的条件下的概率分布.&lt;/p&gt;
+
+&lt;p&gt;贝叶斯网络很清晰地表示了因果关系, 适用于建模具有明确因果结构的系统. 但是它们不能表示循环依赖关系, 因为图必须是无环的.&lt;/p&gt;
+
+&lt;p&gt;贝叶斯网络的独立性:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Common parent: 如果 $X ← Z → Y$, 则 $X ⊥ Y | Z$. 但是 $X$ 和 $Y$ 不独立.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Cascade: 如果 $X → Z → Y$, 则 $X ⊥ Y | Z$. 但是 $X$ 和 $Y$ 不独立.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;V-structure: 如果 $X → Z ← Y$, 则 $X ⊥ Y$. 但是给定 $Z$ 后, $X$ 和 $Y$ 不独立.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;贝叶斯网络未必是马尔可夫随机场, 它不一定有局部性质.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;最简单的例子是 V-structure, $X → Z ← Y$, 这里 $X$ 和 $Y$ 在没有条件化时独立, 但是给定 $Z$ 后不独立, 因此不满足局部性质.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;($p$ factorizes over $G$)&lt;/strong&gt; 设 $G$ 是一个有向无环图, 节点对应随机变量 $X_1, X_2, \ldots, X_n$. 设 $\text{Pa}_G(X_i)$ 是节点 $X_i$ 的父节点集合. 如果联合概率分布 $p(X_1, X_2, \ldots, X_n)$ 可以表示为 $$\begin{equation}
+    p(X_1, X_2, \ldots, X_n) = \prod_{i=1}^n p(X_i | \text{Pa}_G(X_i)),
+\end{equation}$$ 则称 $p$ 在 $G$ 上分解 (factorizes).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;. 在实践上, 我们通常是对于一个具体场景, 想把它建模成一个贝叶斯网络, 我们当然希望这个场景的 p 在我们建的图上分解, 这样我们才能用图来表示这个分布的结构. 所以我们之后只考虑 p 在 G 上分解的情况.&lt;/p&gt;
+
+&lt;p&gt;对于一个 BN, 我们存储的信息除了图的结构就是各个节点的条件概率分布 (CPD). 例如, 对于离散变量, 我们可以用条件概率表 (CPT) 来表示 CPD.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(d-separation)&lt;/strong&gt; 在有向图 $G$ 中, 给定观测集合 $O$, 对于节点集合 $Q,W$, 如果 $Q$ 到 $W$ 之间不存在 active path, 则称 $Q$ 和 $W$ 在 $G$ 中关于 $O$ d-separate. 这里的 active path 定义如下:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;对于路径中的每一个节点 $V$, 如果路径通过 $V$ 的方式是串联 (chain) 或分支 (fork), 即 $→ V →$ 或 $← V →$, 则要求 $V \notin O$;&lt;/li&gt;
+    &lt;li&gt;如果路径通过 $V$ 的方式是汇聚 (collider), 即 $→ V ←$, 则要求 $V$ 或者 $V$ 的某个后代在 $O$ 中.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;记 
+$$\begin{equation}
+    I(p) = \{(A ⊥ B | C)\}
+\end{equation}$$
+为分布 $p$ 蕴含的所有条件独立关系的集合. 记
+$$\begin{equation}
+    I(G) = \{(A ⊥ B | C) : A \text{ 和 } B \text{ 在 } G \text{ 中关于 } C \text{ d-separate}\}.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fact&lt;/strong&gt;: 如果 $p$ 在 $G$ 上分解, 则 $I(G) ⊆ I(p)$. 此时称 $G$ 是 $p$ 的 I-map (independency map).&lt;/p&gt;
+
+&lt;p&gt;这就是在说, 图 $G$ 中的 d-separation 关系都是分布 $p$ 中的条件独立关系.&lt;/p&gt;
+
+&lt;p&gt;自然的问题是, 反过来是否成立? 也就是等号是否成立? 也就是说, 图 $G$ 中的 d-separation 关系是否完全刻画了分布 $p$ 中的条件独立关系? 答案是否定的, 例子是 V-structure.&lt;/p&gt;
+
+&lt;p&gt;有向图的表示能力:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于任意分布 $p$, 存在一个有向无环图 $G$ 使得 $I(G)⊆I(p)$. 例如全连接图.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以追求 minimal I-map, 即删除冗余边.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;并非所有分布都有 perfect I-map, 即存在 $G$ 使得 $I(G)=I(p)$. 例子是 noisy-xor 分布.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;perfect I-map 存在时, 未必唯一. 从而有 I-equivalence 的概念.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;markov-random-fields&quot;&gt;Markov Random Fields&lt;/h3&gt;
+
+&lt;p&gt;MRF 解释性不如 BN.&lt;/p&gt;
+
+&lt;p&gt;MRF 也有表示能力的问题, 分离的点一定是独立的, 但是独立的点不一定是分离的. 例子还是 V-structure.&lt;/p&gt;
+
+&lt;h2 id=&quot;2️⃣-inference&quot;&gt;2️⃣ Inference&lt;/h2&gt;
+
+&lt;p&gt;这个部分前两个算法 (VE、JT, 不包括 LBP) 都是精确算法, 往往只适用于小规模模型.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark&lt;/strong&gt;. 对于实践中的复杂概率模型, 我们往往需要近似解. 近似算法主要分两个大类:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;variational&lt;/strong&gt;: 将 inference 问题转化为 optimization 问题.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;sampling&lt;/strong&gt;: 通过在某些分布下重复生成样本来 produce 近似解.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;-variable-elimination&quot;&gt;✰ Variable elimination&lt;/h3&gt;
+
+&lt;p&gt;其实就是 BN 上的暴力消元求边缘分布, 只是求每一层求和的时候把无关项拿出去, 求和顺序很重要.&lt;/p&gt;
+
+&lt;p&gt;对于大图很不实用.&lt;/p&gt;
+
+&lt;p&gt;MRF 上也能用, 但是我感觉效率也很低.&lt;/p&gt;
+
+&lt;p&gt;是精确算法.&lt;/p&gt;
+
+&lt;p&gt;缺点: 想算另外一个边缘分布的时候要全部重来.&lt;/p&gt;
+
+&lt;h3 id=&quot;-junction-tree-algorithm&quot;&gt;✰ Junction tree algorithm&lt;/h3&gt;
+
+&lt;h4 id=&quot;belief-propagation&quot;&gt;Belief propagation&lt;/h4&gt;
+
+&lt;h4 id=&quot;junction-tree-algorithm&quot;&gt;Junction tree algorithm&lt;/h4&gt;
+
+&lt;h4 id=&quot;loopy-belief-propagation&quot;&gt;Loopy belief propagation&lt;/h4&gt;
+
+&lt;h3 id=&quot;-map-inference&quot;&gt;✰ MAP inference&lt;/h3&gt;
+
+&lt;h3 id=&quot;-sampling-based-inference&quot;&gt;✰ Sampling-based inference&lt;/h3&gt;
+
+&lt;h4 id=&quot;forward-sampling&quot;&gt;Forward sampling&lt;/h4&gt;
+
+&lt;p&gt;在(离散) BN 上就是按照拓扑序生成样本, 简单直接.&lt;/p&gt;
+
+&lt;p&gt;在 undirected model 中只能应用到一些简单的情形, 比如每个 node 都很小的 clique tree (junction tree) , 校准 (calibrate, 即给出每个 node 的 marginal distribution) 之后, 从根节点开始采样, 然后 conditionally 采样子节点, 直到叶节点.&lt;/p&gt;
+
+&lt;h4 id=&quot;monte-carlo-estimation&quot;&gt;Monte Carlo estimation&lt;/h4&gt;
+
+&lt;p&gt;从给定分布生成大量样本来得到解的算法称为 Monte Carlo (MC) 方法. 可以很好地完成 marginal 和 MAP inferance, 并且可以计算积分
+$$\begin{equation}
+    \mathbb{E}_{x∼p}[f(x)] = \sum_x f(x) p(x) 
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;Monte Carle integration 是 Monte Carlo principle 的重要实例. 目标是计算&lt;/p&gt;
+
+&lt;p&gt;$$\begin{equation}
+    \mathbb{E}_{x∼p}[f(x)] ≈ I_T = \frac{1}{T} \sum_{y=1}^T f(x^{(t)}),
+\end{equation}$$
+其中 $x^{(t)}$ 是从分布 $p$ 中采样得到的样本. 我们有
+$$\begin{equation}
+    \mathbb{E}[I_T] = \mathbb{E}_{x∼p}[f(x)],
+\end{equation}$$
+$$\begin{equation}
+    \text{Var}(I_T) = \frac{1}{T} \text{Var}_{x∼p}[f(x)],
+\end{equation}$$
+第一个式子表明 MC estimate $I_T$ 是 unbiased 的, 第二个式子表明随着样本数量 $T$ 增加, 方差以 $1/T$ 的速度减小, 从而估计更加准确, 即 $I_T$ 在 $T→∞$ 时收敛于真实值 $\mathbb{E}_{x∼p}[f(x)]$.&lt;/p&gt;
+
+&lt;h4 id=&quot;rejection-sampling&quot;&gt;Rejection sampling&lt;/h4&gt;
+
+&lt;p&gt;拒绝采样有时会很浪费, 因为很多样本都被拒绝了.&lt;/p&gt;
+
+&lt;h4 id=&quot;importance-sampling&quot;&gt;Importance sampling&lt;/h4&gt;
+
+&lt;h4 id=&quot;markov-chain-monte-carlo-mcmc&quot;&gt;Markov Chain Monte Carlo (MCMC)&lt;/h4&gt;
+
+&lt;p&gt;马尔可夫链的基本概念见另一篇笔记 &lt;a href=&quot;/website/posts/Markov_Chain&quot;&gt;Markov Chain 笔记&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;-variational-inference&quot;&gt;✰ Variational inference&lt;/h3&gt;
+</description>
+          <pubDate>2026-01-17T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/PGM</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/PGM</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>信念传播 (Belief Propagation)</title>
+          <description>&lt;h2 id=&quot;前置概念&quot;&gt;前置概念&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Random Field)&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Markov Random Field)&lt;/strong&gt; 设 $G=(V,E)$ 是一个无向图, 其中 $V$ 是节点集合, $E$ 是边集合. 设 $\{X_v | v∈ V\}$ 是一组随机变量, 每个随机变量 $X_v$ 取值于某个状态空间 $\mathcal{X}_v$. 如果对于任意的节点 $v∈ V$, 给定其邻居节点的状态, $X_v$ 的条件概率分布只依赖于其邻居节点的状态, 即 $$\begin{equation}
+    P(X_v | X_{V\setminus\{v\}}) = P(X_v | X_{N(v)}),
+\end{equation}$$ 其中 $N(v)$ 是节点 $v$ 的邻居节点集合, 则称 $\{X_v | v∈ V\}$ 构成了图 $G$ 上的马尔可夫随机场 (Markov Random Field, MRF).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;介绍一下条件独立符号: 对于随机变量 $X,Y,Z$, 如果 $X$ 在给定 $Z$ 的条件下与 $Y$ 条件独立, 则记作
+$$\begin{equation}
+    X ⊥ Y | Z.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;Markov 性质有三个层次, 分别是 pairwise, local, global:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;pairwise Markov property: 对于任意不相邻的节点 $u,v∈ V$, 有
+$$\begin{equation}
+    X_u ⊥ X_v | X_{V\setminus\{u,v\}}.
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;local Markov property: 对于任意节点 $v∈ V$, 有
+$$\begin{equation}
+    X_v ⊥ X_{V\setminus(\{v\} ∪ N(v))} | X_{N(v)}.
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;global Markov property: 对于任意不相交的节点集合 $A,B,S ⊆ V$, 如果 $S$ 将 $A$ 和 $B$ 分离 (即在图中删除 $S$ 后, $A$ 和 $B$ 不再连通), 则有
+$$\begin{equation}
+    X_A ⊥ X_B | X_S.
+\end{equation}$$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;显然, global Markov property ⇒ local Markov property ⇒ pairwise Markov property.&lt;/p&gt;
+
+&lt;p&gt;但是如果概率分布是严格正的 (strictly positive), 则三者等价. 这里的严格正是指对于任意可能的状态组合 $x∈ \prod_{v∈ V} \mathcal{X}_v$, 有
+$$\begin{equation}
+    P(X_V = x) &gt; 0.
+\end{equation}$$&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(Gibbs Random Field)&lt;/strong&gt; 设 $G=(V,E)$ 是一个无向图, 其中 $V$ 是节点集合, $E$ 是边集合. 设 $\{X_v | v∈ V\}$ 是一组随机变量, 每个随机变量 $X_v$ 取值于某个状态空间 $\mathcal{X}_v$. 如果存在一组势函数 (potential functions) $\{\psi_C : \prod_{v∈ C} \mathcal{X}_v → \mathbb{R}^+ | C ∈ \mathcal{C}\}$, 其中 $\mathcal{C}$ 是图 $G$ 上的所有团 (cliques) 的集合, 使得联合概率分布可以表示为 $$\begin{equation}
+    P(X_V = x) = \frac{1}{Z} \prod_{C∈ \mathcal{C}} \psi_C(x_C),
+\end{equation}$$ 其中 $x_C$ 是 $x$ 在团 $C$ 上的投影, $Z$ 是归一化常数 (partition function), 则称 $\{X_v | v∈ V\}$ 构成了图 $G$ 上的 Gibbs 随机场 (Gibbs Random Field).&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hammersley-Clifford 定理说明, 对于严格正的概率分布, Markov Random Field 和 Gibbs Random Field 是等价的.&lt;/p&gt;
+</description>
+          <pubDate>2026-01-15T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Belief_Propagation</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Belief_Propagation</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>量子系统的数学描述</title>
+          <description>&lt;h2 id=&quot;heisenberg-uncertainty-与-non-abelianess&quot;&gt;Heisenberg uncertainty 与 non-abelianess&lt;/h2&gt;
+
+&lt;p&gt;在 Strocchi 的框架下, 我们也可以由非交换性得到 Heisenberg 不确定原理. 对于自伴的 $A=A^*\in\mathcal{A}$, 我们定义期望值 (expectation) 为
+$$\begin{equation}
+    \langle A \rangle _\omega = \omega(A).
+\end{equation}$$
+定义方差 (variance) 为
+$$\begin{equation}
+    (\Delta_\omega A)^2 = \langle (A - \langle A \rangle_ω  \mathbf{1} )^2 \rangle_\omega.
+\end{equation}$$&lt;/p&gt;
+
+&lt;p&gt;推出不确定性的核心工具是 Cauchy-Schwarz 不等式, 对任意 $X,Y∈\mathcal{A}$, 有
+$$\begin{equation}
+    |\omega(X^*Y)|^2 ≤ \omega(X^*X) \cdot \omega(Y^*Y).
+\end{equation}$$
+这里主要是因为态 $\omega$ 满足 positive condition.&lt;/p&gt;
+
+&lt;p&gt;现在令 $A,B$ 是自伴的, 将它们中心化
+$$\begin{equation}
+    \widetilde{A} = A - \langle A \rangle_ω \mathbf{1}, \quad \widetilde{B} = B - \langle B \rangle_ω \mathbf{1},
+\end{equation}$$
+则有
+$$\begin{equation}
+    (\Delta_ω A)^2 (\Delta_ω B)^2 = \omega(\widetilde{A}^2) \cdot \omega(\widetilde{B}^2) ≥ |\omega(\widetilde{A}\widetilde{B})|^2.
+\end{equation}$$
+注意到
+$$\begin{equation}
+    \widetilde{A}\widetilde{B} = \frac{1}{2}\{\widetilde{A},\widetilde{B}\} + \frac{1}{2}[\widetilde{A},\widetilde{B}],
+\end{equation}$$
+其中 $\{\cdot,\cdot\}$ 是反对易子, $[\cdot,\cdot]$ 是对易子. 注意到 $[\widetilde{A}, \widetilde{B}] = [A,B]$ 以及 $\{\widetilde{A},\widetilde{B}\}$ 是自伴的, 因此
+$$\begin{equation}
+    \omega(\widetilde{A}\widetilde{B}) = \frac{1}{2}\omega(\{\widetilde{A},\widetilde{B}\}) + \frac{1}{2}\omega([A,B]).
+\end{equation}$$
+其中 $\omega(\{\widetilde{A},\widetilde{B}\})$ 是实数, 而 $\omega([A,B])$ 是纯虚数(因为 $[A,B]$ 是反自伴的). 因此
+$$\begin{equation}
+    |\omega(\widetilde{A}\widetilde{B})|^2 = \frac{1}{4}|\omega(\{\widetilde{A},\widetilde{B}\})|^2 + \frac{1}{4}|\omega([A,B])|^2 ≥ \frac{1}{4}|\omega([A,B])|^2.
+\end{equation}$$
+综上, 我们得到了 Heisenberg 不确定性关系
+$$\begin{equation}
+    (\Delta_ω A)^2 (\Delta_ω B)^2 ≥ \frac{1}{4}|\omega([A,B])|^2.
+\end{equation}$$
+也即
+$$\begin{equation}
+    \Delta_ω A \cdot \Delta_ω B ≥ \frac{1}{2}|\omega([A,B])|.
+\end{equation}$$
+这就是不确定性关系的代数形式. 可以看到, 如果 $A$ 和 $B$ 对易, 则右边为零, 因此不存在不确定性限制; 反之, 如果 $A$ 和 $B$ 不对易, 则右边一般非零, 因此存在不确定性限制. 这就说明了量子力学中 Heisenberg 不确定性关系与可观测量代数的非交换性之间的联系.&lt;/p&gt;
+
+&lt;h2 id=&quot;态和表示理论-gns-构造&quot;&gt;态和表示理论, GNS 构造&lt;/h2&gt;
+
+&lt;p&gt;自然的问题是, 对于具体的物理系统, 怎么构建上述的 $C^*$-代数结构.&lt;/p&gt;
+
+&lt;p&gt;对于 abelian 的情况, 即经典系统, Gelfand-Naimark 定理告诉我们, 任何一个 abelian $C^*$-algebra 都等距同构于它的 Gelfand spectrum 上的连续函数代数, 也就是说, 是某个紧空间上的连续函数代数. 这就对应了经典力学中 phase space 上的连续可观测量.&lt;/p&gt;
+
+&lt;p&gt;对于非 abelian 的情况, 就要用 GNS 构造 (Gelfand-Naimark-Segal construction), 下面先介绍一些概念.&lt;/p&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;($*$-homomorphism)&lt;/strong&gt; 两个 $*$-algebra 之间保持代数结构和 $*$-结构的映射 $\pi:\mathcal{A}_1\to\mathcal{A}_2$ 称为 $*$-homomorphism.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(表示, representation)&lt;/strong&gt; 给定一个 $C^*$-algebra $\mathcal{A}$, 如果存在一个 Hilbert 空间 $\mathcal{H}$, 以及一个 $*$-homomorphism $\pi:\mathcal{A}\to\mathcal{B}(\mathcal{H})$ (其中 $\mathcal{B}(\mathcal{H})$ 是 $\mathcal{H}$ 上的有界线性算子代数), 则称 $(\mathcal{H},\pi)$ 是 $\mathcal{A}$ 的一个表示 (representation).&lt;/p&gt;
+  &lt;p&gt;一个表示被称为不可约的 (irreducible), 如果不存在 $\mathcal{H}$ 的非平凡闭子空间 $\mathcal{K}$ 使得 $\pi(\mathcal{A})\mathcal{K} \subseteq \mathcal{K}$, 即不存在非平凡的 $\pi(\mathcal{A})$-invariant &lt;strong&gt;闭&lt;/strong&gt;子空间.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 在希尔伯特空间中, 只有对于闭的子空间 $M$, 我们才有 $M \oplus M^\perp = \mathcal{H}$.&lt;/p&gt;
+
+&lt;p&gt;显然, 在一个不可约表示中, 所有的 vector $\Psi\in\mathcal{H}$ 都是 cyclic 的, 即 $\pi(\mathcal{A})\Psi$ 在 $\mathcal{H}$ 中稠密. 对于一个 Hilbert 空间 $\mathcal{H}$ 上的表示 $\pi$ 及一个 cyclic vector $\Psi$, 我们简记为 $(\mathcal{H},\pi,\Psi)$.&lt;/p&gt;
+
+&lt;p&gt;在介绍 GNS 构造之前, 先给一个 $*$-homomorphism 的一个性质:&lt;/p&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;令 $\pi$ 是两个 $C^*$-algebra $\mathcal{A}$ 和 $\mathcal{B}$ 之间的 $*$-homomorphism, 则对于任意的 $A∈\mathcal{A}$, 都有 $$\begin{equation}
+    ‖\pi(A)‖_{\mathcal{B}} ≤ ‖A‖_\mathcal{A}.
+\end{equation}$$ 若 $\pi$ 是 one-to-one 的, 则成立等号.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面介绍最重要的 GNS 构造, 它说明了我们可以把我们目前抽象定义的态 $\omega$(归一化正线性泛函) 具体地表示为一个希尔伯特空间上的向量态, 从而把我们抽象的 $C^*$-代数表示为一个具体的算子代数, 并且这样的构造是唯一的(模一个 unitary equivalence).&lt;/p&gt;
+
+&lt;div class=&quot;theorem&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(GNS construction)&lt;/strong&gt; &lt;br /&gt; 给定一个 $C^*$-algebra $\mathcal{A}$ 和一个态 $\omega$, 存在一个希尔伯特空间 $\mathcal{H}_\omega$ 和一个表示 $\pi_\omega:\mathcal{A}\to\mathcal{B}(\mathcal{H}_\omega)$ 使得:&lt;br /&gt; 1) $\mathcal{H}_ω$ 包含一个 cyclic vector $\Psi_ω$,&lt;br /&gt; 2) $ω(A) = (\Psi_ω, \pi_\omega(A)\Psi_\omega)$,&lt;br /&gt; 3) 对于任何其它希尔伯特空间 $\mathcal{H}_π$ 上的表示 $\pi$ 和 cyclic vector $\Psi$ 满足 $ω(A) = (\Psi, \pi(A)\Psi)$, 都存在一个 isometry $U:\mathcal{H}_\omega\to\mathcal{H}_π$ 使得 $U\Psi_ω = \Psi$ 且 $U\pi_\omega(A) = \pi(A)U$.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+          <pubDate>2026-01-14T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/Math_of_Quantum</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/Math_of_Quantum</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>量子场论鹦鹉学舌</title>
+          <description>&lt;h2 id=&quot;概念简要清单&quot;&gt;概念简要清单&lt;/h2&gt;
+
+&lt;h3 id=&quot;一what-exites&quot;&gt;一、What exites&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;场 (field)&lt;/p&gt;
+
+    &lt;p&gt;场是基本存在物, 不是粒子; 粒子只是场的激发 (excitation)&lt;/p&gt;
+
+    &lt;p&gt;QFT 的第一性原理:&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;Everything is a field.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;真空 (vacuum)&lt;/p&gt;
+
+    &lt;p&gt;真空不是空的, 而是场的基态 (ground state)&lt;/p&gt;
+
+    &lt;p&gt;真空涨落 (vacuum fluctuation): 真空中场的量子涨落, 导致虚粒子对 (virtual particle-antiparticle pair) 的产生和湮灭&lt;/p&gt;
+
+    &lt;p&gt;所有的相互作用、重整化、反常都源于真空结构的复杂性&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;相对论性局域性 (relativistic locality)&lt;/p&gt;
+
+    &lt;p&gt;QFT 结合了量子力学和狭义相对论的原则, 要求物理过程在时空中是局域的, 且遵守光锥结构&lt;/p&gt;
+
+    &lt;p&gt;禁止超光速信号传递, 保持因果关系&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;二-how-things-evolve&quot;&gt;二、 How things evolve&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;作用量原理 (principle of least action)&lt;/p&gt;
+
+    &lt;p&gt;所有动力学都由一个泛函 $S[\phi]$ 决定.&lt;/p&gt;
+
+    &lt;p&gt;数学上是变分, 物理上是一切动力学的母语&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;路径积分 (path integral)&lt;/p&gt;
+
+    &lt;p&gt;所有可能历史的量子叠加.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;量子不是轨道, 而是求和.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对易关系 (commutatino relations)&lt;/p&gt;
+
+    &lt;p&gt;量子性的代数化表达, 决定玻色子/费米子的根本差异.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;三对称性-真正的主线&quot;&gt;三、对称性 (真正的主线)&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;对称性 (Symmetry)&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Zee: Physics is symmetry + breaking.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;连续对称性与诺特定理 (Noether‘s theorem)&lt;/p&gt;
+
+    &lt;p&gt;每个连续对称性对应一个守恒量 (conserved quantity)&lt;/p&gt;
+
+    &lt;p&gt;例: 平移对称性对应动量守恒, 旋转对称性对应角动量守恒&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;局域对称性/规范对称性 (Gauge symmetry)&lt;/p&gt;
+
+    &lt;p&gt;力不是加进去的, 而是被迫出现的.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;四相互作用的真正来源-why-force-exists&quot;&gt;四、相互作用的真正来源 (Why force exists)&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;规范场 (gauge field)&lt;/p&gt;
+
+    &lt;p&gt;为了保持局域对称性而不得不引入的自由度&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;规范耦合 (gauge coupling)&lt;/p&gt;
+
+    &lt;p&gt;耦合常数 (gauge coupling) 是相互作用的强度&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;自发对称性破缺 (spontaneous symmetry breaking)&lt;/p&gt;
+
+    &lt;p&gt;真空态不具备拉氏量的对称性, 导致粒子获得质量, 以及出现新的集体激发模式 (如希格斯玻色子)&lt;/p&gt;
+
+    &lt;p&gt;方程有对称性, 真空没有.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Higgs机制 (Higgs mechanism)&lt;/p&gt;
+
+    &lt;p&gt;规范不变性 + 真空结构 → 质量产生机制&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;五量子场论的技术心脏-how-we-compute--control-infinities&quot;&gt;五、量子场论的技术心脏 (How we compute &amp;amp; control infinities)&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;重整化 (Renormalization)&lt;/p&gt;
+
+    &lt;p&gt;处理无穷大的数学技术, 通过引入尺度依赖的参数来重新定义物理量&lt;/p&gt;
+
+    &lt;p&gt;使得理论在不同能量尺度下都能给出有限且可预测的结果&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Zee: Renormalization is physics, not pathology.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;重整化群 (Renormalization group)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;有效场论 (Effective field theory)&lt;/p&gt;
+
+    &lt;p&gt;低能现象的描述, 忽略高能自由度的影响, 通过重整化群流体现不同尺度下物理规律的变化&lt;/p&gt;
+
+    &lt;p&gt;不问终极真理, 只描述给定尺度下的物理.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;实用学习组块&quot;&gt;实用学习组块&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;场与真空 (fields and vacuum)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;相对论: 洛伦兹不变 + 因果性 (Lorentz invariance + causality)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;量子: 对易关系 + 产生/湮灭 (commutation relations + creation/annihilation)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;拉氏量 / 作用量 (Lagrangian / action)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;路径积分与关联函数 (path integral and correlators)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;传播子与费曼图 (propagators and Feynman diagrams)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;规范对称性与规范场 (gauge symmetry and gauge fields)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RG / EFT (renormalization group / effective field theory)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;czn-推荐话题&quot;&gt;czn 推荐话题&lt;/h2&gt;
+
+&lt;h3 id=&quot;二次量子化&quot;&gt;二次量子化&lt;/h3&gt;
+
+&lt;p&gt;二次量子化的核心意思是: 把场 (field) 当成基本对象来量子化, 从而自然得到粒子的产生 (creation) 与湮灭 (annihilation)、多粒子态 (multi-particle states) 与统计 (statistics).&lt;/p&gt;
+
+&lt;p&gt;基本对象: 场 (field) $\phi(\mathbf{x},t)$&lt;/p&gt;
+
+&lt;p&gt;量子化: 把场提升为算符 (operator) $\hat{\phi}(\mathbf{x},t)$&lt;/p&gt;
+
+&lt;p&gt;结果: 状态空间不再是一个粒子的希尔伯特空间, 而是 Fock 空间 (Fock space), 包含任意粒子数的态
+$$\begin{equation}
+\mathcal{F} = \mathbb{C} ⊕ \mathcal{H}_1 ⊕ \mathcal{H}_2 ⊕ \cdots,
+\end{equation}$$&lt;/p&gt;
+
+&lt;h3 id=&quot;对称性与诺特定理&quot;&gt;对称性与诺特定理&lt;/h3&gt;
+
+&lt;h3 id=&quot;散射矩阵&quot;&gt;散射矩阵&lt;/h3&gt;
+
+&lt;h3 id=&quot;费曼图&quot;&gt;费曼图&lt;/h3&gt;
+
+&lt;h3 id=&quot;重整化&quot;&gt;重整化&lt;/h3&gt;
+
+&lt;h2 id=&quot;具体学习笔记&quot;&gt;具体学习笔记&lt;/h2&gt;
+
+&lt;h3 id=&quot;路径积分&quot;&gt;路径积分&lt;/h3&gt;
+
+&lt;p&gt;路径积分把 “经典力学的最小作用量原理” 解释成 “量子干涉筛选出的主导路径”.&lt;/p&gt;
+</description>
+          <pubDate>2026-01-10T00:00:00+08:00</pubDate>
+          <link>http://localhost:4000/website/posts/QFT_bite</link>
+          <guid isPermaLink="true">http://localhost:4000/website/posts/QFT_bite</guid>
+        </item>
+      
+    
+      
+        <item>
           <title>20251227表示论研讨会</title>
           <description>&lt;h2 id=&quot;惠昌常---new-view-to-study-representations-of-algebras-centralizer-algebras-of-matrices&quot;&gt;惠昌常 - New view to study representations of algebras: Centralizer algebras of matrices&lt;/h2&gt;
 
@@ -267,12 +1621,10 @@
     
       
         <item>
-          <title>量子物理中的数学结构</title>
-          <description>&lt;h1 id=&quot;1️⃣-mathematical-description-of-a-physical-system&quot;&gt;1️⃣ Mathematical description of a physical system&lt;/h1&gt;
+          <title>物理系统中的数学结构</title>
+          <description>&lt;h2 id=&quot;11-mathematical-description-of-classical-hamiltonian-systems&quot;&gt;1.1 Mathematical description of classical Hamiltonian systems&lt;/h2&gt;
 
-&lt;h2 id=&quot;11-mathematical-description-of-classical-hamiltonian-systems&quot;&gt;1.1 Mathematical description of classical Hamiltonian systems&lt;/h2&gt;
-
-&lt;h4 id=&quot;kinematics-运动学&quot;&gt;Kinematics (运动学)&lt;/h4&gt;
+&lt;h3 id=&quot;kinematics-运动学&quot;&gt;Kinematics (运动学)&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;状态&lt;/strong&gt;: 经典哈密顿系统中的一个状态 (configuration, or state) 被 phase space manifold $\Gamma$ 中的一个点 $\{p,q\}$ 所描述, 其中 $q$ 是广义坐标, $p$ 是共轭动量. 考虑简单情况时假设 $\Gamma$ 是 compact 的, 这对应着系统 confined in a bounded region of space and the energy is bounded.&lt;/p&gt;
 
@@ -441,6 +1793,52 @@ $$\begin{equation}
 $$\begin{equation}
     \omega_t(f) = \omega(f ∘ \Phi_t) = \int_\Gamma f( \Phi_t(x)) \, dμ_ω(x) = \int_\Gamma f(y) \, d((\Phi_t)_\# μ_ω)(y).
 \end{equation}$$&lt;/p&gt;
+
+&lt;h2 id=&quot;13-general-mathematical-description-of-a-physical-system&quot;&gt;1.3 General mathematical description of a physical system&lt;/h2&gt;
+
+&lt;p&gt;可观测量和态的 $C^*$-代数结构是一般物理系统合适的数学语言.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;可观测量&lt;/strong&gt;: 物理操作决定了可观测量的集合成为一个集合 $\mathcal{O}$, 它满足一些性质: 有数乘、可以多项式、进而可以连续函数, 有的可观测量是正的, 正的可以表示为某个可观测量的平方. 但是 $\mathcal{O}$ 没有自然定义的乘法. 之后我们会想办法将可观测量作为自伴部分嵌入到一个 $C^*$-代数中.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;态&lt;/strong&gt;: 态可以理解为可观测量上的归一化正线性泛函.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$C^*$-代数结构&lt;/strong&gt;: 现在我们要考虑给可观测量一个代数结构, 但是直接考虑数值上的乘法是不行的, 因为在物理上我们把可观测量考虑为自伴元, 而两个自伴算法的乘法往往是不自伴的, 这不满足封闭性, 所以如果想把可观测量自身作为一个代数结构, 靠这样的乘法是不行的.&lt;/p&gt;
+
+&lt;p&gt;数学框架总结:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;一个物理系统被它的 $C^*$-algebra $\mathcal{A}$ of observables 所&lt;strong&gt;定义&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;给定物理系统的态等同于 measurements of the observables, 即一个 state 就是一个 $\mathcal{A}$ 上的 normalized positive linear functional. 并且物理态的集合 separate the observables, 且反过来 observables 也 separate the states.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;appendix-a-mathjax_protectedjenekiqmathjax_protected-algebras&quot;&gt;Appendix A: $C^*$-algebras&lt;/h2&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;($C^*$-algebra)&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;一个 $C^*$-algebra $\mathcal{A}$ 是 &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;1) $\mathbb{C}$ 上的线性结合代数; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;2) 赋范, 关于范数是 Banach 空间, 从而是 Banach algebra; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;3) 赋有 involution $*$, 使得 $\mathcal{A}$ 成为 $*$-Banach algebra; &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;4) 满足 $C^*$-condition: 对任意的 $A∈ \mathcal{A}$ 有 $$\begin{equation}
+    ‖A^*A‖ = ‖A‖^2.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;definition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(spectrum)&lt;/strong&gt; 设 $\mathcal{A}$ 是一个 $C^*$-algebra, 对任意的 $A∈ \mathcal{A}$, 定义 $A$ 的谱 (spectrum) 为 $$\begin{equation}
+    σ(A) = \{λ∈ \mathbb{C} : A - λ\mathbf{1} \text{ 不可逆}\}.
+\end{equation}$$&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;proposition&quot;&gt;
+  &lt;p&gt;&lt;strong&gt;(spectral radius formula)&lt;/strong&gt; 设 $\mathcal{A}$ 是一个 Banach algebra, 则对任意的 $A∈ \mathcal{A}$, $\sigma(A)$ 是一个非空紧集, 且有 $$\begin{equation}
+    r(A) := \sup_{\lambda\in\sigma(A)} |\lambda| = \lim_{n\to\infty} ‖A^n‖^{1/n}≤ ‖A‖.
+\end{equation}$$ 如果 $\mathcal{A}$ 是 $C^*$-algebra, 且 $A$ normal, 则上述不等式取等号.&lt;/p&gt;
+&lt;/div&gt;
 </description>
           <pubDate>2025-12-18T00:00:00+08:00</pubDate>
           <link>http://localhost:4000/website/posts/Math_Structure_in_Quantum</link>
@@ -989,7 +2387,7 @@ C^n \cong \mathrm{Ker} d^n \oplus \mathrm{Im} \varphi^n = \mathrm{Ker} d^n \oplu
           <description>&lt;h2 id=&quot;31-复形范畴&quot;&gt;3.1 复形范畴&lt;/h2&gt;
 
 &lt;div class=&quot;proposition&quot;&gt;
-  &lt;p&gt;上同调函子 $̋\mathrm{H}^n:C(\mathcal{A})→\mathcal{A}$ 保持余积, 即 $$\begin{equation}
+  &lt;p&gt;上同调函子 $̋\mathrm{H}^n:C(\mathcal{A})→\mathcal{A}$ 保持积, 即 $$\begin{equation}
 \mathrm{H}^n(\prod_{\alpha} X_{\alpha}^\bullet) \cong \prod_{\alpha} \mathrm{H}^n(X_{\alpha}^\bullet).
 \end{equation}$$&lt;/p&gt;
 &lt;/div&gt;
@@ -6629,12 +8027,12 @@ f⊗ 1_M:M→M, m'↦dm',
 &lt;p&gt;在证明下一个问题之前, 我们证明一个引理:&lt;/p&gt;
 
 &lt;div class=&quot;lemma&quot;&gt;
-  &lt;p&gt;设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+  &lt;p&gt;设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列&lt;strong&gt;当&lt;/strong&gt;对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
 \mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
-\end{equation}$$ 是正合列.&lt;/p&gt;
+\end{equation}$$ 是正合列. &lt;br /&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Remark.&lt;/strong&gt; 左边无法推到右边.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
-    &lt;p&gt;(⇒) 由函子性质. &lt;br /&gt;&lt;/p&gt;
-    &lt;p&gt;(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.&lt;/p&gt;
+    &lt;p&gt;取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Ker}g}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.&lt;/p&gt;
     &lt;center&gt; &lt;br /&gt; &lt;div class=&quot;tikz-diagram&quot;&gt;
         &lt;embed src=&quot;/website/svg/BA_Exercise1/diagram_f64500b370041.svg&quot; type=&quot;image/svg+xml&quot; style=&quot;display: block; width: 50%; height: 50%;&quot; /&gt;
       &lt;/div&gt; &lt;br /&gt; &lt;/center&gt;
@@ -7041,7 +8439,7 @@ $$ 验证它是 $σ$ 的逆即可.&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;problem&quot;&gt;
-  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 若任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.&lt;/p&gt;
+  &lt;p&gt;设 $\mathcal{A}$ 是 Abel 范畴, $P$ 是投射对象. 则任意短正合列 $0 \longrightarrow M \longrightarrow N \longrightarrow P \longrightarrow 0$ 都是可裂短正合列; 当 $\mathcal{A}$ 有足够多投射对象时, 逆命题也成立.&lt;/p&gt;
   &lt;div class=&quot;proof&quot;&gt;
     &lt;p&gt;考虑态射 $\mathrm{Id}_P:P→ P$, 由于 $P$ 是投射对象, 以及 $N\xrightarrow{g}P$ 是满态射, 于是存在 $s:P→N$ 使得 $\mathrm{Id}_P=gs$. 从而该列是短正合列. &lt;br /&gt;&lt;/p&gt;
     &lt;p&gt;当 $\mathcal{A}$ 有足够多投射对象时, 对于任意的满态射 $g:M→N$ 及态射 $p:P→N$, 考虑交换图&lt;/p&gt;

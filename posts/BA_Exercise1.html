@@ -985,12 +985,12 @@ f⊗ 1_M:M→M, m'↦dm',
 <p>在证明下一个问题之前, 我们证明一个引理:</p>
 
 <div class="lemma">
-  <p>设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列当且仅当对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
+  <p>设有 $R$-模中的态射列 $X\xrightarrow{f}Y\xrightarrow{g}Z$, 则这是正合列<strong>当</strong>对于任何 $R$-模 $M$, 由函子 $\mathrm{Hom}_R(M,-)$ 作用后得到的列 $$\begin{equation}
 \mathrm{Hom}_R(M,X)\xrightarrow{f∘-}\mathrm{Hom}_R(M,Y)\xrightarrow{g∘-}\mathrm{Hom}_R(M,Z)
-\end{equation}$$ 是正合列.</p>
+\end{equation}$$ 是正合列. <br /></p>
+  <p><strong>Remark.</strong> 左边无法推到右边.</p>
   <div class="proof">
-    <p>(⇒) 由函子性质. <br /></p>
-    <p>(⇐) 取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Im}f}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.</p>
+    <p>取 $M=X$, 则 $gf=(g∘-)(f∘-)(\mathrm{Id}_X)$. 从而有典范单态射 $u:\mathrm{Im}f↪\mathrm{Ker}g$, $f=m\tilde{f}$ 是单满分解. 取 $W:=\mathrm{Ker}g$, 则由作用后的列的正合性, 知存在 $σ∈\mathrm{Hom}_R(\mathrm{Ker}g, X)$ 使得 $fσ=k$. 于是有 $ku\tilde{f}\sigma=m\tilde{f}\sigma=f\sigma=k$, 由 $k$ 是单态射可得 $u\tilde{f}\sigma=\mathrm{Id}_{\mathrm{Ker}g}$. 于是 $u$ 是满态射, 故为同构, 从而 $f$ 的像等于 $g$ 的核, 即列 $X\xrightarrow{f}Y\xrightarrow{g}Z$ 正合.</p>
     <center> <br /> <div class="tikz-diagram">
         <embed src="/website/svg/BA_Exercise1/diagram_f64500b370041.svg" type="image/svg+xml" style="display: block; width: 50%; height: 50%;" />
       </div> <br /> </center>
@@ -1708,7 +1708,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	<div class="footer">
   <span class="block">&copy;
-    2025
+    2026
     HopeRealiZer</span>
 </div>
 

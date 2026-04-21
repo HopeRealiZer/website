@@ -9,12 +9,12 @@
 
 
 
-  <title>量子力学基础
+  <title>量子系统的数学描述
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="量子力学的假设">
+<meta name="description" content="Heisenberg uncertainty 与 non-abelianess">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Quantum_Mechanics_Basic">
+<link rel="canonical" href="/website/posts/Math_of_Quantum">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,30 +75,97 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>量子力学基础</h1>
+      <h1>量子系统的数学描述</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 30, 2025
+        January 14, 2026
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="量子力学的假设">量子力学的假设</h2>
+    <h2 id="heisenberg-uncertainty-与-non-abelianess">Heisenberg uncertainty 与 non-abelianess</h2>
 
-<h3 id="状态空间">状态空间</h3>
-
-<p>最简单也是我们最关心的量子力学系统是量子比特. 描述量子比特的物理系统是真实存在的, 目前我们可以忽略特定实现进行抽象的讨论.</p>
-
-<h3 id="演化">演化</h3>
-
-<p><strong>封闭量子系统的演化可用酉变换来描述.</strong></p>
-
-<p><strong>封闭量子系统中态的演化由薛定谔方程描述:</strong>
+<p>在 Strocchi 的框架下, 我们也可以由非交换性得到 Heisenberg 不确定原理. 对于自伴的 $A=A^*\in\mathcal{A}$, 我们定义期望值 (expectation) 为
 $$\begin{equation}
-\mathrm{i}ħ\frac{\mathrm{d}|\psi⟩}{\mathrm{d}} = H |\psi⟩,
+    \langle A \rangle _\omega = \omega(A).
+\end{equation}$$
+定义方差 (variance) 为
+$$\begin{equation}
+    (\Delta_\omega A)^2 = \langle (A - \langle A \rangle_ω  \mathbf{1} )^2 \rangle_\omega.
 \end{equation}$$</p>
+
+<p>推出不确定性的核心工具是 Cauchy-Schwarz 不等式, 对任意 $X,Y∈\mathcal{A}$, 有
+$$\begin{equation}
+    |\omega(X^*Y)|^2 ≤ \omega(X^*X) \cdot \omega(Y^*Y).
+\end{equation}$$
+这里主要是因为态 $\omega$ 满足 positive condition.</p>
+
+<p>现在令 $A,B$ 是自伴的, 将它们中心化
+$$\begin{equation}
+    \widetilde{A} = A - \langle A \rangle_ω \mathbf{1}, \quad \widetilde{B} = B - \langle B \rangle_ω \mathbf{1},
+\end{equation}$$
+则有
+$$\begin{equation}
+    (\Delta_ω A)^2 (\Delta_ω B)^2 = \omega(\widetilde{A}^2) \cdot \omega(\widetilde{B}^2) ≥ |\omega(\widetilde{A}\widetilde{B})|^2.
+\end{equation}$$
+注意到
+$$\begin{equation}
+    \widetilde{A}\widetilde{B} = \frac{1}{2}\{\widetilde{A},\widetilde{B}\} + \frac{1}{2}[\widetilde{A},\widetilde{B}],
+\end{equation}$$
+其中 $\{\cdot,\cdot\}$ 是反对易子, $[\cdot,\cdot]$ 是对易子. 注意到 $[\widetilde{A}, \widetilde{B}] = [A,B]$ 以及 $\{\widetilde{A},\widetilde{B}\}$ 是自伴的, 因此
+$$\begin{equation}
+    \omega(\widetilde{A}\widetilde{B}) = \frac{1}{2}\omega(\{\widetilde{A},\widetilde{B}\}) + \frac{1}{2}\omega([A,B]).
+\end{equation}$$
+其中 $\omega(\{\widetilde{A},\widetilde{B}\})$ 是实数, 而 $\omega([A,B])$ 是纯虚数(因为 $[A,B]$ 是反自伴的). 因此
+$$\begin{equation}
+    |\omega(\widetilde{A}\widetilde{B})|^2 = \frac{1}{4}|\omega(\{\widetilde{A},\widetilde{B}\})|^2 + \frac{1}{4}|\omega([A,B])|^2 ≥ \frac{1}{4}|\omega([A,B])|^2.
+\end{equation}$$
+综上, 我们得到了 Heisenberg 不确定性关系
+$$\begin{equation}
+    (\Delta_ω A)^2 (\Delta_ω B)^2 ≥ \frac{1}{4}|\omega([A,B])|^2.
+\end{equation}$$
+也即
+$$\begin{equation}
+    \Delta_ω A \cdot \Delta_ω B ≥ \frac{1}{2}|\omega([A,B])|.
+\end{equation}$$
+这就是不确定性关系的代数形式. 可以看到, 如果 $A$ 和 $B$ 对易, 则右边为零, 因此不存在不确定性限制; 反之, 如果 $A$ 和 $B$ 不对易, 则右边一般非零, 因此存在不确定性限制. 这就说明了量子力学中 Heisenberg 不确定性关系与可观测量代数的非交换性之间的联系.</p>
+
+<h2 id="态和表示理论-gns-构造">态和表示理论, GNS 构造</h2>
+
+<p>自然的问题是, 对于具体的物理系统, 怎么构建上述的 $C^*$-代数结构.</p>
+
+<p>对于 abelian 的情况, 即经典系统, Gelfand-Naimark 定理告诉我们, 任何一个 abelian $C^*$-algebra 都等距同构于它的 Gelfand spectrum 上的连续函数代数, 也就是说, 是某个紧空间上的连续函数代数. 这就对应了经典力学中 phase space 上的连续可观测量.</p>
+
+<p>对于非 abelian 的情况, 就要用 GNS 构造 (Gelfand-Naimark-Segal construction), 下面先介绍一些概念.</p>
+
+<div class="definition">
+  <p><strong>($*$-homomorphism)</strong> 两个 $*$-algebra 之间保持代数结构和 $*$-结构的映射 $\pi:\mathcal{A}_1\to\mathcal{A}_2$ 称为 $*$-homomorphism.</p>
+</div>
+
+<div class="definition">
+  <p><strong>(表示, representation)</strong> 给定一个 $C^*$-algebra $\mathcal{A}$, 如果存在一个 Hilbert 空间 $\mathcal{H}$, 以及一个 $*$-homomorphism $\pi:\mathcal{A}\to\mathcal{B}(\mathcal{H})$ (其中 $\mathcal{B}(\mathcal{H})$ 是 $\mathcal{H}$ 上的有界线性算子代数), 则称 $(\mathcal{H},\pi)$ 是 $\mathcal{A}$ 的一个表示 (representation).</p>
+  <p>一个表示被称为不可约的 (irreducible), 如果不存在 $\mathcal{H}$ 的非平凡闭子空间 $\mathcal{K}$ 使得 $\pi(\mathcal{A})\mathcal{K} \subseteq \mathcal{K}$, 即不存在非平凡的 $\pi(\mathcal{A})$-invariant <strong>闭</strong>子空间.</p>
+</div>
+
+<p><strong>Remark.</strong> 在希尔伯特空间中, 只有对于闭的子空间 $M$, 我们才有 $M \oplus M^\perp = \mathcal{H}$.</p>
+
+<p>显然, 在一个不可约表示中, 所有的 vector $\Psi\in\mathcal{H}$ 都是 cyclic 的, 即 $\pi(\mathcal{A})\Psi$ 在 $\mathcal{H}$ 中稠密. 对于一个 Hilbert 空间 $\mathcal{H}$ 上的表示 $\pi$ 及一个 cyclic vector $\Psi$, 我们简记为 $(\mathcal{H},\pi,\Psi)$.</p>
+
+<p>在介绍 GNS 构造之前, 先给一个 $*$-homomorphism 的一个性质:</p>
+
+<div class="proposition">
+  <p>令 $\pi$ 是两个 $C^*$-algebra $\mathcal{A}$ 和 $\mathcal{B}$ 之间的 $*$-homomorphism, 则对于任意的 $A∈\mathcal{A}$, 都有 $$\begin{equation}
+    ‖\pi(A)‖_{\mathcal{B}} ≤ ‖A‖_\mathcal{A}.
+\end{equation}$$ 若 $\pi$ 是 one-to-one 的, 则成立等号.</p>
+</div>
+
+<p>下面介绍最重要的 GNS 构造, 它说明了我们可以把我们目前抽象定义的态 $\omega$(归一化正线性泛函) 具体地表示为一个希尔伯特空间上的向量态, 从而把我们抽象的 $C^*$-代数表示为一个具体的算子代数, 并且这样的构造是唯一的(模一个 unitary equivalence).</p>
+
+<div class="theorem">
+  <p><strong>(GNS construction)</strong> <br /> 给定一个 $C^*$-algebra $\mathcal{A}$ 和一个态 $\omega$, 存在一个希尔伯特空间 $\mathcal{H}_\omega$ 和一个表示 $\pi_\omega:\mathcal{A}\to\mathcal{B}(\mathcal{H}_\omega)$ 使得:<br /> 1) $\mathcal{H}_ω$ 包含一个 cyclic vector $\Psi_ω$,<br /> 2) $ω(A) = (\Psi_ω, \pi_\omega(A)\Psi_\omega)$,<br /> 3) 对于任何其它希尔伯特空间 $\mathcal{H}_π$ 上的表示 $\pi$ 和 cyclic vector $\Psi$ 满足 $ω(A) = (\Psi, \pi(A)\Psi)$, 都存在一个 isometry $U:\mathcal{H}_\omega\to\mathcal{H}_π$ 使得 $U\Psi_ω = \Psi$ 且 $U\pi_\omega(A) = \pi(A)U$.</p>
+</div>
 
   </article>
 
@@ -197,9 +264,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#量子力学的假设">
+      <a href="#heisenberg-uncertainty-与-non-abelianess">
         <span class="toc-number">1.</span>
-        <span class="toc-title">量子力学的假设</span>
+        <span class="toc-title">Heisenberg uncertainty 与 non-abelianess</span>
       </a>
     </div>
   
@@ -213,27 +280,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-3">
-      <a href="#状态空间">
-        <span class="toc-number">1.1.</span>
-        <span class="toc-title">状态空间</span>
-      </a>
-    </div>
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="toc-row toc-level-3">
-      <a href="#演化">
-        <span class="toc-number">1.2.</span>
-        <span class="toc-title">演化</span>
+    <div class="toc-row toc-level-2">
+      <a href="#态和表示理论-gns-构造">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">态和表示理论, GNS 构造</span>
       </a>
     </div>
   
@@ -286,13 +336,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/OT_Flow" title="NEXT: OT-Flow">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Belief_Propagation" title="NEXT: 信念传播 (Belief Propagation)">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex7_" title="PREV: 《基础代数学》作业 Week7">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/QFT_bite" title="PREV: 量子场论鹦鹉学舌">&gt;&gt;</a>
     
   </div>
 </main>

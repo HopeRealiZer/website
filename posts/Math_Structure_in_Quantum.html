@@ -9,12 +9,12 @@
 
 
 
-  <title>量子物理中的数学结构
+  <title>物理系统中的数学结构
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="1️⃣ Mathematical description of a physical system">
+<meta name="description" content="1.1 Mathematical description of classical Hamiltonian systems">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -75,7 +75,7 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>量子物理中的数学结构</h1>
+      <h1>物理系统中的数学结构</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
@@ -85,11 +85,9 @@ MathJax = {
 
     <div class="divider"></div>
 
-    <h1 id="1️⃣-mathematical-description-of-a-physical-system">1️⃣ Mathematical description of a physical system</h1>
+    <h2 id="11-mathematical-description-of-classical-hamiltonian-systems">1.1 Mathematical description of classical Hamiltonian systems</h2>
 
-<h2 id="11-mathematical-description-of-classical-hamiltonian-systems">1.1 Mathematical description of classical Hamiltonian systems</h2>
-
-<h4 id="kinematics-运动学">Kinematics (运动学)</h4>
+<h3 id="kinematics-运动学">Kinematics (运动学)</h3>
 
 <p><strong>状态</strong>: 经典哈密顿系统中的一个状态 (configuration, or state) 被 phase space manifold $\Gamma$ 中的一个点 $\{p,q\}$ 所描述, 其中 $q$ 是广义坐标, $p$ 是共轭动量. 考虑简单情况时假设 $\Gamma$ 是 compact 的, 这对应着系统 confined in a bounded region of space and the energy is bounded.</p>
 
@@ -259,6 +257,52 @@ $$\begin{equation}
     \omega_t(f) = \omega(f ∘ \Phi_t) = \int_\Gamma f( \Phi_t(x)) \, dμ_ω(x) = \int_\Gamma f(y) \, d((\Phi_t)_\# μ_ω)(y).
 \end{equation}$$</p>
 
+<h2 id="13-general-mathematical-description-of-a-physical-system">1.3 General mathematical description of a physical system</h2>
+
+<p>可观测量和态的 $C^*$-代数结构是一般物理系统合适的数学语言.</p>
+
+<p><strong>可观测量</strong>: 物理操作决定了可观测量的集合成为一个集合 $\mathcal{O}$, 它满足一些性质: 有数乘、可以多项式、进而可以连续函数, 有的可观测量是正的, 正的可以表示为某个可观测量的平方. 但是 $\mathcal{O}$ 没有自然定义的乘法. 之后我们会想办法将可观测量作为自伴部分嵌入到一个 $C^*$-代数中.</p>
+
+<p><strong>态</strong>: 态可以理解为可观测量上的归一化正线性泛函.</p>
+
+<p><strong>$C^*$-代数结构</strong>: 现在我们要考虑给可观测量一个代数结构, 但是直接考虑数值上的乘法是不行的, 因为在物理上我们把可观测量考虑为自伴元, 而两个自伴算法的乘法往往是不自伴的, 这不满足封闭性, 所以如果想把可观测量自身作为一个代数结构, 靠这样的乘法是不行的.</p>
+
+<p>数学框架总结:</p>
+
+<ol>
+  <li>
+    <p>一个物理系统被它的 $C^*$-algebra $\mathcal{A}$ of observables 所<strong>定义</strong>.</p>
+  </li>
+  <li>
+    <p>给定物理系统的态等同于 measurements of the observables, 即一个 state 就是一个 $\mathcal{A}$ 上的 normalized positive linear functional. 并且物理态的集合 separate the observables, 且反过来 observables 也 separate the states.</p>
+  </li>
+</ol>
+
+<h2 id="appendix-a-mathjax_protectedjenekiqmathjax_protected-algebras">Appendix A: $C^*$-algebras</h2>
+
+<div class="definition">
+  <p><strong>($C^*$-algebra)</strong></p>
+  <p>一个 $C^*$-algebra $\mathcal{A}$ 是 <br /></p>
+  <p>1) $\mathbb{C}$ 上的线性结合代数; <br /></p>
+  <p>2) 赋范, 关于范数是 Banach 空间, 从而是 Banach algebra; <br /></p>
+  <p>3) 赋有 involution $*$, 使得 $\mathcal{A}$ 成为 $*$-Banach algebra; <br /></p>
+  <p>4) 满足 $C^*$-condition: 对任意的 $A∈ \mathcal{A}$ 有 $$\begin{equation}
+    ‖A^*A‖ = ‖A‖^2.
+\end{equation}$$</p>
+</div>
+
+<div class="definition">
+  <p><strong>(spectrum)</strong> 设 $\mathcal{A}$ 是一个 $C^*$-algebra, 对任意的 $A∈ \mathcal{A}$, 定义 $A$ 的谱 (spectrum) 为 $$\begin{equation}
+    σ(A) = \{λ∈ \mathbb{C} : A - λ\mathbf{1} \text{ 不可逆}\}.
+\end{equation}$$</p>
+</div>
+
+<div class="proposition">
+  <p><strong>(spectral radius formula)</strong> 设 $\mathcal{A}$ 是一个 Banach algebra, 则对任意的 $A∈ \mathcal{A}$, $\sigma(A)$ 是一个非空紧集, 且有 $$\begin{equation}
+    r(A) := \sup_{\lambda\in\sigma(A)} |\lambda| = \lim_{n\to\infty} ‖A^n‖^{1/n}≤ ‖A‖.
+\end{equation}$$ 如果 $\mathcal{A}$ 是 $C^*$-algebra, 且 $A$ normal, 则上述不等式取等号.</p>
+</div>
+
   </article>
 
   <!-- New Sidebar Column -->
@@ -355,9 +399,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    
-    
-    
     <div class="toc-row toc-level-2">
       <a href="#11-mathematical-description-of-classical-hamiltonian-systems">
         <span class="toc-number">1.</span>
@@ -375,9 +416,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     
-    <div class="toc-row toc-level-4">
+    <div class="toc-row toc-level-3">
       <a href="#kinematics-运动学">
-        <span class="toc-number">1.0.1.</span>
+        <span class="toc-number">1.1.</span>
         <span class="toc-title">Kinematics (运动学)</span>
       </a>
     </div>
@@ -394,7 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="toc-row toc-level-4">
       <a href="#dynamics-动力学">
-        <span class="toc-number">1.0.2.</span>
+        <span class="toc-number">1.1.1.</span>
         <span class="toc-title">Dynamics (动力学)</span>
       </a>
     </div>
@@ -411,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="toc-row toc-level-3">
       <a href="#代数结构">
-        <span class="toc-number">1.1.</span>
+        <span class="toc-number">1.2.</span>
         <span class="toc-title">代数结构</span>
       </a>
     </div>
@@ -428,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="toc-row toc-level-4">
       <a href="#经典可观测量的代数性质">
-        <span class="toc-number">1.1.1.</span>
+        <span class="toc-number">1.2.1.</span>
         <span class="toc-title">经典可观测量的代数性质</span>
       </a>
     </div>
@@ -445,8 +486,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <div class="toc-row toc-level-4">
       <a href="#状态作为线性泛函">
-        <span class="toc-number">1.1.2.</span>
+        <span class="toc-number">1.2.2.</span>
         <span class="toc-title">状态作为线性泛函</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#13-general-mathematical-description-of-a-physical-system">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">1.3 General mathematical description of a physical system</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#appendix-a-mathjax_protectedjenekiqmathjax_protected-algebras">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">Appendix A: $C^*$-algebras</span>
       </a>
     </div>
   
@@ -512,7 +587,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	<div class="footer">
   <span class="block">&copy;
-    2025
+    2026
     HopeRealiZer</span>
 </div>
 

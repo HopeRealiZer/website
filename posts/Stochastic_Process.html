@@ -9,12 +9,12 @@
 
 
 
-  <title>量子力学基础
+  <title>Discrete Time Stochastic Processes
     ·
     Jekyll Latex</title>
 
 
-<meta name="description" content="量子力学的假设">
+<meta name="description" content="1 基本定义: Stochastic Process; Filtration; Stopping Time">
 
 
   <meta name="google-site-verification" content="abc123">
@@ -23,7 +23,7 @@
 <link rel="icon" href="/website/assets/favicon.png">
 <link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
 <link rel="stylesheet" href="/website/assets/core.css">
-<link rel="canonical" href="/website/posts/Quantum_Mechanics_Basic">
+<link rel="canonical" href="/website/posts/Stochastic_Process">
 <link
   rel="alternate"
   type="application/atom+xml"
@@ -75,30 +75,78 @@ MathJax = {
   <!-- Main Content Column -->
   <article class="content-column">
     <div class="center">
-      <h1>量子力学基础</h1>
+      <h1>Discrete Time Stochastic Processes</h1>
       <p class="author">
         Huang Ruizhi
         <br/>
-        October 30, 2025
+        January 24, 2026
       </p>
     </div>
 
     <div class="divider"></div>
 
-    <h2 id="量子力学的假设">量子力学的假设</h2>
+    <h2 id="1-基本定义-stochastic-process-filtration-stopping-time">1 基本定义: Stochastic Process; Filtration; Stopping Time</h2>
 
-<h3 id="状态空间">状态空间</h3>
+<h3 id="stochastic-process">Stochastic Process</h3>
 
-<p>最简单也是我们最关心的量子力学系统是量子比特. 描述量子比特的物理系统是真实存在的, 目前我们可以忽略特定实现进行抽象的讨论.</p>
+<p>不同时刻构成的集合记为 $\mathbf{T}$.</p>
 
-<h3 id="演化">演化</h3>
+<p>本文考虑离散时间的随机过程, 即 $\mathbf{T} = \{0,1,\cdots\}$ 或者 $\mathbf{T} = \{0,1,\cdots,T\}, T<∞$.</p>
 
-<p><strong>封闭量子系统的演化可用酉变换来描述.</strong></p>
+<p>随机过程的定义里面很重要的一个东西是样本空间 $\Omega$, 它通俗的理解就是“世界参数”的集合, 里面的每一个元素(样本), 都编码了一个“世界剧本”. $X_t$ 就是在说在某个剧本下 $t$ 时刻都状态.</p>
 
-<p><strong>封闭量子系统中态的演化由薛定谔方程描述:</strong>
+<p>于是, 随机过程的定义有三种等价形式:</p>
+
+<ul>
+  <li>
+    <p>一族随机变量 $X=(X_t)_{t\in\mathbf{T}}$, 每个 $X_t$ 定义在同一个概率空间 $(\Omega,\mathcal{F},P)$ 上.</p>
+  </li>
+  <li>
+    <p>一个随机变量
 $$\begin{equation}
-\mathrm{i}ħ\frac{\mathrm{d}|\psi⟩}{\mathrm{d}} = H |\psi⟩,
+    X: \Omega× \mathbf{T} → \mathbb{R}, \quad (\omega,t) ↦ X_t(\omega),
+\end{equation}$$
+其中 $\Omega\times\mathbf{T}$ 上的 $\sigma$-代数是 $\mathcal{F} \otimes 2^\mathbf{T}$,</p>
+  </li>
+  <li>
+    <p>样本空间上的可测映射
+$$\begin{equation}
+    X: \Omega → \mathbb{R}^\mathbf{T}, \quad \omega ↦ (X_t(\omega))_{t\in\mathbf{T}},
+\end{equation}$$
+其中 $\mathbb{R}^\mathbf{T}$ 上的 $\sigma$-代数是 product Borel $\sigma$-代数.</p>
+  </li>
+</ul>
+
+<h3 id="filtration">Filtration</h3>
+
+<p>滤过 (filtration) 是一个随时间增加的 $\sigma$-代数族, 用来表示信息随着时间的推移而增加. 形式化定义如下:</p>
+
+<div class="definition">
+  <p><strong>(Filtration)</strong> 滤过是 $\Omega$ 上一个索引集合为 $\mathbf{T}$ 的 $\sigma$-代数族 $$\begin{equation}
+    \mathbb{F} = (\mathcal{F}_t)_{t\in\mathbf{T}},
+\end{equation}$$ 满足对于任意 $s,t\in\mathbf{T}$, 若 $s ≤ t$, 则 $\mathcal{F}_s \subseteq \mathcal{F}_t$.</p>
+</div>
+
+<div class="definition">
+  <p><strong>(filtered space, adapted process)</strong> 一个带有滤过的可测空间称为滤过空间 (filtered space). 一个随机过程 $X$ 称为 $\mathbb{F}$-adapted, 如果对于每个 $t\in\mathbf{T}$, $X_t$ 是 $\mathcal{F}_t$-可测的.</p>
+</div>
+
+<h3 id="stopping-time">Stopping Time</h3>
+
+<div class="definition">
+  <p><strong>(random time)</strong> 随机时间 (random time) 是一个可测映射 $$\begin{equation}
+    \tau: \Omega → \mathbf{T} ∪ \{∞\}.
 \end{equation}$$</p>
+</div>
+
+<div class="definition">
+  <p><strong>(stopping time)</strong> 停止时间 (stopping time) 是一个随机时间 $\tau$, 满足对于每个 $t\in\mathbf{T}$, 事件 $\{\tau ≤ t\} \in \mathcal{F}_t$, 其中 $\{\tau≤t\} = \{\omega ∈ \Omega: \tau(\omega) ≤ t\}$.</p>
+</div>
+
+<p>停止时间的直观理解是, 在时间 $t$ 时刻, 我们可以仅凭借 $\mathcal{F}_t$ 中的信息来判断是否“停止” (即 $\tau ≤ t$).</p>
+
+<h3 id="stochastic-integral">Stochastic Integral</h3>
+
 
   </article>
 
@@ -197,9 +245,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-2">
-      <a href="#量子力学的假设">
+      <a href="#1-基本定义-stochastic-process-filtration-stopping-time">
         <span class="toc-number">1.</span>
-        <span class="toc-title">量子力学的假设</span>
+        <span class="toc-title">1 基本定义: Stochastic Process; Filtration; Stopping Time</span>
       </a>
     </div>
   
@@ -214,9 +262,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#状态空间">
+      <a href="#stochastic-process">
         <span class="toc-number">1.1.</span>
-        <span class="toc-title">状态空间</span>
+        <span class="toc-title">Stochastic Process</span>
       </a>
     </div>
   
@@ -231,9 +279,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <div class="toc-row toc-level-3">
-      <a href="#演化">
+      <a href="#filtration">
         <span class="toc-number">1.2.</span>
-        <span class="toc-title">演化</span>
+        <span class="toc-title">Filtration</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#stopping-time">
+        <span class="toc-number">1.3.</span>
+        <span class="toc-title">Stopping Time</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#stochastic-integral">
+        <span class="toc-number">1.4.</span>
+        <span class="toc-title">Stochastic Integral</span>
       </a>
     </div>
   
@@ -286,13 +368,13 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Navigation (below both columns) -->
   <div class="page-navigation">
     
-      <a class="next" href="/website/posts/OT_Flow" title="NEXT: OT-Flow">&lt;&lt;</a>
+      <a class="next" href="/website/posts/Vacchini_OQS" title="NEXT: Vacchini 的 Open Quantum Systems 读书笔记">&lt;&lt;</a>
       <span>&middot;</span>
     
     <a class="home" href="/website/" title="Back to Homepage">Home</a>
     
       <span>&middot;</span>
-      <a class="prev" href="/website/posts/Ex7_" title="PREV: 《基础代数学》作业 Week7">&gt;&gt;</a>
+      <a class="prev" href="/website/posts/Markov_Chain" title="PREV: Markov Chain 笔记">&gt;&gt;</a>
     
   </div>
 </main>

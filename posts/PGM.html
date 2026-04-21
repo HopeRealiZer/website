@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>Probabilistic Graphical Models
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="总览">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/PGM">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>Probabilistic Graphical Models</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        January 17, 2026
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="总览">总览</h2>
+
+<p>随机变量之间的连线表示它们之间不是独立的, 所以马尔可夫随机场的概念是非常自然的.</p>
+
+<p>主要有三个话题:</p>
+
+<ul>
+  <li>
+    <p>Representation: how to specify a model</p>
+  </li>
+  <li>
+    <p>inference: how to ask the model questions</p>
+
+    <ul>
+      <li>
+        <p>Marginal inference</p>
+      </li>
+      <li>
+        <p>MAP (maximum a posteriori) inference</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>learning: how to fit a model to real-world data</p>
+  </li>
+</ul>
+
+<h2 id="1️⃣-representation">1️⃣ Representation</h2>
+
+<h3 id="bayesian-networks">Bayesian Networks</h3>
+
+<p>贝叶斯网络是有向无环图 (DAG), 节点表示随机变量, 有向边表示条件依赖关系. 每个节点都有一个条件概率分布 (CPD), 描述该节点在给定其父节点(可能多个)的条件下的概率分布.</p>
+
+<p>贝叶斯网络很清晰地表示了因果关系, 适用于建模具有明确因果结构的系统. 但是它们不能表示循环依赖关系, 因为图必须是无环的.</p>
+
+<p>贝叶斯网络的独立性:</p>
+
+<ul>
+  <li>
+    <p>Common parent: 如果 $X ← Z → Y$, 则 $X ⊥ Y | Z$. 但是 $X$ 和 $Y$ 不独立.</p>
+  </li>
+  <li>
+    <p>Cascade: 如果 $X → Z → Y$, 则 $X ⊥ Y | Z$. 但是 $X$ 和 $Y$ 不独立.</p>
+  </li>
+  <li>
+    <p>V-structure: 如果 $X → Z ← Y$, 则 $X ⊥ Y$. 但是给定 $Z$ 后, $X$ 和 $Y$ 不独立.</p>
+  </li>
+</ul>
+
+<p><strong>贝叶斯网络未必是马尔可夫随机场, 它不一定有局部性质.</strong></p>
+
+<p>最简单的例子是 V-structure, $X → Z ← Y$, 这里 $X$ 和 $Y$ 在没有条件化时独立, 但是给定 $Z$ 后不独立, 因此不满足局部性质.</p>
+
+<div class="definition">
+  <p><strong>($p$ factorizes over $G$)</strong> 设 $G$ 是一个有向无环图, 节点对应随机变量 $X_1, X_2, \ldots, X_n$. 设 $\text{Pa}_G(X_i)$ 是节点 $X_i$ 的父节点集合. 如果联合概率分布 $p(X_1, X_2, \ldots, X_n)$ 可以表示为 $$\begin{equation}
+    p(X_1, X_2, \ldots, X_n) = \prod_{i=1}^n p(X_i | \text{Pa}_G(X_i)),
+\end{equation}$$ 则称 $p$ 在 $G$ 上分解 (factorizes).</p>
+</div>
+
+<p><strong>Remark</strong>. 在实践上, 我们通常是对于一个具体场景, 想把它建模成一个贝叶斯网络, 我们当然希望这个场景的 p 在我们建的图上分解, 这样我们才能用图来表示这个分布的结构. 所以我们之后只考虑 p 在 G 上分解的情况.</p>
+
+<p>对于一个 BN, 我们存储的信息除了图的结构就是各个节点的条件概率分布 (CPD). 例如, 对于离散变量, 我们可以用条件概率表 (CPT) 来表示 CPD.</p>
+
+<div class="definition">
+  <p><strong>(d-separation)</strong> 在有向图 $G$ 中, 给定观测集合 $O$, 对于节点集合 $Q,W$, 如果 $Q$ 到 $W$ 之间不存在 active path, 则称 $Q$ 和 $W$ 在 $G$ 中关于 $O$ d-separate. 这里的 active path 定义如下:</p>
+  <ul>
+    <li>对于路径中的每一个节点 $V$, 如果路径通过 $V$ 的方式是串联 (chain) 或分支 (fork), 即 $→ V →$ 或 $← V →$, 则要求 $V \notin O$;</li>
+    <li>如果路径通过 $V$ 的方式是汇聚 (collider), 即 $→ V ←$, 则要求 $V$ 或者 $V$ 的某个后代在 $O$ 中.</li>
+  </ul>
+</div>
+
+<p>记 
+$$\begin{equation}
+    I(p) = \{(A ⊥ B | C)\}
+\end{equation}$$
+为分布 $p$ 蕴含的所有条件独立关系的集合. 记
+$$\begin{equation}
+    I(G) = \{(A ⊥ B | C) : A \text{ 和 } B \text{ 在 } G \text{ 中关于 } C \text{ d-separate}\}.
+\end{equation}$$</p>
+
+<p><strong>Fact</strong>: 如果 $p$ 在 $G$ 上分解, 则 $I(G) ⊆ I(p)$. 此时称 $G$ 是 $p$ 的 I-map (independency map).</p>
+
+<p>这就是在说, 图 $G$ 中的 d-separation 关系都是分布 $p$ 中的条件独立关系.</p>
+
+<p>自然的问题是, 反过来是否成立? 也就是等号是否成立? 也就是说, 图 $G$ 中的 d-separation 关系是否完全刻画了分布 $p$ 中的条件独立关系? 答案是否定的, 例子是 V-structure.</p>
+
+<p>有向图的表示能力:</p>
+
+<ul>
+  <li>
+    <p>对于任意分布 $p$, 存在一个有向无环图 $G$ 使得 $I(G)⊆I(p)$. 例如全连接图.</p>
+  </li>
+  <li>
+    <p>可以追求 minimal I-map, 即删除冗余边.</p>
+  </li>
+  <li>
+    <p>并非所有分布都有 perfect I-map, 即存在 $G$ 使得 $I(G)=I(p)$. 例子是 noisy-xor 分布.</p>
+  </li>
+  <li>
+    <p>perfect I-map 存在时, 未必唯一. 从而有 I-equivalence 的概念.</p>
+  </li>
+</ul>
+
+<h3 id="markov-random-fields">Markov Random Fields</h3>
+
+<p>MRF 解释性不如 BN.</p>
+
+<p>MRF 也有表示能力的问题, 分离的点一定是独立的, 但是独立的点不一定是分离的. 例子还是 V-structure.</p>
+
+<h2 id="2️⃣-inference">2️⃣ Inference</h2>
+
+<p>这个部分前两个算法 (VE、JT, 不包括 LBP) 都是精确算法, 往往只适用于小规模模型.</p>
+
+<p><strong>Remark</strong>. 对于实践中的复杂概率模型, 我们往往需要近似解. 近似算法主要分两个大类:</p>
+
+<ul>
+  <li>
+    <p><strong>variational</strong>: 将 inference 问题转化为 optimization 问题.</p>
+  </li>
+  <li>
+    <p><strong>sampling</strong>: 通过在某些分布下重复生成样本来 produce 近似解.</p>
+  </li>
+</ul>
+
+<h3 id="-variable-elimination">✰ Variable elimination</h3>
+
+<p>其实就是 BN 上的暴力消元求边缘分布, 只是求每一层求和的时候把无关项拿出去, 求和顺序很重要.</p>
+
+<p>对于大图很不实用.</p>
+
+<p>MRF 上也能用, 但是我感觉效率也很低.</p>
+
+<p>是精确算法.</p>
+
+<p>缺点: 想算另外一个边缘分布的时候要全部重来.</p>
+
+<h3 id="-junction-tree-algorithm">✰ Junction tree algorithm</h3>
+
+<h4 id="belief-propagation">Belief propagation</h4>
+
+<h4 id="junction-tree-algorithm">Junction tree algorithm</h4>
+
+<h4 id="loopy-belief-propagation">Loopy belief propagation</h4>
+
+<h3 id="-map-inference">✰ MAP inference</h3>
+
+<h3 id="-sampling-based-inference">✰ Sampling-based inference</h3>
+
+<h4 id="forward-sampling">Forward sampling</h4>
+
+<p>在(离散) BN 上就是按照拓扑序生成样本, 简单直接.</p>
+
+<p>在 undirected model 中只能应用到一些简单的情形, 比如每个 node 都很小的 clique tree (junction tree) , 校准 (calibrate, 即给出每个 node 的 marginal distribution) 之后, 从根节点开始采样, 然后 conditionally 采样子节点, 直到叶节点.</p>
+
+<h4 id="monte-carlo-estimation">Monte Carlo estimation</h4>
+
+<p>从给定分布生成大量样本来得到解的算法称为 Monte Carlo (MC) 方法. 可以很好地完成 marginal 和 MAP inferance, 并且可以计算积分
+$$\begin{equation}
+    \mathbb{E}_{x∼p}[f(x)] = \sum_x f(x) p(x) 
+\end{equation}$$</p>
+
+<p>Monte Carle integration 是 Monte Carlo principle 的重要实例. 目标是计算</p>
+
+<p>$$\begin{equation}
+    \mathbb{E}_{x∼p}[f(x)] ≈ I_T = \frac{1}{T} \sum_{y=1}^T f(x^{(t)}),
+\end{equation}$$
+其中 $x^{(t)}$ 是从分布 $p$ 中采样得到的样本. 我们有
+$$\begin{equation}
+    \mathbb{E}[I_T] = \mathbb{E}_{x∼p}[f(x)],
+\end{equation}$$
+$$\begin{equation}
+    \text{Var}(I_T) = \frac{1}{T} \text{Var}_{x∼p}[f(x)],
+\end{equation}$$
+第一个式子表明 MC estimate $I_T$ 是 unbiased 的, 第二个式子表明随着样本数量 $T$ 增加, 方差以 $1/T$ 的速度减小, 从而估计更加准确, 即 $I_T$ 在 $T→∞$ 时收敛于真实值 $\mathbb{E}_{x∼p}[f(x)]$.</p>
+
+<h4 id="rejection-sampling">Rejection sampling</h4>
+
+<p>拒绝采样有时会很浪费, 因为很多样本都被拒绝了.</p>
+
+<h4 id="importance-sampling">Importance sampling</h4>
+
+<h4 id="markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</h4>
+
+<p>马尔可夫链的基本概念见另一篇笔记 <a href="/website/posts/Markov_Chain">Markov Chain 笔记</a>.</p>
+
+<h3 id="-variational-inference">✰ Variational inference</h3>
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#总览">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">总览</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#1️⃣-representation">
+        <span class="toc-number">2.</span>
+        <span class="toc-title">1️⃣ Representation</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#bayesian-networks">
+        <span class="toc-number">2.1.</span>
+        <span class="toc-title">Bayesian Networks</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#markov-random-fields">
+        <span class="toc-number">2.2.</span>
+        <span class="toc-title">Markov Random Fields</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#2️⃣-inference">
+        <span class="toc-number">3.</span>
+        <span class="toc-title">2️⃣ Inference</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#-variable-elimination">
+        <span class="toc-number">3.1.</span>
+        <span class="toc-title">✰ Variable elimination</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#-junction-tree-algorithm">
+        <span class="toc-number">3.2.</span>
+        <span class="toc-title">✰ Junction tree algorithm</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#belief-propagation">
+        <span class="toc-number">3.2.1.</span>
+        <span class="toc-title">Belief propagation</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#junction-tree-algorithm">
+        <span class="toc-number">3.2.2.</span>
+        <span class="toc-title">Junction tree algorithm</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#loopy-belief-propagation">
+        <span class="toc-number">3.2.3.</span>
+        <span class="toc-title">Loopy belief propagation</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#-map-inference">
+        <span class="toc-number">3.3.</span>
+        <span class="toc-title">✰ MAP inference</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#-sampling-based-inference">
+        <span class="toc-number">3.4.</span>
+        <span class="toc-title">✰ Sampling-based inference</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#forward-sampling">
+        <span class="toc-number">3.4.1.</span>
+        <span class="toc-title">Forward sampling</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#monte-carlo-estimation">
+        <span class="toc-number">3.4.2.</span>
+        <span class="toc-title">Monte Carlo estimation</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#rejection-sampling">
+        <span class="toc-number">3.4.3.</span>
+        <span class="toc-title">Rejection sampling</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#importance-sampling">
+        <span class="toc-number">3.4.4.</span>
+        <span class="toc-title">Importance sampling</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#markov-chain-monte-carlo-mcmc">
+        <span class="toc-number">3.4.5.</span>
+        <span class="toc-title">Markov Chain Monte Carlo (MCMC)</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#-variational-inference">
+        <span class="toc-number">3.5.</span>
+        <span class="toc-title">✰ Variational inference</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Markov_Chain" title="NEXT: Markov Chain 笔记">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/Belief_Propagation" title="PREV: 信念传播 (Belief Propagation)">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2026
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>

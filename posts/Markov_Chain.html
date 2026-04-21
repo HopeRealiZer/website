@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+  <title>Markov Chain 笔记
+    ·
+    Jekyll Latex</title>
+
+
+<meta name="description" content="离散马尔可夫链">
+
+
+  <meta name="google-site-verification" content="abc123">
+
+
+<link rel="icon" href="/website/assets/favicon.png">
+<link rel="apple-touch-icon" href="/website/assets/touch-icon.png">
+<link rel="stylesheet" href="/website/assets/core.css">
+<link rel="canonical" href="/website/posts/Markov_Chain">
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  title="Jekyll Latex"
+  href="/website/feed.xml" />
+
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  chtml: {
+    scale: 0.95,  // Adjust size
+    // No need for fontURL if you're using tex-chtml.js — TeX font is default
+  },
+  svg: {
+    scale: 0.95  // Only applies if you switch to tex-svg.js
+  }
+};
+</script>
+
+<script
+  async
+  id="MathJax-script"
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+	<!-- 打印设置 -->
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
+</head>
+
+<body class="latex-dark">
+
+	<script>
+  // 根据当前页URL动态修改
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+    document.getElementById('logo-link').href = "/website";
+    document.getElementById('logo-prompt').textContent = 'Back to Home';
+  }
+</script>
+
+
+	<main class="container">
+  <!-- Main Content Column -->
+  <article class="content-column">
+    <div class="center">
+      <h1>Markov Chain 笔记</h1>
+      <p class="author">
+        Huang Ruizhi
+        <br/>
+        January 20, 2026
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 id="离散马尔可夫链">离散马尔可夫链</h2>
+
+<h3 id="有限状态离散马尔可夫链">有限状态离散马尔可夫链</h3>
+
+<p>先考虑最简单的模型, 即有限状态离散马尔可夫链, 且是 time-homogeneous 的 (即转移概率不随时间变化).</p>
+
+<h4 id="detailed-balanced-条件--平稳分布">detailed balanced 条件 ⇒ 平稳分布</h4>
+
+<p>detailed balance 条件
+$$\begin{equation}
+    p(x) T(x→x') = p(x') T(x'→x)
+\end{equation}$$
+可以推出平稳分布:
+$$\begin{equation}
+    \sum_x p(x) T(x→x') = p(x').
+\end{equation}$$</p>
+
+<p>直观上就是每条边的流入等于流出, 所以整体上每个节点的流入等于流出, 即平稳. 这显然是一个非常特殊的情况.</p>
+
+<p>对于一般的马尔可夫链, 只要 <strong>存在分布 $π$</strong> 满足 detailed balance 条件, 那么 $π$ 就是平稳分布. 证明只需要一行:
+$$\begin{equation}
+    \sum_x π(x) T(x→x') = \sum_x π(x') T(x'→x) = π(x').
+\end{equation}$$</p>
+
+<p>上面加粗是因为, 得是分布才行, 一个例子是 $\mathbb{Z}$ 上的简单随机游走, 它的转移概率是对称的, 满足 detailed balance 条件, 但是不存在(概率意义上的)平稳分布.</p>
+
+<h4 id="平稳分布的存在性">平稳分布的存在性</h4>
+
+<p><strong>性质</strong>: 概率转移矩阵 $P$ 的每一行和为 $1$, 因为每一行表示从某个状态出发到所有可能状态的转移概率分布. 所以 $P$ 有右特征向量 $\mathbf{1}$, 对应特征值 $1$. (注意, 特征值不分左右, 因为一个矩阵的特征值和它的转置的特征值是一样的, 这时因为 determinant 是转置不变的.)</p>
+
+<p>于是考虑左特征向量 $π$ 满足 $π P = π$, 即 $π$ 是 $P$ 的左特征向量, 对应特征值 $1$. 这时如果 $π_i ≥ 0$ 并且 $\sum_i π_i = 1$ (其实只要处理分量非负), 那么 $π$ 就是平稳分布.</p>
+
+<p>下面来证明一定可以找到分量非负的左特征向量 $\pi$ 对应特征值 $1$. 方便的方式是使用不动点定理.</p>
+
+<p>考虑概率单纯形 
+$$\begin{equation}
+    Δ = \{μ ∣ μ≥0, \sum_i μ_i = 1 \},
+\end{equation}$$
+它在映射 $T(u)=μP$ 下是 invariant 的. 因为这里是有限维情形(有限状态), 所以 $Δ$ 是一个紧凸集. 由于 $T$ 是紧凸集到自身的连续映射, 根据 Brouwer 不动点定理, 存在 $π ∈ Δ$ 使得 $T(π)=π P=π$. 这就证明了平稳分布的存在性.</p>
+
+<p><strong>Remark</strong>. 写到这里突然有个无关的疑问, Brouwer 不动点定理的紧凸集条件可不可以削弱. 问了一下 GPT 说是改成 star-shaped 或是 contractible 都不行.</p>
+
+<p>并且其实我们可以具体构造出平稳分布, 使用 Cesàro average:
+$$\begin{equation}
+    \bar{\mu}_N := \frac{1}{N} \sum_{t=0}^{N-1} \mu_t = \frac{1}{N} \sum_{t=0}^{N-1} \mu_0 P^t,
+\end{equation}$$
+其中 $μ_0$ 是任意初始分布.</p>
+
+<p>这些的确是概率分布 (落在 $Δ$ 里面), 因为都是概率的凸组合. 考虑 (这还不足以说明是平稳分布, 因为还没证明收敛)
+$$\begin{equation}
+    \bar{\mu}_N P - \bar{\mu}_N = \frac{1}{N} (\mu_0 P^N - \mu_0). 
+\end{equation}$$</p>
+
+<p>根据 $\Delta$ 的紧性, 存在子列 $N_k$ 使得 $\bar{\mu}_{N_k} → π$, 利用上面的恒等式可得
+$$\begin{equation}
+    \lim_{k→∞} (\bar{\mu}_{N_k} P - \bar{\mu}_{N_k}) = \lim_{k→∞} \frac{1}{N_k} (\mu_0 P^{N_k} - \mu_0) = 0,
+\end{equation}$$</p>
+
+<p>由于矩阵乘法是连续的, 所以和极限可交换, 于是有
+$$\begin{equation}
+    π P - π = (\lim_{k→∞} \bar{\mu}_{N_k})(P-I) = \lim_{k→∞} (\bar{\mu}_{N_k} P - \bar{\mu}_{N_k}) = 0,
+\end{equation}$$
+即 $π P = π$. 这就构造出了一个平稳分布.</p>
+
+<h4 id="概率转移矩阵的特征值性质">概率转移矩阵的特征值性质</h4>
+
+<p>上面我们已经证明了概率转移矩阵 $P$ 有特征值 $1$, 下面我们来证明其实所有的特征值模长都不大于 $1$.</p>
+
+<p>定义向量无穷范数 $‖x‖_∞ = \max_i|x_i|$, 诱导矩阵范数
+$$\begin{equation}
+    \|A\|_\infty = \max_{‖x‖_\infty≠0} \frac{‖Ax‖_\infty}{‖x‖_\infty} = \max_i \sum_j |A_{ij}|.
+\end{equation}$$</p>
+
+<p>由于 $P_{ij}≥ 0$ 且每行和均为 $1$, 所以
+$$\begin{equation}
+    \|P\|_\infty = \max_i \sum_j |P_{ij}| = \max_i \sum_j P_{ij} = 1.
+\end{equation}$$</p>
+
+<p>这表示
+$$\begin{equation}
+    ‖Pv‖_\infty ≤ ‖v‖_\infty, \quad ∀ v ∈ \mathbb{R}^n.
+\end{equation}$$
+从而可以看出, 对于任意特征值 $λ$ 和对应特征向量 $v$ (非零), 有
+$$\begin{equation}
+    |λ| ‖v‖_\infty = ‖λ v‖_\infty = ‖Pv‖_\infty ≤ ‖v‖_\infty,
+\end{equation}$$
+即 $|λ| ≤ 1$.</p>
+
+<h4 id="不可约情形下平稳分布的唯一性">不可约情形下平稳分布的唯一性</h4>
+
+<p>不可约指的是任意状态都能到达任意状态. 从有向图上看就是强连通图. 从矩阵角度看就是不存在一个非平凡子集 $S$ 使得对于 $i ∈ S, j ∉ S$, 有 $P_{ij}=0$, 也即不可能通过行列置换把 $P$ 写成上三角矩阵.</p>
+
+<div class="proposition">
+  <p><strong>(Perron-Frobenius 定理)</strong> 对于不可约 (irreducible) 的概率转移矩阵 $P$, 存在唯一的特征值 $λ_1=1$, 对应 $λ_1$ 的左特征向量 $π$ 满足 $π_i>0$ 从而可以满足 $\sum_i π_i=1$.</p>
+  <div class="proof">
+    <p>我们考虑对应特征值 $1$ 的归一化的左特征向量 $\pi$, 它代表一个平稳分布. 一个关键的注意点是, $\pi$ 的所有分量都是正的, 否则根据平稳分布的定义其它分量到它的转移概率都是 $0$, 从而和不可约性矛盾. <br /></p>
+    <p>基于此, 如果有两个不同的平稳分布 (即归一化左特征向量) $π$ 和 $π'$, 尝试利用它们构造出一个有 $0$ 分量的平稳分布, 从而得到矛盾. 具体地, 设 $α = \min_i \frac{π_i}{π'_i} > 0$, 那么考虑 $π'' = π - α π'$, 它是一个非零的左特征向量对应特征值 $1$, 并且至少有一个分量为 $0$. 但是根据上面的论证, 这是不可能的. 所以平稳分布是唯一的.</p>
+  </div>
+</div>
+
+<p>到此, 我们证明了不可约情形下的离散马尔可夫过程一定有唯一的平稳分布. 但是, 未必所有的初始分布都会收敛到这个平稳分布, 例如很容易可以想到一些周期性振荡的例子, 这种情况下虽然还是特征值 $1$ 只有一重, 但是其它特征值可能在单位圆上, 导致振荡.</p>
+
+<h4 id="遍历性与平稳分布的可达性">遍历性与平稳分布的可达性</h4>
+
+<p>为了保证所有初始分布都收敛到平稳分布, 需要进一步的条件, 即非周期性 (aperiodicity).</p>
+
+<p>不可约 + 非周期 = 遍历 (ergodic)</p>
+
+<p>下面先给出具体定义:</p>
+
+<div class="definition">
+  <p><strong>(周期)</strong> 对于状态 $i∈ \mathcal{S}$ , 定义它的周期为 $$\begin{equation}
+        d(i) = \text{gcd}\{n ≥ 1 ∣ P^n_{ii} > 0 \},
+    \end{equation}$$ 即从状态 $i$ 出发经过 $n$ 步回到 $i$ 的所有可能步数的最大公约数. 如果 $d(i) ≥ 2$, 则称状态 $i$ 是周期性的 (periodic), 否则称为非周期性的 (aperiodic). 如果对于所有状态 $i$ 都有 $d(i)=1$, 则称马尔可夫链是非周期性的.</p>
+</div>
+
+<p><strong>Remark</strong>. 我们考虑事情往往是在再返类(recurrent class)上面考虑的, 即不怎么考虑那些无法回到自己的状态.</p>
+
+<p>一个状态是非周期的实质是, 当 $t$ 足够大时, 从该状态出发 $t$ 步回到自己的概率总是大于 $0$.</p>
+
+<div class="definition">
+  <p><strong>(遍历性)</strong> 如果马尔可夫链是不可约且非周期的, 则称其为遍历的 (ergodic). <br /></p>
+  <p>或者可以从矩阵上进行定义: 如果存在某个正整数 $m$ 使得对于所有状态 $i,j$ 都有 $P^m_{ij} > 0$, 则称马尔可夫链是遍历的. 这样的矩阵也叫本原的 (primitive).</p>
+</div>
+
+<p><strong>Remark</strong>. Primitive 推导非周期性依赖于 $P$ 是概率转移矩阵 (非负且行和为 $1$) 这一点, 这使得把它乘在一个正矩阵左边还是正矩阵.</p>
+
+<p>证明 primitive ⟺ 不可约 + 非周期: 证明不可约是定义, 证明 primitive 用上面的 remark; 反过来, 证明 primitive 要用非周期的实质, 来吧任意两点之间不可约给出的不同的返回时间拼成同一个时间.</p>
+
+<div class="proposition">
+  <p>对于一个满足遍历性(不可约非周期)的马尔可夫链, $P$ 除了一个特征值 $1$ 之外其他特征值模长都小于 $1$.</p>
+  <div class="proof">
+    <p>这时 $P$ 是 primitive 的矩阵. 从而存在某个 $k$ 使得 $P^k$ 逐项正. 我们分几个步骤来证明. <br /></p>
+    <p>1) <strong>Doeblin minorization</strong>: 存在 $0<\alpha≤1$ 和某个分布 $ν$ 使得对于所有状态 $i,j$ 都有 $$\begin{equation}
+    P^k_{ij} ≥ α ν_j.
+\end{equation}$$</p>
+    <p>只要令 $ϵ:=\min_{i,j}P^k_{ij}\leq\frac{1}{n}$, 则可以取 $α= n ϵ$ 和 $ν_j = \frac{1}{n}$. <br /></p>
+    <p>2) <strong>构造分解</strong>: $$\begin{equation}
+    P^k = α \mathbf{1} ν + (1-α) R,
+\end{equation}$$ 其中 $R = \frac{1}{1-α}(P^k - α \mathbf{1} ν)$ 是一个概率转移矩阵 (容易验证). <br /></p>
+    <p>3) <strong>和为 $0$ 的空间上的严格收缩</strong>: 对于任意满足 $x\mathbf{1}=0$ 的向量 $x$ , 有 $$\begin{equation}
+    x P^k = (1-α) x R,
+\end{equation}$$ 从而有 $$\begin{equation}
+    ‖x P^k‖_1 = (1-α) ‖xR‖_1≤ (1-α) ‖x‖_1.
+\end{equation}$$</p>
+    <p>4) <strong>非 $1$ 特征值模长小于 $1$</strong>: 设 $λ$ 是 $P$ 的某个特征值, 且 $λ≠1$, 对应左特征向量 $v$. 则有 $$\begin{equation}
+    λ v\mathbf{1} = v P \mathbf{1} = v \mathbf{1} ⇒ v \mathbf{1} = 0.
+\end{equation}$$ 于是根据 3) 有 $$\begin{equation}
+    |λ|^k ‖v‖_1 = ‖v P^k‖_1 ≤ (1-α) ‖v‖_1,
+\end{equation}$$ 即 $|λ| ≤ (1-α)^{1/k} < 1$.</p>
+  </div>
+</div>
+
+<p>根据这个命题, 我们可以想象, 任意分布往唯一的平稳分布收缩的过程, 就是不断乘以 $P$, 由于非 $1$ 特征值模长都小于 $1$, 所以最终都会收敛到对应特征值 $1$ 的特征向量, 即平稳分布.</p>
+
+<p>另外我们也可以根据上面的和为 $0$ 的空间上的严格收缩 (任意两个概率分布的差值都在这个空间里面, 所以这个不等式用来估计 TV 距离或 $l^1$ 距离特别好), 直接证明任意初始分布都会收敛到平稳分布.</p>
+
+<p>取任意初始分布 $\mu_0$, 定义迭代 $\mu_m := T^m(\mu_0) = \mu_0 P^{mk}$, 这里 $P^k$ 是正矩阵. 则对于任意 $m>n$ 有
+$$\begin{equation}
+    ‖\mu_m - \mu_n‖_1 = ‖T^n(\mu_{m-n} - \mu_0)‖_1 ≤ ‖ \mu_{m-n} - \mu_0‖_1 (1-α)^n≤ (1-α)^n. 
+\end{equation}$$
+从而 $\{\mu_m\}$ 是 Cauchy 列, 收敛到某个分布 $π$. 由于 $T$ 是连续的, 所以
+$$\begin{equation}
+    π = \lim_{m→∞} \mu_m = \lim_{m→∞} T(\mu_{m-1}) = T( \lim_{m→∞} \mu_{m-1}) = T(π) = π P^k,
+\end{equation}$$
+即 $π$ 是 $P^k$ 的平稳分布.</p>
+
+<p>注意到
+$$\begin{equation}
+    (π P)P^k = π P^{k+1} = (π P^k) P = π P,
+\end{equation}$$
+所以 $π P$ 也是 $P^k$ 的平稳分布. 由于 $P^k$ 的平稳分布唯一, 所以 $π P = π$, 即 $π$ 也是 $P$ 的平稳分布.</p>
+
+<p>最后证明任意初始分布 $\mu_0$ 都收敛到 $π$ (之前证明的是一直作用 $P^k$ 都收敛, 这里要证明作用 $P$). 对于一般的 $t = mk+r, 0≤ r < k$, 我们有
+$$\begin{equation}
+    ‖\mu_0 P^t - π‖_1 = ‖(\mu_0 P^r - π) P^{mk}‖_1 ≤ ‖\mu_0 P^r - π‖_1 (1-α)^m≤ (1-α)^m→ 0, \quad \text{as } t→∞. 
+\end{equation}$$
+因此任意初始分布都收敛到平稳分布 $π$.</p>
+
+<h4 id="mixing-time">mixing time</h4>
+
+<p>上面已经证明了对于不可约非周期的离散马尔可夫链, 任意初始分布都会收敛到唯一的平稳分布. 下面我们来定量地分析收敛的速度, 即 mixing time, 它与马尔可夫链的谱隙 (spectral gap) 也就是非 $1$ 特征值中模长最大的那个特征值有关.</p>
+
+
+  </article>
+
+  <!-- New Sidebar Column -->
+  <aside class="sidebar-column">
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const sections = Array.from(tocLinks).map(link => {
+    return document.querySelector(link.getAttribute('href'));
+  });
+  const headerOffset = 80; // adjust for fixed header
+
+  function onScroll() {
+    const scrollPos = window.scrollY + headerOffset + 5; // small buffer
+    let currentSectionIndex = sections.length - 1;
+
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop > scrollPos) {
+        currentSectionIndex = i - 1;
+        break;
+      }
+    }
+
+    tocLinks.forEach(link => link.classList.remove('active'));
+    if (currentSectionIndex >= 0) {
+      tocLinks[currentSectionIndex].classList.add('active');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // initialize on page load
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tocLinks = document.querySelectorAll('.numbered-toc a[href^="#"]');
+  const headerOffset = 80; // Adjust to your fixed header height if any
+
+  tocLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (!targetElement) return;
+
+      // Calculate scroll position with header offset
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      // Smooth scroll to position
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+
+      // Update URL after scrolling (slightly delayed)
+      setTimeout(() => {
+        history.pushState(null, null, targetId);
+      }, 600);
+    });
+  });
+});
+</script>
+
+<div class="sidebar-column">
+
+  <div class="sidebar-section">
+    <h3>Catalog</h3>
+    
+
+
+
+
+
+
+
+<nav class="numbered-toc">
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-2">
+      <a href="#离散马尔可夫链">
+        <span class="toc-number">1.</span>
+        <span class="toc-title">离散马尔可夫链</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-3">
+      <a href="#有限状态离散马尔可夫链">
+        <span class="toc-number">1.1.</span>
+        <span class="toc-title">有限状态离散马尔可夫链</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#detailed-balanced-条件--平稳分布">
+        <span class="toc-number">1.1.1.</span>
+        <span class="toc-title">detailed balanced 条件 ⇒ 平稳分布</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#平稳分布的存在性">
+        <span class="toc-number">1.1.2.</span>
+        <span class="toc-title">平稳分布的存在性</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#概率转移矩阵的特征值性质">
+        <span class="toc-number">1.1.3.</span>
+        <span class="toc-title">概率转移矩阵的特征值性质</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#不可约情形下平稳分布的唯一性">
+        <span class="toc-number">1.1.4.</span>
+        <span class="toc-title">不可约情形下平稳分布的唯一性</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#遍历性与平稳分布的可达性">
+        <span class="toc-number">1.1.5.</span>
+        <span class="toc-title">遍历性与平稳分布的可达性</span>
+      </a>
+    </div>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="toc-row toc-level-4">
+      <a href="#mixing-time">
+        <span class="toc-number">1.1.6.</span>
+        <span class="toc-title">mixing time</span>
+      </a>
+    </div>
+  
+</nav>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>Links</h3>
+    <a href="/website/">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="home-icon">
+  <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/></svg>
+    Home Page;
+    </a>
+    <p></p>
+    <a href="#" onclick="window.print(); return false;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print Me;
+    </a>
+    <p></p>
+    <a href="/website/posts/Collection_of_Websites">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="tools-icon">
+  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+</svg>
+      Useful Tools;
+    </a>
+    <p></p>
+    <a href="https://github.com/zhangchenchengSJTU/jekyll-latex">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8zM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.25.25 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25z"/>
+</svg>
+      Repository;
+    </a>
+    <p></p>
+    <a href="https://www.zotero.org/groups/6107450/zcclib/library">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="repo-icon">
+  <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+</svg>
+    File Folder.
+    </a>
+  </p>
+  </div>
+
+</div>
+  <!-- Sidebar content -->
+  </aside>
+
+  <!-- Navigation (below both columns) -->
+  <div class="page-navigation">
+    
+      <a class="next" href="/website/posts/Stochastic_Process" title="NEXT: Discrete Time Stochastic Processes">&lt;&lt;</a>
+      <span>&middot;</span>
+    
+    <a class="home" href="/website/" title="Back to Homepage">Home</a>
+    
+      <span>&middot;</span>
+      <a class="prev" href="/website/posts/PGM" title="PREV: Probabilistic Graphical Models">&gt;&gt;</a>
+    
+  </div>
+</main>
+
+	<div class="footer">
+  <span class="block">&copy;
+    2026
+    HopeRealiZer</span>
+</div>
+
+
+</body>
+
+
+</html>
